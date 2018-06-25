@@ -1,8 +1,9 @@
-"copy your cobo tool ""questions"" sheet to the corresponding sheet here"
+"copy your Kobo tool ""questions"" sheet to the corresponding sheet here"
 "same with kobo tool ""choices"" sheet"
 copy your data to the data sheet
 fill out the data_parameters sheet
 "see the ""input check"" to insure your inputs match"
-"define your recoding variables in the ""recoding"" sheet"
+"define your composite indicators in the composite indicators"" sheet"
 "save this file, then click ""update input"" below"
-"now open ""run.R"" in Rstudio and execute the code."
+"now open ""run.R"" in Rstudio, mark all lines and press ctrl+ENTER"
+find all results in ./output/

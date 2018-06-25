@@ -1,7 +1,10 @@
 # msna18
 
 # Overview
+## requirements:
+- excel installed
+- R and RStudio installed
 ## Quick guide:
-1. Define your inputs - data, kobo tool, analysis plan, parameters - are defined by the user in ./input/input.xlm
-2. Open `run.R` in RStudio and run the script.
+1. copy ./input/example_input.xlsm into the same folder and rename it to XXX_input.xlsm (replace XXX by your country code; e.g. UKR)
+2. open the file and follow the instructions in the readme sheet.
 3. find your analysis results in ./output/

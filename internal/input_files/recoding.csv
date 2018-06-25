@@ -1,4 +1,0 @@
-old.variable.name,becomes.TRUE,becomes.FALSE,new.variable.name
-call.status,,off,call.successful
-call.status,,wrong_number,call.successful
-call.status,answered,,call.successful
