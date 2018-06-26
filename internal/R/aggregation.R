@@ -3,9 +3,8 @@
 #' @param df data frame to aggregate
 #' @param split.by aggregating in groups. Creates one row per unique value in the data column with the name speficied here
 #' @param ignore.missing.data if TRUE, NA and empty strings are not counted as a category
-#' @param write.to.file specify a CSV file name to write results to
-#' @return
-#' @seealso \code{\link{function_name}}
+#' @return a list of counts for each column in df 
+#' @seealso \code{\link{aggregate_count_weighted}}
 #' @export
 #' @examples
 aggregate_count<-function(df,split.by=NULL,ignore.missing.data=T){
@@ -22,10 +21,10 @@ aggregate_count<-function(df,split.by=NULL,ignore.missing.data=T){
 
 #' Aggregating by weighted counts
 #'
-#' @param
-#' @param
-#' @param
-#' @return
+#' @param df data frame to aggregate
+#' @param split.by aggregating in groups. Creates one row per unique value in the data column with the name speficied here
+#' @param ignore.missing.data if TRUE, NA and empty strings are not counted as a category
+#' @return a list of weighted counts for each column in df 
 #' @seealso \code{\link{function_name}}
 #' @export
 #' @examples
@@ -44,10 +43,10 @@ aggregate_count_weighted<-function(df,weight.by=NULL,split.by=NULL,ignore.missin
 
 #' Aggregating to percentages for a select one question
 #'
-#' @param
-#' @param
-#' @param
-#' @return
+#' @param df data frame to aggregate
+#' @param split.by aggregating in groups. Creates one row per unique value in the data column with the name speficied here
+#' @param ignore.missing.data if TRUE, NA and empty strings are not counted as a category
+#' @return a list of percentages for each column in df, disaggregated by split.by 
 #' @seealso \code{\link{function_name}}
 #' @export
 #' @examples
@@ -70,10 +69,10 @@ aggregate_percent<-function(df,split.by=NULL,ignore.missing.data=TRUE){
 
 #' Aggregating to weighted percentages
 #'
-#' @param
-#' @param
-#' @param
-#' @return
+#' @param df data frame to aggregate
+#' @param split.by aggregating in groups. Creates one row per unique value in the data column with the name speficied here
+#' @param ignore.missing.data if TRUE, NA and empty strings are not counted as a category
+#' @return a list of weighted percentages for each column in df, disaggregated by split.by 
 #' @seealso \code{\link{function_name}}
 #' @export
 #' @examples
