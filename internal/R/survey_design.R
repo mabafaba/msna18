@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 #' Map to Design
 #'
 #' creates a `survey` design object from the data
@@ -30,12 +22,6 @@ map_to_design <- function(data,
                              weights = as.vector(strata.weights))
   return(survey.design)
   }
-
-
-
-
-
-
 
 
 
@@ -128,6 +114,23 @@ load_samplingframe <- function(sampling.frame.file,
 
 weights_of <- function(df) {
   stop("Before weights_of() can be used, load_samplingframe() must be run.")
+}
+
+
+auto.weight<-function(df,weight.by=NULL){
+  # A) if no weight.by provided, I'll try calculating myself:
+  if(is.null(weight.by)){temp.weights<-weights_of(df)}
+  # B) character string provided
+  else if(is.character(weight.by)){
+    warning("using the weight.by argument is not recommended. You should call load_samplingframe(), and then weighted functions without weight.by argument.")
+    insure.string.is.column.header(df,weight.by)
+    insure(length(weight.by)==1,err="weight by should be NULL for auto weighting, or a single character string naming the data column that stores the weights")
+    df[[weight.by]] <- gsub(",", ".", df[[weight.by]]) %>% as.numeric
+    temp.weights<-df[[weight.by]]
+  }else{
+    insure.has.data(temp.weights)
+  }
+  return(temp.weights)
 }
 
 
