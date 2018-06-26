@@ -14,7 +14,18 @@ recode_select_one_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
   return(x_recoded)
 }
 
-
+#' Recode select_multiple to binary TRUE/FALSE
+#'
+#'@param x vector of select_multiple
+#'@param selected.any.in  vector of possible respones; returns TRUE only if ANY of these were selected (and all other paramteters conditions are fulfilled)
+#'@param selected.all.in  vector of possible respones; returns TRUE only if ALL of these were selected (and all other paramteters conditions are fulfilled)
+#'@param selected.none.in vector of possible respones; returns TRUE only if NONE of these were selected (and all other paramteters conditions are fulfilled)
+#'@details NA's stay NA. All values not specified in becomes.TRUE or becomes.FALSE become NA.
+#'@return logical vector of the same length as th einput vector, all values in becomes.TRUE changed to TRUE, and in becomes.FALSE to FALSE
+recode_select_multiple_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
+  
+  return(x_recoded)
+}
 
 
 
