@@ -1,6 +1,6 @@
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd("../")
+# setwd("../")
 getwd()
 source("./internal/R/dependencies.R")
 source("./internal/R/recoding.R")
@@ -11,16 +11,16 @@ source("./internal/R/survey_design.R")
 # load data
 data<-read.csv("./internal/input_files/data.csv")
 # load data metadata
-data_parameters<-read.csv("./internal/input_files/data_parameters.csv")
-
-# load samplingframe (only if data_parameters says it's a stratified sample)
-if(data_parameters$stratified.=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv")}
-
+data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F)
 
 
 ci_weighted_count_def<-load_composite_indicator_definition_weighted_count()
 data_with_composite_indicators<-add_variable_indicators_weighted_count(data,ci_weighted_count_def)
 
+# load samplingframe (only if data_parameters says it's a stratified sample)
+if(data_parameters$stratified.=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
+                                                              data.stratum.column = data_parameters$stratum.name.variable 
+)}
 
 
 
