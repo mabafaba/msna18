@@ -1,7 +1,7 @@
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd("../../")
-getwd()
+# setwd("../../")
+# getwd()
 source("./internal/R/dependencies.R")
 source("./internal/R/recoding.R")
 source("./internal/R/load_analysis_definitions.R")
