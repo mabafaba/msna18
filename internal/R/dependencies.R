@@ -1,5 +1,5 @@
 # packages to install/load:
-.dependencies<-c("dplyr")
+.dependencies<-c("dplyr","questionr")
 
 
 

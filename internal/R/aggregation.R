@@ -51,8 +51,6 @@ aggregate_count_weighted<-function(df,weight.by=NULL,split.by=NULL,ignore.missin
 #' @export
 #' @examples
 #'
-#'
-#'
 aggregate_percent<-function(df,split.by=NULL,ignore.missing.data=TRUE){
   # df %>% lapply(function(x){is.numeric.fuzzy(as.character(x))}) %>% unlist -> numericcols
   # df[,numericcols] %>% lapply(as.numeric) -> df
@@ -81,10 +79,10 @@ aggregate_percent<-function(df,split.by=NULL,ignore.missing.data=TRUE){
 #'
 aggregate_percent_weighted<-function(df,weight.by=NULL,split.by=NULL,ignore.missing.data=T){
   # throw errors
-  # if(!is.null(weight.by)){insure.string.is.column.header(df,weight.by)}
-  # if(!is.null(weight.by)){insure.is.single.value(weight.by)}
-  # if(!is.null(split.by)){insure.string.is.column.header(df,split.by)}
-  # if(!is.null(split.by)){insure.is.single.value(split.by)}
+  if(!is.null(weight.by)){insure.string.is.column.header(df,weight.by)}
+  if(!is.null(weight.by)){insure.is.single.value(weight.by)}
+  if(!is.null(split.by)){insure.string.is.column.header(df,split.by)}
+  if(!is.null(split.by)){insure.is.single.value(split.by)}
   temp.weights<-auto.weight(df,weight.by)
   perc<- df %>% lapply(wtd.table.fraction
                        ,y=(if(is.null(split.by)){NULL}else{df[[split.by]]})
@@ -157,3 +155,27 @@ aggregate_frequent_weighted<-function(df,n=3,split.by=NULL,weight.by,write.to.fi
   return(top.n.names)
 }
 
+
+
+
+wtd.table.fraction<-function(...,ignore.missing.data=T){
+  args<-list(...)
+  if(ignore.missing.data){args$na.rm<-T}
+  if(!ignore.missing.data){args$na.rm<-F}
+  
+  wt<-do.call(wtd.table,args)
+  if(is.matrix.table(wt)){
+    wt<-apply(wt,2,function(x){
+      x/sum(x)
+    }
+    )}else{
+      wt<-wt/sum(wt)
+    }
+  return(wt)
+}
+
+
+is.matrix.table<-function(x){
+  # determins if a table (output from table() or wtd.table() usually) has multiple rows.
+  !is.na(ncol(x))
+}
