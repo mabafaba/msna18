@@ -22,8 +22,26 @@ recode_select_one_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
 #'@param selected.none.in vector of possible respones; returns TRUE only if NONE of these were selected (and all other paramteters conditions are fulfilled)
 #'@details NA's stay NA. All values not specified in becomes.TRUE or becomes.FALSE become NA.
 #'@return logical vector of the same length as th einput vector, all values in becomes.TRUE changed to TRUE, and in becomes.FALSE to FALSE
-recode_select_multiple_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
-  
+recode_select_multiple_to_logical <- function(x, selected.any.in, selected.all.in = NULL, selected.none.in = NULL){
+  if(is.null(c(selected.any.in, selected.all.in, selected.none.in))){stop("At least one parameter must be provided")}
+  x_recoded <- rep(FALSE, length(x))
+  ####match any
+  if(!is.null(selected.any.in)){
+  match_any <- x %>% strsplit(" ") %>% lapply(function(x){
+    match(selected.any.in, x)})
+  make_false_any <- lapply(match_any, function(x){all(is.na(x))}) %>% unlist
+  x_recoded[!make_false_any] <- TRUE}
+  ####match all
+  if(!is.null(selected.all.in)){
+  make_false_all <- x %>% strsplit(" ") %>% sapply(function(x){
+    match(selected.all.in,x) %>% is.na %>% any}) 
+  x_recoded[!make_false_all] <- TRUE} 
+  ####match none
+  if(!is.null(selected.none.in)){
+  match_none <- x %>% strsplit(" ") %>% lapply(function(x){
+    match(selected.none.in, x)})
+  make_true_none <- lapply(match_none, function(x){all(is.na(x))}) %>% unlist
+  x_recoded[make_true_none] <- TRUE}
   return(x_recoded)
 }
 
