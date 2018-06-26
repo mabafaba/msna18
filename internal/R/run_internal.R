@@ -2,10 +2,25 @@ source("./internal/R/dependencies.R")
 source("./internal/R/recoding.R")
 source("./internal/R/load_analysis_definitions.R")
 source("./internal/R/composite_indicator_weighted_count.R")
+source("./internal/R/survey_design.R")
 
+# load data
 data<-read.csv("./internal/input_files/data.csv")
+# load data metadata
+data_parameters<-read.csv("./internal/input_files/data_parameters.csv")
+
+# load samplingframe (only if data_parameters says it's a stratified sample)
+if(data_parameters$stratified.=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv")}
+
+
+
 ci_weighted_count_def<-load_composite_indicator_definition_weighted_count()
 data_with_composite_indicators<-add_variable_indicators_weighted_count(data,ci_weighted_count_def)
+
+
+
+
+
 write.csv(data_with_composite_indicators,"./output/modified_data/data_w_weighted_counts.csv")
 message(paste0("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsee '",getwd(),"/output' for your results!"))
 
