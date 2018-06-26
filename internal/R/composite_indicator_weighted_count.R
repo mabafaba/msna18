@@ -4,12 +4,15 @@ add_variable_indicators_weighted_count<-function(data,composite_indicator_defini
   if(!("value" %in% names(composite_indicator_definitions))){stop("indicator definition must have a column called 'value'")}
   if(!("weight" %in% names(composite_indicator_definitions))){stop("indicator definition must have a column called 'weight'")}
   
-  composite_indicators <- composite_indicator_definitions %>%
-    split.data.frame(composite_indicator_definitions$new.var.name) %>%
-    sapply(composite_indicator_weighted_count,data=data)
-  
-  names(composite_indicators)<-unique(composite_indicator_definitions$new.var.name)
-  return(data.frame(data,composite_indicators,stringsAsFactors = F))
+  list.of.new.indicator.definitions <- composite_indicator_definitions %>%
+    split.data.frame(composite_indicator_definitions$new.var.name) 
+    
+  # this has to be a loop, because composite indicators may depend on previous composite indicators.
+  for(i in seq_along(list.of.new.indicator.definitions)){
+      data[[unique(composite_indicator_definitions$new.var.name)[1]]]<-composite_indicator_weighted_count(data,indicator_definition = list.of.new.indicator.definitions[[i]])
+      }
+
+  return(data)
 }
 
 

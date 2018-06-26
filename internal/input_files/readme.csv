@@ -1,9 +1,13 @@
+
+
+
 "copy your Kobo tool ""questions"" sheet to the corresponding sheet here"
 "same with kobo tool ""choices"" sheet"
-copy your data to the data sheet
+1. copy your data to the data sheet
 fill out the data_parameters sheet
 "see the ""input check"" to insure your inputs match"
-"define your composite indicators in the composite indicators"" sheet"
-"save this file, then click ""update input"" below"
-"now open ""run.R"" in Rstudio, mark all lines and press ctrl+ENTER"
-find all results in ./output/
+"2. define your composite indicators in the composite indicators"" sheet"
+"3. save this file, then click ""update input"":"
+"4. now open ""run.R"" in Rstudio, mark all lines and press ctrl+ENTER"
+5. find all results in ./output/
+

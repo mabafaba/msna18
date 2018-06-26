@@ -1,5 +1,5 @@
 COMPOSITE INDICATORS: WEIGHTED COUNTS,,,,,,,,,,
-,Enter a variable name for the new indicator you want to create,Enter the name of the variable going into the composite indicator. The  spelling must exactly match the column header in the dataset - select from the drop down,value that the variable takes on to be counted in the composite indicator. All answers not specified will be counted as 0,weight in the composite indicator if the variable takes on the value in D,,,,,,
+only white cells should be filled out. Blue are only haeders. Grey are documentation / empy cells,Enter a variable name for the new indicator you want to create. This should be the same for all rows within one indicator block (dark blue heading),Enter the name of the variable going into the composite indicator. The  spelling must exactly match the column header in the dataset - select from the drop down. This should be the same for one input variable block (light blue header),value that the variable takes on to be counted in the composite indicator. All answers not specified will be counted as 0,weight in the composite indicator if the variable takes on the value in D,,,,,,
 ,new.var.name,var,value,weight,,,,,,
 INDICATOR,,,,,Copy this  block and add it below to create additional indicators,,,,,
 input variable,,,,,,,,,,
