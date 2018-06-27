@@ -1,0 +1,32 @@
+"","host_community"
+"agriculture",0.558333333333333
+"agriculture beekeeping",0.00416666666666667
+"agriculture casual_labour",0.0666666666666667
+"agriculture casual_labour selling_natural_resources",0.0166666666666667
+"agriculture fishery casual_labour",0.00416666666666667
+"agriculture fishery selling_natural_resources",0.00416666666666667
+"agriculture livestock",0.0333333333333333
+"agriculture livestock casual_labour",0.0125
+"agriculture livestock fishery",0.0125
+"agriculture livestock remittance",0.00416666666666667
+"agriculture livestock selling_natural_resources",0.00416666666666667
+"agriculture livestock small_business",0.025
+"agriculture livestock trade",0.00416666666666667
+"agriculture other",0.00416666666666667
+"agriculture remittance casual_labour",0.00833333333333333
+"agriculture remittance small_business",0.00416666666666667
+"agriculture salary",0.0375
+"agriculture salary casual_labour",0.00416666666666667
+"agriculture selling_natural_resources",0.0125
+"agriculture small_business",0.1
+"agriculture small_business casual_labour",0.0166666666666667
+"agriculture small_business selling_natural_resources",0.00416666666666667
+"agriculture trade",0.0166666666666667
+"agriculture trade small_business",0.00416666666666667
+"casual_labour",0.0125
+"livestock",0.00416666666666667
+"salary",0.00416666666666667
+"selling_natural_resources",0.00416666666666667
+"small_business",0.00416666666666667
+"small_business casual_labour",0.00416666666666667
+"small_business casual_labour selling_natural_resources",0.00416666666666667

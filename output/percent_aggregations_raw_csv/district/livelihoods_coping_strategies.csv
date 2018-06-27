@@ -1,0 +1,26 @@
+"","kiryandongo"
+"",0.00833333333333333
+"debt",0.104166666666667
+"debt reduce_spending",0.00416666666666667
+"debt sold_assistance",0.00416666666666667
+"humanitarian_aid",0.00416666666666667
+"none",0.0791666666666667
+"reduce_spending",0.0125
+"selling_assets",0.154166666666667
+"selling_assets debt",0.00416666666666667
+"selling_assets other",0.00416666666666667
+"selling_assets reduce_spending",0.00833333333333333
+"spent_savings",0.295833333333333
+"spent_savings charitable_donations debt sold_assistance",0.00416666666666667
+"spent_savings debt",0.0541666666666667
+"spent_savings reduce_spending",0.00416666666666667
+"spent_savings selling_assets",0.0416666666666667
+"spent_savings selling_assets debt",0.00416666666666667
+"spent_savings sold_assistance",0.00416666666666667
+"spent_savings support_from_friends_relatives",0.0333333333333333
+"spent_savings support_from_friends_relatives debt",0.0125
+"spent_savings support_from_friends_relatives selling_assets",0.025
+"support_from_friends_relatives",0.1
+"support_from_friends_relatives debt",0.00833333333333333
+"support_from_friends_relatives selling_assets",0.0166666666666667
+"support_from_friends_relatives selling_assets debt",0.00833333333333333
