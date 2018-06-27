@@ -1,7 +1,7 @@
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-# setwd("../../")
-# getwd()
+setwd("../../")
+getwd()
 source("./internal/R/dependencies.R")
 source("./internal/R/recoding.R")
 source("./internal/R/load_analysis_definitions.R")
@@ -22,6 +22,7 @@ data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAs
 message("deleting all previous script outputs with absolutely no warning lol")
 unlink("./output/modified_data/",recursive=TRUE) %>% print
 unlink("./output/percent_aggregations_raw_csv",recursive=TRUE) %>% print
+dir.create("./output")
 dir.create("./output/modified_data")
 dir.create("./output/percent_aggregations_raw_csv")
 ci_weighted_count_def<-load_composite_indicator_definition_weighted_count()
@@ -45,7 +46,8 @@ all_percent_disaggregations_all_vars<-
             }
             path<-paste0("./output/percent_aggregations_raw_csv/",disaggregation.var,"/")
             dir.create(path)
-            lapply(names(this_disag_percentages),function(x){write.csv(this_disag_percentages[[x]],paste0(path,x,".csv"))
+            lapply(names(this_disag_percentages),function(x){
+              write.csv(this_disag_percentages[[x]],paste0(path,x,".csv"))
             this_disag_percentages
           })
 
