@@ -24,6 +24,8 @@ unlink("./output/modified_data/",recursive=TRUE) %>% print
 unlink("./output/percent_aggregations_raw_csv",recursive=TRUE) %>% print
 dir.create("./output/modified_data")
 dir.create("./output/percent_aggregations_raw_csv")
+dir.create("./output/")
+
 ci_weighted_count_def<-load_composite_indicator_definition_weighted_count()
 data_with_composite_indicators<-add_variable_indicators_weighted_count(data,ci_weighted_count_def)
 
