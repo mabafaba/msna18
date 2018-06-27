@@ -30,7 +30,8 @@ data_with_composite_indicators<-add_variable_indicators_weighted_count(data,ci_w
 
 # load samplingframe (only if data_parameters says it's a stratified sample)
 if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
-                                                              data.stratum.column = data_parameters$stratum.name.variable 
+                                                              data.stratum.column = data_parameters$stratum.name.variable,return.stratum.populations = F
+                                                             
 )}
 
 # load kobo tool:
@@ -60,6 +61,24 @@ all_percent_disaggregations_all_vars<-
           })
 
 })
+
+
+all_means_disaggregations_all_vars<-
+  lapply(analysis_definition_aggregations$summary.statistics.disaggregated.by.variable,
+         function(disaggregation.var){
+           if(data_parameters$stratified=="yes"){
+             this_disag_percentages<-aggregate_mean_weighted(data,aggregate_by = disaggregation.var)
+           }else{
+             this_disag_percentages<-aggregate_mean(data,aggregate_by = disaggregation.var)
+           }
+           path<-paste0("./output/percent_aggregations_raw_csv/",disaggregation.var,"/")
+           dir.create(path)
+           lapply(names(this_disag_percentages),function(x){
+             write.csv(this_disag_percentages[[x]],paste0(path,x,".csv"))
+             this_disag_percentages
+           })
+           
+         })
 
 
 
