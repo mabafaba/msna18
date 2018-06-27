@@ -163,24 +163,23 @@ mean_R <- function (x, when.tie = NA)
                               hasdata %>% mean))
   }
   else {
-    return(x %>% hasdata %>% Mode(when.tie = when.tie))
+    return(x %>% hasdata %>% Mode)
   }
 }
 
 
 
-mean_R_weighted <- function (x, wts, ignore.missing.data = T) 
+mean_R_weighted <- function (x, weights, ignore.missing.data = T) 
 {
   if (is.numeric.fuzzy(as.character(x))) {
     clean_x <- x %>% as.character %>% as.numeric %>% hasdata
-    wt <- wtd.mean(x, weights = wts)
+    wt <- wtd.mean(x, weights = weights)
     return(wt)
   }
   else {
-    return(x %>% hasdata %>% Mode(when.tie = when.tie))
+    return(x %>% hasdata %>% Mode)
   }
 }
-
 
 
 is.numeric.fuzzy<-function(x,minfrac=0.97){
@@ -192,7 +191,9 @@ is.numeric.fuzzy<-function(x,minfrac=0.97){
   return(isnum)
 }
 
+
 Mode<-function(x,when.tie=NA) {
+
   ux <- unique(x)
   wm<-which.max(tabulate(match(x, ux)))
   # return when.tie when tie

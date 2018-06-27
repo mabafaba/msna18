@@ -92,35 +92,35 @@ aggregate_mean_weighted<-function(df, weight.by = NULL,aggregate_by = NULL, when
 
 
 
-#' Aggregating to mode
-#'
-#' @param df the data frame to aggregate
-#' @param aggregate.by the name of the column to aggregate by
-#' @param when.tie what value to return when there is a tie (defaults to NA)
-#' @param ignore.missing when TRUE, first removes NA, empty strings, -Inf, Inf  (default TRUE)
-#' @return data frame of Modes for all variables in df, with one row per unique value in the column named in aggregate.by
-#' @seealso \code{\link{function_name}}
-#' @export
-#' @examples
-#'
-aggregate_mode<-function(df,aggregate.by,when.tie=NA,ignore.missing=T){
-  
-  df<-df %>% factors2strings
-  # if(ignore.missing){
-  #   df <- lapply(df,hasdata)
-  # }
-  
-  df  %>%
-    split.data.frame(df[[aggregate.by]]) %>%
-    lapply(function(x){
-      
-      
-      lapply(x,function(x){
-        if(ignore.missing){x<-hasdata(x)}
-        Mode(x,when.tie=NA)
-      }) %>%
-        unlist
-    }) %>%
-    do.call(rbind,.)
-  
-}
+#' #' Aggregating to mode
+#' #'
+#' #' @param df the data frame to aggregate
+#' #' @param aggregate.by the name of the column to aggregate by
+#' #' @param when.tie what value to return when there is a tie (defaults to NA)
+#' #' @param ignore.missing when TRUE, first removes NA, empty strings, -Inf, Inf  (default TRUE)
+#' #' @return data frame of Modes for all variables in df, with one row per unique value in the column named in aggregate.by
+#' #' @seealso \code{\link{function_name}}
+#' #' @export
+#' #' @examples
+#' #'
+#' aggregate_mode<-function(df,aggregate.by,when.tie=NA,ignore.missing=T){
+#'   
+#'   df<-df %>% factors2strings
+#'   # if(ignore.missing){
+#'   #   df <- lapply(df,hasdata)
+#'   # }
+#'   
+#'   df  %>%
+#'     split.data.frame(df[[aggregate.by]]) %>%
+#'     lapply(function(x){
+#'       
+#'       
+#'       lapply(x,function(x){
+#'         if(ignore.missing){x<-hasdata(x)}
+#'         Mode(x,when.tie=NA)
+#'       }) %>%
+#'         unlist
+#'     }) %>%
+#'     do.call(rbind,.)
+#'   
+#' }
