@@ -1,4 +1,4 @@
-list_name,name,label,district,subcounty,origin,level_1,settlement
+list_name,name,label::english,district,subcounty,origin,level_1,settlement
 respondent_type_list,refugee,Refugee,,,,,
 respondent_type_list,host_community,Host community member,,,,,
 ,,,,,,,

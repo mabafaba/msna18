@@ -1,0 +1,9 @@
+"","divorced","married","no_answer","single","widowed"
+"",0,0.005,0,0,0
+"clinic",0.333333333333333,0.315,1,0.5,0.32
+"district_hospital",0.166666666666667,0.125,0,0,0.16
+"hc_ii",0.25,0.36,0,0.5,0.28
+"hc_iii",0.25,0.17,0,0,0.16
+"national_referral_hospital",0,0.01,0,0,0
+"private_hospital",0,0.005,0,0,0
+"vht",0,0.01,0,0,0.08

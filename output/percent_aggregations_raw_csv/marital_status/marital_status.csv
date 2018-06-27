@@ -1,0 +1,6 @@
+"","divorced","married","no_answer","single","widowed"
+"divorced",1,0,0,0,0
+"married",0,1,0,0,0
+"no_answer",0,0,1,0,0
+"single",0,0,0,1,0
+"widowed",0,0,0,0,1
