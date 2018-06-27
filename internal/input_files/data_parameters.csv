@@ -1,2 +1,2 @@
-uuid data column name,stratum name variable,stratified
-_uuid,dist.location,yes
+uuid data column name,stratum name variable,stratified,choices.label.column.to.use
+_uuid,dist.location,yes,english

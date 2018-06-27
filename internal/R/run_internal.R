@@ -33,12 +33,20 @@ if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_f
                                                               data.stratum.column = data_parameters$stratum.name.variable 
 )}
 
+# load kobo tool:
+
+questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
+                   choices.file = "./internal/input_files/kobo_choices.csv",
+                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
+
+question_is_select_one("enumerator.num")
 
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
 
 all_percent_disaggregations_all_vars<-
   lapply(analysis_definition_aggregations$summary.statistics.disaggregated.by.variable,
          function(disaggregation.var){
+
             if(data_parameters$stratified=="yes"){
               this_disag_percentages<-aggregate_percent_weighted(data,split.by = disaggregation.var)
             }else{
