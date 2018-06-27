@@ -1,2 +1,2 @@
-uuid data column name,stratum name variable,stratified
-_uuid,dist.location,yes
+stratified,stratum.name.variable,choices.label.column.to.use
+yes,respondent_type,label::english

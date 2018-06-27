@@ -1,0 +1,9 @@
+"","divorced","married","no_answer","single","widowed"
+"",0.833333333333333,0.925,1,1,1
+"cesspit_full",0.0833333333333333,0,0,0,0
+"damaged_structure",0,0.015,0,0,0
+"facility_distance",0,0.005,0,0,0
+"other",0.0833333333333333,0.04,0,0,0
+"unclean_unhygenic",0,0.005,0,0,0
+"unsafe",0,0.005,0,0,0
+"unsafe damaged_structure",0,0.005,0,0,0

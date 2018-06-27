@@ -16,8 +16,6 @@ add_variable_indicators_weighted_count<-function(data,composite_indicator_defini
 }
 
 
-
-
 composite_indicator_weighted_count<-function(data,indicator_definition){
   if(is.null(data)|is.null(indicator_definition)){stop("input can not be null")}
   if(!("new.var.name" %in% names(indicator_definition))){stop("indicator definition must have a column called 'new.var.name'")}

@@ -1,3 +1,4 @@
+
 #' Map to Design
 #'
 #' creates a `survey` design object from the data

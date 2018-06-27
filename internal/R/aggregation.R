@@ -156,6 +156,50 @@ aggregate_frequent_weighted<-function(df,n=3,split.by=NULL,weight.by,write.to.fi
 }
 
 
+mean_R <- function (x, when.tie = NA) 
+{
+  if (is.numeric.fuzzy(as.character(x))) {
+    return(suppressWarnings(x %>% as.character %>% as.numeric %>% 
+                              hasdata %>% mean))
+  }
+  else {
+    return(x %>% hasdata %>% Mode)
+  }
+}
+
+
+
+mean_R_weighted <- function (x, weights, ignore.missing.data = T) 
+{
+  if (is.numeric.fuzzy(as.character(x))) {
+    clean_x <- x %>% as.character %>% as.numeric %>% hasdata
+    wt <- wtd.mean(x, weights = weights)
+    return(wt)
+  }
+  else {
+    return(x %>% hasdata %>% Mode)
+  }
+}
+
+
+is.numeric.fuzzy<-function(x,minfrac=0.97){
+  # are at least minfrac of the values that have data still values after trying to convert them to numbers?
+  suppressWarnings(isnum<-(x %>% as.numeric %>% hasdata %>% length)/ (x %>% hasdata %>% length) >=minfrac)
+  # this relies on NA's created by as.numeric, which issues a warning we don't want to see
+  if(is.na(isnum)){isnum<-FALSE}
+  if(is.null(isnum)){isnum<-FALSE}
+  return(isnum)
+}
+
+
+Mode<-function(x,when.tie=NA) {
+
+  ux <- unique(x)
+  wm<-which.max(tabulate(match(x, ux)))
+  # return when.tie when tie
+  if(((table(x) == max(table(x))) %>% which %>% length)>1){return(when.tie)}
+  return(ux[which.max(tabulate(match(x, ux)))])
+}
 
 
 wtd.table.fraction<-function(...,ignore.missing.data=T){

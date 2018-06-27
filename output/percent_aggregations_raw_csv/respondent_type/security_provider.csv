@@ -1,0 +1,12 @@
+"","host_community"
+"community_group",0.133333333333333
+"local_government",0.245833333333333
+"local_government community_group",0.0375
+"none",0.00833333333333333
+"opm",0.00416666666666667
+"police",0.1
+"police community_group",0.0291666666666667
+"police local_government",0.2375
+"police local_government community_group",0.195833333333333
+"police local_government opm",0.00416666666666667
+"police local_government other",0.00416666666666667

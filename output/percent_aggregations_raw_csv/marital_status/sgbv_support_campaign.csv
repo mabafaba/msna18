@@ -1,0 +1,5 @@
+"","divorced","married","no_answer","single","widowed"
+"",0,0.005,0,0,0.04
+"no",0.5,0.36,0,0,0.6
+"no_answer",0,0.005,0,0,0
+"yes",0.5,0.63,1,1,0.36

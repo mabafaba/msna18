@@ -1,0 +1,7 @@
+"","divorced","married","no_answer","single","widowed"
+"bought_on_credit",0,0.005,0,0,0
+"bought_with_cash",0.0833333333333333,0.245,0,0,0.2
+"gift",0,0.01,0,0,0
+"local_assistance",0,0.01,0,0,0
+"other",0,0.005,0,0,0
+"own_production",0.916666666666667,0.725,1,1,0.8

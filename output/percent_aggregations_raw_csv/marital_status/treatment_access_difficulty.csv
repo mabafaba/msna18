@@ -1,0 +1,36 @@
+"","divorced","married","no_answer","single","widowed"
+"",0.583333333333333,0.41,1,1,0.52
+"drugs_cost",0.0833333333333333,0.015,0,0,0
+"drugs_cost lack_drugs_hc",0,0.045,0,0,0
+"drugs_cost lack_drugs_hc no_transport",0,0.005,0,0,0.04
+"drugs_cost no_transport",0,0.01,0,0,0
+"healthcare_cost",0,0.11,0,0,0.04
+"healthcare_cost drugs_cost",0.0833333333333333,0.025,0,0,0
+"healthcare_cost drugs_cost lack_drugs_hc",0,0.01,0,0,0
+"healthcare_cost drugs_cost no_support_family",0,0,0,0,0.04
+"healthcare_cost drugs_cost no_transport",0,0.005,0,0,0.04
+"healthcare_cost lack_drugs_hc",0,0.02,0,0,0
+"healthcare_cost lack_drugs_hc no_transport",0,0.005,0,0,0
+"healthcare_cost no_transport",0,0.005,0,0,0.04
+"healthcare_cost no_transport no_health_referral",0,0.005,0,0,0
+"healthcare_cost refused_treatment",0,0.005,0,0,0
+"healthcare_cost unqualified_staff_hosp",0,0.005,0,0,0
+"healthcare_cost unqualified_staff_hosp drugs_cost",0,0.005,0,0,0
+"healthcare_cost unqualified_staff_hosp lack_drugs_hc",0,0.005,0,0,0
+"lack_drugs_hc",0.0833333333333333,0.155,0,0,0.08
+"lack_drugs_hc no_transport",0,0.025,0,0,0
+"lack_drugs_hc no_transport no_health_referral",0,0.005,0,0,0
+"lack_drugs_pharmacy",0,0.005,0,0,0
+"lack_drugs_pharmacy no_transport",0,0,0,0,0.04
+"language_barrier lack_drugs_hc no_transport",0,0,0,0,0.04
+"no_answer",0,0.005,0,0,0
+"no_health_referral",0,0.005,0,0,0
+"no_offered_treatment_phc",0,0.005,0,0,0
+"no_transport",0.0833333333333333,0.065,0,0,0.08
+"none",0,0.005,0,0,0
+"refused_treatment",0,0.01,0,0,0
+"refused_treatment lack_drugs_hc no_transport",0,0.005,0,0,0
+"refused_treatment no_health_referral",0,0.005,0,0,0
+"unqualified_staff_hosp",0,0.005,0,0,0.04
+"unqualified_staff_hosp drugs_cost refused_treatment",0.0833333333333333,0,0,0,0
+"unqualified_staff_hosp lack_drugs_hc",0,0.01,0,0,0
