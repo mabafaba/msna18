@@ -53,13 +53,13 @@ sanitise_data<-function(data,
   }
 
 
-  if(length(dep_var_name_in_data_headers)>1){
-    stop(paste("more than 1 data column name matching dependent.var (may be too similar):",
-               dep_var_name_in_data_headers,collapse="\n"))
-  }
-  if(length(indep_var_name_in_data_headers)>1){
-    stop(paste("more than 1 data column name matching independent.var (may be too similar):",
-               dep_var_name_in_data_headers,collapse="\n"))  }
+  # if(length(dep_var_name_in_data_headers)>1){
+  #   stop(paste("more than 1 data column name matching dependent.var (may be too similar):",
+  #              dep_var_name_in_data_headers,collapse="\n"))
+  # }
+  # if(length(indep_var_name_in_data_headers)>1){
+  #   stop(paste("more than 1 data column name matching independent.var (may be too similar):",
+  #              dep_var_name_in_data_headers,collapse="\n"))  }
 
 
 
@@ -89,7 +89,7 @@ sanitise_data<-function(data,
 
     }
   }
-
+if(!(nrow(data)>=2)){return(list(success=F,message="less than two samples with valid data available for this combination of dependent and independent variable"))}
 return(list(success=T,data=data))
 
 

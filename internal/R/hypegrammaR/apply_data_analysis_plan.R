@@ -1,5 +1,5 @@
 apply_data_analysis_plan<-function(data,analysisplan){
-  
+  analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%")
   results<- apply(analysisplan,1,function(x){
     this_valid_data<-data[
       which(
@@ -7,7 +7,7 @@ apply_data_analysis_plan<-function(data,analysisplan){
           (!(is.na(data[,x["independent.var"]])))
       ),
       ]
-    
+    print(cat(x["percentcomplete"]))
     analyse_indicator(this_valid_data,
                       dependent.var = x["dependent.var"],
                       independent.var = x["independent.var"] ,
@@ -18,7 +18,7 @@ apply_data_analysis_plan<-function(data,analysisplan){
   }
   )
   
-  names(results)<-analysisplan$dependent.var
+  # names(results)<-analysisplan$dependent.var
   return(results)
   
 }

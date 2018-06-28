@@ -1,3 +1,4 @@
+
 #' Map to Design
 #'
 #' creates a `survey` design object from the data
@@ -6,14 +7,15 @@
 #' @param cluster.var if cluster sampling was used, what's the name of the column in `data` that identifies the cluster?
 #' @details create a `survey` package design object from the data and information on the sampling strategy
 #' @return a `survey` package design object
-#' @examples map_to_design(data,cluster.var="cluster_id")
+#' @examples map_to_design(data,cluster.var="clusterQ
+#' _id")
 #' @export
 map_to_design <- function(data,
                           cluster.var = NULL) {
   if(is.null(cluster.var)){
     cluster.ids <- as.formula(c("~1"))}else{
     cluster.ids <- cluster.var}
-  strata.weights <- reachR:::weights_of(data)
+  strata.weights <- weights_of(data)
   survey.design <- svydesign(data = data,
       ids = formula(cluster.ids),
       strata = names(strata.weights),
@@ -58,8 +60,10 @@ list_all_cases<-function(implemented_only=F){
   return(c(
     "CASE_group_difference_categorical_categorical",
     "CASE_group_difference_numerical_categorical",
-    "CASE_direct_reporting_numeric_",
-    "CASE_direct_reporting_categorical_"
+    "CASE_direct_reporting_numerical_",
+    "CASE_direct_reporting_categorical_",
+    "CASE_direct_reporting_categorical_categorical",
+    "CASE_direct_reporting_numerical_categorical"
   ))
 }
 
@@ -93,14 +97,22 @@ map_to_summary_statistic <- function(case) {
 
   # define summary functions for all cases:
   summary_functions<-list()
-  summary_functions$CASE_group_difference_categorical_categorical <- percent_with_confints
-  summary_functions$CASE_direct_reporting_numeric_ <- confidence_intervals_num
+  
+  # DIRECT REPORTING
+  # dependent is numerical:
+  summary_functions$CASE_direct_reporting_numerical_ <- confidence_intervals_mean
+  summary_functions$CASE_direct_reporting_numerical_categorical<- confidence_intervals_mean_groups
+  # dependent is categorical:
   summary_functions$CASE_direct_reporting_categorical_ <- percent_with_confints
-  # summary_functions$CASE_group_difference_numerical_numerical <- function(...){stop(paste("summary statistic for case",case,"not implemented"))}hypothesis_test_one_sample_t
-  summary_functions$CASE_group_difference_numerical_categorical <- confidence_intervals_num_groups
+  summary_functions$CASE_direct_reporting_categorical_categorical <- percent_with_confints
+
+  # GROUP DIFFERENCE
+  # dependent is categorical:
+  summary_functions$CASE_group_difference_categorical_categorical <- percent_with_confints
+  summary_functions$CASE_group_difference_numerical_categorical <- confidence_intervals_mean_groups
 
 
-
+  
   # return corresponding summary function:
 
   return(summary_functions[[case]])
@@ -128,10 +140,14 @@ map_to_hypothesis_test <- function(case) {
   })
   names(hypothesis_test_functions)<-list_all_cases(implemented_only = F)
 
-  # add implemented cases:
-  hypothesis_test_functions[["CASE_group_difference_categorical_categorical"]] <- hypothesis_test_chisquared
+  
+  # DIRECT REPORTING
   hypothesis_test_functions[["CASE_direct_reporting_numerical_"]] <- hypothesis_test_empty
   hypothesis_test_functions[["CASE_direct_reporting_categorical_"]] <- hypothesis_test_empty
+  hypothesis_test_functions[["CASE_direct_reporting_numerical_categorical"]] <- hypothesis_test_empty
+  hypothesis_test_functions[["CASE_direct_reporting_categorical_categorical"]] <- hypothesis_test_empty
+  # add implemented cases:
+  hypothesis_test_functions[["CASE_group_difference_categorical_categorical"]] <- hypothesis_test_chisquared
   hypothesis_test_functions[["CASE_group_difference_numerical_categorical"]] <- hypothesis_test_t_two_sample
   # return function belonging to this case:
   return(hypothesis_test_functions[[case]])

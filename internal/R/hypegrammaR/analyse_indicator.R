@@ -25,7 +25,7 @@ analyse_indicator<-function(data,
                             sampling.strategy.stratified=FALSE,
                             do.for.each.unique.value.in.var = NULL,
                             case=NULL){
-  options(survey.lonely.psu = "average")
+  options(survey.lonely.psu = "remove")
 
 
 
@@ -45,7 +45,7 @@ analyse_indicator<-function(data,
                                    paired = NULL)
         }else{
           if(!is_valid_case_string(case)){
-            stop("value for argument 'case' is not a valid case string. It must be of the form CASE_[hypothesis_type]_[dependent.variable.type]_[independent.variable.type]\nfor example 'CASE_group_difference_categorical_categorical'\nAlternatively, you can leave out that parameter, and we will try to identify the case automagically from the questionnaire")
+            stop(paste(case,"is not a valid case string. List of valid cases:\n",paste(list_all_cases(T),collapse = "\n"),"value for argument 'case' is not a valid case string. It must be of the form CASE_[hypothesis_type]_[dependent.variable.type]_[independent.variable.type]\nfor example 'CASE_group_difference_categorical_categorical'\nAlternatively, you can leave out that parameter, and we will try to identify the case automagically from the questionnaire"))
             }
         }
 
@@ -58,12 +58,7 @@ analyse_indicator<-function(data,
     data<-data_sanitised$data
   }else{
     return(
-      list(
-        summary.statistic=NULL,
-        hypothesis.test.result=NULL,
-        visualisation=NULL,
-        message=data_sanitised$message
-      )
+  empty_result(data_sanitised$message)
 
     )
   }
@@ -71,7 +66,7 @@ analyse_indicator<-function(data,
 
     # map from case to appropriate summary statistic, hypothesis test and visualisation:
 
-
+            
             design <- map_to_design(data = data, cluster.var = NULL)
 
 
@@ -90,6 +85,14 @@ analyse_indicator<-function(data,
         # add results to the visualisation:
             # visualisation<-visualisation+ggplot()...
         return(list(
+                    input.parameters= list(
+                      dependent.var=dependent.var,
+                      independent.var=independent.var,
+                      hypothesis.type=hypothesis.type,
+                      sampling.strategy.stratified=sampling.strategy.stratified,
+                      case=case
+                      
+                    ),
                     summary.statistic=summary.result,
                     hypothesis.test=hypothesis.test.result,
                     visualisation=visualisation,
@@ -98,4 +101,18 @@ analyse_indicator<-function(data,
 
     }
 
-
+empty_result<-function(message){
+  empty_summary_stat<-matrix(0, ncol = 6, nrow = 0) %>% as.data.frame
+  colnames(empty_summary_stat)<-c("dependent.var.value", "independent.var.value","numbers","se","min", "max")
+  
+  return(
+    list(
+      
+      summary.statistic=empty_summary_stat,
+      hypothesis.test.result=NULL,
+      visualisation=NULL,
+      message=message
+    )
+    
+  )
+}

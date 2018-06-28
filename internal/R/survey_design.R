@@ -1,31 +1,4 @@
 
-#' Map to Design
-#'
-#' creates a `survey` design object from the data
-#'
-#' @param data
-#' @param cluster.var if cluster sampling was used, what's the name of the column in `data` that identifies the cluster?
-#' @param strata.var if cluster sampling was used, what's the name of the column in `data` that identifies the cluster?
-
-#' @details create a `survey` package design object from the data and information on the sampling strategy
-#' @return a `survey` package design object
-#' @examples map_to_design(data,cluster.var="cluster_id")
-#' @export
-map_to_design <- function(data,
-                          cluster.var = NULL,strata.var) {
-  if(is.null(cluster.var)){
-    cluster.ids <- as.formula(c("~1"))}else{
-      cluster.ids <- cluster.var}
-  strata.weights <- reachR:::weights_of(data)
-  survey.design <- svydesign(data = data,
-                             ids = formula(cluster.ids),
-                             strata = names(strata.weights),
-                             weights = as.vector(strata.weights))
-  return(survey.design)
-  }
-
-
-
 #' Loads the sampling frame from a csv file, performing inital tests on the data.
 #'
 #' @param sampling.frame.file data frame containing the sampling frame. should contain columns "stratum" and "population", otherwise column names must be specified.

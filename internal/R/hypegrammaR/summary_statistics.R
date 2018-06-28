@@ -9,6 +9,22 @@ percent_with_confints <- function(dependent.var,
   f.table <- svytable(formula(formula_string), design)
   p.table <- apply(f.table,1,function(x){x/sum(x)})
 
+  
+  
+  # if dependent and independent variables have only one value, just return that:
+  
+  if(length(unique(data[[dependent.var]]))==1){
+    dependent.var.value=unique(data[[dependent.var]])
+    if(length(unique(data[[independent.var]]==1))){
+      independent.var.value=unique(data[[independent.var]])	
+      return(data.frame(dependent.var.value,independent.var.value,numbers=1,se=NA,min=NA,max=NA))
+      
+    }
+  }
+  
+  
+  
+  
   # if(design$variables %>%
   #    split.data.frame(design$variables[[independent.var]]) %>%
   #    lapply(nrow) %>%
@@ -40,14 +56,14 @@ percent_with_confints <- function(dependent.var,
   # stat <-         summary.result.svyby[,c(independent.var.column,stat.columns)] %>% melt(id.vars=c(independent.var))
   #
   #
-  if(!is.null(p.table) & nrow(p.table)>1){
+
+  
+  # check if we actually got  a frequency table back; problems can arise here if independent.var has only 1 unique value 
+  if(!(nrow(as.data.frame(p.table)>1))){stop("DEV: unexpected edge case in percent_with_confints - freq table has 1 or less rows. contact development team about this error.")}
 
     p.table %>% melt -> ftable_flipped
     colnames(ftable_flipped)<-c("dependent.var.value","independent.var.value","numbers")
     results<-data.frame(ftable_flipped,se=NA,min=NA,max=NA)
-  }else{
-
-  }
 
   # results<-list(
   #   independent.var.value=ftable
@@ -68,10 +84,11 @@ percent_with_confints <- function(dependent.var,
 
 
 
-confidence_intervals_num <- function(dependent.var,
+confidence_intervals_mean <- function(dependent.var,
                                      independent.var = NULL,
                                      design,
                                      data = data){
+    if(!is.null(independent.var)){warning("confidence intervals calculated without disaggregation, but received data for an independent variable.")}
     formula_string<-paste0("~as.numeric(", dependent.var, ")")
     summary <- svymean(formula(formula_string), design, na.rm = T)
     confints <- confint(summary, level = 0.95)
@@ -83,7 +100,7 @@ confidence_intervals_num <- function(dependent.var,
     return(results)
  }
 
-  confidence_intervals_num_groups <- function(dependent.var,
+  confidence_intervals_mean_groups <- function(dependent.var,
                                      independent.var,
                                      design,
                                      data){
