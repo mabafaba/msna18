@@ -1,4 +1,4 @@
-
+rm(list = ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd("../../")
 getwd()
@@ -14,6 +14,7 @@ source("./internal/R/KI_aggregation.R")
 source("./internal/R/errors.R")
 source("./internal/R/summary_statistics.R")
 source("./internal/R/load_questionnaire.R")
+source("./internal/R/select_multiplify.R")
 
 # load data
 data<-read.csv("./internal/input_files/data.csv")
@@ -43,13 +44,10 @@ if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_f
 )}
 
 # load kobo tool:
-
-  questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
+questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
                    choices.file = "./internal/input_files/kobo_choices.csv",
                    choices.label.column.to.use = data_parameters$choices.label.column.to.use)
-debug(load_questionnaire)
-names(data)
-  
+
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
 
 all_percent_disaggregations_all_vars<-
