@@ -1,3 +1,5 @@
+
+
 apply_data_analysis_plan<-function(data,analysisplan){
   analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
   results<- apply(analysisplan,1,function(x){

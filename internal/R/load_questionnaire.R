@@ -79,7 +79,7 @@ load_questionnaire<-function(data,
 
     # make functions that need questionnaire
 
-   question_get_choice_labels <- function(responses,variable.name){
+   question_get_choice_labels <<- function(responses,variable.name){
 
       labels<-replace_with_lookup_table(
         responses,

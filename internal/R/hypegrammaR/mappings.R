@@ -177,16 +177,18 @@ map_to_visualisation <- function(case) {
   # prefill all valid cases with 'not implemented' errors:
   visualisation_functions<-list()
   visualisation_functions<-lapply(list_all_cases(implemented_only = F),function(x){
-    function(...){stop(paste("not implemented: visualisation for case",x,".\n the geneva data unit can help!"))}
+    function(...){warning(paste("not implemented: visualisation for case",x,".\n the geneva data unit can help!"));return(NULL)}
   })
   names(visualisation_functions)<-list_all_cases(implemented_only = F)
 
   # add implemented cases:
-  visualisation_functions[["CASE_group_difference_categorical_categorical"]] <- barchart_with_error_bars
-  visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_with_error_bars
-  visualisation_functions[["CASE_direct_reporting_numerical_"]] <- barchart_with_error_bars
-  visualisation_functions[["CASE_group_difference_numerical_categorical"]] <- barchart_with_error_bars
-
+  visualisation_functions[["CASE_group_difference_categorical_categorical"]] <- grouped_barchart_percent
+  # visualisation_functions[["CASE_group_difference_numerical_categorical"]] <- barchart_with_error_bars
+  # visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_with_error_bars
+  visualisation_functions[["CASE_direct_reporting_numerical_"]] <- barchart_average
+  visualisation_functions[["CASE_direct_reporting_categorical_categorical"]] <- grouped_barchart_percent
+  visualisation_functions[["CASE_direct_reporting_numerical_categorical"]] <- barchart_average
+  
   return(visualisation_functions[[case]])
 }
 
