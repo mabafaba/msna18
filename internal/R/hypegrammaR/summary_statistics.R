@@ -17,13 +17,12 @@ percent_with_confints <- function(dependent.var,
     dependent.var.value=unique(data[[dependent.var]])
     if(length(unique(data[[independent.var]]==1))){
       independent.var.value=unique(data[[independent.var]])	
-      return(data.frame(dependent.var.value,independent.var.value,numbers=1,se=NA,min=NA,max=NA))
+      return(data.frame(dependent.var,independent.var,dependent.var.value,independent.var.value,numbers=1,se=NA,min=NA,max=NA))
       
     }
   }
   
-  
-  
+
   
   # if(design$variables %>%
   #    split.data.frame(design$variables[[independent.var]]) %>%
@@ -53,7 +52,7 @@ percent_with_confints <- function(dependent.var,
   #
   # standard_error <- summary.result.svyby[,c(independent.var.column,se.columns)] %>% melt(id.vars=c(independent.var))
   # # colnames(standard_error)[which(colnames(standard_error)==independent.var)]<-"independent.var"
-  # stat <-         summary.result.svyby[,c(independent.var.column,stat.columns)] %>% melt(id.vars=c(independent.var))
+  # stat <-         summary.result.svyby[,c(independent.var.column,)] %>% melt(id.vars=c(independent.var))
   #
   #
 
@@ -63,7 +62,12 @@ percent_with_confints <- function(dependent.var,
 
     p.table %>% melt -> ftable_flipped
     colnames(ftable_flipped)<-c("dependent.var.value","independent.var.value","numbers")
-    results<-data.frame(ftable_flipped,se=NA,min=NA,max=NA)
+    results<-data.frame( dependent.var = dependent.var,
+                         independent.var = independent.var,
+                         ftable_flipped,
+                         se=NA,
+                         min=NA,
+                         max=NA)
 
   # results<-list(
   #   independent.var.value=ftable
@@ -78,9 +82,6 @@ percent_with_confints <- function(dependent.var,
   # results<-f.table
   return(results)
 }
-
-
-
 
 
 
@@ -112,8 +113,8 @@ confidence_intervals_mean <- function(dependent.var,
   summary$min <- confints[,1]
   summary$max <- confints[,2]
   dependent.var.value <- rep(NA, length(summary$min))
-  results<- data.frame(dependent.var.value, summary) 
-  colnames(results) <- c("dependent.var.value","independent.var.value","numbers", "se", "min", "max")
+  results<- data.frame(dependent.var,independent.var,dependent.var.value, summary) 
+  colnames(results) <- c("dependent.var","independent.var","dependent.var.value","independent.var.value","numbers", "se", "min", "max")
   return(results)
 }
 

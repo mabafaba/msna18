@@ -1,3 +1,9 @@
+# load scripts
+hypegrammaR_source_path<-paste("./internal/R/hypegrammaR/")
+hypegrammaR_source_files<-list.files(hypegrammaR_source_path) %>% paste0(hypegrammaR_source_path,.)
+source_loading_log<-sapply(hypegrammaR_source_files,source,verbose=F)
+
+
 # check if package is installed
 .is.package.installed<-function(package.name){
   package.name %in% installed.packages()[,"Package"]

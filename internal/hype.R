@@ -1,7 +1,7 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
  setwd("../")
-getwd()
+# getwd()
 
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE) 
@@ -13,24 +13,8 @@ dir.create("./output/mean_aggregations_raw_csv",showWarnings = F)
 
 #load dependencies
 source("./internal/R/dependencies.R")
-source("./internal/R/hypegrammar_dependencies.R")
 
-hypegrammaR_source_path<-paste("./internal/R/hypegrammaR/")
-hypegrammaR_source_files<-list.files(hypegrammaR_source_path) %>% paste0(hypegrammaR_source_path,.)
-sapply(hypegrammaR_source_files,source,verbose=F)
-# source("./internal/R/recoding.R")
-source("./internal/R/composite_indicator_weighted_count.R")
-source("./internal/R/survey_design.R")
-# source("./internal/R/recoding.R")
-# source("./internal/R/aggregation.R")
-# source("./internal/R/KI_aggregation.R")
-# 
-# source("./internal/R/errors.R")
-# source("./internal/R/summary_statistics.R")
-source("./internal/R/load_questionnaire.R")
-source("./internal/R/load_analysis_definitions.R")
-
-# LOAD INPUT DATA AND META
+# LOAD INPUT 
 # data 
 data<-read.csv("./internal/input_files/data.csv")
 # data parameters
@@ -49,58 +33,29 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
                                   choices.file = "./internal/input_files/kobo_choices.csv",
                                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
 
-# LOAD ANALYSIS DEFINITIONS
+# load analysis definitions
 
 # aggregating all variables (direct reporting)
+# list of variables to disaggregate by:
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
+# create a data analysis plan with all disaggregation variables as independent variable for all variables as dependent
 analysis_plan_direct_reporting<-map_to_analysis_plan_all_vars_as_dependent(analysis_definition_aggregations,data)
-results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting[c(c(1:10),8   ,13  ,814  ,913  ,816  ,915 ,1315  ,818  ,917 ,1317),])
 
-results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.) ->sumstatsdf
+# APPLY ANALYSIS PLAN:
+results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
 
-
-results[[1000]]$summary.statistic
-
-
-
-cn<-lapply(results,function(x){
-  x$summary.statistic %>% names %>% paste(collapse="- -")
-})
+# RESHAPE OUTPUTS:
+all_summary_statistics<-results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.) 
+all_summary_statistics$master_table_column_name<-paste(all_summary_statistics$dependent.var,all_summary_statistics$dependent.var.value,sep="::: ")
+all_summary_statistics$master_table_column_name %>% table
 
 
-cn %>% unlist -> cn
-cn %>% unique
-results[[((cn=="dependent.var.value- -independent.var.value- -num- -se- -min- -max") %>% which)[1]]]
+all_summary_statistics %>% write.csv("./output/master_table_long.csv")
 
+all_summary_statistics %>% spread(key = c("master_table_column_name"),value = "numbers") %>% write.csv("MASTERWOAH.csv")
+data$adequate_water %>% table
 
-empty_result("sdf")
-compact(colnames)
-require("dplyr")
-require("purrr")
-
-
-cn<-colnames %>% lapply(function(x){paste(x,collapse="...")}) %>% unlist
-
-  
-  
-colnames %>% lapply(length) %>% unlist %>% table
-
-rm(colnames)
-
-
-results$X_uuid
-
-
-
-
-
-
-
-
-
-
-
-
+ggplot(sumstatsdf[sumstatsdf$dependent.var=="hoh_sex",],aes(x=dependent.var.value,y=numbers,fill=independent.var.value))+geom_bar(stat = "identity")+reachtheme()
 
 
 

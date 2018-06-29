@@ -14,7 +14,15 @@ load_questionnaire<-function(data,
                              questions.file,
                              choices.file,
                              choices.label.column.to.use="label..English"){
-
+  # generic function to remove non-data from vectors
+  hasdata<-function (x, return.index = F) {
+    index <- which(!is.null(x) & !is.na(x) & x != "" & !is.infinite(x))
+    value <- x[which(!is.null(x) & !is.na(x) & x != "" & !is.infinite(x))]
+    if (return.index) {
+      return(index)
+    }
+    return(value)
+  }
     # generic function to replace values in a vector based on a lookup table
     replace_with_lookup_table<-function(x,y){
       x2 <- y[match(x, y[,1]),2]

@@ -58,7 +58,7 @@ analyse_indicator<-function(data,
     data<-data_sanitised$data
   }else{
     return(
-  empty_result(data_sanitised$message)
+  empty_result(dependent.var,independent.var,data_sanitised$message)
 
     )
   }
@@ -101,9 +101,9 @@ analyse_indicator<-function(data,
 
     }
 
-empty_result<-function(message){
-  empty_summary_stat<-matrix(0, ncol = 6, nrow = 0) %>% as.data.frame
-  colnames(empty_summary_stat)<-c("dependent.var.value", "independent.var.value","numbers","se","min", "max")
+empty_result<-function(dependent.var,independent.var,message){
+  empty_summary_stat<-matrix(0, ncol = 8, nrow = 0) %>% as.data.frame
+  colnames(empty_summary_stat)<-c("dependent.var","independent.var","dependent.var.value", "independent.var.value","numbers","se","min", "max")
   
   return(
     list(
