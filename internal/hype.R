@@ -1,7 +1,7 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
  setwd("../")
-# getwd()
+getwd()
 
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE) 

@@ -3,14 +3,15 @@ percent_with_confints <- function(dependent.var,
                                   design,
                                   na.rm = TRUE){
 
-
-
-  formula_string<-paste0("~",independent.var, "+",dependent.var )
-  f.table <- svytable(formula(formula_string), design)
+  formula_summary<-paste0("~",independent.var, "+",dependent.var )
+  f.table <- svytable(formula(formula_summary), design)
   p.table <- apply(f.table,1,function(x){x/sum(x)})
+  formula_string <- paste0("~",independent.var,sep = "")
+  by <- paste0("~", dependent.var, sep = "")
+  confints <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T) %>% confint(level = 0.95)
+  confints[,1] %>% replace(confints[,1] < 0 , 0)
+  confints[,2] %>% replace(confints[,2] > 1 , 1)
 
-  
-  
   # if dependent and independent variables have only one value, just return that:
   
   if(length(unique(data[[dependent.var]]))==1){
@@ -61,13 +62,14 @@ percent_with_confints <- function(dependent.var,
   if(!(nrow(as.data.frame(p.table)>1))){stop("DEV: unexpected edge case in percent_with_confints - freq table has 1 or less rows. contact development team about this error.")}
 
     p.table %>% melt -> ftable_flipped
+
     colnames(ftable_flipped)<-c("dependent.var.value","independent.var.value","numbers")
     results<-data.frame( dependent.var = dependent.var,
                          independent.var = independent.var,
                          ftable_flipped,
                          se=NA,
-                         min=NA,
-                         max=NA)
+                         min=confints[,1],
+                         max=confints[,2])
 
   # results<-list(
   #   independent.var.value=ftable
