@@ -70,6 +70,7 @@ plots <- lapply(results, function(result){
 
 
 
+
 # results[[123]]$summary.statistic
 results[[123]]$input.parameters$case
 
