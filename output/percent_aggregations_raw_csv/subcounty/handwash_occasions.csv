@@ -1,0 +1,50 @@
+"","bweyale_tc","kigumba","kigumba_tc","kiryandongo","kiryandongo_tc","mutunda"
+"after_defecating after_eating after_cleaning_baby",0,0.0196078431372549,0,0,0,0
+"after_defecating before_eating",0,0.0196078431372549,0,0.00961538461538462,0,0.0338983050847458
+"after_defecating before_eating after_eating",0.75,0.0784313725490196,1,0.144230769230769,0.684210526315789,0.152542372881356
+"after_defecating before_eating after_eating before_feeding_baby",0,0,0,0.00961538461538462,0,0
+"after_defecating before_eating after_eating other",0,0.0196078431372549,0,0.0288461538461538,0,0
+"after_defecating before_eating other",0,0,0,0.00961538461538462,0,0.0338983050847458
+"after_eating",0,0,0,0.00961538461538462,0,0
+"before_cooking after_defecating",0,0,0,0.00961538461538462,0,0
+"before_cooking after_defecating after_eating",0,0,0,0,0,0.0169491525423729
+"before_cooking after_defecating before_eating",0,0,0,0.0384615384615385,0,0
+"before_cooking after_defecating before_eating after_eating",0,0,0,0.0192307692307692,0.0526315789473684,0
+"before_cooking after_defecating before_eating after_eating before_feeding_baby after_cleaning_baby",0,0.0196078431372549,0,0,0,0
+"before_cooking after_defecating before_eating after_eating other",0,0,0,0.00961538461538462,0,0
+"before_cooking after_defecating before_eating before_feeding_baby other",0,0,0,0.00961538461538462,0,0
+"before_cooking after_eating",0,0,0,0.00961538461538462,0,0
+"before_cooking before_eating after_eating",0,0.0196078431372549,0,0.00961538461538462,0,0
+"before_eating",0.25,0,0,0,0,0
+"before_eating after_eating",0,0.0588235294117647,0,0.00961538461538462,0,0.0169491525423729
+"dirty_hands",0,0,0,0.00961538461538462,0,0.0508474576271186
+"dirty_hands after_defecating",0,0.0392156862745098,0,0.0192307692307692,0,0.0169491525423729
+"dirty_hands after_defecating after_eating",0,0,0,0,0,0.0169491525423729
+"dirty_hands after_defecating after_eating other",0,0.0196078431372549,0,0,0,0
+"dirty_hands after_defecating before_eating",0,0.0588235294117647,0,0.0673076923076923,0,0.135593220338983
+"dirty_hands after_defecating before_eating after_eating",0,0.176470588235294,0,0.201923076923077,0.105263157894737,0.11864406779661
+"dirty_hands after_defecating before_eating after_eating after_cleaning_baby",0,0,0,0.00961538461538462,0,0.0169491525423729
+"dirty_hands after_defecating before_eating before_feeding_baby",0,0.0196078431372549,0,0,0,0
+"dirty_hands after_defecating before_eating other",0,0.0196078431372549,0,0,0,0
+"dirty_hands after_defecating other",0,0.0196078431372549,0,0.00961538461538462,0,0.0169491525423729
+"dirty_hands after_eating",0,0,0,0.0288461538461538,0,0
+"dirty_hands before_cooking after_defecating",0,0.0196078431372549,0,0,0,0.0169491525423729
+"dirty_hands before_cooking after_defecating before_eating",0,0.0392156862745098,0,0.0192307692307692,0,0
+"dirty_hands before_cooking after_defecating before_eating after_cleaning_baby",0,0,0,0,0.0526315789473684,0
+"dirty_hands before_cooking after_defecating before_eating after_eating",0,0.215686274509804,0,0.0961538461538462,0,0.0338983050847458
+"dirty_hands before_cooking after_defecating before_eating after_eating after_cleaning_baby",0,0.0588235294117647,0,0.00961538461538462,0,0.0169491525423729
+"dirty_hands before_cooking after_defecating before_eating after_eating before_feeding_baby",0,0,0,0.0288461538461538,0,0
+"dirty_hands before_cooking after_defecating before_eating after_eating before_feeding_baby after_cleaning_baby",0,0,0,0.00961538461538462,0,0.0338983050847458
+"dirty_hands before_cooking after_defecating before_eating before_feeding_baby",0,0,0,0.00961538461538462,0,0
+"dirty_hands before_cooking after_defecating before_eating before_feeding_baby after_cleaning_baby",0,0,0,0,0,0.0169491525423729
+"dirty_hands before_cooking after_defecating before_eating other",0,0.0196078431372549,0,0,0,0
+"dirty_hands before_cooking after_defecating before_feeding_baby",0,0,0,0,0.0526315789473684,0
+"dirty_hands before_cooking before_eating",0,0,0,0.00961538461538462,0,0
+"dirty_hands before_cooking before_eating after_eating",0,0,0,0,0,0.0169491525423729
+"dirty_hands before_eating",0,0,0,0,0,0.0508474576271186
+"dirty_hands before_eating after_eating",0,0.0196078431372549,0,0.144230769230769,0,0.135593220338983
+"dirty_hands before_eating after_eating before_feeding_baby",0,0,0,0,0,0.0169491525423729
+"dirty_hands before_eating before_feeding_baby",0,0,0,0,0.0526315789473684,0.0169491525423729
+"dirty_hands before_eating other",0,0.0196078431372549,0,0,0,0
+"dirty_hands before_praying",0,0.0196078431372549,0,0,0,0
+"other",0,0,0,0,0,0.0169491525423729

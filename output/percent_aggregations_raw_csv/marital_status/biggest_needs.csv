@@ -1,0 +1,68 @@
+"","divorced","married","no_answer","single","widowed"
+"education",0,0.005,0,0,0
+"education protection",0,0.005,0,0,0
+"food",0,0.025,0,0,0.08
+"food education",0.0833333333333333,0.02,0,0,0
+"food education other",0,0.005,0,0,0
+"food education protection",0,0,0,0,0.04
+"food health_nutrition",0,0.025,0,0,0
+"food health_nutrition education",0,0.055,0,0,0.08
+"food health_nutrition livelihoods",0,0.015,0,0,0
+"food health_nutrition other",0,0.005,0,0,0
+"food health_nutrition protection",0,0.005,0,0,0
+"food health_nutrition shelter",0.0833333333333333,0.02,0,0,0.08
+"food health_nutrition water_sanitation",0,0.055,0,0,0.04
+"food livelihoods",0,0.015,0,0,0
+"food livelihoods education",0.0833333333333333,0.025,0,0,0.04
+"food livelihoods other",0,0.01,0,0,0
+"food livelihoods shelter",0,0.005,0,0,0
+"food nfis education",0,0.005,0,0,0
+"food other",0.0833333333333333,0,0,0,0
+"food protection other",0,0.005,0,0,0
+"food shelter",0,0.005,0,0,0
+"food shelter education",0,0.03,0,0,0.04
+"food water_sanitation",0.0833333333333333,0.035,0,0,0.12
+"food water_sanitation education",0.0833333333333333,0.065,0,0,0.04
+"food water_sanitation livelihoods",0,0.015,0,0,0
+"food water_sanitation nfis",0,0,0,0,0.04
+"food water_sanitation other",0,0.005,0,0,0
+"food water_sanitation shelter",0.0833333333333333,0.03,0,0,0
+"health_nutrition",0,0.015,0,0,0
+"health_nutrition education",0,0.025,0,0,0
+"health_nutrition livelihoods",0,0.01,1,0,0
+"health_nutrition livelihoods education",0,0.015,0,0,0
+"health_nutrition livelihoods protection",0,0.005,0,0,0
+"health_nutrition livelihoods shelter",0,0.01,0,0,0
+"health_nutrition other",0,0.005,0,0,0
+"health_nutrition shelter",0,0.01,0,0,0
+"health_nutrition shelter education",0,0.055,0,0,0
+"health_nutrition water_sanitation",0,0.015,0,0,0
+"health_nutrition water_sanitation education",0.0833333333333333,0.075,0,0.5,0.12
+"health_nutrition water_sanitation livelihoods",0,0.01,0,0,0
+"health_nutrition water_sanitation nfis",0,0.01,0,0,0
+"health_nutrition water_sanitation shelter",0,0.02,0,0,0.12
+"livelihoods",0,0.015,0,0,0
+"livelihoods education",0,0.025,0,0,0
+"livelihoods nfis education",0,0.005,0,0,0
+"livelihoods other",0,0.005,0,0,0
+"livelihoods shelter",0,0.005,0,0,0
+"livelihoods shelter education",0,0.02,0,0,0
+"livelihoods shelter other",0,0.01,0,0,0
+"nfis",0,0.005,0,0,0
+"none",0,0.005,0,0,0
+"other",0,0.005,0,0,0
+"shelter",0,0.005,0,0,0
+"shelter education",0,0.005,0,0,0.08
+"shelter education protection",0.0833333333333333,0,0,0,0
+"shelter nfis education",0,0.005,0,0,0
+"water_sanitation",0,0.005,0,0,0
+"water_sanitation education",0,0.045,0,0.5,0
+"water_sanitation education protection",0,0.02,0,0,0
+"water_sanitation livelihoods",0,0,0,0,0.04
+"water_sanitation livelihoods education",0.0833333333333333,0.01,0,0,0
+"water_sanitation livelihoods shelter",0.0833333333333333,0,0,0,0
+"water_sanitation nfis education",0,0.005,0,0,0
+"water_sanitation protection",0.0833333333333333,0,0,0,0
+"water_sanitation shelter",0,0.005,0,0,0
+"water_sanitation shelter education",0,0.02,0,0,0.04
+"water_sanitation shelter protection",0,0.005,0,0,0

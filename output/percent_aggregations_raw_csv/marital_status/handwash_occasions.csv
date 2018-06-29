@@ -1,0 +1,50 @@
+"","divorced","married","no_answer","single","widowed"
+"after_defecating after_eating after_cleaning_baby",0,0.005,0,0,0
+"after_defecating before_eating",0,0.015,0,0.5,0
+"after_defecating before_eating after_eating",0.166666666666667,0.205,0,0,0.16
+"after_defecating before_eating after_eating before_feeding_baby",0,0.005,0,0,0
+"after_defecating before_eating after_eating other",0,0.015,0,0,0.04
+"after_defecating before_eating other",0,0.015,0,0,0
+"after_eating",0,0.005,0,0,0
+"before_cooking after_defecating",0,0.005,0,0,0
+"before_cooking after_defecating after_eating",0,0.005,0,0,0
+"before_cooking after_defecating before_eating",0.0833333333333333,0.015,0,0,0
+"before_cooking after_defecating before_eating after_eating",0,0.015,0,0,0
+"before_cooking after_defecating before_eating after_eating before_feeding_baby after_cleaning_baby",0,0.005,0,0,0
+"before_cooking after_defecating before_eating after_eating other",0,0.005,0,0,0
+"before_cooking after_defecating before_eating before_feeding_baby other",0,0.005,0,0,0
+"before_cooking after_eating",0,0.005,0,0,0
+"before_cooking before_eating after_eating",0,0.005,0,0,0.04
+"before_eating",0,0.005,0,0,0
+"before_eating after_eating",0,0.015,0,0,0.08
+"dirty_hands",0.0833333333333333,0.015,0,0,0
+"dirty_hands after_defecating",0,0.025,0,0,0
+"dirty_hands after_defecating after_eating",0,0.005,0,0,0
+"dirty_hands after_defecating after_eating other",0,0.005,0,0,0
+"dirty_hands after_defecating before_eating",0.166666666666667,0.065,1,0.5,0.04
+"dirty_hands after_defecating before_eating after_eating",0.166666666666667,0.16,0,0,0.2
+"dirty_hands after_defecating before_eating after_eating after_cleaning_baby",0,0.01,0,0,0
+"dirty_hands after_defecating before_eating before_feeding_baby",0.0833333333333333,0,0,0,0
+"dirty_hands after_defecating before_eating other",0,0.005,0,0,0
+"dirty_hands after_defecating other",0,0.015,0,0,0
+"dirty_hands after_eating",0,0.015,0,0,0
+"dirty_hands before_cooking after_defecating",0.0833333333333333,0.005,0,0,0
+"dirty_hands before_cooking after_defecating before_eating",0,0.015,0,0,0.04
+"dirty_hands before_cooking after_defecating before_eating after_cleaning_baby",0,0.005,0,0,0
+"dirty_hands before_cooking after_defecating before_eating after_eating",0.0833333333333333,0.1,0,0,0.08
+"dirty_hands before_cooking after_defecating before_eating after_eating after_cleaning_baby",0,0.025,0,0,0
+"dirty_hands before_cooking after_defecating before_eating after_eating before_feeding_baby",0,0.015,0,0,0
+"dirty_hands before_cooking after_defecating before_eating after_eating before_feeding_baby after_cleaning_baby",0,0.015,0,0,0
+"dirty_hands before_cooking after_defecating before_eating before_feeding_baby",0,0.005,0,0,0
+"dirty_hands before_cooking after_defecating before_eating before_feeding_baby after_cleaning_baby",0.0833333333333333,0,0,0,0
+"dirty_hands before_cooking after_defecating before_eating other",0,0,0,0,0.04
+"dirty_hands before_cooking after_defecating before_feeding_baby",0,0.005,0,0,0
+"dirty_hands before_cooking before_eating",0,0.005,0,0,0
+"dirty_hands before_cooking before_eating after_eating",0,0.005,0,0,0
+"dirty_hands before_eating",0,0.015,0,0,0
+"dirty_hands before_eating after_eating",0,0.085,0,0,0.28
+"dirty_hands before_eating after_eating before_feeding_baby",0,0.005,0,0,0
+"dirty_hands before_eating before_feeding_baby",0,0.01,0,0,0
+"dirty_hands before_eating other",0,0.005,0,0,0
+"dirty_hands before_praying",0,0.005,0,0,0
+"other",0,0.005,0,0,0

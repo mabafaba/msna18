@@ -1,0 +1,49 @@
+"","host_community"
+"bedding",0.025
+"bedding hygiene_items",0.00833333333333333
+"bedding hygiene_items kitchen_tools",0.0375
+"bedding hygiene_items other",0.00416666666666667
+"bedding hygiene_items sanitary_pads",0.025
+"bedding hygiene_items water_storage",0.0541666666666667
+"bedding kitchen_tools",0.025
+"bedding kitchen_tools sanitary_pads",0.0333333333333333
+"bedding mosquito_nets",0.00833333333333333
+"bedding mosquito_nets hygiene_items",0.0125
+"bedding mosquito_nets kitchen_tools",0.0125
+"bedding mosquito_nets other",0.00833333333333333
+"bedding mosquito_nets sanitary_pads",0.0333333333333333
+"bedding mosquito_nets water_storage",0.0625
+"bedding other",0.0166666666666667
+"bedding sanitary_pads",0.0166666666666667
+"bedding sanitary_pads other",0.00833333333333333
+"bedding water_storage",0.0458333333333333
+"bedding water_storage kitchen_tools",0.175
+"bedding water_storage other",0.00833333333333333
+"bedding water_storage sanitary_pads",0.0416666666666667
+"hygiene_items",0.00416666666666667
+"hygiene_items kitchen_tools",0.00833333333333333
+"hygiene_items kitchen_tools sanitary_pads",0.0208333333333333
+"hygiene_items sanitary_pads",0.00416666666666667
+"hygiene_items water_storage",0.00416666666666667
+"hygiene_items water_storage kitchen_tools",0.0125
+"hygiene_items water_storage sanitary_pads",0.00833333333333333
+"kitchen_tools",0.0125
+"kitchen_tools sanitary_pads",0.00416666666666667
+"mosquito_nets",0.00416666666666667
+"mosquito_nets hygiene_items kitchen_tools",0.00416666666666667
+"mosquito_nets hygiene_items water_storage",0.00416666666666667
+"mosquito_nets kitchen_tools other",0.00416666666666667
+"mosquito_nets kitchen_tools sanitary_pads",0.00416666666666667
+"mosquito_nets sanitary_pads",0.00833333333333333
+"mosquito_nets water_storage kitchen_tools",0.00416666666666667
+"no_answer",0.00833333333333333
+"none",0.0208333333333333
+"other",0.05
+"sanitary_pads",0.0125
+"sanitary_pads other",0.00416666666666667
+"water_storage",0.0208333333333333
+"water_storage kitchen_tools",0.0375
+"water_storage kitchen_tools other",0.00416666666666667
+"water_storage kitchen_tools sanitary_pads",0.0291666666666667
+"water_storage other",0.0125
+"water_storage sanitary_pads",0.025

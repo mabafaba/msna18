@@ -1,0 +1,68 @@
+"","female","male"
+"education",0.00925925925925926,0
+"education protection",0,0.00757575757575758
+"food",0.0185185185185185,0.0378787878787879
+"food education",0.0277777777777778,0.0151515151515152
+"food education other",0.00925925925925926,0
+"food education protection",0,0.00757575757575758
+"food health_nutrition",0,0.0378787878787879
+"food health_nutrition education",0.0555555555555556,0.053030303030303
+"food health_nutrition livelihoods",0.0277777777777778,0
+"food health_nutrition other",0.00925925925925926,0
+"food health_nutrition protection",0.00925925925925926,0
+"food health_nutrition shelter",0.0277777777777778,0.0303030303030303
+"food health_nutrition water_sanitation",0.0555555555555556,0.0454545454545455
+"food livelihoods",0.00925925925925926,0.0151515151515152
+"food livelihoods education",0.0462962962962963,0.0151515151515152
+"food livelihoods other",0,0.0151515151515152
+"food livelihoods shelter",0.00925925925925926,0
+"food nfis education",0.00925925925925926,0
+"food other",0,0.00757575757575758
+"food protection other",0.00925925925925926,0
+"food shelter",0.00925925925925926,0
+"food shelter education",0.0277777777777778,0.0303030303030303
+"food water_sanitation",0.0555555555555556,0.0378787878787879
+"food water_sanitation education",0.0462962962962963,0.0757575757575758
+"food water_sanitation livelihoods",0.0185185185185185,0.00757575757575758
+"food water_sanitation nfis",0.00925925925925926,0
+"food water_sanitation other",0,0.00757575757575758
+"food water_sanitation shelter",0.0462962962962963,0.0151515151515152
+"health_nutrition",0.00925925925925926,0.0151515151515152
+"health_nutrition education",0.0185185185185185,0.0227272727272727
+"health_nutrition livelihoods",0.00925925925925926,0.0151515151515152
+"health_nutrition livelihoods education",0.00925925925925926,0.0151515151515152
+"health_nutrition livelihoods protection",0.00925925925925926,0
+"health_nutrition livelihoods shelter",0.00925925925925926,0.00757575757575758
+"health_nutrition other",0,0.00757575757575758
+"health_nutrition shelter",0.00925925925925926,0.00757575757575758
+"health_nutrition shelter education",0.0555555555555556,0.0378787878787879
+"health_nutrition water_sanitation",0.00925925925925926,0.0151515151515152
+"health_nutrition water_sanitation education",0.0925925925925926,0.0757575757575758
+"health_nutrition water_sanitation livelihoods",0,0.0151515151515152
+"health_nutrition water_sanitation nfis",0.00925925925925926,0.00757575757575758
+"health_nutrition water_sanitation shelter",0.0277777777777778,0.0303030303030303
+"livelihoods",0.00925925925925926,0.0151515151515152
+"livelihoods education",0.0185185185185185,0.0227272727272727
+"livelihoods nfis education",0.00925925925925926,0
+"livelihoods other",0,0.00757575757575758
+"livelihoods shelter",0.00925925925925926,0
+"livelihoods shelter education",0.00925925925925926,0.0227272727272727
+"livelihoods shelter other",0,0.0151515151515152
+"nfis",0,0.00757575757575758
+"none",0.00925925925925926,0
+"other",0,0.00757575757575758
+"shelter",0,0.00757575757575758
+"shelter education",0.0185185185185185,0.00757575757575758
+"shelter education protection",0,0.00757575757575758
+"shelter nfis education",0.00925925925925926,0
+"water_sanitation",0,0.00757575757575758
+"water_sanitation education",0.0185185185185185,0.0606060606060606
+"water_sanitation education protection",0.0185185185185185,0.0151515151515152
+"water_sanitation livelihoods",0.00925925925925926,0
+"water_sanitation livelihoods education",0,0.0227272727272727
+"water_sanitation livelihoods shelter",0.00925925925925926,0
+"water_sanitation nfis education",0.00925925925925926,0
+"water_sanitation protection",0.00925925925925926,0
+"water_sanitation shelter",0,0.00757575757575758
+"water_sanitation shelter education",0.0185185185185185,0.0227272727272727
+"water_sanitation shelter protection",0,0.00757575757575758

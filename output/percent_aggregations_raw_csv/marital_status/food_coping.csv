@@ -1,0 +1,22 @@
+"","divorced","married","no_answer","single","widowed"
+"borrow_food",0.0833333333333333,0.025,0,0,0
+"buy_cheaper_food",0.25,0.17,0,0,0.24
+"buy_cheaper_food limit_meal_size",0.0833333333333333,0.08,0,0,0.08
+"buy_cheaper_food limit_meal_size borrow_food",0,0.005,0,0,0
+"buy_cheaper_food limit_meal_size only_children_eat skip_days",0,0.005,0,0,0
+"buy_cheaper_food limit_meal_size reduce_meal_number",0,0.015,0,0,0
+"buy_cheaper_food only_children_eat other",0,0.005,0,0,0
+"buy_cheaper_food reduce_meal_number",0,0.035,0,0,0
+"exchange_food",0,0.01,0,0,0
+"limit_meal_size",0.0833333333333333,0.225,0,0,0.24
+"limit_meal_size borrow_food",0,0,0,0,0.04
+"limit_meal_size reduce_meal_number",0,0.015,0,0,0
+"no_answer",0,0.005,0,0,0.04
+"none",0.416666666666667,0.245,1,1,0.32
+"only_children_eat",0,0.02,0,0,0
+"other",0,0.015,0,0,0
+"reduce_meal_number",0.0833333333333333,0.1,0,0,0.04
+"reduce_meal_number borrow_food",0,0.005,0,0,0
+"reduce_meal_number skip_days",0,0.005,0,0,0
+"reduce_meal_number skip_days borrow_food",0,0.005,0,0,0
+"skip_days",0,0.01,0,0,0

@@ -1,0 +1,36 @@
+"","female","male"
+"",0.481481481481481,0.401515151515151
+"drugs_cost",0.00925925925925926,0.0227272727272727
+"drugs_cost lack_drugs_hc",0.037037037037037,0.0378787878787879
+"drugs_cost lack_drugs_hc no_transport",0.00925925925925926,0.00757575757575758
+"drugs_cost no_transport",0.00925925925925926,0.00757575757575758
+"healthcare_cost",0.101851851851852,0.0909090909090909
+"healthcare_cost drugs_cost",0.0185185185185185,0.0303030303030303
+"healthcare_cost drugs_cost lack_drugs_hc",0.00925925925925926,0.00757575757575758
+"healthcare_cost drugs_cost no_support_family",0.00925925925925926,0
+"healthcare_cost drugs_cost no_transport",0.00925925925925926,0.00757575757575758
+"healthcare_cost lack_drugs_hc",0.00925925925925926,0.0227272727272727
+"healthcare_cost lack_drugs_hc no_transport",0,0.00757575757575758
+"healthcare_cost no_transport",0.00925925925925926,0.00757575757575758
+"healthcare_cost no_transport no_health_referral",0,0.00757575757575758
+"healthcare_cost refused_treatment",0,0.00757575757575758
+"healthcare_cost unqualified_staff_hosp",0.00925925925925926,0
+"healthcare_cost unqualified_staff_hosp drugs_cost",0.00925925925925926,0
+"healthcare_cost unqualified_staff_hosp lack_drugs_hc",0,0.00757575757575758
+"lack_drugs_hc",0.12037037037037,0.159090909090909
+"lack_drugs_hc no_transport",0.0185185185185185,0.0227272727272727
+"lack_drugs_hc no_transport no_health_referral",0,0.00757575757575758
+"lack_drugs_pharmacy",0.00925925925925926,0
+"lack_drugs_pharmacy no_transport",0.00925925925925926,0
+"language_barrier lack_drugs_hc no_transport",0.00925925925925926,0
+"no_answer",0,0.00757575757575758
+"no_health_referral",0,0.00757575757575758
+"no_offered_treatment_phc",0,0.00757575757575758
+"no_transport",0.0648148148148148,0.0681818181818182
+"none",0,0.00757575757575758
+"refused_treatment",0,0.0151515151515152
+"refused_treatment lack_drugs_hc no_transport",0.00925925925925926,0
+"refused_treatment no_health_referral",0,0.00757575757575758
+"unqualified_staff_hosp",0.00925925925925926,0.00757575757575758
+"unqualified_staff_hosp drugs_cost refused_treatment",0,0.00757575757575758
+"unqualified_staff_hosp lack_drugs_hc",0.0185185185185185,0

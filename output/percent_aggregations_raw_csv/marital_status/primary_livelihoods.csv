@@ -1,0 +1,32 @@
+"","divorced","married","no_answer","single","widowed"
+"agriculture",0.666666666666667,0.555,0,0.5,0.56
+"agriculture beekeeping",0,0.005,0,0,0
+"agriculture casual_labour",0.0833333333333333,0.07,0,0,0.04
+"agriculture casual_labour selling_natural_resources",0,0.015,0,0,0.04
+"agriculture fishery casual_labour",0,0.005,0,0,0
+"agriculture fishery selling_natural_resources",0,0,0,0,0.04
+"agriculture livestock",0,0.03,0,0.5,0.04
+"agriculture livestock casual_labour",0,0.015,0,0,0
+"agriculture livestock fishery",0,0.015,0,0,0
+"agriculture livestock remittance",0,0.005,0,0,0
+"agriculture livestock selling_natural_resources",0,0.005,0,0,0
+"agriculture livestock small_business",0,0.02,0,0,0.08
+"agriculture livestock trade",0,0.005,0,0,0
+"agriculture other",0,0.005,0,0,0
+"agriculture remittance casual_labour",0,0.005,0,0,0.04
+"agriculture remittance small_business",0,0,0,0,0.04
+"agriculture salary",0.0833333333333333,0.04,0,0,0
+"agriculture salary casual_labour",0,0.005,0,0,0
+"agriculture selling_natural_resources",0,0.015,0,0,0
+"agriculture small_business",0.166666666666667,0.1,1,0,0.04
+"agriculture small_business casual_labour",0,0.02,0,0,0
+"agriculture small_business selling_natural_resources",0,0.005,0,0,0
+"agriculture trade",0,0.02,0,0,0
+"agriculture trade small_business",0,0.005,0,0,0
+"casual_labour",0,0.01,0,0,0.04
+"livestock",0,0.005,0,0,0
+"salary",0,0.005,0,0,0
+"selling_natural_resources",0,0.005,0,0,0
+"small_business",0,0.005,0,0,0
+"small_business casual_labour",0,0.005,0,0,0
+"small_business casual_labour selling_natural_resources",0,0,0,0,0.04

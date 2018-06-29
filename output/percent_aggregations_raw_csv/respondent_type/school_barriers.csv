@@ -1,0 +1,36 @@
+"","host_community"
+"",0.5
+"disabled other",0.00416666666666667
+"early_marriage",0.0125
+"early_marriage disabled school_too_far",0.00416666666666667
+"early_marriage school_too_far",0.00416666666666667
+"extensive_absences",0.00416666666666667
+"high_cost",0.1
+"high_cost disabled early_marriage",0.00416666666666667
+"high_cost early_marriage",0.00416666666666667
+"high_cost lack_space school_too_far",0.00416666666666667
+"high_cost other",0.00416666666666667
+"high_cost poor_condition",0.00416666666666667
+"high_cost relocation school_too_far",0.00416666666666667
+"high_cost school_too_far",0.0583333333333333
+"high_cost school_too_far no_transport",0.00416666666666667
+"high_cost school_too_far other",0.00416666666666667
+"high_cost school_too_far too_young",0.00416666666666667
+"high_cost too_young",0.0208333333333333
+"household_chores",0.00833333333333333
+"household_chores school_too_far other",0.00416666666666667
+"household_chores working",0.00416666666666667
+"insecurity",0.00416666666666667
+"lack_space",0.00416666666666667
+"new_arrival",0.00833333333333333
+"none",0.0166666666666667
+"other",0.0416666666666667
+"poor_condition",0.00416666666666667
+"relocation",0.00416666666666667
+"relocation too_young",0.00416666666666667
+"school_too_far",0.0458333333333333
+"school_too_far other",0.00833333333333333
+"school_too_far too_young",0.00416666666666667
+"too_young",0.0833333333333333
+"too_young other",0.00416666666666667
+"working",0.00416666666666667

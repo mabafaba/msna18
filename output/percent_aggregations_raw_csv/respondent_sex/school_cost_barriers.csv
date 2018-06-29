@@ -1,0 +1,23 @@
+"","female","male"
+"",0.759259259259259,0.803030303030303
+"books bag uniform transportation",0.00925925925925926,0
+"books tuition",0.00925925925925926,0.0151515151515152
+"books tuition transportation",0.00925925925925926,0.00757575757575758
+"books tuition uniform",0.0277777777777778,0.0227272727272727
+"books tuition uniform food",0,0.00757575757575758
+"books tuition uniform transportation",0.00925925925925926,0.00757575757575758
+"books tuition uniform transportation food",0.00925925925925926,0.00757575757575758
+"books uniform transportation",0,0.00757575757575758
+"books writing_materials bag tuition uniform",0.00925925925925926,0
+"books writing_materials bag tuition uniform food",0.00925925925925926,0
+"books writing_materials tuition",0,0.00757575757575758
+"books writing_materials tuition uniform",0.0740740740740741,0.0303030303030303
+"books writing_materials tuition uniform food",0.0185185185185185,0.0151515151515152
+"books writing_materials tuition uniform food other",0.00925925925925926,0
+"books writing_materials tuition uniform transportation",0.00925925925925926,0
+"books writing_materials uniform food",0.00925925925925926,0
+"tuition",0.00925925925925926,0.0378787878787879
+"tuition transportation",0,0.00757575757575758
+"tuition uniform",0.00925925925925926,0
+"writing_materials tuition uniform",0.00925925925925926,0.0151515151515152
+"writing_materials tuition uniform transportation",0,0.00757575757575758

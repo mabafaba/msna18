@@ -1,7 +1,26 @@
-# packages to install/load:
-.dependencies<-c("dplyr","questionr")
+
+# external packages to install/load:
+.dependencies<-c("dplyr","questionr","data.table")
 
 
+# reach "hypegrammar" package ("unpackaged" and loaded as scripts)
+source("./internal/R/hypegrammar_dependencies.R")
+
+
+
+source("./internal/R/composite_indicator_weighted_count.R")
+source("./internal/R/survey_design.R")
+source("./internal/R/recoding.R")
+source("./internal/R/load_questionnaire.R")
+source("./internal/R/load_analysis_definitions.R")
+# replaced by hypegrammar:
+# source("./internal/R/aggregation.R")
+# source("./internal/R/KI_aggregation.R")
+# source("./internal/R/errors.R")
+# source("./internal/R/summary_statistics.R")
+
+
+# stuff for loading/installing packages only when needed:
 
 
 # checking if package is installed
@@ -21,6 +40,6 @@
   return(dependencies)
 }
 
-# execute:
+# load external packages:
 .install_dependencies(.dependencies)
 .load_dependencies(.dependencies)
