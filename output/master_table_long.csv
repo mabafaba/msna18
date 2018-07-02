@@ -1,296 +1,1101 @@
-"","dependent.var","independent.var","dependent.var.value","independent.var.value","numbers","se","min","max","master_table_column_name"
-"13","district","respondent_type","kiryandongo","host_community",1,NA,NA,NA,"district::: kiryandongo"
-"14.1","subcounty","respondent_type","bweyale_tc","host_community",0.0166666666666667,NA,NA,NA,"subcounty::: bweyale_tc"
-"14.2","subcounty","respondent_type","kigumba","host_community",0.2125,NA,NA,NA,"subcounty::: kigumba"
-"14.3","subcounty","respondent_type","kigumba_tc","host_community",0.0125,NA,NA,NA,"subcounty::: kigumba_tc"
-"14.4","subcounty","respondent_type","kiryandongo","host_community",0.433333333333333,NA,NA,NA,"subcounty::: kiryandongo"
-"14.5","subcounty","respondent_type","kiryandongo_tc","host_community",0.0791666666666667,NA,NA,NA,"subcounty::: kiryandongo_tc"
-"14.6","subcounty","respondent_type","mutunda","host_community",0.245833333333333,NA,NA,NA,"subcounty::: mutunda"
-"15.1","place","respondent_type","kabonyi","host_community",0.025,NA,NA,NA,"place::: kabonyi"
-"15.2","place","respondent_type","kankoba","host_community",0.025,NA,NA,NA,"place::: kankoba"
-"15.3","place","respondent_type","karungu","host_community",0.0125,NA,NA,NA,"place::: karungu"
-"15.4","place","respondent_type","kiburasaho","host_community",0.00833333333333333,NA,NA,NA,"place::: kiburasaho"
-"15.5","place","respondent_type","kirongoro","host_community",0.0541666666666667,NA,NA,NA,"place::: kirongoro"
-"15.6","place","respondent_type","kiryampungura","host_community",0.025,NA,NA,NA,"place::: kiryampungura"
-"15.7","place","respondent_type","kiryandongo","host_community",0.00416666666666667,NA,NA,NA,"place::: kiryandongo"
-"15.8","place","respondent_type","nanda","host_community",0.025,NA,NA,NA,"place::: nanda"
-"15.9","place","respondent_type","other","host_community",0.820833333333333,NA,NA,NA,"place::: other"
-"16.1","place_other","respondent_type","","host_community",0,NA,NA,NA,"place_other::: "
-"16.2","place_other","respondent_type","Alero-A","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Alero-A"
-"16.3","place_other","respondent_type","Alero a","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Alero a"
-"16.4","place_other","respondent_type","Alero A","host_community",0.0304568527918782,NA,NA,NA,"place_other::: Alero A"
-"16.5","place_other","respondent_type","Alro A","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Alro A"
-"16.6","place_other","respondent_type","Chopeluo","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Chopeluo"
-"16.7","place_other","respondent_type","Chopelwo","host_community",0.0203045685279188,NA,NA,NA,"place_other::: Chopelwo"
-"16.8","place_other","respondent_type","Chopelwor","host_community",0.0203045685279188,NA,NA,NA,"place_other::: Chopelwor"
-"16.9","place_other","respondent_type","Chopewor ","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Chopewor "
-"16.10","place_other","respondent_type","Dyang","host_community",0.0304568527918782,NA,NA,NA,"place_other::: Dyang"
-"16.11","place_other","respondent_type","Dyangi","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Dyangi"
-"16.12","place_other","respondent_type","Dyangi ","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Dyangi "
-"16.13","place_other","respondent_type","Jeeja 2","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Jeeja 2"
-"16.14","place_other","respondent_type","Jeeja II","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Jeeja II"
-"16.15","place_other","respondent_type","Jeja","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Jeja"
-"16.16","place_other","respondent_type","Jeja-2","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Jeja-2"
-"16.17","place_other","respondent_type","Jejja 2","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Jejja 2"
-"16.18","place_other","respondent_type","Kaduku","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Kaduku"
-"16.19","place_other","respondent_type","Kaduku ","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Kaduku "
-"16.20","place_other","respondent_type","Kaduku 1","host_community",0.0355329949238579,NA,NA,NA,"place_other::: Kaduku 1"
-"16.21","place_other","respondent_type","Kakoge","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Kakoge"
-"16.22","place_other","respondent_type","kakooge","host_community",0.0050761421319797,NA,NA,NA,"place_other::: kakooge"
-"16.23","place_other","respondent_type","Kakooge","host_community",0.0304568527918782,NA,NA,NA,"place_other::: Kakooge"
-"16.24","place_other","respondent_type","Kakooge village","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Kakooge village"
-"16.25","place_other","respondent_type","Kapundo","host_community",0.0558375634517767,NA,NA,NA,"place_other::: Kapundo"
-"16.26","place_other","respondent_type","Kapundu","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Kapundu"
-"16.27","place_other","respondent_type","Karagalia","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Karagalia"
-"16.28","place_other","respondent_type","Karagalia ","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Karagalia "
-"16.29","place_other","respondent_type","Karagalya","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Karagalya"
-"16.30","place_other","respondent_type","Karaglya","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Karaglya"
-"16.31","place_other","respondent_type","Karaglya ","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Karaglya "
-"16.32","place_other","respondent_type","Kariagalya","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Kariagalya"
-"16.33","place_other","respondent_type","Katamarwa","host_community",0.0304568527918782,NA,NA,NA,"place_other::: Katamarwa"
-"16.34","place_other","respondent_type","Kikong village","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Kikong village"
-"16.35","place_other","respondent_type","Kikonge","host_community",0.0253807106598985,NA,NA,NA,"place_other::: Kikonge"
-"16.36","place_other","respondent_type","Kiluli","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Kiluli"
-"16.37","place_other","respondent_type","Kirongoro","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Kirongoro"
-"16.38","place_other","respondent_type","Kiruli","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Kiruli"
-"16.39","place_other","respondent_type","Kiruli ","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Kiruli "
-"16.40","place_other","respondent_type","Kiruuli","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Kiruuli"
-"16.41","place_other","respondent_type","Kisoro soro","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Kisoro soro"
-"16.42","place_other","respondent_type","Kisororo","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Kisororo"
-"16.43","place_other","respondent_type","Kisorosoro","host_community",0.0355329949238579,NA,NA,NA,"place_other::: Kisorosoro"
-"16.44","place_other","respondent_type","Kisweka","host_community",0.0558375634517767,NA,NA,NA,"place_other::: Kisweka"
-"16.45","place_other","respondent_type","Kwenda 2","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Kwenda 2"
-"16.46","place_other","respondent_type","Kwenda2","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Kwenda2"
-"16.47","place_other","respondent_type","Kyakibanga","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Kyakibanga"
-"16.48","place_other","respondent_type","Nanda","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Nanda"
-"16.49","place_other","respondent_type","Nanda a","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Nanda a"
-"16.50","place_other","respondent_type","Nanda A","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Nanda A"
-"16.51","place_other","respondent_type","Nginga 2","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Nginga 2"
-"16.52","place_other","respondent_type","Nyakibete 2","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Nyakibete 2"
-"16.53","place_other","respondent_type","Nyakibete II","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Nyakibete II"
-"16.54","place_other","respondent_type","Nyama 2","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Nyama 2"
-"16.55","place_other","respondent_type","Nyamuntende","host_community",0.0406091370558376,NA,NA,NA,"place_other::: Nyamuntende"
-"16.56","place_other","respondent_type","Nyamuntende ","host_community",0.0203045685279188,NA,NA,NA,"place_other::: Nyamuntende "
-"16.57","place_other","respondent_type","Nyinga","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Nyinga"
-"16.58","place_other","respondent_type","Nyinga 2","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Nyinga 2"
-"16.59","place_other","respondent_type","Nyinga 2 village","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Nyinga 2 village"
-"16.60","place_other","respondent_type","Nyinga II","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Nyinga II"
-"16.61","place_other","respondent_type","Nyinga2 village","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Nyinga2 village"
-"16.62","place_other","respondent_type","Popara","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Popara"
-"16.63","place_other","respondent_type","Popara east","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Popara east"
-"16.64","place_other","respondent_type","Popara east ","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Popara east "
-"16.65","place_other","respondent_type","Popara west","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Popara west"
-"16.66","place_other","respondent_type","Popara west ","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Popara west "
-"16.67","place_other","respondent_type","Popara West ","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Popara West "
-"16.68","place_other","respondent_type","Popara West. ","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Popara West. "
-"16.69","place_other","respondent_type","Pupara East","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Pupara East"
-"16.70","place_other","respondent_type","Pupara East ","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Pupara East "
-"16.71","place_other","respondent_type","Rwamudopio","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Rwamudopio"
-"16.72","place_other","respondent_type","Rwamudopiyo","host_community",0.0152284263959391,NA,NA,NA,"place_other::: Rwamudopiyo"
-"16.73","place_other","respondent_type","Rwamudopyo village","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Rwamudopyo village"
-"16.74","place_other","respondent_type","Rwsmudopyo village","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Rwsmudopyo village"
-"16.75","place_other","respondent_type","Ryamutobyo","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Ryamutobyo"
-"16.76","place_other","respondent_type","Ryomudobyo","host_community",0.0101522842639594,NA,NA,NA,"place_other::: Ryomudobyo"
-"16.77","place_other","respondent_type","Sabasaba","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Sabasaba"
-"16.78","place_other","respondent_type","Sasaba","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Sasaba"
-"16.79","place_other","respondent_type","Tugo","host_community",0.0050761421319797,NA,NA,NA,"place_other::: Tugo"
-"17","point_number","respondent_type",NA,"host_community",64.2541666666667,7.56413707782331,49.4287304200089,79.0796029133244,"point_number::: NA"
-"18","respondent_age","respondent_type",NA,"host_community",40.5208333333333,0.902981036911546,38.7510230222641,42.2906436444026,"respondent_age::: NA"
-"19.1","respondent_sex","respondent_type","female","host_community",0.45,NA,NA,NA,"respondent_sex::: female"
-"19.2","respondent_sex","respondent_type","male","host_community",0.55,NA,NA,NA,"respondent_sex::: male"
-"20.1","head_of_household","respondent_type","no","host_community",0.125,NA,NA,NA,"head_of_household::: no"
-"20.2","head_of_household","respondent_type","yes","host_community",0.875,NA,NA,NA,"head_of_household::: yes"
-"21.1","hoh_equivalent","respondent_type","","host_community",0,NA,NA,NA,"hoh_equivalent::: "
-"21.2","hoh_equivalent","respondent_type","yes","host_community",1,NA,NA,NA,"hoh_equivalent::: yes"
-"22.1","hoh_sex","respondent_type","","host_community",0,NA,NA,NA,"hoh_sex::: "
-"22.2","hoh_sex","respondent_type","female","host_community",0.1,NA,NA,NA,"hoh_sex::: female"
-"22.3","hoh_sex","respondent_type","male","host_community",0.9,NA,NA,NA,"hoh_sex::: male"
-"23.1","marital_status","respondent_type","divorced","host_community",0.05,NA,NA,NA,"marital_status::: divorced"
-"23.2","marital_status","respondent_type","married","host_community",0.833333333333333,NA,NA,NA,"marital_status::: married"
-"23.3","marital_status","respondent_type","no_answer","host_community",0.00416666666666667,NA,NA,NA,"marital_status::: no_answer"
-"23.4","marital_status","respondent_type","single","host_community",0.00833333333333333,NA,NA,NA,"marital_status::: single"
-"23.5","marital_status","respondent_type","widowed","host_community",0.104166666666667,NA,NA,NA,"marital_status::: widowed"
-"24.1","nationality","respondent_type","kenya","host_community",0.00833333333333333,NA,NA,NA,"nationality::: kenya"
-"24.2","nationality","respondent_type","uganda","host_community",0.991666666666667,NA,NA,NA,"nationality::: uganda"
-"26","males_0_2","respondent_type",NA,"host_community",0.4375,0.0474346243199981,0.344529844712616,0.530470155287384,"males_0_2::: NA"
-"27","females_0_2","respondent_type",NA,"host_community",0.433333333333333,0.0419481426998224,0.351116484423335,0.515550182243332,"females_0_2::: NA"
-"28","males_3_5","respondent_type",NA,"host_community",0.633333333333333,0.0514322978733025,0.532527881859524,0.734138784807142,"males_3_5::: NA"
-"29","females_3_5","respondent_type",NA,"host_community",0.541666666666667,0.0471620203121709,0.449230805416665,0.634102527916668,"females_3_5::: NA"
-"30","males_6_12","respondent_type",NA,"host_community",0.95,0.0615637688012175,0.829337230397063,1.07066276960294,"males_6_12::: NA"
-"31","females_6_12","respondent_type",NA,"host_community",0.845833333333333,0.059239696026475,0.729725662666342,0.961941004000325,"females_6_12::: NA"
-"32","males_13_18","respondent_type",NA,"host_community",0.816666666666667,0.0662732464061805,0.686773490572004,0.946559842761329,"males_13_18::: NA"
-"33","females_13_18","respondent_type",NA,"host_community",0.7125,0.0598059536505371,0.595282484783876,0.829717515216124,"females_13_18::: NA"
-"34","males_18_59","respondent_type",NA,"host_community",1.45,0.0729675803520081,1.30698617047103,1.59301382952897,"males_18_59::: NA"
-"35","females_18_59","respondent_type",NA,"host_community",1.35416666666667,0.0692276369206806,1.21848299156732,1.48985034176602,"females_18_59::: NA"
-"36","males_60_over","respondent_type",NA,"host_community",0.120833333333333,0.021082884736767,0.0795116385590608,0.162155028107606,"males_60_over::: NA"
-"37","females_60_over","respondent_type",NA,"host_community",0.183333333333333,0.0270380347493217,0.13033975901192,0.236326907654746,"females_60_over::: NA"
-"38","calc_boys_ed","respondent_type",NA,"host_community",2.4,0.119681119782349,2.16542931559717,2.63457068440283,"calc_boys_ed::: NA"
-"39","calc_girls_ed","respondent_type",NA,"host_community",2.1,0.113858411179736,1.87684161475077,2.32315838524923,"calc_girls_ed::: NA"
-"40","calc_boys","respondent_type",NA,"host_community",2.8375,0.133655196852745,2.57554062782201,3.09945937217799,"calc_boys::: NA"
-"41","calc_girls","respondent_type",NA,"host_community",2.53333333333333,0.12313697664094,2.29198929395194,2.77467737271473,"calc_girls::: NA"
-"42","calc_5_and_under","respondent_type",NA,"host_community",2.04583333333333,0.105835310055228,1.83839993733246,2.25326672933421,"calc_5_and_under::: NA"
-"43","calc_minors","respondent_type",NA,"host_community",5.37083333333333,0.207847935230186,4.96345886602116,5.77820780064551,"calc_minors::: NA"
-"44","calc_males","respondent_type",NA,"host_community",4.40833333333333,0.172659853233583,4.06992623941954,4.74674042724713,"calc_males::: NA"
-"45","calc_females","respondent_type",NA,"host_community",4.07083333333333,0.165536395845762,3.74638795934507,4.39527870732159,"calc_females::: NA"
-"46","calc_household","respondent_type",NA,"host_community",8.47916666666667,0.299112350014497,7.89291723330711,9.06541610002622,"calc_household::: NA"
-"47","household_size","respondent_type",NA,"host_community",8.5,0.298590365577359,7.91477363733773,9.08522636266227,"household_size::: NA"
-"50","unaccompanied_minor","respondent_type",NA,"host_community",0.151041666666667,0.041322682960283,0.070050696319945,0.232032637013388,"unaccompanied_minor::: NA"
-"51","orphan","respondent_type",NA,"host_community",0.541871921182266,0.0881168156525751,0.369166136070864,0.714577706293668,"orphan::: NA"
-"52","separated_minor","respondent_type",NA,"host_community",0.450261780104712,0.0654125022517891,0.32205563155256,0.578467928656864,"separated_minor::: NA"
-"53","chronic_ill","respondent_type",NA,"host_community",0.47196261682243,0.0480709842572995,0.377745218976731,0.566180014668129,"chronic_ill::: NA"
-"54","disabled","respondent_type",NA,"host_community",0.395238095238095,0.0448270106257525,0.307378768877026,0.483097421599165,"disabled::: NA"
-"55","pregnant_lactating","respondent_type",NA,"host_community",0.736842105263158,0.05087708721999,0.637124846673674,0.836559363852641,"pregnant_lactating::: NA"
-"56.1","biggest_needs","respondent_type","education","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: education"
-"56.2","biggest_needs","respondent_type","education protection","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: education protection"
-"56.3","biggest_needs","respondent_type","food","host_community",0.0291666666666667,NA,NA,NA,"biggest_needs::: food"
-"56.4","biggest_needs","respondent_type","food education","host_community",0.0208333333333333,NA,NA,NA,"biggest_needs::: food education"
-"56.5","biggest_needs","respondent_type","food education other","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food education other"
-"56.6","biggest_needs","respondent_type","food education protection","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food education protection"
-"56.7","biggest_needs","respondent_type","food health_nutrition","host_community",0.0208333333333333,NA,NA,NA,"biggest_needs::: food health_nutrition"
-"56.8","biggest_needs","respondent_type","food health_nutrition education","host_community",0.0541666666666667,NA,NA,NA,"biggest_needs::: food health_nutrition education"
-"56.9","biggest_needs","respondent_type","food health_nutrition livelihoods","host_community",0.0125,NA,NA,NA,"biggest_needs::: food health_nutrition livelihoods"
-"56.10","biggest_needs","respondent_type","food health_nutrition other","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food health_nutrition other"
-"56.11","biggest_needs","respondent_type","food health_nutrition protection","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food health_nutrition protection"
-"56.12","biggest_needs","respondent_type","food health_nutrition shelter","host_community",0.0291666666666667,NA,NA,NA,"biggest_needs::: food health_nutrition shelter"
-"56.13","biggest_needs","respondent_type","food health_nutrition water_sanitation","host_community",0.05,NA,NA,NA,"biggest_needs::: food health_nutrition water_sanitation"
-"56.14","biggest_needs","respondent_type","food livelihoods","host_community",0.0125,NA,NA,NA,"biggest_needs::: food livelihoods"
-"56.15","biggest_needs","respondent_type","food livelihoods education","host_community",0.0291666666666667,NA,NA,NA,"biggest_needs::: food livelihoods education"
-"56.16","biggest_needs","respondent_type","food livelihoods other","host_community",0.00833333333333333,NA,NA,NA,"biggest_needs::: food livelihoods other"
-"56.17","biggest_needs","respondent_type","food livelihoods shelter","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food livelihoods shelter"
-"56.18","biggest_needs","respondent_type","food nfis education","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food nfis education"
-"56.19","biggest_needs","respondent_type","food other","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food other"
-"56.20","biggest_needs","respondent_type","food protection other","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food protection other"
-"56.21","biggest_needs","respondent_type","food shelter","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food shelter"
-"56.22","biggest_needs","respondent_type","food shelter education","host_community",0.0291666666666667,NA,NA,NA,"biggest_needs::: food shelter education"
-"56.23","biggest_needs","respondent_type","food water_sanitation","host_community",0.0458333333333333,NA,NA,NA,"biggest_needs::: food water_sanitation"
-"56.24","biggest_needs","respondent_type","food water_sanitation education","host_community",0.0625,NA,NA,NA,"biggest_needs::: food water_sanitation education"
-"56.25","biggest_needs","respondent_type","food water_sanitation livelihoods","host_community",0.0125,NA,NA,NA,"biggest_needs::: food water_sanitation livelihoods"
-"56.26","biggest_needs","respondent_type","food water_sanitation nfis","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food water_sanitation nfis"
-"56.27","biggest_needs","respondent_type","food water_sanitation other","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: food water_sanitation other"
-"56.28","biggest_needs","respondent_type","food water_sanitation shelter","host_community",0.0291666666666667,NA,NA,NA,"biggest_needs::: food water_sanitation shelter"
-"56.29","biggest_needs","respondent_type","health_nutrition","host_community",0.0125,NA,NA,NA,"biggest_needs::: health_nutrition"
-"56.30","biggest_needs","respondent_type","health_nutrition education","host_community",0.0208333333333333,NA,NA,NA,"biggest_needs::: health_nutrition education"
-"56.31","biggest_needs","respondent_type","health_nutrition livelihoods","host_community",0.0125,NA,NA,NA,"biggest_needs::: health_nutrition livelihoods"
-"56.32","biggest_needs","respondent_type","health_nutrition livelihoods education","host_community",0.0125,NA,NA,NA,"biggest_needs::: health_nutrition livelihoods education"
-"56.33","biggest_needs","respondent_type","health_nutrition livelihoods protection","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: health_nutrition livelihoods protection"
-"56.34","biggest_needs","respondent_type","health_nutrition livelihoods shelter","host_community",0.00833333333333333,NA,NA,NA,"biggest_needs::: health_nutrition livelihoods shelter"
-"56.35","biggest_needs","respondent_type","health_nutrition other","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: health_nutrition other"
-"56.36","biggest_needs","respondent_type","health_nutrition shelter","host_community",0.00833333333333333,NA,NA,NA,"biggest_needs::: health_nutrition shelter"
-"56.37","biggest_needs","respondent_type","health_nutrition shelter education","host_community",0.0458333333333333,NA,NA,NA,"biggest_needs::: health_nutrition shelter education"
-"56.38","biggest_needs","respondent_type","health_nutrition water_sanitation","host_community",0.0125,NA,NA,NA,"biggest_needs::: health_nutrition water_sanitation"
-"56.39","biggest_needs","respondent_type","health_nutrition water_sanitation education","host_community",0.0833333333333333,NA,NA,NA,"biggest_needs::: health_nutrition water_sanitation education"
-"56.40","biggest_needs","respondent_type","health_nutrition water_sanitation livelihoods","host_community",0.00833333333333333,NA,NA,NA,"biggest_needs::: health_nutrition water_sanitation livelihoods"
-"56.41","biggest_needs","respondent_type","health_nutrition water_sanitation nfis","host_community",0.00833333333333333,NA,NA,NA,"biggest_needs::: health_nutrition water_sanitation nfis"
-"56.42","biggest_needs","respondent_type","health_nutrition water_sanitation shelter","host_community",0.0291666666666667,NA,NA,NA,"biggest_needs::: health_nutrition water_sanitation shelter"
-"56.43","biggest_needs","respondent_type","livelihoods","host_community",0.0125,NA,NA,NA,"biggest_needs::: livelihoods"
-"56.44","biggest_needs","respondent_type","livelihoods education","host_community",0.0208333333333333,NA,NA,NA,"biggest_needs::: livelihoods education"
-"56.45","biggest_needs","respondent_type","livelihoods nfis education","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: livelihoods nfis education"
-"56.46","biggest_needs","respondent_type","livelihoods other","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: livelihoods other"
-"56.47","biggest_needs","respondent_type","livelihoods shelter","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: livelihoods shelter"
-"56.48","biggest_needs","respondent_type","livelihoods shelter education","host_community",0.0166666666666667,NA,NA,NA,"biggest_needs::: livelihoods shelter education"
-"56.49","biggest_needs","respondent_type","livelihoods shelter other","host_community",0.00833333333333333,NA,NA,NA,"biggest_needs::: livelihoods shelter other"
-"56.50","biggest_needs","respondent_type","nfis","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: nfis"
-"56.51","biggest_needs","respondent_type","none","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: none"
-"56.52","biggest_needs","respondent_type","other","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: other"
-"56.53","biggest_needs","respondent_type","shelter","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: shelter"
-"56.54","biggest_needs","respondent_type","shelter education","host_community",0.0125,NA,NA,NA,"biggest_needs::: shelter education"
-"56.55","biggest_needs","respondent_type","shelter education protection","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: shelter education protection"
-"56.56","biggest_needs","respondent_type","shelter nfis education","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: shelter nfis education"
-"56.57","biggest_needs","respondent_type","water_sanitation","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: water_sanitation"
-"56.58","biggest_needs","respondent_type","water_sanitation education","host_community",0.0416666666666667,NA,NA,NA,"biggest_needs::: water_sanitation education"
-"56.59","biggest_needs","respondent_type","water_sanitation education protection","host_community",0.0166666666666667,NA,NA,NA,"biggest_needs::: water_sanitation education protection"
-"56.60","biggest_needs","respondent_type","water_sanitation livelihoods","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: water_sanitation livelihoods"
-"56.61","biggest_needs","respondent_type","water_sanitation livelihoods education","host_community",0.0125,NA,NA,NA,"biggest_needs::: water_sanitation livelihoods education"
-"56.62","biggest_needs","respondent_type","water_sanitation livelihoods shelter","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: water_sanitation livelihoods shelter"
-"56.63","biggest_needs","respondent_type","water_sanitation nfis education","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: water_sanitation nfis education"
-"56.64","biggest_needs","respondent_type","water_sanitation protection","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: water_sanitation protection"
-"56.65","biggest_needs","respondent_type","water_sanitation shelter","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: water_sanitation shelter"
-"56.66","biggest_needs","respondent_type","water_sanitation shelter education","host_community",0.0208333333333333,NA,NA,NA,"biggest_needs::: water_sanitation shelter education"
-"56.67","biggest_needs","respondent_type","water_sanitation shelter protection","host_community",0.00416666666666667,NA,NA,NA,"biggest_needs::: water_sanitation shelter protection"
-"57","biggest_needs.food","respondent_type",NA,"host_community",0.491666666666667,0.0323378190679807,0.428285705954852,0.555047627378481,"biggest_needs.food::: NA"
-"58","biggest_needs.health_nutrition","respondent_type",NA,"host_community",0.445833333333333,0.0321519647572257,0.38281664037697,0.508850026289697,"biggest_needs.health_nutrition::: NA"
-"59","biggest_needs.water_sanitation","respondent_type",NA,"host_community",0.470833333333333,0.0322872376276071,0.407551510422937,0.53411515624373,"biggest_needs.water_sanitation::: NA"
-"60","biggest_needs.livelihoods","respondent_type",NA,"host_community",0.216666666666667,0.0266483549400987,0.164436850736833,0.2688964825965,"biggest_needs.livelihoods::: NA"
-"61","biggest_needs.shelter","respondent_type",NA,"host_community",0.275,0.0288826075851974,0.21839112935341,0.33160887064659,"biggest_needs.shelter::: NA"
-"62","biggest_needs.nfis","respondent_type",NA,"host_community",0.0333333333333333,0.0116112451305664,0.0105757110617572,0.0560909556049095,"biggest_needs.nfis::: NA"
-"63","biggest_needs.education","respondent_type",NA,"host_community",0.5375,0.0322512203395332,0.474288769677049,0.600711230322951,"biggest_needs.education::: NA"
-"64","biggest_needs.protection","respondent_type",NA,"host_community",0.05,0.0140976866852146,0.0223690418316496,0.0776309581683504,"biggest_needs.protection::: NA"
-"65","biggest_needs.other","respondent_type",NA,"host_community",0.05,0.0140976866852146,0.0223690418316496,0.0776309581683504,"biggest_needs.other::: NA"
-"66","biggest_needs.none","respondent_type",NA,"host_community",0.00416666666666667,0.00416666666666667,-0.00399984993558357,0.0123331832689169,"biggest_needs.none::: NA"
-"67","biggest_needs.no_answer","respondent_type",NA,"host_community",0,0,0,0,"biggest_needs.no_answer::: NA"
-"86.1","child_prot_support_campaign","respondent_type","no","host_community",0.454166666666667,NA,NA,NA,"child_prot_support_campaign::: no"
-"86.2","child_prot_support_campaign","respondent_type","yes","host_community",0.545833333333333,NA,NA,NA,"child_prot_support_campaign::: yes"
-"87.1","psych_support_campaign","respondent_type","no","host_community",0.604166666666667,NA,NA,NA,"psych_support_campaign::: no"
-"87.2","psych_support_campaign","respondent_type","yes","host_community",0.395833333333333,NA,NA,NA,"psych_support_campaign::: yes"
-"88.1","sgbv_support_campaign","respondent_type","","host_community",0,NA,NA,NA,"sgbv_support_campaign::: "
-"88.2","sgbv_support_campaign","respondent_type","no","host_community",0.390756302521008,NA,NA,NA,"sgbv_support_campaign::: no"
-"88.3","sgbv_support_campaign","respondent_type","no_answer","host_community",0.00420168067226891,NA,NA,NA,"sgbv_support_campaign::: no_answer"
-"88.4","sgbv_support_campaign","respondent_type","yes","host_community",0.605042016806723,NA,NA,NA,"sgbv_support_campaign::: yes"
-"89.1","psych_distress","respondent_type","no","host_community",0.579166666666667,NA,NA,NA,"psych_distress::: no"
-"89.2","psych_distress","respondent_type","yes","host_community",0.420833333333333,NA,NA,NA,"psych_distress::: yes"
-"90.1","psych_distress_therapy","respondent_type","","host_community",0,NA,NA,NA,"psych_distress_therapy::: "
-"90.2","psych_distress_therapy","respondent_type","didnt_seek","host_community",0.138613861386139,NA,NA,NA,"psych_distress_therapy::: didnt_seek"
-"90.3","psych_distress_therapy","respondent_type","unable","host_community",0.435643564356436,NA,NA,NA,"psych_distress_therapy::: unable"
-"90.4","psych_distress_therapy","respondent_type","yes","host_community",0.425742574257426,NA,NA,NA,"psych_distress_therapy::: yes"
-"91.1","uasc_parent_location","respondent_type","","host_community",0,NA,NA,NA,"uasc_parent_location::: "
-"91.2","uasc_parent_location","respondent_type","another_settlement","host_community",0.0153846153846154,NA,NA,NA,"uasc_parent_location::: another_settlement"
-"91.3","uasc_parent_location","respondent_type","home_country","host_community",0.430769230769231,NA,NA,NA,"uasc_parent_location::: home_country"
-"91.4","uasc_parent_location","respondent_type","no_answer","host_community",0.0153846153846154,NA,NA,NA,"uasc_parent_location::: no_answer"
-"91.5","uasc_parent_location","respondent_type","other_country_nonrefugee","host_community",0.0153846153846154,NA,NA,NA,"uasc_parent_location::: other_country_nonrefugee"
-"91.6","uasc_parent_location","respondent_type","uganda_elsewhere","host_community",0.523076923076923,NA,NA,NA,"uasc_parent_location::: uganda_elsewhere"
-"92","uasc_prot_services","respondent_type",NA,"host_community",0.154761904761905,0.0548665716302533,0.0472254004114212,0.262298409112388,"uasc_prot_services::: NA"
-"93","family_reunion","respondent_type",NA,"host_community",0.315789473684211,0.0974547473444791,0.124781678766581,0.50679726860184,"family_reunion::: NA"
-"94.1","uasc_monitoring_visit","respondent_type","","host_community",0,NA,NA,NA,"uasc_monitoring_visit::: "
-"94.2","uasc_monitoring_visit","respondent_type","no","host_community",0.8,NA,NA,NA,"uasc_monitoring_visit::: no"
-"94.3","uasc_monitoring_visit","respondent_type","yes","host_community",0.2,NA,NA,NA,"uasc_monitoring_visit::: yes"
-"95.1","uasc_monitoring_visit_date","respondent_type","","host_community",0,NA,NA,NA,"uasc_monitoring_visit_date::: "
-"95.2","uasc_monitoring_visit_date","respondent_type","2016-06-01","host_community",0.0833333333333333,NA,NA,NA,"uasc_monitoring_visit_date::: 2016-06-01"
-"95.3","uasc_monitoring_visit_date","respondent_type","2017-02-01","host_community",0.0833333333333333,NA,NA,NA,"uasc_monitoring_visit_date::: 2017-02-01"
-"95.4","uasc_monitoring_visit_date","respondent_type","2017-11-01","host_community",0.0833333333333333,NA,NA,NA,"uasc_monitoring_visit_date::: 2017-11-01"
-"95.5","uasc_monitoring_visit_date","respondent_type","2017-12-01","host_community",0.0833333333333333,NA,NA,NA,"uasc_monitoring_visit_date::: 2017-12-01"
-"95.6","uasc_monitoring_visit_date","respondent_type","2018-02-01","host_community",0.25,NA,NA,NA,"uasc_monitoring_visit_date::: 2018-02-01"
-"95.7","uasc_monitoring_visit_date","respondent_type","2018-03-01","host_community",0.0833333333333333,NA,NA,NA,"uasc_monitoring_visit_date::: 2018-03-01"
-"95.8","uasc_monitoring_visit_date","respondent_type","2018-04-01","host_community",0.333333333333333,NA,NA,NA,"uasc_monitoring_visit_date::: 2018-04-01"
-"96.1","child_violence","respondent_type","","host_community",0,NA,NA,NA,"child_violence::: "
-"96.2","child_violence","respondent_type","no","host_community",0.813559322033898,NA,NA,NA,"child_violence::: no"
-"96.3","child_violence","respondent_type","yes","host_community",0.186440677966102,NA,NA,NA,"child_violence::: yes"
-"97.1","security","respondent_type","good","host_community",0.4125,NA,NA,NA,"security::: good"
-"97.2","security","respondent_type","okay","host_community",0.191666666666667,NA,NA,NA,"security::: okay"
-"97.3","security","respondent_type","poor","host_community",0.279166666666667,NA,NA,NA,"security::: poor"
-"97.4","security","respondent_type","very_good","host_community",0.0583333333333333,NA,NA,NA,"security::: very_good"
-"97.5","security","respondent_type","very_poor","host_community",0.0583333333333333,NA,NA,NA,"security::: very_poor"
-"98.1","insecurity_reasons","respondent_type","","host_community",0,NA,NA,NA,"insecurity_reasons::: "
-"98.2","insecurity_reasons","respondent_type","abduction early_marriage","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: abduction early_marriage"
-"98.3","insecurity_reasons","respondent_type","attack_host","host_community",0.0551181102362205,NA,NA,NA,"insecurity_reasons::: attack_host"
-"98.4","insecurity_reasons","respondent_type","attack_host cattle_raid","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: attack_host cattle_raid"
-"98.5","insecurity_reasons","respondent_type","attack_host cattle_raid early_marriage","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: attack_host cattle_raid early_marriage"
-"98.6","insecurity_reasons","respondent_type","attack_host cattle_raid other","host_community",0.015748031496063,NA,NA,NA,"insecurity_reasons::: attack_host cattle_raid other"
-"98.7","insecurity_reasons","respondent_type","attack_host early_marriage","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: attack_host early_marriage"
-"98.8","insecurity_reasons","respondent_type","attack_host harassment_host","host_community",0.015748031496063,NA,NA,NA,"insecurity_reasons::: attack_host harassment_host"
-"98.9","insecurity_reasons","respondent_type","attack_host harassment_host early_marriage","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: attack_host harassment_host early_marriage"
-"98.10","insecurity_reasons","respondent_type","attack_host harassment_host sexual_violence","host_community",0.015748031496063,NA,NA,NA,"insecurity_reasons::: attack_host harassment_host sexual_violence"
-"98.11","insecurity_reasons","respondent_type","attack_host other","host_community",0.047244094488189,NA,NA,NA,"insecurity_reasons::: attack_host other"
-"98.12","insecurity_reasons","respondent_type","attack_host sexual_violence abduction","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: attack_host sexual_violence abduction"
-"98.13","insecurity_reasons","respondent_type","attack_host sexual_violence early_marriage","host_community",0.015748031496063,NA,NA,NA,"insecurity_reasons::: attack_host sexual_violence early_marriage"
-"98.14","insecurity_reasons","respondent_type","attack_host sexual_violence other","host_community",0.015748031496063,NA,NA,NA,"insecurity_reasons::: attack_host sexual_violence other"
-"98.15","insecurity_reasons","respondent_type","cattle_raid","host_community",0.133858267716535,NA,NA,NA,"insecurity_reasons::: cattle_raid"
-"98.16","insecurity_reasons","respondent_type","cattle_raid early_marriage","host_community",0.015748031496063,NA,NA,NA,"insecurity_reasons::: cattle_raid early_marriage"
-"98.17","insecurity_reasons","respondent_type","cattle_raid other","host_community",0.031496062992126,NA,NA,NA,"insecurity_reasons::: cattle_raid other"
-"98.18","insecurity_reasons","respondent_type","early_marriage","host_community",0.031496062992126,NA,NA,NA,"insecurity_reasons::: early_marriage"
-"98.19","insecurity_reasons","respondent_type","early_marriage other","host_community",0.015748031496063,NA,NA,NA,"insecurity_reasons::: early_marriage other"
-"98.20","insecurity_reasons","respondent_type","harassment_host","host_community",0.0393700787401575,NA,NA,NA,"insecurity_reasons::: harassment_host"
-"98.21","insecurity_reasons","respondent_type","harassment_host abduction forced_recruitment","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: harassment_host abduction forced_recruitment"
-"98.22","insecurity_reasons","respondent_type","harassment_host early_marriage other","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: harassment_host early_marriage other"
-"98.23","insecurity_reasons","respondent_type","harassment_host sexual_violence","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: harassment_host sexual_violence"
-"98.24","insecurity_reasons","respondent_type","harassment_host sexual_violence early_marriage","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: harassment_host sexual_violence early_marriage"
-"98.25","insecurity_reasons","respondent_type","harassment_host sexual_violence other","host_community",0.0078740157480315,NA,NA,NA,"insecurity_reasons::: harassment_host sexual_violence other"
-"98.26","insecurity_reasons","respondent_type","no_answer","host_community",0.0236220472440945,NA,NA,NA,"insecurity_reasons::: no_answer"
-"98.27","insecurity_reasons","respondent_type","none","host_community",0.031496062992126,NA,NA,NA,"insecurity_reasons::: none"
-"98.28","insecurity_reasons","respondent_type","other","host_community",0.322834645669291,NA,NA,NA,"insecurity_reasons::: other"
-"98.29","insecurity_reasons","respondent_type","sexual_violence","host_community",0.015748031496063,NA,NA,NA,"insecurity_reasons::: sexual_violence"
-"98.30","insecurity_reasons","respondent_type","sexual_violence early_marriage","host_community",0.015748031496063,NA,NA,NA,"insecurity_reasons::: sexual_violence early_marriage"
-"98.31","insecurity_reasons","respondent_type","sexual_violence early_marriage other","host_community",0.031496062992126,NA,NA,NA,"insecurity_reasons::: sexual_violence early_marriage other"
-"98.32","insecurity_reasons","respondent_type","sexual_violence other","host_community",0.0236220472440945,NA,NA,NA,"insecurity_reasons::: sexual_violence other"
-"99","insecurity_reasons.attack_refugee","respondent_type",NA,"host_community",0,0,0,0,"insecurity_reasons.attack_refugee::: NA"
-"100","insecurity_reasons.attack_host","respondent_type",NA,"host_community",0.220472440944882,0.0369324075576648,0.148086252269504,0.29285862962026,"insecurity_reasons.attack_host::: NA"
-"101","insecurity_reasons.harassment_refugee","respondent_type",NA,"host_community",0,0,0,0,"insecurity_reasons.harassment_refugee::: NA"
+"","dependent.var","independent.var","dependent.var.value","independent.var.value","numbers","se","min","max"
+"4.1","deviceid","marital_status",NA,"divorced",359144086533368,522916.676763382,359144085508470,359144087558266
+"4.2","deviceid","marital_status",NA,"married",359144086348468,138000.600740758,359144086077991,359144086618944
+"4.3","deviceid","marital_status",NA,"no_answer",359144087603562,0,359144087603562,359144087603562
+"4.4","deviceid","marital_status",NA,"single",359144085173092,1722193.82102403,359144081797654,359144088548529
+"4.5","deviceid","marital_status",NA,"widowed",359144086176308,406090.646068301,359144085380385,359144086972231
+"17.1","point_number","marital_status",NA,"divorced",30.75,10.9296756731744,9.32822931787454,52.1717706821255
+"17.2","point_number","marital_status",NA,"married",57.795,5.80405700340243,46.4192573091138,69.1707426908862
+"17.3","point_number","marital_status",NA,"no_answer",30,0,30,30
+"17.4","point_number","marital_status",NA,"single",67.5,27.2805047867996,14.0311931378003,120.9688068622
+"17.5","point_number","marital_status",NA,"widowed",133.12,53.4539140556247,28.3522536182763,237.887746381724
+"18.1","respondent_age","marital_status",NA,"divorced",48.3333333333333,3.45186734848528,41.5677976508924,55.0988690157743
+"18.2","respondent_age","marital_status",NA,"married",38.8,0.966640215095219,36.9054199924053,40.6945800075947
+"18.3","respondent_age","marital_status",NA,"no_answer",50,0,50,50
+"18.4","respondent_age","marital_status",NA,"single",28,0,28,28
+"18.5","respondent_age","marital_status",NA,"widowed",51.16,2.29681445761726,46.6583263838993,55.6616736161007
+"26.1","males_0_2","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"26.2","males_0_2","marital_status",NA,"married",0.475,0.0543985755412814,0.368380751128807,0.581619248871193
+"26.3","males_0_2","marital_status",NA,"no_answer",1,0,1,1
+"26.4","males_0_2","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"26.5","males_0_2","marital_status",NA,"widowed",0.28,0.106353794982187,0.0715503922157577,0.488449607784242
+"27.1","females_0_2","marital_status",NA,"divorced",0.166666666666667,0.107807704558858,-0.0446325515246305,0.377965884857964
+"27.2","females_0_2","marital_status",NA,"married",0.45,0.0468684618871291,0.358139502690439,0.541860497309561
+"27.3","females_0_2","marital_status",NA,"no_answer",0,0,0,0
+"27.4","females_0_2","marital_status",NA,"single",0,0,0,0
+"27.5","females_0_2","marital_status",NA,"widowed",0.48,0.128267502904108,0.228600313921063,0.731399686078937
+"28.1","males_3_5","marital_status",NA,"divorced",0.25,0.125261233304792,0.00449249406353763,0.495507505936462
+"28.2","males_3_5","marital_status",NA,"married",0.665,0.0585504824558765,0.550243163109038,0.779756836890962
+"28.3","males_3_5","marital_status",NA,"no_answer",0,0,0,0
+"28.4","males_3_5","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"28.5","males_3_5","marital_status",NA,"widowed",0.6,0.126755455924763,0.35156387154351,0.84843612845649
+"29.1","females_3_5","marital_status",NA,"divorced",0.5,0.144639213535093,0.21651235071902,0.78348764928098
+"29.2","females_3_5","marital_status",NA,"married",0.545,0.0529296525319674,0.441259787323125,0.648740212676875
+"29.3","females_3_5","marital_status",NA,"no_answer",0,0,0,0
+"29.4","females_3_5","marital_status",NA,"single",1,0.708584539916872,-0.388800178238953,2.38880017823895
+"29.5","females_3_5","marital_status",NA,"widowed",0.52,0.128267502904108,0.268600313921063,0.771399686078937
+"30.1","males_6_12","marital_status",NA,"divorced",0.75,0.208768722174654,0.340820823439229,1.15917917656077
+"30.2","males_6_12","marital_status",NA,"married",0.945,0.0672959491342121,0.813102363391505,1.0768976366085
+"30.3","males_6_12","marital_status",NA,"no_answer",1,0,1,1
+"30.4","males_6_12","marital_status",NA,"single",1.5,0.354292269958436,0.805599910880524,2.19440008911948
+"30.5","males_6_12","marital_status",NA,"widowed",1.04,0.2157078451911,0.617220392242703,1.4627796077573
+"31.1","females_6_12","marital_status",NA,"divorced",0.666666666666667,0.180396793913585,0.313095447669546,1.02023788566379
+"31.2","females_6_12","marital_status",NA,"married",0.86,0.0653436362240356,0.731928826382003,0.988071173617997
+"31.3","females_6_12","marital_status",NA,"no_answer",0,0,0,0
+"31.4","females_6_12","marital_status",NA,"single",0,0,0,0
+"31.5","females_6_12","marital_status",NA,"widowed",0.92,0.195713050986284,0.536409468762432,1.30359053123757
+"32.1","males_13_18","marital_status",NA,"divorced",0.583333333333333,0.219620991308522,0.152884100119646,1.01378256654702
+"32.2","males_13_18","marital_status",NA,"married",0.8,0.0736382654756304,0.655671651783765,0.944328348216235
+"32.3","males_13_18","marital_status",NA,"no_answer",0,0,0,0
+"32.4","males_13_18","marital_status",NA,"single",1,0.708584539916872,-0.388800178238953,2.38880017823895
+"32.5","males_13_18","marital_status",NA,"widowed",1.08,0.195713050986284,0.696409468762432,1.46359053123757
+"33.1","females_13_18","marital_status",NA,"divorced",0.5,0.186728421743318,0.134019018493091,0.865980981506909
+"33.2","females_13_18","marital_status",NA,"married",0.695,0.0672959491342121,0.563102363391505,0.826897636608495
+"33.3","females_13_18","marital_status",NA,"no_answer",2,0,2,2
+"33.4","females_13_18","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"33.5","females_13_18","marital_status",NA,"widowed",0.92,0.15953069247328,0.607325588323637,1.23267441167636
+"34.1","males_18_59","marital_status",NA,"divorced",1.08333333333333,0.275911910965689,0.542555924934961,1.62411074173171
+"34.2","males_18_59","marital_status",NA,"married",1.48,0.0779314149706685,1.32725723339324,1.63274276660676
+"34.3","males_18_59","marital_status",NA,"no_answer",2,0,2,2
+"34.4","males_18_59","marital_status",NA,"single",1.5,0.354292269958436,0.805599910880524,2.19440008911948
+"34.5","males_18_59","marital_status",NA,"widowed",1.36,0.282752756554047,0.805814780624647,1.91418521937535
+"35.1","females_18_59","marital_status",NA,"divorced",1.33333333333333,0.180396793913585,0.979762114336213,1.68690455233045
+"35.2","females_18_59","marital_status",NA,"married",1.335,0.0780336264819513,1.18205690251232,1.48794309748768
+"35.3","females_18_59","marital_status",NA,"no_answer",1,0,1,1
+"35.4","females_18_59","marital_status",NA,"single",1.5,0.354292269958436,0.805599910880524,2.19440008911948
+"35.5","females_18_59","marital_status",NA,"widowed",1.52,0.20532818918007,1.11756414419624,1.92243585580376
+"36.1","males_60_over","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"36.2","males_60_over","marital_status",NA,"married",0.135,0.024214004039642,0.0875414241607943,0.182458575839206
+"36.3","males_60_over","marital_status",NA,"no_answer",0,0,0,0
+"36.4","males_60_over","marital_status",NA,"single",0,0,0,0
+"36.5","males_60_over","marital_status",NA,"widowed",0.04,0.0392737415870029,-0.0369751190486585,0.116975119048659
+"37.1","females_60_over","marital_status",NA,"divorced",0.25,0.172155098570265,-0.0874177929526631,0.587417792952663
+"37.2","females_60_over","marital_status",NA,"married",0.18,0.0290087275858598,0.123143938694381,0.236856061305619
+"37.3","females_60_over","marital_status",NA,"no_answer",0,0,0,0
+"37.4","females_60_over","marital_status",NA,"single",0,0,0,0
+"37.5","females_60_over","marital_status",NA,"widowed",0.2,0.0801671893150672,0.0428751962006641,0.357124803799336
+"38.1","calc_boys_ed","marital_status",NA,"divorced",1.58333333333333,0.399761667723331,0.799814862195936,2.36685180447073
+"38.2","calc_boys_ed","marital_status",NA,"married",2.41,0.133355158604232,2.14862869198308,2.67137130801692
+"38.3","calc_boys_ed","marital_status",NA,"no_answer",1,0,1,1
+"38.4","calc_boys_ed","marital_status",NA,"single",3,0,3,3
+"38.5","calc_boys_ed","marital_status",NA,"widowed",2.72,0.35182346276787,2.03043868405881,3.40956131594119
+"39.1","calc_girls_ed","marital_status",NA,"divorced",1.66666666666667,0.379630102088733,0.922605339125487,2.41072799420785
+"39.2","calc_girls_ed","marital_status",NA,"married",2.1,0.127348236037086,1.85040204387261,2.34959795612739
+"39.3","calc_girls_ed","marital_status",NA,"no_answer",2,0,2,2
+"39.4","calc_girls_ed","marital_status",NA,"single",1.5,1.06287680987531,-0.583200267358429,3.58320026735843
+"39.5","calc_girls_ed","marital_status",NA,"widowed",2.36,0.329953971685389,1.71330209894069,3.00669790105931
+"40.1","calc_boys","marital_status",NA,"divorced",1.66666666666667,0.431230818235434,0.821469793901478,2.51186353943186
+"40.2","calc_boys","marital_status",NA,"married",2.885,0.150510011621574,2.59000579790901,3.17999420209099
+"40.3","calc_boys","marital_status",NA,"no_answer",2,0,2,2
+"40.4","calc_boys","marital_status",NA,"single",3.5,0.354292269958436,2.80559991088052,4.19440008911948
+"40.5","calc_boys","marital_status",NA,"widowed",3,0.349440676812072,2.31510885871504,3.68489114128496
+"41.1","calc_girls","marital_status",NA,"divorced",1.83333333333333,0.439241982617044,0.972434866905958,2.69423179976071
+"41.2","calc_girls","marital_status",NA,"married",2.55,0.136620906037573,2.28222794463113,2.81777205536887
+"41.3","calc_girls","marital_status",NA,"no_answer",2,0,2,2
+"41.4","calc_girls","marital_status",NA,"single",1.5,1.06287680987531,-0.583200267358429,3.58320026735843
+"41.5","calc_girls","marital_status",NA,"widowed",2.84,0.36597002415144,2.12271193324192,3.55728806675808
+"42.1","calc_5_and_under","marital_status",NA,"divorced",1,0.204550737432307,0.59908792162157,1.40091207837843
+"42.2","calc_5_and_under","marital_status",NA,"married",2.135,0.121016095613309,1.89781281104826,2.37218718895174
+"42.3","calc_5_and_under","marital_status",NA,"no_answer",1,0,1,1
+"42.4","calc_5_and_under","marital_status",NA,"single",2,0,2,2
+"42.5","calc_5_and_under","marital_status",NA,"widowed",1.88,0.242629941892852,1.40445405231896,2.35554594768104
+"43.1","calc_minors","marital_status",NA,"divorced",3.5,0.673258899181997,2.1804368053322,4.8195631946678
+"43.2","calc_minors","marital_status",NA,"married",5.435,0.23141306870659,4.98143871978319,5.88856128021681
+"43.3","calc_minors","marital_status",NA,"no_answer",4,0,4,4
+"43.4","calc_minors","marital_status",NA,"single",5,0.708584539916872,3.61119982176105,6.38880017823895
+"43.5","calc_minors","marital_status",NA,"widowed",5.84,0.604398937220945,4.65539985075266,7.02460014924734
+"44.1","calc_males","marital_status",NA,"divorced",2.83333333333333,0.498719886180762,1.85586031804512,3.81080634862154
+"44.2","calc_males","marital_status",NA,"married",4.5,0.196112852832304,4.11562587154328,4.88437412845672
+"44.3","calc_males","marital_status",NA,"no_answer",4,0,4,4
+"44.4","calc_males","marital_status",NA,"single",5,0,5,5
+"44.5","calc_males","marital_status",NA,"widowed",4.4,0.420400287432871,3.57603057754129,5.22396942245871
+"45.1","calc_females","marital_status",NA,"divorced",3.41666666666667,0.584055142184401,2.27193962299982,4.56139371033351
+"45.2","calc_females","marital_status",NA,"married",4.065,0.184106231840507,3.70415841626323,4.42584158373678
+"45.3","calc_females","marital_status",NA,"no_answer",3,0,3,3
+"45.4","calc_females","marital_status",NA,"single",3,1.41716907983374,0.222399643522095,5.77760035647791
+"45.5","calc_females","marital_status",NA,"widowed",4.56,0.491183524998677,3.59729798120317,5.52270201879684
+"46.1","calc_household","marital_status",NA,"divorced",6.25,0.884745982346089,4.51592973913516,7.98407026086484
+"46.2","calc_household","marital_status",NA,"married",8.565,0.337272657042169,7.90395773922722,9.22604226077278
+"46.3","calc_household","marital_status",NA,"no_answer",7,0,7,7
+"46.4","calc_household","marital_status",NA,"single",8,1.41716907983374,5.22239964352209,10.7776003564779
+"46.5","calc_household","marital_status",NA,"widowed",8.96,0.812580578559886,7.3673713314859,10.5526286685141
+"47.1","household_size","marital_status",NA,"divorced",6.25,0.884745982346089,4.51592973913516,7.98407026086484
+"47.2","household_size","marital_status",NA,"married",8.585,0.336430499764139,7.92560833716148,9.24439166283852
+"47.3","household_size","marital_status",NA,"no_answer",7,0,7,7
+"47.4","household_size","marital_status",NA,"single",8,1.41716907983374,5.22239964352209,10.7776003564779
+"47.5","household_size","marital_status",NA,"widowed",9,0.81558049763169,7.40149159814863,10.5985084018514
+"50.1","unaccompanied_minor","marital_status",NA,"divorced",0.166666666666667,0.152542920652092,-0.132311963907984,0.465645297241318
+"50.2","unaccompanied_minor","marital_status",NA,"married",0.164634146341463,0.0475734502461094,0.0713918972387809,0.257876395444146
+"50.3","unaccompanied_minor","marital_status",NA,"single",0,0,0,0
+"50.4","unaccompanied_minor","marital_status",NA,"widowed",0.0476190476190476,0.0465929261924874,-0.0437014096525606,0.138939504890656
+"51.1","orphan","marital_status",NA,"divorced",1,0.315046615410216,0.382519980344735,1.61748001965526
+"51.2","orphan","marital_status",NA,"married",0.461988304093567,0.0946199087770111,0.27653669067016,0.647439917516974
+"51.3","orphan","marital_status",NA,"single",0,0,0,0
+"51.4","orphan","marital_status",NA,"widowed",1,0.295307378704832,0.421208173369599,1.5787918266304
+"52.1","separated_minor","marital_status",NA,"divorced",0.666666666666667,0.305090022824888,0.068701209887384,1.26463212344595
+"52.2","separated_minor","marital_status",NA,"married",0.414634146341463,0.0696532751099774,0.278116235720647,0.551152056962279
+"52.3","separated_minor","marital_status",NA,"single",0,0,0,0
+"52.4","separated_minor","marital_status",NA,"widowed",0.7,0.225312648277198,0.258395324115352,1.14160467588465
+"53.1","chronic_ill","marital_status",NA,"divorced",0.5,0.292231177379936,-0.0727625828244115,1.07276258282441
+"53.2","chronic_ill","marital_status",NA,"married",0.474860335195531,0.0521213234486755,0.372704418409564,0.577016251981498
+"53.3","chronic_ill","marital_status",NA,"single",0,0,0,0
+"53.4","chronic_ill","marital_status",NA,"widowed",0.458333333333333,0.131795072355534,0.200019738176636,0.716646928490031
+"54.1","disabled","marital_status",NA,"divorced",0.222222222222222,0.138911038460657,-0.0500384102157236,0.494482854660168
+"54.2","disabled","marital_status",NA,"married",0.409090909090909,0.0511145280070201,0.308908275110386,0.509273543071432
+"54.3","disabled","marital_status",NA,"no_answer",1,0,1,1
+"54.4","disabled","marital_status",NA,"single",0,0,0,0
+"54.5","disabled","marital_status",NA,"widowed",0.347826086956522,0.0995486496478089,0.15271431893722,0.542937854975823
+"55.1","pregnant_lactating","marital_status",NA,"divorced",0.3,0.145261700177513,0.01529229931902,0.58470770068098
+"55.2","pregnant_lactating","marital_status",NA,"married",0.775862068965517,0.0571054501057294,0.663937443437339,0.887786694493696
+"55.3","pregnant_lactating","marital_status",NA,"single",0.5,0.354402259499656,-0.194615664658944,1.19461566465894
+"55.4","pregnant_lactating","marital_status",NA,"widowed",0.652173913043478,0.132317611285755,0.392836160403028,0.911511665683928
+"57.1","biggest_needs.food","marital_status",NA,"divorced",0.583333333333333,0.142616187839732,0.303810741555059,0.862855925111607
+"57.2","biggest_needs.food","marital_status",NA,"married",0.48,0.0354008722678153,0.410615565333779,0.549384434666221
+"57.3","biggest_needs.food","marital_status",NA,"no_answer",0,0,0,0
+"57.4","biggest_needs.food","marital_status",NA,"single",0,0,0,0
+"57.5","biggest_needs.food","marital_status",NA,"widowed",0.6,0.0981843539675071,0.407562202378354,0.792437797621646
+"58.1","biggest_needs.health_nutrition","marital_status",NA,"divorced",0.166666666666667,0.107807704558858,-0.0446325515246305,0.377965884857964
+"58.2","biggest_needs.health_nutrition","marital_status",NA,"married",0.46,0.0353156714890099,0.390782555791693,0.529217444208307
+"58.3","biggest_needs.health_nutrition","marital_status",NA,"no_answer",1,0,1,1
+"58.4","biggest_needs.health_nutrition","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"58.5","biggest_needs.health_nutrition","marital_status",NA,"widowed",0.44,0.0994848656516349,0.24501324631599,0.63498675368401
+"59.1","biggest_needs.water_sanitation","marital_status",NA,"divorced",0.583333333333333,0.142616187839732,0.30381074155506,0.862855925111607
+"59.2","biggest_needs.water_sanitation","marital_status",NA,"married",0.45,0.0352516357672631,0.38090806350004,0.51909193649996
+"59.3","biggest_needs.water_sanitation","marital_status",NA,"no_answer",0,0,0,0
+"59.4","biggest_needs.water_sanitation","marital_status",NA,"single",1,0,1,1
+"59.5","biggest_needs.water_sanitation","marital_status",NA,"widowed",0.56,0.0994848656516349,0.36501324631599,0.75498675368401
+"60.1","biggest_needs.livelihoods","marital_status",NA,"divorced",0.25,0.125261233304792,0.00449249406353769,0.495507505936462
+"60.2","biggest_needs.livelihoods","marital_status",NA,"married",0.23,0.0298195409240402,0.171554773753363,0.288445226246637
+"60.3","biggest_needs.livelihoods","marital_status",NA,"no_answer",1,0,1,1
+"60.4","biggest_needs.livelihoods","marital_status",NA,"single",0,0,0,0
+"60.5","biggest_needs.livelihoods","marital_status",NA,"widowed",0.08,0.054372033175446,-0.0265672267900911,0.186567226790091
+"61.1","biggest_needs.shelter","marital_status",NA,"divorced",0.333333333333333,0.136367158288204,0.06605861441438,0.600608052252287
+"61.2","biggest_needs.shelter","marital_status",NA,"married",0.265,0.0312721887752517,0.203707636282769,0.326292363717231
+"61.3","biggest_needs.shelter","marital_status",NA,"no_answer",0,0,0,0
+"61.4","biggest_needs.shelter","marital_status",NA,"single",0,0,0,0
+"61.5","biggest_needs.shelter","marital_status",NA,"widowed",0.36,0.0962006271780806,0.171450235440797,0.548549764559203
+"62.1","biggest_needs.nfis","marital_status",NA,"divorced",0,0,0,0
+"62.2","biggest_needs.nfis","marital_status",NA,"married",0.035,0.0130223496327721,0.00947666372567833,0.0605233362743217
+"62.3","biggest_needs.nfis","marital_status",NA,"no_answer",0,0,0,0
+"62.4","biggest_needs.nfis","marital_status",NA,"single",0,0,0,0
+"62.5","biggest_needs.nfis","marital_status",NA,"widowed",0.04,0.0392737415870029,-0.0369751190486585,0.116975119048659
+"63.1","biggest_needs.education","marital_status",NA,"divorced",0.5,0.144639213535093,0.21651235071902,0.78348764928098
+"63.2","biggest_needs.education","marital_status",NA,"married",0.545,0.0352854468797871,0.475841794937216,0.614158205062784
+"63.3","biggest_needs.education","marital_status",NA,"no_answer",0,0,0,0
+"63.4","biggest_needs.education","marital_status",NA,"single",1,0,1,1
+"63.5","biggest_needs.education","marital_status",NA,"widowed",0.48,0.100128787361964,0.283751182954881,0.676248817045119
+"64.1","biggest_needs.protection","marital_status",NA,"divorced",0.166666666666667,0.107807704558858,-0.0446325515246305,0.377965884857964
+"64.2","biggest_needs.protection","marital_status",NA,"married",0.045,0.0146892497622379,0.0162095995061002,0.0737904004938998
+"64.3","biggest_needs.protection","marital_status",NA,"no_answer",0,0,0,0
+"64.4","biggest_needs.protection","marital_status",NA,"single",0,0,0,0
+"64.5","biggest_needs.protection","marital_status",NA,"widowed",0.04,0.0392737415870028,-0.0369751190486585,0.116975119048659
+"65.1","biggest_needs.other","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"65.2","biggest_needs.other","marital_status",NA,"married",0.055,0.0161543289274496,0.0233380971077853,0.0866619028922147
+"65.3","biggest_needs.other","marital_status",NA,"no_answer",0,0,0,0
+"65.4","biggest_needs.other","marital_status",NA,"single",0,0,0,0
+"65.5","biggest_needs.other","marital_status",NA,"widowed",0,0,0,0
+"66.1","biggest_needs.none","marital_status",NA,"divorced",0,0,0,0
+"66.2","biggest_needs.none","marital_status",NA,"married",0.005,0.00499790751194016,-0.00479571872146491,0.0147957187214649
+"66.3","biggest_needs.none","marital_status",NA,"no_answer",0,0,0,0
+"66.4","biggest_needs.none","marital_status",NA,"single",0,0,0,0
+"66.5","biggest_needs.none","marital_status",NA,"widowed",0,0,0,0
+"92.1","uasc_prot_services","marital_status",NA,"divorced",0.333333333333333,0.2738001694628,-0.203305137774718,0.869971804441385
+"92.2","uasc_prot_services","marital_status",NA,"married",0.17910447761194,0.0668981662220588,0.0479864811849311,0.31022247403895
+"92.3","uasc_prot_services","marital_status",NA,"widowed",0,0,0,0
+"93.1","family_reunion","marital_status",NA,"divorced",0,0,0,0
+"93.2","family_reunion","marital_status",NA,"married",0.355555555555556,0.119291461030944,0.121748588271743,0.589362522839368
+"93.3","family_reunion","marital_status",NA,"widowed",0.2,0.127615493909299,-0.0501217719315162,0.450121771931516
+"100.1","insecurity_reasons.attack_host","marital_status",NA,"divorced",0,0,0,0
+"100.2","insecurity_reasons.attack_host","marital_status",NA,"married",0.233644859813084,0.0410693521316342,0.153150408766688,0.31413931085948
+"100.3","insecurity_reasons.attack_host","marital_status",NA,"single",0,0,0,0
+"100.4","insecurity_reasons.attack_host","marital_status",NA,"widowed",0.2,0.103688585443735,-0.0032258930776248,0.403225893077625
+"102.1","insecurity_reasons.harassment_host","marital_status",NA,"divorced",0.25,0.21736380519655,-0.176025229727818,0.676025229727818
+"102.2","insecurity_reasons.harassment_host","marital_status",NA,"married",0.121495327102804,0.0317085603466248,0.0593476908218042,0.183642963383803
+"102.3","insecurity_reasons.harassment_host","marital_status",NA,"single",0,0,0,0
+"102.4","insecurity_reasons.harassment_host","marital_status",NA,"widowed",0.0666666666666667,0.0646611936082821,-0.0600669440029377,0.193400277336271
+"103.1","insecurity_reasons.sexual_violence","marital_status",NA,"divorced",0.25,0.21736380519655,-0.176025229727818,0.676025229727818
+"103.2","insecurity_reasons.sexual_violence","marital_status",NA,"married",0.149532710280374,0.0346115946500501,0.0816952313187765,0.217370189241971
+"103.3","insecurity_reasons.sexual_violence","marital_status",NA,"single",0,0,0,0
+"103.4","insecurity_reasons.sexual_violence","marital_status",NA,"widowed",0.266666666666667,0.114632044319859,0.0419919883255445,0.491341345007789
+"104.1","insecurity_reasons.abduction","marital_status",NA,"divorced",0,0,0,0
+"104.2","insecurity_reasons.abduction","marital_status",NA,"married",0.0280373831775701,0.0160220550060982,-0.00336526759270209,0.0594400339478423
+"104.3","insecurity_reasons.abduction","marital_status",NA,"single",0,0,0,0
+"104.4","insecurity_reasons.abduction","marital_status",NA,"widowed",0,0,0,0
+"105.1","insecurity_reasons.forced_recruitment","marital_status",NA,"divorced",0,0,0,0
+"105.2","insecurity_reasons.forced_recruitment","marital_status",NA,"married",0.00934579439252336,0.00933885976636075,-0.00895803440621384,0.0276496231912606
+"105.3","insecurity_reasons.forced_recruitment","marital_status",NA,"single",0,0,0,0
+"105.4","insecurity_reasons.forced_recruitment","marital_status",NA,"widowed",0,0,0,0
+"106.1","insecurity_reasons.cattle_raid","marital_status",NA,"divorced",0.75,0.21736380519655,0.323974770272182,1.17602522972782
+"106.2","insecurity_reasons.cattle_raid","marital_status",NA,"married",0.177570093457944,0.0370901899889547,0.104874656899845,0.250265530016043
+"106.3","insecurity_reasons.cattle_raid","marital_status",NA,"single",1,0,1,1
+"106.4","insecurity_reasons.cattle_raid","marital_status",NA,"widowed",0.266666666666667,0.114632044319859,0.0419919883255445,0.491341345007789
+"107.1","insecurity_reasons.early_marriage","marital_status",NA,"divorced",0,0,0,0
+"107.2","insecurity_reasons.early_marriage","marital_status",NA,"married",0.168224299065421,0.0363054795205063,0.0970668667637718,0.239381731367069
+"107.3","insecurity_reasons.early_marriage","marital_status",NA,"single",0,0,0,0
+"107.4","insecurity_reasons.early_marriage","marital_status",NA,"widowed",0.266666666666667,0.114632044319859,0.0419919883255445,0.491341345007789
+"108.1","insecurity_reasons.other","marital_status",NA,"divorced",0.25,0.21736380519655,-0.176025229727818,0.676025229727818
+"108.2","insecurity_reasons.other","marital_status",NA,"married",0.504672897196262,0.0485261388002928,0.409563412838896,0.599782381553627
+"108.3","insecurity_reasons.other","marital_status",NA,"single",1,0,1,1
+"108.4","insecurity_reasons.other","marital_status",NA,"widowed",0.666666666666667,0.12219816983151,0.427162654820199,0.906170678513134
+"109.1","insecurity_reasons.none","marital_status",NA,"divorced",0,0,0,0
+"109.2","insecurity_reasons.none","marital_status",NA,"married",0.0373831775700935,0.0184115151404053,0.00129727099408524,0.0734690841461017
+"109.3","insecurity_reasons.none","marital_status",NA,"single",0,0,0,0
+"109.4","insecurity_reasons.none","marital_status",NA,"widowed",0,0,0,0
+"110.1","insecurity_reasons.no_answer","marital_status",NA,"divorced",0,0,0,0
+"110.2","insecurity_reasons.no_answer","marital_status",NA,"married",0.0280373831775701,0.0160220550060982,-0.00336526759270205,0.0594400339478422
+"110.3","insecurity_reasons.no_answer","marital_status",NA,"single",0,0,0,0
+"110.4","insecurity_reasons.no_answer","marital_status",NA,"widowed",0,0,0,0
+"113.1","security_provider.police","marital_status",NA,"divorced",0.5,0.144639213535093,0.21651235071902,0.78348764928098
+"113.2","security_provider.police","marital_status",NA,"married",0.585,0.0349135213763292,0.516570755528925,0.653429244471075
+"113.3","security_provider.police","marital_status",NA,"no_answer",0,0,0,0
+"113.4","security_provider.police","marital_status",NA,"single",1,0,1,1
+"113.5","security_provider.police","marital_status",NA,"widowed",0.48,0.100128787361964,0.283751182954881,0.676248817045119
+"114.1","security_provider.local_government","marital_status",NA,"divorced",0.666666666666667,0.136367158288204,0.399391947747713,0.93394138558562
+"114.2","security_provider.local_government","marital_status",NA,"married",0.72,0.0318153669352054,0.657643026652071,0.782356973347929
+"114.3","security_provider.local_government","marital_status",NA,"no_answer",1,0,1,1
+"114.4","security_provider.local_government","marital_status",NA,"single",1,0,1,1
+"114.5","security_provider.local_government","marital_status",NA,"widowed",0.76,0.0855951353562381,0.592236617449942,0.927763382550058
+"115.1","security_provider.opm","marital_status",NA,"divorced",0,0,0,0
+"115.2","security_provider.opm","marital_status",NA,"married",0.01,0.00705032715345261,-0.00381838729999192,0.0238183872999919
+"115.3","security_provider.opm","marital_status",NA,"no_answer",0,0,0,0
+"115.4","security_provider.opm","marital_status",NA,"single",0,0,0,0
+"115.5","security_provider.opm","marital_status",NA,"widowed",0,0,0,0
+"118.1","security_provider.community_group","marital_status",NA,"divorced",0.416666666666667,0.142616187839732,0.137144074888393,0.69618925844494
+"118.2","security_provider.community_group","marital_status",NA,"married",0.375,0.0343042015309761,0.307765000480883,0.442234999519117
+"118.3","security_provider.community_group","marital_status",NA,"no_answer",0,0,0,0
+"118.4","security_provider.community_group","marital_status",NA,"single",0,0,0,0
+"118.5","security_provider.community_group","marital_status",NA,"widowed",0.6,0.0981843539675071,0.407562202378354,0.792437797621646
+"119.1","security_provider.other","marital_status",NA,"divorced",0,0,0,0
+"119.2","security_provider.other","marital_status",NA,"married",0.005,0.00499790751194016,-0.00479571872146491,0.0147957187214649
+"119.3","security_provider.other","marital_status",NA,"no_answer",0,0,0,0
+"119.4","security_provider.other","marital_status",NA,"single",0,0,0,0
+"119.5","security_provider.other","marital_status",NA,"widowed",0,0,0,0
+"120.1","security_provider.none","marital_status",NA,"divorced",0,0,0,0
+"120.2","security_provider.none","marital_status",NA,"married",0.01,0.00705032715345261,-0.00381838729999191,0.0238183872999919
+"120.3","security_provider.none","marital_status",NA,"no_answer",0,0,0,0
+"120.4","security_provider.none","marital_status",NA,"single",0,0,0,0
+"120.5","security_provider.none","marital_status",NA,"widowed",0,0,0,0
+"130.1","other_water_sources.borehole","marital_status",NA,"divorced",0,0,0,0
+"130.2","other_water_sources.borehole","marital_status",NA,"married",0.085,0.0197611257789178,0.0462689051793551,0.123731094820645
+"130.3","other_water_sources.borehole","marital_status",NA,"no_answer",0,0,0,0
+"130.4","other_water_sources.borehole","marital_status",NA,"single",0,0,0,0
+"130.5","other_water_sources.borehole","marital_status",NA,"widowed",0.08,0.054372033175446,-0.0265672267900912,0.186567226790091
+"131.1","other_water_sources.protected_well","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"131.2","other_water_sources.protected_well","marital_status",NA,"married",0.06,0.0168279504491186,0.0270178231861029,0.0929821768138971
+"131.3","other_water_sources.protected_well","marital_status",NA,"no_answer",0,0,0,0
+"131.4","other_water_sources.protected_well","marital_status",NA,"single",0,0,0,0
+"131.5","other_water_sources.protected_well","marital_status",NA,"widowed",0,0,0,0
+"132.1","other_water_sources.protected_spring","marital_status",NA,"divorced",0,0,0,0
+"132.2","other_water_sources.protected_spring","marital_status",NA,"married",0.015,0.00861301923940787,-0.00188120750738999,0.03188120750739
+"132.3","other_water_sources.protected_spring","marital_status",NA,"no_answer",0,0,0,0
+"132.4","other_water_sources.protected_spring","marital_status",NA,"single",0,0,0,0
+"132.5","other_water_sources.protected_spring","marital_status",NA,"widowed",0,0,0,0
+"133.1","other_water_sources.protected_rainwater_tank","marital_status",NA,"divorced",0,0,0,0
+"133.2","other_water_sources.protected_rainwater_tank","marital_status",NA,"married",0.005,0.00499790751194016,-0.00479571872146491,0.0147957187214649
+"133.3","other_water_sources.protected_rainwater_tank","marital_status",NA,"no_answer",0,0,0,0
+"133.4","other_water_sources.protected_rainwater_tank","marital_status",NA,"single",0,0,0,0
+"133.5","other_water_sources.protected_rainwater_tank","marital_status",NA,"widowed",0,0,0,0
+"134.1","other_water_sources.unprotected_well","marital_status",NA,"divorced",0.5,0.144639213535093,0.21651235071902,0.78348764928098
+"134.2","other_water_sources.unprotected_well","marital_status",NA,"married",0.155,0.0256440063711096,0.104738671093309,0.205261328906691
+"134.3","other_water_sources.unprotected_well","marital_status",NA,"no_answer",0,0,0,0
+"134.4","other_water_sources.unprotected_well","marital_status",NA,"single",0,0,0,0
+"134.5","other_water_sources.unprotected_well","marital_status",NA,"widowed",0.04,0.0392737415870028,-0.0369751190486585,0.116975119048659
+"135.1","other_water_sources.unprotected_spring","marital_status",NA,"divorced",0,0,0,0
+"135.2","other_water_sources.unprotected_spring","marital_status",NA,"married",0.045,0.0146892497622379,0.0162095995061002,0.0737904004938998
+"135.3","other_water_sources.unprotected_spring","marital_status",NA,"no_answer",0,0,0,0
+"135.4","other_water_sources.unprotected_spring","marital_status",NA,"single",0,0,0,0
+"135.5","other_water_sources.unprotected_spring","marital_status",NA,"widowed",0,0,0,0
+"136.1","other_water_sources.surface_water","marital_status",NA,"divorced",0.333333333333333,0.136367158288204,0.0660586144143801,0.600608052252287
+"136.2","other_water_sources.surface_water","marital_status",NA,"married",0.375,0.0343042015309761,0.307765000480883,0.442234999519117
+"136.3","other_water_sources.surface_water","marital_status",NA,"no_answer",0,0,0,0
+"136.4","other_water_sources.surface_water","marital_status",NA,"single",1,0,1,1
+"136.5","other_water_sources.surface_water","marital_status",NA,"widowed",0.4,0.0981843539675072,0.207562202378354,0.592437797621646
+"137.1","other_water_sources.unprotected_rainwater_tank","marital_status",NA,"divorced",0,0,0,0
+"137.2","other_water_sources.unprotected_rainwater_tank","marital_status",NA,"married",0.01,0.00705032715345261,-0.00381838729999191,0.0238183872999919
+"137.3","other_water_sources.unprotected_rainwater_tank","marital_status",NA,"no_answer",0,0,0,0
+"137.4","other_water_sources.unprotected_rainwater_tank","marital_status",NA,"single",0,0,0,0
+"137.5","other_water_sources.unprotected_rainwater_tank","marital_status",NA,"widowed",0,0,0,0
+"140.1","other_water_sources.water_truck","marital_status",NA,"divorced",0,0,0,0
+"140.2","other_water_sources.water_truck","marital_status",NA,"married",0.04,0.013885364499369,0.0127851856690257,0.0672148143309743
+"140.3","other_water_sources.water_truck","marital_status",NA,"no_answer",0,0,0,0
+"140.4","other_water_sources.water_truck","marital_status",NA,"single",0,0,0,0
+"140.5","other_water_sources.water_truck","marital_status",NA,"widowed",0,0,0,0
+"141.1","other_water_sources.other","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"141.2","other_water_sources.other","marital_status",NA,"married",0.04,0.0138853644993689,0.0127851856690259,0.0672148143309741
+"141.3","other_water_sources.other","marital_status",NA,"no_answer",0,0,0,0
+"141.4","other_water_sources.other","marital_status",NA,"single",0,0,0,0
+"141.5","other_water_sources.other","marital_status",NA,"widowed",0.08,0.054372033175446,-0.0265672267900911,0.186567226790091
+"142.1","other_water_sources.none","marital_status",NA,"divorced",0,0,0,0
+"142.2","other_water_sources.none","marital_status",NA,"married",0.215,0.0291102363051313,0.157944985260492,0.272055014739508
+"142.3","other_water_sources.none","marital_status",NA,"no_answer",1,0,1,1
+"142.4","other_water_sources.none","marital_status",NA,"single",0,0,0,0
+"142.5","other_water_sources.none","marital_status",NA,"widowed",0.48,0.100128787361964,0.283751182954881,0.676248817045119
+"147.1","water_coping.reduce_drinking","marital_status",NA,"divorced",0.25,0.217776193805097,-0.176833496548205,0.676833496548205
+"147.2","water_coping.reduce_drinking","marital_status",NA,"married",0.0428571428571429,0.0243495383354535,-0.00486707532052338,0.0905813610348091
+"147.3","water_coping.reduce_drinking","marital_status",NA,"no_answer",0,0,0,0
+"147.4","water_coping.reduce_drinking","marital_status",NA,"single",1,0,1,1
+"147.5","water_coping.reduce_drinking","marital_status",NA,"widowed",0,0,0,0
+"148.1","water_coping.reduce_bathing","marital_status",NA,"divorced",0.25,0.217776193805097,-0.176833496548205,0.676833496548205
+"148.2","water_coping.reduce_bathing","marital_status",NA,"married",0.471428571428571,0.0600137182053807,0.353803845167689,0.589053297689453
+"148.3","water_coping.reduce_bathing","marital_status",NA,"no_answer",1,0,1,1
+"148.4","water_coping.reduce_bathing","marital_status",NA,"single",1,0,1,1
+"148.5","water_coping.reduce_bathing","marital_status",NA,"widowed",0.3,0.14576370886997,0.014308380361877,0.585691619638123
+"149.1","water_coping.spend_money","marital_status",NA,"divorced",0.25,0.217776193805097,-0.176833496548205,0.676833496548205
+"149.2","water_coping.spend_money","marital_status",NA,"married",0.114285714285714,0.038250185087593,0.039316729112041,0.189254699459388
+"149.3","water_coping.spend_money","marital_status",NA,"no_answer",0,0,0,0
+"149.4","water_coping.spend_money","marital_status",NA,"single",0,0,0,0
+"149.5","water_coping.spend_money","marital_status",NA,"widowed",0.1,0.0954247470677349,-0.0870290674866044,0.287029067486604
+"150.1","water_coping.further_water_point","marital_status",NA,"divorced",0.25,0.217776193805097,-0.176833496548205,0.676833496548205
+"150.2","water_coping.further_water_point","marital_status",NA,"married",0.528571428571429,0.0600137182053807,0.410946702310547,0.646196154832311
+"150.3","water_coping.further_water_point","marital_status",NA,"no_answer",0,0,0,0
+"150.4","water_coping.further_water_point","marital_status",NA,"single",0,0,0,0
+"150.5","water_coping.further_water_point","marital_status",NA,"widowed",0.6,0.155827959433397,0.294582811726173,0.905417188273827
+"152.1","water_coping.use_non_drinking_water","marital_status",NA,"divorced",0,0,0,0
+"152.2","water_coping.use_non_drinking_water","marital_status",NA,"married",0.0142857142857143,0.014266493672522,-0.0136760994980975,0.0422475280695261
+"152.3","water_coping.use_non_drinking_water","marital_status",NA,"no_answer",0,0,0,0
+"152.4","water_coping.use_non_drinking_water","marital_status",NA,"single",0,0,0,0
+"152.5","water_coping.use_non_drinking_water","marital_status",NA,"widowed",0.1,0.0954247470677348,-0.0870290674866044,0.287029067486604
+"153.1","water_coping.other","marital_status",NA,"divorced",0,0,0,0
+"153.2","water_coping.other","marital_status",NA,"married",0.0142857142857143,0.014266493672522,-0.0136760994980975,0.042247528069526
+"153.3","water_coping.other","marital_status",NA,"no_answer",0,0,0,0
+"153.4","water_coping.other","marital_status",NA,"single",0,0,0,0
+"153.5","water_coping.other","marital_status",NA,"widowed",0,0,0,0
+"154.1","water_coping.none","marital_status",NA,"divorced",0,0,0,0
+"154.2","water_coping.none","marital_status",NA,"married",0.0571428571428571,0.0279058121344499,0.00244847039999457,0.11183724388572
+"154.3","water_coping.none","marital_status",NA,"no_answer",0,0,0,0
+"154.4","water_coping.none","marital_status",NA,"single",0,0,0,0
+"154.5","water_coping.none","marital_status",NA,"widowed",0.1,0.0954247470677349,-0.0870290674866044,0.287029067486604
+"169.1","collect_water","marital_status",NA,"divorced",7,0,7,7
+"169.2","collect_water","marital_status",NA,"married",6.5,0.100398066617167,6.3032234053129,6.6967765946871
+"169.3","collect_water","marital_status",NA,"no_answer",7,0,7,7
+"169.4","collect_water","marital_status",NA,"single",7,0,7,7
+"169.5","collect_water","marital_status",NA,"widowed",6.36,0.353473034955537,5.66720558198108,7.05279441801892
+"170.1","containers","marital_status",NA,"divorced",4.16666666666667,0.716738830656924,2.76188437225774,5.57144896107559
+"170.2","containers","marital_status",NA,"married",4.055,0.173016191469065,3.71589449597835,4.39410550402165
+"170.3","containers","marital_status",NA,"no_answer",3,0,3,3
+"170.4","containers","marital_status",NA,"single",5,0.708584539916872,3.61119982176105,6.38880017823895
+"170.5","containers","marital_status",NA,"widowed",4.44,0.471148512150991,3.51656588481443,5.36343411518557
+"171.1","water_total","marital_status",NA,"divorced",116,17.8873742901471,80.9413906133239,151.058609386676
+"171.2","water_total","marital_status",NA,"married",138.865,6.28788305769758,126.540975667913,151.189024332087
+"171.3","water_total","marital_status",NA,"no_answer",120,0,120,120
+"171.4","water_total","marital_status",NA,"single",130,7.08584539916872,116.11199821761,143.88800178239
+"171.5","water_total","marital_status",NA,"widowed",161.2,16.3467366517963,129.160984897718,193.239015102282
+"172.1","loop_position_count","marital_status",NA,"divorced",4.16666666666667,0.716738830656924,2.76188437225774,5.57144896107559
+"172.2","loop_position_count","marital_status",NA,"married",4.055,0.173016191469065,3.71589449597835,4.39410550402165
+"172.3","loop_position_count","marital_status",NA,"no_answer",3,0,3,3
+"172.4","loop_position_count","marital_status",NA,"single",5,0.708584539916872,3.61119982176105,6.38880017823895
+"172.5","loop_position_count","marital_status",NA,"widowed",4.44,0.471148512150991,3.51656588481443,5.36343411518557
+"174.1","water_days_last","marital_status",NA,"divorced",1,0,1,1
+"174.2","water_days_last","marital_status",NA,"married",1.105,0.0268865585244505,1.05230331362385,1.15769668637615
+"174.3","water_days_last","marital_status",NA,"no_answer",1,0,1,1
+"174.4","water_days_last","marital_status",NA,"single",1,0,1,1
+"174.5","water_days_last","marital_status",NA,"widowed",1.4,0.247091872196232,0.915708829622811,1.88429117037719
+"175.1","water_pppd","marital_status",NA,"divorced",23.3271728271728,3.61124991366252,16.2492530572209,30.4050925971248
+"175.2","water_pppd","marital_status",NA,"married",16.7542892285182,0.562290073611461,15.6522209353754,17.856357521661
+"175.3","water_pppd","marital_status",NA,"no_answer",17.1428571428571,0,17.1428571428571,17.1428571428571
+"175.4","water_pppd","marital_status",NA,"single",17.6666666666667,4.01556478423627,9.79630431197623,25.5370290213571
+"175.5","water_pppd","marital_status",NA,"widowed",17.052662037037,1.349137849291,14.4084004422468,19.6969236318272
+"183.1","latrine_access_problem.facility_distance","marital_status",NA,"divorced",0,0,0,0
+"183.2","latrine_access_problem.facility_distance","marital_status",NA,"married",0.0666666666666667,0.0663883077612873,-0.0634520255400175,0.196785358873351
+"186.1","latrine_access_problem.unclean_unhygenic","marital_status",NA,"divorced",0,0,0,0
+"186.2","latrine_access_problem.unclean_unhygenic","marital_status",NA,"married",0.0666666666666667,0.0663883077612873,-0.0634520255400174,0.196785358873351
+"188.1","latrine_access_problem.unsafe","marital_status",NA,"divorced",0,0,0,0
+"188.2","latrine_access_problem.unsafe","marital_status",NA,"married",0.133333333333333,0.0904720132703213,-0.0439885542853261,0.310655220951993
+"189.1","latrine_access_problem.cesspit_full","marital_status",NA,"divorced",0.5,0.364434493427831,-0.214278481842648,1.21427848184265
+"189.2","latrine_access_problem.cesspit_full","marital_status",NA,"married",0,0,0,0
+"192.1","latrine_access_problem.damaged_structure","marital_status",NA,"divorced",0,0,0,0
+"192.2","latrine_access_problem.damaged_structure","marital_status",NA,"married",0.266666666666667,0.117693890461025,0.0359908801626546,0.497342453170679
+"193.1","latrine_access_problem.other","marital_status",NA,"divorced",0.5,0.364434493427831,-0.214278481842648,1.21427848184265
+"193.2","latrine_access_problem.other","marital_status",NA,"married",0.533333333333333,0.132776615522575,0.273095948919965,0.793570717746702
+"206.1","handwash_occasions.dirty_hands","marital_status",NA,"divorced",0.75,0.125261233304792,0.504492494063538,0.995507505936462
+"206.2","handwash_occasions.dirty_hands","marital_status",NA,"married",0.645,0.0339067142608441,0.578544061214655,0.711455938785345
+"206.3","handwash_occasions.dirty_hands","marital_status",NA,"no_answer",1,0,1,1
+"206.4","handwash_occasions.dirty_hands","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"206.5","handwash_occasions.dirty_hands","marital_status",NA,"widowed",0.68,0.0934902048882226,0.496762565511813,0.863237434488187
+"207.1","handwash_occasions.before_cooking","marital_status",NA,"divorced",0.333333333333333,0.136367158288204,0.0660586144143801,0.600608052252287
+"207.2","handwash_occasions.before_cooking","marital_status",NA,"married",0.265,0.0312721887752517,0.203707636282769,0.326292363717231
+"207.3","handwash_occasions.before_cooking","marital_status",NA,"no_answer",0,0,0,0
+"207.4","handwash_occasions.before_cooking","marital_status",NA,"single",0,0,0,0
+"207.5","handwash_occasions.before_cooking","marital_status",NA,"widowed",0.2,0.0801671893150672,0.0428751962006641,0.357124803799336
+"208.1","handwash_occasions.after_defecating","marital_status",NA,"divorced",0.916666666666667,0.0799523335446662,0.759962972439187,1.07337036089415
+"208.2","handwash_occasions.after_defecating","marital_status",NA,"married",0.795,0.0286056728434843,0.738933911473235,0.851066088526765
+"208.3","handwash_occasions.after_defecating","marital_status",NA,"no_answer",1,0,1,1
+"208.4","handwash_occasions.after_defecating","marital_status",NA,"single",1,0,1,1
+"208.5","handwash_occasions.after_defecating","marital_status",NA,"widowed",0.6,0.0981843539675071,0.407562202378354,0.792437797621646
+"209.1","handwash_occasions.before_eating","marital_status",NA,"divorced",0.833333333333333,0.107807704558858,0.622034115142036,1.04463255152463
+"209.2","handwash_occasions.before_eating","marital_status",NA,"married",0.875,0.0234342309435646,0.829069751345219,0.920930248654781
+"209.3","handwash_occasions.before_eating","marital_status",NA,"no_answer",1,0,1,1
+"209.4","handwash_occasions.before_eating","marital_status",NA,"single",1,0,1,1
+"209.5","handwash_occasions.before_eating","marital_status",NA,"widowed",1,0,1,1
+"210.1","handwash_occasions.after_eating","marital_status",NA,"divorced",0.416666666666667,0.142616187839732,0.137144074888393,0.69618925844494
+"210.2","handwash_occasions.after_eating","marital_status",NA,"married",0.735,0.0312721887752517,0.673707636282769,0.796292363717231
+"210.3","handwash_occasions.after_eating","marital_status",NA,"no_answer",0,0,0,0
+"210.4","handwash_occasions.after_eating","marital_status",NA,"single",0,0,0,0
+"210.5","handwash_occasions.after_eating","marital_status",NA,"widowed",0.88,0.0651281324787328,0.75235120596133,1.00764879403867
+"211.1","handwash_occasions.before_feeding_baby","marital_status",NA,"divorced",0.166666666666667,0.107807704558858,-0.0446325515246305,0.377965884857964
+"211.2","handwash_occasions.before_feeding_baby","marital_status",NA,"married",0.07,0.0180793231257752,0.0345651778086184,0.105434822191382
+"211.3","handwash_occasions.before_feeding_baby","marital_status",NA,"no_answer",0,0,0,0
+"211.4","handwash_occasions.before_feeding_baby","marital_status",NA,"single",0,0,0,0
+"211.5","handwash_occasions.before_feeding_baby","marital_status",NA,"widowed",0,0,0,0
+"212.1","handwash_occasions.after_cleaning_baby","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"212.2","handwash_occasions.after_cleaning_baby","marital_status",NA,"married",0.065,0.0174684413590522,0.0307624840702077,0.0992375159297923
+"212.3","handwash_occasions.after_cleaning_baby","marital_status",NA,"no_answer",0,0,0,0
+"212.4","handwash_occasions.after_cleaning_baby","marital_status",NA,"single",0,0,0,0
+"212.5","handwash_occasions.after_cleaning_baby","marital_status",NA,"widowed",0,0,0,0
+"213.1","handwash_occasions.before_praying","marital_status",NA,"divorced",0,0,0,0
+"213.2","handwash_occasions.before_praying","marital_status",NA,"married",0.005,0.00499790751194016,-0.00479571872146491,0.0147957187214649
+"213.3","handwash_occasions.before_praying","marital_status",NA,"no_answer",0,0,0,0
+"213.4","handwash_occasions.before_praying","marital_status",NA,"single",0,0,0,0
+"213.5","handwash_occasions.before_praying","marital_status",NA,"widowed",0,0,0,0
+"216.1","handwash_occasions.other","marital_status",NA,"divorced",0,0,0,0
+"216.2","handwash_occasions.other","marital_status",NA,"married",0.075,0.0186635034179716,0.0384202054754355,0.111579794524564
+"216.3","handwash_occasions.other","marital_status",NA,"no_answer",0,0,0,0
+"216.4","handwash_occasions.other","marital_status",NA,"single",0,0,0,0
+"216.5","handwash_occasions.other","marital_status",NA,"widowed",0.08,0.054372033175446,-0.0265672267900911,0.186567226790091
+"221.1","primary_livelihoods.agriculture","marital_status",NA,"divorced",1,0,1,1
+"221.2","primary_livelihoods.agriculture","marital_status",NA,"married",0.965,0.0130223496327721,0.939476663725678,0.990523336274322
+"221.3","primary_livelihoods.agriculture","marital_status",NA,"no_answer",1,0,1,1
+"221.4","primary_livelihoods.agriculture","marital_status",NA,"single",1,0,1,1
+"221.5","primary_livelihoods.agriculture","marital_status",NA,"widowed",0.92,0.054372033175446,0.813432773209909,1.02656722679009
+"222.1","primary_livelihoods.livestock","marital_status",NA,"divorced",0,0,0,0
+"222.2","primary_livelihoods.livestock","marital_status",NA,"married",0.1,0.0212575361975062,0.0583359946528313,0.141664005347169
+"222.3","primary_livelihoods.livestock","marital_status",NA,"no_answer",0,0,0,0
+"222.4","primary_livelihoods.livestock","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"222.5","primary_livelihoods.livestock","marital_status",NA,"widowed",0.12,0.0651281324787328,-0.00764879403866955,0.24764879403867
+"223.1","primary_livelihoods.fishery","marital_status",NA,"divorced",0,0,0,0
+"223.2","primary_livelihoods.fishery","marital_status",NA,"married",0.02,0.00992018355883618,0.000556797504654715,0.0394432024953453
+"223.3","primary_livelihoods.fishery","marital_status",NA,"no_answer",0,0,0,0
+"223.4","primary_livelihoods.fishery","marital_status",NA,"single",0,0,0,0
+"223.5","primary_livelihoods.fishery","marital_status",NA,"widowed",0.04,0.0392737415870028,-0.0369751190486585,0.116975119048659
+"224.1","primary_livelihoods.trade","marital_status",NA,"divorced",0,0,0,0
+"224.2","primary_livelihoods.trade","marital_status",NA,"married",0.03,0.01208754675734,0.00630884369416979,0.0536911563058302
+"224.3","primary_livelihoods.trade","marital_status",NA,"no_answer",0,0,0,0
+"224.4","primary_livelihoods.trade","marital_status",NA,"single",0,0,0,0
+"224.5","primary_livelihoods.trade","marital_status",NA,"widowed",0,0,0,0
+"225.1","primary_livelihoods.remittance","marital_status",NA,"divorced",0,0,0,0
+"225.2","primary_livelihoods.remittance","marital_status",NA,"married",0.01,0.00705032715345261,-0.0038183872999919,0.0238183872999919
+"225.3","primary_livelihoods.remittance","marital_status",NA,"no_answer",0,0,0,0
+"225.4","primary_livelihoods.remittance","marital_status",NA,"single",0,0,0,0
+"225.5","primary_livelihoods.remittance","marital_status",NA,"widowed",0.08,0.054372033175446,-0.0265672267900911,0.186567226790091
+"226.1","primary_livelihoods.salary","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"226.2","primary_livelihoods.salary","marital_status",NA,"married",0.05,0.0154432420122645,0.0197318018514257,0.0802681981485743
+"226.3","primary_livelihoods.salary","marital_status",NA,"no_answer",0,0,0,0
+"226.4","primary_livelihoods.salary","marital_status",NA,"single",0,0,0,0
+"226.5","primary_livelihoods.salary","marital_status",NA,"widowed",0,0,0,0
+"227.1","primary_livelihoods.small_business","marital_status",NA,"divorced",0.166666666666667,0.107807704558858,-0.0446325515246305,0.377965884857964
+"227.2","primary_livelihoods.small_business","marital_status",NA,"married",0.16,0.0259771383235562,0.109085744464415,0.210914255535585
+"227.3","primary_livelihoods.small_business","marital_status",NA,"no_answer",1,0,1,1
+"227.4","primary_livelihoods.small_business","marital_status",NA,"single",0,0,0,0
+"227.5","primary_livelihoods.small_business","marital_status",NA,"widowed",0.2,0.0801671893150672,0.042875196200664,0.357124803799336
+"228.1","primary_livelihoods.casual_labour","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"228.2","primary_livelihoods.casual_labour","marital_status",NA,"married",0.15,0.0253015288869415,0.100409914627795,0.199590085372205
+"228.3","primary_livelihoods.casual_labour","marital_status",NA,"no_answer",0,0,0,0
+"228.4","primary_livelihoods.casual_labour","marital_status",NA,"single",0,0,0,0
+"228.5","primary_livelihoods.casual_labour","marital_status",NA,"widowed",0.2,0.0801671893150672,0.0428751962006641,0.357124803799336
+"229.1","primary_livelihoods.selling_natural_resources","marital_status",NA,"divorced",0,0,0,0
+"229.2","primary_livelihoods.selling_natural_resources","marital_status",NA,"married",0.045,0.0146892497622379,0.0162095995061001,0.0737904004938999
+"229.3","primary_livelihoods.selling_natural_resources","marital_status",NA,"no_answer",0,0,0,0
+"229.4","primary_livelihoods.selling_natural_resources","marital_status",NA,"single",0,0,0,0
+"229.5","primary_livelihoods.selling_natural_resources","marital_status",NA,"widowed",0.12,0.0651281324787328,-0.00764879403866961,0.24764879403867
+"230.1","primary_livelihoods.beekeeping","marital_status",NA,"divorced",0,0,0,0
+"230.2","primary_livelihoods.beekeeping","marital_status",NA,"married",0.005,0.00499790751194016,-0.00479571872146491,0.0147957187214649
+"230.3","primary_livelihoods.beekeeping","marital_status",NA,"no_answer",0,0,0,0
+"230.4","primary_livelihoods.beekeeping","marital_status",NA,"single",0,0,0,0
+"230.5","primary_livelihoods.beekeeping","marital_status",NA,"widowed",0,0,0,0
+"231.1","primary_livelihoods.other","marital_status",NA,"divorced",0,0,0,0
+"231.2","primary_livelihoods.other","marital_status",NA,"married",0.005,0.00499790751194017,-0.00479571872146491,0.0147957187214649
+"231.3","primary_livelihoods.other","marital_status",NA,"no_answer",0,0,0,0
+"231.4","primary_livelihoods.other","marital_status",NA,"single",0,0,0,0
+"231.5","primary_livelihoods.other","marital_status",NA,"widowed",0,0,0,0
+"232.1","primary_livelihoods.none","marital_status",NA,"divorced",0,0,0,0
+"232.2","primary_livelihoods.none","marital_status",NA,"married",0.005,0.00499790751194016,-0.00479571872146491,0.0147957187214649
+"232.3","primary_livelihoods.none","marital_status",NA,"no_answer",0,0,0,0
+"232.4","primary_livelihoods.none","marital_status",NA,"single",0,0,0,0
+"232.5","primary_livelihoods.none","marital_status",NA,"widowed",0,0,0,0
+"236.1","hh_member_earning_number","marital_status",NA,"divorced",1.55555555555556,0.228963019450557,1.10679628364092,2.00431482747019
+"236.2","hh_member_earning_number","marital_status",NA,"married",1.82432432432432,0.122986876158466,1.58327447648264,2.06537417216601
+"236.3","hh_member_earning_number","marital_status",NA,"no_answer",3,0,3,3
+"236.4","hh_member_earning_number","marital_status",NA,"single",1,0,1,1
+"236.5","hh_member_earning_number","marital_status",NA,"widowed",1.88235294117647,0.184339315928043,1.52105452102276,2.24365136133019
+"239.1","livelihoods_coping_strategies.spent_savings","marital_status",NA,"divorced",0.5,0.144639213535093,0.21651235071902,0.78348764928098
+"239.2","livelihoods_coping_strategies.spent_savings","marital_status",NA,"married",0.475,0.0353849127483622,0.405646845417118,0.544353154582882
+"239.3","livelihoods_coping_strategies.spent_savings","marital_status",NA,"no_answer",1,0,1,1
+"239.4","livelihoods_coping_strategies.spent_savings","marital_status",NA,"single",0,0,0,0
+"239.5","livelihoods_coping_strategies.spent_savings","marital_status",NA,"widowed",0.52,0.100128787361964,0.323751182954881,0.716248817045119
+"240.1","livelihoods_coping_strategies.support_from_friends_relatives","marital_status",NA,"divorced",0.166666666666667,0.107807704558858,-0.0446325515246305,0.377965884857964
+"240.2","livelihoods_coping_strategies.support_from_friends_relatives","marital_status",NA,"married",0.205,0.0286056728434843,0.148933911473235,0.261066088526765
+"240.3","livelihoods_coping_strategies.support_from_friends_relatives","marital_status",NA,"no_answer",0,0,0,0
+"240.4","livelihoods_coping_strategies.support_from_friends_relatives","marital_status",NA,"single",0,0,0,0
+"240.5","livelihoods_coping_strategies.support_from_friends_relatives","marital_status",NA,"widowed",0.24,0.0855951353562381,0.0722366174499424,0.407763382550058
+"241.1","livelihoods_coping_strategies.selling_assets","marital_status",NA,"divorced",0.25,0.125261233304792,0.00449249406353763,0.495507505936462
+"241.2","livelihoods_coping_strategies.selling_assets","marital_status",NA,"married",0.27,0.0314582808011236,0.20834290261425,0.33165709738575
+"241.3","livelihoods_coping_strategies.selling_assets","marital_status",NA,"no_answer",1,0,1,1
+"241.4","livelihoods_coping_strategies.selling_assets","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"241.5","livelihoods_coping_strategies.selling_assets","marital_status",NA,"widowed",0.2,0.0801671893150672,0.042875196200664,0.357124803799336
+"242.1","livelihoods_coping_strategies.charitable_donations","marital_status",NA,"divorced",0,0,0,0
+"242.2","livelihoods_coping_strategies.charitable_donations","marital_status",NA,"married",0,0,0,0
+"242.3","livelihoods_coping_strategies.charitable_donations","marital_status",NA,"no_answer",0,0,0,0
+"242.4","livelihoods_coping_strategies.charitable_donations","marital_status",NA,"single",0,0,0,0
+"242.5","livelihoods_coping_strategies.charitable_donations","marital_status",NA,"widowed",0.04,0.0392737415870029,-0.0369751190486585,0.116975119048659
+"243.1","livelihoods_coping_strategies.debt","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"243.2","livelihoods_coping_strategies.debt","marital_status",NA,"married",0.215,0.0291102363051313,0.157944985260492,0.272055014739508
+"243.3","livelihoods_coping_strategies.debt","marital_status",NA,"no_answer",0,0,0,0
+"243.4","livelihoods_coping_strategies.debt","marital_status",NA,"single",0,0,0,0
+"243.5","livelihoods_coping_strategies.debt","marital_status",NA,"widowed",0.24,0.0855951353562381,0.0722366174499424,0.407763382550058
+"245.1","livelihoods_coping_strategies.humanitarian_aid","marital_status",NA,"divorced",0,0,0,0
+"245.2","livelihoods_coping_strategies.humanitarian_aid","marital_status",NA,"married",0,0,0,0
+"245.3","livelihoods_coping_strategies.humanitarian_aid","marital_status",NA,"no_answer",0,0,0,0
+"245.4","livelihoods_coping_strategies.humanitarian_aid","marital_status",NA,"single",0,0,0,0
+"245.5","livelihoods_coping_strategies.humanitarian_aid","marital_status",NA,"widowed",0.04,0.0392737415870029,-0.0369751190486585,0.116975119048659
+"246.1","livelihoods_coping_strategies.reduce_spending","marital_status",NA,"divorced",0,0,0,0
+"246.2","livelihoods_coping_strategies.reduce_spending","marital_status",NA,"married",0.03,0.0120875467573399,0.00630884369416983,0.0536911563058302
+"246.3","livelihoods_coping_strategies.reduce_spending","marital_status",NA,"no_answer",0,0,0,0
+"246.4","livelihoods_coping_strategies.reduce_spending","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"246.5","livelihoods_coping_strategies.reduce_spending","marital_status",NA,"widowed",0,0,0,0
+"247.1","livelihoods_coping_strategies.sold_assistance","marital_status",NA,"divorced",0,0,0,0
+"247.2","livelihoods_coping_strategies.sold_assistance","marital_status",NA,"married",0.01,0.00705032715345262,-0.00381838729999192,0.0238183872999919
+"247.3","livelihoods_coping_strategies.sold_assistance","marital_status",NA,"no_answer",0,0,0,0
+"247.4","livelihoods_coping_strategies.sold_assistance","marital_status",NA,"single",0,0,0,0
+"247.5","livelihoods_coping_strategies.sold_assistance","marital_status",NA,"widowed",0.04,0.0392737415870029,-0.0369751190486585,0.116975119048659
+"248.1","livelihoods_coping_strategies.other","marital_status",NA,"divorced",0,0,0,0
+"248.2","livelihoods_coping_strategies.other","marital_status",NA,"married",0.005,0.00499790751194016,-0.00479571872146491,0.0147957187214649
+"248.3","livelihoods_coping_strategies.other","marital_status",NA,"no_answer",0,0,0,0
+"248.4","livelihoods_coping_strategies.other","marital_status",NA,"single",0,0,0,0
+"248.5","livelihoods_coping_strategies.other","marital_status",NA,"widowed",0,0,0,0
+"249.1","livelihoods_coping_strategies.none","marital_status",NA,"divorced",0.25,0.125261233304792,0.00449249406353769,0.495507505936462
+"249.2","livelihoods_coping_strategies.none","marital_status",NA,"married",0.06,0.0168279504491186,0.0270178231861029,0.0929821768138971
+"249.3","livelihoods_coping_strategies.none","marital_status",NA,"no_answer",0,0,0,0
+"249.4","livelihoods_coping_strategies.none","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"249.5","livelihoods_coping_strategies.none","marital_status",NA,"widowed",0.12,0.0651281324787328,-0.00764879403866955,0.24764879403867
+"282.1","food_coping.buy_cheaper_food","marital_status",NA,"divorced",0.333333333333333,0.136367158288204,0.06605861441438,0.600608052252287
+"282.2","food_coping.buy_cheaper_food","marital_status",NA,"married",0.315,0.0329148768999507,0.250488026720527,0.379511973279473
+"282.3","food_coping.buy_cheaper_food","marital_status",NA,"no_answer",0,0,0,0
+"282.4","food_coping.buy_cheaper_food","marital_status",NA,"single",0,0,0,0
+"282.5","food_coping.buy_cheaper_food","marital_status",NA,"widowed",0.32,0.0934902048882226,0.136762565511813,0.503237434488187
+"283.1","food_coping.limit_meal_size","marital_status",NA,"divorced",0.166666666666667,0.107807704558858,-0.0446325515246305,0.377965884857964
+"283.2","food_coping.limit_meal_size","marital_status",NA,"married",0.345,0.0336838612759916,0.278980845038813,0.411019154961187
+"283.3","food_coping.limit_meal_size","marital_status",NA,"no_answer",0,0,0,0
+"283.4","food_coping.limit_meal_size","marital_status",NA,"single",0,0,0,0
+"283.5","food_coping.limit_meal_size","marital_status",NA,"widowed",0.36,0.0962006271780806,0.171450235440797,0.548549764559203
+"284.1","food_coping.only_children_eat","marital_status",NA,"divorced",0,0,0,0
+"284.2","food_coping.only_children_eat","marital_status",NA,"married",0.03,0.0120875467573399,0.00630884369416985,0.0536911563058301
+"284.3","food_coping.only_children_eat","marital_status",NA,"no_answer",0,0,0,0
+"284.4","food_coping.only_children_eat","marital_status",NA,"single",0,0,0,0
+"284.5","food_coping.only_children_eat","marital_status",NA,"widowed",0,0,0,0
+"285.1","food_coping.reduce_meal_number","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"285.2","food_coping.reduce_meal_number","marital_status",NA,"married",0.18,0.0272229290508715,0.126644039506603,0.233355960493397
+"285.3","food_coping.reduce_meal_number","marital_status",NA,"no_answer",0,0,0,0
+"285.4","food_coping.reduce_meal_number","marital_status",NA,"single",0,0,0,0
+"285.5","food_coping.reduce_meal_number","marital_status",NA,"widowed",0.04,0.0392737415870029,-0.0369751190486585,0.116975119048659
+"286.1","food_coping.skip_days","marital_status",NA,"divorced",0,0,0,0
+"286.2","food_coping.skip_days","marital_status",NA,"married",0.025,0.0110627725836923,0.00331736416680598,0.046682635833194
+"286.3","food_coping.skip_days","marital_status",NA,"no_answer",0,0,0,0
+"286.4","food_coping.skip_days","marital_status",NA,"single",0,0,0,0
+"286.5","food_coping.skip_days","marital_status",NA,"widowed",0,0,0,0
+"288.1","food_coping.borrow_food","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"288.2","food_coping.borrow_food","marital_status",NA,"married",0.04,0.013885364499369,0.0127851856690258,0.0672148143309742
+"288.3","food_coping.borrow_food","marital_status",NA,"no_answer",0,0,0,0
+"288.4","food_coping.borrow_food","marital_status",NA,"single",0,0,0,0
+"288.5","food_coping.borrow_food","marital_status",NA,"widowed",0.04,0.0392737415870029,-0.0369751190486585,0.116975119048659
+"289.1","food_coping.exchange_food","marital_status",NA,"divorced",0,0,0,0
+"289.2","food_coping.exchange_food","marital_status",NA,"married",0.01,0.00705032715345261,-0.00381838729999192,0.0238183872999919
+"289.3","food_coping.exchange_food","marital_status",NA,"no_answer",0,0,0,0
+"289.4","food_coping.exchange_food","marital_status",NA,"single",0,0,0,0
+"289.5","food_coping.exchange_food","marital_status",NA,"widowed",0,0,0,0
+"290.1","food_coping.other","marital_status",NA,"divorced",0,0,0,0
+"290.2","food_coping.other","marital_status",NA,"married",0.02,0.00992018355883619,0.000556797504654691,0.0394432024953453
+"290.3","food_coping.other","marital_status",NA,"no_answer",0,0,0,0
+"290.4","food_coping.other","marital_status",NA,"single",0,0,0,0
+"290.5","food_coping.other","marital_status",NA,"widowed",0,0,0,0
+"291.1","food_coping.none","marital_status",NA,"divorced",0.416666666666667,0.142616187839732,0.137144074888393,0.69618925844494
+"291.2","food_coping.none","marital_status",NA,"married",0.245,0.030475314106248,0.185269481934208,0.304730518065792
+"291.3","food_coping.none","marital_status",NA,"no_answer",1,0,1,1
+"291.4","food_coping.none","marital_status",NA,"single",1,0,1,1
+"291.5","food_coping.none","marital_status",NA,"widowed",0.32,0.0934902048882226,0.136762565511813,0.503237434488187
+"292.1","food_coping.no_answer","marital_status",NA,"divorced",0,0,0,0
+"292.2","food_coping.no_answer","marital_status",NA,"married",0.005,0.00499790751194016,-0.00479571872146491,0.0147957187214649
+"292.3","food_coping.no_answer","marital_status",NA,"no_answer",0,0,0,0
+"292.4","food_coping.no_answer","marital_status",NA,"single",0,0,0,0
+"292.5","food_coping.no_answer","marital_status",NA,"widowed",0.04,0.0392737415870028,-0.0369751190486585,0.116975119048659
+"296.1","cereals","marital_status",NA,"divorced",2.75,0.810711071051361,1.16103549887144,4.33896450112856
+"296.2","cereals","marital_status",NA,"married",4.665,0.176475607853788,4.31911416445676,5.01088583554324
+"296.3","cereals","marital_status",NA,"no_answer",7,0,7,7
+"296.4","cereals","marital_status",NA,"single",4.5,1.77146134979218,1.02799955440262,7.97200044559738
+"296.5","cereals","marital_status",NA,"widowed",4.08,0.470602569311598,3.15763591311725,5.00236408688275
+"297.1","tubers","marital_status",NA,"divorced",5.33333333333333,0.606028907501205,4.14553850104082,6.52112816562585
+"297.2","tubers","marital_status",NA,"married",4.68,0.177253807106903,4.33258892194786,5.02741107805214
+"297.3","tubers","marital_status",NA,"no_answer",7,0,7,7
+"297.4","tubers","marital_status",NA,"single",3.5,2.48004588970905,-1.36080062383634,8.36080062383634
+"297.5","tubers","marital_status",NA,"widowed",5,0.388624868868333,4.23830925352147,5.76169074647853
+"298.1","pulses","marital_status",NA,"divorced",3.25,0.709813655393824,1.85879079969338,4.64120920030662
+"298.2","pulses","marital_status",NA,"married",4.445,0.178796183722717,4.09456591933027,4.79543408066973
+"298.3","pulses","marital_status",NA,"no_answer",5,0,5,5
+"298.4","pulses","marital_status",NA,"single",3.5,2.48004588970905,-1.36080062383634,8.36080062383634
+"298.5","pulses","marital_status",NA,"widowed",3.76,0.436451265450074,2.90457123871093,4.61542876128908
+"299.1","nuts","marital_status",NA,"divorced",0.25,0.172155098570265,-0.0874177929526631,0.587417792952663
+"299.2","nuts","marital_status",NA,"married",1.015,0.124048343930095,0.771869713555176,1.25813028644482
+"299.3","nuts","marital_status",NA,"no_answer",3,0,3,3
+"299.4","nuts","marital_status",NA,"single",0,0,0,0
+"299.5","nuts","marital_status",NA,"widowed",0.56,0.212707589964373,0.143100784431515,0.976899215568485
+"300.1","orange_vegetables","marital_status",NA,"divorced",1.41666666666667,0.571990740936722,0.295585414940311,2.53774791839302
+"300.2","orange_vegetables","marital_status",NA,"married",1.12,0.151570854221293,0.822926584620296,1.4170734153797
+"300.3","orange_vegetables","marital_status",NA,"no_answer",2,0,2,2
+"300.4","orange_vegetables","marital_status",NA,"single",0,0,0,0
+"300.5","orange_vegetables","marital_status",NA,"widowed",0.92,0.367022168222203,0.200649768756681,1.63935023124332
+"301.1","green_vegetables","marital_status",NA,"divorced",3.83333333333333,0.799523335446663,2.26629639105854,5.40037027560813
+"301.2","green_vegetables","marital_status",NA,"married",3.82,0.18214344432239,3.46300540910804,4.17699459089196
+"301.3","green_vegetables","marital_status",NA,"no_answer",0,0,0,0
+"301.4","green_vegetables","marital_status",NA,"single",6,0.708584539916872,4.61119982176105,7.38880017823895
+"301.5","green_vegetables","marital_status",NA,"widowed",4,0.453494105546798,3.11116788592707,4.88883211407293
+"302.1","other_vegetables","marital_status",NA,"divorced",4,0.688620394281062,2.65032882818935,5.34967117181065
+"302.2","other_vegetables","marital_status",NA,"married",4.175,0.191899228261948,3.79888442394555,4.55111557605445
+"302.3","other_vegetables","marital_status",NA,"no_answer",2,0,2,2
+"302.4","other_vegetables","marital_status",NA,"single",5,1.41716907983374,2.22239964352209,7.77760035647791
+"302.5","other_vegetables","marital_status",NA,"widowed",3.88,0.501669847592282,2.89674516658943,4.86325483341057
+"303.1","orange_fruits","marital_status",NA,"divorced",4.91666666666667,0.751180691596398,3.44437956525584,6.3889537680775
+"303.2","orange_fruits","marital_status",NA,"married",4.43,0.198215047412956,4.04150564587671,4.81849435412329
+"303.3","orange_fruits","marital_status",NA,"no_answer",7,0,7,7
+"303.4","orange_fruits","marital_status",NA,"single",3.5,2.48004588970905,-1.36080062383634,8.36080062383634
+"303.5","orange_fruits","marital_status",NA,"widowed",4.56,0.567094333654991,3.44851553019948,5.67148446980052
+"304.1","other_fruits","marital_status",NA,"divorced",0.666666666666667,0.397575170007637,-0.112566347695691,1.44589968102902
+"304.2","other_fruits","marital_status",NA,"married",0.26,0.0626766958353488,0.137155933492745,0.382844066507255
+"304.3","other_fruits","marital_status",NA,"no_answer",2,0,2,2
+"304.4","other_fruits","marital_status",NA,"single",0,0,0,0
+"304.5","other_fruits","marital_status",NA,"widowed",0.16,0.0928002308466326,-0.0218851102164027,0.341885110216403
+"305.1","meat","marital_status",NA,"divorced",0.75,0.208768722174654,0.340820823439229,1.15917917656077
+"305.2","meat","marital_status",NA,"married",0.83,0.0795731289141523,0.674039533191099,0.985960466808901
+"305.3","meat","marital_status",NA,"no_answer",1,0,1,1
+"305.4","meat","marital_status",NA,"single",0,0,0,0
+"305.5","meat","marital_status",NA,"widowed",0.64,0.178180482990782,0.290772670590115,0.989227329409885
+"306.1","offal","marital_status",NA,"divorced",0,0,0,0
+"306.2","offal","marital_status",NA,"married",0.065,0.0224940717434245,0.0209124295172279,0.109087570482772
+"306.3","offal","marital_status",NA,"no_answer",0,0,0,0
+"306.4","offal","marital_status",NA,"single",0,0,0,0
+"306.5","offal","marital_status",NA,"widowed",0,0,0,0
+"307.1","fish","marital_status",NA,"divorced",2.08333333333333,0.416840967727069,1.26634004930746,2.90032661735921
+"307.2","fish","marital_status",NA,"married",1.675,0.129680166589554,1.42083154397532,1.92916845602468
+"307.3","fish","marital_status",NA,"no_answer",2,0,2,2
+"307.4","fish","marital_status",NA,"single",0,0,0,0
+"307.5","fish","marital_status",NA,"widowed",1.8,0.392737415870029,1.03024880951341,2.56975119048659
+"308.1","eggs","marital_status",NA,"divorced",0.5,0.220940048161148,0.0669654628616046,0.933034537138395
+"308.2","eggs","marital_status",NA,"married",0.515,0.0769646443852997,0.36415206892188,0.66584793107812
+"308.3","eggs","marital_status",NA,"no_answer",3,0,3,3
+"308.4","eggs","marital_status",NA,"single",0,0,0,0
+"308.5","eggs","marital_status",NA,"widowed",0.4,0.233725512220557,-0.0580935862204669,0.858093586220467
+"309.1","dairy","marital_status",NA,"divorced",1.5,0.596362755011456,0.331150478456463,2.66884952154354
+"309.2","dairy","marital_status",NA,"married",2,0.206950360914991,1.59438474601905,2.40561525398095
+"309.3","dairy","marital_status",NA,"no_answer",7,0,7,7
+"309.4","dairy","marital_status",NA,"single",0,0,0,0
+"309.5","dairy","marital_status",NA,"widowed",1.48,0.522994915853269,0.454948800830037,2.50505119916996
+"310.1","oils","marital_status",NA,"divorced",5.08333333333333,0.732378610172254,3.64789763434822,6.51876903231845
+"310.2","oils","marital_status",NA,"married",4.1,0.197388811983441,3.71312503756131,4.48687496243869
+"310.3","oils","marital_status",NA,"no_answer",7,0,7,7
+"310.4","oils","marital_status",NA,"single",3.5,2.48004588970905,-1.36080062383634,8.36080062383634
+"310.5","oils","marital_status",NA,"widowed",4.48,0.501028899524764,3.49800140171773,5.46199859828227
+"311.1","sugars","marital_status",NA,"divorced",3.91666666666667,0.910640136347254,2.1318447965494,5.70148853678393
+"311.2","sugars","marital_status",NA,"married",3.555,0.209565899203059,3.14425838517425,3.96574161482575
+"311.3","sugars","marital_status",NA,"no_answer",7,0,7,7
+"311.4","sugars","marital_status",NA,"single",1.5,1.06287680987531,-0.583200267358429,3.58320026735843
+"311.5","sugars","marital_status",NA,"widowed",3.04,0.627356278028354,1.81040428958933,4.26959571041067
+"312.1","condiments","marital_status",NA,"divorced",7,0,7,7
+"312.2","condiments","marital_status",NA,"married",6.905,0.0473202390201117,6.81225403578075,6.99774596421925
+"312.3","condiments","marital_status",NA,"no_answer",7,0,7,7
+"312.4","condiments","marital_status",NA,"single",7,0,7,7
+"312.5","condiments","marital_status",NA,"widowed",7,1.68480829458374e-16,7,7
+"320.1","treatment_access_difficulty.healthcare_cost","marital_status",NA,"divorced",0.2,0.179551680499374,-0.151914827142416,0.551914827142416
+"320.2","treatment_access_difficulty.healthcare_cost","marital_status",NA,"married",0.347457627118644,0.0439975775097673,0.261223959792491,0.433691294444798
+"320.3","treatment_access_difficulty.healthcare_cost","marital_status",NA,"widowed",0.333333333333333,0.136589591177038,0.0656226539632885,0.601044012703378
+"321.1","treatment_access_difficulty.unqualified_staff_hosp","marital_status",NA,"divorced",0.2,0.179551680499374,-0.151914827142415,0.551914827142415
+"321.2","treatment_access_difficulty.unqualified_staff_hosp","marital_status",NA,"married",0.0508474576271186,0.0202990685709161,0.0110620143084141,0.0906329009458232
+"321.3","treatment_access_difficulty.unqualified_staff_hosp","marital_status",NA,"widowed",0.0833333333333333,0.0800827463855774,-0.0736259653654536,0.24029263203212
+"322.1","treatment_access_difficulty.drugs_cost","marital_status",NA,"divorced",0.6,0.219904999841349,0.168994120290669,1.03100587970933
+"322.2","treatment_access_difficulty.drugs_cost","marital_status",NA,"married",0.203389830508475,0.0371929838696546,0.130492921646372,0.276286739370577
+"322.3","treatment_access_difficulty.drugs_cost","marital_status",NA,"widowed",0.25,0.125465550959664,0.00409203881858458,0.495907961181415
+"323.1","treatment_access_difficulty.language_barrier","marital_status",NA,"divorced",0,0,0,0
+"323.2","treatment_access_difficulty.language_barrier","marital_status",NA,"married",0,0,0,0
+"323.3","treatment_access_difficulty.language_barrier","marital_status",NA,"widowed",0.0833333333333333,0.0800827463855774,-0.0736259653654536,0.24029263203212
+"324.1","treatment_access_difficulty.refused_treatment","marital_status",NA,"divorced",0.2,0.179551680499374,-0.151914827142415,0.551914827142415
+"324.2","treatment_access_difficulty.refused_treatment","marital_status",NA,"married",0.0423728813559322,0.0186129708852782,0.00589212877549423,0.0788536339363702
+"324.3","treatment_access_difficulty.refused_treatment","marital_status",NA,"widowed",0,0,0,0
+"325.1","treatment_access_difficulty.lack_drugs_hc","marital_status",NA,"divorced",0.2,0.179551680499374,-0.151914827142415,0.551914827142415
+"325.2","treatment_access_difficulty.lack_drugs_hc","marital_status",NA,"married",0.491525423728814,0.0461935241297721,0.400987780115478,0.582063067342149
+"325.3","treatment_access_difficulty.lack_drugs_hc","marital_status",NA,"widowed",0.333333333333333,0.136589591177038,0.0656226539632885,0.601044012703378
+"326.1","treatment_access_difficulty.lack_drugs_pharmacy","marital_status",NA,"divorced",0,0,0,0
+"326.2","treatment_access_difficulty.lack_drugs_pharmacy","marital_status",NA,"married",0.00847457627118644,0.00847001939854401,-0.00812635669831543,0.0250755092406883
+"326.3","treatment_access_difficulty.lack_drugs_pharmacy","marital_status",NA,"widowed",0.0833333333333333,0.0800827463855774,-0.0736259653654536,0.24029263203212
+"327.1","treatment_access_difficulty.no_transport","marital_status",NA,"divorced",0.2,0.179551680499374,-0.151914827142416,0.551914827142416
+"327.2","treatment_access_difficulty.no_transport","marital_status",NA,"married",0.228813559322034,0.0388145050315723,0.152738527382404,0.304888591261664
+"327.3","treatment_access_difficulty.no_transport","marital_status",NA,"widowed",0.583333333333333,0.142848813723074,0.303354803201837,0.86331186346483
+"328.1","treatment_access_difficulty.no_offered_treatment_phc","marital_status",NA,"divorced",0,0,0,0
+"328.2","treatment_access_difficulty.no_offered_treatment_phc","marital_status",NA,"married",0.00847457627118644,0.008470019398544,-0.00812635669831541,0.0250755092406883
+"328.3","treatment_access_difficulty.no_offered_treatment_phc","marital_status",NA,"widowed",0,0,0,0
+"330.1","treatment_access_difficulty.no_health_referral","marital_status",NA,"divorced",0,0,0,0
+"330.2","treatment_access_difficulty.no_health_referral","marital_status",NA,"married",0.0338983050847458,0.0167214484934004,0.00112486826833953,0.066671741901152
+"330.3","treatment_access_difficulty.no_health_referral","marital_status",NA,"widowed",0,0,0,0
+"333.1","treatment_access_difficulty.no_support_family","marital_status",NA,"divorced",0,0,0,0
+"333.2","treatment_access_difficulty.no_support_family","marital_status",NA,"married",0,0,0,0
+"333.3","treatment_access_difficulty.no_support_family","marital_status",NA,"widowed",0.0833333333333333,0.0800827463855774,-0.0736259653654536,0.24029263203212
+"335.1","treatment_access_difficulty.none","marital_status",NA,"divorced",0,0,0,0
+"335.2","treatment_access_difficulty.none","marital_status",NA,"married",0.00847457627118644,0.00847001939854401,-0.00812635669831542,0.0250755092406883
+"335.3","treatment_access_difficulty.none","marital_status",NA,"widowed",0,0,0,0
+"336.1","treatment_access_difficulty.no_answer","marital_status",NA,"divorced",0,0,0,0
+"336.2","treatment_access_difficulty.no_answer","marital_status",NA,"married",0.00847457627118644,0.00847001939854401,-0.00812635669831542,0.0250755092406883
+"336.3","treatment_access_difficulty.no_answer","marital_status",NA,"widowed",0,0,0,0
+"339.1","stress","marital_status",NA,"divorced",0,0,0,0
+"339.2","stress","marital_status",NA,"married",0.687022900763359,0.171308556655555,0.351264299474931,1.02278150205179
+"339.3","stress","marital_status",NA,"no_answer",0,0,0,0
+"339.4","stress","marital_status",NA,"single",0,0,0,0
+"339.5","stress","marital_status",NA,"widowed",0.8,0.487470600351341,-0.155424820210746,1.75542482021075
+"340.1","minor_injury","marital_status",NA,"divorced",1,0,1,1
+"340.2","minor_injury","marital_status",NA,"married",0.351145038167939,0.0692984282815001,0.215322614550967,0.486967461784911
+"340.3","minor_injury","marital_status",NA,"no_answer",0,0,0,0
+"340.4","minor_injury","marital_status",NA,"single",0.5,0.354770445451023,-0.195337295863237,1.19533729586324
+"340.5","minor_injury","marital_status",NA,"widowed",0.5,0.292551203888399,-0.0733898232550967,1.0733898232551
+"341.1","serious_injury","marital_status",NA,"divorced",0,0,0,0
+"341.2","serious_injury","marital_status",NA,"married",0.244274809160305,0.0613665678990453,0.123998546223345,0.364551072097266
+"341.3","serious_injury","marital_status",NA,"no_answer",0,0,0,0
+"341.4","serious_injury","marital_status",NA,"single",0,0,0,0
+"341.5","serious_injury","marital_status",NA,"widowed",0.3,0.285584699677093,-0.259735725902789,0.859735725902789
+"342.1","diarrhoea","marital_status",NA,"divorced",0.5,0.354770445451023,-0.195337295863237,1.19533729586324
+"342.2","diarrhoea","marital_status",NA,"married",0.748091603053435,0.0882338756839518,0.575156384496505,0.921026821610365
+"342.3","diarrhoea","marital_status",NA,"no_answer",0,0,0,0
+"342.4","diarrhoea","marital_status",NA,"single",0,0,0,0
+"342.5","diarrhoea","marital_status",NA,"widowed",1,0.200688470194392,0.606657826306551,1.39334217369345
+"343.1","rapid_weight_loss","marital_status",NA,"divorced",0,0,0,0
+"343.2","rapid_weight_loss","marital_status",NA,"married",0.465648854961832,0.0752834300909384,0.318096043350954,0.61320166657271
+"343.3","rapid_weight_loss","marital_status",NA,"no_answer",0,0,0,0
+"343.4","rapid_weight_loss","marital_status",NA,"single",0,0,0,0
+"343.5","rapid_weight_loss","marital_status",NA,"widowed",0.4,0.210483843265611,-0.0125407521281701,0.81254075212817
+"344.1","respiratory_infection","marital_status",NA,"divorced",0,0,0,0
+"344.2","respiratory_infection","marital_status",NA,"married",0.175572519083969,0.0546819064164051,0.0683979519018258,0.282747086266113
+"344.3","respiratory_infection","marital_status",NA,"no_answer",0,0,0,0
+"344.4","respiratory_infection","marital_status",NA,"single",0,0,0,0
+"344.5","respiratory_infection","marital_status",NA,"widowed",0.1,0.0951948998923642,-0.0865785753009296,0.28657857530093
+"345.1","skin","marital_status",NA,"divorced",1,0.709540890902046,-0.390674591726473,2.39067459172647
+"345.2","skin","marital_status",NA,"married",0.755725190839695,0.132270416516869,0.49647993824652,1.01497044343287
+"345.3","skin","marital_status",NA,"no_answer",0,0,0,0
+"345.4","skin","marital_status",NA,"single",0,0,0,0
+"345.5","skin","marital_status",NA,"widowed",1.8,1.00143345536148,-0.162773505422008,3.76277350542201
+"346.1","feet","marital_status",NA,"divorced",0,0,0,0
+"346.2","feet","marital_status",NA,"married",0.183206106870229,0.0339143105771617,0.116735279578486,0.249676934161972
+"346.3","feet","marital_status",NA,"no_answer",0,0,0,0
+"346.4","feet","marital_status",NA,"single",0,0,0,0
+"346.5","feet","marital_status",NA,"widowed",0.2,0.126926533189819,-0.0487714337345729,0.448771433734573
+"347.1","measles","marital_status",NA,"divorced",0,0,0,0
+"347.2","measles","marital_status",NA,"married",0.229007633587786,0.073122540309168,0.0856900881237387,0.372325179051834
+"347.3","measles","marital_status",NA,"no_answer",0,0,0,0
+"347.4","measles","marital_status",NA,"single",1,0.709540890902046,-0.390674591726473,2.39067459172647
+"347.5","measles","marital_status",NA,"widowed",0.4,0.290825223020335,-0.170006962915686,0.970006962915686
+"348.1","hypertension","marital_status",NA,"divorced",0,0,0,0
+"348.2","hypertension","marital_status",NA,"married",0.244274809160305,0.0473322693208289,0.151505265984931,0.33704435233568
+"348.3","hypertension","marital_status",NA,"no_answer",0,0,0,0
+"348.4","hypertension","marital_status",NA,"single",0,0,0,0
+"348.5","hypertension","marital_status",NA,"widowed",0,0,0,0
+"349.1","asthma","marital_status",NA,"divorced",0,0,0,0
+"349.2","asthma","marital_status",NA,"married",0.0687022900763359,0.0246805559023357,0.0203292893893305,0.117075290763341
+"349.3","asthma","marital_status",NA,"no_answer",0,0,0,0
+"349.4","asthma","marital_status",NA,"single",0,0,0,0
+"349.5","asthma","marital_status",NA,"widowed",0.1,0.0951948998923642,-0.0865785753009296,0.28657857530093
+"350.1","tb","marital_status",NA,"divorced",0,0,0,0
+"350.2","tb","marital_status",NA,"married",0.083969465648855,0.0287386221003903,0.0276428013667832,0.140296129930927
+"350.3","tb","marital_status",NA,"no_answer",0,0,0,0
+"350.4","tb","marital_status",NA,"single",0,0,0,0
+"350.5","tb","marital_status",NA,"widowed",0.3,0.203181590260264,-0.0982285992316907,0.698228599231691
+"351.1","malaria","marital_status",NA,"divorced",1.5,0.354770445451023,0.804662704136763,2.19533729586324
+"351.2","malaria","marital_status",NA,"married",1.63358778625954,0.130085219809692,1.37862544051157,1.88855013200751
+"351.3","malaria","marital_status",NA,"no_answer",3,0,3,3
+"351.4","malaria","marital_status",NA,"single",0.5,0.354770445451023,-0.195337295863237,1.19533729586324
+"351.5","malaria","marital_status",NA,"widowed",1.9,0.701692535084351,0.524707903014064,3.27529209698594
+"352.1","child_birth","marital_status",NA,"divorced",0,0,0,0
+"352.2","child_birth","marital_status",NA,"married",0.114503816793893,0.0515449419039134,0.0134775870770134,0.215530046510773
+"352.3","child_birth","marital_status",NA,"no_answer",0,0,0,0
+"352.4","child_birth","marital_status",NA,"single",0,0,0,0
+"352.5","child_birth","marital_status",NA,"widowed",0.1,0.0951948998923642,-0.0865785753009296,0.28657857530093
+"353.1","health_other","marital_status",NA,"divorced",0,0,0,0
+"353.2","health_other","marital_status",NA,"married",0.175572519083969,0.0412224829041582,0.0947779372385014,0.256367100929437
+"353.3","health_other","marital_status",NA,"no_answer",0,0,0,0
+"353.4","health_other","marital_status",NA,"single",0,0,0,0
+"353.5","health_other","marital_status",NA,"widowed",0.1,0.0951948998923642,-0.0865785753009296,0.28657857530093
+"359.1","polio_vaccine_number","marital_status",NA,"divorced",1.33333333333333,0.157561258524642,1.02451894126623,1.64214772540044
+"359.2","polio_vaccine_number","marital_status",NA,"married",1.77124183006536,0.0714902927794594,1.6311234309734,1.91136022915732
+"359.3","polio_vaccine_number","marital_status",NA,"no_answer",1,0,1,1
+"359.4","polio_vaccine_number","marital_status",NA,"single",1,0,1,1
+"359.5","polio_vaccine_number","marital_status",NA,"widowed",1.76190476190476,0.212517489022934,1.34537813733492,2.1784313864746
+"361.1","measles_vaccine_number","marital_status",NA,"divorced",1.125,0.117296231203012,0.895103611319814,1.35489638868019
+"361.2","measles_vaccine_number","marital_status",NA,"married",1.80451127819549,0.0907984603941342,1.6265495659713,1.98247299041968
+"361.3","measles_vaccine_number","marital_status",NA,"no_answer",1,0,1,1
+"361.4","measles_vaccine_number","marital_status",NA,"single",2,0,2,2
+"361.5","measles_vaccine_number","marital_status",NA,"widowed",1.8,0.235499290045245,1.33842987312657,2.26157012687343
+"363.1","vitamin_supplement_number","marital_status",NA,"divorced",1.4,0.220056308160121,0.968697561435316,1.83130243856468
+"363.2","vitamin_supplement_number","marital_status",NA,"married",1.76767676767677,0.100260238388251,1.5711703113544,1.96418322399914
+"363.3","vitamin_supplement_number","marital_status",NA,"no_answer",1,0,1,1
+"363.4","vitamin_supplement_number","marital_status",NA,"single",2,0,2,2
+"363.5","vitamin_supplement_number","marital_status",NA,"widowed",1.25,0.153769019976147,0.948618258908731,1.55138174109127
+"365.1","sleeping_under_nets","marital_status",NA,"divorced",5.3,1.06137748585868,3.21973835371532,7.38026164628468
+"365.2","sleeping_under_nets","marital_status",NA,"married",6.18604651162791,0.337538377334345,5.5244834486525,6.84760957460331
+"365.3","sleeping_under_nets","marital_status",NA,"no_answer",7,0,7,7
+"365.4","sleeping_under_nets","marital_status",NA,"single",7,0.708846283891784,5.61068681299705,8.38931318700295
+"365.5","sleeping_under_nets","marital_status",NA,"widowed",6.94736842105263,0.887495773189797,5.2079086691691,8.68682817293616
+"367.1","iycf_counselling_number","marital_status",NA,"divorced",1,0,1,1
+"367.2","iycf_counselling_number","marital_status",NA,"married",1.12345679012346,0.0407314767076202,1.04362456273939,1.20328901750752
+"367.3","iycf_counselling_number","marital_status",NA,"single",1,0,1,1
+"367.4","iycf_counselling_number","marital_status",NA,"widowed",1.125,0.117574592162687,0.894558033864148,1.35544196613585
+"369.1","nutr_supplement_number","marital_status",NA,"divorced",1,0,1,1
+"369.2","nutr_supplement_number","marital_status",NA,"married",1.08333333333333,0.0382793345669799,1.00830721622989,1.15835945043677
+"369.3","nutr_supplement_number","marital_status",NA,"single",1,0,1,1
+"369.4","nutr_supplement_number","marital_status",NA,"widowed",1,0,1,1
+"371.1","fanidar_dose_number","marital_status",NA,"divorced",1,0,1,1
+"371.2","fanidar_dose_number","marital_status",NA,"married",1.08974358974359,0.0373099861040213,1.01661736071602,1.16286981877116
+"371.3","fanidar_dose_number","marital_status",NA,"single",1,0,1,1
+"371.4","fanidar_dose_number","marital_status",NA,"widowed",1,0,1,1
+"372.1","access_to_buckets","marital_status",NA,"divorced",0.5,0.255499848167847,-0.000770500464433055,1.00077050046443
+"372.2","access_to_buckets","marital_status",NA,"married",0.861538461538462,0.0886071396621817,0.687871659027475,1.03520526404945
+"372.3","access_to_buckets","marital_status",NA,"no_answer",4,0,4,4
+"372.4","access_to_buckets","marital_status",NA,"single",2,1.41725815914221,-0.777774948714272,4.77777494871427
+"372.5","access_to_buckets","marital_status",NA,"widowed",0.64,0.186992162845177,0.273502095432204,1.0064979045678
+"373.1","access_to_jerry_can","marital_status",NA,"divorced",5,0.717346794568243,3.59402611822099,6.40597388177901
+"373.2","access_to_jerry_can","marital_status",NA,"married",4.69897959183673,0.188364138511767,4.32979266437476,5.06816651929871
+"373.3","access_to_jerry_can","marital_status",NA,"no_answer",3,0,3,3
+"373.4","access_to_jerry_can","marital_status",NA,"single",4,0,4,4
+"373.5","access_to_jerry_can","marital_status",NA,"widowed",4.72,0.448239862527837,3.84146601301025,5.59853398698974
+"374.1","access_to_pots","marital_status",NA,"divorced",0.909090909090909,0.155387446385512,0.604537110525657,1.21364470765616
+"374.2","access_to_pots","marital_status",NA,"married",1.07692307692308,0.100161131832864,0.880610865879895,1.27323528796626
+"374.3","access_to_pots","marital_status",NA,"no_answer",1,0,1,1
+"374.4","access_to_pots","marital_status",NA,"single",1,0,1,1
+"374.5","access_to_pots","marital_status",NA,"widowed",1,0.138861094023763,0.727837256859594,1.27216274314041
+"375.1","access_to_sleeping_mats","marital_status",NA,"divorced",1.63636363636364,0.412944032319828,0.82700820538603,2.44571906734124
+"375.2","access_to_sleeping_mats","marital_status",NA,"married",1.94387755102041,0.116411305882396,1.71571558409764,2.17203951794318
+"375.3","access_to_sleeping_mats","marital_status",NA,"no_answer",2,0,2,2
+"375.4","access_to_sleeping_mats","marital_status",NA,"single",1.5,0.354308041165012,0.805568999883641,2.19443100011636
+"375.5","access_to_sleeping_mats","marital_status",NA,"widowed",1.8,0.340135719518412,1.1333462398883,2.4666537601117
+"376.1","access_to_mattress","marital_status",NA,"divorced",2.72727272727273,0.343083059148336,2.05484228763616,3.39970316690929
+"376.2","access_to_mattress","marital_status",NA,"married",2.5969387755102,0.141061138858676,2.320464023729,2.87341352729141
+"376.3","access_to_mattress","marital_status",NA,"no_answer",7,0,7,7
+"376.4","access_to_mattress","marital_status",NA,"single",2.5,0.354308041165012,1.80556899988364,3.19443100011636
+"376.5","access_to_mattress","marital_status",NA,"widowed",3,0.453514292691216,2.11112831985106,3.88887168014894
+"377.1","access_to_tarpaulin","marital_status",NA,"divorced",0.454545454545455,0.198084569788286,0.0663068318673023,0.842784077223607
+"377.2","access_to_tarpaulin","marital_status",NA,"married",0.476683937823834,0.0601406425999031,0.358810444320929,0.59455743132674
+"377.3","access_to_tarpaulin","marital_status",NA,"no_answer",1,0,1,1
+"377.4","access_to_tarpaulin","marital_status",NA,"single",0,0,0,0
+"377.5","access_to_tarpaulin","marital_status",NA,"widowed",0.4,0.126764601010156,0.151545947505504,0.648454052494496
+"378.1","access_to_torches","marital_status",NA,"divorced",1.45454545454545,0.269138951998092,0.927042801792341,1.98204810729857
+"378.2","access_to_torches","marital_status",NA,"married",1.41025641025641,0.0827362189900502,1.24809640081889,1.57241641969393
+"378.3","access_to_torches","marital_status",NA,"no_answer",2,0,2,2
+"378.4","access_to_torches","marital_status",NA,"single",1,0,1,1
+"378.5","access_to_torches","marital_status",NA,"widowed",1.2,0.219558667748944,0.769672918718475,1.63032708128153
+"383.1","nfi_needs.bedding","marital_status",NA,"divorced",0.666666666666667,0.136367158288204,0.399391947747713,0.93394138558562
+"383.2","nfi_needs.bedding","marital_status",NA,"married",0.65,0.0337973285072347,0.583758453352151,0.716241546647849
+"383.3","nfi_needs.bedding","marital_status",NA,"no_answer",0,0,0,0
+"383.4","nfi_needs.bedding","marital_status",NA,"single",0,0,0,0
+"383.5","nfi_needs.bedding","marital_status",NA,"widowed",0.84,0.0734744426576301,0.695992738606892,0.984007261393108
+"384.1","nfi_needs.mosquito_nets","marital_status",NA,"divorced",0.25,0.125261233304792,0.00449249406353769,0.495507505936462
+"384.2","nfi_needs.mosquito_nets","marital_status",NA,"married",0.17,0.0266167594354608,0.11783211012133,0.22216788987867
+"384.3","nfi_needs.mosquito_nets","marital_status",NA,"no_answer",0,0,0,0
+"384.4","nfi_needs.mosquito_nets","marital_status",NA,"single",0,0,0,0
+"384.5","nfi_needs.mosquito_nets","marital_status",NA,"widowed",0.16,0.0734744426576301,0.0159927386068917,0.304007261393108
+"385.1","nfi_needs.hygiene_items","marital_status",NA,"divorced",0.333333333333333,0.136367158288204,0.06605861441438,0.600608052252287
+"385.2","nfi_needs.hygiene_items","marital_status",NA,"married",0.22,0.0293528526409104,0.162469465980304,0.277530534019696
+"385.3","nfi_needs.hygiene_items","marital_status",NA,"no_answer",0,0,0,0
+"385.4","nfi_needs.hygiene_items","marital_status",NA,"single",0,0,0,0
+"385.5","nfi_needs.hygiene_items","marital_status",NA,"widowed",0.12,0.0651281324787328,-0.00764879403866953,0.24764879403867
+"386.1","nfi_needs.water_storage","marital_status",NA,"divorced",0.333333333333333,0.136367158288204,0.06605861441438,0.600608052252287
+"386.2","nfi_needs.water_storage","marital_status",NA,"married",0.535,0.0353423187964223,0.465730328028879,0.604269671971121
+"386.3","nfi_needs.water_storage","marital_status",NA,"no_answer",0,0,0,0
+"386.4","nfi_needs.water_storage","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"386.5","nfi_needs.water_storage","marital_status",NA,"widowed",0.8,0.0801671893150672,0.642875196200664,0.957124803799336
+"387.1","nfi_needs.kitchen_tools","marital_status",NA,"divorced",0.333333333333333,0.136367158288204,0.06605861441438,0.600608052252287
+"387.2","nfi_needs.kitchen_tools","marital_status",NA,"married",0.43,0.035080302379865,0.36124387076869,0.49875612923131
+"387.3","nfi_needs.kitchen_tools","marital_status",NA,"no_answer",0,0,0,0
+"387.4","nfi_needs.kitchen_tools","marital_status",NA,"single",0,0,0,0
+"387.5","nfi_needs.kitchen_tools","marital_status",NA,"widowed",0.52,0.100128787361964,0.323751182954881,0.716248817045119
+"388.1","nfi_needs.sanitary_pads","marital_status",NA,"divorced",0.166666666666667,0.107807704558858,-0.0446325515246305,0.377965884857964
+"388.2","nfi_needs.sanitary_pads","marital_status",NA,"married",0.29,0.032152877497679,0.226981518105221,0.353018481894779
+"388.3","nfi_needs.sanitary_pads","marital_status",NA,"no_answer",0,0,0,0
+"388.4","nfi_needs.sanitary_pads","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"388.5","nfi_needs.sanitary_pads","marital_status",NA,"widowed",0.24,0.0855951353562381,0.0722366174499424,0.407763382550058
+"389.1","nfi_needs.other","marital_status",NA,"divorced",0.166666666666667,0.107807704558858,-0.0446325515246305,0.377965884857964
+"389.2","nfi_needs.other","marital_status",NA,"married",0.115,0.0226054016575777,0.0706942268950856,0.159305773104914
+"389.3","nfi_needs.other","marital_status",NA,"no_answer",1,0,1,1
+"389.4","nfi_needs.other","marital_status",NA,"single",0,0,0,0
+"389.5","nfi_needs.other","marital_status",NA,"widowed",0.04,0.0392737415870028,-0.0369751190486585,0.116975119048659
+"390.1","nfi_needs.none","marital_status",NA,"divorced",0,0,0,0
+"390.2","nfi_needs.none","marital_status",NA,"married",0.025,0.0110627725836923,0.00331736416680602,0.046682635833194
+"390.3","nfi_needs.none","marital_status",NA,"no_answer",0,0,0,0
+"390.4","nfi_needs.none","marital_status",NA,"single",0,0,0,0
+"390.5","nfi_needs.none","marital_status",NA,"widowed",0,0,0,0
+"391.1","nfi_needs.no_answer","marital_status",NA,"divorced",0.0833333333333333,0.0799523335446662,-0.0733703608941461,0.240037027560813
+"391.2","nfi_needs.no_answer","marital_status",NA,"married",0,0,0,0
+"391.3","nfi_needs.no_answer","marital_status",NA,"no_answer",0,0,0,0
+"391.4","nfi_needs.no_answer","marital_status",NA,"single",0.5,0.354292269958436,-0.194400089119476,1.19440008911948
+"391.5","nfi_needs.no_answer","marital_status",NA,"widowed",0,0,0,0
+"396.1","family_number_plot","marital_status",NA,"divorced",1.16666666666667,0.107809599895653,0.955363733683513,1.37796959964982
+"396.2","family_number_plot","marital_status",NA,"married",1.51256281407035,0.0722267381034776,1.37100100866673,1.65412461947397
+"396.3","family_number_plot","marital_status",NA,"no_answer",1,0,1,1
+"396.4","family_number_plot","marital_status",NA,"single",1,0,1,1
+"396.5","family_number_plot","marital_status",NA,"widowed",1.33333333333333,0.113071662288245,1.1117169475763,1.55494971909037
+"397.1","family_number_shelter","marital_status",NA,"divorced",1.25,0.239865506050595,0.77987224700736,1.72012775299264
+"397.2","family_number_shelter","marital_status",NA,"married",1.04568527918782,0.0165531207515662,1.013241758683,1.07812879969263
+"397.3","family_number_shelter","marital_status",NA,"no_answer",1,0,1,1
+"397.4","family_number_shelter","marital_status",NA,"single",1,0,1,1
+"397.5","family_number_shelter","marital_status",NA,"widowed",1.25,0.135302393137197,0.984812182429015,1.51518781757098
+"402.1","calc_edu_males_3_5_unattending_total","marital_status",NA,"divorced",0,0,0,0
+"402.2","calc_edu_males_3_5_unattending_total","marital_status",NA,"married",0.274611398963731,0.0403711573074648,0.195485384626899,0.353737413300563
+"402.3","calc_edu_males_3_5_unattending_total","marital_status",NA,"no_answer",0,0,0,0
+"402.4","calc_edu_males_3_5_unattending_total","marital_status",NA,"single",0.5,0.354324500321928,-0.19446325947113,1.19446325947113
+"402.5","calc_edu_males_3_5_unattending_total","marital_status",NA,"widowed",0.291666666666667,0.110150773157099,0.0757751184095121,0.507558214923821
+"403.1","calc_edu_females_3_5_unattending_total","marital_status",NA,"divorced",0,0,0,0
+"403.2","calc_edu_females_3_5_unattending_total","marital_status",NA,"married",0.155440414507772,0.027149548196481,0.102228277846135,0.208652551169409
+"403.3","calc_edu_females_3_5_unattending_total","marital_status",NA,"no_answer",0,0,0,0
+"403.4","calc_edu_females_3_5_unattending_total","marital_status",NA,"single",0,0,0,0
+"403.5","calc_edu_females_3_5_unattending_total","marital_status",NA,"widowed",0.25,0.0885811250804821,0.0763841851322175,0.423615814867783
+"404.1","calc_edu_males_6_12_unattending_total","marital_status",NA,"divorced",0.1,0.0950752402576174,-0.0863440467264226,0.286344046726423
+"404.2","calc_edu_males_6_12_unattending_total","marital_status",NA,"married",0.0880829015544042,0.0272317574632035,0.0347096376907955,0.141456165418013
+"404.3","calc_edu_males_6_12_unattending_total","marital_status",NA,"no_answer",0,0,0,0
+"404.4","calc_edu_males_6_12_unattending_total","marital_status",NA,"single",0,0,0,0
+"404.5","calc_edu_males_6_12_unattending_total","marital_status",NA,"widowed",0.125,0.122635014566277,-0.115360211793448,0.365360211793448
+"405.1","calc_edu_females_6_12_unattending_total","marital_status",NA,"divorced",0,0,0,0
+"405.2","calc_edu_females_6_12_unattending_total","marital_status",NA,"married",0.0725388601036269,0.0289041901292959,0.0158876884479089,0.129190031759345
+"405.3","calc_edu_females_6_12_unattending_total","marital_status",NA,"no_answer",0,0,0,0
+"405.4","calc_edu_females_6_12_unattending_total","marital_status",NA,"single",0,0,0,0
+"405.5","calc_edu_females_6_12_unattending_total","marital_status",NA,"widowed",0.125,0.0676549518042768,-0.00760126891217561,0.257601268912176
+"406.1","calc_edu_males_13_18_unattending_total","marital_status",NA,"divorced",0.2,0.126766987010157,-0.0484587289685636,0.448458728968564
+"406.2","calc_edu_males_13_18_unattending_total","marital_status",NA,"married",0.155440414507772,0.0357263179353231,0.0854181180543114,0.225462710961233
+"406.3","calc_edu_males_13_18_unattending_total","marital_status",NA,"no_answer",0,0,0,0
+"406.4","calc_edu_males_13_18_unattending_total","marital_status",NA,"single",0,0,0,0
+"406.5","calc_edu_males_13_18_unattending_total","marital_status",NA,"widowed",0.208333333333333,0.101928898967702,0.00855636237281651,0.40811030429385
+"407.1","calc_edu_females_13_18_unattending_total","marital_status",NA,"divorced",0.1,0.0950752402576174,-0.0863440467264226,0.286344046726423
+"407.2","calc_edu_females_13_18_unattending_total","marital_status",NA,"married",0.181347150259067,0.034698720303017,0.113338908155525,0.249355392362609
+"407.3","calc_edu_females_13_18_unattending_total","marital_status",NA,"no_answer",0,0,0,0
+"407.4","calc_edu_females_13_18_unattending_total","marital_status",NA,"single",0,0,0,0
+"407.5","calc_edu_females_13_18_unattending_total","marital_status",NA,"widowed",0.416666666666667,0.143644328781221,0.135128955672043,0.698204377661291
+"408.1","calc_edu_unattending_total","marital_status",NA,"divorced",0.4,0.155257217202453,0.095701445943279,0.704298554056721
+"408.2","calc_edu_unattending_total","marital_status",NA,"married",0.927461139896373,0.103980676026709,0.723662759795897,1.13125951999685
+"408.3","calc_edu_unattending_total","marital_status",NA,"no_answer",0,0,0,0
+"408.4","calc_edu_unattending_total","marital_status",NA,"single",0.5,0.354324500321928,-0.19446325947113,1.19446325947113
+"408.5","calc_edu_unattending_total","marital_status",NA,"widowed",1.41666666666667,0.429582095915138,0.574701230269766,2.25863210306357
+"411.1","school_barriers.high_cost","marital_status",NA,"divorced",0.5,0.251048222626717,0.00795452526884155,0.992045474731158
+"411.2","school_barriers.high_cost","marital_status",NA,"married",0.414141414141414,0.049713034745676,0.316705656477701,0.511577171805128
+"411.3","school_barriers.high_cost","marital_status",NA,"single",1,0,1,1
+"411.4","school_barriers.high_cost","marital_status",NA,"widowed",0.5,0.125524111313358,0.253977262634421,0.746022737365579
+"412.1","school_barriers.lack_space","marital_status",NA,"divorced",0,0,0,0
+"412.2","school_barriers.lack_space","marital_status",NA,"married",0.0202020202020202,0.0141992437784045,-0.00762798621135695,0.0480320266153974
+"412.3","school_barriers.lack_space","marital_status",NA,"single",0,0,0,0
+"412.4","school_barriers.lack_space","marital_status",NA,"widowed",0,0,0,0
+"413.1","school_barriers.poor_condition","marital_status",NA,"divorced",0,0,0,0
+"413.2","school_barriers.poor_condition","marital_status",NA,"married",0.0202020202020202,0.0141992437784044,-0.00762798621135693,0.0480320266153973
+"413.3","school_barriers.poor_condition","marital_status",NA,"single",0,0,0,0
+"413.4","school_barriers.poor_condition","marital_status",NA,"widowed",0,0,0,0
+"414.1","school_barriers.household_chores","marital_status",NA,"divorced",0.25,0.217414138369668,-0.176123880934357,0.676123880934357
+"414.2","school_barriers.household_chores","marital_status",NA,"married",0.0303030303030303,0.0173005772618404,-0.00360547804192946,0.0642115386479901
+"414.3","school_barriers.household_chores","marital_status",NA,"single",0,0,0,0
+"414.4","school_barriers.household_chores","marital_status",NA,"widowed",0,0,0,0
+"415.1","school_barriers.working","marital_status",NA,"divorced",0,0,0,0
+"415.2","school_barriers.working","marital_status",NA,"married",0.0202020202020202,0.0141992437784045,-0.00762798621135696,0.0480320266153974
+"415.3","school_barriers.working","marital_status",NA,"single",0,0,0,0
+"415.4","school_barriers.working","marital_status",NA,"widowed",0,0,0,0
+"416.1","school_barriers.early_marriage","marital_status",NA,"divorced",0,0,0,0
+"416.2","school_barriers.early_marriage","marital_status",NA,"married",0.0606060606060606,0.0240813843837156,0.0134074145161127,0.107804706696009
+"416.3","school_barriers.early_marriage","marital_status",NA,"single",0,0,0,0
+"416.4","school_barriers.early_marriage","marital_status",NA,"widowed",0.0625,0.0607690990830154,-0.0566052455756562,0.181605245575656
+"417.1","school_barriers.relocation","marital_status",NA,"divorced",0,0,0,0
+"417.2","school_barriers.relocation","marital_status",NA,"married",0.0303030303030303,0.0173005772618404,-0.00360547804192947,0.0642115386479901
+"417.3","school_barriers.relocation","marital_status",NA,"single",0,0,0,0
+"417.4","school_barriers.relocation","marital_status",NA,"widowed",0,0,0,0
+"418.1","school_barriers.new_arrival","marital_status",NA,"divorced",0,0,0,0
+"418.2","school_barriers.new_arrival","marital_status",NA,"married",0.0202020202020202,0.0141992437784044,-0.00762798621135694,0.0480320266153973
+"418.3","school_barriers.new_arrival","marital_status",NA,"single",0,0,0,0
+"418.4","school_barriers.new_arrival","marital_status",NA,"widowed",0,0,0,0
+"420.1","school_barriers.insecurity","marital_status",NA,"divorced",0,0,0,0
+"420.2","school_barriers.insecurity","marital_status",NA,"married",0.0101010101010101,0.0100920034027402,-0.00967895310021643,0.0298809733022366
+"420.3","school_barriers.insecurity","marital_status",NA,"single",0,0,0,0
+"420.4","school_barriers.insecurity","marital_status",NA,"widowed",0,0,0,0
+"421.1","school_barriers.disabled","marital_status",NA,"divorced",0,0,0,0
+"421.2","school_barriers.disabled","marital_status",NA,"married",0.0101010101010101,0.0100920034027402,-0.00967895310021642,0.0298809733022366
+"421.3","school_barriers.disabled","marital_status",NA,"single",0,0,0,0
+"421.4","school_barriers.disabled","marital_status",NA,"widowed",0.125,0.0830263955193839,-0.0377287449841701,0.28772874498417
+"425.1","school_barriers.extensive_absences","marital_status",NA,"divorced",0,0,0,0
+"425.2","school_barriers.extensive_absences","marital_status",NA,"married",0.0101010101010101,0.0100920034027402,-0.00967895310021642,0.0298809733022366
+"425.3","school_barriers.extensive_absences","marital_status",NA,"single",0,0,0,0
+"425.4","school_barriers.extensive_absences","marital_status",NA,"widowed",0,0,0,0
+"426.1","school_barriers.school_too_far","marital_status",NA,"divorced",0,0,0,0
+"426.2","school_barriers.school_too_far","marital_status",NA,"married",0.303030303030303,0.0463820055107478,0.212123242698499,0.393937363362107
+"426.3","school_barriers.school_too_far","marital_status",NA,"single",1,0,1,1
+"426.4","school_barriers.school_too_far","marital_status",NA,"widowed",0.3125,0.11636396555202,0.0844308184197821,0.540569181580218
+"427.1","school_barriers.no_transport","marital_status",NA,"divorced",0,0,0,0
+"427.2","school_barriers.no_transport","marital_status",NA,"married",0.0101010101010101,0.0100920034027402,-0.00967895310021641,0.0298809733022366
+"427.3","school_barriers.no_transport","marital_status",NA,"single",0,0,0,0
+"427.4","school_barriers.no_transport","marital_status",NA,"widowed",0,0,0,0
+"428.1","school_barriers.too_young","marital_status",NA,"divorced",0,0,0,0
+"428.2","school_barriers.too_young","marital_status",NA,"married",0.242424242424242,0.043251443154601,0.157652971561843,0.327195513286642
+"428.3","school_barriers.too_young","marital_status",NA,"single",0,0,0,0
+"428.4","school_barriers.too_young","marital_status",NA,"widowed",0.3125,0.11636396555202,0.0844308184197822,0.540569181580218
+"429.1","school_barriers.other","marital_status",NA,"divorced",0.25,0.217414138369668,-0.176123880934357,0.676123880934357
+"429.2","school_barriers.other","marital_status",NA,"married",0.131313131313131,0.0340867230627382,0.0645043817591736,0.198121880867089
+"429.3","school_barriers.other","marital_status",NA,"single",0,0,0,0
+"429.4","school_barriers.other","marital_status",NA,"widowed",0.1875,0.0979872279878327,-0.00455143780106715,0.379551437801067
+"430.1","school_barriers.none","marital_status",NA,"divorced",0,0,0,0
+"430.2","school_barriers.none","marital_status",NA,"married",0.0303030303030303,0.0173005772618404,-0.00360547804192947,0.0642115386479901
+"430.3","school_barriers.none","marital_status",NA,"single",0,0,0,0
+"430.4","school_barriers.none","marital_status",NA,"widowed",0.0625,0.0607690990830154,-0.0566052455756562,0.181605245575656
+"434.1","school_cost_barriers.books","marital_status",NA,"divorced",0.5,0.357002773647708,-0.199712578730413,1.19971257873041
+"434.2","school_cost_barriers.books","marital_status",NA,"married",0.75609756097561,0.0677207322825915,0.623367364695051,0.888827757256168
+"434.3","school_cost_barriers.books","marital_status",NA,"single",1,0,1,1
+"434.4","school_cost_barriers.books","marital_status",NA,"widowed",0.875,0.118067569554015,0.643591815931953,1.10640818406805
+"435.1","school_cost_barriers.writing_materials","marital_status",NA,"divorced",0,0,0,0
+"435.2","school_cost_barriers.writing_materials","marital_status",NA,"married",0.51219512195122,0.0788252658032202,0.357700439905111,0.666689803997328
+"435.3","school_cost_barriers.writing_materials","marital_status",NA,"single",0,0,0,0
+"435.4","school_cost_barriers.writing_materials","marital_status",NA,"widowed",0.625,0.172833224610929,0.286253104430658,0.963746895569342
+"436.1","school_cost_barriers.bag","marital_status",NA,"divorced",0,0,0,0
+"436.2","school_cost_barriers.bag","marital_status",NA,"married",0.0731707317073171,0.0410670232755497,-0.00731915486502846,0.153660618279663
+"436.3","school_cost_barriers.bag","marital_status",NA,"single",0,0,0,0
+"436.4","school_cost_barriers.bag","marital_status",NA,"widowed",0,0,0,0
+"437.1","school_cost_barriers.tuition","marital_status",NA,"divorced",1,0,1,1
+"437.2","school_cost_barriers.tuition","marital_status",NA,"married",0.926829268292683,0.0410670232755497,0.846339381720337,1.00731915486503
+"437.3","school_cost_barriers.tuition","marital_status",NA,"single",1,0,1,1
+"437.4","school_cost_barriers.tuition","marital_status",NA,"widowed",1,0,1,1
+"438.1","school_cost_barriers.uniform","marital_status",NA,"divorced",0.5,0.357002773647708,-0.199712578730413,1.19971257873041
+"438.2","school_cost_barriers.uniform","marital_status",NA,"married",0.75609756097561,0.0677207322825915,0.623367364695051,0.888827757256168
+"438.3","school_cost_barriers.uniform","marital_status",NA,"single",1,0,1,1
+"438.4","school_cost_barriers.uniform","marital_status",NA,"widowed",0.75,0.154586735600211,0.447015565735972,1.05298443426403
+"439.1","school_cost_barriers.transportation","marital_status",NA,"divorced",0,0,0,0
+"439.2","school_cost_barriers.transportation","marital_status",NA,"married",0.195121951219512,0.0624946387727695,0.0726347099980436,0.317609192440981
+"439.3","school_cost_barriers.transportation","marital_status",NA,"single",1,0,1,1
+"439.4","school_cost_barriers.transportation","marital_status",NA,"widowed",0.25,0.154586735600211,-0.0529844342640285,0.552984434264028
+"440.1","school_cost_barriers.food","marital_status",NA,"divorced",0,0,0,0
+"440.2","school_cost_barriers.food","marital_status",NA,"married",0.219512195121951,0.0652735213641707,0.0915784441040709,0.347445946139832
+"440.3","school_cost_barriers.food","marital_status",NA,"single",0,0,0,0
+"440.4","school_cost_barriers.food","marital_status",NA,"widowed",0.125,0.118067569554015,-0.106408184068047,0.356408184068047
+"441.1","school_cost_barriers.other","marital_status",NA,"divorced",0,0,0,0
+"441.2","school_cost_barriers.other","marital_status",NA,"married",0,0,0,0
+"441.3","school_cost_barriers.other","marital_status",NA,"single",0,0,0,0
+"441.4","school_cost_barriers.other","marital_status",NA,"widowed",0.125,0.118067569554015,-0.106408184068047,0.356408184068047
+"446.1","X_geopoint_latitude","marital_status",NA,"divorced",1.94587018888889,0.0366051290440875,1.87412545431304,2.01761492346474
+"446.2","X_geopoint_latitude","marital_status",NA,"married",1.91048288666667,0.00797749010796734,1.89484729336803,1.92611847996531
+"446.3","X_geopoint_latitude","marital_status",NA,"no_answer",1.8147383,0,1.8147383,1.8147383
+"446.4","X_geopoint_latitude","marital_status",NA,"single",1.80228993333333,0.014510583164295,1.77384971293664,1.83073015373002
+"446.5","X_geopoint_latitude","marital_status",NA,"widowed",1.897449076,0.0206553646565142,1.85696530518569,1.93793284681431
+"447.1","X_geopoint_longitude","marital_status",NA,"divorced",32.1244853611111,0.0334586826876553,32.0589075480732,32.1900631741491
+"447.2","X_geopoint_longitude","marital_status",NA,"married",32.1112471091667,0.00761046393178095,32.0963308739547,32.1261633443786
+"447.3","X_geopoint_longitude","marital_status",NA,"no_answer",32.0938417,0,32.0938417,32.0938417
+"447.4","X_geopoint_longitude","marital_status",NA,"single",32.1034624333333,0.00926774253396482,32.0852979917488,32.1216268749179
+"447.5","X_geopoint_longitude","marital_status",NA,"widowed",32.0824459893333,0.0194872042988934,32.0442517707481,32.1206402079185
+"448.1","X_geopoint_altitude","marital_status",NA,"divorced",1063.25,12.5697967682449,1038.61365104125,1087.88634895875
+"448.2","X_geopoint_altitude","marital_status",NA,"married",1067.5095,4.84036379200078,1058.02256129561,1076.99643870439
+"448.3","X_geopoint_altitude","marital_status",NA,"no_answer",1042,0,1042,1042
+"448.4","X_geopoint_altitude","marital_status",NA,"single",1045.65,2.7989089326716,1040.16423929596,1051.13576070404
+"448.5","X_geopoint_altitude","marital_status",NA,"widowed",1077.48,5.08956540219925,1067.50463511473,1087.45536488527
+"449.1","X_geopoint_precision","marital_status",NA,"divorced",8.325,0.348962399016679,7.64104626596861,9.00895373403138
+"449.2","X_geopoint_precision","marital_status",NA,"married",8.46,0.0924451663777554,8.27881080335479,8.64118919664521
+"449.3","X_geopoint_precision","marital_status",NA,"no_answer",10,0,10,10
+"449.4","X_geopoint_precision","marital_status",NA,"single",8.65,0.956589128887777,6.77511975937741,10.5248802406226
+"449.5","X_geopoint_precision","marital_status",NA,"widowed",8.384,0.244587453877222,7.90461739933029,8.86338260066971
+"451.1","X_id","marital_status",NA,"divorced",2555164.58333333,8624.93294899115,2538260.02538424,2572069.14128243
+"451.2","X_id","marital_status",NA,"married",2569746.43,2172.40894108497,2565488.58671578,2574004.27328422
+"451.3","X_id","marital_status",NA,"no_answer",2533460,0,2533460,2533460
+"451.4","X_id","marital_status",NA,"single",2569644,22445.1238864068,2525652.3655541,2613635.6344459
+"451.5","X_id","marital_status",NA,"widowed",2568976.36,6312.59152450584,2556603.90796286,2581348.81203714
+"453.1","X_index","marital_status",NA,"divorced",1276.16666666667,108.979086021787,1062.57158299587,1489.76175033746
+"453.2","X_index","marital_status",NA,"married",1468.395,26.3186402252366,1416.81141303647,1519.97858696353
+"453.3","X_index","marital_status",NA,"no_answer",1073,0,1073,1073
+"453.4","X_index","marital_status",NA,"single",1503.5,235.60435952236,1041.72394073555,1965.27605926445
+"453.5","X_index","marital_status",NA,"widowed",1473.64,77.9971728872915,1320.76835024496,1626.51164975504

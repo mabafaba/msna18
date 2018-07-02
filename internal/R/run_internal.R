@@ -86,7 +86,7 @@ all_means_disaggregations_all_vars<-
            })
            
          })
-debug(mean_R_weighted)
+
 
 
 

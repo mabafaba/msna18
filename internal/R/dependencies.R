@@ -1,6 +1,6 @@
 
 # external packages to install/load:
-.dependencies<-c("dplyr","questionr","data.table","tidyr")
+.dependencies<-c("dplyr","questionr","data.table","tidyr","crayon")
 
 
 

@@ -1,16 +1,11 @@
+
+
+
 percent_with_confints <- function(dependent.var,
                                   independent.var,
                                   design,
                                   na.rm = TRUE){
 
-  formula_summary<-paste0("~",independent.var, "+",dependent.var )
-  f.table <- svytable(formula(formula_summary), design)
-  p.table <- apply(f.table,1,function(x){x/sum(x)})
-  formula_string <- paste0("~",independent.var,sep = "")
-  by <- paste0("~", dependent.var, sep = "")
-  confints <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T) %>% confint(level = 0.95)
-  confints[,1] %>% replace(confints[,1] < 0 , 0)
-  confints[,2] %>% replace(confints[,2] > 1 , 1)
 
   # if dependent and independent variables have only one value, just return that:
   
@@ -23,7 +18,55 @@ percent_with_confints <- function(dependent.var,
     }
   }
   
-
+  formula_summary<-paste0("~",independent.var, "+",dependent.var )
+  f.table <- svytable(formula(formula_summary), design)
+  p.table <- apply(f.table,1,function(x){x/sum(x)})
+  table(design$variables[[dependent.var]],design$variables[[independent.var]])
+  formula_string <- paste0("~",independent.var,sep = "")
+  by <- paste0("~", dependent.var, sep = "")
+  result_hg_format<-tryCatch(
+    {
+    result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
+    unique.independent.var.values<- design$variables[[independent.var]] %>% unique
+    summary_with_confints<-unique.independent.var.values %>%
+      lapply(function(x){
+        summary_stat_colname<-paste0(independent.var,x)
+        lower_confint_colname<-paste0("ci_l.",summary_stat_colname)
+        upper_confint_colname<-paste0("ci_u.",summary_stat_colname)
+        
+        independent_value_x_stats<-result_svy_format[,c(dependent.var,summary_stat_colname,lower_confint_colname,upper_confint_colname)]
+        colnames(independent_value_x_stats)<-c("dependent.var.value","numbers","min","max")
+        data.frame(dependent.var=dependent.var,
+                   independent.var=independent.var,
+                   dependent.var.value=independent_value_x_stats[,"dependent.var.value"],
+                   independent.var.value=x,
+                   numbers=independent_value_x_stats[,"numbers"],
+                   se=NA,
+                   min=independent_value_x_stats[,"min"],
+                   max= independent_value_x_stats[,"max"])
+      }) %>% do.call(rbind,.)
+    
+    
+    result[,"min"] %>% replace(summary_with_confints[,"min"] < 0 , 0)
+    result[,"max"] %>% replace(summary_with_confints[,"min"] > 1 , 1)
+    result
+    },
+    error=function(cond){
+                       sink("./internal/issues_log.txt")
+                       cat("\nconfints failed:\n")
+                       cat(paste("dependent.var:",dependent.var,"\nindependent.var:",independent.var))
+                       cat("\n")
+                       print(cond)
+                       sink()
+                       return(empty_result(list(),message = "FAILED CONFINTS/SUMMARY STAT IN percent_with_confints"))
+                       }
+                     )
+  
+   
+  return(result_hg_format)
+    }
+    
+      
   
   # if(design$variables %>%
   #    split.data.frame(design$variables[[independent.var]]) %>%
@@ -59,17 +102,17 @@ percent_with_confints <- function(dependent.var,
 
   
   # check if we actually got  a frequency table back; problems can arise here if independent.var has only 1 unique value 
-  if(!(nrow(as.data.frame(p.table)>1))){stop("DEV: unexpected edge case in percent_with_confints - freq table has 1 or less rows. contact development team about this error.")}
-
-    p.table %>% melt -> ftable_flipped
-
-    colnames(ftable_flipped)<-c("dependent.var.value","independent.var.value","numbers")
-    results<-data.frame( dependent.var = dependent.var,
-                         independent.var = independent.var,
-                         ftable_flipped,
-                         se=NA,
-                         min=confints[,1],
-                         max=confints[,2])
+  # if(!(nrow(as.data.frame(p.table)>1))){stop("DEV: unexpected edge case in percent_with_confints - freq table has 1 or less rows. contact development team about this error.")}
+  # 
+  #   p.table %>% melt -> ftable_flipped
+  # 
+  #   colnames(ftable_flipped)<-c("dependent.var.value","independent.var.value","numbers")
+  #   results<-data.frame( dependent.var = dependent.var,
+  #                        independent.var = independent.var,
+  #                        ftable_flipped,
+  #                        se=NA,
+  #                        min=confints[,1],
+  #                        max=confints[,2])
 
   # results<-list(
   #   independent.var.value=ftable
@@ -82,8 +125,8 @@ percent_with_confints <- function(dependent.var,
   # results$min <- results$numbers - results$se
   # results$max <- results$numbers + results$se
   # results<-f.table
-  return(results)
-}
+#   return(results)
+# }
 
 
 

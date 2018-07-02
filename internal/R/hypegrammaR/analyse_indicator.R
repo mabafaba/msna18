@@ -1,5 +1,4 @@
 
-
 #' Complete  analysis for one hypothesis
 #'
 #' Produce summary statistics, hypothesis tests and plot objects for a hypothesis
@@ -25,7 +24,7 @@ analyse_indicator<-function(data,
                             sampling.strategy.stratified=FALSE,
                             do.for.each.unique.value.in.var = NULL,
                             case=NULL){
-  options(survey.lonely.psu = "remove")
+  options(survey.lonely.psu = "average")
 
 
   input.parameters= list(

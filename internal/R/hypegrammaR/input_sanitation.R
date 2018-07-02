@@ -2,8 +2,6 @@
 
 
 
-
-
 sanitise_group_difference<-function(data,dependent.var,independent.var){
 
 
@@ -81,6 +79,13 @@ sanitise_data<-function(data,
                                                 independent.var = independent.var)
     if(group_difference$success==F){return(group_difference)}
 
+  }
+  if((grep("direct_reporting",case) %>% length)>0){
+    group_difference<-sanitise_group_difference(data,
+                                                dependent.var = dependent.var,
+                                                independent.var = independent.var)
+    if(group_difference$success==F){return(group_difference)}
+    
   }
 
   if(case=="CASE_group_difference_categorical_categorical"){

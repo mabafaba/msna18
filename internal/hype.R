@@ -16,13 +16,24 @@ source("./internal/R/dependencies.R")
 
 # LOAD INPUT 
 # data 
-data<-read.csv("./internal/input_files/data.csv")
+data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) 
+
+missing_data_to_NA<-function(data){
+  lapply(data,function(x){
+    replace(x,which(x %in% c("","N/A","#N/A","NA")),NA)    
+  }) %>% as.data.frame(stringsAsFactors=T)# survey needs with factors.
+}
+
+
+
+
 # data parameters
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F)
 composite_indicators_weighted_counts<-load_composite_indicator_definition_weighted_count()
 data<-add_variable_indicators_weighted_count(data,composite_indicators_weighted_counts)
 data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
 # load samplingframe (only if data_parameters says it's a stratified sample)
+
 if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
                                                              data.stratum.column = data_parameters$stratum.name.variable,return.stratum.populations = F
                                                              
@@ -42,10 +53,13 @@ analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all
 analysis_plan_direct_reporting<-map_to_analysis_plan_all_vars_as_dependent("marital_status",data)
 
 # APPLY ANALYSIS PLAN:
+# analyse_indicator(data,dependent.var = "deviceid",independent.var= "marital_status",hypothesis.type = "direct_reporting",sampling.strategy.stratified = TRUE,case = "CASE_direct_reporting_numerical_categorical")
+data<-missing_data_to_NA(data)
 results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
 
 # RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
+
 all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.) 
 # save as a csv. Long format + pivot table is great for interactive xlsx
 all_summary_statistics %>% as.data.frame(stringsAsFactors=F) %>%  map_to_file("./output/master_table_long.csv")
