@@ -139,20 +139,6 @@ barchart_average<-function(summary.statistic,filename){
 
 
 
-map_to_file<-function(object,filename){
-  if("ggplot" %in% class(object)){
-    ggsave(filename,object)
-    return(filename)
-  }
-  
-  if("data.frame" %in% class(object)){
-    write.csv(object,filename)
-  }
-  
-  
-}
-
-
 
 
 

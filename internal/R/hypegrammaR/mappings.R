@@ -193,3 +193,44 @@ map_to_visualisation <- function(case) {
 }
 
 
+
+
+
+map_to_file<-function(object,filename){
+  tryCatch({
+    
+    if("ggplot" %in% class(object)){
+      ggsave(filename,object)
+      return(filename)
+    }
+    
+    if("data.frame" %in% class(object)){
+      write.csv(object,filename)
+    }
+    
+  },
+  error=function(cond){
+    message(paste0("Could not write to the file called:\n",filename))
+    message("Please close the file if it is open in any application and make sure the folder I am trying to write to exists.")
+    message("to try again and continue the script, type 't'. To skip writing this file and countine the script, type 's'. To cancel the whole script, type 'c'. Then press enter.")
+    whattodo<-readline("Try again (t), skip this file (s), or cancel script (c)?: ")  
+    
+    if(!(whattodo %in% c("t","s","c"))){
+      message("invalid input. You must type 't' to Try again, 's' to skip this file or 'c' to cancel the script (otherwise I'll abort the script, equivalent to typing 'c').")
+      whattodo<-readline("Try again (t), skip this file (s), or cancel script (c)?: ")  
+    }
+    if(!(whattodo %in% c("t","s","c"))){
+      stop("Could not write to a file, and user decided to cancel the script.")
+    }
+    
+    if(whattodo=="t"){return(map_to_file(object,filename))}
+    if(whattodo=="s"){
+      message("WRITING TO FILE HAS BEEN SKIPPED. Proceeding with the script.")
+      return(NULL)}
+    if(whattodo=="c"){stop("Could not write to a file, and user decided to cancel the script.")}
+
+  },
+  finally = {}
+  ) 
+}
+

@@ -1,6 +1,6 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
- setwd("../")
+ # setwd("../")
 # getwd()
 
 # clear/create folders
@@ -20,8 +20,8 @@ data<-read.csv("./internal/input_files/data.csv")
 # data parameters
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F)
 composite_indicators_weighted_counts<-load_composite_indicator_definition_weighted_count()
-data_with_composite_indicators<-add_variable_indicators_weighted_count(data,composite_indicators_weighted_counts)
-
+data<-add_variable_indicators_weighted_count(data,composite_indicators_weighted_counts)
+data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
 # load samplingframe (only if data_parameters says it's a stratified sample)
 if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
                                                              data.stratum.column = data_parameters$stratum.name.variable,return.stratum.populations = F
@@ -44,44 +44,36 @@ analysis_plan_direct_reporting<-map_to_analysis_plan_all_vars_as_dependent("mari
 # APPLY ANALYSIS PLAN:
 results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
 
-
 # RESHAPE OUTPUTS FOR MASTER TABLE:
-all_summary_statistics<-results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.) 
+# extract summary statistics from result list and rbind to a single long format table
+all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.) 
+# save as a csv. Long format + pivot table is great for interactive xlsx
+all_summary_statistics %>% as.data.frame(stringsAsFactors=F) %>%  map_to_file("./output/master_table_long.csv")
 
-all_summary_statistics %>% write.csv("./output/master_table_long.csv")
+# wide format "master" table: questions and answers for columns
 all_summary_statistics$master_table_column_name<-paste(all_summary_statistics$dependent.var,all_summary_statistics$dependent.var.value,sep="::: ")
-all_summary_statistics[,c("independent.var","independent.var.value","master_table_column_name","numbers")] %>% spread(key = c("master_table_column_name"),value = "numbers") %>% write.csv("master_table_wide.csv")
-all_summary_statistics$master_table_column_name %>% table
-all_summary_statistics[all_summary_statistics$master_table_column_name=="marital_status::: no_latrine_access_who::: married",]
+all_summary_statistics[,c("independent.var","independent.var.value","master_table_column_name","numbers")] %>%
+  spread(key = c("master_table_column_name"),value = "numbers") %>% map_to_file("./output/master_table_wide.csv")
 
 # PLOTS
 dir.create("./output/barcharts")
 
-# grouped_barchart_percent(results[[123]]$summary.statistic,filename = "test.jpg")
-# all_summary_statistics[all_summary_statistics$dependent.var=="respondent_age",] %>% barchart_average("test.jpg")
-
 plots <- lapply(results, function(result){
+  printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
   if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){print(result);return(NULL)}
   filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
-  print(map_to_visualisation(result$input.parameters$case ))
   theplot<-map_to_visualisation(result$input.parameters$case )(result$summary.statistic,filename = filename)
 })
 
+cat("\014")  
+cat("\n\n\nDONE - no issues detected.\n")
+cat(paste0("see ", getwd(),"/","/output/ for results."))
 
-
-
-
-# results[[123]]$summary.statistic
-results[[123]]$input.parameters$case
-
-extract_from_result_list<-function(resultlist,what){lapply(resultlist,function(x){
-  if(what=="case"){return(x$input.parameters$case)}
-}) %>% unlist
-  }
-
-numericalcases<-results %>% extract_from_result_list("case") %>% grep("numerical",.)
-
-map_to_visualisation(results[[123]]$summary.statistic,filename = "./test.jpg")
+# extract_from_result_list<-function(resultlist,what){lapply(resultlist,function(x){
+#   if(what=="case"){return(x$input.parameters$case)}
+# }) %>% unlist
+#   }
+# 
 
 
 
