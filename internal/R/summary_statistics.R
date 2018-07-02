@@ -19,9 +19,4 @@ aggregate_percent_select_one <- function(dependent.var,
     
   }
 
-  return(results)
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> ef00f2512722555d12b563b8e3f90c1e00b81642
+  return(results)}
