@@ -28,7 +28,14 @@ analyse_indicator<-function(data,
   options(survey.lonely.psu = "remove")
 
 
-
+  input.parameters= list(
+    dependent.var=dependent.var,
+    independent.var=independent.var,
+    hypothesis.type=hypothesis.type,
+    sampling.strategy.stratified=sampling.strategy.stratified,
+    case=case
+    
+  )
         # sanitise input
             if(!is.null(do.for.each.unique.value.in.var)){stop("do.for.each.unique.value.in.var must be NULL (not yet implemented)")}
             if(sampling.strategy.cluster){stop("cluster must be FALSE (not yet implemented)")}
@@ -58,7 +65,7 @@ analyse_indicator<-function(data,
     data<-data_sanitised$data
   }else{
     return(
-  empty_result(dependent.var,independent.var,data_sanitised$message)
+  empty_result(input.parameters,data_sanitised$message)
 
     )
   }
@@ -101,13 +108,13 @@ analyse_indicator<-function(data,
 
     }
 
-empty_result<-function(dependent.var,independent.var,message){
+empty_result<-function(input.parameters,message){
   empty_summary_stat<-matrix(0, ncol = 8, nrow = 0) %>% as.data.frame
   colnames(empty_summary_stat)<-c("dependent.var","independent.var","dependent.var.value", "independent.var.value","numbers","se","min", "max")
   
   return(
     list(
-      
+      input.parameters=input.parameters,
       summary.statistic=empty_summary_stat,
       hypothesis.test.result=NULL,
       visualisation=NULL,

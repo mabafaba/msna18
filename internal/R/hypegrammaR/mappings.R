@@ -177,17 +177,60 @@ map_to_visualisation <- function(case) {
   # prefill all valid cases with 'not implemented' errors:
   visualisation_functions<-list()
   visualisation_functions<-lapply(list_all_cases(implemented_only = F),function(x){
-    function(...){stop(paste("not implemented: visualisation for case",x,".\n the geneva data unit can help!"))}
+    function(...){warning(paste("not implemented: visualisation for case",x,".\n the geneva data unit can help!"));return(NULL)}
   })
   names(visualisation_functions)<-list_all_cases(implemented_only = F)
 
   # add implemented cases:
-  visualisation_functions[["CASE_group_difference_categorical_categorical"]] <- barchart_with_error_bars
-  visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_with_error_bars
-  visualisation_functions[["CASE_direct_reporting_numerical_"]] <- barchart_with_error_bars
-  visualisation_functions[["CASE_group_difference_numerical_categorical"]] <- barchart_with_error_bars
-
+  visualisation_functions[["CASE_group_difference_categorical_categorical"]] <- grouped_barchart_percent
+  # visualisation_functions[["CASE_group_difference_numerical_categorical"]] <- barchart_with_error_bars
+  # visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_with_error_bars
+  visualisation_functions[["CASE_direct_reporting_numerical_"]] <- barchart_average
+  visualisation_functions[["CASE_direct_reporting_categorical_categorical"]] <- grouped_barchart_percent
+  visualisation_functions[["CASE_direct_reporting_numerical_categorical"]] <- barchart_average
+  
   return(visualisation_functions[[case]])
 }
 
+
+
+
+
+map_to_file<-function(object,filename){
+  tryCatch({
+    
+    if("ggplot" %in% class(object)){
+      ggsave(filename,object)
+      return(filename)
+    }
+    
+    if("data.frame" %in% class(object)){
+      write.csv(object,filename)
+    }
+    
+  },
+  error=function(cond){
+    message(paste0("Could not write to the file called:\n",filename))
+    message("Please close the file if it is open in any application and make sure the folder I am trying to write to exists.")
+    message("to try again and continue the script, type 't'. To skip writing this file and countine the script, type 's'. To cancel the whole script, type 'c'. Then press enter.")
+    whattodo<-readline("Try again (t), skip this file (s), or cancel script (c)?: ")  
+    
+    if(!(whattodo %in% c("t","s","c"))){
+      message("invalid input. You must type 't' to Try again, 's' to skip this file or 'c' to cancel the script (otherwise I'll abort the script, equivalent to typing 'c').")
+      whattodo<-readline("Try again (t), skip this file (s), or cancel script (c)?: ")  
+    }
+    if(!(whattodo %in% c("t","s","c"))){
+      stop("Could not write to a file, and user decided to cancel the script.")
+    }
+    
+    if(whattodo=="t"){return(map_to_file(object,filename))}
+    if(whattodo=="s"){
+      message("WRITING TO FILE HAS BEEN SKIPPED. Proceeding with the script.")
+      return(NULL)}
+    if(whattodo=="c"){stop("Could not write to a file, and user decided to cancel the script.")}
+
+  },
+  finally = {}
+  ) 
+}
 

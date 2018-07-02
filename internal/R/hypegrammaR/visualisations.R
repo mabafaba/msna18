@@ -53,12 +53,11 @@ reach_style_barchart<-function(group,percent,error_min=NULL,error_max=NULL,horiz
 
 
 
-
 barchart_with_error_bars <- function(hypothesis.test.results,summary.statistics){
   test_name <- hypothesis.test.results$test.parameters[[3]]
   p_value <- hypothesis.test.results$test.results[[2]]
   
-  chart <- reach_style_barchart(group = summary.result$names, 
+  chart <- reach_style_barchart(group = summary.statistics$independent.var.value, 
                                 percent = summary.result$numbers, 
                                 error_min = summary.result$min, 
                                 error_max =  summary.result$max)
@@ -73,6 +72,76 @@ barchart_with_error_bars <- function(hypothesis.test.results,summary.statistics)
                     hjust=0,
                     vjust=0.5)
   }
+
+
+
+grouped_barchart_percent<-function(summary.statistic,filename){
+  
+  if(length(unique(summary.statistic$dependent.var.value))>12){
+    warning("I don't do grouped barcharts with more than 12 responses. that's madness! there isn't even 12 colours!")
+    return(NULL)}
+  percent_formats<-function(x,digits=0){return(paste0(round(x*100,digits),"%"))}
+  
+  theplot<-ggplot(summary.statistic,aes(x=independent.var.value,y=numbers,fill=dependent.var.value))+geom_bar(stat = "identity",position='dodge')+theme_tufte()+
+    xlab(unique(summary.statistic$independent.var)[1])+ylab("percent")+ 
+    theme(text=element_text(family="Arial Narrow")
+          # axis.title.x=element_text(summary.statistic$dependent.var.value"),
+          # axis.text.x=element_blank(),
+          # axis.ticks.x=element_blank(),
+          # axis.title.y=element_blank(),
+          # axis.text.y=element_blank(),
+          # axis.ticks.y=element_blank(),
+          # plot.margin = unit(x = c(0,0,0,0),'null')
+          )+scale_fill_reach(name=unique(summary.statistic$dependent.var)[1])+
+    geom_errorbar( aes(x=summary.statistic$independent.var.value,
+                       ymin=as.numeric(summary.statistic$min),
+                       ymax=as.numeric(summary.statistic$max)),
+                   stat='identity',
+                   width=0) 
+
+
+  map_to_file(theplot,filename)
+    # 
+  return(theplot)
+  }
+
+
+
+
+barchart_average<-function(summary.statistic,filename){
+  
+  
+  theplot<-ggplot(summary.statistic,aes(x=independent.var.value,y=numbers),fill=reach_style_color_darkgrey(1))+geom_bar(stat = "identity")+theme_tufte()+
+    xlab(unique(summary.statistic$independent.var)[1])+ylab(summary.statistic$dependent.var[1])+ 
+    theme(text=element_text(family="Arial Narrow")
+          # axis.title.x=element_text(summary.statistic$dependent.var.value"),
+          # axis.text.x=element_blank(),
+          # axis.ticks.x=element_blank(),
+          # axis.title.y=element_blank(),
+          # axis.text.y=element_blank(),
+          # axis.ticks.y=element_blank(),
+          # plot.margin = unit(x = c(0,0,0,0),'null')
+    )+
+    geom_errorbar( aes(x=summary.statistic$independent.var.value,
+                       ymin=as.numeric(summary.statistic$min),
+                       ymax=as.numeric(summary.statistic$max)),
+                   stat='identity',
+                   width=.1) 
+  
+  
+  map_to_file(theplot,filename)
+  # 
+  return(theplot)
+}
+
+
+
+
+
+
+
+
+
 
 
 

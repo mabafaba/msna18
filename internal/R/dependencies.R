@@ -1,10 +1,7 @@
 
 # external packages to install/load:
-.dependencies<-c("dplyr","questionr","data.table")
+.dependencies<-c("dplyr","questionr","data.table","tidyr")
 
-
-# reach "hypegrammar" package ("unpackaged" and loaded as scripts)
-source("./internal/R/hypegrammar_dependencies.R")
 
 
 
@@ -43,3 +40,6 @@ source("./internal/R/load_analysis_definitions.R")
 # load external packages:
 .install_dependencies(.dependencies)
 .load_dependencies(.dependencies)
+# reach "hypegrammar" package ("unpackaged" and loaded as scripts)
+source("./internal/R/hypegrammar_dependencies.R")
+
