@@ -4,9 +4,6 @@ load_composite_indicator_definition_weighted_count<-function(file="./internal/in
   read.csv.part(file = file,2,2,6) %>% remove.empty.rows
 }
 
-
-
-
 read.csv.part<-function(file,first.row,first.col=1,last.col=NULL){
   headers = read.csv(file, skip = first.row, header = F, nrows = 1, as.is = T)
   df = read.csv(file, skip = first.row+1, header = F,stringsAsFactors = F)
