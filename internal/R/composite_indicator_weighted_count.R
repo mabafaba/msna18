@@ -37,7 +37,24 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
   recoded %>% as.data.frame %>% sapply(ass.numeric) %>% rowSums %>% return
 }
 
-recode<-function(x,from,to){
+recode_equal<-function(x,from,to){
+  return(to[match(x,from)])
+}
+
+
+recode_smaller_equal<-function(x,from,to){
+  return(to[match(x,from)])
+}
+
+recode_smaller_equal<-function(x,from,to){
+  return(to[match(x,from)])
+}
+
+recode_contains_suficcient<-function(x,from){
+  recode_select_multiple_to_logical(x,selected.any.in = from)
+}
+
+recode_contains_necessary<-function(x,from,to){
   return(to[match(x,from)])
 }
 

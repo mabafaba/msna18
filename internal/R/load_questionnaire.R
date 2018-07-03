@@ -36,20 +36,20 @@ load_questionnaire<-function(data,
 
 
       # harmonise data column references
-      names(questions) <- reachR:::to_alphanumeric_lowercase(names(questions))
-      names(choices) <- reachR:::to_alphanumeric_lowercase(names(choices))
-      names(data) <- reachR:::to_alphanumeric_lowercase(names(data))
-      choices.label.column.to.use <- reachR:::to_alphanumeric_lowercase(choices.label.column.to.use)
+      names(questions) <- names(questions)
+      names(choices) <- names(choices)
+      names(data) <- names(data)
+      choices.label.column.to.use <- choices.label.column.to.use
 
       # sanitise
       names(questions)
 
-      reachR:::insure.string.is.column.header(questions, "type")
-      reachR:::insure.string.is.column.header(questions, "name")
-      reachR:::insure.string.is.column.header(choices, choices.label.column.to.use)
-      reachR:::insure.string.is.column.header(choices, "list.name")
+      insure.string.is.column.header(questions, "type")
+      insure.string.is.column.header(questions, "name")
+      insure.string.is.column.header(choices, choices.label.column.to.use)
+      insure.string.is.column.header(choices, "list_name")
 
-      questions$name <- reachR:::to_alphanumeric_lowercase(questions$name)
+      questions$name <- questions$name
       begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
       end_gr <- grep(paste(c("end_group","end group"), collapse = "|"), questions$type, ignore.case = T)
       number_of_questions <- (length(questions$name) - length(begin_gr) - length(end_gr))
@@ -68,7 +68,7 @@ load_questionnaire<-function(data,
         choices_per_data_column<-questions$type %>% as.character %>% strsplit(" ") %>% lapply(unlist)%>% lapply(function(x){
 
         x %>% lapply(function(y){
-        grep(y,choices$list.name,value=F)
+        grep(y,choices$list_name,value=F)
       }
       ) %>% unlist
     }) %>% lapply(hasdata) %>% lapply(function(x){
@@ -175,11 +175,14 @@ load_questionnaire<-function(data,
 #' @export
 #' @examples
 #'
-variable_type <- function(variables){
+question_variable_type <- function(variables){
     variable_types <- as.vector(sapply(variables, function(x){
-      if(question_is_categorical(x)){return("categorical")}
+      # if(question_is_categorical(x)){return("categorical")}
+      if(question_is_select_multiple(x)){return("select_multiple")}
+      if(question_is_select_one(x)){return("select_one")}
       if(question_is_numeric(x)){return("numeric")}
-      return("This variable is neither numeric nor categorical")})
+      return(NA)
+      })
     )
     return(variable_types)
     }
@@ -193,6 +196,6 @@ variable_type <- function(variables){
 
 read.csv.auto.sep<-function(file,stringsAsFactors=F,...){
   df<-fread(file,stringsAsFactors=stringsAsFactors,...) %>% as.data.frame
-  colnames(df)<-reachR:::to_alphanumeric_lowercase(colnames(df))
+  colnames(df)<-colnames(df)
   return(df)
 }

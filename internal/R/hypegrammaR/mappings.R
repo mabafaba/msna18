@@ -40,7 +40,7 @@ map_to_case<-function(data,
                       dependent.var,
                       independent.var = NULL,
                       paired = NULL){
-  variable.type <- paste0(reachR:::variable_type(dependent.var), "_", reachR:::variable_type(independent.var))
+  variable.type <- paste0(variable_type(dependent.var), "_", variable_type(independent.var))
   case <- paste(c("CASE",hypothesis.type,variable.type, paired), collapse = "_")
   class(case)<-"analysis_case"
   return(case)

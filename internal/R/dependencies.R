@@ -9,7 +9,7 @@ source("./internal/R/load_analysis_definitions.R")
 # replaced by hypegrammar:
 # source("./internal/R/aggregation.R")
 # source("./internal/R/KI_aggregation.R")
-# source("./internal/R/errors.R")
+source("./internal/R/errors.R")
 # source("./internal/R/summary_statistics.R")
 
 # stuff for loading/installing packages only when needed:
