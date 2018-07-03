@@ -31,7 +31,7 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
       # get the name of the variable to recode
       var.to.recode<-as.character(unique(x$var))
       # return the weights corresponding to each value
-      return(data[,var.to.recode] %>% recode(x$value,x$weight))
+      return(data[,var.to.recode] %>% recode_equal(x$value,x$weight))
     })
   # then take the rowsums and return them
   recoded %>% as.data.frame %>% sapply(ass.numeric) %>% rowSums %>% return
