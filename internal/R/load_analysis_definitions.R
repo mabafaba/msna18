@@ -1,7 +1,7 @@
 
 
 load_composite_indicator_definition_weighted_count<-function(file="./internal/input_files/composite_indicators.csv"){
-  read.csv.part(file = file,2,2,5) %>% remove.empty.rows
+  read.csv.part(file = file,2,2,6) %>% remove.empty.rows
 }
 
 

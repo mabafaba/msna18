@@ -31,6 +31,7 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
       # get the name of the variable to recode
       var.to.recode<-as.character(unique(x$var))
       # return the weights corresponding to each value
+
       if(x$condition == "EQUAL"){
       return(data[,var.to.recode] %>% recode_equal(x$value,x$weight))}
       if(x$condition == "SMALLER OR EQUAL"){
@@ -38,6 +39,7 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
       if(x$condition == "MORE"){
       return(data[,var.to.recode] %>% recode_more(x$value,x$weight))} 
       })
+
   # then take the rowsums and return them
   recoded %>% as.data.frame %>% sapply(ass.numeric) %>% rowSums %>% return
 }
