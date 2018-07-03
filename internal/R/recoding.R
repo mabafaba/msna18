@@ -10,7 +10,7 @@ recode_select_one_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
   make_false<- x %in% becomes.FALSE
   x_recoded<-rep(NA,length(x))
   x_recoded[make_false] <- FALSE  # recode to "to" value where condition met
-  x_recoded[make_true] <- TRUE  # recode to "to" value where condition met
+  x_recoded[make_true] <- TRUE  # recode to "to" value where condition not met
   return(x_recoded)
 }
 
@@ -43,6 +43,28 @@ recode_select_multiple_to_logical <- function(x, selected.any.in, selected.all.i
   make_true_none <- lapply(match_none, function(x){all(is.na(x))}) %>% unlist
   x_recoded[make_true_none] <- TRUE}
   return(x_recoded)
+}
+
+
+recode_equal<-function(x,from,to){
+return(to[match(x,from)])
+  }
+
+
+recode_smaller_equal<-function(x,from,to){
+  return(to[x <= from])
+}
+
+recode_larger<-function(x,from,to){
+  return(to[x > from])
+}
+
+recode_contains_suficcient<-function(x,from){
+  recode_select_multiple_to_logical(x,selected.any.in = from)
+}
+
+recode_contains_necessary<-function(x,from,to){
+  return(to[match(x,from)])
 }
 
 

@@ -31,37 +31,16 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
       # get the name of the variable to recode
       var.to.recode<-as.character(unique(x$var))
       # return the weights corresponding to each value
-      return(data[,var.to.recode] %>% recode(x$value,x$weight))
-    })
+      if(x$condition == "EQUAL"){
+      return(data[,var.to.recode] %>% recode_equal(x$value,x$weight))}
+      if(x$condition == "SMALLER OR EQUAL"){
+      return(data[,var.to.recode] %>% recode_less_than_equal(x$value,x$weight))}
+      if(x$condition == "MORE"){
+      return(data[,var.to.recode] %>% recode_more(x$value,x$weight))} 
+      })
   # then take the rowsums and return them
   recoded %>% as.data.frame %>% sapply(ass.numeric) %>% rowSums %>% return
 }
-
-recode_equal<-function(x,from,to){
-  return(to[match(x,from)])
-}
-
-
-recode_smaller_equal<-function(x,from,to){
-  return(to[match(x,from)])
-}
-
-recode_smaller_equal<-function(x,from,to){
-  return(to[match(x,from)])
-}
-
-recode_contains_suficcient<-function(x,from){
-  recode_select_multiple_to_logical(x,selected.any.in = from)
-}
-
-recode_contains_necessary<-function(x,from,to){
-  return(to[match(x,from)])
-}
-
-
-
-
-
 
 ass.numeric<-function(x){
   # as.numeric, but without factor mayham
