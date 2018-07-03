@@ -1,5 +1,5 @@
 
 confints failed:
-dependent.var: X_submission_time 
+dependent.var: enumerator 
 independent.var: marital_status
 <simpleError in eval(lhs, parent, parent): object 'result' not found>

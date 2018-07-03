@@ -5,11 +5,14 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE) 
-unlink("./output/percent_aggregations_raw_csv",recursive=TRUE) 
+unlink("./output/percent_aggregations_raw_csv",recursive=TRUE)
+unlink("./output/barcharts",recursive=TRUE) 
+
 dir.create("./output",showWarnings = F)
 dir.create("./output/modified_data",showWarnings = F)
 dir.create("./output/percent_aggregations_raw_csv",showWarnings = F)
 dir.create("./output/mean_aggregations_raw_csv",showWarnings = F)
+dir.create("./output/barcharts",showWarnings = F)
 
 #load dependencies
 source("./internal/R/dependencies.R")
@@ -59,7 +62,6 @@ results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
 
 # RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
-
 all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.) 
 # save as a csv. Long format + pivot table is great for interactive xlsx
 all_summary_statistics %>% as.data.frame(stringsAsFactors=F) %>%  map_to_file("./output/master_table_long.csv")
@@ -70,17 +72,18 @@ all_summary_statistics[,c("independent.var","independent.var.value","master_tabl
   spread(key = c("master_table_column_name"),value = "numbers") %>% map_to_file("./output/master_table_wide.csv")
 
 # PLOTS
-dir.create("./output/barcharts")
 
 plots <- lapply(results, function(result){
-  printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
+  # printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
   if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){print(result);return(NULL)}
   filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
   theplot<-map_to_visualisation(result$input.parameters$case )(result$summary.statistic,filename = filename)
+  print(filename)
+  
 })
 
 cat("\014")  
-cat("\n\n\nDONE - no issues detected.\n")
+cat(green("\n\n\nDONE - no issues detected.\n"))
 cat(paste0("see ", getwd(),"/","/output/ for results."))
 
 # extract_from_result_list<-function(resultlist,what){lapply(resultlist,function(x){

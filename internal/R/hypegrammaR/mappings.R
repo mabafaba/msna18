@@ -197,10 +197,11 @@ map_to_visualisation <- function(case) {
 
 
 map_to_file<-function(object,filename){
+  print(class(object))
   tryCatch({
     
     if("ggplot" %in% class(object)){
-      ggsave(filename,object)
+      ggsave(filename,object,)
       return(filename)
     }
     

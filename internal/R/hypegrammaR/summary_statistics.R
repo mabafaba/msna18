@@ -18,49 +18,52 @@ percent_with_confints <- function(dependent.var,
     }
   }
   
-  formula_summary<-paste0("~",independent.var, "+",dependent.var )
-  f.table <- svytable(formula(formula_summary), design)
-  p.table <- apply(f.table,1,function(x){x/sum(x)})
-  table(design$variables[[dependent.var]],design$variables[[independent.var]])
-  formula_string <- paste0("~",independent.var,sep = "")
-  by <- paste0("~", dependent.var, sep = "")
-  result_hg_format<-tryCatch(
+  # formula_summary<-paste0("~",dependent.var, "+",independent.var )
+  # f.table <- svytable(formula(formula_summary), design)
+  # p.table <- apply(f.table,1,function(x){x/sum(x)})
+  # table(design$variables[[dependent.var]],design$variables[[independent.var]])
+  
+  formula_string <- paste0("~",dependent.var,sep = "")
+  by <- paste0("~", independent.var, sep = "")
+  
+  result_hg_format<- # tryCatch(
     {
     result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
-    unique.independent.var.values<- design$variables[[independent.var]] %>% unique
-    summary_with_confints<-unique.independent.var.values %>%
+    unique.dependent.var.values<- design$variables[[dependent.var]] %>% unique
+    summary_with_confints<-unique.dependent.var.values %>%
       lapply(function(x){
-        summary_stat_colname<-paste0(independent.var,x)
+        summary_stat_colname<-paste0(dependent.var,x)
         lower_confint_colname<-paste0("ci_l.",summary_stat_colname)
         upper_confint_colname<-paste0("ci_u.",summary_stat_colname)
         
-        independent_value_x_stats<-result_svy_format[,c(dependent.var,summary_stat_colname,lower_confint_colname,upper_confint_colname)]
-        colnames(independent_value_x_stats)<-c("dependent.var.value","numbers","min","max")
+        dependent_value_x_stats<-result_svy_format[,c(independent.var,summary_stat_colname,lower_confint_colname,upper_confint_colname)]
+        colnames(dependent_value_x_stats)<-c("independent.var.value","numbers","min","max")
         data.frame(dependent.var=dependent.var,
                    independent.var=independent.var,
-                   dependent.var.value=independent_value_x_stats[,"dependent.var.value"],
-                   independent.var.value=x,
-                   numbers=independent_value_x_stats[,"numbers"],
+                   dependent.var.value=x,
+                   independent.var.value=dependent_value_x_stats[,"independent.var.value"],
+                   numbers=dependent_value_x_stats[,"numbers"],
                    se=NA,
-                   min=independent_value_x_stats[,"min"],
-                   max= independent_value_x_stats[,"max"])
+                   min=dependent_value_x_stats[,"min"],
+                   max=dependent_value_x_stats[,"max"])
       }) %>% do.call(rbind,.)
     
     
-    result[,"min"] %>% replace(summary_with_confints[,"min"] < 0 , 0)
-    result[,"max"] %>% replace(summary_with_confints[,"min"] > 1 , 1)
-    result
-    },
-    error=function(cond){
-                       sink("./internal/issues_log.txt")
-                       cat("\nconfints failed:\n")
-                       cat(paste("dependent.var:",dependent.var,"\nindependent.var:",independent.var))
-                       cat("\n")
-                       print(cond)
-                       sink()
-                       return(empty_result(list(),message = "FAILED CONFINTS/SUMMARY STAT IN percent_with_confints"))
-                       }
-                     )
+    summary_with_confints[,"min"] <- summary_with_confints[,"min"] %>% replace(summary_with_confints[,"min"] < 0 , 0)
+    summary_with_confints[,"max"] <- summary_with_confints[,"max"] %>% replace(summary_with_confints[,"max"] > 1 , 1)
+    summary_with_confints %>% as.data.frame
+     }
+    #,
+    # error=function(cond){        data.frame(dependent.var=NA,
+    #                                         independent.var=NA,
+    #                                         dependent.var.value=NA,
+    #                                         independent.var.value=NA,
+    #                                         numbers=NA,
+    #                                         se=NA,
+    #                                         min=NA,
+    #                                         max= NA)[FALSE,]
+    #                    }
+    #                  )
   
    
   return(result_hg_format)
@@ -143,7 +146,7 @@ confidence_intervals_mean <- function(dependent.var,
     results$numbers <- summary
     results$min <- confints[,1]
     results$max <- confints[,2]
-    return(results)
+    return(results %>% as.data.frame)
  }
 
   confidence_intervals_mean_groups <- function(dependent.var,
