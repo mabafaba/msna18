@@ -1,7 +1,7 @@
 
 
 load_composite_indicator_definition_weighted_count<-function(file="./internal/input_files/composite_indicators.csv"){
-  read.csv.part(file = file,2,2,6) %>% remove.empty.rows
+  read.csv.part(file = file,2,2,6) %>% remove.empty.rows %>% lapply(to_alphanumeric_lowercase) %>% do.call(cbind,.) %>% as.data.frame
 }
 
 read.csv.part<-function(file,first.row,first.col=1,last.col=NULL){
@@ -18,6 +18,11 @@ remove.empty.rows<-function(df){
     all(x %in% c(NA,""))
   })
   df[!rowempty,]  
+}
+
+to_alphanumeric_lowercase_df <- function(df){
+  names(df) <- to_alphanumeric_lowercase(names(df))
+  return(df)
 }
 
 

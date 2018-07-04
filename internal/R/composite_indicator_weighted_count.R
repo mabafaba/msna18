@@ -5,11 +5,13 @@ add_variable_indicators_weighted_count<-function(data,composite_indicator_defini
   if(!("weight" %in% names(composite_indicator_definitions))){stop("indicator definition must have a column called 'weight'")}
   
   list.of.new.indicator.definitions <- composite_indicator_definitions %>%
-    split.data.frame(composite_indicator_definitions$new.var.name) 
+    # split definitions by new indicators to create. specify levels to insure order stays consistent
+    split.data.frame(factor(composite_indicator_definitions$new.var.name,levels=unique(composite_indicator_definitions$new.var.name)))
     
   # this has to be a loop, because composite indicators may depend on previous composite indicators.
   for(i in seq_along(list.of.new.indicator.definitions)){
-      data[[unique(composite_indicator_definitions$new.var.name)[1]]]<-composite_indicator_weighted_count(data,indicator_definition = list.of.new.indicator.definitions[[i]])
+      data[[unique(list.of.new.indicator.definitions[[i]]$new.var.name)[1]]] <- composite_indicator_weighted_count(data,indicator_definition = list.of.new.indicator.definitions[[i]])
+      print("vulnerability_index" %in% names(data))
       }
 
   return(data)
@@ -22,30 +24,27 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
   if(!("var" %in% names(indicator_definition))){stop("indicator definition must have a column called 'var'")}
   if(!("value" %in% names(indicator_definition))){stop("indicator definition must have a column called 'value'")}
   if(!("weight" %in% names(indicator_definition))){stop("indicator definition must have a column called 'weight'")}
-  if(length(unique(indicator_definition$new.var.name))!=1){stop("trying to make composite indicator with more than one new name for the newly created variable")}
-  
-  # split indicator definition by source variable: 
-  recoded <- indicator_definition %>% split.data.frame(indicator_definition$var) %>% 
-    # for each source variable...
-    lapply(function(x){
-      # get the name of the variable to recode
-      var.to.recode<-as.character(unique(x$var))
-      # return the weights corresponding to each value
-  recoded.values <- x %>% split.data.frame(x$value) %>%     
-    lapply(function(y){
-      if(y$condition == "EQUAL"){
-      return(recode_equal(y$value,y$weight))}
-      if(y$condition == "SMALLER OR EQUAL"){
-      return(recode_less_than_equal(y$value,y$weight))}
-      if(y$condition == "MORE"){
-      return(recode_more(y$value,y$weight))} 
-}    
-  )
-  }
-)
+ # if(length(unique(indicator_definition$new.var.name))!=1){stop("trying to make composite indicator with more than one new name for the newly created variable")}
 
-  # then take the rowsums and return them
-  recoded %>% as.data.frame %>% sapply(ass.numeric) %>% rowSums %>% return
+  # split indicator definition by source variable: 
+  indicator_definition_by_variable <- indicator_definition %>% split.data.frame(indicator_definition$var) 
+  
+  all_recoded_vars<-lapply(indicator_definition_by_variable,
+         function(this_var_recoding_definition){
+            var.to.recode <- as.character(unique(this_var_recoding_definition$var))
+                # return the weights corresponding to each value
+            print(var.to.recode)
+            composite_indicators_definitions_weighted_counts
+            x_recoded <- rep(NA,length(data[,var.to.recode]))
+            for(i in 1:nrow(this_var_recoding_definition)){
+              x <- this_var_recoding_definition[i,,drop = F]
+              recoded_generic <- recode_generic(data[,x$var], x$value, x$condition, x$weight)
+              x_recoded[!is.na(recoded_generic)] <- recoded_generic[!is.na(recoded_generic)]
+              }
+              return(x_recoded)}
+         )
+  
+  all_recoded_vars %>% as.data.frame %>% sapply(ass.numeric) %>% rowSums %>% return
 }
 
 ass.numeric<-function(x){

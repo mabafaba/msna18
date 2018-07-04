@@ -46,6 +46,23 @@ recode_select_multiple_to_logical <- function(x, selected.any.in, selected.all.i
 }
 
 
+### input x should be the line in the data with variable name, 
+recode_generic <- function(x, value, condition, to){
+  recoded <- rep(NA,length(x))
+  if(condition == "SMALLER OR EQUAL"){
+    recoded <- recode_smaller_equal(x = x, from = value, to = to)
+  }
+  if(condition == "EQUAL")
+  {
+    recoded <- recode_equal(x = x, from = value, to = to)
+  }
+  if(condition == "LARGER"){
+    recoded <- recode_larger(x = x, from = value, to = to)
+  }
+  return(recoded)
+}
+
+
 recode_equal<-function(x,from,to){
 return(to[match(x,from)])
   }

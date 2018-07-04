@@ -19,7 +19,9 @@ source("./internal/R/dependencies.R")
 
 # LOAD INPUT 
 # data 
-data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) 
+data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F)
+names(data) <- to_alphanumeric_lowercase(names(data))
+
 
 missing_data_to_NA<-function(data){
   lapply(data,function(x){
@@ -32,8 +34,11 @@ missing_data_to_NA<-function(data){
 
 # data parameters
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F)
-composite_indicators_weighted_counts<-load_composite_indicator_definition_weighted_count()
-data<-add_variable_indicators_weighted_count(data,composite_indicators_weighted_counts)
+composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
+debug(composite_indicator_weighted_count)
+#undebug(recode_generic)
+#debug(add_variable_indicators_weighted_count)
+data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
 data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
 # load samplingframe (only if data_parameters says it's a stratified sample)
 
