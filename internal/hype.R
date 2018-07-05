@@ -1,7 +1,7 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-# setwd("../")
-# getwd()
+setwd("../")
+getwd()
 
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE) 
@@ -55,7 +55,8 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
 # list of variables to disaggregate by:
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
 # create a data analysis plan with all disaggregation variables as independent variable for all variables as dependent
-analysis_plan_direct_reporting<-map_to_analysis_plan_all_vars_as_dependent("marital_status",data)
+analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent("marital_status",data)
+analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] %<>% lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
 
 # APPLY ANALYSIS PLAN:
 # analyse_indicator(data,dependent.var = "deviceid",independent.var= "marital_status",hypothesis.type = "direct_reporting",sampling.strategy.stratified = TRUE,case = "CASE_direct_reporting_numerical_categorical")
