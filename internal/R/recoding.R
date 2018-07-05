@@ -49,14 +49,14 @@ recode_select_multiple_to_logical <- function(x, selected.any.in, selected.all.i
 ### input x should be the line in the data with variable name, 
 recode_generic <- function(x, value, condition, to){
   recoded <- rep(NA,length(x))
-  if(condition == "SMALLER OR EQUAL"){
+  if(condition == "smaller.or.equal"){
     recoded <- recode_smaller_equal(x = x, from = value, to = to)
   }
-  if(condition == "EQUAL")
+  if(condition == "equal")
   {
     recoded <- recode_equal(x = x, from = value, to = to)
   }
-  if(condition == "LARGER"){
+  if(condition == "larger"){
     recoded <- recode_larger(x = x, from = value, to = to)
   }
   return(recoded)
@@ -64,17 +64,29 @@ recode_generic <- function(x, value, condition, to){
 
 
 recode_equal<-function(x,from,to){
-return(to[match(x,from)])
+to %<>% as.numeric
+recoded <- to[match(x,from)]
+return(recoded)
   }
 
-
 recode_smaller_equal<-function(x,from,to){
-  return(to[x <= from])
+  from %<>% as.numeric
+  to %<>% as.numeric
+  condition_met <- x <= from
+  recoded_empty <- rep(NA,length(x))
+  recoded_empty[condition_met] <- to
+  return(recoded_empty)
 }
 
 recode_larger<-function(x,from,to){
-  return(to[x > from])
+  from %<>% as.numeric
+  to %<>% as.numeric
+  condition_met <- x > from
+  recoded_empty <- rep(NA,length(x))
+  recoded_empty[condition_met] <- to
+  return(recoded_empty)
 }
+
 
 recode_contains_suficcient<-function(x,from){
   recode_select_multiple_to_logical(x,selected.any.in = from)

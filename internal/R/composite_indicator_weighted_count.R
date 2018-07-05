@@ -7,6 +7,7 @@ add_variable_indicators_weighted_count<-function(data,composite_indicator_defini
   list.of.new.indicator.definitions <- composite_indicator_definitions %>%
     # split definitions by new indicators to create. specify levels to insure order stays consistent
     split.data.frame(factor(composite_indicator_definitions$new.var.name,levels=unique(composite_indicator_definitions$new.var.name)))
+    composite_indicator_definitions$new.var.name <- to_alphanumeric_lowercase(composite_indicator_definitions$new.var.name)
     
   # this has to be a loop, because composite indicators may depend on previous composite indicators.
   for(i in seq_along(list.of.new.indicator.definitions)){
@@ -40,6 +41,7 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
               x <- this_var_recoding_definition[i,,drop = F]
               recoded_generic <- recode_generic(data[,x$var], x$value, x$condition, x$weight)
               x_recoded[!is.na(recoded_generic)] <- recoded_generic[!is.na(recoded_generic)]
+              print(x_recoded)
               }
               return(x_recoded)}
          )
