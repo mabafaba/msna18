@@ -30,7 +30,7 @@ missing_data_to_NA<-function(data){
 }
 
 
-
+composite_indicators_definitions_weighted_counts
 
 # data parameters
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
