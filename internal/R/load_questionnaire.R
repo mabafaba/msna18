@@ -36,31 +36,28 @@ load_questionnaire<-function(data,
 
 
       # harmonise data column references
-      names(questions) <- names(questions)
-      names(choices) <- names(choices)
-      names(data) <- names(data)
-      choices.label.column.to.use <- choices.label.column.to.use
+      names(questions) <- to_alphanumeric_lowercase(names(questions))
+      names(choices) <- to_alphanumeric_lowercase(names(choices))
+      # names(data) <- to_alphanumeric_lowercase(names(data)
+      choices.label.column.to.use <- to_alphanumeric_lowercase(choices.label.column.to.use)
 
       # sanitise
-      names(questions)
-
       insure.string.is.column.header(questions, "type")
       insure.string.is.column.header(questions, "name")
       insure.string.is.column.header(choices, choices.label.column.to.use)
-      insure.string.is.column.header(choices, "list_name")
-
-      questions$name <- questions$name
+      insure.string.is.column.header(choices, "list.name")
+      questions$name <- to_alphanumeric_lowercase(questions$name)
       begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
       end_gr <- grep(paste(c("end_group","end group"), collapse = "|"), questions$type, ignore.case = T)
       number_of_questions <- (length(questions$name) - length(begin_gr) - length(end_gr))
 
       # get data column names
-      data_colnames<-names(data); data_colnames
+      data_colnames<-names(data)
 
       # this changes the questionnaire questions and choices to fit the data columns,
       # with empty entries for data columns that don't appear in the questionnaire.
       if((sum(!is.na(match(data_colnames, questions$name)))/number_of_questions) < 0.3) {
-        stop("The question names and data column names don't seem to match. please make sure the two columns are harmonized")
+        stop("The question names (questionnaire) and data column names (data) don't seem to match. please make sure the two columns are harmonized")
       }
 
       questions <- questions[match(data_colnames, questions$name),]
@@ -196,6 +193,6 @@ question_variable_type <- function(variables){
 
 read.csv.auto.sep<-function(file,stringsAsFactors=F,...){
   df<-fread(file,stringsAsFactors=stringsAsFactors,...) %>% as.data.frame
-  colnames(df)<-colnames(df)
+  df<-to_alphanumeric_lowercase_colnames_df(df)
   return(df)
 }

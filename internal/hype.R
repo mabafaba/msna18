@@ -1,6 +1,6 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-# setwd("../")
+setwd("../")
 # getwd()
 
 # clear/create folders
@@ -15,7 +15,6 @@ dir.create("./output/mean_aggregations_raw_csv",showWarnings = F)
 dir.create("./output/barcharts",showWarnings = F)
 
 #load dependencies
-source("./internal/R/hypegrammar/utilities.R")
 source("./internal/R/dependencies.R")
 
 # LOAD INPUT 
@@ -29,8 +28,6 @@ missing_data_to_NA<-function(data){
   }) %>% as.data.frame(stringsAsFactors=T)# survey needs with factors.
 }
 
-
-composite_indicators_definitions_weighted_counts
 
 # data parameters
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
@@ -47,7 +44,7 @@ if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_f
                                                              data.stratum.column = data_parameters$stratum.name.variable,return.stratum.populations = F
                                                              
 )}
-
+# debug(load_questionnaire)
 # load kobo tool:
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
                                   choices.file = "./internal/input_files/kobo_choices.csv",

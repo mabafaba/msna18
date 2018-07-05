@@ -44,7 +44,6 @@ triangulate_empty<-function(x,by){
 }
 
 
-
 map_to_triangulation<-function(varname=NULL,vartype=NULL){
   
   if(is.null(varname) & is.null(vartype)){stop("must provide at least one of 'varname' or 'vartype' parameters")}
