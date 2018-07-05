@@ -2,7 +2,7 @@
 triangulate<-function(data,by.var.name,vartypes=NULL){
   lapply(names(data),function(varname){
     triangulation_fun<-map_to_triangulation(varname)
-    return(triangulation_fun(data[,"varname"],by="by.var.name"))
+    return(triangulation_fun(data[,varname],by=by.var.name))
   }) %>% as.data.frame(stringsAsFactors=F)
 }
 
@@ -30,6 +30,7 @@ numeric_consensus<-function(x){
 
 
 triangulate_mean<-function(x,by){
+  print(x)
   split(as.numeric(x),by) %>% lapply(
     function(x){
       if(!numeric_consensus(x)){return(NA)}
