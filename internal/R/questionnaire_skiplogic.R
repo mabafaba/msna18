@@ -3,9 +3,7 @@
 condition<-"selected(${respondent_type}, \"\"host_community\"\")"
 
 skipped_condition<-function(condition){
-  
             extract_varname<-function(condition){
-            
             }
             
 
