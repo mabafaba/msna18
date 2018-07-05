@@ -34,14 +34,12 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
          function(this_var_recoding_definition){
             var.to.recode <- as.character(unique(this_var_recoding_definition$var))
                 # return the weights corresponding to each value
-            print(var.to.recode)
             composite_indicators_definitions_weighted_counts
             x_recoded <- rep(NA,length(data[,var.to.recode]))
             for(i in 1:nrow(this_var_recoding_definition)){
               x <- this_var_recoding_definition[i,,drop = F]
               recoded_generic <- recode_generic(data[,x$var], x$value, x$condition, x$weight)
               x_recoded[!is.na(recoded_generic)] <- recoded_generic[!is.na(recoded_generic)]
-              print(x_recoded)
               }
               return(x_recoded)}
          )
