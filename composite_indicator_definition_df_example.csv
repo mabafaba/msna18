@@ -1,0 +1,14 @@
+new.var.name,var,condition,value,weight
+vulnerability.index,disabled,equal,0,0
+vulnerability.index,disabled,equal,1,1
+vulnerability.index,insecurity.reasons.harassment.refugee,equal,0,0
+vulnerability.index,unaccompanied.minor,equal,1,1
+vulnerability.index,disabled,equal,0,0
+vulnerability.index,disabled,equal,1,1
+vulnerability.index,hoh.sex,equal,male,0
+vulnerability.index,hoh.sex,equal,female,1
+vulnerability.index,females.0.2,larger,0,1
+vulnerability.index,males.3.5,larger,2,3
+vulnerability.index,males.3.5,smaller.or.equal,2,0
+vul.pin,vulnerability.index,smaller.or.equal,0,0
+vul.pin,vulnerability.index,larger,1,1

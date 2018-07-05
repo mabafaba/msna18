@@ -36,9 +36,6 @@ missing_data_to_NA<-function(data){
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
 data_parameters %>% dplyr::select("stratum.name.variable") %>% to_alphanumeric_lowercase
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
-debug(composite_indicator_weighted_count)
-#undebug(recode_generic)
-#debug(add_variable_indicators_weighted_count)
 data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
 data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
 # load samplingframe (only if data_parameters says it's a stratified sample)
