@@ -15,12 +15,12 @@ dir.create("./output/mean_aggregations_raw_csv",showWarnings = F)
 dir.create("./output/barcharts",showWarnings = F)
 
 #load dependencies
+source("./internal/R/hypegrammar/utilities.R")
 source("./internal/R/dependencies.R")
 
 # LOAD INPUT 
 # data 
-data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F)
-names(data) <- to_alphanumeric_lowercase(names(data))
+data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 
 
 missing_data_to_NA<-function(data){
@@ -33,7 +33,8 @@ missing_data_to_NA<-function(data){
 
 
 # data parameters
-data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F)
+data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
+data_parameters %>% dplyr::select("stratum.name.variable") %>% to_alphanumeric_lowercase
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 debug(composite_indicator_weighted_count)
 #undebug(recode_generic)

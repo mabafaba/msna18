@@ -20,9 +20,4 @@ remove.empty.rows<-function(df){
   df[!rowempty,]  
 }
 
-to_alphanumeric_lowercase_df <- function(df){
-  names(df) <- to_alphanumeric_lowercase(names(df))
-  return(df)
-}
-
 
