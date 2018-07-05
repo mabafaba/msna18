@@ -1,5 +1,5 @@
 
-triangulate<-function(data,by.var.name,vartypes){
+triangulate<-function(data,by.var.name,vartypes=NULL){
   lapply(names(data),function(varname){
     triangulation_fun<-map_to_triangulation(varname)
     return(triangulation_fun(data[,"varname"],by="by.var.name"))

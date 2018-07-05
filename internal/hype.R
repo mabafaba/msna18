@@ -28,7 +28,6 @@ missing_data_to_NA<-function(data){
   }) %>% as.data.frame(stringsAsFactors=T)# survey needs with factors.
 }
 
-
 # data parameters
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
 data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %>% to_alphanumeric_lowercase
