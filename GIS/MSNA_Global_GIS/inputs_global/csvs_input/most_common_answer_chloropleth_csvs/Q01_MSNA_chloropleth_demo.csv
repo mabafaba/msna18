@@ -1,0 +1,775 @@
+FID *,Shape *,admin2Name *,admin2Pcod,admin2RefN,admin1Pcod,admin0Name,admin0Pcod,LGA_Name,num_1_ans
+1,Polygon,Aba North,NG001001,Aba North,NG001,Nigeria,NG,ABA NORTH,1
+2,Polygon,Aba South,NG001002,Aba South,NG001,Nigeria,NG,ABA SOUTH,1
+3,Polygon,Abaji,NG015001,Abaji,NG015,Nigeria,NG,ABAJI,1
+4,Polygon,Abak,NG003001,Abak,NG003,Nigeria,NG,ABAK,1
+5,Polygon,Abakaliki,NG011001,Abakaliki,NG011,Nigeria,NG,ABAKALIKI,1
+6,Polygon,Abeokuta North,NG028001,Abeokuta North,NG028,Nigeria,NG,ABEOKUTA NORTH,1
+7,Polygon,Abeokuta South,NG028002,Abeokuta South,NG028,Nigeria,NG,ABEOKUTA SOUTH,1
+8,Polygon,Abi,NG009001,Abi,NG009,Nigeria,NG,ABI,1
+9,Polygon,Aboh-Mbaise,NG017001,Aboh-Mbaise,NG017,Nigeria,NG,ABOH-MBAISE,1
+10,Polygon,Abua/Odual,NG033001,Abua/Odual,NG033,Nigeria,NG,ABUA/ODUAL,1
+11,Polygon,Abuja Municipal,NG015002,Abuja Municipal,NG015,Nigeria,NG,ABUJA MUNICIPAL,1
+12,Polygon,Adavi,NG023001,Adavi,NG023,Nigeria,NG,ADAVI,1
+13,Polygon,Ado,NG007001,Ado,NG007,Nigeria,NG,ADO,1
+14,Polygon,Ado-Odo/Ota,NG028003,Ado-Odo/Ota,NG028,Nigeria,NG,ADO-ODO/OTA,1
+15,Polygon,Ado Ekiti,NG013001,Ado Ekiti,NG013,Nigeria,NG,ADO EKITI,1
+16,Polygon,Afijio,NG031001,Afijio,NG031,Nigeria,NG,AFIJIO,1
+17,Polygon,Afikpo North,NG011002,Afikpo North,NG011,Nigeria,NG,AFIKPO NORTH,1
+18,Polygon,Afikpo South,NG011003,Afikpo South,NG011,Nigeria,NG,AFIKPO SOUTH,1
+19,Polygon,Agaie,NG027001,Agaie,NG027,Nigeria,NG,AGAIE,1
+20,Polygon,Agatu,NG007002,Agatu,NG007,Nigeria,NG,AGATU,1
+21,Polygon,Agege,NG025001,Agege,NG025,Nigeria,NG,AGEGE,1
+22,Polygon,Aguata,NG004001,Aguata,NG004,Nigeria,NG,AGUATA,1
+23,Polygon,Agwara,NG027002,Agwara,NG027,Nigeria,NG,AGWARA,1
+24,Polygon,Ahiazu-Mbaise,NG017002,Ahiazu-Mbaise,NG017,Nigeria,NG,AHIAZU-MBAISE,1
+25,Polygon,Ahoada East,NG033002,Ahoada East,NG033,Nigeria,NG,AHOADA EAST,1
+26,Polygon,Ahoada West,NG033003,Ahoada West,NG033,Nigeria,NG,AHOADA WEST,1
+27,Polygon,Aiyedade,NG030001,Aiyedade,NG030,Nigeria,NG,AIYEDADE,1
+28,Polygon,Aiyedire,NG030002,Aiyedire,NG030,Nigeria,NG,AIYEDIRE,1
+29,Polygon,Aiyekire (Gbonyin),NG013002,Aiyekire (Gbonyin),NG013,Nigeria,NG,AIYEKIRE (GBONYIN),1
+30,Polygon,Ajaokuta,NG023002,Ajaokuta,NG023,Nigeria,NG,AJAOKUTA,1
+31,Polygon,Ajeromi-Ifelodun,NG025002,Ajeromi-Ifelodun,NG025,Nigeria,NG,AJEROMI-IFELODUN,1
+32,Polygon,Ajingi,NG020001,Ajingi,NG020,Nigeria,NG,AJINGI,1
+33,Polygon,Akamkpa,NG009002,Akamkpa,NG009,Nigeria,NG,AKAMKPA,1
+34,Polygon,Akinyele,NG031002,Akinyele,NG031,Nigeria,NG,AKINYELE,1
+35,Polygon,Akko,NG016001,Akko,NG016,Nigeria,NG,AKKO,1
+36,Polygon,Akoko-Edo,NG012001,Akoko-Edo,NG012,Nigeria,NG,AKOKO-EDO,1
+37,Polygon,Akoko North East,NG029001,Akoko North East,NG029,Nigeria,NG,AKOKO NORTH EAST,1
+38,Polygon,Akoko North West,NG029002,Akoko North West,NG029,Nigeria,NG,AKOKO NORTH WEST,1
+39,Polygon,Akoko South East,NG029003,Akoko South East,NG029,Nigeria,NG,AKOKO SOUTH EAST,1
+40,Polygon,Akoko South West,NG029004,Akoko South West,NG029,Nigeria,NG,AKOKO SOUTH WEST,1
+41,Polygon,Akuku Toru,NG033004,Akuku Toru,NG033,Nigeria,NG,AKUKU TORU,1
+42,Polygon,Akure North,NG029005,Akure North,NG029,Nigeria,NG,AKURE NORTH,1
+43,Polygon,Akure South,NG029006,Akure South,NG029,Nigeria,NG,AKURE SOUTH,1
+44,Polygon,Akwanga,NG026001,Akwanga,NG026,Nigeria,NG,AKWANGA,1
+45,Polygon,Albasu,NG020002,Albasu,NG020,Nigeria,NG,ALBASU,1
+46,Polygon,Aleiro,NG022001,Aleiro,NG022,Nigeria,NG,ALEIRO,1
+47,Polygon,Alimosho,NG025003,Alimosho,NG025,Nigeria,NG,ALIMOSHO,1
+48,Polygon,Alkaleri,NG005001,Alkaleri,NG005,Nigeria,NG,ALKALERI,1
+49,Polygon,Amuwo-Odofin,NG025004,Amuwo-Odofin,NG025,Nigeria,NG,AMUWO-ODOFIN,1
+50,Polygon,Anambra East,NG004002,Anambra East,NG004,Nigeria,NG,ANAMBRA EAST,1
+51,Polygon,Anambra West,NG004003,Anambra West,NG004,Nigeria,NG,ANAMBRA WEST,1
+52,Polygon,Anaocha,NG004004,Anaocha,NG004,Nigeria,NG,ANAOCHA,1
+53,Polygon,Andoni,NG033005,Andoni,NG033,Nigeria,NG,ANDONI,1
+54,Polygon,Aninri,NG014001,Aninri,NG014,Nigeria,NG,ANINRI,1
+55,Polygon,Aniocha North,NG010001,Aniocha North,NG010,Nigeria,NG,ANIOCHA NORTH,1
+56,Polygon,Aniocha South,NG010002,Aniocha South,NG010,Nigeria,NG,ANIOCHA SOUTH,1
+57,Polygon,Anka,NG037001,Anka,NG037,Nigeria,NG,ANKA,1
+58,Polygon,Ankpa,NG023003,Ankpa,NG023,Nigeria,NG,ANKPA,1
+59,Polygon,Apa,NG007003,Apa,NG007,Nigeria,NG,APA,1
+60,Polygon,Apapa,NG025005,Apapa,NG025,Nigeria,NG,APAPA,1
+61,Polygon,Ardo-Kola,NG035001,Ardo-Kola,NG035,Nigeria,NG,ARDO-KOLA,1
+62,Polygon,Arewa-Dandi,NG022002,Arewa-Dandi,NG022,Nigeria,NG,AREWA-DANDI,1
+63,Polygon,Argungu,NG022003,Argungu,NG022,Nigeria,NG,ARGUNGU,1
+64,Polygon,Arochukwu,NG001003,Arochukwu,NG001,Nigeria,NG,AROCHUKWU,1
+65,Polygon,Asa,NG024001,Asa,NG024,Nigeria,NG,ASA,1
+66,Polygon,Asari-Toru,NG033006,Asari-Toru,NG033,Nigeria,NG,ASARI-TORU,1
+67,Polygon,Atakumosa East,NG030003,Atakumosa East,NG030,Nigeria,NG,ATAKUMOSA EAST,1
+68,Polygon,Atakumosa West,NG030004,Atakumosa West,NG030,Nigeria,NG,ATAKUMOSA WEST,1
+69,Polygon,Atiba,NG031003,Atiba,NG031,Nigeria,NG,ATIBA,1
+70,Polygon,Atigbo,NG031004,Atigbo,NG031,Nigeria,NG,ATIGBO,1
+71,Polygon,Augie,NG022004,Augie,NG022,Nigeria,NG,AUGIE,1
+72,Polygon,Auyo,NG018001,Auyo,NG018,Nigeria,NG,AUYO,1
+73,Polygon,Awe,NG026002,Awe,NG026,Nigeria,NG,AWE,1
+74,Polygon,Awgu,NG014002,Awgu,NG014,Nigeria,NG,AWGU,1
+75,Polygon,Awka North,NG004005,Awka North,NG004,Nigeria,NG,AWKA NORTH,1
+76,Polygon,Awka South,NG004006,Awka South,NG004,Nigeria,NG,AWKA SOUTH,1
+77,Polygon,Ayamelum,NG004007,Ayamelum,NG004,Nigeria,NG,AYAMELUM,1
+78,Polygon,Babura,NG018002,Babura,NG018,Nigeria,NG,BABURA,1
+79,Polygon,Badagry,NG025006,Badagry,NG025,Nigeria,NG,BADAGRY,1
+80,Polygon,Bade,NG036001,Bade,NG036,Nigeria,NG,BADE,1
+81,Polygon,Bagudo,NG022005,Bagudo,NG022,Nigeria,NG,BAGUDO,1
+82,Polygon,Bagwai,NG020003,Bagwai,NG020,Nigeria,NG,BAGWAI,1
+83,Polygon,Akpabuyo,NG009003,Akpabuyo,NG009,Nigeria,NG,AKPABUYO,1
+84,Polygon,Bakori,NG021001,Bakori,NG021,Nigeria,NG,BAKORI,1
+85,Polygon,Bakura,NG037002,Bakura,NG037,Nigeria,NG,BAKURA,1
+86,Polygon,Balanga,NG016002,Balanga,NG016,Nigeria,NG,BALANGA,1
+87,Polygon,Bali,NG035002,Bali,NG035,Nigeria,NG,BALI,1
+88,Polygon,Barikin Ladi,NG032001,Barikin Ladi,NG032,Nigeria,NG,BARIKIN LADI,1
+89,Polygon,Baruten,NG024002,Baruten,NG024,Nigeria,NG,BARUTEN,1
+90,Polygon,Bassa,NG023004,Bassa,NG023,Nigeria,NG,BASSA,1
+91,Polygon,Bassa,NG032002,Bassa,NG032,Nigeria,NG,BASSA,1
+92,Polygon,Batagarawa,NG021002,Batagarawa,NG021,Nigeria,NG,BATAGARAWA,1
+93,Polygon,Batsari,NG021003,Batsari,NG021,Nigeria,NG,BATSARI,1
+94,Polygon,Bauchi,NG005002,Bauchi,NG005,Nigeria,NG,BAUCHI,1
+95,Polygon,Baure,NG021004,Baure,NG021,Nigeria,NG,BAURE,1
+96,Polygon,Bebeji,NG020004,Bebeji,NG020,Nigeria,NG,BEBEJI,1
+97,Polygon,Bekwara,NG009006,Bekwara,NG009,Nigeria,NG,BEKWARA,1
+98,Polygon,Bende,NG001004,Bende,NG001,Nigeria,NG,BENDE,1
+99,Polygon,Biase,NG009007,Biase,NG009,Nigeria,NG,BIASE,1
+100,Polygon,Bichi,NG020005,Bichi,NG020,Nigeria,NG,BICHI,1
+101,Polygon,Bida,NG027003,Bida,NG027,Nigeria,NG,BIDA,1
+102,Polygon,Billiri,NG016003,Billiri,NG016,Nigeria,NG,BILLIRI,1
+103,Polygon,Bindawa,NG021005,Bindawa,NG021,Nigeria,NG,BINDAWA,1
+104,Polygon,Binji,NG034001,Binji,NG034,Nigeria,NG,BINJI,1
+105,Polygon,Biriniwa,NG018003,Biriniwa,NG018,Nigeria,NG,BIRINIWA,1
+106,Polygon,Birni Kudu,NG018004,Birni Kudu,NG018,Nigeria,NG,BIRNI KUDU,1
+107,Polygon,Birnin-Gwari,NG019001,Birnin-Gwari,NG019,Nigeria,NG,BIRNIN-GWARI,1
+108,Polygon,Birnin Kebbi,NG022006,Birnin Kebbi,NG022,Nigeria,NG,BIRNIN KEBBI,1
+109,Polygon,Birnin Magaji,NG037003,Birnin Magaji,NG037,Nigeria,NG,BIRNIN MAGAJI,1
+110,Polygon,Bodinga,NG034002,Bodinga,NG034,Nigeria,NG,BODINGA,1
+111,Polygon,Bogoro,NG005003,Bogoro,NG005,Nigeria,NG,BOGORO,1
+112,Polygon,Boki,NG009008,Boki,NG009,Nigeria,NG,BOKI,1
+113,Polygon,Bokkos,NG032003,Bokkos,NG032,Nigeria,NG,BOKKOS,1
+114,Polygon,Boluwaduro,NG030005,Boluwaduro,NG030,Nigeria,NG,BOLUWADURO,1
+115,Polygon,Bomadi,NG010003,Bomadi,NG010,Nigeria,NG,BOMADI,1
+116,Polygon,Bonny,NG033007,Bonny,NG033,Nigeria,NG,BONNY,1
+117,Polygon,Borgu,NG027004,Borgu,NG027,Nigeria,NG,BORGU,1
+118,Polygon,Boripe,NG030006,Boripe,NG030,Nigeria,NG,BORIPE,1
+119,Polygon,Bosso,NG027005,Bosso,NG027,Nigeria,NG,BOSSO,1
+120,Polygon,Brass,NG006001,Brass,NG006,Nigeria,NG,BRASS,1
+121,Polygon,Buji,NG018005,Buji,NG018,Nigeria,NG,BUJI,1
+122,Polygon,Bukkuyum,NG037004,Bukkuyum,NG037,Nigeria,NG,BUKKUYUM,1
+123,Polygon,Bungudu,NG037005,Bungudu,NG037,Nigeria,NG,BUNGUDU,1
+124,Polygon,Bunkure,NG020006,Bunkure,NG020,Nigeria,NG,BUNKURE,1
+125,Polygon,Bunza,NG022007,Bunza,NG022,Nigeria,NG,BUNZA,1
+126,Polygon,Bursari,NG036002,Bursari,NG036,Nigeria,NG,BURSARI,1
+127,Polygon,Buruku,NG007004,Buruku,NG007,Nigeria,NG,BURUKU,1
+128,Polygon,Burutu,NG010004,Burutu,NG010,Nigeria,NG,BURUTU,1
+129,Polygon,Bwari,NG015003,Bwari,NG015,Nigeria,NG,BWARI,1
+130,Polygon,Calabar-Municipal,NG009010,Calabar-Municipal,NG009,Nigeria,NG,CALABAR-MUNICIPAL,1
+131,Polygon,Calabar South,NG009009,Calabar South,NG009,Nigeria,NG,CALABAR SOUTH,1
+132,Polygon,Chanchaga,NG027006,Chanchaga,NG027,Nigeria,NG,CHANCHAGA,1
+133,Polygon,Charanchi,NG021006,Charanchi,NG021,Nigeria,NG,CHARANCHI,1
+134,Polygon,Chikun,NG019002,Chikun,NG019,Nigeria,NG,CHIKUN,1
+135,Polygon,Dala,NG020007,Dala,NG020,Nigeria,NG,DALA,1
+136,Polygon,Damaturu,NG036003,Damaturu,NG036,Nigeria,NG,DAMATURU,1
+137,Polygon,Damban,NG005004,Damban,NG005,Nigeria,NG,DAMBAN,1
+138,Polygon,Dambatta,NG020008,Dambatta,NG020,Nigeria,NG,DAMBATTA,1
+139,Polygon,Dan Musa,NG021007,Dan Musa,NG021,Nigeria,NG,DAN MUSA,1
+140,Polygon,Dandi,NG022008,Dandi,NG022,Nigeria,NG,DANDI,1
+141,Polygon,Dandume,NG021008,Dandume,NG021,Nigeria,NG,DANDUME,1
+142,Polygon,Dange-Shuni,NG034003,Dange-Shuni,NG034,Nigeria,NG,DANGE-SHUNI,1
+143,Polygon,Danja,NG021009,Danja,NG021,Nigeria,NG,DANJA,1
+144,Polygon,Darazo,NG005005,Darazo,NG005,Nigeria,NG,DARAZO,1
+145,Polygon,Dass,NG005006,Dass,NG005,Nigeria,NG,DASS,1
+146,Polygon,Daura,NG021010,Daura,NG021,Nigeria,NG,DAURA,1
+147,Polygon,Dawakin Kudu,NG020009,Dawakin Kudu,NG020,Nigeria,NG,DAWAKIN KUDU,1
+148,Polygon,Dawakin Tofa,NG020010,Dawakin Tofa,NG020,Nigeria,NG,DAWAKIN TOFA,1
+149,Polygon,Degema,NG033008,Degema,NG033,Nigeria,NG,DEGEMA,1
+150,Polygon,Dekina,NG023005,Dekina,NG023,Nigeria,NG,DEKINA,1
+151,Polygon,Demsa,NG002001,Demsa,NG002,Nigeria,NG,DEMSA,1
+152,Polygon,Doguwa,NG020011,Doguwa,NG020,Nigeria,NG,DOGUWA,1
+153,Polygon,Doma,NG026003,Doma,NG026,Nigeria,NG,DOMA,1
+154,Polygon,Donga,NG035003,Donga,NG035,Nigeria,NG,DONGA,1
+155,Polygon,Dukku,NG016004,Dukku,NG016,Nigeria,NG,DUKKU,1
+156,Polygon,Njikoka,NG004013,Njikoka,NG004,Nigeria,NG,NJIKOKA,1
+157,Polygon,Dutse,NG018006,Dutse,NG018,Nigeria,NG,DUTSE,1
+158,Polygon,Dutsi,NG021011,Dutsi,NG021,Nigeria,NG,DUTSI,1
+159,Polygon,Dutsin-Ma,NG021012,Dutsin-Ma,NG021,Nigeria,NG,DUTSIN-MA,1
+160,Polygon,Eastern Obolo,NG003002,Eastern Obolo,NG003,Nigeria,NG,EASTERN OBOLO,1
+161,Polygon,Ebonyi,NG011004,Ebonyi,NG011,Nigeria,NG,EBONYI,1
+162,Polygon,Edati,NG027007,Edati,NG027,Nigeria,NG,EDATI,1
+163,Polygon,Ede North,NG030007,Ede North,NG030,Nigeria,NG,EDE NORTH,1
+164,Polygon,Ede South,NG030008,Ede South,NG030,Nigeria,NG,EDE SOUTH,1
+165,Polygon,Edu,NG024003,Edu,NG024,Nigeria,NG,EDU,1
+166,Polygon,Efon,NG013003,Efon,NG013,Nigeria,NG,EFON,1
+167,Polygon,Egbado North,NG028004,Egbado North,NG028,Nigeria,NG,EGBADO NORTH,1
+168,Polygon,Egbado South,NG028005,Egbado South,NG028,Nigeria,NG,EGBADO SOUTH,1
+169,Polygon,Egbeda,NG031005,Egbeda,NG031,Nigeria,NG,EGBEDA,1
+170,Polygon,Egbedore,NG030009,Egbedore,NG030,Nigeria,NG,EGBEDORE,1
+171,Polygon,Egor,NG012002,Egor,NG012,Nigeria,NG,EGOR,1
+172,Polygon,Ehime-Mbano,NG017003,Ehime-Mbano,NG017,Nigeria,NG,EHIME-MBANO,1
+173,Polygon,Ejigbo,NG030010,Ejigbo,NG030,Nigeria,NG,EJIGBO,1
+174,Polygon,Ekeremor,NG006002,Ekeremor,NG006,Nigeria,NG,EKEREMOR,1
+175,Polygon,Eket,NG003003,Eket,NG003,Nigeria,NG,EKET,1
+176,Polygon,Ekiti,NG024004,Ekiti,NG024,Nigeria,NG,EKITI,1
+177,Polygon,Ekiti East,NG013004,Ekiti East,NG013,Nigeria,NG,EKITI EAST,1
+178,Polygon,Ekiti South West,NG013005,Ekiti South West,NG013,Nigeria,NG,EKITI SOUTH WEST,1
+179,Polygon,Ekiti West,NG013006,Ekiti West,NG013,Nigeria,NG,EKITI WEST,1
+180,Polygon,Ekwusigo,NG004009,Ekwusigo,NG004,Nigeria,NG,EKWUSIGO,1
+181,Polygon,Eleme,NG033009,Eleme,NG033,Nigeria,NG,ELEME,1
+182,Polygon,Emohua,NG033010,Emohua,NG033,Nigeria,NG,EMOHUA,1
+183,Polygon,Emure,NG013007,Emure,NG013,Nigeria,NG,EMURE,1
+184,Polygon,Enugu East,NG014003,Enugu East,NG014,Nigeria,NG,ENUGU EAST,1
+185,Polygon,Enugu North,NG014004,Enugu North,NG014,Nigeria,NG,ENUGU NORTH,1
+186,Polygon,Enugu South,NG014005,Enugu South,NG014,Nigeria,NG,ENUGU SOUTH,1
+187,Polygon,Epe,NG025007,Epe,NG025,Nigeria,NG,EPE,1
+188,Polygon,Esan Central,NG012003,Esan Central,NG012,Nigeria,NG,ESAN CENTRAL,1
+189,Polygon,Esan North East,NG012004,Esan North East,NG012,Nigeria,NG,ESAN NORTH EAST,1
+190,Polygon,Esan South East,NG012005,Esan South East,NG012,Nigeria,NG,ESAN SOUTH EAST,1
+191,Polygon,Esan West,NG012006,Esan West,NG012,Nigeria,NG,ESAN WEST,1
+192,Polygon,Ese-Odo,NG029007,Ese-Odo,NG029,Nigeria,NG,ESE-ODO,1
+193,Polygon,Esit - Eket,NG003004,Esit - Eket,NG003,Nigeria,NG,ESIT - EKET,1
+194,Polygon,Essien Udim,NG003005,Essien Udim,NG003,Nigeria,NG,ESSIEN UDIM,1
+195,Polygon,Etche,NG033011,Etche,NG033,Nigeria,NG,ETCHE,1
+196,Polygon,Ethiope East,NG010005,Ethiope East,NG010,Nigeria,NG,ETHIOPE EAST,1
+197,Polygon,Ethiope West,NG010006,Ethiope West,NG010,Nigeria,NG,ETHIOPE WEST,1
+198,Polygon,Eti-Osa,NG025008,Eti-Osa,NG025,Nigeria,NG,ETI-OSA,1
+199,Polygon,Etim Ekpo,NG003006,Etim Ekpo,NG003,Nigeria,NG,ETIM EKPO,1
+200,Polygon,Etinan,NG003007,Etinan,NG003,Nigeria,NG,ETINAN,1
+201,Polygon,Etsako Central,NG012007,Etsako Central,NG012,Nigeria,NG,ETSAKO CENTRAL,1
+202,Polygon,Etsako East,NG012008,Etsako East,NG012,Nigeria,NG,ETSAKO EAST,1
+203,Polygon,Etsako West,NG012009,Etsako West,NG012,Nigeria,NG,ETSAKO WEST,1
+204,Polygon,Etung,NG009011,Etung,NG009,Nigeria,NG,ETUNG,1
+205,Polygon,Ewekoro,NG028006,Ewekoro,NG028,Nigeria,NG,EWEKORO,1
+206,Polygon,Ezeagu,NG014006,Ezeagu,NG014,Nigeria,NG,EZEAGU,1
+207,Polygon,Ezinihitte,NG017004,Ezinihitte,NG017,Nigeria,NG,EZINIHITTE,1
+208,Polygon,Ezza North,NG011005,Ezza North,NG011,Nigeria,NG,EZZA NORTH,1
+209,Polygon,Ezza South,NG011006,Ezza South,NG011,Nigeria,NG,EZZA SOUTH,1
+210,Polygon,Fagge,NG020012,Fagge,NG020,Nigeria,NG,FAGGE,1
+211,Polygon,Fakai,NG022009,Fakai,NG022,Nigeria,NG,FAKAI,1
+212,Polygon,Faskari,NG021013,Faskari,NG021,Nigeria,NG,FASKARI,1
+213,Polygon,Fika,NG036004,Fika,NG036,Nigeria,NG,FIKA,1
+214,Polygon,Fufore,NG002002,Fufore,NG002,Nigeria,NG,FUFORE,1
+215,Polygon,Funakaye,NG016005,Funakaye,NG016,Nigeria,NG,FUNAKAYE,1
+216,Polygon,Fune,NG036005,Fune,NG036,Nigeria,NG,FUNE,1
+217,Polygon,Funtua,NG021014,Funtua,NG021,Nigeria,NG,FUNTUA,1
+218,Polygon,Gabasawa,NG020013,Gabasawa,NG020,Nigeria,NG,GABASAWA,1
+219,Polygon,Gada,NG034004,Gada,NG034,Nigeria,NG,GADA,1
+220,Polygon,Gagarawa,NG018007,Gagarawa,NG018,Nigeria,NG,GAGARAWA,1
+221,Polygon,Gamawa,NG005007,Gamawa,NG005,Nigeria,NG,GAMAWA,1
+222,Polygon,Ganjuwa,NG005008,Ganjuwa,NG005,Nigeria,NG,GANJUWA,1
+223,Polygon,Ganye,NG002003,Ganye,NG002,Nigeria,NG,GANYE,1
+224,Polygon,Garki,NG018008,Garki,NG018,Nigeria,NG,GARKI,1
+225,Polygon,Garko,NG020014,Garko,NG020,Nigeria,NG,GARKO,1
+226,Polygon,Garum Mallam,NG020015,Garum Mallam,NG020,Nigeria,NG,GARUM MALLAM,1
+227,Polygon,Gashaka,NG035004,Gashaka,NG035,Nigeria,NG,GASHAKA,1
+228,Polygon,Gassol,NG035005,Gassol,NG035,Nigeria,NG,GASSOL,1
+229,Polygon,Gaya,NG020016,Gaya,NG020,Nigeria,NG,GAYA,1
+230,Polygon,Gbako,NG027008,Gbako,NG027,Nigeria,NG,GBAKO,1
+231,Polygon,Gboko,NG007005,Gboko,NG007,Nigeria,NG,GBOKO,1
+232,Polygon,Geidam,NG036006,Geidam,NG036,Nigeria,NG,GEIDAM,1
+233,Polygon,Gezawa,NG020017,Gezawa,NG020,Nigeria,NG,GEZAWA,1
+234,Polygon,Giade,NG005009,Giade,NG005,Nigeria,NG,GIADE,1
+235,Polygon,Gombi,NG002004,Gombi,NG002,Nigeria,NG,GOMBI,1
+236,Polygon,Giwa,NG019003,Giwa,NG019,Nigeria,NG,GIWA,1
+237,Polygon,Gokana,NG033012,Gokana,NG033,Nigeria,NG,GOKANA,1
+238,Polygon,Gombe,NG016006,Gombe,NG016,Nigeria,NG,GOMBE,1
+239,Polygon,Girei,NG002005,Girei,NG002,Nigeria,NG,GIREI,1
+240,Polygon,Goronyo,NG034006,Goronyo,NG034,Nigeria,NG,GORONYO,1
+241,Polygon,Gudu,NG034007,Gudu,NG034,Nigeria,NG,GUDU,1
+242,Polygon,Gujba,NG036007,Gujba,NG036,Nigeria,NG,GUJBA,1
+243,Polygon,Gulani,NG036008,Gulani,NG036,Nigeria,NG,GULANI,1
+244,Polygon,Guma,NG007006,Guma,NG007,Nigeria,NG,GUMA,1
+245,Polygon,Gumel,NG018009,Gumel,NG018,Nigeria,NG,GUMEL,1
+246,Polygon,Gummi,NG037006,Gummi,NG037,Nigeria,NG,GUMMI,1
+247,Polygon,Gurara,NG027009,Gurara,NG027,Nigeria,NG,GURARA,1
+248,Polygon,Guri,NG018010,Guri,NG018,Nigeria,NG,GURI,1
+249,Polygon,Gusau,NG037007,Gusau,NG037,Nigeria,NG,GUSAU,1
+250,Polygon,Guyuk,NG002006,Guyuk,NG002,Nigeria,NG,GUYUK,1
+251,Polygon,Gwadabawa,NG034005,Gwadabawa,NG034,Nigeria,NG,GWADABAWA,1
+252,Polygon,Gwagwalada,NG015004,Gwagwalada,NG015,Nigeria,NG,GWAGWALADA,1
+253,Polygon,Gwale,NG020018,Gwale,NG020,Nigeria,NG,GWALE,1
+254,Polygon,Gwandu,NG022010,Gwandu,NG022,Nigeria,NG,GWANDU,1
+255,Polygon,Gwaram,NG018011,Gwaram,NG018,Nigeria,NG,GWARAM,1
+256,Polygon,Gwarzo,NG020019,Gwarzo,NG020,Nigeria,NG,GWARZO,1
+257,Polygon,Gwer East,NG007007,Gwer East,NG007,Nigeria,NG,GWER EAST,1
+258,Polygon,Gwer West,NG007008,Gwer West,NG007,Nigeria,NG,GWER WEST,1
+259,Polygon,Gwiwa,NG018012,Gwiwa,NG018,Nigeria,NG,GWIWA,1
+260,Polygon,Hadejia,NG018013,Hadejia,NG018,Nigeria,NG,HADEJIA,1
+261,Polygon,Hong,NG002007,Hong,NG002,Nigeria,NG,HONG,1
+262,Polygon,Ibadan North,NG031006,Ibadan North,NG031,Nigeria,NG,IBADAN NORTH,1
+263,Polygon,Ibadan North East,NG031007,Ibadan North East,NG031,Nigeria,NG,IBADAN NORTH EAST,1
+264,Polygon,Ibadan North West,NG031008,Ibadan North West,NG031,Nigeria,NG,IBADAN NORTH WEST,1
+265,Polygon,Ibadan South East,NG031009,Ibadan South East,NG031,Nigeria,NG,IBADAN SOUTH EAST,1
+266,Polygon,Ibadan South West,NG031010,Ibadan South West,NG031,Nigeria,NG,IBADAN SOUTH WEST,1
+267,Polygon,Ibaji,NG023006,Ibaji,NG023,Nigeria,NG,IBAJI,1
+268,Polygon,Ibarapa Central,NG031011,Ibarapa Central,NG031,Nigeria,NG,IBARAPA CENTRAL,1
+269,Polygon,Ibarapa East,NG031012,Ibarapa East,NG031,Nigeria,NG,IBARAPA EAST,1
+270,Polygon,Ibarapa North,NG031013,Ibarapa North,NG031,Nigeria,NG,IBARAPA NORTH,1
+271,Polygon,Ibeju/Lekki,NG025009,Ibeju/Lekki,NG025,Nigeria,NG,IBEJU/LEKKI,1
+272,Polygon,Ibeno,NG003008,Ibeno,NG003,Nigeria,NG,IBENO,1
+273,Polygon,Ibesikpo Asutan,NG003009,Ibesikpo Asutan,NG003,Nigeria,NG,IBESIKPO ASUTAN,1
+274,Polygon,Ibi,NG035006,Ibi,NG035,Nigeria,NG,IBI,1
+275,Polygon,Ibiono Ibom,NG003010,Ibiono Ibom,NG003,Nigeria,NG,IBIONO IBOM,1
+276,Polygon,Idah,NG023007,Idah,NG023,Nigeria,NG,IDAH,1
+277,Polygon,Idanre,NG029008,Idanre,NG029,Nigeria,NG,IDANRE,1
+278,Polygon,Ideato North,NG017005,Ideato North,NG017,Nigeria,NG,IDEATO NORTH,1
+279,Polygon,Ideato South,NG017006,Ideato South,NG017,Nigeria,NG,IDEATO SOUTH,1
+280,Polygon,Idemili North,NG004010,Idemili North,NG004,Nigeria,NG,IDEMILI NORTH,1
+281,Polygon,Idemili South,NG004011,Idemili South,NG004,Nigeria,NG,IDEMILI SOUTH,1
+282,Polygon,Ido,NG031014,Ido,NG031,Nigeria,NG,IDO,1
+283,Polygon,Ido-Osi,NG013008,Ido-Osi,NG013,Nigeria,NG,IDO-OSI,1
+284,Polygon,Ifako-Ijaye,NG025010,Ifako-Ijaye,NG025,Nigeria,NG,IFAKO-IJAYE,1
+285,Polygon,Ife Central,NG030011,Ife Central,NG030,Nigeria,NG,IFE CENTRAL,1
+286,Polygon,Ife East,NG030012,Ife East,NG030,Nigeria,NG,IFE EAST,1
+287,Polygon,Ife North,NG030013,Ife North,NG030,Nigeria,NG,IFE NORTH,1
+288,Polygon,Ife South,NG030014,Ife South,NG030,Nigeria,NG,IFE SOUTH,1
+289,Polygon,Ifedayo,NG030015,Ifedayo,NG030,Nigeria,NG,IFEDAYO,1
+290,Polygon,Ifedore,NG029009,Ifedore,NG029,Nigeria,NG,IFEDORE,1
+291,Polygon,Ifelodun,NG030016,Ifelodun,NG030,Nigeria,NG,IFELODUN,1
+292,Polygon,Ifelodun,NG024005,Ifelodun,NG024,Nigeria,NG,IFELODUN,1
+293,Polygon,Ifo,NG028007,Ifo,NG028,Nigeria,NG,IFO,1
+294,Polygon,Igabi,NG019004,Igabi,NG019,Nigeria,NG,IGABI,1
+295,Polygon,Igalamela-Odolu,NG023008,Igalamela-Odolu,NG023,Nigeria,NG,IGALAMELA-ODOLU,1
+296,Polygon,Igbo-Etiti,NG014007,Igbo-Etiti,NG014,Nigeria,NG,IGBO-ETITI,1
+297,Polygon,Igbo-Eze North,NG014008,Igbo-Eze North,NG014,Nigeria,NG,IGBO-EZE NORTH,1
+298,Polygon,Igbo-Eze South,NG014009,Igbo-Eze South,NG014,Nigeria,NG,IGBO-EZE SOUTH,1
+299,Polygon,Igueben,NG012010,Igueben,NG012,Nigeria,NG,IGUEBEN,1
+300,Polygon,Ihiala,NG004012,Ihiala,NG004,Nigeria,NG,IHIALA,1
+301,Polygon,Ihitte/Uboma,NG017007,Ihitte/Uboma,NG017,Nigeria,NG,IHITTE/UBOMA,1
+302,Polygon,Ijebu East,NG028008,Ijebu East,NG028,Nigeria,NG,IJEBU EAST,1
+303,Polygon,Ijebu North,NG028009,Ijebu North,NG028,Nigeria,NG,IJEBU NORTH,1
+304,Polygon,Ijebu North East,NG028010,Ijebu North East,NG028,Nigeria,NG,IJEBU NORTH EAST,1
+305,Polygon,Ijebu Ode,NG028011,Ijebu Ode,NG028,Nigeria,NG,IJEBU ODE,1
+306,Polygon,Ijero,NG013009,Ijero,NG013,Nigeria,NG,IJERO,1
+307,Polygon,Ijumu,NG023009,Ijumu,NG023,Nigeria,NG,IJUMU,1
+308,Polygon,Ika,NG003011,Ika,NG003,Nigeria,NG,IKA,1
+309,Polygon,Ika North East,NG010007,Ika North East,NG010,Nigeria,NG,IKA NORTH EAST,1
+310,Polygon,Ika South,NG010008,Ika South,NG010,Nigeria,NG,IKA SOUTH,1
+311,Polygon,Ikara,NG019005,Ikara,NG019,Nigeria,NG,IKARA,1
+312,Polygon,Ikeduru,NG017008,Ikeduru,NG017,Nigeria,NG,IKEDURU,1
+313,Polygon,Ikeja,NG025011,Ikeja,NG025,Nigeria,NG,IKEJA,1
+314,Polygon,Ikenne,NG028012,Ikenne,NG028,Nigeria,NG,IKENNE,1
+315,Polygon,Ikere,NG013010,Ikere,NG013,Nigeria,NG,IKERE,1
+316,Polygon,Ikole,NG013011,Ikole,NG013,Nigeria,NG,IKOLE,1
+317,Polygon,Ikom,NG009012,Ikom,NG009,Nigeria,NG,IKOM,1
+318,Polygon,Ikono,NG003012,Ikono,NG003,Nigeria,NG,IKONO,1
+319,Polygon,Ikorodu,NG025012,Ikorodu,NG025,Nigeria,NG,IKORODU,1
+320,Polygon,Ikot Abasi,NG003013,Ikot Abasi,NG003,Nigeria,NG,IKOT ABASI,1
+321,Polygon,Ikot Ekpene,NG003014,Ikot Ekpene,NG003,Nigeria,NG,IKOT EKPENE,1
+322,Polygon,Ikpoba-Okha,NG012011,Ikpoba-Okha,NG012,Nigeria,NG,IKPOBA-OKHA,1
+323,Polygon,Ikwerre,NG033013,Ikwerre,NG033,Nigeria,NG,IKWERRE,1
+324,Polygon,Ikwo,NG011007,Ikwo,NG011,Nigeria,NG,IKWO,1
+325,Polygon,Ikwuano,NG001005,Ikwuano,NG001,Nigeria,NG,IKWUANO,1
+326,Polygon,Ila,NG030017,Ila,NG030,Nigeria,NG,ILA,1
+327,Polygon,Ilaje,NG029010,Ilaje,NG029,Nigeria,NG,ILAJE,1
+328,Polygon,Ile-Oluji-Okeigbo,NG029011,Ile-Oluji-Okeigbo,NG029,Nigeria,NG,ILE-OLUJI-OKEIGBO,1
+329,Polygon,Ilejemeji,NG013012,Ilejemeji,NG013,Nigeria,NG,ILEJEMEJI,1
+330,Polygon,Ilesha East,NG030018,Ilesha East,NG030,Nigeria,NG,ILESHA EAST,1
+331,Polygon,Ilesha West,NG030019,Ilesha West,NG030,Nigeria,NG,ILESHA WEST,1
+332,Polygon,Illela,NG034008,Illela,NG034,Nigeria,NG,ILLELA,1
+333,Polygon,Ilorin East,NG024006,Ilorin East,NG024,Nigeria,NG,ILORIN EAST,1
+334,Polygon,Ilorin South,NG024007,Ilorin South,NG024,Nigeria,NG,ILORIN SOUTH,1
+335,Polygon,Ilorin West,NG024008,Ilorin West,NG024,Nigeria,NG,ILORIN WEST,1
+336,Polygon,Imeko-Afon,NG028013,Imeko-Afon,NG028,Nigeria,NG,IMEKO-AFON,1
+337,Polygon,Ingawa,NG021015,Ingawa,NG021,Nigeria,NG,INGAWA,1
+338,Polygon,Ini,NG003015,Ini,NG003,Nigeria,NG,INI,1
+339,Polygon,Ipokia,NG028014,Ipokia,NG028,Nigeria,NG,IPOKIA,1
+340,Polygon,Irele,NG029012,Irele,NG029,Nigeria,NG,IRELE,1
+341,Polygon,Irepo,NG031015,Irepo,NG031,Nigeria,NG,IREPO,1
+342,Polygon,Irepodun,NG024009,Irepodun,NG024,Nigeria,NG,IREPODUN,1
+343,Polygon,Irepodun/Ifelodun,NG013013,Irepodun/Ifelodun,NG013,Nigeria,NG,IREPODUN/IFELODUN,1
+344,Polygon,Irepodun,NG030020,Irepodun,NG030,Nigeria,NG,IREPODUN,1
+345,Polygon,Irewole,NG030021,Irewole,NG030,Nigeria,NG,IREWOLE,1
+346,Polygon,Isa,NG034009,Isa,NG034,Nigeria,NG,ISA,1
+347,Polygon,Ise/Orun,NG013014,Ise/Orun,NG013,Nigeria,NG,ISE/ORUN,1
+348,Polygon,Iseyin,NG031016,Iseyin,NG031,Nigeria,NG,ISEYIN,1
+349,Polygon,Ishielu,NG011008,Ishielu,NG011,Nigeria,NG,ISHIELU,1
+350,Polygon,Isi-Uzo,NG014010,Isi-Uzo,NG014,Nigeria,NG,ISI-UZO,1
+351,Polygon,Isiala-Ngwa North,NG001006,Isiala-Ngwa North,NG001,Nigeria,NG,ISIALA-NGWA NORTH,1
+352,Polygon,Isiala-Ngwa South,NG001007,Isiala-Ngwa South,NG001,Nigeria,NG,ISIALA-NGWA SOUTH,1
+353,Polygon,Isiala Mbano,NG017009,Isiala Mbano,NG017,Nigeria,NG,ISIALA MBANO,1
+354,Polygon,Isin,NG024010,Isin,NG024,Nigeria,NG,ISIN,1
+355,Polygon,Isiukwuato,NG001008,Isiukwuato,NG001,Nigeria,NG,ISIUKWUATO,1
+356,Polygon,Isokan,NG030022,Isokan,NG030,Nigeria,NG,ISOKAN,1
+357,Polygon,Isoko North,NG010009,Isoko North,NG010,Nigeria,NG,ISOKO NORTH,1
+358,Polygon,Isoko South,NG010010,Isoko South,NG010,Nigeria,NG,ISOKO SOUTH,1
+359,Polygon,Isu,NG017010,Isu,NG017,Nigeria,NG,ISU,1
+360,Polygon,Itas/Gadau,NG005010,Itas/Gadau,NG005,Nigeria,NG,ITAS/GADAU,1
+361,Polygon,Itesiwaju,NG031017,Itesiwaju,NG031,Nigeria,NG,ITESIWAJU,1
+362,Polygon,Itu,NG003016,Itu,NG003,Nigeria,NG,ITU,1
+363,Polygon,Ivo,NG011009,Ivo,NG011,Nigeria,NG,IVO,1
+364,Polygon,Iwajowa,NG031018,Iwajowa,NG031,Nigeria,NG,IWAJOWA,1
+365,Polygon,Iwo,NG030023,Iwo,NG030,Nigeria,NG,IWO,1
+366,Polygon,Izzi,NG011010,Izzi,NG011,Nigeria,NG,IZZI,1
+367,Polygon,Jaba,NG019006,Jaba,NG019,Nigeria,NG,JABA,1
+368,Polygon,Jada,NG002008,Jada,NG002,Nigeria,NG,JADA,1
+369,Polygon,Jahun,NG018014,Jahun,NG018,Nigeria,NG,JAHUN,1
+370,Polygon,Jakusko,NG036009,Jakusko,NG036,Nigeria,NG,JAKUSKO,1
+371,Polygon,Jalingo,NG035007,Jalingo,NG035,Nigeria,NG,JALINGO,1
+372,Polygon,Jama'are,NG005011,Jamaare,NG005,Nigeria,NG,JAMA'ARE,1
+373,Polygon,Jega,NG022011,Jega,NG022,Nigeria,NG,JEGA,1
+374,Polygon,Jema'a,NG019007,Jemaa,NG019,Nigeria,NG,JEMA'A,1
+375,Polygon,Jibia,NG021016,Jibia,NG021,Nigeria,NG,JIBIA,1
+376,Polygon,Jos East,NG032004,Jos East,NG032,Nigeria,NG,JOS EAST,1
+377,Polygon,Jos North,NG032005,Jos North,NG032,Nigeria,NG,JOS NORTH,1
+378,Polygon,Jos South,NG032006,Jos South,NG032,Nigeria,NG,JOS SOUTH,1
+379,Polygon,Kabba/Bunu,NG023010,Kabba/Bunu,NG023,Nigeria,NG,KABBA/BUNU,1
+380,Polygon,Kabo,NG020020,Kabo,NG020,Nigeria,NG,KABO,1
+381,Polygon,Kachia,NG019008,Kachia,NG019,Nigeria,NG,KACHIA,1
+382,Polygon,Kaduna North,NG019009,Kaduna North,NG019,Nigeria,NG,KADUNA NORTH,1
+383,Polygon,Kaduna South,NG019010,Kaduna South,NG019,Nigeria,NG,KADUNA SOUTH,1
+384,Polygon,Kafin Hausa,NG018015,Kafin Hausa,NG018,Nigeria,NG,KAFIN HAUSA,1
+385,Polygon,Kafur,NG021017,Kafur,NG021,Nigeria,NG,KAFUR,1
+386,Polygon,Kagarko,NG019011,Kagarko,NG019,Nigeria,NG,KAGARKO,1
+387,Polygon,Kaiama,NG024011,Kaiama,NG024,Nigeria,NG,KAIAMA,1
+388,Polygon,Kaita,NG021018,Kaita,NG021,Nigeria,NG,KAITA,1
+389,Polygon,Kajola,NG031019,Kajola,NG031,Nigeria,NG,KAJOLA,1
+390,Polygon,Kajuru,NG019012,Kajuru,NG019,Nigeria,NG,KAJURU,1
+391,Polygon,Kalgo,NG022012,Kalgo,NG022,Nigeria,NG,KALGO,1
+392,Polygon,Kaltungo,NG016007,Kaltungo,NG016,Nigeria,NG,KALTUNGO,1
+393,Polygon,Kanam,NG032007,Kanam,NG032,Nigeria,NG,KANAM,1
+394,Polygon,Kankara,NG021019,Kankara,NG021,Nigeria,NG,KANKARA,1
+395,Polygon,Kanke,NG032008,Kanke,NG032,Nigeria,NG,KANKE,1
+396,Polygon,Kankia,NG021020,Kankia,NG021,Nigeria,NG,KANKIA,1
+397,Polygon,Kano Municipal,NG020021,Kano Municipal,NG020,Nigeria,NG,KANO MUNICIPAL,1
+398,Polygon,Karasuwa,NG036010,Karasuwa,NG036,Nigeria,NG,KARASUWA,1
+399,Polygon,Karaye,NG020022,Karaye,NG020,Nigeria,NG,KARAYE,1
+400,Polygon,Karim-Lamido,NG035008,Karim-Lamido,NG035,Nigeria,NG,KARIM-LAMIDO,1
+401,Polygon,Karu,NG026004,Karu,NG026,Nigeria,NG,KARU,1
+402,Polygon,Katagum,NG005012,Katagum,NG005,Nigeria,NG,KATAGUM,1
+403,Polygon,Katcha,NG027010,Katcha,NG027,Nigeria,NG,KATCHA,1
+404,Polygon,Katsina,NG021021,Katsina,NG021,Nigeria,NG,KATSINA,1
+405,Polygon,Katsina-Ala,NG007009,Katsina-Ala,NG007,Nigeria,NG,KATSINA-ALA,1
+406,Polygon,Kaugama,NG018016,Kaugama,NG018,Nigeria,NG,KAUGAMA,1
+407,Polygon,Kaura,NG019013,Kaura,NG019,Nigeria,NG,KAURA,1
+408,Polygon,Kaura Namoda,NG037008,Kaura Namoda,NG037,Nigeria,NG,KAURA NAMODA,1
+409,Polygon,Kauru,NG019014,Kauru,NG019,Nigeria,NG,KAURU,1
+410,Polygon,Kazaure,NG018017,Kazaure,NG018,Nigeria,NG,KAZAURE,1
+411,Polygon,Keana,NG026005,Keana,NG026,Nigeria,NG,KEANA,1
+412,Polygon,Kebbe,NG034010,Kebbe,NG034,Nigeria,NG,KEBBE,1
+413,Polygon,Keffi,NG026006,Keffi,NG026,Nigeria,NG,KEFFI,1
+414,Polygon,Khana,NG033014,Khana,NG033,Nigeria,NG,KHANA,1
+415,Polygon,Kibiya,NG020023,Kibiya,NG020,Nigeria,NG,KIBIYA,1
+416,Polygon,Kirfi,NG005013,Kirfi,NG005,Nigeria,NG,KIRFI,1
+417,Polygon,Kiri Kasamma,NG018018,Kiri Kasamma,NG018,Nigeria,NG,KIRI KASAMMA,1
+418,Polygon,Kiru,NG020024,Kiru,NG020,Nigeria,NG,KIRU,1
+419,Polygon,Kiyawa,NG018019,Kiyawa,NG018,Nigeria,NG,KIYAWA,1
+420,Polygon,Kogi,NG023011,Kogi,NG023,Nigeria,NG,KOGI,1
+421,Polygon,Koko/Besse,NG022013,Koko/Besse,NG022,Nigeria,NG,KOKO/BESSE,1
+422,Polygon,Kokona,NG026007,Kokona,NG026,Nigeria,NG,KOKONA,1
+423,Polygon,Kolokuma/Opokuma,NG006003,Kolokuma/Opokuma,NG006,Nigeria,NG,KOLOKUMA/OPOKUMA,1
+424,Polygon,Konshisha,NG007010,Konshisha,NG007,Nigeria,NG,KONSHISHA,1
+425,Polygon,Kontagora,NG027011,Kontagora,NG027,Nigeria,NG,KONTAGORA,1
+426,Polygon,Kosofe,NG025013,Kosofe,NG025,Nigeria,NG,KOSOFE,1
+427,Polygon,Kubau,NG019015,Kubau,NG019,Nigeria,NG,KUBAU,1
+428,Polygon,Kudan,NG019016,Kudan,NG019,Nigeria,NG,KUDAN,1
+429,Polygon,Kuje,NG015005,Kuje,NG015,Nigeria,NG,KUJE,1
+430,Polygon,Kumbotso,NG020025,Kumbotso,NG020,Nigeria,NG,KUMBOTSO,1
+431,Polygon,Kunchi,NG020026,Kunchi,NG020,Nigeria,NG,KUNCHI,1
+432,Polygon,Kura,NG020027,Kura,NG020,Nigeria,NG,KURA,1
+433,Polygon,Kurfi,NG021022,Kurfi,NG021,Nigeria,NG,KURFI,1
+434,Polygon,Kurmi,NG035009,Kurmi,NG035,Nigeria,NG,KURMI,1
+435,Polygon,Kusada,NG021023,Kusada,NG021,Nigeria,NG,KUSADA,1
+436,Polygon,Kwali,NG015006,Kwali,NG015,Nigeria,NG,KWALI,1
+437,Polygon,Kwami,NG016008,Kwami,NG016,Nigeria,NG,KWAMI,1
+438,Polygon,Kwande,NG007011,Kwande,NG007,Nigeria,NG,KWANDE,1
+439,Polygon,Kware,NG034011,Kware,NG034,Nigeria,NG,KWARE,1
+440,Polygon,Lafia,NG026008,Lafia,NG026,Nigeria,NG,LAFIA,1
+441,Polygon,Lagelu,NG031020,Lagelu,NG031,Nigeria,NG,LAGELU,1
+442,Polygon,Lagos Island,NG025014,Lagos Island,NG025,Nigeria,NG,LAGOS ISLAND,1
+443,Polygon,Lagos Mainland,NG025015,Lagos Mainland,NG025,Nigeria,NG,LAGOS MAINLAND,1
+444,Polygon,Lamurde,NG002009,Lamurde,NG002,Nigeria,NG,LAMURDE,1
+445,Polygon,Langtang North,NG032009,Langtang North,NG032,Nigeria,NG,LANGTANG NORTH,1
+446,Polygon,Langtang South,NG032010,Langtang South,NG032,Nigeria,NG,LANGTANG SOUTH,1
+447,Polygon,Lapai,NG027012,Lapai,NG027,Nigeria,NG,LAPAI,1
+448,Polygon,Lau,NG035010,Lau,NG035,Nigeria,NG,LAU,1
+449,Polygon,Lavun,NG027013,Lavun,NG027,Nigeria,NG,LAVUN,1
+450,Polygon,Lere,NG019017,Lere,NG019,Nigeria,NG,LERE,1
+451,Polygon,Logo,NG007012,Logo,NG007,Nigeria,NG,LOGO,1
+452,Polygon,Lokoja,NG023012,Lokoja,NG023,Nigeria,NG,LOKOJA,1
+453,Polygon,Machina,NG036011,Machina,NG036,Nigeria,NG,MACHINA,1
+454,Polygon,Madagali,NG002010,Madagali,NG002,Nigeria,NG,MADAGALI,1
+455,Polygon,Madobi,NG020028,Madobi,NG020,Nigeria,NG,MADOBI,1
+456,Polygon,Magama,NG027014,Magama,NG027,Nigeria,NG,MAGAMA,1
+457,Polygon,Mai'adua,NG021024,Maiadua,NG021,Nigeria,NG,MAI'ADUA,1
+458,Polygon,Maigatari,NG018020,Maigatari,NG018,Nigeria,NG,MAIGATARI,1
+459,Polygon,Maiha,NG002011,Maiha,NG002,Nigeria,NG,MAIHA,1
+460,Polygon,Maiyama,NG022014,Maiyama,NG022,Nigeria,NG,MAIYAMA,1
+461,Polygon,Makoda,NG020029,Makoda,NG020,Nigeria,NG,MAKODA,1
+462,Polygon,Makurdi,NG007013,Makurdi,NG007,Nigeria,NG,MAKURDI,1
+463,Polygon,Malam Madori,NG018021,Malam Madori,NG018,Nigeria,NG,MALAM MADORI,1
+464,Polygon,Malumfashi,NG021025,Malumfashi,NG021,Nigeria,NG,MALUMFASHI,1
+465,Polygon,Mangu,NG032011,Mangu,NG032,Nigeria,NG,MANGU,1
+466,Polygon,Mani,NG021026,Mani,NG021,Nigeria,NG,MANI,1
+467,Polygon,Maradun,NG037009,Maradun,NG037,Nigeria,NG,MARADUN,1
+468,Polygon,Mariga,NG027015,Mariga,NG027,Nigeria,NG,MARIGA,1
+469,Polygon,Markafi,NG019018,Markafi,NG019,Nigeria,NG,MARKAFI,1
+470,Polygon,Maru,NG037010,Maru,NG037,Nigeria,NG,MARU,1
+471,Polygon,Mashegu,NG027016,Mashegu,NG027,Nigeria,NG,MASHEGU,1
+472,Polygon,Mashi,NG021027,Mashi,NG021,Nigeria,NG,MASHI,1
+473,Polygon,Matazu,NG021028,Matazu,NG021,Nigeria,NG,MATAZU,1
+474,Polygon,Mayo-Belwa,NG002012,Mayo-Belwa,NG002,Nigeria,NG,MAYO-BELWA,1
+475,Polygon,Mbaitoli,NG017011,Mbaitoli,NG017,Nigeria,NG,MBAITOLI,1
+476,Polygon,Mbo,NG003017,Mbo,NG003,Nigeria,NG,MBO,1
+477,Polygon,Michika,NG002013,Michika,NG002,Nigeria,NG,MICHIKA,1
+478,Polygon,Miga,NG018022,Miga,NG018,Nigeria,NG,MIGA,1
+479,Polygon,Mikang,NG032012,Mikang,NG032,Nigeria,NG,MIKANG,1
+480,Polygon,Minjibir,NG020030,Minjibir,NG020,Nigeria,NG,MINJIBIR,1
+481,Polygon,Misau,NG005014,Misau,NG005,Nigeria,NG,MISAU,1
+482,Polygon,Mkpat Enin,NG003018,Mkpat Enin,NG003,Nigeria,NG,MKPAT ENIN,1
+483,Polygon,Moba,NG013015,Moba,NG013,Nigeria,NG,MOBA,1
+484,Polygon,Mokwa,NG027017,Mokwa,NG027,Nigeria,NG,MOKWA,1
+485,Polygon,Mopa-Muro,NG023013,Mopa-Muro,NG023,Nigeria,NG,MOPA-MURO,1
+486,Polygon,Moro,NG024012,Moro,NG024,Nigeria,NG,MORO,1
+487,Polygon,Mubi North,NG002014,Mubi North,NG002,Nigeria,NG,MUBI NORTH,1
+488,Polygon,Mubi South,NG002015,Mubi South,NG002,Nigeria,NG,MUBI SOUTH,1
+489,Polygon,Musawa,NG021029,Musawa,NG021,Nigeria,NG,MUSAWA,1
+490,Polygon,Mushin,NG025016,Mushin,NG025,Nigeria,NG,MUSHIN,1
+491,Polygon,Muya,NG027018,Muya,NG027,Nigeria,NG,MUYA,1
+492,Polygon,Nafada,NG016009,Nafada,NG016,Nigeria,NG,NAFADA,1
+493,Polygon,Nangere,NG036012,Nangere,NG036,Nigeria,NG,NANGERE,1
+494,Polygon,Nasarawa,NG020031,Nasarawa,NG020,Nigeria,NG,NASARAWA,1
+495,Polygon,Nasarawa-Eggon,NG026010,Nasarawa-Eggon,NG026,Nigeria,NG,NASARAWA-EGGON,1
+496,Polygon,Nasarawa,NG026009,Nasarawa,NG026,Nigeria,NG,NASARAWA,1
+497,Polygon,Ndokwa East,NG010011,Ndokwa East,NG010,Nigeria,NG,NDOKWA EAST,1
+498,Polygon,Ndokwa West,NG010012,Ndokwa West,NG010,Nigeria,NG,NDOKWA WEST,1
+499,Polygon,Nembe,NG006004,Nembe,NG006,Nigeria,NG,NEMBE,1
+500,Polygon,Ngaski,NG022015,Ngaski,NG022,Nigeria,NG,NGASKI,1
+501,Polygon,Ngor-Okpala,NG017012,Ngor-Okpala,NG017,Nigeria,NG,NGOR-OKPALA,1
+502,Polygon,Nguru,NG036013,Nguru,NG036,Nigeria,NG,NGURU,1
+503,Polygon,Ningi,NG005015,Ningi,NG005,Nigeria,NG,NINGI,1
+504,Polygon,Njaba,NG017013,Njaba,NG017,Nigeria,NG,NJABA,1
+505,Polygon,Dunukofia,NG004008,Dunukofia,NG004,Nigeria,NG,DUNUKOFIA,1
+506,Polygon,Nkanu East,NG014011,Nkanu East,NG014,Nigeria,NG,NKANU EAST,1
+507,Polygon,Nkanu West,NG014012,Nkanu West,NG014,Nigeria,NG,NKANU WEST,1
+508,Polygon,Nkwerre,NG017014,Nkwerre,NG017,Nigeria,NG,NKWERRE,1
+509,Polygon,Nnewi North,NG004014,Nnewi North,NG004,Nigeria,NG,NNEWI NORTH,1
+510,Polygon,Nnewi South,NG004015,Nnewi South,NG004,Nigeria,NG,NNEWI SOUTH,1
+511,Polygon,Nsit Atai,NG003019,Nsit Atai,NG003,Nigeria,NG,NSIT ATAI,1
+512,Polygon,Nsit Ibom,NG003020,Nsit Ibom,NG003,Nigeria,NG,NSIT IBOM,1
+513,Polygon,Nsit Ubium,NG003021,Nsit Ubium,NG003,Nigeria,NG,NSIT UBIUM,1
+514,Polygon,Nsukka,NG014013,Nsukka,NG014,Nigeria,NG,NSUKKA,1
+515,Polygon,Numan,NG002016,Numan,NG002,Nigeria,NG,NUMAN,1
+516,Polygon,Nwangele,NG017015,Nwangele,NG017,Nigeria,NG,NWANGELE,1
+517,Polygon,Obafemi-Owode,NG028015,Obafemi-Owode,NG028,Nigeria,NG,OBAFEMI-OWODE,1
+518,Polygon,Obanliku,NG009013,Obanliku,NG009,Nigeria,NG,OBANLIKU,1
+519,Polygon,Obi,NG026011,Obi,NG026,Nigeria,NG,OBI,1
+520,Polygon,Obi Ngwa,NG001009,Obi Ngwa,NG001,Nigeria,NG,OBI NGWA,1
+521,Polygon,Obi,NG007014,Obi,NG007,Nigeria,NG,OBI,1
+522,Polygon,Obia/Akpor,NG033015,Obia/Akpor,NG033,Nigeria,NG,OBIA/AKPOR,1
+523,Polygon,Obokun,NG030024,Obokun,NG030,Nigeria,NG,OBOKUN,1
+524,Polygon,Obot Akara,NG003022,Obot Akara,NG003,Nigeria,NG,OBOT AKARA,1
+525,Polygon,Obowo,NG017016,Obowo,NG017,Nigeria,NG,OBOWO,1
+526,Polygon,Obubra,NG009014,Obubra,NG009,Nigeria,NG,OBUBRA,1
+527,Polygon,Obudu,NG009015,Obudu,NG009,Nigeria,NG,OBUDU,1
+528,Polygon,Odeda,NG028016,Odeda,NG028,Nigeria,NG,ODEDA,1
+529,Polygon,Odigbo,NG029013,Odigbo,NG029,Nigeria,NG,ODIGBO,1
+530,Polygon,Odo-Otin,NG030025,Odo-Otin,NG030,Nigeria,NG,ODO-OTIN,1
+531,Polygon,Odogbolu,NG028017,Odogbolu,NG028,Nigeria,NG,ODOGBOLU,1
+532,Polygon,Odukpani,NG009016,Odukpani,NG009,Nigeria,NG,ODUKPANI,1
+533,Polygon,Offa,NG024013,Offa,NG024,Nigeria,NG,OFFA,1
+534,Polygon,Ofu,NG023014,Ofu,NG023,Nigeria,NG,OFU,1
+535,Polygon,Ogba/Egbema/Ndoni,NG033016,Ogba/Egbema/Ndoni,NG033,Nigeria,NG,OGBA/EGBEMA/NDONI,1
+536,Polygon,Ogbadibo,NG007015,Ogbadibo,NG007,Nigeria,NG,OGBADIBO,1
+537,Polygon,Ogbaru,NG004016,Ogbaru,NG004,Nigeria,NG,OGBARU,1
+538,Polygon,Ogbia,NG006005,Ogbia,NG006,Nigeria,NG,OGBIA,1
+539,Polygon,Ogbomosho North,NG031021,Ogbomosho North,NG031,Nigeria,NG,OGBOMOSHO NORTH,1
+540,Polygon,Ogbomosho South,NG031022,Ogbomosho South,NG031,Nigeria,NG,OGBOMOSHO SOUTH,1
+541,Polygon,Ogo Oluwa,NG031023,Ogo Oluwa,NG031,Nigeria,NG,OGO OLUWA,1
+542,Polygon,Ogoja,NG009017,Ogoja,NG009,Nigeria,NG,OGOJA,1
+543,Polygon,Ogori/Magongo,NG023015,Ogori/Magongo,NG023,Nigeria,NG,OGORI/MAGONGO,1
+544,Polygon,Ogu/Bolo,NG033017,Ogu/Bolo,NG033,Nigeria,NG,OGU/BOLO,1
+545,Polygon,Ogun waterside,NG028018,Ogun waterside,NG028,Nigeria,NG,OGUN WATERSIDE,1
+546,Polygon,Oguta,NG017017,Oguta,NG017,Nigeria,NG,OGUTA,1
+547,Polygon,Ohafia,NG001010,Ohafia,NG001,Nigeria,NG,OHAFIA,1
+548,Polygon,Ohaji/Egbema,NG017018,Ohaji/Egbema,NG017,Nigeria,NG,OHAJI/EGBEMA,1
+549,Polygon,Ohaozara,NG011011,Ohaozara,NG011,Nigeria,NG,OHAOZARA,1
+550,Polygon,Ohaukwu,NG011012,Ohaukwu,NG011,Nigeria,NG,OHAUKWU,1
+551,Polygon,Ohimini,NG007016,Ohimini,NG007,Nigeria,NG,OHIMINI,1
+552,Polygon,Oji-River,NG014014,Oji-River,NG014,Nigeria,NG,OJI-RIVER,1
+553,Polygon,Ojo,NG025017,Ojo,NG025,Nigeria,NG,OJO,1
+554,Polygon,Oju,NG007017,Oju,NG007,Nigeria,NG,OJU,1
+555,Polygon,Oke-Ero,NG024014,Oke-Ero,NG024,Nigeria,NG,OKE-ERO,1
+556,Polygon,Okehi,NG023016,Okehi,NG023,Nigeria,NG,OKEHI,1
+557,Polygon,Okene,NG023017,Okene,NG023,Nigeria,NG,OKENE,1
+558,Polygon,Okigwe,NG017019,Okigwe,NG017,Nigeria,NG,OKIGWE,1
+559,Polygon,Okitipupa,NG029014,Okitipupa,NG029,Nigeria,NG,OKITIPUPA,1
+560,Polygon,Okobo,NG003023,Okobo,NG003,Nigeria,NG,OKOBO,1
+561,Polygon,Okpe,NG010013,Okpe,NG010,Nigeria,NG,OKPE,1
+562,Polygon,Okpokwu,NG007018,Okpokwu,NG007,Nigeria,NG,OKPOKWU,1
+563,Polygon,Okrika,NG033018,Okrika,NG033,Nigeria,NG,OKRIKA,1
+564,Polygon,Ola-oluwa,NG030026,Ola-oluwa,NG030,Nigeria,NG,OLA-OLUWA,1
+565,Polygon,Olamabolo,NG023018,Olamabolo,NG023,Nigeria,NG,OLAMABOLO,1
+566,Polygon,Olorunda,NG030027,Olorunda,NG030,Nigeria,NG,OLORUNDA,1
+567,Polygon,Olorunsogo,NG031024,Olorunsogo,NG031,Nigeria,NG,OLORUNSOGO,1
+568,Polygon,Oluyole,NG031025,Oluyole,NG031,Nigeria,NG,OLUYOLE,1
+569,Polygon,Omala,NG023019,Omala,NG023,Nigeria,NG,OMALA,1
+570,Polygon,Omumma,NG033019,Omumma,NG033,Nigeria,NG,OMUMMA,1
+571,Polygon,Ona-Ara,NG031026,Ona-Ara,NG031,Nigeria,NG,ONA-ARA,1
+572,Polygon,Ondo East,NG029015,Ondo East,NG029,Nigeria,NG,ONDO EAST,1
+573,Polygon,Ondo West,NG029016,Ondo West,NG029,Nigeria,NG,ONDO WEST,1
+574,Polygon,Onicha,NG011013,Onicha,NG011,Nigeria,NG,ONICHA,1
+575,Polygon,Onitsha North,NG004017,Onitsha North,NG004,Nigeria,NG,ONITSHA NORTH,1
+576,Polygon,Onitsha South,NG004018,Onitsha South,NG004,Nigeria,NG,ONITSHA SOUTH,1
+577,Polygon,Onna,NG003024,Onna,NG003,Nigeria,NG,ONNA,1
+578,Polygon,Opobo/Nkoro,NG033020,Opobo/Nkoro,NG033,Nigeria,NG,OPOBO/NKORO,1
+579,Polygon,Oredo,NG012012,Oredo,NG012,Nigeria,NG,OREDO,1
+580,Polygon,Orelope,NG031027,Orelope,NG031,Nigeria,NG,ORELOPE,1
+581,Polygon,Orhionmwon,NG012013,Orhionmwon,NG012,Nigeria,NG,ORHIONMWON,1
+582,Polygon,Ori Ire,NG031028,Ori Ire,NG031,Nigeria,NG,ORI IRE,1
+583,Polygon,Oriade,NG030028,Oriade,NG030,Nigeria,NG,ORIADE,1
+584,Polygon,Orlu,NG017020,Orlu,NG017,Nigeria,NG,ORLU,1
+585,Polygon,Orolu,NG030029,Orolu,NG030,Nigeria,NG,OROLU,1
+586,Polygon,Oron,NG003025,Oron,NG003,Nigeria,NG,ORON,1
+587,Polygon,Orsu,NG017021,Orsu,NG017,Nigeria,NG,ORSU,1
+588,Polygon,Oru East,NG017022,Oru East,NG017,Nigeria,NG,ORU EAST,1
+589,Polygon,Oru West,NG017023,Oru West,NG017,Nigeria,NG,ORU WEST,1
+590,Polygon,Oruk Anam,NG003026,Oruk Anam,NG003,Nigeria,NG,ORUK ANAM,1
+591,Polygon,Orumba North,NG004019,Orumba North,NG004,Nigeria,NG,ORUMBA NORTH,1
+592,Polygon,Orumba South,NG004020,Orumba South,NG004,Nigeria,NG,ORUMBA SOUTH,1
+593,Polygon,Ose,NG029017,Ose,NG029,Nigeria,NG,OSE,1
+594,Polygon,Oshimili North,NG010014,Oshimili North,NG010,Nigeria,NG,OSHIMILI NORTH,1
+595,Polygon,Oshimili South,NG010015,Oshimili South,NG010,Nigeria,NG,OSHIMILI SOUTH,1
+596,Polygon,Oshodi-Isolo,NG025018,Oshodi-Isolo,NG025,Nigeria,NG,OSHODI-ISOLO,1
+597,Polygon,Osisioma Ngwa,NG001011,Osisioma Ngwa,NG001,Nigeria,NG,OSISIOMA NGWA,1
+598,Polygon,Osogbo,NG030030,Osogbo,NG030,Nigeria,NG,OSOGBO,1
+599,Polygon,Oturkpo,NG007019,Oturkpo,NG007,Nigeria,NG,OTURKPO,1
+600,Polygon,Ovia North East,NG012014,Ovia North East,NG012,Nigeria,NG,OVIA NORTH EAST,1
+601,Polygon,Ovia South West,NG012015,Ovia South West,NG012,Nigeria,NG,OVIA SOUTH WEST,1
+602,Polygon,Owan East,NG012016,Owan East,NG012,Nigeria,NG,OWAN EAST,1
+603,Polygon,Owan West,NG012017,Owan West,NG012,Nigeria,NG,OWAN WEST,1
+604,Polygon,Owerri-Municipal,NG017026,Owerri-Municipal,NG017,Nigeria,NG,OWERRI-MUNICIPAL,1
+605,Polygon,Owerri North,NG017024,Owerri North,NG017,Nigeria,NG,OWERRI NORTH,1
+606,Polygon,Owerri West,NG017025,Owerri West,NG017,Nigeria,NG,OWERRI WEST,1
+607,Polygon,Owo,NG029018,Owo,NG029,Nigeria,NG,OWO,1
+608,Polygon,Oye,NG013016,Oye,NG013,Nigeria,NG,OYE,1
+609,Polygon,Oyi,NG004021,Oyi,NG004,Nigeria,NG,OYI,1
+610,Polygon,Oyigbo,NG033021,Oyigbo,NG033,Nigeria,NG,OYIGBO,1
+611,Polygon,Oyo East,NG031029,Oyo East,NG031,Nigeria,NG,OYO EAST,1
+612,Polygon,Oyo West,NG031030,Oyo West,NG031,Nigeria,NG,OYO WEST,1
+613,Polygon,Oyun,NG024015,Oyun,NG024,Nigeria,NG,OYUN,1
+614,Polygon,Paikoro,NG027019,Paikoro,NG027,Nigeria,NG,PAIKORO,1
+615,Polygon,Pankshin,NG032013,Pankshin,NG032,Nigeria,NG,PANKSHIN,1
+616,Polygon,Patani,NG010016,Patani,NG010,Nigeria,NG,PATANI,1
+617,Polygon,Pategi,NG024016,Pategi,NG024,Nigeria,NG,PATEGI,1
+618,Polygon,Port-Harcourt,NG033022,Port-Harcourt,NG033,Nigeria,NG,PORT-HARCOURT,1
+619,Polygon,Potiskum,NG036014,Potiskum,NG036,Nigeria,NG,POTISKUM,1
+620,Polygon,Qua'an Pan,NG032014,Quaan Pan,NG032,Nigeria,NG,QUA'AN PAN,1
+621,Polygon,Rabah,NG034012,Rabah,NG034,Nigeria,NG,RABAH,1
+622,Polygon,Rafi,NG027020,Rafi,NG027,Nigeria,NG,RAFI,1
+623,Polygon,Rano,NG020032,Rano,NG020,Nigeria,NG,RANO,1
+624,Polygon,Remo North,NG028019,Remo North,NG028,Nigeria,NG,REMO NORTH,1
+625,Polygon,Rijau,NG027021,Rijau,NG027,Nigeria,NG,RIJAU,1
+626,Polygon,Rimi,NG021030,Rimi,NG021,Nigeria,NG,RIMI,1
+627,Polygon,Rimin Gado,NG020033,Rimin Gado,NG020,Nigeria,NG,RIMIN GADO,1
+628,Polygon,Ringim,NG018023,Ringim,NG018,Nigeria,NG,RINGIM,1
+629,Polygon,Riyom,NG032015,Riyom,NG032,Nigeria,NG,RIYOM,1
+630,Polygon,Rogo,NG020034,Rogo,NG020,Nigeria,NG,ROGO,1
+631,Polygon,Roni,NG018024,Roni,NG018,Nigeria,NG,RONI,1
+632,Polygon,Sabon-Gari,NG019019,Sabon-Gari,NG019,Nigeria,NG,SABON-GARI,1
+633,Polygon,Sabon Birni,NG034013,Sabon Birni,NG034,Nigeria,NG,SABON BIRNI,1
+634,Polygon,Sabuwa,NG021031,Sabuwa,NG021,Nigeria,NG,SABUWA,1
+635,Polygon,Safana,NG021032,Safana,NG021,Nigeria,NG,SAFANA,1
+636,Polygon,Sagbama,NG006006,Sagbama,NG006,Nigeria,NG,SAGBAMA,1
+637,Polygon,Sakaba,NG022016,Sakaba,NG022,Nigeria,NG,SAKABA,1
+638,Polygon,Saki East,NG031031,Saki East,NG031,Nigeria,NG,SAKI EAST,1
+639,Polygon,Saki West,NG031032,Saki West,NG031,Nigeria,NG,SAKI WEST,1
+640,Polygon,Sandamu,NG021033,Sandamu,NG021,Nigeria,NG,SANDAMU,1
+641,Polygon,Sanga,NG019020,Sanga,NG019,Nigeria,NG,SANGA,1
+642,Polygon,Sapele,NG010017,Sapele,NG010,Nigeria,NG,SAPELE,1
+643,Polygon,Sardauna,NG035011,Sardauna,NG035,Nigeria,NG,SARDAUNA,1
+644,Polygon,Shagamu,NG028020,Shagamu,NG028,Nigeria,NG,SHAGAMU,1
+645,Polygon,Shagari,NG034014,Shagari,NG034,Nigeria,NG,SHAGARI,1
+646,Polygon,Shanga,NG022017,Shanga,NG022,Nigeria,NG,SHANGA,1
+647,Polygon,Shanono,NG020035,Shanono,NG020,Nigeria,NG,SHANONO,1
+648,Polygon,Shelleng,NG002017,Shelleng,NG002,Nigeria,NG,SHELLENG,1
+649,Polygon,Shendam,NG032016,Shendam,NG032,Nigeria,NG,SHENDAM,1
+650,Polygon,Shinkafi,NG037011,Shinkafi,NG037,Nigeria,NG,SHINKAFI,1
+651,Polygon,Shira,NG005016,Shira,NG005,Nigeria,NG,SHIRA,1
+652,Polygon,Shiroro,NG027022,Shiroro,NG027,Nigeria,NG,SHIRORO,1
+653,Polygon,Shomgom,NG016010,Shomgom,NG016,Nigeria,NG,SHOMGOM,1
+654,Polygon,Shomolu,NG025019,Shomolu,NG025,Nigeria,NG,SHOMOLU,1
+655,Polygon,Silame,NG034015,Silame,NG034,Nigeria,NG,SILAME,1
+656,Polygon,Soba,NG019021,Soba,NG019,Nigeria,NG,SOBA,1
+657,Polygon,Sokoto North,NG034016,Sokoto North,NG034,Nigeria,NG,SOKOTO NORTH,1
+658,Polygon,Sokoto South,NG034017,Sokoto South,NG034,Nigeria,NG,SOKOTO SOUTH,1
+659,Polygon,Song,NG002018,Song,NG002,Nigeria,NG,SONG,1
+660,Polygon,Southern Ijaw,NG006007,Southern Ijaw,NG006,Nigeria,NG,SOUTHERN IJAW,1
+661,Polygon,Sule-Tankarkar,NG018025,Sule-Tankarkar,NG018,Nigeria,NG,SULE-TANKARKAR,1
+662,Polygon,Suleja,NG027023,Suleja,NG027,Nigeria,NG,SULEJA,1
+663,Polygon,Sumaila,NG020036,Sumaila,NG020,Nigeria,NG,SUMAILA,1
+664,Polygon,Suru,NG022018,Suru,NG022,Nigeria,NG,SURU,1
+665,Polygon,Surulere,NG025020,Surulere,NG025,Nigeria,NG,SURULERE,1
+666,Polygon,Surulere,NG031033,Surulere,NG031,Nigeria,NG,SURULERE,1
+667,Polygon,Tafa,NG027024,Tafa,NG027,Nigeria,NG,TAFA,1
+668,Polygon,Tafawa-Balewa,NG005017,Tafawa-Balewa,NG005,Nigeria,NG,TAFAWA-BALEWA,1
+669,Polygon,Tai,NG033023,Tai,NG033,Nigeria,NG,TAI,1
+670,Polygon,Takai,NG020037,Takai,NG020,Nigeria,NG,TAKAI,1
+671,Polygon,Takum,NG035012,Takum,NG035,Nigeria,NG,TAKUM,1
+672,Polygon,Talata Mafara,NG037012,Talata Mafara,NG037,Nigeria,NG,TALATA MAFARA,1
+673,Polygon,Tambuwal,NG034018,Tambuwal,NG034,Nigeria,NG,TAMBUWAL,1
+674,Polygon,Tangaza,NG034019,Tangaza,NG034,Nigeria,NG,TANGAZA,1
+675,Polygon,Tarauni,NG020038,Tarauni,NG020,Nigeria,NG,TARAUNI,1
+676,Polygon,Tarka,NG007020,Tarka,NG007,Nigeria,NG,TARKA,1
+677,Polygon,Tarmua,NG036015,Tarmua,NG036,Nigeria,NG,TARMUA,1
+678,Polygon,Taura,NG018026,Taura,NG018,Nigeria,NG,TAURA,1
+679,Polygon,Tofa,NG020039,Tofa,NG020,Nigeria,NG,TOFA,1
+680,Polygon,Toro,NG005018,Toro,NG005,Nigeria,NG,TORO,1
+681,Polygon,Toto,NG026012,Toto,NG026,Nigeria,NG,TOTO,1
+682,Polygon,Toungo,NG002019,Toungo,NG002,Nigeria,NG,TOUNGO,1
+683,Polygon,Tsafe,NG037013,Tsafe,NG037,Nigeria,NG,TSAFE,1
+684,Polygon,Tsanyawa,NG020040,Tsanyawa,NG020,Nigeria,NG,TSANYAWA,1
+685,Polygon,Tudun Wada,NG020041,Tudun Wada,NG020,Nigeria,NG,TUDUN WADA,1
+686,Polygon,Tureta,NG034020,Tureta,NG034,Nigeria,NG,TURETA,1
+687,Polygon,Udenu,NG014015,Udenu,NG014,Nigeria,NG,UDENU,1
+688,Polygon,Udi,NG014016,Udi,NG014,Nigeria,NG,UDI,1
+689,Polygon,Udu,NG010018,Udu,NG010,Nigeria,NG,UDU,1
+690,Polygon,Udung Uko,NG003027,Udung Uko,NG003,Nigeria,NG,UDUNG UKO,1
+691,Polygon,Ughelli North,NG010019,Ughelli North,NG010,Nigeria,NG,UGHELLI NORTH,1
+692,Polygon,Ughelli South,NG010020,Ughelli South,NG010,Nigeria,NG,UGHELLI SOUTH,1
+693,Polygon,Ugwunagbo,NG001012,Ugwunagbo,NG001,Nigeria,NG,UGWUNAGBO,1
+694,Polygon,Uhunmwonde,NG012018,Uhunmwonde,NG012,Nigeria,NG,UHUNMWONDE,1
+695,Polygon,Ukanafun,NG003028,Ukanafun,NG003,Nigeria,NG,UKANAFUN,1
+696,Polygon,Ukum,NG007021,Ukum,NG007,Nigeria,NG,UKUM,1
+697,Polygon,Ukwa East,NG001013,Ukwa East,NG001,Nigeria,NG,UKWA EAST,1
+698,Polygon,Ukwa West,NG001014,Ukwa West,NG001,Nigeria,NG,UKWA WEST,1
+699,Polygon,Ukwuani,NG010021,Ukwuani,NG010,Nigeria,NG,UKWUANI,1
+700,Polygon,Umu-Nneochi,NG001017,Umu-Nneochi,NG001,Nigeria,NG,UMU-NNEOCHI,1
+701,Polygon,Umuahia North,NG001015,Umuahia North,NG001,Nigeria,NG,UMUAHIA NORTH,1
+702,Polygon,Umuahia South,NG001016,Umuahia South,NG001,Nigeria,NG,UMUAHIA SOUTH,1
+703,Polygon,Ungogo,NG020042,Ungogo,NG020,Nigeria,NG,UNGOGO,1
+704,Polygon,Unuimo,NG017027,Unuimo,NG017,Nigeria,NG,UNUIMO,1
+705,Polygon,Uruan,NG003029,Uruan,NG003,Nigeria,NG,URUAN,1
+706,Polygon,Urue-Offong/Oruko,NG003030,Urue-Offong/Oruko,NG003,Nigeria,NG,URUE-OFFONG/ORUKO,1
+707,Polygon,Ushongo,NG007022,Ushongo,NG007,Nigeria,NG,USHONGO,1
+708,Polygon,Ussa,NG035013,Ussa,NG035,Nigeria,NG,USSA,1
+709,Polygon,Uvwie,NG010022,Uvwie,NG010,Nigeria,NG,UVWIE,1
+710,Polygon,Uyo,NG003031,Uyo,NG003,Nigeria,NG,UYO,1
+711,Polygon,Uzo-Uwani,NG014017,Uzo-Uwani,NG014,Nigeria,NG,UZO-UWANI,1
+712,Polygon,Vandeikya,NG007023,Vandeikya,NG007,Nigeria,NG,VANDEIKYA,1
+713,Polygon,Wamako,NG034021,Wamako,NG034,Nigeria,NG,WAMAKO,1
+714,Polygon,Wamba,NG026013,Wamba,NG026,Nigeria,NG,WAMBA,1
+715,Polygon,Warawa,NG020043,Warawa,NG020,Nigeria,NG,WARAWA,1
+716,Polygon,Warji,NG005019,Warji,NG005,Nigeria,NG,WARJI,1
+717,Polygon,Warri North,NG010023,Warri North,NG010,Nigeria,NG,WARRI NORTH,1
+718,Polygon,Warri South,NG010024,Warri South,NG010,Nigeria,NG,WARRI SOUTH,1
+719,Polygon,Warri South West,NG010025,Warri South West,NG010,Nigeria,NG,WARRI SOUTH WEST,1
+720,Polygon,Wasagu/Danko,NG022019,Wasagu/Danko,NG022,Nigeria,NG,WASAGU/DANKO,1
+721,Polygon,Wase,NG032017,Wase,NG032,Nigeria,NG,WASE,1
+722,Polygon,Wudil,NG020044,Wudil,NG020,Nigeria,NG,WUDIL,1
+723,Polygon,Wukari,NG035014,Wukari,NG035,Nigeria,NG,WUKARI,1
+724,Polygon,Wurno,NG034022,Wurno,NG034,Nigeria,NG,WURNO,1
+725,Polygon,Wushishi,NG027025,Wushishi,NG027,Nigeria,NG,WUSHISHI,1
+726,Polygon,Yabo,NG034023,Yabo,NG034,Nigeria,NG,YABO,1
+727,Polygon,Yagba East,NG023020,Yagba East,NG023,Nigeria,NG,YAGBA EAST,1
+728,Polygon,Yagba West,NG023021,Yagba West,NG023,Nigeria,NG,YAGBA WEST,1
+729,Polygon,Yakurr,NG009018,Yakurr,NG009,Nigeria,NG,YAKURR,1
+730,Polygon,Yala,NG009019,Yala,NG009,Nigeria,NG,YALA,1
+731,Polygon,Yamaltu/Deba,NG016011,Yamaltu/Deba,NG016,Nigeria,NG,YAMALTU/DEBA,1
+732,Polygon,Yankwashi,NG018027,Yankwashi,NG018,Nigeria,NG,YANKWASHI,1
+733,Polygon,Yauri,NG022020,Yauri,NG022,Nigeria,NG,YAURI,1
+734,Polygon,Yenegoa,NG006008,Yenegoa,NG006,Nigeria,NG,YENEGOA,1
+735,Polygon,Yola South,NG002021,Yola South,NG002,Nigeria,NG,YOLA SOUTH,1
+736,Polygon,Yola North,NG002020,Yola North,NG002,Nigeria,NG,YOLA NORTH,1
+737,Polygon,Yorro,NG035015,Yorro,NG035,Nigeria,NG,YORRO,1
+738,Polygon,Yunusari,NG036016,Yunusari,NG036,Nigeria,NG,YUNUSARI,1
+739,Polygon,Yusufari,NG036017,Yusufari,NG036,Nigeria,NG,YUSUFARI,1
+740,Polygon,Zaki,NG005020,Zaki,NG005,Nigeria,NG,ZAKI,1
+741,Polygon,Zango,NG021034,Zango,NG021,Nigeria,NG,ZANGO,1
+742,Polygon,Zango-Kataf,NG019022,Zango-Kataf,NG019,Nigeria,NG,ZANGO-KATAF,1
+743,Polygon,Zaria,NG019023,Zaria,NG019,Nigeria,NG,ZARIA,1
+744,Polygon,Zing,NG035016,Zing,NG035,Nigeria,NG,ZING,1
+745,Polygon,Zurmi,NG037014,Zurmi,NG037,Nigeria,NG,ZURMI,1
+746,Polygon,Zuru,NG022021,Zuru,NG022,Nigeria,NG,ZURU,1
+747,Polygon,Bakassi,NG009005,Bakassi,NG009,Nigeria,NG,BAKASSI,1
+748,Polygon,Abadam,NG008001,Abadam,NG008,Nigeria,NG,ABADAM,1
+749,Polygon,Askira/Uba,NG008002,Askira/Uba,NG008,Nigeria,NG,ASKIRA/UBA,1
+750,Polygon,Bama,NG008003,Bama,NG008,Nigeria,NG,BAMA,1
+751,Polygon,Bayo,NG008004,Bayo,NG008,Nigeria,NG,BAYO,1
+752,Polygon,Biu,NG008005,Biu,NG008,Nigeria,NG,BIU,1
+753,Polygon,Chibok,NG008006,Chibok,NG008,Nigeria,NG,CHIBOK,1
+754,Polygon,Damboa,NG008007,Damboa,NG008,Nigeria,NG,DAMBOA,1
+755,Polygon,Dikwa,NG008008,Dikwa,NG008,Nigeria,NG,DIKWA,1
+756,Polygon,Gubio,NG008009,Gubio,NG008,Nigeria,NG,GUBIO,1
+757,Polygon,Guzamala,NG008010,Guzamala,NG008,Nigeria,NG,GUZAMALA,1
+758,Polygon,Gwoza,NG008011,Gwoza,NG008,Nigeria,NG,GWOZA,1
+759,Polygon,Hawul,NG008012,Hawul,NG008,Nigeria,NG,HAWUL,1
+760,Polygon,Jere,NG008013,Jere,NG008,Nigeria,NG,JERE,1
+761,Polygon,Kaga,NG008014,Kaga,NG008,Nigeria,NG,KAGA,1
+762,Polygon,Kala/Balge,NG008015,Kala/Balge,NG008,Nigeria,NG,KALA/BALGE,1
+763,Polygon,Konduga,NG008016,Konduga,NG008,Nigeria,NG,KONDUGA,1
+764,Polygon,Kukawa,NG008017,Kukawa,NG008,Nigeria,NG,KUKAWA,1
+765,Polygon,Kwaya Kusar,NG008018,Kwaya Kusar,NG008,Nigeria,NG,KWAYA KUSAR,1
+766,Polygon,Mafa,NG008019,Mafa,NG008,Nigeria,NG,MAFA,1
+767,Polygon,Magumeri,NG008020,Magumeri,NG008,Nigeria,NG,MAGUMERI,1
+768,Polygon,Maiduguri,NG008021,Maiduguri,NG008,Nigeria,NG,MAIDUGURI,1
+769,Polygon,Marte,NG008022,Marte,NG008,Nigeria,NG,MARTE,1
+770,Polygon,Mobbar,NG008023,Mobbar,NG008,Nigeria,NG,MOBBAR,1
+771,Polygon,Monguno,NG008024,Monguno,NG008,Nigeria,NG,MONGUNO,1
+772,Polygon,Ngala,NG008025,Ngala,NG008,Nigeria,NG,NGALA,1
+773,Polygon,Nganzai,NG008026,Nganzai,NG008,Nigeria,NG,NGANZAI,1
+774,Polygon,Shani,NG008027,Shani,NG008,Nigeria,NG,SHANI,1
