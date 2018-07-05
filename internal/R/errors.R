@@ -23,3 +23,6 @@ insure.is.matrix<-function(x){
 insure.same.length<-function(x,y){
   if(length(x)!=length(y)){stop(paste(deparse(substitute(x)),"and",deparse(substitute(y)),"must have the same length"))}
 }
+
+
+

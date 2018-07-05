@@ -14,7 +14,15 @@ load_questionnaire<-function(data,
                              questions.file,
                              choices.file,
                              choices.label.column.to.use="label..English"){
-
+  # generic function to remove non-data from vectors
+  hasdata<-function (x, return.index = F) {
+    index <- which(!is.null(x) & !is.na(x) & x != "" & !is.infinite(x))
+    value <- x[which(!is.null(x) & !is.na(x) & x != "" & !is.infinite(x))]
+    if (return.index) {
+      return(index)
+    }
+    return(value)
+  }
     # generic function to replace values in a vector based on a lookup table
     replace_with_lookup_table<-function(x,y){
       x2 <- y[match(x, y[,1]),2]
@@ -27,20 +35,20 @@ load_questionnaire<-function(data,
       choices <- read.csv.auto.sep(choices.file,stringsAsFactors = F, header = T)
 
       # harmonise data column references
-      names(questions) <- reachR:::to_alphanumeric_lowercase(names(questions))
-      names(choices) <- reachR:::to_alphanumeric_lowercase(names(choices))
-      names(data) <- reachR:::to_alphanumeric_lowercase(names(data))
-      choices.label.column.to.use <- reachR:::to_alphanumeric_lowercase(choices.label.column.to.use)
+      names(questions) <- names(questions)
+      names(choices) <- names(choices)
+      names(data) <- names(data)
+      choices.label.column.to.use <- choices.label.column.to.use
 
       # sanitise
       names(questions)
 
-      reachR:::insure.string.is.column.header(questions, "type")
-      reachR:::insure.string.is.column.header(questions, "name")
-      reachR:::insure.string.is.column.header(choices, choices.label.column.to.use)
-      reachR:::insure.string.is.column.header(choices, "list.name")
+      insure.string.is.column.header(questions, "type")
+      insure.string.is.column.header(questions, "name")
+      insure.string.is.column.header(choices, choices.label.column.to.use)
+      insure.string.is.column.header(choices, "list_name")
 
-      questions$name <- reachR:::to_alphanumeric_lowercase(questions$name)
+      questions$name <- questions$name
       begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
       end_gr <- grep(paste(c("end_group","end group"), collapse = "|"), questions$type, ignore.case = T)
       number_of_questions <- (length(questions$name) - length(begin_gr) - length(end_gr))
@@ -59,7 +67,7 @@ load_questionnaire<-function(data,
         choices_per_data_column<-questions$type %>% as.character %>% strsplit(" ") %>% lapply(unlist)%>% lapply(function(x){
 
         x %>% lapply(function(y){
-        grep(y,choices$list.name,value=F)
+        grep(y,choices$list_name,value=F)
       }
       ) %>% unlist
     }) %>% lapply(hasdata) %>% lapply(function(x){
@@ -70,7 +78,7 @@ load_questionnaire<-function(data,
 
     # make functions that need questionnaire
 
-   question_get_choice_labels <- function(responses,variable.name){
+   question_get_choice_labels <<- function(responses,variable.name){
 
       labels<-replace_with_lookup_table(
         responses,
@@ -166,11 +174,14 @@ load_questionnaire<-function(data,
 #' @export
 #' @examples
 #'
-variable_type <- function(variables){
+question_variable_type <- function(variables){
     variable_types <- as.vector(sapply(variables, function(x){
-      if(question_is_categorical(x)){return("categorical")}
+      # if(question_is_categorical(x)){return("categorical")}
+      if(question_is_select_multiple(x)){return("select_multiple")}
+      if(question_is_select_one(x)){return("select_one")}
       if(question_is_numeric(x)){return("numeric")}
-      return("This variable is neither numeric nor categorical")})
+      return(NA)
+      })
     )
     return(variable_types)
     }
@@ -184,6 +195,6 @@ variable_type <- function(variables){
 
 read.csv.auto.sep<-function(file,stringsAsFactors=F,...){
   df<-fread(file,stringsAsFactors=stringsAsFactors,...) %>% as.data.frame
-  colnames(df)<-reachR:::to_alphanumeric_lowercase(colnames(df))
+  colnames(df)<-colnames(df)
   return(df)
 }

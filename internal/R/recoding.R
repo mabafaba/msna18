@@ -10,11 +10,11 @@ recode_select_one_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
   make_false<- x %in% becomes.FALSE
   x_recoded<-rep(NA,length(x))
   x_recoded[make_false] <- FALSE  # recode to "to" value where condition met
-  x_recoded[make_true] <- TRUE  # recode to "to" value where condition met
+  x_recoded[make_true] <- TRUE  # recode to "to" value where condition not met
   return(x_recoded)
 }
 
-#' Recode select_multiple to binary TRUE/FALSE
+#' Recode select_multiple to binaryw TRUE/FALSE
 #'
 #'@param x vector of select_multiple
 #'@param selected.any.in  vector of possible respones; returns TRUE only if ANY of these were selected (and all other paramteters conditions are fulfilled)
@@ -43,6 +43,57 @@ recode_select_multiple_to_logical <- function(x, selected.any.in, selected.all.i
   make_true_none <- lapply(match_none, function(x){all(is.na(x))}) %>% unlist
   x_recoded[make_true_none] <- TRUE}
   return(x_recoded)
+}
+
+
+### input x should be the line in the data with variable name, 
+recode_generic <- function(x, value, condition, to){
+  recoded <- rep(NA,length(x))
+  if(condition == "smaller.or.equal"){
+    recoded <- recode_smaller_equal(x = x, from = value, to = to)
+  }
+  if(condition == "equal")
+  {
+    recoded <- recode_equal(x = x, from = value, to = to)
+  }
+  if(condition == "larger"){
+    recoded <- recode_larger(x = x, from = value, to = to)
+  }
+  return(recoded)
+}
+
+
+recode_equal<-function(x,from,to){
+to %<>% as.numeric
+recoded <- to[match(x,from)]
+return(recoded)
+  }
+
+recode_smaller_equal<-function(x,from,to){
+  from %<>% as.numeric
+  to %<>% as.numeric
+  condition_met <- x <= from
+  recoded_empty <- rep(NA,length(x))
+  recoded_empty[condition_met] <- to
+  return(recoded_empty)
+}
+
+recode_larger<-function(x,from,to){
+  from %<>% as.numeric
+  to %<>% as.numeric
+  condition_met <- x > from
+  recoded_empty <- rep(NA,length(x))
+  recoded_empty[condition_met] <- to
+  return(recoded_empty)
+}
+
+
+recode_contains_suficcient<-function(x,from){
+  recode_select_multiple_to_logical(x,selected.any.in = from)
+}
+
+recode_contains_necessary<-function(x,from,to){
+  return(to[match(x,from)])
 }
 
 
