@@ -31,7 +31,6 @@ missing_data_to_NA<-function(data){
 
 
 
-
 # data parameters
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
 data_parameters %>% dplyr::select("stratum.name.variable") %>% to_alphanumeric_lowercase

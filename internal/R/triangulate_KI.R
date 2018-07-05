@@ -1,4 +1,16 @@
-triangulate_select_one<-function(x,by){
+
+triangulate<-function(data,by.var.name,vartypes){
+  lapply(names(data),function(varname){
+    triangulation_fun<-map_to_triangulation(varname)
+    return(triangulation_fun(data[,"varname"],by="by.var.name"))
+  }) %>% as.data.frame(stringsAsFactors=F)
+}
+
+
+
+
+
+triangulate_mode<-function(x,by){
   
 triangulated <-  split(x,by) %>% lapply(Mode) %>% unlist(use.names = T)
 # triangulated_vector<- triangulated[["x"]]
@@ -6,7 +18,7 @@ triangulated <-  split(x,by) %>% lapply(Mode) %>% unlist(use.names = T)
 # triangulated_vector
 }
 
-triangulate_select_multiple<-function(x,by){
+triangulate_combine_select_multiple<-function(x,by){
 split(x,by) %>% lapply(function(x){strsplit(x," ") %>% unlist %>% unique %>% paste(collapse =" ")})
 }
 
@@ -17,7 +29,7 @@ numeric_consensus<-function(x){
   }
 
 
-triangulate_numeric<-function(x,by){
+triangulate_mean<-function(x,by){
   split(as.numeric(x),by) %>% lapply(
     function(x){
       if(!numeric_consensus(x)){return(NA)}
@@ -31,12 +43,6 @@ triangulate_empty<-function(x,by){
   empty
 }
 
-triangulate<-function(data,by.var.name,vartypes){
-  lapply(names(data),function(varname){
-    triangulation_fun<-map_to_triangulation(varname)
-    return(triangulation_fun(data[,"varname"],by="by.var.name"))
-  }) %>% as.data.frame(stringsAsFactors=F)
-}
 
 
 map_to_triangulation<-function(varname=NULL,vartype=NULL){
@@ -55,11 +61,9 @@ map_to_triangulation<-function(varname=NULL,vartype=NULL){
   }
 
 
-  if(vartype=="select_multiple"){return(triangulate_select_multiple)}
-  if(vartype=="select_one"){return(triangulate_select_one)}
-  if(vartype=="numeric"){return(triangulate_numeric)}
-  
- 
+  if(vartype=="select_multiple"){return(triangulate_combine_select_multiple)}
+  if(vartype=="select_one"){return(triangulate_mode)}
+  if(vartype=="numeric"){return(triangulate_mean)}
 }
 
 
