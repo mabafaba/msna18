@@ -38,10 +38,19 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
             x_recoded <- rep(NA,length(data[,var.to.recode]))
             for(i in 1:nrow(this_var_recoding_definition)){
               x <- this_var_recoding_definition[i,,drop = F]
-              print(x$var)
+              print(paste("VARNAME:",x$var))
               recoded_generic <- recode_generic(data, data[,x$var], x$value, x$condition, x$weight, x$var)
-              print(recoded_generic)
-              x_recoded[!is.na(recoded_generic)] <- recoded_generic[!is.na(recoded_generic)]
+              
+              if(x$condition == "else"){
+              # subset(x_recoded, !is.na(x_recoded) & (!is.na(data[,x$var]) | question_is_skipped(data, data[,x$var]))) <- recode_else(data = data, x = x, to = to)
+                to_replace<- (is.na(x_recoded) & ((!is.na(data[,x$var]) | question_is_skipped(data, data[,x$var]))))
+              }else{
+                to_replace<-!is.na(recoded_generic) 
+                # (apart from "else" amd skipped, no condition can overwrite NAs in original data)
+              }
+              print(x)
+              x_recoded[to_replace] <- recoded_generic[to_replace]
+              print(x_recoded)
               }
               return(x_recoded)}
          )

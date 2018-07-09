@@ -47,10 +47,17 @@ recode_select_one_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
 
 
 recode_generic <- function(data, x, value, condition, to, variable.name){
+  if(condition=="else"){
+    recoded <- recode_else(data = data, x = x, to = to)
+    return(recoded)
+  }
+  
   if(question_is_select_multiple(variable.name)){
-    recoded <- recode_select_multiple(data = data, x = x, value = value, condition = condition, to = to)}
-  else{
-    recoded <- recode_generic_one(data = data, x = x, value = value, condition = condition, to = to)}
+    recoded <- recode_select_multiple(data = data, x = x, value = value, condition = condition, to = to)
+    return(recoded)    
+    }
+  
+  recoded <- recode_generic_one(data = data, x = x, value = value, condition = condition, to = to)
   return(recoded)
 }
 
@@ -65,23 +72,28 @@ recode_generic <- function(data, x, value, condition, to, variable.name){
 recode_select_multiple <- function(data, x, value, condition, to){
   if(is.null(value)){stop("At least one parameter must be provided")}
   x_recoded <- rep(NA, length(x))
+  value <- value %>% strsplit(",") %>% as.vector %>% unlist %>% gsub(" ", "", .)
   ####match any
-  if(condition == "any"){
+    if(condition == "any"){
     match_any <- x %>% strsplit(" ") %>% lapply(function(x){
-      match(condition, x)})
+      match(value, x)})
     make_false_any <- lapply(match_any, function(x){all(is.na(x))}) %>% unlist
     x_recoded[!make_false_any] <- to}
   ####match all
   if(condition == "all"){
-    make_false_all <- x %>% strsplit(" ") %>% sapply(function(x){
-      match(condition,x) %>% is.na %>% any}) 
-    x_recoded[!make_false_all] <- to} 
+    isfulfilled <- x %>% strsplit(" ") %>% lapply(function(x){
+      (value %in% x) %>% all}) %>% unlist
+    x_recoded[isfulfilled] <- to} 
   ####match none
   if(condition == "none"){
     match_none <- x %>% strsplit(" ") %>% lapply(function(x){
-      match(condition, x)})
+      match(value, x)})
     make_true_none <- lapply(match_none, function(x){all(is.na(x))}) %>% unlist
     x_recoded[make_true_none] <- to}
+  # ####match else
+  # if(condition == "else"){
+  #   x_recoded <- recode_else(data = data, x = x, to = to)
+  # }
   return(x_recoded)
 }
 
@@ -101,9 +113,6 @@ recode_generic_one <- function(data, x, value, condition, to){
   }
   if(condition == "skipped"){
     recoded <- recode_skipped(data = data, x = x, to = to)
-  }
-  if(condition == "else"){
-    recoded <- recode_else(data = data, x = x, to = to)
   }
   return(recoded)
 }
@@ -158,7 +167,13 @@ ass.numeric<-function(x){
 }
 
 
-
+#### fake question_is_skipped function (delete this ASAP)
+question_is_skipped <- function(data, x){
+  recode_empty <- rep(FALSE,length(x))
+  skipped <- x == 3
+  skipped[is.na(skipped)] <- FALSE
+  recode_empty[skipped] <- TRUE
+return(rep(TRUE,length(x)))}
 
 
 

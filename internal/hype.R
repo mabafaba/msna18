@@ -1,7 +1,7 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd("../")
-getwd()
+# getwd()
 
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE) 
@@ -28,23 +28,24 @@ missing_data_to_NA<-function(data){
   }) %>% as.data.frame(stringsAsFactors=T)# survey needs with factors.
 }
 
+# data parameters
+data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
+data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %>% to_alphanumeric_lowercase
 
 # load samplingframe (only if data_parameters says it's a stratified sample)
 if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
-                                                             data.stratum.column = data_parameters$stratum.name.variable,return.stratum.populations = F
-                                                             
-)}
+                                                             data.stratum.column = data_parameters$stratum.name.variable,
+                                                             return.stratum.populations = F)}
 
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
                                   choices.file = "./internal/input_files/kobo_choices.csv",
                                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
 
-# data parameters
-data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
-data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %>% to_alphanumeric_lowercase
-
+#composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
+
+debug(recode_select_multiple)
 
 data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
 
