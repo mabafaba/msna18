@@ -1,12 +1,21 @@
-
-
-
 percent_with_confints <- function(dependent.var,
                                   independent.var,
                                   design,
+                                  data,
                                   na.rm = TRUE){
+  if(question_is_select_multiple(dependent.var)){
+    return(percent_with_confints_select_mult(dependent.var = dependent.var, independent.var = independent.var, design = design, data = data))
+  }
+  return(percent_with_confints_select_one(dependent.var = dependent.var, independent.var = independent.var, design = design))
+}
 
 
+percent_with_confints_select_one <- function(dependent.var,
+                                  independent.var,
+                                  design,
+                                  na.rm = TRUE){
+  
+  
   # if dependent and independent variables have only one value, just return that:
   
   if(length(unique(data[[dependent.var]]))==1){
@@ -17,17 +26,12 @@ percent_with_confints <- function(dependent.var,
       
     }
   }
-  
-  # formula_summary<-paste0("~",dependent.var, "+",independent.var )
-  # f.table <- svytable(formula(formula_summary), design)
-  # p.table <- apply(f.table,1,function(x){x/sum(x)})
-  # table(design$variables[[dependent.var]],design$variables[[independent.var]])
-  
-  formula_string <- paste0("~",dependent.var,sep = "")
-  by <- paste0("~", independent.var, sep = "")
+
+  formula_string <- paste0("~",dependent.var ,sep = "")
+  by <- paste0("~", independent.var ,sep = "")
   
   result_hg_format<- # tryCatch(
-    {
+  {
     result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
     unique.dependent.var.values<- design$variables[[dependent.var]] %>% unique
     summary_with_confints<-unique.dependent.var.values %>%
@@ -69,6 +73,56 @@ percent_with_confints <- function(dependent.var,
   return(result_hg_format)
     }
     
+
+#should only be called if the question is select multiple 
+percent_with_confints_select_mult <- function(dependent.var,
+                                              independent.var,
+                                              design,
+                                              data,
+                                              na.rm = TRUE){
+  
+  dependent.var <- "other.water.sources"
+  undebug(percent_with_confints_select_mult)
+  debug(choices_for_select_multiple)
+  # if dependent and independent variables have only one value, just return that:
+  choices <- data[,choices_for_select_multiple(dependent.var, data)]
+  
+  result_hg_format <- lapply(names(choices), function(x){
+    if(length(unique(data[[x]]))==1){
+      dependent.var.value= x
+    if(length(unique(data[[independent.var]]==1))){
+      independent.var.value=unique(data[[independent.var]])	
+      return(data.frame(dependent.var,independent.var,dependent.var.value,independent.var.value,numbers=1,se=NA,min=NA,max=NA))}}
+    
+    formula_string <- paste0("~",x ,sep = "")
+    by <- paste0("~", independent.var ,sep = "") 
+    
+    result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
+    
+        summary_stat_colname <- x
+        lower_confint_colname<-paste0("ci_l")
+        upper_confint_colname<-paste0("ci_u")
+        
+        dependent_value_x_stats <- result_svy_format[,c(independent.var, summary_stat_colname,lower_confint_colname,upper_confint_colname)]
+        colnames(dependent_value_x_stats)<-c("independent.var.value","numbers","min","max")
+        data.frame(dependent.var=dependent.var,
+                   independent.var=independent.var,
+                   dependent.var.value=x,
+                   independent.var.value=dependent_value_x_stats[,"independent.var.value"],
+                   numbers=dependent_value_x_stats[,"numbers"],
+                   se=NA,
+                   min=dependent_value_x_stats[,"min"],
+                   max=dependent_value_x_stats[,"max"])})
+  
+  result_hg_format %<>% do.call(rbind,.)
+    
+  result_hg_format[,"min"] <- result_hg_format[,"min"] %>% replace(result_hg_format[,"min"] < 0 , 0)
+  result_hg_format[,"max"] <- result_hg_format[,"max"] %>% replace(result_hg_format[,"max"] > 1 , 1)
+  result_hg_format %>% as.data.frame
+
+  
+  return(result_hg_format)
+}
       
   
   # if(design$variables %>%
@@ -166,24 +220,4 @@ confidence_intervals_mean <- function(dependent.var,
   return(results)
 }
 
-# 
-#   percent_with_confints <- f(dependent.var = dependent.var, independent.var = independent.var, design = design)
-# 
-#     formula_string <- paste0("~as.numeric(", dependent.var,")")
-#     by <- paste0("~", independent.var, sep = "")
-#     summary <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T)
-#     confints <- confint(summary, level = 0.95)
-#     summary$min <- confints[,1]
-#     summary$max <- confints[,2]
-#     dependent.var.value <- rep(NA, length(summary$min))
-#     results<- data.frame(dependent.var.value, summary)
-#     colnames(results) <- c("dependent.var.value","independent.var.value","numbers", "se", "min", "max")
-#     return(results)
-# }
-
-
-
-# dependent.var <- "VAR.18...what.is.your.relationship.to.the.head.of.family."
-# independent.var <- "Camp.17"
-# design <-  map_to_design(data = data, cluster.var = NULL)
 

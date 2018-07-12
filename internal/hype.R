@@ -1,7 +1,7 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd("../")
-getwd()
+# getwd()
 
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE) 
@@ -32,25 +32,22 @@ missing_data_to_NA<-function(data){
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
 data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %>% to_alphanumeric_lowercase
 
-composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
-
-data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
-
-data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
 # load samplingframe (only if data_parameters says it's a stratified sample)
-
 if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
-                                                             data.stratum.column = data_parameters$stratum.name.variable,return.stratum.populations = F
-                                                             
-)}
-# debug(load_questionnaire)
-# load kobo tool:
+                                                             data.stratum.column = data_parameters$stratum.name.variable,
+                                                             return.stratum.populations = T)}
+
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
                                   choices.file = "./internal/input_files/kobo_choices.csv",
                                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
 
-# load analysis definitions
+#composite_indicators
+composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
+data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
 
+data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
+
+# load analysis definitions
 # aggregating all variables (direct reporting)
 # list of variables to disaggregate by:
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)

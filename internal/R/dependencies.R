@@ -7,6 +7,7 @@ source("./internal/R/recoding.R")
 source("./internal/R/load_questionnaire.R")
 source("./internal/R/load_analysis_definitions.R")
 source("./internal/R/hypegrammar/utilities.R")
+source("./internal/R/select_multiplify.R")
 # replaced by hypegrammar:
 # source("./internal/R/aggregation.R")
 # source("./internal/R/KI_aggregation.R")
