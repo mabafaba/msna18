@@ -1,0 +1,7 @@
+Error in close.connection(zz) : cannot close 'message' sink connection
+Error in close.connection(zz) : cannot close 'message' sink connection
+Error in close.connection(zz) : cannot close 'message' sink connection
+Error in closings[1:(length(closings) - 1)] : 
+  only 0's may be mixed with negative subscripts
+Error in closings[1:(length(closings) - 1)] : 
+  only 0's may be mixed with negative subscripts

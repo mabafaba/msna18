@@ -1,20 +1,23 @@
-require("rlist")
-require("dplyr")
-condition<-'(${calc_boys_ed} + ${calc_girls_ed} > 0) and (selected(${head_of_household}, "yes") or (selected(${hoh_equivalent}, "yes") or BETWEEN REGULAR ORS or SOMETHING or (selected(${hoh_equivalent}, "maybe")))) and (LAST)'
-data<-data.frame(calc.boys.ed=runif(100),calc.girls.ed=-runif(100),head.of.household= sample(c("yes","no","maybe"),100,T),hoh.equivalent= sample(c("yes","no","maybe"),100,T))
-hierarch<-string_w_brackets_to_hierarchical_list(condition)
-res<-hierarchical_condition_fulfilled(data,hierarch)
-res<-remove_junk_from_disected_condition(res)
-res<-list.clean(res,recursive = T,fun = is.null)
-res<-reduce_single_item_lists(res)
 
 
-# res<-list.clean(res,recursive = T,fun = function(x){length(x)==0})
 
-
-undebug(list_operate_logic)
-list_operate_logic(res)
-res
+is_skipped<-function(data,condition){
+  if(condition=="" | is.null(condition)|is.na(condition)){return(rep(nrow(data)),FALSE)}
+  
+  hierarchical_condition_string<-string_w_brackets_to_hierarchical_list(condition)
+  res<-hierarchical_condition_fulfilled(data,hierarchical_condition_string)
+  
+  res<-remove_junk_from_disected_condition(res)
+  res<-list.clean(res,recursive = T,fun = is.null)
+  res<-reduce_single_item_lists(res)
+  is_skipped<-list_collapse_logic_hierarchy(res)
+  if(!is.vector(is_skipped)){
+    warning("at least parts of skip logic condition `", condition ,"` could not be read properly.")
+    if(is.logical(is_skipped[[1]])){return(is_skipped[[1]])}
+  }
+  
+  return(is_skipped)
+}
 
 
 
@@ -28,40 +31,49 @@ hierarchical_condition_fulfilled<-function(data,x){
 
 
 
-
-
-
-
-
-
-
-
-list_operate_logic<-function(l){
+list_collapse_logic_hierarchy<-function(l){
   if(!is.list(l)){return(l)}
   
   # the nested conditions can only be combined if they are in a list of the form:
   # logical vector - operater string - logical vector - ....
   # this checks if that is the case:
-  print(l %>% glimpse)
-goodlisttooperateon<- is.logical(l[[1]]) & is.logical(l[[3]]) & (l[[2]] %in% c("|","&") )
-print(goodlisttooperateon)
-
-if(!goodlisttooperateon){lapply(l,list_operate_logic)}
-
+  
+# if it's not a logical list combo that I can collapse directly, try collapsing first all sub elements ( - using this fun, so it'srecursive):
+if(!is_collapsable_logiclist(l)){l<-lapply(l,list_collapse_logic_hierarchy)}
+# if I it's still not a collapsable thing.. give up 
+if(!is_collapsable_logiclist(l)){
+  print(l)
+  warning("collapsable hierarchy list has a structure that I can't handle:")
+  return(l)
+  
+}
+# otherwise sweet, let's collapse the first three elements
 if(l[[2]]=="&"){combined<-l[[1]] | l[[3]]}
 if(l[[2]]=="|"){combined<-l[[1]] & l[[3]]}
   l[[1]]<-NULL
   l[[1]]<-NULL
   l[[1]]<-combined
   if(length(l)>1){
-    return(list_operate_logic(l))
+    # there might be more conditions after the first elements that I just collapsed.. if that's the case do those first and then return: 
+    return(list_collapse_logic_hierarchy(l))
   }else{
+    # otherwise all done!
     return(combined)
   }
 }
 
 
-
+is_collapsable_logiclist<-function(l){
+  if(length(l)<3){
+    # if list is less than 3 elements, defo not:
+    goodlisttooperateon<-FALSE
+  }
+  else{
+    # otherwise depends.. is the first and third element a logical vector - and the second element an operator as a character?
+    goodlisttooperateon<- is.logical(l[[1]]) & is.logical(l[[3]]) & (l[[2]] %in% c("|","&") )
+  }
+  goodlisttooperateon
+}
 
 
 
@@ -134,7 +146,6 @@ splitStringAt(x,c(highest_opening_split_positions,highest_closing_split_position
 
 
 
-
 # INDIVIDUAL CONDITIONS FULFILLED IN DATA? (identify numeric or categorical):
 # returns a logical vector  (condition fulfilled or not in provided records):
 
@@ -195,11 +206,9 @@ numeric_condition_fulfilled<-function(data,condition){
   varnames_subset_rexpression[is.na(varnames_subset_rexpression)]<-to_compare_components[is.na(varnames_subset_rexpression)]   
   to_compare_rexpression<-varnames_subset_rexpression %>%  paste0(collapse="")
   full_expression<- paste0(to_compare_rexpression,OPERATOR,CRITICAL_VALUE)
-  
   is_skipped<-eval(parse(text = full_expression))
   return(is_skipped)
 }
-
 
 
 
@@ -223,7 +232,6 @@ splitStringAt <- function(x, pos) {
 lettervector<-function(char){
   char %>% strsplit("") %>% unlist
 }
-
 
 
 # changes different variations of strings containing "and", "or" into "&", "|" or NA (when no "and"/"or" found)
