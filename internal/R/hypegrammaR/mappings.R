@@ -80,7 +80,7 @@ case_not_implemented_error<-function(case,situation){
 
 
 
-#' map to summary statistic
+#' Map to summary statistic
 #'
 #' selects an appropriate summary statistic function based on the analysis case
 #'
@@ -119,9 +119,11 @@ map_to_summary_statistic <- function(case) {
 
 }
 
+#################################
+# map to Hypothesis test:         #
+#################################
 
-
-#' map to hypothesis test
+#' Map to hypothesis test
 #'
 #' selects an appropriate hypothesis test function based on the analysis case
 #'
@@ -235,3 +237,19 @@ map_to_file<-function(object,filename){
   ) 
 }
 
+#################################
+# map to rank:           ########
+#################################
+### for select_one answers, returns the most common answer for that group 
+# only works for select_one and select_multiple
+# 
+# summary_statistic_rank <- function(dependent.var,independent.var, design,data){
+#  percent<-percent_with_confints(dependent.var,independent.var, design,data)
+#  rank<- percent %>% split.data.frame(percent$independent.var.value) %>% lapply(function(x) {
+#    x$numbers<-rank(numbers)
+#    x) } %>% do.call(rbind,.)
+#  
+#   table <- svytable(~subcounty+security, design)
+#  table <- colnames(table)[table %>% apply(1, which.max)]  %>% cbind(table) %>% as.data.frame
+#  table[,1] %>% as.data.frame 
+#  }

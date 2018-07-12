@@ -83,7 +83,7 @@ analyse_indicator<-function(data,
 
 
         # apply the summary statistic, hypothesis test to the given data and survey design:
-            summary.result  <- summarise.result(dependent.var,independent.var, design)
+            summary.result  <- summarise.result(dependent.var,independent.var, design, data)
         # do hypothesis test:
 
             hypothesis.test.result<- test.hypothesis(dependent.var,independent.var, design)

@@ -1,6 +1,6 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-# setwd("../")
+setwd("../")
 # getwd()
 
 # clear/create folders
@@ -35,7 +35,7 @@ data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %
 # load samplingframe (only if data_parameters says it's a stratified sample)
 if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
                                                              data.stratum.column = data_parameters$stratum.name.variable,
-                                                             return.stratum.populations = F)}
+                                                             return.stratum.populations = T)}
 
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
                                   choices.file = "./internal/input_files/kobo_choices.csv",
@@ -44,12 +44,8 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
 #composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
-debug(recode_select_multiple)
-data$biggest.needs %>% grep("nfi",.) %>% length
+
 data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
-
-recode_else(data,data$biggest.needs,to = 1) %>% sum(na.rm = T)
-
 
 # load analysis definitions
 # aggregating all variables (direct reporting)
