@@ -11,9 +11,9 @@ percent_with_confints <- function(dependent.var,
 
 
 percent_with_confints_select_one <- function(dependent.var,
-                                  independent.var,
-                                  design,
-                                  na.rm = TRUE){
+                                             independent.var,
+                                             design,
+                                             na.rm = TRUE){
   
   
   # if dependent and independent variables have only one value, just return that:
@@ -26,7 +26,7 @@ percent_with_confints_select_one <- function(dependent.var,
       
     }
   }
-
+  
   formula_string <- paste0("~",dependent.var ,sep = "")
   by <- paste0("~", independent.var ,sep = "")
   
@@ -56,23 +56,23 @@ percent_with_confints_select_one <- function(dependent.var,
     summary_with_confints[,"min"] <- summary_with_confints[,"min"] %>% replace(summary_with_confints[,"min"] < 0 , 0)
     summary_with_confints[,"max"] <- summary_with_confints[,"max"] %>% replace(summary_with_confints[,"max"] > 1 , 1)
     summary_with_confints %>% as.data.frame
-     }
-    #,
-    # error=function(cond){        data.frame(dependent.var=NA,
-    #                                         independent.var=NA,
-    #                                         dependent.var.value=NA,
-    #                                         independent.var.value=NA,
-    #                                         numbers=NA,
-    #                                         se=NA,
-    #                                         min=NA,
-    #                                         max= NA)[FALSE,]
-    #                    }
-    #                  )
+  }
+  #,
+  # error=function(cond){        data.frame(dependent.var=NA,
+  #                                         independent.var=NA,
+  #                                         dependent.var.value=NA,
+  #                                         independent.var.value=NA,
+  #                                         numbers=NA,
+  #                                         se=NA,
+  #                                         min=NA,
+  #                                         max= NA)[FALSE,]
+  #                    }
+  #                  )
   
-   
+  
   return(result_hg_format)
-    }
-    
+}
+
 
 #should only be called if the question is select multiple 
 percent_with_confints_select_mult <- function(dependent.var,
@@ -81,36 +81,33 @@ percent_with_confints_select_mult <- function(dependent.var,
                                               data,
                                               na.rm = TRUE){
   
-  dependent.var <- "other.water.sources"
-  undebug(percent_with_confints_select_mult)
-  debug(choices_for_select_multiple)
   # if dependent and independent variables have only one value, just return that:
   choices <- data[,choices_for_select_multiple(dependent.var, data)]
   
   result_hg_format <- lapply(names(choices), function(x){
     if(length(unique(data[[x]]))==1){
       dependent.var.value= x
-    if(length(unique(data[[independent.var]]==1))){
-      independent.var.value=unique(data[[independent.var]])	
-      return(data.frame(dependent.var,independent.var,dependent.var.value,independent.var.value,numbers=1,se=NA,min=NA,max=NA))}}
+      if(length(unique(data[[independent.var]]==1))){
+        independent.var.value=unique(data[[independent.var]])	
+        return(data.frame(dependent.var,independent.var,dependent.var.value,independent.var.value,numbers=1,se=NA,min=NA,max=NA))}}
     
     formula_string <- paste0("~",x ,sep = "")
     by <- paste0("~", independent.var ,sep = "") 
     
     result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
     
-        summary_stat_colname <- x
-        lower_confint_colname<-paste0("ci_l")
-        upper_confint_colname<-paste0("ci_u")
-        
-        dependent_value_x_stats <- result_svy_format[,c(independent.var, summary_stat_colname,lower_confint_colname,upper_confint_colname)]
-        colnames(dependent_value_x_stats)<-c("independent.var.value","numbers","min","max")
-        data.frame(dependent.var=dependent.var,
-                   independent.var=independent.var,
-                   dependent.var.value=x,
-                   independent.var.value=dependent_value_x_stats[,"independent.var.value"],
-                   numbers=dependent_value_x_stats[,"numbers"],
-                   se=NA,
+    summary_stat_colname <- x
+    lower_confint_colname<-paste0("ci_l")
+    upper_confint_colname<-paste0("ci_u")
+    
+    dependent_value_x_stats <- result_svy_format[,c(independent.var, summary_stat_colname,lower_confint_colname,upper_confint_colname)]
+    colnames(dependent_value_x_stats)<-c("independent.var.value","numbers","min","max")
+    data.frame(dependent.var=dependent.var,
+               independent.var=independent.var,
+               dependent.var.value=gsub(paste0("^",dependent.var,"."),"",x),
+               independent.var.value=dependent_value_x_stats[,"independent.var.value"],
+               numbers=dependent_value_x_stats[,"numbers"],
+               se=NA,
                    min=dependent_value_x_stats[,"min"],
                    max=dependent_value_x_stats[,"max"])})
   

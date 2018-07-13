@@ -2,6 +2,10 @@ rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # setwd("../")
 # getwd()
+if(!exists("debugging_mode")){
+  debugging_mode<-FALSE
+}
+
 
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE) 
@@ -53,8 +57,7 @@ data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv"
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
 # create a data analysis plan with all disaggregation variables as independent variable for all variables as dependent
 analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent("marital_status",data)
-analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] %<>% lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
-
+analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] <- analysis_plan_direct_reporting[,c("dependent.var", "independent.var")]  %>%  lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
 # APPLY ANALYSIS PLAN:
 # analyse_indicator(data,dependent.var = "deviceid",independent.var= "marital_status",hypothesis.type = "direct_reporting",sampling.strategy.stratified = TRUE,case = "CASE_direct_reporting_numerical_categorical")
 data<-missing_data_to_NA(data)

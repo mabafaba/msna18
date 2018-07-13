@@ -25,8 +25,8 @@ analyse_indicator<-function(data,
                             do.for.each.unique.value.in.var = NULL,
                             case=NULL){
   options(survey.lonely.psu = "average")
-
-
+  
+  
   input.parameters= list(
     dependent.var=dependent.var,
     independent.var=independent.var,
@@ -35,16 +35,16 @@ analyse_indicator<-function(data,
     case=case
     
   )
-        # sanitise input
-            if(!is.null(do.for.each.unique.value.in.var)){stop("do.for.each.unique.value.in.var must be NULL (not yet implemented)")}
-            if(sampling.strategy.cluster){stop("cluster must be FALSE (not yet implemented)")}
-            # data <- data[!is.na(data[,dependent.var]),]
-            # if(nrow(data)==0){stop('provided data has no rows where dependent.var is not NA')}
-            # if(all(is.na(data[,dependent.var]))){stop(paste('variable', dependent.var, 'can\'t be all NA'))}
-
-        # map from input to analysis case:
-        if(is.null(case)){
-        case <- map_to_case(hypothesis.type = hypothesis.type,
+  # sanitise input
+  if(!is.null(do.for.each.unique.value.in.var)){stop("do.for.each.unique.value.in.var must be NULL (not yet implemented)")}
+  if(sampling.strategy.cluster){stop("cluster must be FALSE (not yet implemented)")}
+  # data <- data[!is.na(data[,dependent.var]),]
+  # if(nrow(data)==0){stop('provided data has no rows where dependent.var is not NA')}
+  # if(all(is.na(data[,dependent.var]))){stop(paste('variable', dependent.var, 'can\'t be all NA'))}
+  
+  # map from input to analysis case:
+  if(is.null(case)){
+    case <- map_to_case(hypothesis.type = hypothesis.type,
                                    data = data,
                                    dependent.var = dependent.var,
                                    independent.var = independent.var,

@@ -10,24 +10,9 @@ multiples_in_questionnaire <- function(data){
 ###function that returns the indices in the data of the choices for each select multiple question
 ### needs the questionnaire to be loaded
 choices_for_select_multiple <- function(question_name, data){
-  ### cleaning the questionnaire questions of group names
-  # groups <- grep("begin_group", questionnaire[["questions"]]$type, ignore.case = T)
-  # group_names <- questionnaire[["questions"]]$name[groups]
-  # 
-  ### cleaning the questionnaire choices names and data column names
-  questionnaire[["choices"]]$list.name <- reachR:::to_alphanumeric_lowercase(questionnaire[["choices"]]$list.name)
-  questionnaire[["choices"]]$list.name <- gsub(".list", "", questionnaire[["choices"]]$list.name)
-  
-  ### calculating the indices
-  index_multiple_answers_data <- c()
-  if(question_name %in% names(data)){
-  # mult.q <- filter(questionnaire[["questions"]], name %in% question_name) %>% select(type)
-    number <- nrow(filter(questionnaire[["choices"]], list.name %in% question_name))
-    
-    q.num <- c(as.numeric(which(names(data) == question_name)+1):as.numeric(which(names(data) == question_name)+number))
-    index_multiple_answers_data <- q.num 
-  }
-  return(index_multiple_answers_data)
+  choices<-questionnaire$choices_per_variable[[question_name]]
+  select_mult_colnames<-paste(question_name,choices$name,sep=".") %>% to_alphanumeric_lowercase
+  match(select_mult_colnames,names(data))
 }
 
 # qs_dirt$type
