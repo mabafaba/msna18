@@ -1,6 +1,6 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd("../")
+# setwd("../")
 # getwd()
 
 # clear/create folders

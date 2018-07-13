@@ -6,9 +6,6 @@ multiples_in_questionnaire <- function(data){
   return(list(select_mul, select_mul_names))
 }
 
-questionnaire$choices_per_variable
-questionnaire$choices_per_variable[["other.water.sources"]]
-question_name <- "other.water.sources"
 
 ###function that returns the indices in the data of the choices for each select multiple question
 ### needs the questionnaire to be loaded

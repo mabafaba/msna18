@@ -23,32 +23,32 @@ load_questionnaire<-function(data,
     }
     return(value)
   }
-    # generic function to replace values in a vector based on a lookup table
-    replace_with_lookup_table<-function(x,y){
-      x2 <- y[match(x, y[,1]),2]
-      dim(x2) <- dim(x)
-      x2
-    }
-
-      # load files
-      questions <- read.csv.auto.sep(questions.file,stringsAsFactors = F, header = T)
-      choices <- read.csv(choices.file, stringsAsFactors = F, header = T)
-
-      # harmonise data column references
-      names(questions) <- to_alphanumeric_lowercase(names(questions))
-      names(choices) <- to_alphanumeric_lowercase(names(choices))
-      names(data) <- to_alphanumeric_lowercase(names(data))
-      choices.label.column.to.use <- to_alphanumeric_lowercase(choices.label.column.to.use)
-
-      # sanitise
-      insure.string.is.column.header(questions, "type")
-      insure.string.is.column.header(questions, "name")
-      insure.string.is.column.header(choices, choices.label.column.to.use)
-      insure.string.is.column.header(choices, "list.name")
-      questions$name <- to_alphanumeric_lowercase(questions$name)
-      begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
-      end_gr <- grep(paste(c("end_group","end group"), collapse = "|"), questions$type, ignore.case = T)
+  # generic function to replace values in a vector based on a lookup table
+  replace_with_lookup_table<-function(x,y){
+    x2 <- y[match(x, y[,1]),2]
+    dim(x2) <- dim(x)
+    x2
+  }
+  
+  # load files
+  questions <- read.csv.auto.sep(questions.file,stringsAsFactors = F, header = T)
+  choices <- read.csv(choices.file, stringsAsFactors = F, header = T)
+  
+  # harmonise data column references
+  names(questions) <- to_alphanumeric_lowercase(names(questions))
+  names(choices) <- to_alphanumeric_lowercase(names(choices))
+  names(data) <- to_alphanumeric_lowercase(names(data))
+  choices.label.column.to.use <- to_alphanumeric_lowercase(choices.label.column.to.use)
+  
+  # sanitise
+  insure.string.is.column.header(questions, "type")
+  insure.string.is.column.header(questions, "name")
+  insure.string.is.column.header(choices, choices.label.column.to.use)
+  insure.string.is.column.header(choices, "list.name")
+  questions$name <- to_alphanumeric_lowercase(questions$name)
       number_of_questions <- (length(questions$name) - length(begin_gr) - length(end_gr))
+
+  questions$relevant<-add_group_condition_to_question_conditions(questions)
 
       # get data column names
       data_colnames<-names(data)
@@ -64,7 +64,7 @@ load_questionnaire<-function(data,
         choices_per_data_column<-questions$type %>% as.character %>% strsplit(" ") %>% lapply(unlist)%>% lapply(function(x){
 
         x %>% lapply(function(y){
-        grep(y,choices$list_name,value=F)
+        grep(y,choices[["list.name"]],value=F)
       }
       ) %>% unlist
     }) %>% lapply(hasdata) %>% lapply(function(x){
@@ -186,6 +186,46 @@ question_variable_type <- function(variables){
 
 
 
+
+
+
+
+add_group_conditions_to_question_conditions<-function(questions){
+  group_conditions<-NULL
+  conditions<-c()
+  
+  begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
+  end_gr <- grep(paste(c("end_group","end group"), collapse = "|"), questions$type, ignore.case = T)
+  
+  
+  for(i in 1:nrow(questions)){
+    is_group_start<-(i %in% as.numeric(begin_gr))
+    is_group_end<-(i %in% as.numeric(end_gr))
+    
+    if(is_group_start){
+      # print("adding:")
+      print(questions$relevant[i])
+      group_conditions<-c(group_conditions,questions$relevant[i])
+      condition_that_only_applies_to_this_question<-NULL
+    }
+    if(is_group_end){
+      print("removing:")
+      # print(group_conditions[-length(group_conditions)])
+      group_conditions<-group_conditions[-length(group_conditions)]
+      condition_that_only_applies_to_this_question<-NULL  }
+    if(!is_group_end ^ !is_group_start){
+      condition_that_only_applies_to_this_question<-questions$relevant[i]
+    }
+    all_condition_for_this_q<-c(group_conditions,condition_that_only_applies_to_this_question)
+    all_condition_for_this_q<-paste("(",all_condition_for_this_q,")")
+    all_condition_for_this_q_combined<-paste(all_condition_for_this_q,collapse=" and ")
+    conditions<-c(conditions,all_condition_for_this_q_combined)  
+  }
+  
+  
+  
+  conditions
+}
 
 
 
