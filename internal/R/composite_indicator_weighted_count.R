@@ -48,10 +48,15 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
                 # (apart from "else" amd skipped, no condition can overwrite NAs in original data)
               }
               x_recoded[to_replace] <- recoded_generic[to_replace]
-              }
-              return(x_recoded)}
+            }
+            
+            # default else to 0:
+            x_recoded[(is.na(x_recoded) & ((!is.na(data[,x$var]) | question_is_skipped(data, data[,x$var]))))]<-0
+            
+              return(x_recoded)
+            
+            }
          )
-  
   all_recoded_vars %>% as.data.frame %>% sapply(ass.numeric) %>% rowSums %>% return
 }
 
