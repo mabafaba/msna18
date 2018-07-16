@@ -206,14 +206,10 @@ add_group_conditions_to_question_conditions<-function(questions){
     is_group_end<-(i %in% as.numeric(end_gr))
     
     if(is_group_start){
-      # print("adding:")
-      print(questions$relevant[i])
       group_conditions<-c(group_conditions,questions$relevant[i])
       condition_that_only_applies_to_this_question<-NULL
     }
     if(is_group_end){
-      print("removing:")
-      # print(group_conditions[-length(group_conditions)])
       group_conditions<-group_conditions[-length(group_conditions)]
       condition_that_only_applies_to_this_question<-NULL  }
     if(!is_group_end ^ !is_group_start){

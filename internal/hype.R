@@ -78,14 +78,14 @@ all_summary_statistics[,c("independent.var","independent.var.value","master_tabl
 
 plots <- lapply(results, function(result){
   # printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
-  if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){print(result);return(NULL)}
+  if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){return(NULL)}
   filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
   theplot<-map_to_visualisation(result$input.parameters$case )(result$summary.statistic,filename = filename)
   print(filename)
   
 })
 
-cat("\014")  
+if(!debugging_mode){cat("\014")}  
 cat(green("\n\n\nDONE - no issues detected.\n"))
 cat(paste0("see ", getwd(),"/","/output/ for results."))
 

@@ -12,6 +12,8 @@ source("./internal/R/select_multiplify.R")
 # source("./internal/R/aggregation.R")
 # source("./internal/R/KI_aggregation.R")
 source("./internal/R/errors.R")
+source("./internal/R/questionnaire_skiplogic.R")
+
 # source("./internal/R/summary_statistics.R")
 
 # stuff for loading/installing packages only when needed:
