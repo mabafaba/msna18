@@ -17,6 +17,7 @@ dir.create("./output/modified_data",showWarnings = F)
 dir.create("./output/percent_aggregations_raw_csv",showWarnings = F)
 dir.create("./output/mean_aggregations_raw_csv",showWarnings = F)
 dir.create("./output/barcharts",showWarnings = F)
+dir.create("./output/composite_indicator_visualisation",showWarnings = F)
 
 #load dependencies
 source("./internal/R/dependencies.R")
@@ -47,6 +48,7 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
 
 #composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
+visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
 data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
 
 data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")

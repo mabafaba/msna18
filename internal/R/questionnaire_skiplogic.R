@@ -263,6 +263,8 @@ extract_varname_from_condition<-function(condition){
 
 
 
-
+question_is_skipped<-function(data,condition){
+  return(rep(FALSE,nrow(data)))
+}
 
 

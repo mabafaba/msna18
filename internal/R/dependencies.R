@@ -1,5 +1,5 @@
 # external packages to install/load:
-.dependencies<-c("dplyr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi")
+.dependencies<-c("dplyr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi","igraph")
 
 source("./internal/R/composite_indicator_weighted_count.R")
 source("./internal/R/survey_design.R")
@@ -13,6 +13,7 @@ source("./internal/R/select_multiplify.R")
 # source("./internal/R/KI_aggregation.R")
 source("./internal/R/errors.R")
 source("./internal/R/questionnaire_skiplogic.R")
+source("./internal/R/bonus_visualise_composite.R")
 
 # source("./internal/R/summary_statistics.R")
 
