@@ -52,10 +52,10 @@ recode_generic <- function(data, x, value, condition, to, variable.name){
     return(recoded)
   }
   
-  if(question_is_select_multiple(variable.name)){
+  if(condition %in% c("any","all","none")){
     recoded <- recode_select_multiple(data = data, x = x, value = value, condition = condition, to = to)
     return(recoded)    
-    }
+  }
   
   recoded <- recode_generic_one(data = data, x = x, value = value, condition = condition, to = to)
   return(recoded)
@@ -74,7 +74,7 @@ recode_select_multiple <- function(data, x, value, condition, to){
   x_recoded <- rep(NA, length(x))
   value <- value %>% strsplit(",") %>% as.vector %>% unlist %>% gsub(" ", "", .)
   ####match any
-    if(condition == "any"){
+  if(condition == "any"){
     match_any <- x %>% strsplit(" ") %>% lapply(function(x){
       match(value, x)})
     make_false_any <- lapply(match_any, function(x){all(is.na(x))}) %>% unlist
@@ -101,7 +101,7 @@ recode_select_multiple <- function(data, x, value, condition, to){
 ### input x should be the line in the data with variable name, 
 recode_generic_one <- function(data, x, value, condition, to){
   recoded <- rep(NA,length(x))
-  if(condition == "smaller.or.equal"){
+  if(condition == "smaller.equal"){
     recoded <- recode_smaller_equal(x = x, from = value, to = to)
   }
   if(condition == "equal")
@@ -173,7 +173,7 @@ question_is_skipped <- function(data, x){
   skipped <- x == 3
   skipped[is.na(skipped)] <- FALSE
   recode_empty[skipped] <- TRUE
-return(rep(TRUE,length(x)))}
+return(rep(FALSE,length(x)))}
 
 
 
