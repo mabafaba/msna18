@@ -198,16 +198,16 @@ map_to_visualisation <- function(case) {
 
 
 
-map_to_file<-function(object,filename){
+map_to_file<-function(object,filename,...){
   tryCatch({
     
     if("ggplot" %in% class(object)){
-      ggsave(filename,object)
+      ggsave(filename,object,...)
       return(filename)
     }
     
     if("data.frame" %in% class(object)){
-      write.csv(object,filename)
+      write.csv(object,filename,...)
     }
     
   },

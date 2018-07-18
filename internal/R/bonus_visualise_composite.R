@@ -1,7 +1,14 @@
 visualisation_composite_indicator_definition_graph<-function(composite_indicators_definitions_weighted_counts){
 
 require("igraph")
-
+  composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
+  composite_indicators_definitions_weighted_counts$var %<>% question_get_question_label
+# composite_indicators_definitions_weighted_counts$value<-composite_indicators_definitions_weighted_counts %>% 
+#   split.data.frame(composite_indicators_definitions_weighted_counts$var) %>% 
+#   lapply(function(x){
+#     print(x)
+#     print(gsub(","," ",x$value))
+#     question_get_choice_labels(gsub(","," ",x$value),x$var[1])}) %>% unlist
 
 # condition node names:
 composite_indicators_definitions_weighted_counts$condition_node<-paste0(
@@ -60,12 +67,12 @@ primary<-reach_style_color_red(1)
 secondary<-reach_style_color_red(3)
 neutral<-"black"
 size<-pagerank
-pdf(file = "./output/composite_indicator_visualisation/indicator_graph.pdf",18,18)
+pdf(file = "./output/composite_indicator_visualisation/indicator_graph.pdf",20,20)
 
 plot(g,
      # vertex.color=primary,
      vertex.frame.color=NA,
-     vertex.size=(size+1)*15,
+     vertex.size=(size+1)*5,
      vertex.label.color=neutral,
      edge.color="#CCCCCC",
      edge.width=2,edge.curved=F,vertex.label.dist=0)

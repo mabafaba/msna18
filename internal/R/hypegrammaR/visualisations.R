@@ -97,9 +97,10 @@ grouped_barchart_percent<-function(summary.statistic,filename){
                        ymax=as.numeric(summary.statistic$max)),
                    position=position_dodge(width=0.9),
                    stat='identity',
-                   width=.1) 
-
-  map_to_file(theplot,filename)
+                   width=.1)+ theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ 
+  number_of_bars<-5+(length(unique(summary.statistic$dependent.var.value)*length(unique(summary.statistic$independent.var.value))))*1.5
+  map_to_file(theplot,filename,width=)
     # 
   return(theplot)
   }

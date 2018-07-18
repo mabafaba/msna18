@@ -79,7 +79,7 @@ load_questionnaire<-function(data,
     # make functions that need questionnaire
 
    question_get_choice_labels <<- function(responses,variable.name){
-
+      if(question_is_select_one(variable.name)){
       labels<-replace_with_lookup_table(
         responses,
         # MAKE LABEL COLUMN A PARAMETER!!!
@@ -88,9 +88,23 @@ load_questionnaire<-function(data,
 
       # fix those that were not found to go back to original NA
       labels[is.na(labels)]<-responses[is.na(labels)]
-      labels
+      return(labels)
+      
+      }
+     if(question_is_select_multiple(variable.name)){
+       
+     }
 
-    }
+   }
+   
+   question_get_question_label<<-function(variable.names){
+     labelcol<-grep("label",names(questions))[1]
+     questionnaire_rows<-match(variable.names,questions[,"name"])
+     labels<-questions[questionnaire_rows,labelcol]
+     labels[is.na(labels)]<-variable.names[is.na(labels)]
+     return(labels)
+        }
+   
 
     question_is_numeric <<- function(question.name){
       if(is.null(question.name)){return(FALSE)}
@@ -130,12 +144,25 @@ load_questionnaire<-function(data,
       return(question_is_select_one(question.name) | question_is_select_multiple(question.name))
     }
 
-    message("you can now use \n 'get_choice_labels():'change answers to their labels \n question_is_categorical() \n question_is_categorical()\n question_is_select_one() \n question_is_select_multiple()")
+    message("you can now use
+            \n get_choice_labels()
+            \n question_is_numeric()
+            \n question_is_categorical()
+            \n question_is_categorical()
+            \n question_is_select_one()
+            \n question_is_select_multiple()
+            \n question_variable_type()
+            \n 
+            \n question_get_choice_labels()
+            \n question")
     questionnaire_is_loaded <- TRUE
+    is_questionnaire_loaded<-function(){return(TRUE)}
     return(c(list(questions=questions,choices=choices,choices_per_variable=choices_per_data_column), data))
 
 
 }
+
+
 
 
     question_get_choice_labels<-function(responses,variable.name){
@@ -143,6 +170,11 @@ load_questionnaire<-function(data,
 
     }
 
+    
+    question_get_question_label<-function(variable.name){
+      stop("you must successfully run load_questionnaire() first")
+    }
+    
     question_is_numeric<-function(question.name){
       stop("you must successfully run load_questionnaire() first")
     }
@@ -165,6 +197,11 @@ load_questionnaire<-function(data,
 
 
 
+    is_questionnaire_loaded<-function(){return(FALSE)
+    }
+    
+  
+    
 
 #' variable_type
 #'

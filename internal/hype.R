@@ -46,6 +46,7 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
                                   choices.file = "./internal/input_files/kobo_choices.csv",
                                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
 
+
 #composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
@@ -95,7 +96,5 @@ cat(paste0("see ", getwd(),"/","/output/ for results."))
 # }) %>% unlist
 #   }
 # 
-
-
 
 
