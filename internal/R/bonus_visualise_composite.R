@@ -1,9 +1,9 @@
 visualisation_composite_indicator_definition_graph<-function(composite_indicators_definitions_weighted_counts){
 
-require("igraph")
   composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
-  composite_indicators_definitions_weighted_counts$var %<>% question_get_question_label
-# composite_indicators_definitions_weighted_counts$value<-composite_indicators_definitions_weighted_counts %>% 
+  # composite_indicators_definitions_weighted_counts$var %<>% question_get_question_label
+
+  # composite_indicators_definitions_weighted_counts$value<-composite_indicators_definitions_weighted_counts %>% 
 #   split.data.frame(composite_indicators_definitions_weighted_counts$var) %>% 
 #   lapply(function(x){
 #     print(x)
@@ -35,7 +35,8 @@ condition_vertices<-cbind(name=condition,
                           label=composite_indicators_definitions_weighted_counts$condition_label,
                           color=reach_style_color_red(3))
 condition_vertices<-condition_vertices[!duplicated(condition_vertices[,"name"]),]
-composite_vertice<-cbind(name=unique(target),type="composite",
+
+composite_vertices<-cbind(name=unique(target),type="composite",
                          label=unique(target),
                          color=reach_style_color_red(1))
 variable_vertices<-cbind(name=unique(source),type="variable",
@@ -62,13 +63,17 @@ pagerank<-page.rank(g_reversed,directed = T,damping = 1)$vector[names(V(g))]
 pagerank<-(pagerank-min(pagerank))
 pagerank<-pagerank/max(pagerank)
 
-primary<-reach_style_color_red(1)
 
+# cols<-get.vertex.attribute(g,"color")
+# cols[degree(g,mode = "out")==0]<-"#333399"
+# set.vertex.attribute(g,name = "color",value = cols)
+
+primary<-reach_style_color_red(1)
 secondary<-reach_style_color_red(3)
 neutral<-"black"
 size<-pagerank
-pdf(file = "./output/composite_indicator_visualisation/indicator_graph.pdf",20,20)
-
+dir.create("./output/composite_indicator_visualisation")
+pdf(file = "./output/composite_indicator_visualisation/composite_indicator_graph.pdf",20,20)
 plot(g,
      # vertex.color=primary,
      vertex.frame.color=NA,
@@ -78,8 +83,6 @@ plot(g,
      edge.width=2,edge.curved=F,vertex.label.dist=0)
 
 dev.off()
-
-
 
 }
 
