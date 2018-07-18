@@ -64,7 +64,6 @@ analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] <- analys
 # analyse_indicator(data,dependent.var = "deviceid",independent.var= "marital_status",hypothesis.type = "direct_reporting",sampling.strategy.stratified = TRUE,case = "CASE_direct_reporting_numerical_categorical")
 data<-missing_data_to_NA(data)
 results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
-
 # RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
 all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.) 
@@ -77,16 +76,19 @@ all_summary_statistics[,c("independent.var","independent.var.value","master_tabl
   spread(key = c("master_table_column_name"),value = "numbers") %>% map_to_file("./output/master_table_wide.csv")
 
 # PLOTS
-
 plots <- lapply(results, function(result){
   # printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
   if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){return(NULL)}
+
+  
+  
+  result$summary.statistic.labeled<-map_to_labelisation("summary.statistic")(result$summary.statistic)  
+  
   filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
-  theplot<-map_to_visualisation(result$input.parameters$case )(result$summary.statistic,filename = filename)
+  theplot<-map_to_visualisation(result$input.parameters$case )(result[["summary.statistic.labeled"]],filename = filename)
   print(filename)
   
 })
-
 if(!debugging_mode){cat("\014")}  
 cat(green("\n\n\nDONE - no issues detected.\n"))
 cat(paste0("see ", getwd(),"/","/output/ for results."))
@@ -96,5 +98,4 @@ cat(paste0("see ", getwd(),"/","/output/ for results."))
 # }) %>% unlist
 #   }
 # 
-
 

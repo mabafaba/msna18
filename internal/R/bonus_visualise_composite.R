@@ -1,14 +1,12 @@
 visualisation_composite_indicator_definition_graph<-function(composite_indicators_definitions_weighted_counts){
 
-  composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
-  # composite_indicators_definitions_weighted_counts$var %<>% question_get_question_label
 
-  # composite_indicators_definitions_weighted_counts$value<-composite_indicators_definitions_weighted_counts %>% 
-#   split.data.frame(composite_indicators_definitions_weighted_counts$var) %>% 
-#   lapply(function(x){
-#     print(x)
-#     print(gsub(","," ",x$value))
-#     question_get_choice_labels(gsub(","," ",x$value),x$var[1])}) %>% unlist
+composite_indicators_definitions_weighted_counts$value_label<-composite_indicators_definitions_weighted_counts %>%
+  split.data.frame(composite_indicators_definitions_weighted_counts$var) %>%
+  lapply(function(x){
+    question_get_choice_labels(gsub(","," ",x$value),x$var[1])}) %>% unlist
+
+composite_indicators_definitions_weighted_counts$var_label<-question_get_question_label(composite_indicators_definitions_weighted_counts$var)
 
 # condition node names:
 composite_indicators_definitions_weighted_counts$condition_node<-paste0(
@@ -40,10 +38,10 @@ composite_vertices<-cbind(name=unique(target),type="composite",
                          label=unique(target),
                          color=reach_style_color_red(1))
 variable_vertices<-cbind(name=unique(source),type="variable",
-                         label=unique(source),
+                         label=question_get_question_label(unique(source)),
                          color=reach_style_color_darkgrey(2))
-variable_vertices<-variable_vertices[!(variable_vertices[,"name"] %in% composite_vertice[,"name"]),]
-vertex_list<-rbind(variable_vertices,condition_vertices,composite_vertice)
+variable_vertices<-variable_vertices[!(variable_vertices[,"name"] %in% composite_vertices[,"name"]),]
+vertex_list<-rbind(variable_vertices,condition_vertices,composite_vertices)
 
 
 # compile graph
@@ -68,12 +66,19 @@ pagerank<-pagerank/max(pagerank)
 # cols[degree(g,mode = "out")==0]<-"#333399"
 # set.vertex.attribute(g,name = "color",value = cols)
 
+
+
 primary<-reach_style_color_red(1)
 secondary<-reach_style_color_red(3)
 neutral<-"black"
 size<-pagerank
 dir.create("./output/composite_indicator_visualisation")
-pdf(file = "./output/composite_indicator_visualisation/composite_indicator_graph.pdf",20,20)
+
+#plotwidth: roughly 10x10 per 20 vertices
+area_sidelength_per_20_nodes<-10
+plotwidth<-sqrt((area_sidelength_per_20_nodes^2)*length(V(g))/20)
+
+pdf(file = "./output/composite_indicator_visualisation/composite_indicator_graph.pdf",plotwidth,plotwidth)
 plot(g,
      # vertex.color=primary,
      vertex.frame.color=NA,

@@ -79,31 +79,30 @@ load_questionnaire<-function(data,
     # make functions that need questionnaire
 
    question_get_choice_labels <<- function(responses,variable.name){
-      if(question_is_select_one(variable.name)){
+     variable.name<-as.character(variable.name)
+      if(question_is_categorical(variable.name)){
       labels<-replace_with_lookup_table(
-        responses,
+        as.character(responses),
         # MAKE LABEL COLUMN A PARAMETER!!!
-        cbind(as.character(choices_per_data_column[[variable.name]]$name),as.character(choices_per_data_column[[variable.name]]$label..datamerge))
+        cbind(as.character(choices_per_data_column[[variable.name]]$name),as.character(choices_per_data_column[[variable.name]][,choices.label.column.to.use]))
       )
-
       # fix those that were not found to go back to original NA
       labels[is.na(labels)]<-responses[is.na(labels)]
       return(labels)
       
       }
-     if(question_is_select_multiple(variable.name)){
-       
-     }
-
+     return(responses)
    }
-   
    question_get_question_label<<-function(variable.names){
+     variable.names<-as.character(variable.names)
+     
      labelcol<-grep("label",names(questions))[1]
      questionnaire_rows<-match(variable.names,questions[,"name"])
      labels<-questions[questionnaire_rows,labelcol]
      labels[is.na(labels)]<-variable.names[is.na(labels)]
+     labels[gsub("[[:space:]]", "", labels)==""]<-variable.names[gsub("[[:space:]]", "", labels)==""]
      return(labels)
-        }
+      }
    
 
     question_is_numeric <<- function(question.name){

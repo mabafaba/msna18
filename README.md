@@ -1,3 +1,6 @@
+
+PLEASE READ "End user documentation.docx"
+
 # msna18
 
 # Overview

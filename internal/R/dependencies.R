@@ -14,6 +14,7 @@ source("./internal/R/select_multiplify.R")
 source("./internal/R/errors.R")
 source("./internal/R/questionnaire_skiplogic.R")
 source("./internal/R/bonus_visualise_composite.R")
+source("./internal/R/labelise.R")
 
 # source("./internal/R/summary_statistics.R")
 
