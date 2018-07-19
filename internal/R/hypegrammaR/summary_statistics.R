@@ -89,12 +89,13 @@ percent_with_confints_select_mult <- function(dependent.var,
       dependent.var.value= x
       if(length(unique(data[[independent.var]]==1))){
         independent.var.value=unique(data[[independent.var]])	
-        return(data.frame(dependent.var,independent.var,dependent.var.value,independent.var.value,numbers=1,se=NA,min=NA,max=NA))}}
+        return(data.frame(dependent.var,independent.var,dependent.var.value,independent.var.value,numbers=as.numeric(unique(data[[x]])),se=NA,min=NA,max=NA))}}
     
     formula_string <- paste0("~",x ,sep = "")
     by <- paste0("~", independent.var ,sep = "") 
     
     result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
+    
     
     summary_stat_colname <- x
     lower_confint_colname<-paste0("ci_l")
