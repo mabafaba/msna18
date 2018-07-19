@@ -98,7 +98,6 @@ barchart<-  div(bars,
 #########################################################################################
 #########################################################################################
           
-          require("knitr")
           
           .record<-function(to.file="./output/validation_log.htm"){
             recorder.file<-to.file
@@ -134,8 +133,9 @@ barchart<-  div(bars,
           }
           
           .shout<-function(text){
-            .break()
+            
             start.speaking()
+           .break()
             cat("<h3>")
             generic.speak(text)
             cat("</h3>")
@@ -144,6 +144,11 @@ barchart<-  div(bars,
           }
           
           .scream<-function(text){
+            .saytag("br")
+            .saytag("br")
+            .saytag("br")
+            .break()
+            
             start.speaking()
             
             cat("<h1>")

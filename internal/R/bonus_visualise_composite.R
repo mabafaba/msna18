@@ -89,6 +89,18 @@ plot(g,
 
 dev.off()
 
+plotwidthpx<-sqrt((area_sidelength_per_20_nodes^2)*length(V(g))/20)*150
+
+jpeg(file = "./output/composite_indicator_visualisation/composite_indicator_graph.jpg",plotwidthpx,plotwidthpx)
+plot(g,
+     # vertex.color=primary,
+     vertex.frame.color=NA,
+     vertex.size=(size+1)*5,
+     vertex.label.color=neutral,
+     edge.color="#CCCCCC",
+     edge.width=2,edge.curved=F,vertex.label.dist=0)
+
+dev.off()
 }
 
 

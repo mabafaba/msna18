@@ -76,7 +76,8 @@ all_summary_statistics[,c("independent.var","independent.var.value","master_tabl
   spread(key = c("master_table_column_name"),value = "numbers") %>% map_to_file("./output/master_table_wide.csv")
 
 # PLOTS
-plots <- lapply(results, function(result){
+plots <- lapply(seq_along(results), function(resultindex){
+  result<-results[[resultindex]]
   # printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
   if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){return(NULL)}
 
@@ -86,6 +87,7 @@ plots <- lapply(results, function(result){
   
   filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
   theplot<-map_to_visualisation(result$input.parameters$case )(result[["summary.statistic.labeled"]],filename = filename)
+  results$plotfilename<-paste0(paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
   print(filename)
   
 })
