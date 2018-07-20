@@ -13,4 +13,3 @@ map_to_analysis_plan_all_vars_as_dependent <- function(independent.vars,data,hyp
     return(analysisplan)
   }) %>% do.call(rbind,.)
 }
-
