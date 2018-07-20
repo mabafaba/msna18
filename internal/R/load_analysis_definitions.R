@@ -2,7 +2,8 @@
 
 load_composite_indicator_definition_weighted_count<-function(file="./internal/input_files/composite_indicators.csv"){
   table <- read.csv.part(file = file,2,2,6) %>% remove.empty.rows 
-  table[,c(1,2,4)] <- table[,c(1,2,4)] %>% lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
+  table[,c("var","new.var.name","condition")] <- table[,c("var","new.var.name","condition")] %>% lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
+  
   return(table)}
 
 read.csv.part<-function(file,first.row,first.col=1,last.col=NULL){
