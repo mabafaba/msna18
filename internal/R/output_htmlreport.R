@@ -25,7 +25,7 @@ dir.create("./output/summary")
 seq_along(results) %>% lapply(function(result){
   result<-results[[result]]
   .shout(question_get_question_label(results[[1]]$input.parameters$dependent.var))
-  .saytag("img",src=paste0("../barcharts/",result$plotfilename))
+  .saytag("img",src=paste0("../barcharts/",result$plotfilename),style="height:80%;width:auto")
 })
 
 # ggplot(results$`1`$summary.statistic,aes(independent.var.value,dependent.var.value))+

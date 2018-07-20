@@ -59,7 +59,13 @@ data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv"
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
 # create a data analysis plan with all disaggregation variables as independent variable for all variables as dependent
 analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]],data)
+
+analysis_plan_direct_reporting$dependent.var
+
+# random sample of analysis plan rows for testing:
+# analysis_plan_direct_reporting<-analysis_plan_direct_reporting[sample(1:nrow(analysis_plan_direct_reporting),200),]
 analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] <- analysis_plan_direct_reporting[,c("dependent.var", "independent.var")]  %>%  lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
+
 # APPLY ANALYSIS PLAN:
 # analyse_indicator(data,dependent.var = "deviceid",independent.var= "marital_status",hypothesis.type = "direct_reporting",sampling.strategy.stratified = TRUE,case = "CASE_direct_reporting_numerical_categorical")
 data<-missing_data_to_NA(data)
@@ -67,6 +73,7 @@ results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
 # RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
 all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.) 
+
 # save as a csv. Long format + pivot table is great for interactive xlsx
 all_summary_statistics %>% as.data.frame(stringsAsFactors=F) %>%  map_to_file("./output/master_table_long.csv")
 
@@ -87,13 +94,17 @@ plots <- lapply(seq_along(results), function(resultindex){
   
   filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
   theplot<-map_to_visualisation(result$input.parameters$case )(result[["summary.statistic.labeled"]],filename = filename)
-  results$plotfilename<-paste0(paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
+  result$plotfilename<-paste0(paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
   print(filename)
+  return(result)
   
 })
+htmlreport(plots)
 if(!debugging_mode){cat("\014")}  
 cat(green("\n\n\nDONE - no issues detected.\n"))
 cat(paste0("see ", getwd(),"/","/output/ for results."))
+
+
 
 # extract_from_result_list<-function(resultlist,what){lapply(resultlist,function(x){
 #   if(what=="case"){return(x$input.parameters$case)}
