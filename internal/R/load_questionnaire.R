@@ -58,7 +58,7 @@ load_questionnaire<-function(data,
   
   # this changes the questionnaire questions and choices to fit the data columns,
   # with empty entries for data columns that don't appear in the questionnaire.
-  if((sum(!is.na(match(data_colnames, questions$name)))/number_of_questions) < 0.3) {
+  if((sum(!is.na(match(data_colnames, questions$name)))/number_of_questions) < 0.1) {
         stop("The question names (questionnaire) and data column names (data) don't seem to match. please make sure the two columns are harmonized")
       }
 
@@ -70,27 +70,27 @@ load_questionnaire<-function(data,
         grep(y,choices[["list.name"]],value=F)
       }
       ) %>% unlist
-    }) %>% lapply(hasdata) %>% lapply(function(x){
-      choices[x,]
-    })
-    names(choices_per_data_column)<- data_colnames
-
-
-    # make functions that need questionnaire
-
-   question_get_choice_labels <<- function(responses,variable.name){
-
-      labels<-replace_with_lookup_table(
-        responses,
-        # MAKE LABEL COLUMN A PARAMETER!!!
-        cbind(as.character(choices_per_data_column[[variable.name]]$name),as.character(choices_per_data_column[[variable.name]]$label..datamerge))
-      )
-
-      # fix those that were not found to go back to original NA
-      labels[is.na(labels)]<-responses[is.na(labels)]
-      labels
-
-    }
+        }) %>% lapply(hasdata) %>% lapply(function(x){
+          choices[x,]
+        })
+        names(choices_per_data_column)<- data_colnames
+        
+        
+        # make functions that need questionnaire
+        
+        question_get_choice_labels <<- function(responses,variable.name){
+          
+          labels<-replace_with_lookup_table(
+            responses,
+            # MAKE LABEL COLUMN A PARAMETER!!!
+            cbind(as.character(choices_per_data_column[[variable.name]]$name),as.character(choices_per_data_column[[variable.name]]$label..datamerge))
+          )
+          
+          # fix those that were not found to go back to original NA
+          labels[is.na(labels)]<-responses[is.na(labels)]
+          labels
+          
+        }
 
     question_is_numeric <<- function(question.name){
       if(is.null(question.name)){return(FALSE)}
@@ -207,12 +207,10 @@ add_group_conditions_to_question_conditions<-function(questions){
     
     if(is_group_start){
       # print("adding:")
-      print(questions$relevant[i])
       group_conditions<-c(group_conditions,questions$relevant[i])
       condition_that_only_applies_to_this_question<-NULL
     }
     if(is_group_end){
-      print("removing:")
       # print(group_conditions[-length(group_conditions)])
       group_conditions<-group_conditions[-length(group_conditions)]
       condition_that_only_applies_to_this_question<-NULL  }

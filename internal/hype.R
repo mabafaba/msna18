@@ -1,6 +1,6 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-#setwd("../")
+# setwd("../")
 # getwd()
 if(!exists("debugging_mode")){
   debugging_mode<-FALSE
@@ -24,8 +24,6 @@ source("./internal/R/dependencies.R")
 # LOAD INPUT 
 # data 
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
-
-
 missing_data_to_NA<-function(data){
   lapply(data,function(x){
     replace(x,which(x %in% c("","N/A","#N/A","NA")),NA)    
