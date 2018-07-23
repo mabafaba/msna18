@@ -143,17 +143,24 @@ load_questionnaire<-function(data,
       return(question_is_select_one(question.name) | question_is_select_multiple(question.name))
     }
 
-    message("you can now use
-            \n get_choice_labels()
-            \n question_is_numeric()
-            \n question_is_categorical()
-            \n question_is_categorical()
-            \n question_is_select_one()
-            \n question_is_select_multiple()
-            \n question_variable_type()
-            \n 
-            \n question_get_choice_labels()
-            \n question")
+    message(blue("load_questionnaire() activated the following functions:
+
+
+             identifying data type:
+
+             question_is_numeric()
+             question_is_categorical()
+             question_is_categorical()
+             question_is_select_one()
+             question_is_select_multiple()
+             question_variable_type()
+
+             labels:
+             question_get_choice_labels()
+             question_get_question_label()
+
+             skiplogic:
+             question_is_skipped()"))
     questionnaire_is_loaded <- TRUE
     is_questionnaire_loaded<-function(){return(TRUE)}
     return(c(list(questions=questions,choices=choices,choices_per_variable=choices_per_data_column), data))

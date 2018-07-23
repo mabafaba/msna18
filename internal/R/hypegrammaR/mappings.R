@@ -222,7 +222,7 @@ map_to_file<-function(object,filename,...){
       whattodo<-readline("Try again (t), skip this file (s), or cancel script (c)?: ")  
     }
     if(!(whattodo %in% c("t","s","c"))){
-      stop("Could not write to a file, and user decided to cancel the script.")
+      stop("Could not write to a file")
     }
     
     if(whattodo=="t"){return(map_to_file(object,filename))}

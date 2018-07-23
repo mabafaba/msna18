@@ -30,78 +30,131 @@ el<-rbind(cbind(source,condition),cbind(condition,target))
 # make nodelist:
 condition_vertices<-cbind(name=condition,
                           type="condition",
-                          label=composite_indicators_definitions_weighted_counts$condition_label,
-                          color=reach_style_color_red(3))
+                          label=composite_indicators_definitions_weighted_counts$condition_label)
 condition_vertices<-condition_vertices[!duplicated(condition_vertices[,"name"]),]
 
-composite_vertices<-cbind(name=unique(target),type="composite",
-                         label=unique(target),
-                         color=reach_style_color_red(1))
+composite_vertices<-cbind(name=unique(target),
+                          type="composite",
+                          label=unique(target))
 variable_vertices<-cbind(name=unique(source),type="variable",
-                         label=question_get_question_label(unique(source)),
-                         color=reach_style_color_darkgrey(2))
+                         label=question_get_question_label(unique(source)))
+
 variable_vertices<-variable_vertices[!(variable_vertices[,"name"] %in% composite_vertices[,"name"]),]
+
 vertex_list<-rbind(variable_vertices,condition_vertices,composite_vertices)
 
 
-# compile graph
 g<-graph_from_data_frame(el,directed = T,vertices = vertex_list)
-# composite_edgelist<-composite_indicators_definitions_weighted_counts[,c("var","new.var.name")]
-# condition_edgelist$type<-"condition"
-# compiled_edgelist<-rbind(condition_edgelist %>% as.matrix,composite_edgelist %>% as.matrix)
-
-# vertices_composite<-cbind(unique(as.vector(composite_edgelist[,2])),"composite")
-# vertices_variable<-cbind(unique(as.vector(composite_edgelist[,1]),"composite")
-# vertices_condition<-cbind(unique(condition_edgelist)[,1])
-
-# g<-graph.edgelist(compiled_edgelist) %>% simplify
-
-g_reversed<-graph.edgelist(el[,2:1]) 
-pagerank<-page.rank(g_reversed,directed = T,damping = 1)$vector[names(V(g))]
-pagerank<-(pagerank-min(pagerank))
-pagerank<-pagerank/max(pagerank)
-
-
-# cols<-get.vertex.attribute(g,"color")
-# cols[degree(g,mode = "out")==0]<-"#333399"
-# set.vertex.attribute(g,name = "color",value = cols)
+V(g)$type[degree(g,mode = "out")==0]<-"composite_final"
 
 
 
-primary<-reach_style_color_red(1)
-secondary<-reach_style_color_red(3)
-neutral<-"black"
-size<-pagerank
-dir.create("./output/composite_indicator_visualisation")
 
-#plotwidth: roughly 10x10 per 20 vertices
-area_sidelength_per_20_nodes<-10
-plotwidth<-sqrt((area_sidelength_per_20_nodes^2)*length(V(g))/20)
+vertex_color_table<-data.frame(
 
-pdf(file = "./output/composite_indicator_visualisation/composite_indicator_graph.pdf",plotwidth,plotwidth)
-plot(g,
-     # vertex.color=primary,
-     vertex.frame.color=NA,
-     vertex.size=(size+1)*5,
-     vertex.label.color=neutral,
-     edge.color="#CCCCCC",
-     edge.width=2,edge.curved=F,vertex.label.dist=0)
+  type=c("variable",
+         "condition",
+         "composite",
+         "composite_final"),
 
-dev.off()
+  color=c(reach_style_color_darkgrey(2),
+          reach_style_color_beige(2),
+          reach_style_color_red(2),
+          reach_style_color_red(1)
+          )
+  )
 
-plotwidthpx<-sqrt((area_sidelength_per_20_nodes^2)*length(V(g))/20)*150
+V(g)$color<-as.character(vertex_color_table$color[match(V(g)$type,vertex_color_table$type)])
 
-jpeg(file = "./output/composite_indicator_visualisation/composite_indicator_graph.jpg",plotwidthpx,plotwidthpx)
-plot(g,
-     # vertex.color=primary,
-     vertex.frame.color=NA,
-     vertex.size=(size+1)*5,
-     vertex.label.color=neutral,
-     edge.color="#CCCCCC",
-     edge.width=2,edge.curved=F,vertex.label.dist=0)
 
-dev.off()
+g_independent_components<-decompose.graph(g)
+
+
+lapply(seq_along(g_independent_components),function(gi){
+  g<-g_independent_components[[gi]]
+  area_sidelength_per_20_nodes<-10
+  plotwidth<-sqrt((area_sidelength_per_20_nodes^2)*length(V(g))/20)
+  
+  
+  pdf(file = paste0("./output/composite_indicator_visualisation/",
+                    "composite_indicator_graph_",gi,".pdf"),
+      plotwidth,plotwidth)
+  plotwidthpx<-sqrt((area_sidelength_per_20_nodes^2)*length(V(g))/20)*150
+  jpeg(file = paste0("./output/composite_indicator_visualisation/",
+                     "composite_indicator_graph_",gi,".jpg")
+       ,plotwidthpx,plotwidthpx)
+  
+  plot_composite_graph(g)
+  dev.off()
+  dev.off()
+  
+#   save_graph_to_d3_web(g,
+#                        path = ".",
+#                        paste0(file="./output/composite_indicator_visualisation/composite_indicator_graph_",gi,".html"))
+#   
+})
+
 }
 
+
+
+
+
+
+
+
+
+
+graph_reverse_edges<-function(g){
+graph_as_dfs<-as_data_frame(g,"both")
+old_from<-graph_as_dfs$edges$from
+graph_as_dfs$edges$from<-graph_as_dfs$edges$to
+graph_as_dfs$edges$to<-old_from
+graph_from_data_frame(graph_as_dfs$edges,directed = T,vertices = graph_as_dfs$vertices)
+}
+
+
+
+
+
+
+
+
+plot_composite_graph<-function(g){
+  
+  # plot parameters
+  # size based on pagerank:
+  pagerank<-page.rank(graph_reverse_edges(g),directed = T,damping = 1)$vector[names(V(g))]
+  pagerank<-(pagerank-min(pagerank))
+  pagerank<-pagerank/max(pagerank)
+  size<-pagerank
+  neutral="black"
+  
+  # plot size
+  plot(g,
+       vertex.color=V(g)$color,
+       vertex.frame.color=NA,
+       vertex.size=(size+1)*5,
+       vertex.label.color=neutral,
+       edge.color="#CCCCCC",
+       edge.width=2,edge.curved=F,vertex.label.dist=0)
+  
+  
+  
+  }
+
+
+
+save_graph_to_d3_web<-function(g, path, filename){
+  
+  gd3<-igraph_to_networkD3(g,group = V(g)$type)
+  fn<-forceNetwork(Links = gd3$links,Nodes = gd3$nodes,Source="source",
+                   Target="target",NodeID = "name",Group="group",fontSize = 14,
+                   legend = T,zoom = F,bounded = T,arrows = F,opacity = 1,opacityNoHover = 1,charge = -100)
+  oldwd<-getwd()
+  setwd(path)
+  networkD3::saveNetwork(fn, filename, selfcontained = TRUE)
+  setwd(oldwd)
+ }
 
 

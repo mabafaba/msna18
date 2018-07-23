@@ -115,7 +115,7 @@ grouped_barchart_percent<-function(summary.statistic,filename){
 
 
 barchart_average<-function(summary.statistic,filename){
-  
+
   theplot<-ggplot(summary.statistic,aes(x=independent.var.value,y=numbers),fill=reach_style_color_darkgrey(1))+geom_bar(stat = "identity")+theme_tufte()+
     xlab(unique(summary.statistic$independent.var)[1])+ylab(summary.statistic$dependent.var[1])+ 
     theme(text=element_text(family="Arial Narrow")
