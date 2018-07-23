@@ -10,3 +10,6 @@
 3. open both files and follow the instructions in each files readme sheet.
 4. open `./run.R` in RStudio. highlight all lines at once (ctrl+a) and press (ctrl+ENTER)
 5. find your analysis results in `./output/`
+
+
+input xlsm files are not tracked by this repo
