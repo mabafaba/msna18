@@ -1,11 +1,11 @@
 .DS_Store
 .Rhistory
 .RData
-output/barcharts
-output/modified_data
-output/percent_aggregations_raw_csv
-output/composite_indicator_visualisation
-output/mean_aggregations_raw_csv
-input/**
+output/barcharts/
+output/modified_data/
+output/percent_aggregations_raw_csv/
+output/composite_indicator_visualisation/
+output/mean_aggregations_raw_csv/
+/input/**
 !input/TEMPLATE_analysis_definition.xlsm
 !input/TEMPLATE_analysis_input_data.xlsm

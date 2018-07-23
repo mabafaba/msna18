@@ -12,4 +12,4 @@
 5. find your analysis results in `./output/`
 
 
-input xlsm files are not tracked by this repo
+input xlsm files are not tracked by this git repository.
