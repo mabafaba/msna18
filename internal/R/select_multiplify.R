@@ -12,7 +12,8 @@ multiples_in_questionnaire <- function(data){
 choices_for_select_multiple <- function(question_name, data){
   choices<-questionnaire$choices_per_variable[[question_name]]
   select_mult_colnames<-paste(question_name,choices$name,sep=".") %>% to_alphanumeric_lowercase
-  match(select_mult_colnames,names(data))
+  indices<-match(select_mult_colnames,names(data))
+  if(any(is.na(indices))){stop(paste("can not find TRUE/FALSE columns for variable",question_name,". Please double check that they exist in the data and that their names are in the standard kobo format of \"[question name].[choice name]\""))}
 }
 
 # qs_dirt$type

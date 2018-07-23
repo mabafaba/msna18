@@ -59,9 +59,9 @@ load_questionnaire<-function(data,
   # this changes the questionnaire questions and choices to fit the data columns,
   # with empty entries for data columns that don't appear in the questionnaire.
   if((sum(!is.na(match(data_colnames, questions$name)))/number_of_questions) < 0.1) {
-        stop("The question names (questionnaire) and data column names (data) don't seem to match. please make sure the two columns are harmonized")
-      }
-
+    stop("The question names (questionnaire) and data column names (data) don't seem to match. please make sure the two columns are harmonized")
+  }
+  
       questions <- questions[match(data_colnames, questions$name),]
 
         choices_per_data_column<-questions$type %>% as.character %>% strsplit(" ") %>% lapply(unlist)%>% lapply(function(x){
