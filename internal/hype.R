@@ -40,7 +40,7 @@ data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %
 if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
                                                              data.stratum.column = data_parameters$stratum.name.variable,
                                                              return.stratum.populations = T)}
-
+# undebug(add_variable_indicators_weighted_count)
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
                                   choices.file = "./internal/input_files/kobo_choices.csv",
                                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
@@ -48,7 +48,6 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
 #composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
-
 data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
 
 # load analysis definitions
@@ -56,7 +55,7 @@ data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv"
 # list of variables to disaggregate by:
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
 # create a data analysis plan with all disaggregation variables as independent variable for all variables as dependent
-analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent("marital_status",data)
+analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]],data)
 analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] <- analysis_plan_direct_reporting[,c("dependent.var", "independent.var")]  %>%  lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
 # APPLY ANALYSIS PLAN:
 # analyse_indicator(data,dependent.var = "deviceid",independent.var= "marital_status",hypothesis.type = "direct_reporting",sampling.strategy.stratified = TRUE,case = "CASE_direct_reporting_numerical_categorical")

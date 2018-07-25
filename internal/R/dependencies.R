@@ -1,6 +1,5 @@
 # external packages to install/load:
 .dependencies<-c("dplyr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi")
-
 source("./internal/R/composite_indicator_weighted_count.R")
 source("./internal/R/survey_design.R")
 source("./internal/R/recoding.R")
