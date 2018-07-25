@@ -1,20 +1,20 @@
 
-
-
-question_is_skipped<-function(data,condition){
-  print(paste("analyising skiplogic for:",condition))
-  if(condition=="" | is.null(condition)|is.na(condition)){return(rep(nrow(data),FALSE))}
+question_is_skipped_apply_condition_to_data<-function(data,condition){
+  print(paste("analysing skiplogic for:",condition))
+  if(condition=="" | is.null(condition)|is.na(condition)){return(rep(FALSE,nrow(data)))}
   
   hierarchical_condition_string<-string_w_brackets_to_hierarchical_list(condition)
+  hierarchical_condition_string<-reduce_single_item_lists(hierarchical_condition_string)
   res<-hierarchical_condition_fulfilled(data,hierarchical_condition_string)
-  
   res<-remove_junk_from_disected_condition(res)
   res<-list.clean(res,recursive = T,fun = is.null)
   res<-reduce_single_item_lists(res)
   is_skipped<-list_collapse_logic_hierarchy(res)
   if(!is.vector(is_skipped)){
     warning("at least parts of skip logic condition `", condition ,"` could not be read properly.")
-    if(is.logical(is_skipped[[1]])){return(is_skipped[[1]])}
+    if(is.logical(is_skipped[[1]])){return(is_skipped[[1]])}else{
+      warning("assuming all records are skiped")
+    }
   }
   
   return(is_skipped)
@@ -158,7 +158,7 @@ single_condition_fulfilled<-function(data,x){
 
 # is condition type "selected"?
 is_selected_condition<-function(condition){
-  (length(grep('}, "',condition,fixed = T))!=0)|(length(grep("}, '",condition,fixed = T))!=0)
+  (length(grep("}[[:space:]]*,[[:space:]]*['\"]",condition,fixed = F))!=0)
 }
 # is condition type "numric"?
 is_numeric_condition<-function(condition){
@@ -180,8 +180,8 @@ selected_condition_fulfilled<-function(data,condition){
   varname<-to_alphanumeric_lowercase(conditional_var)
   # if the variable is not in the data we're giving up:
   if(!(varname %in% names(data))){
-    warning(paste("couldn't figure out skip logic:",varname,"is not a column name in the provided data."))
-    return(rep(TRUE,nrow(data)))}
+    warning(paste("couldn't figure out part of skip logic condition:\n",condition,"\n", varname," is not a column name in the provided data.\nassuming no records are skipped."))
+    return(rep(FALSE,nrow(data)))}
   
   lapply(data[,varname],function(x){
     (conditional_value%in%(x %>% as.character %>% strsplit(" ") %>% unlist))
@@ -262,9 +262,5 @@ extract_varname_from_condition<-function(condition){
 }
 
 
-
-question_is_skipped<-function(data,condition){
-  return(rep(FALSE,nrow(data)))
-}
 
 

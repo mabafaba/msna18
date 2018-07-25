@@ -2,7 +2,7 @@
 # 
 
 #' load_questionnaire
-#'
+#' @param data data frame containing the data matching the questionnaire to be loaded.
 #' @param questions.file file name of a csv file containing the kobo form's question sheet
 #' @param choices.file file name of a csv file containing the kobo form's choices sheet
 #' @return list of questions and choices, sorted to match. to data columns.
@@ -142,7 +142,21 @@ load_questionnaire<-function(data,
       if(question.name==""){return(FALSE)}
       return(question_is_select_one(question.name) | question_is_select_multiple(question.name))
     }
+    
+    
+    
+    question_is_skipped <<- function(data, question.name){
+      qid<-which(questions$name==question.name)
+      condition<-questions$relevant[qid[1]]
+      question_is_skipped_apply_condition_to_data(data,condition)
+    }
+    
 
+    is_questionnaire_loaded<<-function(){return(TRUE)
+    }
+    
+    
+    
     message(blue("load_questionnaire() activated the following functions:
 
 
@@ -166,7 +180,9 @@ load_questionnaire<-function(data,
     return(c(list(questions=questions,choices=choices,choices_per_variable=choices_per_data_column), data))
 
 
-}
+
+    
+    }
 
 
 
@@ -207,7 +223,9 @@ load_questionnaire<-function(data,
     }
     
   
-    
+    question_is_skipped<-function(data, variable.name){
+      stop("you must successfully run load_questionnaire() first")
+    }
 
 #' variable_type
 #'
@@ -255,11 +273,18 @@ add_group_conditions_to_question_conditions<-function(questions){
     if(is_group_end){
       group_conditions<-group_conditions[-length(group_conditions)]
       condition_that_only_applies_to_this_question<-NULL  }
-    if(!is_group_end ^ !is_group_start){
+    if(!is_group_end & !is_group_start){
       condition_that_only_applies_to_this_question<-questions$relevant[i]
     }
+    
     all_condition_for_this_q<-c(group_conditions,condition_that_only_applies_to_this_question)
-    all_condition_for_this_q<-paste("(",all_condition_for_this_q,")")
+    
+    if(all(all_condition_for_this_q=="")){
+        all_condition_for_this_q<-""
+      }else{
+        all_condition_for_this_q<-paste("(",all_condition_for_this_q[all_condition_for_this_q!=""],")")
+      }
+    
     all_condition_for_this_q_combined<-paste(all_condition_for_this_q,collapse=" and ")
     conditions<-c(conditions,all_condition_for_this_q_combined)  
   }
