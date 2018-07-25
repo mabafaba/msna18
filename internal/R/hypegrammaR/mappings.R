@@ -14,7 +14,7 @@
                           cluster.var = NULL) {
   if(is.null(cluster.var)){
     cluster.ids <- as.formula(c("~1"))}else{
-    cluster.ids  <- paste0("~", reduce(cluster.var, function(x, y) {paste(x, y, sep = "+")}))}
+    cluster.ids  <- cluster.var}
   strata.weights <- weights_of(data)
   survey.design <- svydesign(data = data,
       ids = formula(cluster.ids),
