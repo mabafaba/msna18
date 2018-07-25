@@ -19,7 +19,7 @@ dir.create("./output/mean_aggregations_raw_csv",showWarnings = F)
 dir.create("./output/barcharts",showWarnings = F)
 
 #load dependencies
-source("./internal/R/dependencies.R")
+  source("./internal/R/dependencies.R")
 
 # LOAD INPUT 
 # data 
