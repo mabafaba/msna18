@@ -22,7 +22,6 @@ analyse_indicator<-function(data,
                             hypothesis.type,
                             sampling.strategy.cluster=FALSE,
                             sampling.strategy.stratified=FALSE,
-                            do.for.each.unique.value.in.var = NULL,
                             case=NULL){
   options(survey.lonely.psu = "average")
   

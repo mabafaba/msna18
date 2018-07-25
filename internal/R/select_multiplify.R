@@ -14,14 +14,3 @@ choices_for_select_multiple <- function(question_name, data){
   select_mult_colnames<-paste(question_name,choices$name,sep=".") %>% to_alphanumeric_lowercase
   match(select_mult_colnames,names(data))
 }
-
-# qs_dirt$type
-# begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), qs_dirt$type, ignore.case = T)
-# end_gr <- grep(paste(c("end_group","end group"), collapse = "|"), qs_dirt$type, ignore.case = T)
-# reachR:::insure.same.length(begin_gr, end_gr)
-# groups <- cbind(begin_gr, end_gr)
-
-# #####
-# multiples <- data.frame(s_mul, s_mul_names)
-# multiples_indices_in_data <- which(reachR:::to_alphanumeric_lowercase(names(data)) %in% s_mul_names)
-
