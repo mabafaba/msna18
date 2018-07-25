@@ -4,7 +4,7 @@
 #' creates a `survey` design object from the data
 #'
 #' @param data
-#' @param cluster.var if cluster sampling was used, what's the name of the column in `data` that identifies the cluster?
+#' @param cluster.var if cluster sampling was used, what's the name of the column(s) in `data` that identifies the cluster?
 #' @details create a `survey` package design object from the data and information on the sampling strategy
 #' @return a `survey` package design object
 #' @examples map_to_design(data,cluster.var="clusterQ
@@ -14,7 +14,9 @@
                           cluster.var = NULL) {
   if(is.null(cluster.var)){
     cluster.ids <- as.formula(c("~1"))}else{
-      cluster.ids <- cluster.var}
+
+    cluster.ids  <- paste0("~", reduce(cluster.var, function(x, y) {paste(x, y, sep = "+")}))}
+
   strata.weights <- weights_of(data)
   survey.design <- svydesign(data = data,
                              ids = formula(cluster.ids),

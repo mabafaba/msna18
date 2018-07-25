@@ -20,7 +20,7 @@ dir.create("./output/barcharts",showWarnings = F)
 dir.create("./output/composite_indicator_visualisation",showWarnings = F)
 
 #load dependencies
-source("./internal/R/dependencies.R")
+  source("./internal/R/dependencies.R")
 
 # LOAD INPUT 
 # data 
