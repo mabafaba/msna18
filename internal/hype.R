@@ -25,8 +25,6 @@ source("./internal/R/dependencies.R")
 # LOAD INPUT 
 # data 
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
-
-
 missing_data_to_NA<-function(data){
   lapply(data,function(x){
     replace(x,which(x %in% c("","N/A","#N/A","NA")),NA)    
@@ -38,8 +36,8 @@ data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAs
 data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %>% to_alphanumeric_lowercase
 
 # load samplingframe (only if data_parameters says it's a stratified sample)
-if(data_parameters$stratified=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
-                                                             data.stratum.column = data_parameters$stratum.name.variable,
+if(data_parameters$stratified[1]=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
+                                                             data.stratum.column = data_parameters$stratum.name.variable[1],
                                                              return.stratum.populations = T)}
 # undebug(add_variable_indicators_weighted_count)
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",

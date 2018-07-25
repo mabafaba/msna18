@@ -10,7 +10,7 @@
 #' @examples map_to_design(data,cluster.var="clusterQ
 #' _id")
 #' @export
-map_to_design <- function(data,
+  map_to_design <- function(data,
                           cluster.var = NULL) {
   if(is.null(cluster.var)){
     cluster.ids <- as.formula(c("~1"))}else{
@@ -199,6 +199,7 @@ map_to_visualisation <- function(case) {
 
 
 map_to_file<-function(object,filename,...){
+
   tryCatch({
     
     if("ggplot" %in% class(object)){
@@ -237,18 +238,21 @@ map_to_file<-function(object,filename,...){
 }
 
 #################################
-# map to rank:           ########
+# map to mode:           ########
 #################################
-### for select_one answers, returns the most common answer for that group 
+### for select_one and select multiple answers, returns the most common answer for that group 
 # only works for select_one and select_multiple
-# 
-# summary_statistic_rank <- function(dependent.var,independent.var, design,data){
-#  percent<-percent_with_confints(dependent.var,independent.var, design,data)
-#  rank<- percent %>% split.data.frame(percent$independent.var.value) %>% lapply(function(x) {
-#    x$numbers<-rank(numbers)
-#    x) } %>% do.call(rbind,.)
-#  
-#   table <- svytable(~subcounty+security, design)
-#  table <- colnames(table)[table %>% apply(1, which.max)]  %>% cbind(table) %>% as.data.frame
-#  table[,1] %>% as.data.frame 
-#  }
+
+
+summary_statistic_mode <- function(dependent.var,independent.var, design,data){
+ percent<-percent_with_confints(dependent.var,independent.var, design,data)
+ modes <- percent %>% split.data.frame(percent$independent.var.value, drop = T) %>% lapply(function(x){
+   x[which.max(x$numbers),]}) %>% do.call(rbind, .)
+ return(modes)}
+
+summary_statistic_rank<- function(dependent.var,independent.var, design,data){
+  percent<-percent_with_confints(dependent.var,independent.var, design,data)
+  ranked <- percent %>% split.data.frame(percent$independent.var.value, drop = T) %>% lapply(function(x){
+  mutate(x, rank = rank(x$numbers, ties.method = "min"))}) %>% do.call(rbind, .) 
+  return(ranked)}
+

@@ -99,7 +99,7 @@ load_samplingframe <- function(sampling.frame.file,
   names(population.counts)<-as.character(unique_strata)
   
   # error if any stratum has zero population
-  if(any(population.counts==0)){stop("strata in sampling frame can not have population 0, please remove the stratum from your sampling frame and data. (how did you even sample from that)")}
+  if(any(population.counts==0,na.rm = T)){stop("strata in sampling frame can not have population 0, please remove the stratum from your sampling frame and data. (how did you even sample from that)")}
   # make sure all strata have data:
   population.counts <- population.counts[(
     !is.na(population.counts) &

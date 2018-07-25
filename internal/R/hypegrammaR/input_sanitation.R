@@ -8,7 +8,7 @@ sanitise_group_difference<-function(data,dependent.var,independent.var){
   independent_less_than_30 <- length(unique(data[[independent.var]])) <= 30
 
   if(!independent_less_than_30){
-  return(list(success=FALSE,message="can not test group difference with 30 or more unique values in the independent variable"))
+  return(list(success=FALSE,message="can not test group difference with 20 or more unique values in the independent variable"))
   }
 
   dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
@@ -88,7 +88,7 @@ sanitise_data<-function(data,
     
   }
 
-  if(case=="CASE_group_difference_categorical_categorical"){
+  if(case%in%c("CASE_group_difference_categorical_categorical","CASE_direct_reporting_categorical_categorical")){
     if(length(unique(data[[dependent.var]]))>50){
       return(list(success=F,message="can not perform chisquared test on >50 unique values in the dependent variable."))
 
@@ -97,7 +97,7 @@ sanitise_data<-function(data,
 if(!(nrow(data)>=2)){return(list(success=F,message="less than two samples with valid data available for this combination of dependent and independent variable"))}
 return(list(success=T,data=data))
 
-
+  
 }
 
 

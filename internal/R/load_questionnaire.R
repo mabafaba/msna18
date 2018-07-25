@@ -58,10 +58,10 @@ load_questionnaire<-function(data,
   
   # this changes the questionnaire questions and choices to fit the data columns,
   # with empty entries for data columns that don't appear in the questionnaire.
-  if((sum(!is.na(match(data_colnames, questions$name)))/number_of_questions) < 0.3) {
-        stop("The question names (questionnaire) and data column names (data) don't seem to match. please make sure the two columns are harmonized")
-      }
-
+  if((sum(!is.na(match(data_colnames, questions$name)))/number_of_questions) < 0.1) {
+    stop("The question names (questionnaire) and data column names (data) don't seem to match. please make sure the two columns are harmonized")
+  }
+  
       questions <- questions[match(data_colnames, questions$name),]
 
         choices_per_data_column<-questions$type %>% as.character %>% strsplit(" ") %>% lapply(unlist)%>% lapply(function(x){
@@ -104,6 +104,7 @@ load_questionnaire<-function(data,
      return(labels)
       }
    
+
 
     question_is_numeric <<- function(question.name){
       if(is.null(question.name)){return(FALSE)}
@@ -267,10 +268,12 @@ add_group_conditions_to_question_conditions<-function(questions){
     is_group_end<-(i %in% as.numeric(end_gr))
     
     if(is_group_start){
+
       group_conditions<-c(group_conditions,questions$relevant[i])
       condition_that_only_applies_to_this_question<-NULL
     }
     if(is_group_end){
+
       group_conditions<-group_conditions[-length(group_conditions)]
       condition_that_only_applies_to_this_question<-NULL  }
     if(!is_group_end & !is_group_start){

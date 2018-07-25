@@ -11,9 +11,10 @@ add_variable_indicators_weighted_count<-function(data,composite_indicator_defini
   
   # this has to be a loop, because composite indicators may depend on previous composite indicators.
   for(i in seq_along(list.of.new.indicator.definitions)){
-    data[[unique(list.of.new.indicator.definitions[[i]]$new.var.name)[1]]] <- composite_indicator_weighted_count(data,indicator_definition = list.of.new.indicator.definitions[[i]])
-  }
-  
+
+      data[[unique(list.of.new.indicator.definitions[[i]]$new.var.name)[1]]] <- composite_indicator_weighted_count(data,indicator_definition = list.of.new.indicator.definitions[[i]])
+      }
+
   return(data)
 }
 
