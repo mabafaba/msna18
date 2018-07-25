@@ -1,7 +1,9 @@
 recoding conditions
-EQUAL
-SMALLER OR EQUAL
-LARGER
-CONTAINS (NECESSARY)
-CONTAINS (SUFFICIENT)
-ELSE
+Equal
+Smaller Equal
+Larger
+Any
+All
+None
+Else
+Skipped
