@@ -87,6 +87,12 @@ all_means_disaggregations_all_vars<-
          })
 
 
+summary_stats_no_disaggregation <- function(data){
+  if(data_parameters$stratified=="yes"){
+    this_disag_means<-aggregate_mean_weighted(data)
+  }else{
+    this_disag_means<-aggregate_mean(data)
+  }}
 
 
 

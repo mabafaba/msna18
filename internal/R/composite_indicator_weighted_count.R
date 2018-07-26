@@ -11,13 +11,16 @@ add_variable_indicators_weighted_count<-function(data,composite_indicator_defini
     
   # this has to be a loop, because composite indicators may depend on previous composite indicators.
   for(i in seq_along(list.of.new.indicator.definitions)){
+      var_in_data<-list.of.new.indicator.definitions[[i]]$var %in% names(data)
+      if(any(!var_in_data)){stop(
+        paste("Promblem in Composite indicator definition: variable name not found in data. If variable name is a composite itself, it must be defined first. problematic variable names:",
+              paste(list.of.new.indicator.definitions[[i]]$var[!var_in_data] %>% unique,collapse = ", ")))}
       data[[unique(list.of.new.indicator.definitions[[i]]$new.var.name)[1]]] <- composite_indicator_weighted_count(data,indicator_definition = list.of.new.indicator.definitions[[i]])
       print("vulnerability_index" %in% names(data))
       }
 
   return(data)
 }
-
 
 composite_indicator_weighted_count<-function(data,indicator_definition){
   if(is.null(data)|is.null(indicator_definition)){stop("input can not be null")}

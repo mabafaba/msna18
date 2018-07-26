@@ -35,7 +35,7 @@ analyse_indicator<-function(data,
     
   )
   # sanitise input
-  if(!is.null(do.for.each.unique.value.in.var)){stop("do.for.each.unique.value.in.var must be NULL (not yet implemented)")}
+  # if(!is.null(do.for.each.unique.value.in.var)){stop("do.for.each.unique.value.in.var must be NULL (not yet implemented)")}
   if(sampling.strategy.cluster){stop("cluster must be FALSE (not yet implemented)")}
   # data <- data[!is.na(data[,dependent.var]),]
   # if(nrow(data)==0){stop('provided data has no rows where dependent.var is not NA')}
@@ -82,7 +82,7 @@ analyse_indicator<-function(data,
 
 
         # apply the summary statistic, hypothesis test to the given data and survey design:
-            summary.result  <- summarise.result(dependent.var,independent.var, design, data)
+            summary.result  <- summarise.result(dependent.var = dependent.var,independent.var, design = design, data = data)
         # do hypothesis test:
 
             hypothesis.test.result<- test.hypothesis(dependent.var,independent.var, design)

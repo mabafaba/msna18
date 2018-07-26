@@ -1,4 +1,4 @@
-type,name,label::english,hint,required,relevant,choice_filter,appearance,constraint,constraint_message,repeat_count,calculation
+type,name,label,hint,required,relevant,choice_filter,appearance,constraint,constraint_message,repeat_count,calculation
 start,start,,,,,,,,,,
 end,end,,,,,,,,,,
 today,today,,,,,,,,,,
@@ -14,6 +14,7 @@ select_one district_list,district,In which district is this interview taking pla
 select_one subcounty_list,subcounty,In which subcounty is this interview taking place?,,true,"selected(${respondent_type}, ""host_community"")",district = ${district},minimal,,,,
 select_one place_list,place,In which village or town is this interview taking place?,,true,"selected(${respondent_type}, ""host_community"")",district = ${district} and subcounty = ${subcounty},minimal,,,,
 text,place_other,In which village or town is this interview taking place?,"Other, please specify:",true,"selected(${place}, ""other"")",,,,,,
+select_one strata_list,strata,Settlement or district strata for HC/refugee,,true,,,,,,,
 integer,point_number,What is the number of the point on the map you are surveying at?,,true,"selected(${consent}, ""yes"")",,,,,,
 integer,respondent_age,How old are you?,"Respondent must be at least 15. If not, cancel the survey and proceed to the next sample.",true,"selected(${consent}, ""yes"")",,,.>=15 and . <= 120,The inputted age is below 15 or above 120.,,
 select_one sex_list,respondent_sex,Sex of the respondent,"Do not ask this question, use observation.",true,"selected(${consent}, ""yes"")",,,,,,
@@ -49,6 +50,7 @@ calculate,calc_minors,,,,,,,,,,${calc_boys} + ${calc_girls}
 calculate,calc_males,,,,,,,,,,${calc_boys} + ${males_18_59} + ${males_60_over}
 calculate,calc_females,,,,,,,,,,${calc_girls} + ${females_18_59} + ${females_60_over}
 calculate,calc_household,,,,,,,,,,${calc_males} + ${calc_females}
+calculate,calc_working_age,,,,,,,,,,${males_18_59} + ${females_18_59}
 begin group,b2,Household size,,,,,,,,,
 integer,household_size,What is the total household size?,"Members of the household who regularly share resources, such as water, food, and living space, not temporary visitors such as friends and family",true,,,,,,,
 note,household_size_note,The total household size provided does not match previously given household population data. Please double check the figures.,,,${household_size} != ${calc_household},,,,,,
@@ -60,6 +62,7 @@ integer,orphan,Orphan,"Not with primary caregiver or extended family, but it is 
 integer,separated_minor,Separated child/minor,"Separated from his/her primary caregiver (usually parents) but still with his extended family (close relatives, usually)",,${calc_minors} > 0,,,. >= 0 and . <= (${calc_minors} - ${unaccompanied_minor}),,,
 integer,chronic_ill,Suffering from a chronic illness or disease,"These typically include long term health issues such as disorders (digestive, haematological, neurological, respiratory, etc.), diseases (cardiovascular, cerebrovascular, etc.) and cancer",,,,,. >= 0 and . <= ${calc_household},,,
 integer,disabled,Suffering from a disability,"Intellectual (down syndrome, autism, fragile x syndrome etc), mental health problem (anxiety, depression, PTSD, bipolar disorder, esquizophrenia), physical and sensory (hearing, visual, physical, speech)",,,,,,,,
+calculate,vulnerable_members,,,,,,,,,,${unaccompanied_minor} + ${orphan} + ${separated_minor} + ${chronic_ill} +${disabled}
 integer,pregnant_lactating,Pregnant and/or lactating women,Include both pregnant women and women that are breastfeeding,,${females_6_12} + ${females_13_18} + ${females_18_59} > 0,,,. >= 0 and . <= (${females_6_12} + ${females_13_18} + ${females_18_59}),Number should not exceed number of females aged 6 and over in HH,,
 end group,,,,,,,,,,,
 end group,,,,,,,,,,,
@@ -95,9 +98,12 @@ select_one psych_distress_therapy_list,psych_distress_therapy,Have these members
 begin group,c3,Children at risk,,,${separated_minor} + ${unaccompanied_minor} + ${orphan} > 0,,,,,,
 select_one separated_children_list,uasc_parent_location,Where are the parents of the separated or unaccompanied children living in the household?,,true,${separated_minor} + ${unaccompanied_minor} > 0,,,,,,
 integer,uasc_prot_services,How many of the unaccompanied or separated children or orphans are receiving protection services?,"This could be follow-up, therapy, or other services provided by the government, UN, NGOs or other organizations. Skip if the respondent doesn't know.",,,,,,,,
+calculate,uasc_need_services,,,,,,,,,,${separated_minor} + ${unaccompanied_minor} + ${orphan} - ${uasc_prot_services}
 integer,family_reunion,How many of the unaccompanied or separated children are planned to be reunified with their parents in the next three months?,"This could be children going to join the parents, parents coming to the current location, or both parties going elsewhere to meet. Skip if the respondent doesn't know.",,"not(selected(${uasc_parent_location}, ""no_answer"")) and (${separated_minor} + ${unaccompanied_minor} > 0)",,,,,,
+calculate,not_family_reunion,,,,,,,,,,${separated_minor} + ${unaccompanied_minor} - ${family_reunion}
 select_one yn_dk_list,uasc_monitoring_visit,Have you ever had a monitoring visit to check on the unaccompanied children and/or orphans living in the household?,Remember that unaccompanied children are those separated from parents and not still living with relatives/friends,true,${unaccompanied_minor} + ${orphan} > 0,,,,,,
 date,uasc_monitoring_visit_date,When was the last monitoring visit to check on the unaccompanied children?,Skip if the respondent doesn't know.,,"selected(${uasc_monitoring_visit}, ""yes"")",,month-year,,,,
+calculate,uasc_months_since_monitor,,,,"not(${uasc_monitoring_visit_date} = """")",,,,,,${today} - ${uasc_monitoring_visit_date}
 end group,,,,,,,,,,,
 begin group,c4,Safety and security,"These questions are asking about general safety and security, not just about sexual and gender based violence (SGBV)",,,,,,,,
 select_one yn_dk_list,child_violence,"Have any of the children in your household experiences violence, abuse, or exploitation in your current location?",,true,${calc_minors} > 0,,,,,,
@@ -218,9 +224,10 @@ integer,other_fruits,"Other Fruits: banana, apple, lemon, tangerine",,true,,,,.>
 calculate,fruit,,,,,,,,,,"max(${orange_fruits} + ${other_fruits}, 7)"
 integer,meat,"Meat: goat, beef, chicken, pork ",Report only meat consumed in large quantities and not as a condiment. Does not include offal.,true,,,,.>=0 and .<=7,Cannot be more than 7 days,,
 integer,offal,"Liver, kidney, heart and / or other organ meats and blood",,true,,,,.>=0 and .<=7,Cannot be more than 7 days,,
+calculate,all_meats,,,,,,,,,,"max(${meat} + ${offal}, 7)"
 integer,fish,"Fish / Shellfish: fish, including canned tuna, and/or other seafood",Report only fish consumed in large quantities and not as a condiment.,true,,,,.>=0 and .<=7,Cannot be more than 7 days,,
 integer,eggs,Eggs,,true,,,,.>=0 and .<=7,Cannot be more than 7 days,,
-calculate,protein,,,,,,,,,,"max(${meat} + ${offal} + ${fish} + ${eggs}, 7)"
+calculate,protein,,,,,,,,,,"max(${all_meats} + ${fish} + ${eggs}, 7)"
 integer,dairy,"Milk and other dairy products: fresh milk / sour, yogurt, cheese, other dairy products ","Does NOT include margarine, butter, and small amounts of milk for tea/coffee.",true,,,,.>=0 and .<=7,Cannot be more than 7 days,,
 integer,oils,"Oil / fat / butter: vegetable oil, palm oil, shea butter, margarine, other fats / oil",,true,,,,.>=0 and .<=7,Cannot be more than 7 days,,
 integer,sugars,"Sugar, or sweet: sugar, honey, jam, cakes, candy, cookies, pastries, cakes and other sweet (sugary drinks)",,true,,,,.>=0 and .<=7,Cannot be more than 7 days,,
@@ -266,6 +273,7 @@ select_one yn_dk_list,vitamin_supplement,Have any of the individuals 5 years old
 integer,vitamin_supplement_number,How many of the individuals 5 years old or under received vitamin A supplementation in the past 6 months?,"The respondent can estimate, but if they don't know, skip the specific question.",,"selected(${vitamin_supplement}, ""yes"")",,,. >= 0 and . <= ${calc_5_and_under},Number must not exceed total number of children at or under 5 in HH,,
 select_one yn_dk_list,treated_nets,Does your household have an insecticide treated mosquito net?,Treatment should've been sprayed within one year,true,,,,,,,
 integer,sleeping_under_nets,How many family members slept under the net last night?,"The respondent can estimate, but if they don't know, skip the specific question.",,"selected(${treated_nets}, ""yes"")",,,,,,
+calculate,not_sleeping_under_nets,,,,"not(${sleeping_under_nets} = """")",,,,,,${calc_household} - ${sleeping_under_nets}
 begin group,g2,Pregnant and/or lactating women,,,${pregnant_lactating},,,,,,
 select_one yn_dk_list,iycf_counselling,Have any of the pregnant/lactating women in the household received counselling on infant and young child feeding?,,true,,,,,,,
 integer,iycf_counselling_number,How many of the pregnant/lactating women in the household received counselling on infant and young child feeding?,"The respondent can estimate, but if they don't know, skip the specific question",,"selected(${iycf_counselling}, ""yes"")",,,. >= 0 and . <= ${pregnant_lactating},Number must not exceed the number of pregnant and lactating women in the HH,,
@@ -308,38 +316,122 @@ note,education_note,"We are about schooling for every child in the household. We
 begin repeat,i1,"Males, 3 to 5",,true,${males_3_5} > 0,,field-list,,,${males_3_5},
 calculate,edu_males_3_5_loop_position,,,,,,,,,,position(..)
 select_multiple education_type_list,edu_males_3_5,"Of the ${males_3_5} males aged 3 to 5 in the household, what type of education is the # ${edu_males_3_5_loop_position} male aged 3 to 5 in the household receiving?( in school season)",,true,,,,,,,
+calculate,edu_males_3_5_ecd,,,,,,,,,,"if(selected(${edu_males_3_5}, ""ecd""), ""1"", ""0"")"
+calculate,edu_males_3_5_primary,,,,,,,,,,"if(selected(${edu_males_3_5}, ""primary""), ""1"", ""0"")"
+calculate,edu_males_3_5_secondary,,,,,,,,,,"if(selected(${edu_males_3_5}, ""secondary""), ""1"", ""0"")"
+calculate,edu_males_3_5_tvet,,,,,,,,,,"if(selected(${edu_males_3_5}, ""tvet""), ""1"", ""0"")"
+calculate,edu_males_3_5_alp,,,,,,,,,,"if(selected(${edu_males_3_5}, ""alp""), ""1"", ""0"")"
+calculate,edu_males_3_5_non_formal,,,,,,,,,,"if(selected(${edu_males_3_5}, ""non_formal""), ""1"", ""0"")"
+calculate,edu_males_3_5_other,,,,,,,,,,"if(selected(${edu_males_3_5}, ""other""), ""1"", ""0"")"
 calculate,edu_males_3_5_unattending,,,,,,,,,,"if(selected(${edu_males_3_5}, ""none""), ""1"", ""0"")"
 end repeat,,,,,,,,,,,
+calculate,calc_edu_males_3_5_ecd,,,,,,,,,,sum(${edu_males_3_5_ecd})
+calculate,calc_edu_males_3_5_primary,,,,,,,,,,sum(${edu_males_3_5_primary})
+calculate,calc_edu_males_3_5_secondary,,,,,,,,,,sum(${edu_males_3_5_secondary})
+calculate,calc_edu_males_3_5_tvet,,,,,,,,,,sum(${edu_males_3_5_tvet})
+calculate,calc_edu_males_3_5_alp,,,,,,,,,,sum(${edu_males_3_5_alp})
+calculate,calc_edu_males_3_5_non_formal,,,,,,,,,,sum(${edu_males_3_5_non_formal})
+calculate,calc_edu_males_3_5_other,,,,,,,,,,sum(${edu_males_3_5_other})
 calculate,calc_edu_males_3_5_unattending_total,,,,,,,,,,sum(${edu_males_3_5_unattending})
 begin repeat,i2,"Females, 3 to 5",,true,${females_3_5} > 0,,field-list,,,${females_3_5},
 calculate,edu_females_3_5_loop_position,,,,,,,,,,position(..)
 select_multiple education_type_list,edu_females_3_5,"Of the ${females_3_5} females aged 3 to 5 in the household, what type of education is the # ${edu_females_3_5_loop_position} female aged 3 to 5 in the household receiving?( in school season)",,true,,,,,,,
+calculate,edu_females_3_5_ecd,,,,,,,,,,"if(selected(${edu_females_3_5}, ""ecd""), ""1"", ""0"")"
+calculate,edu_females_3_5_primary,,,,,,,,,,"if(selected(${edu_females_3_5}, ""primary""), ""1"", ""0"")"
+calculate,edu_females_3_5_secondary,,,,,,,,,,"if(selected(${edu_females_3_5}, ""secondary""), ""1"", ""0"")"
+calculate,edu_females_3_5_tvet,,,,,,,,,,"if(selected(${edu_females_3_5}, ""tvet""), ""1"", ""0"")"
+calculate,edu_females_3_5_alp,,,,,,,,,,"if(selected(${edu_females_3_5}, ""alp""), ""1"", ""0"")"
+calculate,edu_females_3_5_non_formal,,,,,,,,,,"if(selected(${edu_females_3_5}, ""non_formal""), ""1"", ""0"")"
+calculate,edu_females_3_5_other,,,,,,,,,,"if(selected(${edu_females_3_5}, ""other""), ""1"", ""0"")"
 calculate,edu_females_3_5_unattending,,,,,,,,,,"if(selected(${edu_females_3_5}, ""none""), ""1"", ""0"")"
 end repeat,,,,,,,,,,,
+calculate,calc_edu_females_3_5_ecd,,,,,,,,,,sum(${edu_females_3_5_ecd})
+calculate,calc_edu_females_3_5_primary,,,,,,,,,,sum(${edu_females_3_5_primary})
+calculate,calc_edu_females_3_5_secondary,,,,,,,,,,sum(${edu_females_3_5_secondary})
+calculate,calc_edu_females_3_5_tvet,,,,,,,,,,sum(${edu_females_3_5_tvet})
+calculate,calc_edu_females_3_5_alp,,,,,,,,,,sum(${edu_females_3_5_alp})
+calculate,calc_edu_females_3_5_non_formal,,,,,,,,,,sum(${edu_females_3_5_non_formal})
+calculate,calc_edu_females_3_5_other,,,,,,,,,,sum(${edu_females_3_5_other})
 calculate,calc_edu_females_3_5_unattending_total,,,,,,,,,,sum(${edu_females_3_5_unattending})
 begin repeat,i3,"Males, 6 to 12",,true,${males_6_12} > 0,,field-list,,,${males_6_12},
 calculate,edu_males_6_12_loop_position,,,,,,,,,,position(..)
 select_multiple education_type_list,edu_males_6_12,"Of the ${males_6_12} males aged 6 to 12 in the household, what type of education is the # ${edu_males_6_12_loop_position} male aged 6 to 12 in the household receiving?( in school season)",,true,,,,,,,
+calculate,edu_males_6_12_ecd,,,,,,,,,,"if(selected(${edu_males_6_12}, ""ecd""), ""1"", ""0"")"
+calculate,edu_males_6_12_primary,,,,,,,,,,"if(selected(${edu_males_6_12}, ""primary""), ""1"", ""0"")"
+calculate,edu_males_6_12_secondary,,,,,,,,,,"if(selected(${edu_males_6_12}, ""secondary""), ""1"", ""0"")"
+calculate,edu_males_6_12_tvet,,,,,,,,,,"if(selected(${edu_males_6_12}, ""tvet""), ""1"", ""0"")"
+calculate,edu_males_6_12_alp,,,,,,,,,,"if(selected(${edu_males_6_12}, ""alp""), ""1"", ""0"")"
+calculate,edu_males_6_12_non_formal,,,,,,,,,,"if(selected(${edu_males_6_12}, ""non_formal""), ""1"", ""0"")"
+calculate,edu_males_6_12_other,,,,,,,,,,"if(selected(${edu_males_6_12}, ""other""), ""1"", ""0"")"
 calculate,edu_males_6_12_unattending,,,,,,,,,,"if(selected(${edu_males_6_12}, ""none""), ""1"", ""0"")"
 end repeat,,,,,,,,,,,
+calculate,calc_edu_males_6_12_ecd,,,,,,,,,,sum(${edu_males_6_12_ecd})
+calculate,calc_edu_males_6_12_primary,,,,,,,,,,sum(${edu_males_6_12_primary})
+calculate,calc_edu_males_6_12_secondary,,,,,,,,,,sum(${edu_males_6_12_secondary})
+calculate,calc_edu_males_6_12_tvet,,,,,,,,,,sum(${edu_males_6_12_tvet})
+calculate,calc_edu_males_6_12_alp,,,,,,,,,,sum(${edu_males_6_12_alp})
+calculate,calc_edu_males_6_12_non_formal,,,,,,,,,,sum(${edu_males_6_12_non_formal})
+calculate,calc_edu_males_6_12_other,,,,,,,,,,sum(${edu_males_6_12_other})
 calculate,calc_edu_males_6_12_unattending_total,,,,,,,,,,sum(${edu_males_6_12_unattending})
 begin repeat,i4,"Females, 6 to 12",,true,${females_6_12} > 0,,field-list,,,${females_6_12},
 calculate,edu_females_6_12_loop_position,,,,,,,,,,position(..)
 select_multiple education_type_list,edu_females_6_12,"Of the ${females_6_12} females aged 6 to 12 in the household, what type of education is the # ${edu_females_6_12_loop_position} female aged 6 to 12 in the household receiving?( in school season)",,true,,,,,,,
+calculate,edu_females_6_12_ecd,,,,,,,,,,"if(selected(${edu_females_6_12}, ""ecd""), ""1"", ""0"")"
+calculate,edu_females_6_12_primary,,,,,,,,,,"if(selected(${edu_females_6_12}, ""primary""), ""1"", ""0"")"
+calculate,edu_females_6_12_secondary,,,,,,,,,,"if(selected(${edu_females_6_12}, ""secondary""), ""1"", ""0"")"
+calculate,edu_females_6_12_tvet,,,,,,,,,,"if(selected(${edu_females_6_12}, ""tvet""), ""1"", ""0"")"
+calculate,edu_females_6_12_alp,,,,,,,,,,"if(selected(${edu_females_6_12}, ""alp""), ""1"", ""0"")"
+calculate,edu_females_6_12_non_formal,,,,,,,,,,"if(selected(${edu_females_6_12}, ""non_formal""), ""1"", ""0"")"
+calculate,edu_females_6_12_other,,,,,,,,,,"if(selected(${edu_females_6_12}, ""other""), ""1"", ""0"")"
 calculate,edu_females_6_12_unattending,,,,,,,,,,"if(selected(${edu_females_6_12}, ""none""), ""1"", ""0"")"
 end repeat,,,,,,,,,,,
+calculate,calc_edu_females_6_12_ecd,,,,,,,,,,sum(${edu_females_6_12_ecd})
+calculate,calc_edu_females_6_12_primary,,,,,,,,,,sum(${edu_females_6_12_primary})
+calculate,calc_edu_females_6_12_secondary,,,,,,,,,,sum(${edu_females_6_12_secondary})
+calculate,calc_edu_females_6_12_tvet,,,,,,,,,,sum(${edu_females_6_12_tvet})
+calculate,calc_edu_females_6_12_alp,,,,,,,,,,sum(${edu_females_6_12_alp})
+calculate,calc_edu_females_6_12_non_formal,,,,,,,,,,sum(${edu_females_6_12_non_formal})
+calculate,calc_edu_females_6_12_other,,,,,,,,,,sum(${edu_females_6_12_other})
 calculate,calc_edu_females_6_12_unattending_total,,,,,,,,,,sum(${edu_females_6_12_unattending})
 begin repeat,i5,"Males, 13 to 18",,true,${males_13_18} > 0,,field-list,,,${males_13_18},
 calculate,edu_males_13_18_loop_position,,,,,,,,,,position(..)
 select_multiple education_type_list,edu_males_13_18,"Of the ${males_13_18} males aged 13 to 18 in the household, what type of education is the # ${edu_males_13_18_loop_position} male aged 13 to 18 in the household receiving?( in school season)",,true,,,,,,,
+calculate,edu_males_13_18_ecd,,,,,,,,,,"if(selected(${edu_males_13_18}, ""ecd""), ""1"", ""0"")"
+calculate,edu_males_13_18_primary,,,,,,,,,,"if(selected(${edu_males_13_18}, ""primary""), ""1"", ""0"")"
+calculate,edu_males_13_18_secondary,,,,,,,,,,"if(selected(${edu_males_13_18}, ""secondary""), ""1"", ""0"")"
+calculate,edu_males_13_18_tvet,,,,,,,,,,"if(selected(${edu_males_13_18}, ""tvet""), ""1"", ""0"")"
+calculate,edu_males_13_18_alp,,,,,,,,,,"if(selected(${edu_males_13_18}, ""alp""), ""1"", ""0"")"
+calculate,edu_males_13_18_non_formal,,,,,,,,,,"if(selected(${edu_males_13_18}, ""non_formal""), ""1"", ""0"")"
+calculate,edu_males_13_18_other,,,,,,,,,,"if(selected(${edu_males_13_18}, ""other""), ""1"", ""0"")"
 calculate,edu_males_13_18_unattending,,,,,,,,,,"if(selected(${edu_males_13_18}, ""none""), ""1"", ""0"")"
 end repeat,,,,,,,,,,,
+calculate,calc_edu_males_13_18_ecd,,,,,,,,,,sum(${edu_males_13_18_ecd})
+calculate,calc_edu_males_13_18_primary,,,,,,,,,,sum(${edu_males_13_18_primary})
+calculate,calc_edu_males_13_18_secondary,,,,,,,,,,sum(${edu_males_13_18_secondary})
+calculate,calc_edu_males_13_18_tvet,,,,,,,,,,sum(${edu_males_13_18_tvet})
+calculate,calc_edu_males_13_18_alp,,,,,,,,,,sum(${edu_males_13_18_alp})
+calculate,calc_edu_males_13_18_non_formal,,,,,,,,,,sum(${edu_males_13_18_non_formal})
+calculate,calc_edu_males_13_18_other,,,,,,,,,,sum(${edu_males_13_18_other})
 calculate,calc_edu_males_13_18_unattending_total,,,,,,,,,,sum(${edu_males_13_18_unattending})
 begin repeat,i6,"Females, 13 to 18",,true,${females_13_18} > 0,,field-list,,,${females_13_18},
 calculate,edu_females_13_18_loop_position,,,,,,,,,,position(..)
 select_multiple education_type_list,edu_females_13_18,"Of the ${females_13_18} females aged 13 to 18 in the household, what type of education is the # ${edu_females_13_18_loop_position} female aged 13 to 18 in the household receiving?( in school season)",,true,,,,,,,
+calculate,edu_females_13_18_ecd,,,,,,,,,,"if(selected(${edu_females_13_18}, ""ecd""), ""1"", ""0"")"
+calculate,edu_females_13_18_primary,,,,,,,,,,"if(selected(${edu_females_13_18}, ""primary""), ""1"", ""0"")"
+calculate,edu_females_13_18_secondary,,,,,,,,,,"if(selected(${edu_females_13_18}, ""secondary""), ""1"", ""0"")"
+calculate,edu_females_13_18_tvet,,,,,,,,,,"if(selected(${edu_females_13_18}, ""tvet""), ""1"", ""0"")"
+calculate,edu_females_13_18_alp,,,,,,,,,,"if(selected(${edu_females_13_18}, ""alp""), ""1"", ""0"")"
+calculate,edu_females_13_18_non_formal,,,,,,,,,,"if(selected(${edu_females_13_18}, ""non_formal""), ""1"", ""0"")"
+calculate,edu_females_13_18_other,,,,,,,,,,"if(selected(${edu_females_13_18}, ""other""), ""1"", ""0"")"
 calculate,edu_females_13_18_unattending,,,,,,,,,,"if(selected(${edu_females_13_18}, ""none""), ""1"", ""0"")"
 end repeat,,,,,,,,,,,
+calculate,calc_edu_females_13_18_ecd,,,,,,,,,,sum(${edu_females_13_18_ecd})
+calculate,calc_edu_females_13_18_primary,,,,,,,,,,sum(${edu_females_13_18_primary})
+calculate,calc_edu_females_13_18_secondary,,,,,,,,,,sum(${edu_females_13_18_secondary})
+calculate,calc_edu_females_13_18_tvet,,,,,,,,,,sum(${edu_females_13_18_tvet})
+calculate,calc_edu_females_13_18_alp,,,,,,,,,,sum(${edu_females_13_18_alp})
+calculate,calc_edu_females_13_18_non_formal,,,,,,,,,,sum(${edu_females_13_18_non_formal})
+calculate,calc_edu_females_13_18_other,,,,,,,,,,sum(${edu_females_13_18_other})
 calculate,calc_edu_females_13_18_unattending_total,,,,,,,,,,sum(${edu_females_13_18_unattending})
 calculate,calc_edu_unattending_total,,,,,,,,,,${calc_edu_males_3_5_unattending_total} + ${calc_edu_females_3_5_unattending_total} + ${calc_edu_males_6_12_unattending_total} + ${calc_edu_females_6_12_unattending_total} + ${calc_edu_males_13_18_unattending_total} + ${calc_edu_females_13_18_unattending_total}
 begin group,i7,Barriers to education,,,${calc_edu_unattending_total} > 0,,,,,,

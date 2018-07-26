@@ -1,16 +1,96 @@
 percent_with_confints <- function(dependent.var,
+                                  design,
+                                  data,
+                                  na.rm = TRUE){
+  if(question_is_select_multiple(dependent.var)){
+    return(percent_with_confints_select_mult(dependent.var = dependent.var, design = design))
+  }
+  return(percent_with_confints_select_one(dependent.var = dependent.var,  design = design))
+}
+
+
+percent_with_confints_select_one <- function(dependent.var,
+                                             design,
+                                             na.rm = TRUE){
+  
+  
+  # if dependent var have only one value, just return that:
+  
+  dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
+  if(!dependent_more_than_1){
+    dependent.var.value=unique(data[[dependent.var]])
+    return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
+
+
+  
+  result_hg_format<- # tryCatch(
+  {
+    result_svy_format <- svymean(formula(paste0("~", dependent.var)),design, level=0.95) %>% cbind(.,confint(.))
+    colnames(result_svy_format)<-c("numbers","min","max")
+    summary_with_confints <- data.frame(dependent.var=dependent.var,
+                   independent.var=NA,
+                   dependent.var.value=rownames(result_svy_format),
+                   independent.var.value=NA,
+                   numbers=result_svy_format[,"numbers"],
+                   se=NA,
+                   min=result_svy_format[,"min"],
+                   max=result_svy_format[,"max"])
+    summary_with_confints[,"min"] <- summary_with_confints[,"min"] %>% replace(summary_with_confints[,"min"] < 0 , 0)
+    summary_with_confints[,"max"] <- summary_with_confints[,"max"] %>% replace(summary_with_confints[,"max"] > 1 , 1)
+    summary_with_confints %>% as.data.frame
+  }
+  return(result_hg_format)}
+
+percent_with_confints_select_mult <- function(dependent.var,
+                                             design,
+                                             na.rm = TRUE){
+  
+  
+  # if dependent and independent variables have only one value, just return that:
+  choices <- data[,choices_for_select_multiple(dependent.var, data)]
+  
+  dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
+  if(!dependent_more_than_1){
+    dependent.var.value=unique(data[[dependent.var]])
+    return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
+  
+  result_hg_format <- lapply(names(choices), function(x){
+    
+    result_svy_format <- svymean(formula(paste0("~", x)),design, level=0.95) %>% cbind(.,confint(.))
+    
+    colnames(result_svy_format)<-c("numbers","min","max")
+    summary_with_confints <- data.frame(dependent.var=dependent.var,
+                                        independent.var=NA,
+                                        dependent.var.value=gsub(paste0("^",dependent.var,"."),"",x),
+                                        independent.var.value=NA,
+                                        numbers=result_svy_format[,"numbers"],
+                                        se=NA,
+                                        min=result_svy_format[,"min"],
+                                        max=result_svy_format[,"max"])})
+  
+  result_hg_format %<>% do.call(rbind,.)
+    
+  result_hg_format[,"min"] <- result_hg_format[,"min"] %>% replace(result_hg_format[,"min"] < 0 , 0)
+  result_hg_format[,"max"] <- result_hg_format[,"max"] %>% replace(result_hg_format[,"max"] > 1 , 1)
+  result_hg_format %>% as.data.frame
+
+  return(result_hg_format)}
+
+
+
+percent_with_confints_groups <- function(dependent.var,
                                   independent.var,
                                   design,
                                   data,
                                   na.rm = TRUE){
   if(question_is_select_multiple(dependent.var)){
-    return(percent_with_confints_select_mult(dependent.var = dependent.var, independent.var = independent.var, design = design, data = data))
+    return(percent_with_confints_select_mult_groups(dependent.var = dependent.var, independent.var = independent.var, design = design, data = data))
   }
-  return(percent_with_confints_select_one(dependent.var = dependent.var, independent.var = independent.var, design = design))
+  return(percent_with_confints_select_one_groups(dependent.var = dependent.var, independent.var = independent.var, design = design))
 }
 
 
-percent_with_confints_select_one <- function(dependent.var,
+percent_with_confints_select_one_groups <- function(dependent.var,
                                              independent.var,
                                              design,
                                              na.rm = TRUE){
@@ -18,9 +98,9 @@ percent_with_confints_select_one <- function(dependent.var,
   
   # if dependent and independent variables have only one value, just return that:
   
-  if(length(unique(data[[dependent.var]]))==1){
+  if(length(unique(as.character(data[[dependent.var]])))==1){
     dependent.var.value=unique(data[[dependent.var]])
-    if(length(unique(data[[independent.var]]==1))){
+    if(length(unique(as.character(data[[independent.var]])))==1){
       independent.var.value=unique(data[[independent.var]])	
       return(data.frame(dependent.var,independent.var,dependent.var.value,independent.var.value,numbers=1,se=NA,min=NA,max=NA))
       
@@ -57,25 +137,15 @@ percent_with_confints_select_one <- function(dependent.var,
     summary_with_confints[,"max"] <- summary_with_confints[,"max"] %>% replace(summary_with_confints[,"max"] > 1 , 1)
     summary_with_confints %>% as.data.frame
   }
-  #,
-  # error=function(cond){        data.frame(dependent.var=NA,
-  #                                         independent.var=NA,
-  #                                         dependent.var.value=NA,
-  #                                         independent.var.value=NA,
-  #                                         numbers=NA,
-  #                                         se=NA,
-  #                                         min=NA,
-  #                                         max= NA)[FALSE,]
-  #                    }
-  #                  )
-  
   
   return(result_hg_format)
 }
 
 
+
+
 #should only be called if the question is select multiple 
-percent_with_confints_select_mult <- function(dependent.var,
+percent_with_confints_select_mult_groups <- function(dependent.var,
                                               independent.var,
                                               design,
                                               data,
@@ -121,42 +191,7 @@ percent_with_confints_select_mult <- function(dependent.var,
   
   return(result_hg_format)
 }
-      
-  
-  # if(design$variables %>%
-  #    split.data.frame(design$variables[[independent.var]]) %>%
-  #    lapply(nrow) %>%
-  #    unlist %>%
-  #    (function(x){x<2}) %>%
-  #    any){
-  #       warning("independent var must have at least two unique values");return(NULL)
-  #     }
-
-  # formula_err <- paste0("~", dependent.var, sep = "")
-  # by <- paste0(" ~",independent.var , sep = "")
-  # summary.result.svyby <- svyby(formula(formula_err), formula(by), design, na.rm = T, svymean)
-  # # fix weird column names:
-  # colnames(summary.result.svyby)<-colnames(summary.result.svyby) %>% gsub(paste0("^se.",dependent.var),"",.) %>% gsub(paste0("^",dependent.var),"",.)
-  #
-  #
-  #
-  #
-  # # if(length(summary.result.svyby)==3 & length(summary.result.svyby[[2]])==2){return(list(ERROR="error calculating convidendce intervals. illformated output attached. might be that variable names too similar to other variable names. Try running again using design object without other variable columns."))}
-  # # pick out the columns that are the standard error
-  #
-  # independent.var.column<-1
-  # dependent.var.n<-(ncol(summary.result.svyby)-1)/2
-  # stat.columns<-2:(1+dependent.var.n)
-  # se.columns<-(max(stat.columns)+1):ncol(summary.result.svyby)
-  #
-  # standard_error <- summary.result.svyby[,c(independent.var.column,se.columns)] %>% melt(id.vars=c(independent.var))
-  # # colnames(standard_error)[which(colnames(standard_error)==independent.var)]<-"independent.var"
-  # stat <-         summary.result.svyby[,c(independent.var.column,)] %>% melt(id.vars=c(independent.var))
-  #
-  #
-
-  
-  # check if we actually got  a frequency table back; problems can arise here if independent.var has only 1 unique value 
+ # check if we actually got  a frequency table back; problems can arise here if independent.var has only 1 unique value 
   # if(!(nrow(as.data.frame(p.table)>1))){stop("DEV: unexpected edge case in percent_with_confints - freq table has 1 or less rows. contact development team about this error.")}
   # 
   #   p.table %>% melt -> ftable_flipped

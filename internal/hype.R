@@ -1,7 +1,7 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-#setwd("../")
-# getwd()
+setwd("../")
+#getwd()
 if(!exists("debugging_mode")){
   debugging_mode<-FALSE
 }
@@ -26,9 +26,9 @@ dir.create("./output/barcharts",showWarnings = F)
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 
 
-missing_data_to_NA<-function(data){
+missing_data_to_NA <- function(data){
   lapply(data,function(x){
-    replace(x,which(x %in% c("","N/A","#N/A","NA")),NA)    
+    replace(x,which(x %in% c("","N/A","#N/A","NA", " ")),NA)    
   }) %>% as.data.frame(stringsAsFactors=T)# survey needs with factors.
 }
 
@@ -53,13 +53,22 @@ data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv"
 # load analysis definitions
 # aggregating all variables (direct reporting)
 # list of variables to disaggregate by:
-analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
+analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F) %>% remove.empty.rows 
 # create a data analysis plan with all disaggregation variables as independent variable for all variables as dependent
-analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]],data)
+analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(repeat.var = analysis_definition_aggregations[["do.for.each.variable"]][1], 
+                                                                             independent.vars = analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]], 
+                                                                             data = data)
+data <- missing_data_to_NA(data)
+
+
+analysis_plan_all_vars_no_disag <- map_to_analysis_plan_all_vars_no_disag(repeat.var = analysis_definition_aggregations[["do.for.each.variable"]][1], 
+                                                                          data = data)
+
 analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] <- analysis_plan_direct_reporting[,c("dependent.var", "independent.var")]  %>%  lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
+
+
 # APPLY ANALYSIS PLAN:
-# analyse_indicator(data,dependent.var = "deviceid",independent.var= "marital_status",hypothesis.type = "direct_reporting",sampling.strategy.stratified = TRUE,case = "CASE_direct_reporting_numerical_categorical")
-data<-missing_data_to_NA(data)
+results_no_disag <- apply_data_analysis_plan(data, analysis_plan_all_vars_no_disag)
 results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
 
 # RESHAPE OUTPUTS FOR MASTER TABLE:
@@ -73,8 +82,10 @@ all_summary_statistics$master_table_column_name<-paste(all_summary_statistics$de
 all_summary_statistics[,c("independent.var","independent.var.value","master_table_column_name","numbers")] %>%
   spread(key = c("master_table_column_name"),value = "numbers") %>% map_to_file("./output/master_table_wide.csv")
 
-# PLOTS
+# RESHAPE PIN OUTPUTS FOR FASTER TABLE
 
+
+# PLOTS
 plots <- lapply(results, function(result){
   # printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
   if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){print(result);return(NULL)}
