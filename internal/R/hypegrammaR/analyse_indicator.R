@@ -45,26 +45,26 @@ analyse_indicator<-function(data,
   # map from input to analysis case:
   if(is.null(case)){
     case <- map_to_case(hypothesis.type = hypothesis.type,
-                                   data = data,
-                                   dependent.var = dependent.var,
-                                   independent.var = independent.var,
-                                   paired = NULL)
-        }else{
-          if(!is_valid_case_string(case)){
-            stop(paste(case,"is not a valid case string. List of valid cases:\n",paste(list_all_cases(T),collapse = "\n"),"value for argument 'case' is not a valid case string. It must be of the form CASE_[hypothesis_type]_[dependent.variable.type]_[independent.variable.type]\nfor example 'CASE_group_difference_categorical_categorical'\nAlternatively, you can leave out that parameter, and we will try to identify the case automagically from the questionnaire"))
-            }
-        }
-
-
+                        data = data,
+                        dependent.var = dependent.var,
+                        independent.var = independent.var,
+                        paired = NULL)
+  }else{
+    if(!is_valid_case_string(case)){
+      stop(paste(case,"is not a valid case string. List of valid cases:\n",paste(list_all_cases(T),collapse = "\n"),"value for argument 'case' is not a valid case string. It must be of the form CASE_[hypothesis_type]_[dependent.variable.type]_[independent.variable.type]\nfor example 'CASE_group_difference_categorical_categorical'\nAlternatively, you can leave out that parameter, and we will try to identify the case automagically from the questionnaire"))
+    }
+  }
+  
+  
   data_sanitised<-sanitise_data(data,
-                dependent.var,
-                independent.var,
-                case)
+                                dependent.var,
+                                independent.var,
+                                case)
   if(data_sanitised$success){
     data<-data_sanitised$data
   }else{
     return(
-  empty_result(input.parameters,data_sanitised$message)
+      empty_result(input.parameters,data_sanitised$message)
 
     )
   }
