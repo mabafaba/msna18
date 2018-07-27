@@ -1,10 +1,4 @@
-
-
-
-
 sanitise_group_difference<-function(data,dependent.var,independent.var){
-
-
   independent_less_than_30 <- length(unique(data[[independent.var]])) <= 30
 
   if(!independent_less_than_30){
@@ -34,8 +28,45 @@ sanitise_group_difference<-function(data,dependent.var,independent.var){
 }
 
 
+sanitise_data <- function(data, dependent.var,independent.var,case){
+  if(is.null(independent.var)){
+    sanitise_data_no_independent(data = data, dependent.var = dependent.var, case = case)}else{
+      sanitise_data_independent(data = data, independent.var = independent.var, dependent.var = dependent.var, case = case)
+    }
+}
 
-sanitise_data<-function(data,
+sanitise_data_no_independent<-function(data,
+                                 dependent.var,
+                                 case){
+  
+  dep_var_name_in_data_headers<- grep(paste0("^",dependent.var),colnames(data),value = T)
+  indep_var_name_in_data_headers<- grep(paste0("^",dependent.var),colnames(data),value = T)
+  if(length(dep_var_name_in_data_headers)==0){
+    stop("dependent.var not found in data")
+  }
+  
+
+  
+  if(!sanitise_is_good_dataframe(data)){return(list(success=F,message="not a data frame or data frame without data"))}
+  
+  # remove records with NA in dependent or independent
+  data<-data[!is.na(data[[dependent.var]]),]
+  data<-data[(data[[dependent.var]]!=""),]
+  
+
+  # still have enough data?
+  
+  dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
+  if(!dependent_more_than_1){
+    return(list(success=FALSE,message="can not summarise statistics with <2 different values in the dependent variable"))
+  }
+  
+  
+  if(!sanitise_is_good_dataframe(data)){return(list(success=F,message="no data (after removing records with NA in dependent variable)"))}
+  return(list(success=T,data=data))
+}
+
+sanitise_data_independent<-function(data,
                         dependent.var,
                         independent.var,
                         case){
@@ -49,18 +80,6 @@ sanitise_data<-function(data,
   if(length(indep_var_name_in_data_headers)==0){
     stop("independent.var not found in data")
   }
-
-
-  # if(length(dep_var_name_in_data_headers)>1){
-  #   stop(paste("more than 1 data column name matching dependent.var (may be too similar):",
-  #              dep_var_name_in_data_headers,collapse="\n"))
-  # }
-  # if(length(indep_var_name_in_data_headers)>1){
-  #   stop(paste("more than 1 data column name matching independent.var (may be too similar):",
-  #              dep_var_name_in_data_headers,collapse="\n"))  }
-
-
-
 
   if(!sanitise_is_good_dataframe(data)){return(list(success=F,message="not a data frame or data frame without data"))}
 
@@ -99,21 +118,6 @@ return(list(success=T,data=data))
 
   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

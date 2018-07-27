@@ -3,6 +3,7 @@
 .RData
 output/barcharts/
 output/modified_data/
+<<<<<<< HEAD
 output/percent_aggregations_raw_csv/
 output/composite_indicator_visualisation/
 output/mean_aggregations_raw_csv/
@@ -10,3 +11,26 @@ output/mean_aggregations_raw_csv/
 /input/*.xlsm
 !input/TEMPLATE_analysis_definition.xlsm
 !input/TEMPLATE_analysis_input_data.xlsm
+=======
+
+
+output/percent_aggregations_raw_csv/
+
+
+output/composite_indicator_visualisation/
+
+
+output/mean_aggregations_raw_csv/
+
+
+/internal/input_files/*.csv
+
+
+/input/*.xlsm
+
+
+!input/TEMPLATE_analysis_definition.xlsm
+
+
+!input/TEMPLATE_analysis_input_data.xlsm
+>>>>>>> remotes/origin/do_for_each

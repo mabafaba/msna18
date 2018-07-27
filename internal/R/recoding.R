@@ -44,15 +44,13 @@ recode_select_one_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
 #'   x_recoded[make_true_none] <- TRUE}
 #'   return(x_recoded)
 #' }
-
-
 recode_generic <- function(data, x, value, condition, to, variable.name){
   if(condition=="else"){
     recoded <- recode_else(data = data, x = x, to = to)
     return(recoded)
   }
   
-  if(condition %in% c("any","all","none")){
+  if(question_is_select_multiple(variable.name)){
     recoded <- recode_select_multiple(data = data, x = x, value = value, condition = condition, to = to)
     return(recoded)    
   }
@@ -75,7 +73,7 @@ recode_select_multiple <- function(data, x, value, condition, to){
   value <- value %>% strsplit(",") %>% as.vector %>% unlist %>% gsub(" ", "", .)
   ####match any
   if(condition == "any"){
-    match_any <- x %>% strsplit(" ") %>% lapply(function(x){
+    match_any <- x %>% as.character %>% strsplit(" ") %>% lapply(function(x){
       match(value, x)})
     make_false_any <- lapply(match_any, function(x){all(is.na(x))}) %>% unlist
     x_recoded[!make_false_any] <- to}
@@ -119,12 +117,14 @@ recode_generic_one <- function(data, x, value, condition, to){
 
 
 recode_equal<-function(x,from,to){
+x %<>% as.character
 to %<>% as.numeric
 recoded <- to[match(x,from)]
 return(recoded)
   }
 
 recode_smaller_equal<-function(x,from,to){
+  x %<>% as.character %>% as.numeric
   from %<>% as.numeric
   to %<>% as.numeric
   condition_met <- x <= from
@@ -134,6 +134,7 @@ recode_smaller_equal<-function(x,from,to){
 }
 
 recode_larger<-function(x,from,to){
+  x %<>% as.character %>% as.numeric
   from %<>% as.numeric
   to %<>% as.numeric
   condition_met <- x > from

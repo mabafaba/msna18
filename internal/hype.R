@@ -37,8 +37,21 @@ if(any(!filesexist)){stop("Input information seems to be missing. Please open th
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 missing_data_to_NA<-function(data){
   lapply(data,function(x){
-    replace(x,which(x %in% c("","N/A","#N/A","NA")),NA)    
-  }) %>% as.data.frame(stringsAsFactors=T)# survey needs with factors.
+    replace(x,which(x %in% c("","N/A","#N/A","NA", " ")),NA)    
+  }) %>% as.data.frame(stringsAsFactors=F)# survey needs with factors.
+}
+
+#function that recodes categorical variables using the levels provided in the choices file
+#also converts missing data to NA without messing up the factors 
+levels_for_cat <- function(data, questionnaire){
+  #questionnaire must be loaded
+ data_level <-  lapply(names(data), function(x){
+   replace(data[[x]],which(data[[x]] %in% c("","N/A","#N/A","NA", " ")),NA)
+    if(question_is_categorical(x)){
+      data[[x]] %<>% factor(., levels = questionnaire$choices_per_variable[x] %>% as.data.frame %>% extract2(2) %>% unique)}
+  return(data[[x]])}) 
+ names(data_level) <- names(data)
+ return(data_level %>% as.data.frame)
 }
 
 ## Loading cluster sampling units
@@ -59,6 +72,9 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
 # load cluster ids and create associated functions:
 clusterids<-load_cluster_sampling_units()
 
+# cleaning and getting the factors out 
+data <- levels_for_cat(data, questionnaire)
+
 #composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
@@ -68,18 +84,29 @@ data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv"
 # load analysis definitions
 # aggregating all variables (direct reporting)
 # list of variables to disaggregate by:
-analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
+analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F) %>% remove.empty.rows 
 # create a data analysis plan with all disaggregation variables as independent variable for all variables as dependent
+
 analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]],data)
 
 
 
 # random sample of analysis plan rows for testing:
 # analysis_plan_direct_reporting<-analysis_plan_direct_reporting[sample(1:nrow(analysis_plan_direct_reporting),200),]
-analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] <- analysis_plan_direct_reporting[,c("dependent.var", "independent.var")]  %>%  lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
+
+analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(repeat.var = analysis_definition_aggregations[["do.for.each.variable"]][1], 
+                                                                             independent.vars = analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]], 
+                                                                             data = data)
+
+analysis_plan_all_vars_no_disag <- map_to_analysis_plan_all_vars_no_disag(repeat.var = analysis_definition_aggregations[["do.for.each.variable"]][1], 
+                                                                          data = data)
+
+
+
+
 # APPLY ANALYSIS PLAN:
-# analyse_indicator(data,dependent.var = "deviceid",independent.var= "marital_status",hypothesis.type = "direct_reporting",sampling.strategy.stratified = TRUE,case = "CASE_direct_reporting_numerical_categorical")
-data<-missing_data_to_NA(data)
+results_no_disag <- apply_data_analysis_plan(data, analysis_plan_all_vars_no_disag)
+
 results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
 # RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
@@ -128,6 +155,7 @@ arow_per_repeat_value %>% write.csv("./output/master_table_datamerge.csv")
 # PLOTS
 plots <- lapply(seq_along(results), function(resultindex){
   result<-results[[resultindex]]
+
   # printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
   if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){return(NULL)}
 

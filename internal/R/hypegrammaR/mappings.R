@@ -104,11 +104,11 @@ map_to_summary_statistic <- function(case) {
   summary_functions$CASE_direct_reporting_numerical_categorical<- confidence_intervals_mean_groups
   # dependent is categorical:
   summary_functions$CASE_direct_reporting_categorical_ <- percent_with_confints
-  summary_functions$CASE_direct_reporting_categorical_categorical <- percent_with_confints
-  
+  summary_functions$CASE_direct_reporting_categorical_categorical <- percent_with_confints_groups
+
   # GROUP DIFFERENCE
   # dependent is categorical:
-  summary_functions$CASE_group_difference_categorical_categorical <- percent_with_confints
+  summary_functions$CASE_group_difference_categorical_categorical <- percent_with_confints_groups
   summary_functions$CASE_group_difference_numerical_categorical <- confidence_intervals_mean_groups
   
   
