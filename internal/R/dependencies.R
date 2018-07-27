@@ -1,5 +1,10 @@
 # external packages to install/load:
+<<<<<<< HEAD
 .dependencies<-c("dplyr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi")
+=======
+.dependencies<-c("dplyr", "purrr", "questionr","data.table","tidyr","crayon","magrittr","rstudioapi")
+
+>>>>>>> 853dc9ee5a86348475f263652df7c3aa6f2203a9
 source("./internal/R/composite_indicator_weighted_count.R")
 source("./internal/R/survey_design.R")
 source("./internal/R/recoding.R")
@@ -7,6 +12,7 @@ source("./internal/R/load_questionnaire.R")
 source("./internal/R/load_analysis_definitions.R")
 source("./internal/R/hypegrammar/utilities.R")
 source("./internal/R/select_multiplify.R")
+source("./internal/R/load_cluster_ids.R")
 # replaced by hypegrammar:
 # source("./internal/R/aggregation.R")
 # source("./internal/R/KI_aggregation.R")

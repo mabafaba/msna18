@@ -19,7 +19,6 @@ load_cluster_sampling_units <- function(file = "./internal/input_files/cluster_s
     else {
       cluster_formula <- paste0("~", reduce(sampling_units[-1], function(x, y) {paste(x, y, sep = "+")}))
     }
-    
-    return(cluster_formula)
   }
+  return(cluster_formula)
 }
