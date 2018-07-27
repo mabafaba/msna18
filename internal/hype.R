@@ -29,7 +29,20 @@ data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_al
 missing_data_to_NA <- function(data){
   lapply(data,function(x){
     replace(x,which(x %in% c("","N/A","#N/A","NA", " ")),NA)    
-  }) %>% as.data.frame(stringsAsFactors=T)# survey needs with factors.
+  }) %>% as.data.frame(stringsAsFactors=F)# survey needs with factors.
+}
+
+#function that recodes categorical variables using the levels provided in the choices file
+#also converts missing data to NA without messing up the factors 
+levels_for_cat <- function(data, questionnaire){
+  #questionnaire must be loaded
+ data_level <-  lapply(names(data), function(x){
+   replace(data[[x]],which(data[[x]] %in% c("","N/A","#N/A","NA", " ")),NA)
+    if(question_is_categorical(x)){
+      data[[x]] %<>% factor(., levels = questionnaire$choices_per_variable[x] %>% as.data.frame %>% extract2(2) %>% unique)}
+  return(data[[x]])}) 
+ names(data_level) <- names(data)
+ return(data_level %>% as.data.frame)
 }
 
 # data parameters
@@ -45,6 +58,9 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
                                   choices.file = "./internal/input_files/kobo_choices.csv",
                                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
 
+# cleaning and getting the factors out 
+data <- levels_for_cat(data, questionnaire)
+
 #composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
@@ -58,17 +74,15 @@ analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all
 analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(repeat.var = analysis_definition_aggregations[["do.for.each.variable"]][1], 
                                                                              independent.vars = analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]], 
                                                                              data = data)
-data <- missing_data_to_NA(data)
-
 
 analysis_plan_all_vars_no_disag <- map_to_analysis_plan_all_vars_no_disag(repeat.var = analysis_definition_aggregations[["do.for.each.variable"]][1], 
                                                                           data = data)
-
 analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] <- analysis_plan_direct_reporting[,c("dependent.var", "independent.var")]  %>%  lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
 
 
 # APPLY ANALYSIS PLAN:
 results_no_disag <- apply_data_analysis_plan(data, analysis_plan_all_vars_no_disag)
+
 results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
 
 # RESHAPE OUTPUTS FOR MASTER TABLE:

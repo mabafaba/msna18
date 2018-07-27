@@ -21,9 +21,7 @@ percent_with_confints_select_one <- function(dependent.var,
     dependent.var.value=unique(data[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
 
-
-  
-  result_hg_format<- # tryCatch(
+  tryCatch(expr={result_hg_format<- 
   {
     result_svy_format <- svymean(formula(paste0("~", dependent.var)),design, level=0.95) %>% cbind(.,confint(.))
     colnames(result_svy_format)<-c("numbers","min","max")
@@ -39,8 +37,9 @@ percent_with_confints_select_one <- function(dependent.var,
     summary_with_confints[,"max"] <- summary_with_confints[,"max"] %>% replace(summary_with_confints[,"max"] > 1 , 1)
     summary_with_confints %>% as.data.frame
   }
-  return(result_hg_format)}
-
+  return(result_hg_format)}, error=function(error){print(error)})
+  }
+  
 percent_with_confints_select_mult <- function(dependent.var,
                                              design,
                                              na.rm = TRUE){

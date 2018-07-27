@@ -45,14 +45,23 @@ sanitise_data_no_independent<-function(data,
     stop("dependent.var not found in data")
   }
   
+
+  
   if(!sanitise_is_good_dataframe(data)){return(list(success=F,message="not a data frame or data frame without data"))}
   
   # remove records with NA in dependent or independent
   data<-data[!is.na(data[[dependent.var]]),]
   data<-data[(data[[dependent.var]]!=""),]
   
+
+  # still have enough data?
   
-  # still have data?
+  dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
+  if(!dependent_more_than_1){
+    return(list(success=FALSE,message="can not summarise statistics with <2 different values in the dependent variable"))
+  }
+  
+  
   if(!sanitise_is_good_dataframe(data)){return(list(success=F,message="no data (after removing records with NA in dependent variable)"))}
   return(list(success=T,data=data))
 }

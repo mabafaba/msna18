@@ -23,6 +23,7 @@ analyse_indicator<-function(data,
                             sampling.strategy.cluster=FALSE,
                             sampling.strategy.stratified=FALSE,
                             case=NULL){
+  
   options(survey.lonely.psu = "average")
   
   
