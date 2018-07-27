@@ -1,7 +1,7 @@
 rm(list=ls())
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # setwd("../")
-# getwd()
+getwd()
 if(!exists("debugging_mode")){
   debugging_mode<-FALSE
 }
@@ -22,7 +22,17 @@ dir.create("./output/composite_indicator_visualisation",showWarnings = F)
 #load dependencies
   source("./internal/R/dependencies.R")
 
-# LOAD INPUT 
+# LOAD INPUT
+
+# make sure all files exist:
+files_needed<-c("./internal/input_files/data.csv",
+                "./internal/input_files/data_parameters.csv",
+                "./internal/input_files/sampling_frame.csv",
+                "./internal/input_files/kobo_questions.csv",
+                "./internal/input_files/kobo_choices.csv")
+
+filesexist<-sapply(files_needed,file.exists)
+if(any(!filesexist)){stop("Input information seems to be missing. Please open the input xlsx sheets for data and analysis definition and click the update button in the readme sheet of each file. Make sure the input xlsm files  contain all sheets from the template with the names unchanged!")}
 # data 
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 missing_data_to_NA<-function(data){
@@ -39,11 +49,12 @@ data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %
 if(data_parameters$stratified[1]=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
                                                              data.stratum.column = data_parameters$stratum.name.variable[1],
                                                              return.stratum.populations = T)}
-# undebug(add_variable_indicators_weighted_count)
+# load questionnaire and create associated functions:
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
                                   choices.file = "./internal/input_files/kobo_choices.csv",
                                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
-
+# load cluster ids and create associated functions:
+clusterids<-load_cluster_sampling_units()
 
 #composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
@@ -58,27 +69,58 @@ analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all
 # create a data analysis plan with all disaggregation variables as independent variable for all variables as dependent
 analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]],data)
 
-analysis_plan_direct_reporting$dependent.var
+
 
 # random sample of analysis plan rows for testing:
 # analysis_plan_direct_reporting<-analysis_plan_direct_reporting[sample(1:nrow(analysis_plan_direct_reporting),200),]
 analysis_plan_direct_reporting[,c("dependent.var", "independent.var")] <- analysis_plan_direct_reporting[,c("dependent.var", "independent.var")]  %>%  lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
-
 # APPLY ANALYSIS PLAN:
 # analyse_indicator(data,dependent.var = "deviceid",independent.var= "marital_status",hypothesis.type = "direct_reporting",sampling.strategy.stratified = TRUE,case = "CASE_direct_reporting_numerical_categorical")
 data<-missing_data_to_NA(data)
 results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
 # RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
-all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.) 
 
+all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
+all_summary_statistics_labeled <- results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic}) %>% do.call(rbind,.)
+
+
+
+stay_distinguishable<-c("dependent.var","dependent.var.value","independent.var","independent.var.value")
+all_summary_statistics_labelandnames<-all_summary_statistics_labeled
+all_summary_statistics_labelandnames[,stay_distinguishable]<-lapply(stay_distinguishable,function(column){
+  jointlabel<-all_summary_statistics_labeled[[column]]
+  jointlabel[!is.na(all_summary_statistics[[column]])]<-
+    paste0(all_summary_statistics_labeled[[column]][!is.na(all_summary_statistics[[column]])]," (",
+           all_summary_statistics[[column]][!is.na(all_summary_statistics[[column]])],")")
+  jointlabel
+})
+
+all_summary_statistics_labelandnames %>% glimpse
 # save as a csv. Long format + pivot table is great for interactive xlsx
-all_summary_statistics %>% as.data.frame(stringsAsFactors=F) %>%  map_to_file("./output/master_table_long.csv")
+
+all_summary_statistics_labelandnames %>% as.data.frame(stringsAsFactors=F) %>%  map_to_file("./output/master_table_long.csv")
+all_summary_statistics_labeled$dependent.var.value %>% table
 
 # wide format "master" table: questions and answers for columns
-all_summary_statistics$master_table_column_name<-paste(all_summary_statistics$dependent.var,all_summary_statistics$dependent.var.value,sep="::: ")
-all_summary_statistics[,c("independent.var","independent.var.value","master_table_column_name","numbers")] %>%
+all_summary_statistics_labelandnames$master_table_column_name<-paste(all_summary_statistics_labelandnames$dependent.var,all_summary_statistics_labelandnames$dependent.var.value,sep="::: ")
+
+all_summary_statistics_labelandnames[,c("independent.var","independent.var.value","master_table_column_name","numbers")] %>%
   spread(key = c("master_table_column_name"),value = "numbers") %>% map_to_file("./output/master_table_wide.csv")
+
+all_summary_statistics_labelandnames$master_table_column_name<-paste(all_summary_statistics_labelandnames$independent.var,":: ",
+                                                                     all_summary_statistics_labelandnames$independent.var.value," - ",
+                                                                     all_summary_statistics_labelandnames$dependent.var,":: ",
+                                                                     all_summary_statistics_labelandnames$dependent.var.value,
+                                                                     
+                                                                     sep="")
+
+arow_per_repeat_value<-all_summary_statistics_labelandnames[,c("repeat.var.value","master_table_column_name","numbers")] %>%
+  spread(key = c("master_table_column_name"),value = "numbers")
+arow_per_repeat_value %>% nrow
+
+arow_per_repeat_value$master_table_column_name
+arow_per_repeat_value %>% write.csv("./output/master_table_datamerge.csv")
 
 # PLOTS
 plots <- lapply(seq_along(results), function(resultindex){

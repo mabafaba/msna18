@@ -1,10 +1,10 @@
-### function that returns the names of select multiple questions and their indices in the data
-### needs the questionnaire to be loaded
-multiples_in_questionnaire <- function(data){
-  select_mul <- lapply(questionnaire$questions$name, question_is_select_multiple) %>% unlist %>% which
-  select_mul_names <- questionnaire$questions$name[select_mul]
-  return(list(select_mul, select_mul_names))
-}
+# ### function that returns the names of select multiple questions and their indices in the data
+# ### needs the questionnaire to be loaded
+# multiples_in_questionnaire <- function(data){
+#   select_mul <- lapply(questionnaire$questions$name, question_is_select_multiple) %>% unlist %>% which
+#   select_mul_names <- questionnaire$questions$name[select_mul]
+#   return(list(select_mul, select_mul_names))
+# }
 
 
 ###function that returns the indices in the data of the choices for each select multiple question

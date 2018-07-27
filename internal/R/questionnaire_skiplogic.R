@@ -1,6 +1,6 @@
 
 question_is_skipped_apply_condition_to_data<-function(data,condition){
-  print(paste("analysing skiplogic for:",condition))
+  # print(paste("analysing skiplogic for:",condition))
   if(condition=="" | is.null(condition)|is.na(condition)){return(rep(FALSE,nrow(data)))}
   
   hierarchical_condition_string<-string_w_brackets_to_hierarchical_list(condition)
@@ -13,8 +13,9 @@ question_is_skipped_apply_condition_to_data<-function(data,condition){
   if(!is.vector(is_skipped)){
     warning("at least parts of skip logic condition `", condition ,"` could not be read properly.")
     if(is.logical(is_skipped[[1]])){return(is_skipped[[1]])}else{
-      warning("assuming all records are skiped")
     }
+    warning("assuming all records are skipped")
+    return(rep(FALSE,nrow(data)))
   }
   
   return(is_skipped)

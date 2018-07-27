@@ -7,6 +7,7 @@ map_to_labelisation<-function(type){
 }
 
 labels_summary_statistic<-function(x){
+  if(is.null(x)){return(x)}
   summary.statistic<-x
   if(length(unique(summary.statistic[,"dependent.var"]))>1){stop("labels_summary_statistic only works for a single combination of dependent and independent variable.")}
   if(length(unique(summary.statistic[,"independent.var"]))>1){stop("labels_summary_statistic only works for a single combination of dependent and independent variable.")}

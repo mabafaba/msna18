@@ -4,7 +4,10 @@
 source("./internal/R/composite_indicator_weighted_count.R")
 source("./internal/R/survey_design.R")
 source("./internal/R/recoding.R")
+
 source("./internal/R/load_questionnaire.R")
+source("./internal/R/load_cluster_ids.R")
+
 source("./internal/R/load_analysis_definitions.R")
 source("./internal/R/hypegrammar/utilities.R")
 source("./internal/R/select_multiplify.R")

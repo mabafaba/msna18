@@ -44,7 +44,7 @@ load_questionnaire<-function(data,
   insure.string.is.column.header(questions, "type")
   insure.string.is.column.header(questions, "name")
   insure.string.is.column.header(choices, choices.label.column.to.use)
-  insure.string.is.column.header(choices, "list.name")
+  insure.string.is.column.header(choices, "list_name")
   questions$name <- to_alphanumeric_lowercase(questions$name)
   
   begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
@@ -52,7 +52,6 @@ load_questionnaire<-function(data,
   number_of_questions <- (length(questions$name) - length(begin_gr) - length(end_gr))
   
   questions$relevant<-add_group_conditions_to_question_conditions(questions)
-  
   # get data column names
   data_colnames<-names(data)
   
@@ -67,7 +66,7 @@ load_questionnaire<-function(data,
         choices_per_data_column<-questions$type %>% as.character %>% strsplit(" ") %>% lapply(unlist)%>% lapply(function(x){
 
         x %>% lapply(function(y){
-        grep(y,choices[["list.name"]],value=F)
+        grep(y,choices[["list_name"]],value=F)
       }
       ) %>% unlist
     }) %>% lapply(hasdata) %>% lapply(function(x){
@@ -104,7 +103,7 @@ load_questionnaire<-function(data,
      return(labels)
       }
    
-
+    
 
     question_is_numeric <<- function(question.name){
       if(is.null(question.name)){return(FALSE)}
@@ -178,14 +177,34 @@ load_questionnaire<-function(data,
              question_is_skipped()"))
     questionnaire_is_loaded <- TRUE
     is_questionnaire_loaded<-function(){return(TRUE)}
-    return(c(list(questions=questions,choices=choices,choices_per_variable=choices_per_data_column), data))
-
-
 
     
+    # select_multiple_names<-names(data)[question_is_select_multiple(names(data))]
+    # sm_choice_varnames<-lapply(select_multiple_names,function(sm_varname){
+    #   paste(sm_varname,choices_per_data_column[[sm_varname]]$name,sep=".")
+    # })
+    # questions$type[(questions$name %in% sm_choice_varnames) & is.na(questions$type)]<-"sm_choice"
+    
+    question_is_sm_choice<<-function(question.name){
+      if(is.null(question.name)){return(FALSE)}
+      if(is.na(question.name)){return(FALSE)}
+      if(question.name==""){return(FALSE)}
+      
+      var.name.split<-strsplit(question.name,"\\.")
+      question.name.sans.choice<-paste0(var.name.split[[1]][-length(var.name.split[[1]])],collapse=".")
+      choice.name<-var.name.split[[1]][length(var.name.split[[1]])]
+      
+      if(!question_is_select_multiple(question.name.sans.choice)){return(FALSE)}      
+      
+      if(choice.name %in% choices_per_data_column[[question.name.sans.choice]]$name){
+        return(TRUE)
+      }
+      return(FALSE)
     }
+    
+    return(c(list(questions=questions,choices=choices,choices_per_variable=choices_per_data_column), data))
 
-
+    }
 
 
     question_get_choice_labels<-function(responses,variable.name){
@@ -213,7 +232,10 @@ load_questionnaire<-function(data,
 
     }
 
-
+    question_is_sm_choice<-function(question.name){
+      stop("you must successfully run load_questionnaire() first")
+      
+    }
     question_is_categorical<-function(question.name){
       stop("you must successfully run load_questionnaire() first")
     }
@@ -242,6 +264,7 @@ question_variable_type <- function(variables){
       if(question_is_select_multiple(x)){return("select_multiple")}
       if(question_is_select_one(x)){return("select_one")}
       if(question_is_numeric(x)){return("numeric")}
+      
       return(NA)
       })
     )
