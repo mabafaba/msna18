@@ -1,14 +1,13 @@
 # external packages to install/load:
-<<<<<<< HEAD
-.dependencies<-c("dplyr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi")
-=======
-.dependencies<-c("dplyr", "purrr", "questionr","data.table","tidyr","crayon","magrittr","rstudioapi")
+.dependencies<-c("dplyr","purrr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi","igraph","knitr","rlist")
 
->>>>>>> 853dc9ee5a86348475f263652df7c3aa6f2203a9
 source("./internal/R/composite_indicator_weighted_count.R")
 source("./internal/R/survey_design.R")
 source("./internal/R/recoding.R")
+
 source("./internal/R/load_questionnaire.R")
+source("./internal/R/load_cluster_ids.R")
+
 source("./internal/R/load_analysis_definitions.R")
 source("./internal/R/hypegrammar/utilities.R")
 source("./internal/R/select_multiplify.R")
@@ -17,6 +16,10 @@ source("./internal/R/load_cluster_ids.R")
 # source("./internal/R/aggregation.R")
 # source("./internal/R/KI_aggregation.R")
 source("./internal/R/errors.R")
+source("./internal/R/questionnaire_skiplogic.R")
+source("./internal/R/bonus_visualise_composite.R")
+source("./internal/R/labelise.R")
+source("./internal/R/output_htmlreport.R")
 # source("./internal/R/summary_statistics.R")
 
 # stuff for loading/installing packages only when needed:

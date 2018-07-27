@@ -2,7 +2,7 @@
 # 
 
 #' load_questionnaire
-#'
+#' @param data data frame containing the data matching the questionnaire to be loaded.
 #' @param questions.file file name of a csv file containing the kobo form's question sheet
 #' @param choices.file file name of a csv file containing the kobo form's choices sheet
 #' @return list of questions and choices, sorted to match. to data columns.
@@ -44,7 +44,7 @@ load_questionnaire<-function(data,
   insure.string.is.column.header(questions, "type")
   insure.string.is.column.header(questions, "name")
   insure.string.is.column.header(choices, choices.label.column.to.use)
-  insure.string.is.column.header(choices, "list.name")
+  insure.string.is.column.header(choices, "list_name")
   questions$name <- to_alphanumeric_lowercase(questions$name)
   
   begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
@@ -52,7 +52,6 @@ load_questionnaire<-function(data,
   number_of_questions <- (length(questions$name) - length(begin_gr) - length(end_gr))
   
   questions$relevant<-add_group_conditions_to_question_conditions(questions)
-  
   # get data column names
   data_colnames<-names(data)
   
@@ -67,30 +66,44 @@ load_questionnaire<-function(data,
         choices_per_data_column<-questions$type %>% as.character %>% strsplit(" ") %>% lapply(unlist)%>% lapply(function(x){
 
         x %>% lapply(function(y){
-        grep(y,choices[["list.name"]],value=F)
+        grep(y,choices[["list_name"]],value=F)
       }
       ) %>% unlist
-        }) %>% lapply(hasdata) %>% lapply(function(x){
-          choices[x,]
-        })
-        names(choices_per_data_column)<- data_colnames
-        
-        
-        # make functions that need questionnaire
-        
-        question_get_choice_labels <<- function(responses,variable.name){
-          
-          labels<-replace_with_lookup_table(
-            responses,
-            # MAKE LABEL COLUMN A PARAMETER!!!
-            cbind(as.character(choices_per_data_column[[variable.name]]$name),as.character(choices_per_data_column[[variable.name]]$label..datamerge))
-          )
-          
-          # fix those that were not found to go back to original NA
-          labels[is.na(labels)]<-responses[is.na(labels)]
-          labels
-          
-        }
+    }) %>% lapply(hasdata) %>% lapply(function(x){
+      choices[x,]
+    })
+    names(choices_per_data_column)<- data_colnames
+
+
+    # make functions that need questionnaire
+
+   question_get_choice_labels <<- function(responses,variable.name){
+     variable.name<-as.character(variable.name)
+      if(question_is_categorical(variable.name)){
+      labels<-replace_with_lookup_table(
+        as.character(responses),
+        # MAKE LABEL COLUMN A PARAMETER!!!
+        cbind(as.character(choices_per_data_column[[variable.name]]$name),as.character(choices_per_data_column[[variable.name]][,choices.label.column.to.use]))
+      )
+      # fix those that were not found to go back to original NA
+      labels[is.na(labels)]<-responses[is.na(labels)]
+      return(labels)
+      
+      }
+     return(responses)
+   }
+   question_get_question_label<<-function(variable.names){
+     variable.names<-as.character(variable.names)
+     
+     labelcol<-grep("label",names(questions))[1]
+     questionnaire_rows<-match(variable.names,questions[,"name"])
+     labels<-questions[questionnaire_rows,labelcol]
+     labels[is.na(labels)]<-variable.names[is.na(labels)]
+     labels[gsub("[[:space:]]", "", labels)==""]<-variable.names[gsub("[[:space:]]", "", labels)==""]
+     return(labels)
+      }
+   
+    
 
     question_is_numeric <<- function(question.name){
       if(is.null(question.name)){return(FALSE)}
@@ -129,13 +142,69 @@ load_questionnaire<-function(data,
       if(question.name==""){return(FALSE)}
       return(question_is_select_one(question.name) | question_is_select_multiple(question.name))
     }
+    
+    
+    
+    question_is_skipped <<- function(data, question.name){
+      qid<-which(questions$name==question.name)
+      condition<-questions$relevant[qid[1]]
+      question_is_skipped_apply_condition_to_data(data,condition)
+    }
+    
 
-    message("you can now use \n 'get_choice_labels():'change answers to their labels \n question_is_categorical() \n question_is_categorical()\n question_is_select_one() \n question_is_select_multiple()")
+    is_questionnaire_loaded<<-function(){return(TRUE)
+    }
+    
+    
+    
+    message(blue("load_questionnaire() activated the following functions:
+
+
+             identifying data type:
+
+             question_is_numeric()
+             question_is_categorical()
+             question_is_categorical()
+             question_is_select_one()
+             question_is_select_multiple()
+             question_variable_type()
+
+             labels:
+             question_get_choice_labels()
+             question_get_question_label()
+
+             skiplogic:
+             question_is_skipped()"))
     questionnaire_is_loaded <- TRUE
+    is_questionnaire_loaded<-function(){return(TRUE)}
+
+    
+    # select_multiple_names<-names(data)[question_is_select_multiple(names(data))]
+    # sm_choice_varnames<-lapply(select_multiple_names,function(sm_varname){
+    #   paste(sm_varname,choices_per_data_column[[sm_varname]]$name,sep=".")
+    # })
+    # questions$type[(questions$name %in% sm_choice_varnames) & is.na(questions$type)]<-"sm_choice"
+    
+    question_is_sm_choice<<-function(question.name){
+      if(is.null(question.name)){return(FALSE)}
+      if(is.na(question.name)){return(FALSE)}
+      if(question.name==""){return(FALSE)}
+      
+      var.name.split<-strsplit(question.name,"\\.")
+      question.name.sans.choice<-paste0(var.name.split[[1]][-length(var.name.split[[1]])],collapse=".")
+      choice.name<-var.name.split[[1]][length(var.name.split[[1]])]
+      
+      if(!question_is_select_multiple(question.name.sans.choice)){return(FALSE)}      
+      
+      if(choice.name %in% choices_per_data_column[[question.name.sans.choice]]$name){
+        return(TRUE)
+      }
+      return(FALSE)
+    }
+    
     return(c(list(questions=questions,choices=choices,choices_per_variable=choices_per_data_column), data))
 
-
-}
+    }
 
 
     question_get_choice_labels<-function(responses,variable.name){
@@ -143,6 +212,11 @@ load_questionnaire<-function(data,
 
     }
 
+    
+    question_get_question_label<-function(variable.name){
+      stop("you must successfully run load_questionnaire() first")
+    }
+    
     question_is_numeric<-function(question.name){
       stop("you must successfully run load_questionnaire() first")
     }
@@ -158,13 +232,23 @@ load_questionnaire<-function(data,
 
     }
 
-
+    question_is_sm_choice<-function(question.name){
+      stop("you must successfully run load_questionnaire() first")
+      
+    }
     question_is_categorical<-function(question.name){
       stop("you must successfully run load_questionnaire() first")
     }
 
 
 
+    is_questionnaire_loaded<-function(){return(FALSE)
+    }
+    
+  
+    question_is_skipped<-function(data, variable.name){
+      stop("you must successfully run load_questionnaire() first")
+    }
 
 #' variable_type
 #'
@@ -180,6 +264,7 @@ question_variable_type <- function(variables){
       if(question_is_select_multiple(x)){return("select_multiple")}
       if(question_is_select_one(x)){return("select_one")}
       if(question_is_numeric(x)){return("numeric")}
+      
       return(NA)
       })
     )
@@ -206,19 +291,26 @@ add_group_conditions_to_question_conditions<-function(questions){
     is_group_end<-(i %in% as.numeric(end_gr))
     
     if(is_group_start){
-      # print("adding:")
+
       group_conditions<-c(group_conditions,questions$relevant[i])
       condition_that_only_applies_to_this_question<-NULL
     }
     if(is_group_end){
-      # print(group_conditions[-length(group_conditions)])
+
       group_conditions<-group_conditions[-length(group_conditions)]
       condition_that_only_applies_to_this_question<-NULL  }
-    if(!is_group_end ^ !is_group_start){
+    if(!is_group_end & !is_group_start){
       condition_that_only_applies_to_this_question<-questions$relevant[i]
     }
+    
     all_condition_for_this_q<-c(group_conditions,condition_that_only_applies_to_this_question)
-    all_condition_for_this_q<-paste("(",all_condition_for_this_q,")")
+    
+    if(all(all_condition_for_this_q=="")){
+        all_condition_for_this_q<-""
+      }else{
+        all_condition_for_this_q<-paste("(",all_condition_for_this_q[all_condition_for_this_q!=""],")")
+      }
+    
     all_condition_for_this_q_combined<-paste(all_condition_for_this_q,collapse=" and ")
     conditions<-c(conditions,all_condition_for_this_q_combined)  
   }

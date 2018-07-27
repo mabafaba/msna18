@@ -75,13 +75,18 @@
 
 
 grouped_barchart_percent<-function(summary.statistic,filename){
+  if(is.null(summary.statistic)){return(NULL)}
   if(length(summary.statistic)==0){return(NULL)}
   if(nrow(summary.statistic)==0){return(NULL)}
   if(length(unique(summary.statistic$dependent.var.value))>12){
     warning("I don't do grouped barcharts with more than 12 responses. that's madness! there isn't even 12 colours!")
     return(NULL)}
   percent_formats<-function(x,digits=0){return(paste0(round(x*100,digits),"%"))}
-  theplot<-ggplot(summary.statistic,aes(x=independent.var.value,y=numbers,fill=dependent.var.value))+geom_bar(stat = "identity",position='dodge')+theme_tufte()+
+
+
+  
+  
+    theplot<-ggplot(summary.statistic,aes(x=independent.var.value,y=numbers,fill=dependent.var.value))+geom_bar(stat = "identity",position='dodge')+theme_tufte()+
     xlab(unique(summary.statistic$independent.var)[1])+ylab("percent")+ 
     theme(text=element_text(family="Arial Narrow")
           # axis.title.x=element_text(summary.statistic$dependent.var.value"),
@@ -97,9 +102,11 @@ grouped_barchart_percent<-function(summary.statistic,filename){
                        ymax=as.numeric(summary.statistic$max)),
                    position=position_dodge(width=0.9),
                    stat='identity',
-                   width=.1) 
-
-  map_to_file(theplot,filename)
+                   width=.1)+ theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ 
+  number_of_bars<-(length(unique(summary.statistic$dependent.var.value))*length(unique(summary.statistic$independent.var.value)))
+  plotwidth<-5+number_of_bars*1.5
+  map_to_file(theplot,filename,width=plotwidth,unit="cm")
     # 
   return(theplot)
   }
@@ -108,8 +115,7 @@ grouped_barchart_percent<-function(summary.statistic,filename){
 
 
 barchart_average<-function(summary.statistic,filename){
-  
-  
+
   theplot<-ggplot(summary.statistic,aes(x=independent.var.value,y=numbers),fill=reach_style_color_darkgrey(1))+geom_bar(stat = "identity")+theme_tufte()+
     xlab(unique(summary.statistic$independent.var)[1])+ylab(summary.statistic$dependent.var[1])+ 
     theme(text=element_text(family="Arial Narrow")
@@ -125,11 +131,11 @@ barchart_average<-function(summary.statistic,filename){
                        ymin=as.numeric(summary.statistic$min),
                        ymax=as.numeric(summary.statistic$max)),
                    stat='identity',
-                   width=.1) 
+                   width=.1) + theme(axis.text.x = element_text(angle = 45, hjust = 1))
   
-  
-  map_to_file(theplot,filename)
-  # 
+  number_of_bars<-(length(unique(summary.statistic$independent.var.value)))
+  plotwidth<-5+(number_of_bars*1.5)
+  map_to_file(theplot,filename,width=plotwidth,unit="cm")
   return(theplot)
 }
 

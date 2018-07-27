@@ -3,4 +3,5 @@
 rm(list=ls())
 if(!("rstudioapi" %in% installed.packages()[,"Package"])){install.packages("rstudioapi")};require("rstudioapi")
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+debugging_mode<-T
 source("./internal/hype.R")

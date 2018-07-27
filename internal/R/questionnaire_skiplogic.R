@@ -1,25 +1,25 @@
 
-
-
-is_skipped<-function(data,condition){
-  if(condition=="" | is.null(condition)|is.na(condition)){return(rep(nrow(data)),FALSE)}
+question_is_skipped_apply_condition_to_data<-function(data,condition){
+  # print(paste("analysing skiplogic for:",condition))
+  if(condition=="" | is.null(condition)|is.na(condition)){return(rep(FALSE,nrow(data)))}
   
   hierarchical_condition_string<-string_w_brackets_to_hierarchical_list(condition)
+  hierarchical_condition_string<-reduce_single_item_lists(hierarchical_condition_string)
   res<-hierarchical_condition_fulfilled(data,hierarchical_condition_string)
-  
   res<-remove_junk_from_disected_condition(res)
   res<-list.clean(res,recursive = T,fun = is.null)
   res<-reduce_single_item_lists(res)
   is_skipped<-list_collapse_logic_hierarchy(res)
   if(!is.vector(is_skipped)){
     warning("at least parts of skip logic condition `", condition ,"` could not be read properly.")
-    if(is.logical(is_skipped[[1]])){return(is_skipped[[1]])}
+    if(is.logical(is_skipped[[1]])){return(is_skipped[[1]])}else{
+    }
+    warning("assuming all records are skipped")
+    return(rep(FALSE,nrow(data)))
   }
   
   return(is_skipped)
 }
-
-
 
 # takes a condition that's already split into a hierarchical list and applies it to data
 hierarchical_condition_fulfilled<-function(data,x){
@@ -38,18 +38,17 @@ list_collapse_logic_hierarchy<-function(l){
   # logical vector - operater string - logical vector - ....
   # this checks if that is the case:
   
-# if it's not a logical list combo that I can collapse directly, try collapsing first all sub elements ( - using this fun, so it'srecursive):
-if(!is_collapsable_logiclist(l)){l<-lapply(l,list_collapse_logic_hierarchy)}
-# if I it's still not a collapsable thing.. give up 
-if(!is_collapsable_logiclist(l)){
-  print(l)
-  warning("collapsable hierarchy list has a structure that I can't handle:")
-  return(l)
-  
-}
-# otherwise sweet, let's collapse the first three elements
-if(l[[2]]=="&"){combined<-l[[1]] | l[[3]]}
-if(l[[2]]=="|"){combined<-l[[1]] & l[[3]]}
+  # if it's not a logical list combo that I can collapse directly, try collapsing first all sub elements ( - using this fun, so it'srecursive):
+  if(!is_collapsable_logiclist(l)){l<-lapply(l,list_collapse_logic_hierarchy)}
+  # if I it's still not a collapsable thing.. give up 
+  if(!is_collapsable_logiclist(l)){
+    warning("collapsable hierarchy list has a structure that I can't handle:")
+    return(l)
+    
+  }
+  # otherwise sweet, let's collapse the first three elements
+  if(l[[2]]=="&"){combined<-l[[1]] | l[[3]]}
+  if(l[[2]]=="|"){combined<-l[[1]] & l[[3]]}
   l[[1]]<-NULL
   l[[1]]<-NULL
   l[[1]]<-combined
@@ -160,7 +159,7 @@ single_condition_fulfilled<-function(data,x){
 
 # is condition type "selected"?
 is_selected_condition<-function(condition){
-  (length(grep('}, "',condition,fixed = T))!=0)|(length(grep("}, '",condition,fixed = T))!=0)
+  (length(grep("}[[:space:]]*,[[:space:]]*['\"]",condition,fixed = F))!=0)
 }
 # is condition type "numric"?
 is_numeric_condition<-function(condition){
@@ -180,6 +179,10 @@ selected_condition_fulfilled<-function(data,condition){
   conditional_value<-strsplit(conditional_value,"\")")[[1]][1]
   
   varname<-to_alphanumeric_lowercase(conditional_var)
+  # if the variable is not in the data we're giving up:
+  if(!(varname %in% names(data))){
+    warning(paste("couldn't figure out part of skip logic condition:\n",condition,"\n", varname," is not a column name in the provided data.\nassuming no records are skipped."))
+    return(rep(FALSE,nrow(data)))}
   
   lapply(data[,varname],function(x){
     (conditional_value%in%(x %>% as.character %>% strsplit(" ") %>% unlist))
@@ -201,6 +204,9 @@ numeric_condition_fulfilled<-function(data,condition){
   to_compare_components<-gsub("\\+","HERESANOPERATOR+HERESANOPERATOR",to_compare)
   to_compare_components<- strsplit(to_compare_components,"HERESANOPERATOR")[[1]]
   to_compare_components_as_varnames<-lapply(to_compare_components,extract_varname_from_condition) %>% unlist %>% to_alphanumeric_lowercase
+  if(!(to_compare_components_as_varnames %in% names(data))){
+    warning(paste("couldn't figure out skip logic:",varname,"is not a column name in the provided data."))
+    return(rep(TRUE,nrow(data)))}
   # lapply(to_compare_components_as_varnames,function(x){if(!is.na(x)){return(data[,x])}else{NA}})
   varnames_subset_rexpression<-to_compare_components_as_varnames %>% lapply(function(x){if(!is.na(x)){return(paste0('data[,"',x,'"]'))}else{return(x)}}) %>% unlist
   varnames_subset_rexpression[is.na(varnames_subset_rexpression)]<-to_compare_components[is.na(varnames_subset_rexpression)]   
@@ -255,8 +261,6 @@ extract_varname_from_condition<-function(condition){
   varname<-  strsplit(varname,"\\}")[[1]][1]
   return(to_alphanumeric_lowercase(varname))
 }
-
-
 
 
 

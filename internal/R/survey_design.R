@@ -44,7 +44,6 @@ load_samplingframe <- function(sampling.frame.file,
           data.strata.not.in.sampleframe<-samplecounts[!strataexists]
           # throw error if data strata not found in sampling frame
           if(length(data.strata.not.in.sampleframe)!=0){
-            print(data.strata.not.in.sampleframe)
             stop(paste("data has strata names that don't exist in sampling frame. records in this stratum will be ignored in all weighted functions."))
           }
           # return sample counts

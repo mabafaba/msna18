@@ -35,8 +35,7 @@ apply_data_analysis_plan<-function(data,analysisplan){
 
 
 printparamlist<-function(x,title=""){
-  
-  cat("\014")
+  # if(!exists("debugging_mode")){cat("\014")}else{if(!debugging_mode){cat("\014")}}
   cat(title)
   cat("\n")
   cbind(names(x[-length(x)]),as.matrix(x)[-length(x)]) %>% apply(1,paste,collapse=" = '") %>% paste(collapse="'\n") %>% cat

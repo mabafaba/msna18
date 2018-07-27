@@ -7,10 +7,11 @@ add_variable_indicators_weighted_count<-function(data,composite_indicator_defini
   list.of.new.indicator.definitions <- composite_indicator_definitions %>%
     # split definitions by new indicators to create. specify levels to insure order stays consistent
     split.data.frame(factor(composite_indicator_definitions$new.var.name,levels=unique(composite_indicator_definitions$new.var.name)))
-    composite_indicator_definitions$new.var.name <- to_alphanumeric_lowercase(composite_indicator_definitions$new.var.name)
-    
+  composite_indicator_definitions$new.var.name <- to_alphanumeric_lowercase(composite_indicator_definitions$new.var.name)
+  
   # this has to be a loop, because composite indicators may depend on previous composite indicators.
   for(i in seq_along(list.of.new.indicator.definitions)){
+
       data[[unique(list.of.new.indicator.definitions[[i]]$new.var.name)[1]]] <- composite_indicator_weighted_count(data,indicator_definition = list.of.new.indicator.definitions[[i]])
       }
 
@@ -25,11 +26,12 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
   if(!("value" %in% names(indicator_definition))){stop("indicator definition must have a column called 'value'")}
   if(!("weight" %in% names(indicator_definition))){stop("indicator definition must have a column called 'weight'")}
  # if(length(unique(indicator_definition$new.var.name))!=1){stop("trying to make composite indicator with more than one new name for the newly created variable")}
-
+  
   # split indicator definition by source variable: 
   indicator_definition_by_variable <- indicator_definition %>% split.data.frame(indicator_definition$var) 
   
   all_recoded_vars<-lapply(indicator_definition_by_variable,
+
          function(this_var_recoding_definition){
             var.to.recode <- as.character(unique(this_var_recoding_definition$var))
                 # return the weights corresponding to each value

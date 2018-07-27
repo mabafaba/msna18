@@ -10,6 +10,10 @@ map_to_analysis_plan_all_vars_as_dependent <- function(independent.vars,data,hyp
                               case=paste0("CASE_",hypothesis.type,"_",ifelse(data %>% sapply(is.numeric),"numerical","categorical"),"_categorical")
                               ,stringsAsFactors = F)
     analysisplan <- analysisplan[analysisplan[,"dependent.var"]!= analysisplan[,"independent.var"],]
+    dependent_is_sm_choice<-sapply(analysisplan[,"dependent.var"],question_is_sm_choice)
+    analysisplan <- analysisplan[!dependent_is_sm_choice,]
+    
+    
     return(analysisplan)
   }) %>% do.call(rbind,.)
 }
