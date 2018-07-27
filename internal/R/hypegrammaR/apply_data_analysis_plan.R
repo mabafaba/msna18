@@ -1,14 +1,17 @@
 apply_data_analysis_plan<-function(data,analysisplan){
-  
+  ?slice
   if(!is.null(analysisplan[,"repeat.var"])){
-      rep.v <- unique(analysisplan$repeat.var)
-      repeat.var.value <- unique(data[[rep.v]])
+    repeat.var <- as.character(unique(analysisplan$repeat.var)[1])
+      repeat.var.value <- unique(data[[repeat.var]])
       analysisplan <- analysisplan %>% slice(rep(1:n(), each = length(repeat.var.value))) %>% cbind(.,repeat.var.value, stringsAsFactors = F)}
   analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
   
   results<- apply(analysisplan,1,function(x){
     if(!is.null(x["repeat.var"])&(!is.na(x["repeat.var"][1]))){
-      this_valid_data <- data[data[,x["repeat.var"]] == as.character(x["repeat.var.value"]),]}
+      this_valid_data <- data[data[,x["repeat.var"]] == as.character(x["repeat.var.value"]),]}else{
+        this_valid_data<-data
+      }
+    
     this_valid_data<-this_valid_data[
       which(
         !(is.na(data[,x["dependent.var"]]))),]
@@ -38,10 +41,14 @@ apply_data_analysis_plan<-function(data,analysisplan){
     result$repeat.var<-x["repeat.var"]
     result$repeat.var.value<-x["repeat.var.value"]}
     if(!is.null(result$summary.statistic)){
-        result$summary.statistic$repeat.var<-repeat.var
-        result$summary.statistic$repeat.var.value<-repeat.var.value
+      if(nrow(result$summary.statistic)>0){
+        result$summary.statistic$repeat.var<-x["repeat.var"]
+        result$summary.statistic$repeat.var.value<-x["repeat.var.value"]
+      }else{
+        result$summary.statistic$repeat.var<-NULL
+        result$summary.statistic$repeat.var.value<-NULL
         }
-    
+    }
     return(result)})
   
   # names(results)<-analysisplan$dependent.var

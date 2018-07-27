@@ -68,6 +68,7 @@ recode_generic <- function(data, x, value, condition, to, variable.name){
 #'@details NA's stay NA
 #'@return vector of the same length as th einput vector, all values are either a numeric value specified in "to" or NA's
 recode_select_multiple <- function(data, x, value, condition, to){
+  x<-as.character(x)
   if(is.null(value)){stop("At least one parameter must be provided")}
   x_recoded <- rep(NA, length(x))
   value <- value %>% strsplit(",") %>% as.vector %>% unlist %>% gsub(" ", "", .)

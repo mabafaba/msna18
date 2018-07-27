@@ -1,7 +1,7 @@
 rm(list=ls())
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # setwd("../")
-getwd()
+# getwd()
 if(!exists("debugging_mode")){
   debugging_mode<-FALSE
 }
@@ -29,10 +29,20 @@ files_needed<-c("./internal/input_files/data.csv",
                 "./internal/input_files/data_parameters.csv",
                 "./internal/input_files/sampling_frame.csv",
                 "./internal/input_files/kobo_questions.csv",
-                "./internal/input_files/kobo_choices.csv")
+                "./internal/input_files/kobo_choices.csv",
+                "./internal/input_files/cluster_sample.csv")
 
 filesexist<-sapply(files_needed,file.exists)
-if(any(!filesexist)){stop("Input information seems to be missing. Please open the input xlsx sheets for data and analysis definition and click the update button in the readme sheet of each file. Make sure the input xlsm files  contain all sheets from the template with the names unchanged!")}
+
+if(any(!filesexist)){
+missing_sheets<-files_needed[!filesexist] %>%  strsplit("/") %>% lapply(function(x){x[length(x)] %>% gsub(".csv","",.)}) %>% unlist %>% paste(collapse = "\n")
+stop(paste0(
+"Input information seems to be missing.
+Please open the input xlsx sheets for data and analysis definition and click the update button in the readme sheet of each file.
+Make sure the input xlsm files  contain all sheets from the template with the names unchanged! Not exported sheets:\n",
+missing_sheets))
+}
+
 # data 
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 missing_data_to_NA<-function(data){
@@ -62,15 +72,18 @@ data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAs
 data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %>% to_alphanumeric_lowercase
 
 # load samplingframe (only if data_parameters says it's a stratified sample)
-if(data_parameters$stratified[1]=="yes"){sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
+if(data_parameters$stratified[1]=="yes"){
+  
+  if(is.na(data_parameters$stratum.name.variable)){stop("if the input sheets \"define stratified\":\"yes\"", "then you also must fill a value for \"stratum name variable\" (see input sheet xlsm)")}
+
+    sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
                                                              data.stratum.column = data_parameters$stratum.name.variable[1],
                                                              return.stratum.populations = T)}
 # load questionnaire and create associated functions:
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
-                                  choices.file = "./internal/input_files/kobo_choices.csv",
+                                    choices.file = "./internal/input_files/kobo_choices.csv",
                                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
 # load cluster ids and create associated functions:
-clusterids<-load_cluster_sampling_units()
 
 # cleaning and getting the factors out 
 data <- levels_for_cat(data, questionnaire)
@@ -87,7 +100,6 @@ data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv"
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F) %>% remove.empty.rows 
 # create a data analysis plan with all disaggregation variables as independent variable for all variables as dependent
 
-analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]],data)
 
 
 

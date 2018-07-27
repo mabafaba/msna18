@@ -5,3 +5,4 @@ if(!("rstudioapi" %in% installed.packages()[,"Package"])){install.packages("rstu
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 debugging_mode<-T
 source("./internal/hype.R")
+options(error=recover)
