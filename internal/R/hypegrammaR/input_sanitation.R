@@ -1,6 +1,4 @@
 sanitise_group_difference<-function(data,dependent.var,independent.var){
-
-
   independent_less_than_30 <- length(unique(data[[independent.var]])) <= 30
 
   if(!independent_less_than_30){
