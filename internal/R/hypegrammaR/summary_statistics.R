@@ -37,7 +37,9 @@ percent_with_confints_select_one <- function(dependent.var,
     summary_with_confints[,"max"] <- summary_with_confints[,"max"] %>% replace(summary_with_confints[,"max"] > 1 , 1)
     summary_with_confints %>% as.data.frame
   }
-  return(result_hg_format)}, error=function(error){print(error)}, finally={print("skipping this")})
+  return(result_hg_format)}, error=function(e){
+    .write_to_log("percent_with_confints_select_one failed with error:")
+    .write_to_log(e)})
   }
   
 percent_with_confints_select_mult <- function(dependent.var,

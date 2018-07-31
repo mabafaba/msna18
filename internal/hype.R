@@ -111,7 +111,6 @@ composite_indicators_definitions_weighted_counts<-load_composite_indicator_defin
 visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
 data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
 data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
-
 # load analysis definitions
 # aggregating all variables (direct reporting)
 # list of variables to disaggregate by:
@@ -132,15 +131,16 @@ analysis_plan_all_vars_no_disag <- map_to_analysis_plan_all_vars_no_disag(repeat
                                                                           data = data)
 
 
+analysisplan<-rbind(analysis_plan_direct_reporting,analysis_plan_all_vars_no_disag)
+
 # APPLY ANALYSIS PLAN:
-results_no_disag <- apply_data_analysis_plan(data, analysis_plan_all_vars_no_disag)
-results<-apply_data_analysiçs_plan(data,analysis_plan_direct_reporting)
-options(error=recover)
-# RESHAPE OUTPUTS FOR MASTER TABLE:
+results<-apply_data_analysis_plan(data,analysisplan)
+results %>% lapply(function(x){x$summary.statistic %>% names %>% paste(collapse=" / ") %>% paste(x$input.parameters$case,"---",.)}) %>% unlist %>% table
+
+#RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
 
 
-results %>% lapply(function(x){x$message})
 all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
 all_summary_statistics_labeled <- results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic}) %>% do.call(rbind,.)
 

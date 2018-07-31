@@ -2,6 +2,7 @@ apply_data_analysis_plan<-function(data,analysisplan){
   if(!is.null(analysisplan[,"repeat.var"])){
     repeat.var <- as.character(unique(analysisplan$repeat.var)[1])
       repeat.var.value <- unique(data[[repeat.var]])
+      repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
       analysisplan <- analysisplan %>% slice(rep(1:n(), each = length(repeat.var.value))) %>% cbind(.,repeat.var.value, stringsAsFactors = F)}
   analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
   x<-analysis_plan_all_vars_no_disag[10,] %>% unlist
@@ -21,7 +22,7 @@ apply_data_analysis_plan<-function(data,analysisplan){
     }
 
     printparamlist(x,"1/2: calculating summary statistics and hypothesis tests")
-    
+    .write_to_log(printparamlist(x,"1/2: calculating summary statistics and hypothesis tests"))
     if(is.na(x["independent.var"])|is.null(x["independent.var"])){
       indep.var <- NULL}else{
         indep.var <- x["independent.var"]
