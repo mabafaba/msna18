@@ -36,15 +36,17 @@ apply_data_analysis_plan<-function(data,analysisplan){
                               case=x["case"])
     
     if(!is.null(x["repeat.var"])&(!is.na(x["repeat.var"]))){
-    result$repeat.var<-x["repeat.var"]
-    result$repeat.var.value<-x["repeat.var.value"]}
+      result$repeat.var<-x["repeat.var"]
+      result$repeat.var.value<-x["repeat.var.value"]
+    }
+    
     if(!is.null(result$summary.statistic)){
       if(nrow(result$summary.statistic)>0){
         result$summary.statistic$repeat.var<-x["repeat.var"]
         result$summary.statistic$repeat.var.value<-x["repeat.var.value"]
       }else{
-        result$summary.statistic$repeat.var<-NULL
-        result$summary.statistic$repeat.var.value<-NULL
+        result$summary.statistic$repeat.var<-character(0)
+        result$summary.statistic$repeat.var.value<-character(0)
         }
     }
     return(result)})

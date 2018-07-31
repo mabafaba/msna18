@@ -135,13 +135,18 @@ analysisplan<-rbind(analysis_plan_direct_reporting,analysis_plan_all_vars_no_dis
 
 # APPLY ANALYSIS PLAN:
 results<-apply_data_analysis_plan(data,analysisplan)
-results %>% lapply(function(x){x$summary.statistic %>% names %>% paste(collapse=" / ") %>% paste(x$input.parameters$case,"---",.)}) %>% unlist %>% table
 
 #RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
 
 
 all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
+# results %>% lapply(function(x){x$summary.statistic %>% names %>%
+#     paste(collapse=" / ") %>% paste(x$input.parameters$case,"--",.)
+# # (function(x){"ci_l" %in% x})
+#   }) %>%
+#   unlist %>% table %>% kable
+
 all_summary_statistics_labeled <- results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic}) %>% do.call(rbind,.)
 
 dir.create("./internal/log")
@@ -161,7 +166,6 @@ all_summary_statistics_labelandnames %>% glimpse
 # save as a csv. Long format + pivot table is great for interactive xlsx
 
 all_summary_statistics_labelandnames %>% as.data.frame(stringsAsFactors=F) %>%  map_to_file("./output/master_table_long.csv")
-all_summary_statistics_labeled$dependent.var.value %>% table
 
 # wide format "master" table: questions and answers for columns
 all_summary_statistics_labelandnames$master_table_column_name<-paste(all_summary_statistics_labelandnames$dependent.var,all_summary_statistics_labelandnames$dependent.var.value,sep="::: ")
@@ -178,7 +182,7 @@ all_summary_statistics_labelandnames$master_table_column_name<-paste(all_summary
 
 arow_per_repeat_value<-all_summary_statistics_labelandnames[,c("repeat.var.value","master_table_column_name","numbers")] %>%
   spread(key = c("master_table_column_name"),value = "numbers")
-
+arow_per_repeat_value %>% glimpse
 arow_per_repeat_value %>% write.csv("./output/master_table_datamerge.csv")
 
 # PLOTS

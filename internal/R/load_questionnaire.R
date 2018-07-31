@@ -97,9 +97,12 @@ load_questionnaire<-function(data,
      
      labelcol<-grep("label",names(questions))[1]
      questionnaire_rows<-match(variable.names,questions[,"name"])
-     labels<-questions[questionnaire_rows,labelcol]
+     questionnaire_rows[is.na(variable.names)]<-NA
+     labels<-questionnaire_rows
+     labels[!is.na(questionnaire_rows)]<-questions[questionnaire_rows[!is.na(questionnaire_rows)],labelcol]
      labels[is.na(labels)]<-variable.names[is.na(labels)]
-     labels[gsub("[[:space:]]", "", labels)==""]<-variable.names[gsub("[[:space:]]", "", labels)==""]
+     
+     labels[gsub("[[:space:]]", "", labels)==""| is.na(variable.names)]<-variable.names[gsub("[[:space:]]", "", labels)==""| is.na(variable.names)]
      return(labels)
       }
    

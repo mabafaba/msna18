@@ -5,7 +5,7 @@
 #'
 #' @param data
 #' @param dependent.var string with the column name in `data` of the dependent variable
-#' @param independen.var string with the column name in `data` of the independent variable
+#' @param independent.var string with the column name in `data` of the independent variable
 #' @param hypothesis.type the type of hypothesis as a string. Allowed values are "direct_reporting", "group_difference", "limit", "correlation" or "change"
 #' @param sampling.strategy.cluster set to TRUE if you used cluster sampling
 #' @param sampling.strategy.stratified set to TRUE if you used stratified sampling

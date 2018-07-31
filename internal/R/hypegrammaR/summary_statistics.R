@@ -229,7 +229,7 @@ confidence_intervals_mean <- function(dependent.var,
     summary <- svymean(formula(formula_string), design, na.rm = T)
     confints <- confint(summary, level = 0.95)
     results <- data.frame(dependent.var = dependent.var,
-               independen.var = "NA",
+               independent.var = "NA",
                dependent.var.value = "NA",
                independent.var.value = "NA",
                numbers=summary[1],
