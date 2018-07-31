@@ -55,8 +55,6 @@ analyse_indicator<-function(data,
             }
         }
 
-
-  data_sanitised<-
     
   if(data_sanitised$success){
     data<-data_sanitised$data
