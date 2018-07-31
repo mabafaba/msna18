@@ -4,9 +4,20 @@ hypothesis_test_chisquared <- function(dependent.var,
                                   design){
 
 
-
+  .write_to_log(paste0("chisquared testing:\n",
+                       "dependent.var: ", dependent.var,"\n",
+                       "independent.var:",independent.var,"\n\n"
+                ))
   formula_string<-paste0("~",independent.var, "+", dependent.var)
-  chisq <- svychisq (formula(formula_string), design, na.rm = TRUE)
+  chisq<-tryCatch(
+  {svychisq (formula(formula_string), design, na.rm = TRUE)
+  },
+  error=function(e){
+    .write_to_log(paste0("FAILED with error:\n",e,"\n"))
+    .write_to_log(kable(table(design$variables[,c(dependent.var,independent.var)])))
+    return(NULL)}
+  
+  )
   results<-list()
   results$results <- list(F=chisq$statistic, p.value=chisq$p.value %>% unname)
   results$parameters <- chisq$parameter %>% as.list

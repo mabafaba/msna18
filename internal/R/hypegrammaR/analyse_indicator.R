@@ -109,9 +109,11 @@ analyse_indicator<-function(data,
     }
 
 empty_result<-function(input.parameters,message){
+  
   empty_summary_stat<-matrix(0, ncol = 8, nrow = 0) %>% as.data.frame
   colnames(empty_summary_stat)<-c("dependent.var","independent.var","dependent.var.value", "independent.var.value","numbers","se","min", "max")
-  
+  .write_to_log("data sanitation decided not to produce summary statistics. Message:")
+  .write_to_log(message)
   return(
     list(
       input.parameters=input.parameters,

@@ -33,6 +33,24 @@ files_needed<-c("./internal/input_files/data.csv",
                 "./internal/input_files/cluster_sample.csv")
 
 filesexist<-sapply(files_needed,file.exists)
+.log<-list()
+.logfile<-"./output/log.txt"
+
+.write_to_log<-function(x){
+  .log<-c(.log,x)
+  sink(.logfile,append = T)
+  cat("\n\n\n---------------------\n---------------------\n")
+  cat(x)
+  sink()
+}
+
+.clearlog<-function(){
+  sink(.logfile,append = F)
+  cat("")
+  sink()
+}
+
+.clearlog()
 
 if(any(!filesexist)){
 missing_sheets<-files_needed[!filesexist] %>%  strsplit("/") %>% lapply(function(x){x[length(x)] %>% gsub(".csv","",.)}) %>% unlist %>% paste(collapse = "\n")
@@ -114,19 +132,20 @@ analysis_plan_all_vars_no_disag <- map_to_analysis_plan_all_vars_no_disag(repeat
                                                                           data = data)
 
 
-
-
 # APPLY ANALYSIS PLAN:
 results_no_disag <- apply_data_analysis_plan(data, analysis_plan_all_vars_no_disag)
-
-results<-apply_data_analysis_plan(data,analysis_plan_direct_reporting)
+results<-apply_data_analysiçs_plan(data,analysis_plan_direct_reporting)
+options(error=recover)
 # RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
 
+
+results %>% lapply(function(x){x$message})
 all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
 all_summary_statistics_labeled <- results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic}) %>% do.call(rbind,.)
 
-
+dir.create("./internal/log")
+all_summary_statistics %>% saveRDS("./internal/log/results.RDS")
 
 stay_distinguishable<-c("dependent.var","dependent.var.value","independent.var","independent.var.value")
 all_summary_statistics_labelandnames<-all_summary_statistics_labeled
@@ -159,9 +178,7 @@ all_summary_statistics_labelandnames$master_table_column_name<-paste(all_summary
 
 arow_per_repeat_value<-all_summary_statistics_labelandnames[,c("repeat.var.value","master_table_column_name","numbers")] %>%
   spread(key = c("master_table_column_name"),value = "numbers")
-arow_per_repeat_value %>% nrow
 
-arow_per_repeat_value$master_table_column_name
 arow_per_repeat_value %>% write.csv("./output/master_table_datamerge.csv")
 
 # PLOTS

@@ -3,6 +3,6 @@
 rm(list=ls())
 if(!("rstudioapi" %in% installed.packages()[,"Package"])){install.packages("rstudioapi")};require("rstudioapi")
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-debugging_mode<-T
+debugging_mode<-F
 source("./internal/hype.R")
-options(error=recover)
+debug(apply_data_analysis_plan)
