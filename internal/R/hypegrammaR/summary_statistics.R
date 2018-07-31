@@ -37,7 +37,7 @@ percent_with_confints_select_one <- function(dependent.var,
     summary_with_confints[,"max"] <- summary_with_confints[,"max"] %>% replace(summary_with_confints[,"max"] > 1 , 1)
     summary_with_confints %>% as.data.frame
   }
-  return(result_hg_format)}, error=function(error){print(error)})
+  return(result_hg_format)}, error=function(error){print(error)}, finally={print("skipping this")})
   }
   
 percent_with_confints_select_mult <- function(dependent.var,
@@ -218,7 +218,6 @@ percent_with_confints_select_mult_groups <- function(dependent.var,
 # }
 
 
-
 confidence_intervals_mean <- function(dependent.var,
                                      independent.var = NULL,
                                      design,
@@ -227,12 +226,15 @@ confidence_intervals_mean <- function(dependent.var,
     formula_string<-paste0("~as.numeric(", dependent.var, ")")
     summary <- svymean(formula(formula_string), design, na.rm = T)
     confints <- confint(summary, level = 0.95)
-    results<-list()
-    results$names <- dependent.var
-    results$numbers <- summary
-    results$min <- confints[,1]
-    results$max <- confints[,2]
-    return(results %>% as.data.frame)
+    results <- data.frame(dependent.var = dependent.var,
+               independen.var = "NA",
+               dependent.var.value = "NA",
+               independent.var.value = "NA",
+               numbers=summary[1],
+               se=summary[2],
+               min=confints[1],
+               max=confints[2])
+    return(results)
  }
 
   confidence_intervals_mean_groups <- function(dependent.var,
@@ -242,13 +244,23 @@ confidence_intervals_mean <- function(dependent.var,
 
   formula_string <- paste0("~as.numeric(", dependent.var,")")
   by <- paste0("~", independent.var, sep = "")
-  summary <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T)
-  confints <- confint(summary, level = 0.95)
-  summary$min <- confints[,1]
-  summary$max <- confints[,2]
-  dependent.var.value <- rep(NA, length(summary$min))
-  results<- data.frame(dependent.var,independent.var,dependent.var.value, summary) 
-  colnames(results) <- c("dependent.var","independent.var","dependent.var.value","independent.var.value","numbers", "se", "min", "max")
+  
+  result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
+  unique.independent.var.values <- design$variables[[independent.var]] %>% unique
+  results<-unique.independent.var.values %>%
+    lapply(function(x){
+      dependent_value_x_stats <- result_svy_format[x,]
+      colnames(dependent_value_x_stats)<-c("independent.var.value","numbers","min","max")
+      data.frame(dependent.var=dependent.var,
+                 independent.var=independent.var,
+                 dependent.var.value= NA,
+                 independent.var.value=x,
+                 numbers=dependent_value_x_stats[2],
+                 se=NA,
+                 min=dependent_value_x_stats[3],
+                 max=dependent_value_x_stats[4])
+    }) %>% do.call(rbind,.)
+
   return(results)
 }
 
