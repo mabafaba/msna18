@@ -220,9 +220,6 @@ percent_with_confints_select_mult_groups <- function(dependent.var,
 # }
 
 
-dependent.var <- "respondent.age"
-independent.var <- "district"
-
 confidence_intervals_mean <- function(dependent.var,
                                      independent.var = NULL,
                                      design,
@@ -255,7 +252,7 @@ confidence_intervals_mean <- function(dependent.var,
   results<-unique.independent.var.values %>%
     lapply(function(x){
       dependent_value_x_stats <- result_svy_format[x,]
-      colnames(result_svy_format)<-c("independent.var.value","numbers","min","max")
+      colnames(dependent_value_x_stats)<-c("independent.var.value","numbers","min","max")
       data.frame(dependent.var=dependent.var,
                  independent.var=independent.var,
                  dependent.var.value= NA,
