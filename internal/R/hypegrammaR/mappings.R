@@ -185,18 +185,13 @@ map_to_visualisation <- function(case) {
   
   # add implemented cases:
   visualisation_functions[["CASE_group_difference_categorical_categorical"]] <- grouped_barchart_percent
-  # visualisation_functions[["CASE_group_difference_numerical_categorical"]] <- barchart_with_error_bars
+  visualisation_functions[["CASE_group_difference_numerical_categorical"]] <- barchart_average
   # visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_with_error_bars
   visualisation_functions[["CASE_direct_reporting_numerical_"]] <- barchart_average
-  visualisation_functions[["CASE_direct_reporting_categorical_categorical"]] <- grouped_barchart_percent
-  visualisation_functions[["CASE_direct_reporting_numerical_categorical"]] <- barchart_average
+  visualisation_functions[["CASE_direct_reporting_categorical_"]] <- grouped_barchart_percent
   
   return(visualisation_functions[[case]])
 }
-
-
-
-
 
 map_to_file<-function(object,filename,...){
 

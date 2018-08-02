@@ -143,7 +143,30 @@ barchart_average<-function(summary.statistic,filename){
 
 
 
-
+barchart_percent<-function(summary.statistic,filename){
+  
+  theplot<-ggplot(summary.statistic,aes(x=independent.var.value,y=numbers),fill=reach_style_color_darkgrey(1))+geom_bar(stat = "identity")+theme_tufte()+
+    xlab(unique(summary.statistic$independent.var)[1])+ylab(summary.statistic$dependent.var[1])+ 
+    theme(text=element_text(family="Arial Narrow")
+          # axis.title.x=element_text(summary.statistic$dependent.var.value"),
+          # axis.text.x=element_blank(),
+          # axis.ticks.x=element_blank(),
+          # axis.title.y=element_blank(),
+          # axis.text.y=element_blank(),
+          # axis.ticks.y=element_blank(),
+          # plot.margin = unit(x = c(0,0,0,0),'null')
+    )+
+    geom_errorbar( aes(x=summary.statistic$independent.var.value,
+                       ymin=as.numeric(summary.statistic$min),
+                       ymax=as.numeric(summary.statistic$max)),
+                   stat='identity',
+                   width=.1) + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+  number_of_bars<-(length(unique(summary.statistic$independent.var.value)))
+  plotwidth<-5+(number_of_bars*1.5)
+  map_to_file(theplot,filename,width=plotwidth,unit="cm")
+  return(theplot)
+}
 
 
 

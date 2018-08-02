@@ -273,96 +273,6 @@ independent.var:yes_no_host
 
 ---------------------
 ---------------------
-data sanitation decided not to produce summary statistics. Message:
-
-
----------------------
----------------------
-can not test group difference with <2 different values in the dependent variable
-
-
----------------------
----------------------
-
-
-
----------------------
----------------------
-
-
-
----------------------
----------------------
-
-
-
----------------------
----------------------
-data sanitation decided not to produce summary statistics. Message:
-
-
----------------------
----------------------
-can not test group difference with <2 different values in the dependent variable
-
-
----------------------
----------------------
-
-
-
----------------------
----------------------
-data sanitation decided not to produce summary statistics. Message:
-
-
----------------------
----------------------
-can not test group difference with <2 different values in the dependent variable
-
-
----------------------
----------------------
-
-
-
----------------------
----------------------
-data sanitation decided not to produce summary statistics. Message:
-
-
----------------------
----------------------
-can not test group difference with <2 different values in the dependent variable
-
-
----------------------
----------------------
-
-
-
----------------------
----------------------
-
-
-
----------------------
----------------------
-data sanitation decided not to produce summary statistics. Message:
-
-
----------------------
----------------------
-can not test group difference with <2 different values in the dependent variable
-
-
----------------------
----------------------
-
-
-
----------------------
----------------------
 chisquared testing:
 dependent.var: hh_ids
 independent.var:yes_no_host
@@ -413,6 +323,8055 @@ not a data frame or data frame without data
 ---------------------
 ---------------------
 
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: beh_change
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: girls_beh_change
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: boys_beh_change
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: girls_harsh_work_type
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: girls_harsh_work_type_other
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: boys_harsh_work_type_other
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: separated_members
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: free_movement
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: not_safe_men_boys
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: not_safe_women_girls
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: not_safe_women_girls_where
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: gbv_services
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: relations_host
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: legal_system
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: decision_making
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: own_land
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: land_docs
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: eviction_risk
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: rent_paid_money_inkind
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: rent_pay_change
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: rent_frequency
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: unable_pay_rent
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: food_now
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: food_no_reason1
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: food_no_reason2
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: food_normally
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: food_source
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: food_change
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: primary_source
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: secondary_source
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: tertiary_source
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: hh_income_source_other
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: lost_sources
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: livelihood_coping
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: livelihood_used
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: own_livestock
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: livestock_dead
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: cultivated
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: cultivated_damaged
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: food_price_change
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_drinking
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_drinking_other
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_domestic
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_washing_other
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: adequate_water
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_access_challenges
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_treat
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_treat_how
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_dist
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_pay
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: water_price_change
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: soap_access
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: no_soap_why
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: handwashing_technique
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: latrine_access
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: latrine_type
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: latrine_segregated
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: latrines_accessible_disabled
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: latrines_lockable
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: latrines_handwashing
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: latrines_lighting
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: latrine_hygiene
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: no_latrine_defecation
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: dispose_faeces
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: dispose_waste
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: health_access
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: no_health_access
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: health_source
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: dist_health_facility
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: chw_visit
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: health_pay
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: health_price_change
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: health_issues_child
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: access_child
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: health_issues_adult
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: access_adults
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: health_satisfied
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: vaccination_card
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: no_vaccination
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: nutrition_access
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: nutrition_service_available
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: nutrition_distance
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: received_baby_items_milk
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: child_feeding_6months
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: child_feeding_over6m
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: child_bf
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: type_shelter
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: shelter_damage
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: shelter_damage_how
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: occupied_3months_above
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: theft_shelter
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: floor_material
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: structural_material
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: structural_material_other
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: covering_material
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: covering_material_other
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: internal_separation
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: internal_separation_type
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: internal_separation_type_other
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: light_night
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: shelter_lock
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: nfis_good
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: nfis_poor
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: why_not_attend_girls
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: why_not_attend_boys
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: attend_previous
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: type_education_previous
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: received_assistance
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: asst_type
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: aid_satisfaction
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: aid_violence
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: aid_violence_types
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: savings_assoc
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: mother_tongue
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: language_spoken
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: language_read
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: language_written
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: language_preferred
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: info_received
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: trusted_info_sources
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: info_channels
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: information_needs
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: access_radio
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: access_phone
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+chisquared testing:
+dependent.var: resp_contact_details
+independent.var:yes_no_host
+
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not test group difference with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+percent_with_confints_select_one failed with error:
+
+
+---------------------
+---------------------
+object 'depednent.var' not found
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+not a data frame or data frame without data
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+
+
+
+---------------------
+---------------------
+data sanitation decided not to produce summary statistics. Message:
+
+
+---------------------
+---------------------
+can not summarise statistics with <2 different values in the dependent variable
 
 
 ---------------------

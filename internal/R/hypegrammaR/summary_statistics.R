@@ -27,7 +27,7 @@ percent_with_confints_select_one <- function(dependent.var,
     colnames(result_svy_format)<-c("numbers","min","max")
     summary_with_confints <- data.frame(dependent.var=dependent.var,
                    independent.var=NA,
-                   dependent.var.value=rownames(result_svy_format),
+                   dependent.var.value=gsub(paste0("^",depednent.var),"",rownames(result_svy_format)),
                    independent.var.value=NA,
                    numbers=result_svy_format[,"numbers"],
                    se=NA,
@@ -39,9 +39,11 @@ percent_with_confints_select_one <- function(dependent.var,
   }
   return(result_hg_format)}, error=function(e){
     .write_to_log("percent_with_confints_select_one failed with error:")
-    .write_to_log(e)})
-  }
+    .write_to_log(e$message)}
+  )
   
+}
+
 percent_with_confints_select_mult <- function(dependent.var,
                                              design,
                                              na.rm = TRUE){

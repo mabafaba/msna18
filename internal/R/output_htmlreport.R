@@ -2,14 +2,7 @@
 
 htmlreport<-function(results){
 source("./internal/R/htmlR.R")
-.saytag<-function(tag,x=NULL,...){
-  .say(tag(tag,x,...))
-}
 
-.saybold<-function(x){
-  tag("b",x)
-  
-}
 dir.create("./output/summary")
 .record(to.file = "output/summary/index.html")
 .rewind()

@@ -212,7 +212,16 @@ barchart<-  div(bars,
             })
           }
 
-
+          
+          
+          .saytag<-function(tag,x=NULL,...){
+            .say(tag(tag,x,...))
+          }
+          
+          .saybold<-function(x){
+            tag("b",x)
+            
+          }
 
 #########################################################################################
 #  HIGH LEVEL VALIDATION SPECIFIC

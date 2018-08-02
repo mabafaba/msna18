@@ -1,4 +1,4 @@
-rm(list=ls())
+# rm(list=ls())
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # setwd("../")
 # getwd()
@@ -23,7 +23,6 @@ dir.create("./output/composite_indicator_visualisation",showWarnings = F)
   source("./internal/R/dependencies.R")
 
 # LOAD INPUT
-
 # make sure all files exist:
 files_needed<-c("./internal/input_files/data.csv",
                 "./internal/input_files/data_parameters.csv",
@@ -105,7 +104,6 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
 
 # cleaning and getting the factors out 
 data <- levels_for_cat(data, questionnaire)
-
 #composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
@@ -126,10 +124,8 @@ analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all
 analysis_plan_direct_reporting <- map_to_analysis_plan_all_vars_as_dependent(repeat.var = analysis_definition_aggregations[["do.for.each.variable"]][1], 
                                                                              independent.vars = analysis_definition_aggregations[["summary.statistics.disaggregated.by.variable"]], 
                                                                              data = data)
-
 analysis_plan_all_vars_no_disag <- map_to_analysis_plan_all_vars_no_disag(repeat.var = analysis_definition_aggregations[["do.for.each.variable"]][1], 
                                                                           data = data)
-
 
 analysisplan<-rbind(analysis_plan_direct_reporting,analysis_plan_all_vars_no_disag)
 
@@ -147,22 +143,21 @@ all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %
 #   }) %>%
 #   unlist %>% table %>% kable
 
-all_summary_statistics_labeled <- results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic}) %>% do.call(rbind,.)
-
 dir.create("./internal/log")
 all_summary_statistics %>% saveRDS("./internal/log/results.RDS")
-
+all_summary_statistics_labeled <- results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic}) %>% do.call(rbind,.)
 stay_distinguishable<-c("dependent.var","dependent.var.value","independent.var","independent.var.value")
 all_summary_statistics_labelandnames<-all_summary_statistics_labeled
 all_summary_statistics_labelandnames[,stay_distinguishable]<-lapply(stay_distinguishable,function(column){
-  jointlabel<-all_summary_statistics_labeled[[column]]
+  jointlabel<-all_summary_statistics_labeled[[column]] %>% as.character
   jointlabel[!is.na(all_summary_statistics[[column]])]<-
-    paste0(all_summary_statistics_labeled[[column]][!is.na(all_summary_statistics[[column]])]," (",
-           all_summary_statistics[[column]][!is.na(all_summary_statistics[[column]])],")")
+    paste0(as.character(all_summary_statistics_labeled[[column]][!is.na(all_summary_statistics[[column]])])," (",
+           as.character(all_summary_statistics[[column]][!is.na(all_summary_statistics[[column]])]),")")
   jointlabel
 })
 
-all_summary_statistics_labelandnames %>% glimpse
+
+
 # save as a csv. Long format + pivot table is great for interactive xlsx
 
 all_summary_statistics_labelandnames %>% as.data.frame(stringsAsFactors=F) %>%  map_to_file("./output/master_table_long.csv")
@@ -177,13 +172,11 @@ all_summary_statistics_labelandnames$master_table_column_name<-paste(all_summary
                                                                      all_summary_statistics_labelandnames$independent.var.value," - ",
                                                                      all_summary_statistics_labelandnames$dependent.var,":: ",
                                                                      all_summary_statistics_labelandnames$dependent.var.value,
-                                                                     
                                                                      sep="")
 
 arow_per_repeat_value<-all_summary_statistics_labelandnames[,c("repeat.var.value","master_table_column_name","numbers")] %>%
   spread(key = c("master_table_column_name"),value = "numbers")
-arow_per_repeat_value %>% glimpse
-arow_per_repeat_value %>% write.csv("./output/master_table_datamerge.csv")
+arow_per_repeat_value %>% map_to_file("./output/master_table_datamerge.csv")
 
 # PLOTS
 plots <- lapply(seq_along(results), function(resultindex){
@@ -191,8 +184,6 @@ plots <- lapply(seq_along(results), function(resultindex){
 
   # printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
   if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){return(NULL)}
-
-  
   
   result$summary.statistic.labeled<-map_to_labelisation("summary.statistic")(result$summary.statistic)  
   
