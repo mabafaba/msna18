@@ -88,6 +88,10 @@ cluster_formula <- load_cluster_sampling_units()
 data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAsFactors = F) 
 data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %>% to_alphanumeric_lowercase
 
+#KI interviews
+ki_aggregation<-read.csv("./internal/input_files/ki_aggregation.csv",stringsAsFactors = F) 
+ki_aggregation <- ki_aggregation %>% apply(., 2, to_alphanumeric_lowercase) 
+
 # load samplingframe (only if data_parameters says it's a stratified sample)
 if(data_parameters$stratified[1]=="yes"){
   
@@ -96,6 +100,9 @@ if(data_parameters$stratified[1]=="yes"){
     sf<-load_samplingframe("./internal/input_files/sampling_frame.csv",
                                                              data.stratum.column = data_parameters$stratum.name.variable[1],
                                                              return.stratum.populations = T)}
+
+#do KI aggregations if that was the methodology, else 
+if(ki_aggregation[1] == "yes"){source("./internal/R/ki_aggregation.R")}else{
 # load questionnaire and create associated functions:
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
                                     choices.file = "./internal/input_files/kobo_choices.csv",
@@ -174,6 +181,14 @@ all_summary_statistics_labelandnames$master_table_column_name<-paste(all_summary
                                                                      all_summary_statistics_labelandnames$dependent.var.value,
                                                                      sep="")
 
+###Forgot about this code, but it does the no disaggregation without all the hassle (but not for repeat var)
+summary_stats_no_disaggregation <- function(data){
+  if(data_parameters$stratified=="yes"){
+    this_disag_means<-aggregate_mean_weighted(data)
+  }else{
+    this_disag_means<-aggregate_mean(data)
+  }}
+
 arow_per_repeat_value<-all_summary_statistics_labelandnames[,c("repeat.var.value","master_table_column_name","numbers")] %>%
   spread(key = c("master_table_column_name"),value = "numbers")
 arow_per_repeat_value %>% map_to_file("./output/master_table_datamerge.csv")
@@ -198,6 +213,7 @@ htmlreport(plots)
 if(!debugging_mode){cat("\014")}  
 cat(green("\n\n\nDONE - no issues detected.\n"))
 cat(paste0("see ", getwd(),"/","/output/ for results."))
+} ###This bracket closes the "else" statement from the "if parameters$KI" 
 
 
 

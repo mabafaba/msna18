@@ -8,8 +8,6 @@ triangulate<-function(data,by.var.name,vartypes=NULL){
 
 
 
-
-
 triangulate_mode<-function(x,by){
   
   triangulated <-  split(x,by) %>% lapply(Mode) %>% unlist(use.names = T)

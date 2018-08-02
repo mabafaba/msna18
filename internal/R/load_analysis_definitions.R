@@ -47,6 +47,6 @@ remove.empty.rows<-function(df){
 
 load_ki_aggregation_definition<-function(file="./internal/KI_aggregation_parameters.csv"){
     def<-read.csv.auto.sep(file)
-    def<-lapply(to_alphanumeric_lowercase)
+    def<-lapply(to_alphanumeric_lowercase, def)
     def    
 }

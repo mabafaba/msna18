@@ -50,6 +50,8 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
 
 analysis_definition_aggregations<-read.csv("./internal/input_files/aggregate all variables.csv",stringsAsFactors = F)
 
+if(data_parameters$kii)
+
 all_percent_disaggregations_all_vars<-
   lapply(analysis_definition_aggregations$summary.statistics.disaggregated.by.variable,
          function(disaggregation.var){
