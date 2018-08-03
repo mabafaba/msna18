@@ -244,7 +244,7 @@ visualisation_barchart_percent_nogroups_FS<-function(data,filename="test.svg"){
                          plot_numbers(data),
                          plot_bars(data), ncol=3,widths=smallFSplotwdith*c(0.4,0.1,0.5))
   
-  ggsave(file=filename, plot=fullplot,width =smallFSplotwdith, height=heightperbarcm*length(unique(data$dependent.var.value)),units = "cm",device = "jpeg")   
+  ggsave(file=filename, plot=fullplot,width =smallFSplotwdith, height=heightperbarcm*length(unique(data$dependent.var.value)),units = "cm",device = "jpg")   
   
   return(fullplot)
 }

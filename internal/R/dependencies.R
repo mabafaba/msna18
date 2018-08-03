@@ -1,6 +1,7 @@
 # external packages to install/load:
 .dependencies<-c("dplyr","purrr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi","igraph","knitr","rlist")
 
+source("./internal/R/verify_excel_input.R")
 source("./internal/R/composite_indicator_weighted_count.R")
 source("./internal/R/survey_design.R")
 source("./internal/R/recoding.R")
@@ -20,6 +21,7 @@ source("./internal/R/questionnaire_skiplogic.R")
 source("./internal/R/bonus_visualise_composite.R")
 source("./internal/R/labelise.R")
 source("./internal/R/output_htmlreport.R")
+
 # source("./internal/R/summary_statistics.R")
 
 # stuff for loading/installing packages only when needed:

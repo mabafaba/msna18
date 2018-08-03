@@ -82,9 +82,35 @@ analysisplan_remove_dependent_same_as_independent<-function(analysisplan){
 
 
 
+map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
+  analysis_plan_user %>% head
+  analysis_plan_all_vars_no_disag %>% head
+  analysis_plan_user_ALL<-analysis_plan_user[analysis_plan_user$variable=="..all..",]
+  analysis_plan_user<-analysis_plan_user[analysis_plan_user$variable!="..all..",]
+  
 
-
-
+  repeat.var=analysis_plan_user$repeat.for %>% to_alphanumeric_lowercase %>% unname
+  independent.var = analysis_plan_user$disaggregate.by %>% to_alphanumeric_lowercase %>% unname
+  independent.var<-independent.var %>% (function(x){y<-x;y[is.na(x)|x==""|is.null(x)]<-NA;y})
+  dependent.var = analysis_plan_user$variable %>% to_alphanumeric_lowercase %>% unname
+  hypothesis.type = rep("group_difference",nrow(analysis_plan_user))
+  hypothesis.type[is.na(independent.var)]<-"direct_reporting"
+  case<- paste0("CASE_",hypothesis.type,"_",ifelse(data[,dependent.var] %>% sapply(is.numeric),"numerical","categorical"),"_categorical")
+  analysisplan<-data.frame(
+             independent.var,
+             dependent.var,
+             hypothesis.type,
+             case,
+             repeat.var,
+             analysis_plan_user[,grep("output",names(analysis_plan_user))],
+             stringsAsFactors=F)
+  
+    var.exists.in.data <- (c(analysisplan[,"dependent.var"],analysisplan[,"independent.var"]) %>% unique) %in% names(data)
+  if(any(!var.exists.in.data)){stop(paste0("analysis plan input contains variable names that could not be found in the data or composite indicators:\n",
+                                    paste0((c(analysisplan[,"dependent.var"],analysisplan[,"independent.var"]) %>% unique)[var.exists.in.data] %>% names,collapse="\n")))}
+  
+    analysisplan
+    }
 
 
 

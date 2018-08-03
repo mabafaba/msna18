@@ -181,15 +181,12 @@ plots <- lapply(seq_along(results), function(resultindex){
   if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){return(NULL)}
   
   result$summary.statistic.labeled<-map_to_labelisation("summary.statistic")(result$summary.statistic)  
-  result<-results[[20]]
   filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
   
   if(result$input.parameters$case %in% c("CASE_direct_reporting_categorical_","CASE_group_difference_categorical_categorical")){
-    result$summary.statistic %>% split.data.frame(result$summary.statistic$independent.var.value) %>% lapply(function(sumstat){
+    result$summary.statistic.labeled %>% split.data.frame(result$summary.statistic$independent.var.value) %>% lapply(function(sumstat){
       filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),"__",sumstat$independent.var[1],"_",sumstat$independent.var.value[1],".jpg")
-      visualisation_barchart_percent_nogroups_FS(result$summary.statistic,filename)
-      print("FSPLOT");  print(filename);print("FSPLOTOVER")
-
+      theplot<-map_to_visualisation(result$input.parameters$case )(sumstat,filename = filename)
       
     })
 
@@ -203,13 +200,6 @@ plots <- lapply(seq_along(results), function(resultindex){
   return(result)
   
 })
-results[[3]]
-data$hh_ids %>% table
-
-sumstat<-result$summary.statistic
-dev.off()
-undebug(visualisation_barchart_percent_nogroups_FS)
-visualisation_barchart_percent_nogroups_FS(result$summary.statistic,"test.jpg")
 
 htmlreport(plots)
 if(!debugging_mode){cat("\014")}  

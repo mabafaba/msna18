@@ -5,7 +5,6 @@ apply_data_analysis_plan<-function(data,analysisplan){
       repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
       analysisplan <- analysisplan %>% slice(rep(1:n(), each = length(repeat.var.value))) %>% cbind(.,repeat.var.value, stringsAsFactors = F)}
   analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
-  x<-analysis_plan_all_vars_no_disag[10,] %>% unlist
   results<- apply(analysisplan,1,function(x){
     if(!is.null(x["repeat.var"])&(!is.na(x["repeat.var"][1]))){
       this_valid_data <- data[data[,x["repeat.var"]] == as.character(x["repeat.var.value"]),]}else{
