@@ -135,13 +135,8 @@ results<-apply_data_analysis_plan(data,analysisplan)
 #RESHAPE OUTPUTS FOR MASTER TABLE:
 # extract summary statistics from result list and rbind to a single long format table
 
-
 all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
-# results %>% lapply(function(x){x$summary.statistic %>% names %>%
-#     paste(collapse=" / ") %>% paste(x$input.parameters$case,"--",.)
-# # (function(x){"ci_l" %in% x})
-#   }) %>%
-#   unlist %>% table %>% kable
+
 
 dir.create("./internal/log")
 all_summary_statistics %>% saveRDS("./internal/log/results.RDS")
@@ -186,14 +181,36 @@ plots <- lapply(seq_along(results), function(resultindex){
   if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){return(NULL)}
   
   result$summary.statistic.labeled<-map_to_labelisation("summary.statistic")(result$summary.statistic)  
-  
+  result<-results[[20]]
   filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
-  theplot<-map_to_visualisation(result$input.parameters$case )(result[["summary.statistic.labeled"]],filename = filename)
-  result$plotfilename<-paste0(paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
+  
+  if(result$input.parameters$case %in% c("CASE_direct_reporting_categorical_","CASE_group_difference_categorical_categorical")){
+    result$summary.statistic %>% split.data.frame(result$summary.statistic$independent.var.value) %>% lapply(function(sumstat){
+      filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),"__",sumstat$independent.var[1],"_",sumstat$independent.var.value[1],".jpg")
+      visualisation_barchart_percent_nogroups_FS(result$summary.statistic,filename)
+      print("FSPLOT");  print(filename);print("FSPLOTOVER")
+
+      
+    })
+
+    }else{
+      theplot<-map_to_visualisation(result$input.parameters$case )(result[["summary.statistic.labeled"]],filename = filename)
+      result$plotfilename<-paste0(paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
+    }
+  
+  
   print(filename)
   return(result)
   
 })
+results[[3]]
+data$hh_ids %>% table
+
+sumstat<-result$summary.statistic
+dev.off()
+undebug(visualisation_barchart_percent_nogroups_FS)
+visualisation_barchart_percent_nogroups_FS(result$summary.statistic,"test.jpg")
+
 htmlreport(plots)
 if(!debugging_mode){cat("\014")}  
 cat(green("\n\n\nDONE - no issues detected.\n"))
@@ -206,4 +223,3 @@ cat(paste0("see ", getwd(),"/","/output/ for results."))
 # }) %>% unlist
 #   }
 # 
-

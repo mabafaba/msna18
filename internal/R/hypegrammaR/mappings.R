@@ -207,8 +207,9 @@ map_to_file<-function(object,filename,...){
     }
     
   },
-  error=function(cond){
+  error=function(e){
     message(paste0("Could not write to the file called:\n",filename))
+    message(paste0("error:\n",e$message))
     message("Please close the file if it is open in any application and make sure the folder I am trying to write to exists.")
     message("to try again and continue the script, type 't'. To skip writing this file and countine the script, type 's'. To cancel the whole script, type 'c'. Then press enter.")
     whattodo<-readline("Try again (t), skip this file (s), or cancel script (c)?: ")  
@@ -249,5 +250,6 @@ summary_statistic_rank<- function(dependent.var,independent.var, design,data){
   percent<-percent_with_confints(dependent.var,independent.var, design,data)
   ranked <- percent %>% split.data.frame(percent$independent.var.value, drop = T) %>% lapply(function(x){
   mutate(x, rank = rank(x$numbers, ties.method = "min"))}) %>% do.call(rbind, .) 
-  return(ranked)}
+  return(ranked)
+  }
 

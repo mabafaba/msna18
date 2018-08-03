@@ -268,4 +268,20 @@ confidence_intervals_mean <- function(dependent.var,
   return(results)
 }
 
-
+  ### for select_one and select multiple answers, returns the most common answer for that group 
+  # only works for select_one and select_multiple
+  
+  
+  summary_statistic_mode <- function(dependent.var,independent.var, design,data){
+    percent<-percent_with_confints(dependent.var,independent.var, design,data)
+    modes <- percent %>% split.data.frame(percent$independent.var.value, drop = T) %>% lapply(function(x){
+      x[which.max(x$numbers),]}) %>% do.call(rbind, .)
+    return(modes)}
+  
+  summary_statistic_rank<- function(dependent.var,independent.var, design,data){
+    percent<-percent_with_confints(dependent.var,independent.var, design,data)
+    ranked <- percent %>% split.data.frame(percent$independent.var.value, drop = T) %>% lapply(function(x){
+      mutate(x, rank = rank(x$numbers, ties.method = "min"))}) %>% do.call(rbind, .) 
+    return(ranked)
+  }
+  

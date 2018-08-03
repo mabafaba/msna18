@@ -36,8 +36,8 @@ apply_data_analysis_plan<-function(data,analysisplan){
                               case=x["case"])
     
     if(!is.null(x["repeat.var"])&(!is.na(x["repeat.var"]))){
-      result$repeat.var<-x["repeat.var"]
-      result$repeat.var.value<-x["repeat.var.value"]
+      result$input.parameters$repeat.var<-x["repeat.var"]
+      result$input.parameters$repeat.var.value<-x["repeat.var.value"]
     }
     
     if(!is.null(result$summary.statistic)){
