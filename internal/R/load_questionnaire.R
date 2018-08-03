@@ -31,8 +31,8 @@ load_questionnaire<-function(data,
   }
   
   # load files
-  questions <- read.csv.auto.sep(questions.file,stringsAsFactors = F, header = T)
-  choices <- read.csv(choices.file, stringsAsFactors = F, header = T)
+  questions <- read.csv.auto.sep(questions.file,stringsAsFactors = F, header = T) %>% remove.empty.rows
+  choices <- read.csv(choices.file, stringsAsFactors = F, header = T) %>% remove.empty.rows
   
   # harmonise data column references
   names(questions) <- to_alphanumeric_lowercase(names(questions))

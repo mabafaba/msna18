@@ -10,7 +10,7 @@ triangulate<-function(data,by.var.name,vartypes=NULL){
 
 triangulate_mode<-function(x,by){
   
-  triangulated <-  split(x,by) %>% lapply(Mode) %>% unlist(use.names = T)
+  triangulated <-  split(x,by) %>% lapply(mode) %>% unlist(use.names = T)
   # triangulated_vector<- triangulated[["x"]]
   # names(triangulated_vector)<-triangulated[["Group.1"]]
   # triangulated_vector
