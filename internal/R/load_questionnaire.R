@@ -78,6 +78,7 @@ load_questionnaire<-function(data,
     # make functions that need questionnaire
 
    question_get_choice_labels <<- function(responses,variable.name){
+
      variable.name<-as.character(variable.name)
       if(question_is_categorical(variable.name)){
       labels<-replace_with_lookup_table(

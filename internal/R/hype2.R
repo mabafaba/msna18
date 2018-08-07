@@ -30,7 +30,8 @@ source("./internal/R/load_excel_input.R")
   
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
+  analysisplan
   undebug(apply_data_analysis_plan)
   results<-apply_data_analysis_plan(data,analysisplan)
 
-  
+  mean(NA,na.rm=T)

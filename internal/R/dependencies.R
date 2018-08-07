@@ -21,6 +21,7 @@ source("./internal/R/questionnaire_skiplogic.R")
 source("./internal/R/bonus_visualise_composite.R")
 source("./internal/R/labelise.R")
 source("./internal/R/output_htmlreport.R")
+source("./internal/R/log.R")
 
 # source("./internal/R/summary_statistics.R")
 

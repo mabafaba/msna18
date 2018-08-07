@@ -46,7 +46,7 @@ cluster.id.formula<-cluster_formula()
 
 if(any(grep("stratified", data_parameters$sampling.strategy[1])>0)){
   rawsf<-read.csv("./internal/input_files/stratification_samplingframe.csv",stringsAsFactors = F) %>% remove.empty.rows
-  data_parameters$stratification.variable<-sf_file[1,"first.strata.name.variable"] %>% as.character
+  data_parameters$stratification.variable<-rawsf[1,"first.strata.name.variable"] %>% as.character
   rawsf_readable<-rawsf[-1,c("first.strata.name.variable","population")]
   colnames(rawsf_readable)<-c("stratum","population")
   # data[["unique_stratum_group_name"]]<-paste()
