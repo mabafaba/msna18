@@ -3,3 +3,22 @@
 which necessary input files exist?
 
 |                                                        |     | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+which necessary input files exist?
+
+|                                                        |     | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

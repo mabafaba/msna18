@@ -69,4 +69,4 @@ data <- levels_for_cat(data, questionnaire)
 # load analysis definitions
 analysis_plan_user<-read.csv("./internal/input_files/analysis plan.csv",stringsAsFactors = F)
 analysis_plan_user[,c("repeat.for","disaggregate.by","variable")]<-analysis_plan_user[,c("repeat.for","disaggregate.by","variable")] %>% lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors=F)
-  
+

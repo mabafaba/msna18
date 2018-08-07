@@ -83,8 +83,6 @@ analysisplan_remove_dependent_same_as_independent<-function(analysisplan){
 
 
 map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
-  analysis_plan_user %>% head
-  analysis_plan_all_vars_no_disag %>% head
   analysis_plan_user_ALL<-analysis_plan_user[analysis_plan_user$variable=="..all..",]
   analysis_plan_user<-analysis_plan_user[analysis_plan_user$variable!="..all..",]
   

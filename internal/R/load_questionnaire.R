@@ -66,7 +66,10 @@ load_questionnaire<-function(data,
         choices_per_data_column<-questions$type %>% as.character %>% strsplit(" ") %>% lapply(unlist)%>% lapply(function(x){
 
         x %>% lapply(function(y){
-        grep(y,choices[["list_name"]],value=F)
+        # grep(y,choices[["list_name"]],value=F)
+        # match (full word only)
+        grep(paste0(" ",y," "),paste0(" ",choices[["list_name"]]," "),value=F,fixed = T)
+          
       }
       ) %>% unlist
     }) %>% lapply(hasdata) %>% lapply(function(x){
