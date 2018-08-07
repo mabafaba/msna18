@@ -27,6 +27,8 @@ load_composite_indicator_definition_weighted_count<-function(file="./internal/in
 
 
 
+
+
 read.csv.part<-function(file,first.row,first.col=1,last.col=NULL){
   headers = read.csv.auto.sep(file, skip = first.row, header = F, nrows = 1)
   df = read.csv.auto.sep(file, skip = first.row+1, header = F,stringsAsFactors = F)
@@ -50,3 +52,7 @@ load_ki_aggregation_definition<-function(file="./internal/KI_aggregation_paramet
     def<-lapply(to_alphanumeric_lowercase)
     def    
 }
+
+
+  
+  

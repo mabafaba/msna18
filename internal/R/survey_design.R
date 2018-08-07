@@ -13,13 +13,18 @@
 #' @export
 #' @examples
 #' load_data("mydata.csv",uuid.column="UUID")
-load_samplingframe <- function(sampling.frame.file,
-                               data.stratum.column,
-                               sampling.frame.population.column="population",
-                               sampling.frame.stratum.column="stratum",
-                               return.stratum.populations=FALSE){
+#' 
+#' 
+#' 
+load_samplingframe.stratification <- function(sampling.frame.file,
+                                       data.stratum.column,
+                                       sampling.frame.population.column="population",
+                                       sampling.frame.stratum.column="stratum",
+                                       return.stratum.populations=FALSE,
+                                       ){
   
-  
+  ###################
+  #### BLIND_CODE (UP! (varname))
   
   # functions from previous external dependencies. In here to not pollute global space
         hasdata<-function (x, return.index = F) {
@@ -143,6 +148,19 @@ load_samplingframe <- function(sampling.frame.file,
 }
 
 
+
+
+
+
+
+
+
+
+
+
+#######
+# PUBLIC FUNCTIONS
+#######
 weights_of <- function(df) {
   stop("Before weights_of() can be used, load_samplingframe() must be run.")
 }
