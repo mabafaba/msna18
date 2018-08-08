@@ -20,7 +20,7 @@
       strata = names(strata.weights),
       weights = as.vector(strata.weights))
     return(survey.design)}
-
+?svydesign
 #add to this an option that strata weights can be the vector of weights if there is one in the data & warning that we usually dont do this
 
 #' Map to case

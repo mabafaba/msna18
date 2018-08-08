@@ -20,7 +20,7 @@ load_samplingframe.stratification <- function(sampling.frame.file,
                                        data.stratum.column,
                                        sampling.frame.population.column="population",
                                        sampling.frame.stratum.column="stratum",
-                                       return.stratum.populations=FALSE,
+                                       return.stratum.populations=FALSE
                                        ){
   
   ###################

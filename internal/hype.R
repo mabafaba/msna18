@@ -68,18 +68,7 @@ missing_data_to_NA<-function(data){
   }) %>% as.data.frame(stringsAsFactors=F)# survey needs with factors.
 }
 
-#function that recodes categorical variables using the levels provided in the choices file
-#also converts missing data to NA without messing up the factors 
-levels_for_cat <- function(data, questionnaire){
-  #questionnaire must be loaded
- data_level <-  lapply(names(data), function(x){
-   replace(data[[x]],which(data[[x]] %in% c("","N/A","#N/A","NA", " ")),NA)
-    if(question_is_categorical(x)){
-      data[[x]] %<>% factor(., levels = questionnaire$choices_per_variable[x] %>% as.data.frame %>% extract2(2) %>% unique)}
-  return(data[[x]])}) 
- names(data_level) <- names(data)
- return(data_level %>% as.data.frame)
-}
+
 
 ## Loading cluster sampling units
 cluster_formula <- load_cluster_sampling_units()

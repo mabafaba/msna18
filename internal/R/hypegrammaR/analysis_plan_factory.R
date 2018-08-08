@@ -86,11 +86,33 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
   analysis_plan_user_ALL<-analysis_plan_user[analysis_plan_user$variable=="..all..",]
   analysis_plan_user<-analysis_plan_user[analysis_plan_user$variable!="..all..",]
   
+  analysis_plan_user<-analysis_plan_user[!apply(analysis_plan_user,1,function(x){all(is.na(x))}),]
 
   repeat.var=analysis_plan_user$repeat.for %>% to_alphanumeric_lowercase %>% unname
   independent.var = analysis_plan_user$disaggregate.by %>% to_alphanumeric_lowercase %>% unname
   independent.var<-independent.var %>% (function(x){y<-x;y[is.na(x)|x==""|is.null(x)]<-NA;y})
   dependent.var = analysis_plan_user$variable %>% to_alphanumeric_lowercase %>% unname
+  illegal_independent<-independent.var[which(
+                                              (
+                                                !((is.na(independent.var)) | independent.var=="") # not empty or na (which is allowed)
+                                              & !(independent.var %in% names(data)) # and not in data colnames
+                                              ))]
+  illegal_dependent<-dependent.var[which( !(  dependent.var %in% names(data)))] # not in data
+  illegal_repeat<-repeat.var[which(
+                                                  (
+                                                    !((is.na(repeat.var)) | repeat.var=="") # not empty or na (which is allowed)
+                                                    & !(repeat.var %in% names(data)) # and not in data colnames
+                                                  ))]
+
+                                                data
+  if(length(c(illegal_repeat,illegal_dependent,illegal_independent))>0){
+    stop(paste("analysis plan variable name inputs not found in data:\n",
+               "repeat for: ",paste(illegal_repeat %>% unique,collapse=", "),"\n",
+               "dissagregate by: ", paste(illegal_independent %>% unique,collapse=", "),"\n",
+               "variable: ", paste(illegal_dependent %>% unique,collapse=", ")
+               ))
+  }
+
   hypothesis.type = rep("group_difference",nrow(analysis_plan_user))
   hypothesis.type[is.na(independent.var)]<-"direct_reporting"
   case<- paste0("CASE_",hypothesis.type,"_",ifelse(data[,dependent.var] %>% sapply(is.numeric),"numerical","categorical"),"_categorical")

@@ -9,7 +9,7 @@ combine_weighting_functions<-function(weights_function_1,weights_function_2){
   combined_weighting_function<-function(df){
     w1 <- weights_function_1(df)
     w2 <- weights_function_2(df)
-    w_combined<-weights_of_1*weights_of_2
+    w_combined<-w1*w2
     w_combined_normalised<-(w_combined*length(w_combined)/sum(w_combined))
     return(w_combined_normalised)
   }

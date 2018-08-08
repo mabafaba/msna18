@@ -1,5 +1,18 @@
 # data 
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
+
+som_add_population_group_column<-function(data){
+  data$population_group<-rep(NA,nrow(data))
+  data$population_group[data$yes_no_host=="yes"]<-"Host"
+  data$population_group[data$yes_no_idp=="yes"]<-"IDP"
+  # data$population_group[data$yes_no_returnee==""]<-"returnee"
+  # data$population_group[data$refugee=="yes"]<-"refugee"
+  return(data)
+}
+
+data<-som_add_population_group_column(data)
+
+
 missing_data_to_NA<-function(data){
   lapply(data,function(x){
     replace(x,which(x %in% c("","N/A","#N/A","NA", " ")),NA)    
@@ -34,7 +47,6 @@ levels_for_cat <- function(data, questionnaire){
 # data parameters
 data_parameters<-read.csv("./internal/input_files/parameters.csv",stringsAsFactors = F) 
 
-data_parameters$stratum.name.variable <- data_parameters$strata.name.variable[1] %>% to_alphanumeric_lowercase
 
 cluster_formula <- if(any(grep("cluster", data_parameters$sampling.strategy)>0)){
                             load_cluster_sampling_units(cluster.variable = data_parameters$cluster.variables %>% to_alphanumeric_lowercase)
@@ -44,11 +56,13 @@ cluster_formula <- if(any(grep("cluster", data_parameters$sampling.strategy)>0))
 
 cluster.id.formula<-cluster_formula()
 
+# remove records with NA in cluster id
+rows_with_valid_clusterids<-data[,all.vars(formula(cluster.id.formula)),drop=F] %>% apply(2,is.na) %>% apply(1,function(x){!any(x)}) 
+data<-data[rows_with_valid_clusterids,]
 
 # make the weighting functions based on strata sampling frame and cluster sampling frame
 is.stratified<-function(){any(grep("stratified", data_parameters$sampling.strategy[1])>0)}
 is.clustered<-function(){any(grep("cluster", data_parameters$sampling.strategy[1])>0)}
-
 # load strata weighting function
 if(is.stratified()){
   stratfication_weighting<-excel_csv_inputs_sampling_frame_stratification_to_weighting_function()
