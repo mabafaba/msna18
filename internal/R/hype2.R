@@ -22,7 +22,6 @@ verify_excel_input()
 
 # load all the excel input files:
 source("./internal/R/load_excel_input.R",local = T)
-weights_of(data)
 # this creates following objects:
   # data  # questionnaire  # data_parameters # analysis_plan_user
   # cluster_formula()  # weights_of() # question_is_skipped()
@@ -38,7 +37,7 @@ weights_of(data)
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
   analysisplan %>% head
-debug(map_to_design)
+undebug(map_to_design)
   results<-apply_data_analysis_plan(data,analysisplan)
   
 options(error=recover)

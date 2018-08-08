@@ -36,11 +36,16 @@ levels_for_cat <- function(data, questionnaire){
   data_level <-  lapply(names(data), function(x){
     replace(data[[x]],which(data[[x]] %in% c("","N/A","#N/A","NA", " ")),NA)
     if(question_is_categorical(x)){
-      data[[x]] %<>% factor(., levels = questionnaire$choices_per_variable[x] %>% as.data.frame %>% extract2(2) %>% unique)}
+      levels_questionnaire<-questionnaire$choices_per_variable[x] %>% as.data.frame %>% extract2(2) %>% unique
+      levels_data<-unique(data[[x]])
+      levels_all<-c(levels_questionnaire,levels_data) %>% unique
+      data[[x]] %<>% factor(., levels = levels_all)
+      }
     return(data[[x]])}) 
   names(data_level) <- names(data)
   return(data_level %>% as.data.frame)
 }
+
 
 ## Loading cluster sampling units
 
