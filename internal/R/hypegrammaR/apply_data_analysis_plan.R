@@ -11,10 +11,13 @@ apply_data_analysis_plan<-function(data,analysisplan){
         repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
         analysisplan %>% filter(repeat.var %in% x) %>% slice(rep(1:n(), each = length(repeat.var.value))) %>% cbind(.,repeat.var.value, stringsAsFactors = F)}}) %>% do.call(rbind,.)
     
-      analysisplan <- cbind(analysisplan.no.repeat, analysisplan.repeat, stringsAsFactors = F) }
-   analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
-  results<- apply(analysisplan,1,function(x){
-    if(!is.null(x["repeat.var"])&(!is.na(x["repeat.var"][1]))){
+      analysisplan <- rbind(analysisplan.no.repeat, analysisplan.repeat, stringsAsFactors = F) 
+      rm(repeat.var)}
+   
+  analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
+  
+   results<- apply(analysisplan,1,function(x){
+    if(!(x["repeat.var"]) %in% c(NULL, "", " ", NA)){
       this_valid_data <- data[data[,x["repeat.var"]] == as.character(x["repeat.var.value"]),]}else{
         this_valid_data<-data
       }
@@ -27,13 +30,14 @@ apply_data_analysis_plan<-function(data,analysisplan){
         which(
           !(is.na(data[,x["independent.var"]]))),]
     }
-
+print(x)
     printparamlist(x,"1/2: calculating summary statistics and hypothesis tests")
     .write_to_log(printparamlist(x,"1/2: calculating summary statistics and hypothesis tests"))
     if(is.na(x["independent.var"])|is.null(x["independent.var"])){
       indep.var <- NULL}else{
         indep.var <- x["independent.var"]
       }
+    
     result<-analyse_indicator(this_valid_data,
                               dependent.var = x["dependent.var"],
                               independent.var = indep.var ,
@@ -47,6 +51,8 @@ apply_data_analysis_plan<-function(data,analysisplan){
       result$input.parameters$repeat.var.value<-x["repeat.var.value"]
     }
     
+
+    
     if(!is.null(result$summary.statistic)){
       if(nrow(result$summary.statistic)>0){
         result$summary.statistic$repeat.var<-x["repeat.var"]
@@ -59,7 +65,7 @@ apply_data_analysis_plan<-function(data,analysisplan){
     return(result)})
   
   # names(results)<-analysisplan$dependent.var
-  return(results)
+  return(list(results=results,analysisplan=analysisplan))
   
 }
 

@@ -5,7 +5,8 @@
 #'
 #' @param data
 #' @param cluster.var if cluster sampling was used, what's the name of the column(s) in `data` that identifies the cluster?
-#' @details create a `survey` package design object from the data and information on the sampling strategy
+#' @details create a `surve
+#' y` package design object from the data and information on the sampling strategy
 #' @return a `survey` package design object
 #' @examples map_to_design(data,cluster.var="clusterQ
 #' _id")
@@ -20,7 +21,7 @@
       strata = names(strata.weights),
       weights = as.vector(strata.weights))
     return(survey.design)}
-?svydesign
+
 #add to this an option that strata weights can be the vector of weights if there is one in the data & warning that we usually dont do this
 
 #' Map to case
