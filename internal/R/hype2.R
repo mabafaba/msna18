@@ -37,11 +37,11 @@ source("./internal/R/load_excel_input.R",local = T)
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
   analysisplan %>% head
-undebug(map_to_design)
   results<-apply_data_analysis_plan(data,analysisplan)
+  results %>% lapply(function(x){x$summary.statistic })  %>% do.call(rbind,.)
+
   
-options(error=recover)
-
-
-  lapply()
+  
+  
+  
 

@@ -1,0 +1,614 @@
+
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: fcs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hdds_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: hhs_ranking
+independent.var:population_group
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
