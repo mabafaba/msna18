@@ -40,6 +40,7 @@ source("./internal/R/load_excel_input.R",local = T)
 # OUTPUT
   all_summary_statistics<-map_resultlist_to_summarystatistic_df(results)
   
+  
   plots <- lapply(seq_along(results), function(resultindex){
     result<-results[[resultindex]]
     # printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
@@ -64,4 +65,12 @@ source("./internal/R/load_excel_input.R",local = T)
     return(result)
     
   })
+  
+  map_resultlist_to_datamerge(results,rows = NULL) %>% map_to_file("./output/master_table_wide.csv")
+  
+  
+  
+  results[[10]]$visualisation(results[[10]]$summary.statistic,"test.jpg")
+  
+  
   
