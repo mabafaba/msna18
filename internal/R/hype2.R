@@ -37,8 +37,8 @@ weights_of(data)
   
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
-  analysisplan %>% head
-debug(map_to_design)
+  analysisplan 
+
   results<-apply_data_analysis_plan(data,analysisplan)
   
 options(error=recover)

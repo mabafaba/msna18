@@ -1,10 +1,18 @@
 apply_data_analysis_plan<-function(data,analysisplan){
   if(!is.null(analysisplan[,"repeat.var"])){
-    repeat.var <- as.character(unique(analysisplan$repeat.var)[1])
-      repeat.var.value <- unique(data[[repeat.var]])
-      repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
-      analysisplan <- analysisplan %>% slice(rep(1:n(), each = length(repeat.var.value))) %>% cbind(.,repeat.var.value, stringsAsFactors = F)}
-  analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
+    repeat.var <- as.character(unique(analysisplan$repeat.var))
+      # repeat.var.value <- unique(data[[repeat.var]])
+      # repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
+      analysisplan.no.repeat <- analysisplan %>% filter(repeat.var %in% c(NA, "", " ")) %>% cbind(.,repeat.var.value = NA, stringsAsFactors = F)
+      
+      analysisplan.repeat <- lapply(repeat.var, function(x){
+        if(!x %in% c(NA, "", " ")){
+        repeat.var.value <- unique(data[[x]])
+        repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
+        analysisplan %>% filter(repeat.var %in% x) %>% slice(rep(1:n(), each = length(repeat.var.value))) %>% cbind(.,repeat.var.value, stringsAsFactors = F)}}) %>% do.call(rbind,.)
+    
+      analysisplan <- cbind(analysisplan.no.repeat, analysisplan.repeat, stringsAsFactors = F) }
+   analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
   results<- apply(analysisplan,1,function(x){
     if(!is.null(x["repeat.var"])&(!is.na(x["repeat.var"][1]))){
       this_valid_data <- data[data[,x["repeat.var"]] == as.character(x["repeat.var.value"]),]}else{

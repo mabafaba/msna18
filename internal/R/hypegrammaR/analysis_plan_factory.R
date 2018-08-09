@@ -24,7 +24,8 @@ map_to_analysis_plan_all_vars_as_dependent <- function(repeat.var = NULL ,indepe
                                 dependent.var=names(data),
                                 hypothesis.type=hypothesis.type,
                                 case=paste0("CASE_",hypothesis.type,"_",ifelse(data %>% sapply(is.numeric),"numerical","categorical"),"_categorical")
-                                ,stringsAsFactors = F)
+                        
+                                        ,stringsAsFactors = F)
       analysisplan <- analysisplan[analysisplan[,"dependent.var"]!= analysisplan[,"independent.var"],]
       return(analysisplan)})
       if(!is.null(repeat.var)){analysis_plan_data_table <- analysisplan_list %>% do.call(rbind, .) %>% cbind(.,repeat.var, stringsAsFactors = F)}
