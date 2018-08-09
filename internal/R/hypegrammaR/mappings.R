@@ -17,9 +17,11 @@
   cluster.id.formula <- cluster_formula()
   strata.weights <- weights_of(data)
   survey.design <- svydesign(data = data,
-      ids = formula(cluster.id.formula),
-      strata = names(strata.weights),
-      weights = as.vector(strata.weights))
+      ids = formula(cluster.id.formula),   # the cluster id's. 
+      strata = names(strata.weights),      # names of the strata
+      weights = as.vector(strata.weights), # weights
+      nest = T                             # adds strata names to cluster id's in case of duplicates
+      )
     return(survey.design)}
 
 #add to this an option that strata weights can be the vector of weights if there is one in the data & warning that we usually dont do this
