@@ -38,7 +38,7 @@ source("./internal/R/load_excel_input.R",local = T)
 
 
   lapply(seq_along(results),function(resultindex)){
-      if(results$analyisplanè )
+      if(results$analyisplan)
   }
 
   results %>% lapply(function(x){x$summary.statistic })  %>% do.call(rbind,.)
