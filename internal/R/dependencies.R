@@ -1,5 +1,5 @@
 # external packages to install/load:
-.dependencies<-c("dplyr","purrr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi","igraph","knitr","rlist")
+.dependencies<-c("dplyr","purrr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi","igraph","knitr","rlist","ggplot2","ggthemes","extrafont","gridExtra")
 
 source("./internal/R/verify_excel_input.R")
 source("./internal/R/composite_indicator_weighted_count.R")

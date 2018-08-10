@@ -1,3 +1,6 @@
+# check all files are there:
+verify_excel_input()
+
 # data 
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 

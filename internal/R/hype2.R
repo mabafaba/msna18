@@ -14,7 +14,6 @@ source("./internal/R/read_excel_output.R")
 
 # LOAD INPUT
 # make sure all files exist:
-verify_excel_input()
 
 # load all the excel input files:
 source("./internal/R/load_excel_input.R",local = T)
@@ -32,7 +31,6 @@ source("./internal/R/load_excel_input.R",local = T)
   
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
-  analysisplan %>% head
   results<-apply_data_analysis_plan(data,analysisplan)
   results %>% lapply(function(x){x$summary.statistic })  %>% do.call(rbind,.)
 
@@ -41,18 +39,25 @@ source("./internal/R/load_excel_input.R",local = T)
   all_summary_statistics<-map_resultlist_to_summarystatistic_df(results)
   
   
+  
+  map_analysisplan_to_visualisation<-function(results,type="FS_style_barchart_A4"){
+    if(type=="FS_style_barchart_A4"){return()}
+  }
+  
+  
+  
   plots <- lapply(seq_along(results), function(resultindex){
     result<-results[[resultindex]]
     # printparamlist(result$input.parameters,"Exporting charts (may take a few minutes):")
     if(is.null(result$summary.statistic)|is.null(result$input.parameters$case)){return(NULL)}
     result$summary.statistic.labeled<-map_to_labelisation("summary.statistic")(result$summary.statistic)  
 
-      filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
+      filename<-paste0("./output/charts/",paste(result$input.parameters %>% unlist,collapse="___"),".jpg")
     
     if(result$input.parameters$case %in% c("CASE_direct_reporting_categorical_","CASE_group_difference_categorical_categorical")){
       result$summary.statistic.labeled %>% split.data.frame(result$summary.statistic$independent.var.value) %>% lapply(function(sumstat){
         filename<-paste0("./output/barcharts/",paste(result$input.parameters %>% unlist,collapse="___"),"__",sumstat$independent.var[1],"_",sumstat$independent.var.value[1],".jpg")
-        theplot<-map_to_visualisation(result$input.parameters$case )(sumstat,filename = filename)
+        theplot<-plot_to_file_FS_quarter_a4width(sumstat,filename = filename)
         
       })
       
@@ -66,7 +71,7 @@ source("./internal/R/load_excel_input.R",local = T)
     
   })
   
-  map_resultlist_to_datamerge(results,rows = NULL) %>% map_to_file("./output/master_table_wide.csv")
+  fmap_resultlist_to_datamerge(results,rows = NULL) %>% map_to_file("./output/master_table_wide.csv")
   
   
   

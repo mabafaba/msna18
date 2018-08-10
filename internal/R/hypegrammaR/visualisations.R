@@ -201,7 +201,6 @@ visualisation_barchart_percent_nogroups_FS<-function(data,filename="test.svg"){
     
   }
   
-  
   # font size units different in theme() and in geom_text(): factor 1/0.35
   # only labels with no bars at all
   plot_labels<-function(data){
