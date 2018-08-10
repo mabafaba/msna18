@@ -34,10 +34,10 @@ source("./internal/R/load_excel_input.R",local = T)
 
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
+
   message(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
   results$analysisplan$message<-lapply(results$results,function(x){x$message}) %>% unlist
-
 
 # OUTPUT
   results_labeled_values<-lapply(results$results,function(x){
@@ -112,7 +112,4 @@ source("./internal/R/load_excel_input.R",local = T)
   
   map_resultlist_to_datamerge(results,rows = NULL) %>% map_to_file("./output/master_table_wide.csv")
   
-  
 
-  
-  

@@ -16,13 +16,11 @@
   cluster.id.formula <- cluster_formula()
   strata.weights <- weights_of(data)
   survey.design <- svydesign(data = data,
-      ids = formula(cluster.id.formula),   # the cluster id's. 
-      strata = names(strata.weights),      # names of the strata
-      weights = as.vector(strata.weights), # weights
-      nest = T                             # adds strata names to cluster id's in case of duplicates
-      )
+      ids = formula(cluster.id.formula),
+      strata = names(strata.weights),
+      weights = as.vector(strata.weights))
     return(survey.design)}
-
+?svydesign
 #add to this an option that strata weights can be the vector of weights if there is one in the data & warning that we usually dont do this
 
 #' Map to case
@@ -237,4 +235,4 @@ map_to_file<-function(object,filename,...){
 #################################
 # map to mode:           ########
 #################################
-
+map_to_maps <- 
