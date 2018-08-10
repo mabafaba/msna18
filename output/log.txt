@@ -10,6 +10,10 @@ which necessary input files exist?
 
 
 
+
+
+
+
 chisquared testing:
 dependent.var: fcs_ranking
 independent.var:population_group
@@ -617,4 +621,410 @@ independent.var:population_group
 
 
 
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: household_expenditure
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: boys_harsh_work_type
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
+
+
+
+
+
+chisquared testing:
+dependent.var: legal_system
+independent.var:population_group
 

@@ -2,6 +2,7 @@
 verify_excel_input()
 
 # data 
+message(silver("loading and preparing data.."))
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 
 som_add_population_group_column<-function(data){
@@ -53,6 +54,8 @@ levels_for_cat <- function(data, questionnaire){
 ## Loading cluster sampling units
 
 # data parameters
+message(silver("loading and preparing parameters.."))
+
 data_parameters<-read.csv("./internal/input_files/parameters.csv",stringsAsFactors = F) 
 
 
@@ -67,6 +70,8 @@ cluster.id.formula<-cluster_formula()
 # remove records with NA in cluster id
 rows_with_valid_clusterids<-data[,all.vars(formula(cluster.id.formula)),drop=F] %>% apply(2,is.na) %>% apply(1,function(x){!any(x)}) 
 data<-data[rows_with_valid_clusterids,]
+
+message(silver("loading and preparing sampling frames.."))
 
 # make the weighting functions based on strata sampling frame and cluster sampling frame
 is.stratified<-function(){any(grep("stratified", data_parameters$sampling.strategy[1])>0)}
@@ -99,6 +104,7 @@ if(!is.stratified() & !is.clustered()){
 ###################  
 
 
+message(silver("loading and preparing questionnaire.."))
 
 # load questionnaire and create associated functions:
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo questions.csv",
@@ -108,6 +114,7 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
 
 # cleaning and getting the factors out 
 data <- levels_for_cat(data, questionnaire)
+message(silver("loading and preparing analysis plan.."))
 
 # load analysis definitions
 analysis_plan_user<-read.csv("./internal/input_files/analysis plan.csv",stringsAsFactors = F)

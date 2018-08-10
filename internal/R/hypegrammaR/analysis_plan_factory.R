@@ -129,8 +129,13 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
   if(any(!var.exists.in.data)){stop(paste0("analysis plan input contains variable names that could not be found in the data or composite indicators:\n",
                                     paste0((c(analysisplan[,"dependent.var"],analysisplan[,"independent.var"]) %>% unique)[var.exists.in.data] %>% names,collapse="\n")))}
   
-    analysisplan
-    }
+    analysisplan$output.minimal.chart...width.of.quarter.A4.landscape..FS.[analysisplan$output.minimal.chart...width.of.quarter.A4.landscape..FS.!="yes"]<-"no"
+    analysisplan$output.raw.numbers[!(analysisplan$output.raw.numbers)=="yes"]<-"no"
+    analysisplan$output.regular.chart..report.[analysisplan$output.regular.chart..report.!="yes"]<-"no"
+    analysisplan$output.Map..Mode[analysisplan$output.Map..Mode!="yes"]<-"no"
+    analysisplan$output.Map..Average.Percent..of.mode.[analysisplan$output.Map..Average.Percent..of.mode.!="yes"]<-"no"
+    return(analysisplan)
+}
 
 
 

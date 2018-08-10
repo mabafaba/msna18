@@ -186,11 +186,10 @@ map_to_visualisation <- function(case) {
   names(visualisation_functions)<-list_all_cases(implemented_only = F)
   
   # add implemented cases:
-  visualisation_functions[["CASE_group_difference_categorical_categorical"]] <- barchart_plot_fct
+  visualisation_functions[["CASE_group_difference_categorical_categorical"]] <- grouped_barchart_percent
   visualisation_functions[["CASE_group_difference_numerical_categorical"]] <- barchart_average
-  # visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_with_error_bars
+  visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_percent
   visualisation_functions[["CASE_direct_reporting_numerical_"]] <- barchart_average
-  visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_plot_fct
   
   return(visualisation_functions[[case]])
 }
