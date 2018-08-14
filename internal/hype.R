@@ -55,7 +55,7 @@ if(any(!filesexist)){
 missing_sheets<-files_needed[!filesexist] %>%  strsplit("/") %>% lapply(function(x){x[length(x)] %>% gsub(".csv","",.)}) %>% unlist %>% paste(collapse = "\n")
 stop(paste0(
 "Input information seems to be missing.
-Please open the input xlsx sheets for data and analysis definition and click the update button in the readme sheet of each file.
+Please open the input xlsx sheet analysis definition and click the update button in the readme sheet of each file.
 Make sure the input xlsm files  contain all sheets from the template with the names unchanged! Not exported sheets:\n",
 missing_sheets))
 }
@@ -89,7 +89,7 @@ data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAs
 data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %>% to_alphanumeric_lowercase
 
 #KI interviews
-ki_aggregation<-read.csv("./internal/input_files/ki_aggregation.csv",stringsAsFactors = F) 
+ki_aggregation<-read.csv("./internal/input_files/ki_aggregation.csv",stringsAsFactors = F)  %>% as.data.frame(stringsAsFactors=F)
 ki_aggregation <- ki_aggregation %>% apply(., 2, to_alphanumeric_lowercase) 
 
 # load samplingframe (only if data_parameters says it's a stratified sample)
@@ -101,15 +101,17 @@ if(data_parameters$stratified[1]=="yes"){
                                                              data.stratum.column = data_parameters$stratum.name.variable[1],
                                                              return.stratum.populations = T)}
 
-#do KI aggregations if that was the methodology, else 
-if(ki_aggregation[1] == "yes"){source("./internal/R/ki_aggregation.R")}else{
 # load questionnaire and create associated functions:
-questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
+questionnaire <- load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
                                     choices.file = "./internal/input_files/kobo_choices.csv",
                                   choices.label.column.to.use = data_parameters$choices.label.column.to.use)
 # load cluster ids and create associated functions:
 
+
+#do KI aggregations if that was the methodology, else 
+if(ki_aggregation$key.informant.interviews == "yes"){source("./internal/R/KI_aggs/ki_aggregation.R")}else{
 # cleaning and getting the factors out 
+  
 data <- levels_for_cat(data, questionnaire)
 #composite_indicators
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
@@ -162,7 +164,6 @@ all_summary_statistics_labelandnames[,stay_distinguishable]<-lapply(stay_disting
            as.character(all_summary_statistics[[column]][!is.na(all_summary_statistics[[column]])]),")")
   jointlabel
 })
-
 
 
 # save as a csv. Long format + pivot table is great for interactive xlsx

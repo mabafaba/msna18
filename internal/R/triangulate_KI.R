@@ -22,7 +22,8 @@ triangulate_combine_select_multiple<-function(x,by){
 
 numeric_consensus<-function(x){
   # accepting 30% difference at most
-  if((max(x)-min(x))/min(x)>0.3){return(FALSE)}
+  x <- as.numeric(x)
+  if(((max(x) - min(x))/min(x))> 0.3){return(FALSE)}
   TRUE
 }
 
@@ -42,13 +43,11 @@ triangulate_empty<-function(x,by){
 }
 
 
-map_to_triangulation<-function(varname=NULL,vartype=NULL){
-  
-  if(is.null(varname) & is.null(vartype)){stop("must provide at least one of 'varname' or 'vartype' parameters")}
+map_to_triangulation<-function(varname=NULL){
+  vartype <- question_variable_type(varname)
+ 
+   if(is.null(varname)){stop("must provide at least one of 'varname' or 'vartype' parameters")}
 
-  if(is.null(vartype)){
-    vartype<-question_variable_type(varname)
-    }
   if(!(vartype%in% c("select_one","select_multiple","numeric"))){
     warning(paste(
       "don't know how to triangulate variable of type: '",

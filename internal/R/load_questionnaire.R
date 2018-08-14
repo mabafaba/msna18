@@ -50,14 +50,14 @@ load_questionnaire<-function(data,
   begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
   end_gr <- grep(paste(c("end_group","end group"), collapse = "|"), questions$type, ignore.case = T)
   number_of_questions <- (length(questions$name) - length(begin_gr) - length(end_gr))
-  
+
   questions$relevant<-add_group_conditions_to_question_conditions(questions)
   # get data column names
   data_colnames<-names(data)
   
   # this changes the questionnaire questions and choices to fit the data columns,
   # with empty entries for data columns that don't appear in the questionnaire.
-  if((sum(!is.na(match(data_colnames, questions$name)))/number_of_questions) < 0.1) {
+  if((sum(!is.na(match(data_colnames, questions$name)))/number_of_questions) < 0.4) {
     stop("The question names (questionnaire) and data column names (data) don't seem to match. please make sure the two columns are harmonized")
   }
   

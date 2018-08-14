@@ -1,9 +1,11 @@
 #### add a mapping function from the parameters (what you are aggregating to) to the median / mode / means
+source("./internal/R/triangulate_KI.R")
 
 
 ###FIRST YOU TRIANGULATE 
 if(!is.null(ki_aggregation$level.to.triangualte.to)){
-  trig_data <- triangulate(data, ki_aggregation$level.to.triangualte.to)}
+  trig_data <- triangulate(data, ki_aggregation$level.to.triangualte.to)
+  }
 
 
 
