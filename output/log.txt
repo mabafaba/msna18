@@ -965,3 +965,93 @@ data sanitation decided not to produce summary statistics. Message:
 
 can not test group difference with <2 different values in the dependent variable
 
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+no data (after removing records with NA in dependent or independent variable)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
