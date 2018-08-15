@@ -18,7 +18,8 @@
   survey.design <- svydesign(data = data,
       ids = formula(cluster.id.formula),
       strata = names(strata.weights),
-      weights = as.vector(strata.weights))
+      weights = as.vector(strata.weights),
+      nest = T)
     return(survey.design)}
 ?svydesign
 #add to this an option that strata weights can be the vector of weights if there is one in the data & warning that we usually dont do this
@@ -40,7 +41,18 @@ map_to_case<-function(data,
                       dependent.var,
                       independent.var = NULL,
                       paired = NULL){
-  variable.type <- paste0(variable_type(dependent.var), "_", variable_type(independent.var))
+  case_vartype<-function(varname,data){
+      if(varname %in% c(NA,""," ")){return("")}
+      if(question_is_categorical(varname)){return("categorical")}
+      if(question_is_numeric(varname)){return("numeric")}
+      # if conversion to numeric doesn't cause extra NA's, give numeric:
+      if(length(which(is.na(as.numeric(data[[varname]]))))==length(which(is.na(data[[varname]])))){return("numeric")}
+      # if it wasn't empty,not NA, not found in kobo tool, and not convertable to numeric.. then let's give categorical a shot i guess:
+      return("categorical")
+    
+    }
+  
+  variable.type <- paste0(case_vartype(dependent.var,data), "_", case_vartype(independent.var,data))
   case <- paste(c("CASE",hypothesis.type,variable.type, paired), collapse = "_")
   class(case)<-"analysis_case"
   return(case)
@@ -235,4 +247,3 @@ map_to_file<-function(object,filename,...){
 #################################
 # map to mode:           ########
 #################################
-map_to_maps <- 

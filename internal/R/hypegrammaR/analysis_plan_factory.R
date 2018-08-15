@@ -85,10 +85,23 @@ analysisplan_remove_dependent_same_as_independent<-function(analysisplan){
 
 map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
   analysis_plan_user_ALL<-analysis_plan_user[analysis_plan_user$variable=="..all..",]
-  analysis_plan_user<-analysis_plan_user[analysis_plan_user$variable!="..all..",]
+  if(nrow(analysis_plan_user_ALL)>0){
+    all_dependent_types<-names(data) %>% sapply(question_variable_type)
+    all_dependents<-names(data)[all_dependent_types%in% c("select_one", "select_multiple","numeric","integer")]
+    analysis_plan_user_ALL<- all_dependents %>% lapply(function(dep){
+      # dep<-all_dependents[1]
+      this_analysis_plan_user_ALL<-analysis_plan_user_ALL
+      this_analysis_plan_user_ALL$variable<-dep;
+      this_analysis_plan_user_ALL})%>% do.call(rbind,.)
+  } 
+  analysis_plan_user<-rbind(analysis_plan_user[analysis_plan_user$variable!="..all..",],analysis_plan_user_ALL) %>% unique
   
-  analysis_plan_user<-analysis_plan_user[!apply(analysis_plan_user,1,function(x){all(is.na(x))}),]
-
+  
+  
+  analysis_plan_user<-analysis_plan_user[!apply(analysis_plan_user,1,function(x){all(is.na(x)|grepl("^[[:space:]]*$",x))}),]
+  has_no_var<-analysis_plan_user$variable %>% (function(x){is.na(x)|grepl("^[[:space:]]*$",x)})
+  if(any(has_no_var)){analysis_plan_user<-analysis_plan_user[!has_no_var,]
+                      .write_to_log("Some rows in the user defined analysisplan are not completely empty, but have an empty \"variable\" field. Removed.")}
   repeat.var=analysis_plan_user$repeat.for %>% to_alphanumeric_lowercase %>% unname
   independent.var = analysis_plan_user$disaggregate.by %>% to_alphanumeric_lowercase %>% unname
   independent.var<-independent.var %>% (function(x){y<-x;y[is.na(x)|x==""|is.null(x)]<-NA;y})
@@ -105,7 +118,7 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
                                                     & !(repeat.var %in% names(data)) # and not in data colnames
                                                   ))]
 
-                                                data
+                                                
   if(length(c(illegal_repeat,illegal_dependent,illegal_independent))>0){
     stop(paste("analysis plan variable name inputs not found in data:\n",
                "repeat for: ",paste(illegal_repeat %>% unique,collapse=", "),"\n",
@@ -114,9 +127,16 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
                ))
   }
 
+
+
   hypothesis.type = rep("group_difference",nrow(analysis_plan_user))
   hypothesis.type[is.na(independent.var)]<-"direct_reporting"
-  case<- paste0("CASE_",hypothesis.type,"_",ifelse(data[,dependent.var] %>% sapply(is.numeric),"numerical","categorical"),"_categorical")
+  case<-sapply(1:nrow(analysis_plan_user),function(x){
+    map_to_case(data,hypothesis.type[x],dependent.var = dependent.var[x],independent.var = independent.var[x])
+  })
+  
+  
+  # case<- paste0("CASE_",hypothesis.type,"_",ifelse(data[,dependent.var] %>% as.data.frame(stringsAsFactors=F) %>% sapply(is.numeric),"numerical","categorical"),"_categorical")
   analysisplan<-data.frame(
              independent.var,
              dependent.var,
@@ -126,7 +146,7 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
              analysis_plan_user[,grep("output",names(analysis_plan_user))],
              stringsAsFactors=F)
   
-    var.exists.in.data <- (c(analysisplan[,"dependent.var"],analysisplan[,"independent.var"]) %>% unique) %in% names(data)
+    var.exists.in.data <- (c(analysisplan[,"dependent.var"],analysisplan[,"independent.var"]) %>% unique) %in% c(NA,names(data))
   if(any(!var.exists.in.data)){stop(paste0("analysis plan input contains variable names that could not be found in the data or composite indicators:\n",
                                     paste0((c(analysisplan[,"dependent.var"],analysisplan[,"independent.var"]) %>% unique)[var.exists.in.data] %>% names,collapse="\n")))}
   
@@ -135,6 +155,7 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
     analysisplan$output.regular.chart..report.[analysisplan$output.regular.chart..report.!="yes"]<-"no"
     analysisplan$output.Map..Mode[analysisplan$output.Map..Mode!="yes"]<-"no"
     analysisplan$output.Map..Average.Percent..of.mode.[analysisplan$output.Map..Average.Percent..of.mode.!="yes"]<-"no"
+    # just in case
     return(analysisplan)
 }
 

@@ -11,15 +11,19 @@ excel_csv_inputs_sampling_frame_stratification_to_weighting_function<-function(f
   # clean up in case there's NA's or empty strings
   
   # remove the top row from input csv, store it as the variable names, turn rest into sampling frame with concatenated strata names:
-  sf_strata_names<-rawsf[-1,stratanames.rawcols] %>% apply(1,paste0,collapse=stratum_var_separator_string)
+  sf_strata_names<-rawsf[-1,stratanames.rawcols] %>% as.data.frame %>% apply(1,paste0,collapse=stratum_var_separator_string)
+  
   sf_strata_populations<-rawsf[-1,"population"] %>% as.numeric
   sampling.frame <- data.frame(stratum=sf_strata_names, population=sf_strata_populations)  
   
   
   # a function that creates combined strata names from multiple variables
   add_stratum_names_to_data<-function(data){
+    if(any(!(strata.variable.names %in% names(data)))){
+      stop(paste("sampling frame references variable(s) that can not be found in the data:",
+                                                                  strata.variable.names[!(strata.variable.names %in% names(data))]))}
     # when combining stratum names from different variables, what string to use as separator?
-    data_strata_names<-data[,strata.variable.names] %>% apply(1,paste0,collapse=stratum_var_separator_string)
+    data_strata_names<-data[,strata.variable.names] %>% as.data.frame(stringsAsFactors=F) %>% apply(1,paste0,collapse=stratum_var_separator_string)
     data$these_are_all_the_strata_names<-data_strata_names
     return(data)
   }
@@ -54,16 +58,18 @@ excel_csv_inputs_sampling_frame_cluster_to_weighting_function<-function(file="./
   strata.variable.names<-rawsf[1,stratanames.rawcols] %>% to_alphanumeric_lowercase 
   # clean up in case there's NA's or empty strings
   # remove the top row from input csv, store it as the variable names, turn rest into sampling frame with concatenated strata names:
-  sf_strata_names<-rawsf[-1,stratanames.rawcols] %>% apply(1,paste0,collapse=stratum_var_separator_string)
+  sf_strata_names<-rawsf[-1,stratanames.rawcols] %>% as.data.frame %>% apply(1,paste0,collapse=stratum_var_separator_string)
   sf_strata_populations<-rawsf[-1,"population"] %>% as.numeric
   sampling.frame <- data.frame(stratum=sf_strata_names, population=sf_strata_populations)  
   
   
   # a function that creates combined strata names from multiple variables
   add_stratum_names_to_data<-function(data){
+    if(any(!(strata.variable.names %in% names(data)))){stop(paste("sampling frame references variable(s) that can not be found in the data:",
+                                                                  strata.variable.names[!(strata.variable.names %in% names(data))]))}
     # when combining stratum names from different variables, what string to use as separator?
-    data_strata_names<-data[,strata.variable.names] %>% apply(1,paste0,collapse=stratum_var_separator_string)
-    data_strata_names[data[,strata.variable.names] %>% apply(1,function(x){any(is.na(x))})]<-NA
+    data_strata_names<-data[,strata.variable.names] %>% as.data.frame(stringsAsFactors=F) %>% apply(1,paste0,collapse=stratum_var_separator_string)
+    data_strata_names[data[,strata.variable.names] %>% as.data.frame(stringsAsFactors=F) %>% apply(1,function(x){any(is.na(x))})]<-NA
     data$these_are_all_the_cluster_names<-data_strata_names
     return(data)
   }

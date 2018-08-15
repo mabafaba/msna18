@@ -4,16 +4,26 @@
 
 
 
-
 combine_weighting_functions<-function(weights_function_1,weights_function_2){
-  combined_weighting_function<-function(df){
+  normweights<-function(w){w*length(w)/sum(w)}
+  normW2byW1<-function(w1,w2){
+    w1_proportions_is<-(w2 %>% split(names(w1)) %>% sapply(sum)) %>% normweights() 
+    w1_proportions_should<-w1[!duplicated(names(w1))]
+    w1_proportion_factor<-w1_proportions_should/w1_proportions_is
+    w_combined<-w2*w1_proportion_factor[names(w1)]
+    w_combined
+  }
+  
+  combined_fun<-function(df){
+    
     w1 <- weights_function_1(df)
     w2 <- weights_function_2(df)
-    w_combined<-w1*w2
-    w_combined_normalised<-(w_combined*length(w_combined)/sum(w_combined))
-    return(w_combined_normalised)
+    w_combined<-normW2byW1(w1,w2) 
+    
+    return(w_combined)
   }
-  return(combined_weighting_function)
+  
+  return(combined_fun)
 }
 
 
@@ -36,7 +46,7 @@ combine_weighting_functions<-function(weights_function_1,weights_function_2){
 weighting_fun_from_samplingframe <- function(sampling.frame,
                                data.stratum.column,
                                sampling.frame.population.column="population",
-                               sampling.frame.stratum.column="stratum"){
+                               sampling.frame.stratum.column="stratum",data=NULL){
   
   # this function was originally designed for stratification weights only, hence the variable names.
   # just imagine you're doing a stratification, and BAAAMM you will feel normal again
@@ -65,14 +75,18 @@ weighting_fun_from_samplingframe <- function(sampling.frame,
           strataexists<-(names((samplecounts)) %in% names(sf.strata))
           data.strata.not.in.sampleframe<-samplecounts[!strataexists]
           # throw error if data strata not found in sampling frame
+          
           if(length(data.strata.not.in.sampleframe)!=0){
-            stop(paste("data has strata names that don't exist in sampling frame. records in this stratum will be ignored in all weighted functions."))
-          }
+            stop(paste0("problem with ", cat(bgYellow(red(" sampling frame "))),
+                        "in the data, we find the following strata names that don't exist in the sampling frame, or have no valid population numbers:\n",
+                        cyan(paste0(names(data.strata.not.in.sampleframe),collapse="\n")))
+            )
+                 }
           # return sample counts
           return(samplecounts[strataexists])
         }
         
-        
+        x<-c(a="1",b="2")
         stratify.weights<-function(pop_strata,sample_strata){
           
           
@@ -106,12 +120,16 @@ weighting_fun_from_samplingframe <- function(sampling.frame,
 
   # load file:
   sf_raw<-sampling.frame
-
+  if(any(duplicated(sf_raw[, sampling.frame.stratum.column]))){
+    sf_raw<-sf_raw[!duplicated(sf_raw[sampling.frame.stratum.column]),]
+    .write_to_log(paste("SERIOUS ISSUE: duplicate stratum names in the sampling frame:\n",
+                        cyan(paste0(names(sf_raw[duplicated(sf_raw[sampling.frame.stratum.column]),sampling.frame.stratum.column] %>% table),collapse="\n"))))
+    warning("DUPLICATE STRATUM NAMES IN SAMPLING FRAME! results potentially invalid.")
+  }
   # sf_raw<-sf
   # get unique strata names from sampling frame
   unique_strata <- sf_raw[, sampling.frame.stratum.column]
   # make sure strata are unique
-  if(any((unique_strata %>% hasdata %>% table)>1)){stop("duplicate stratum names in the sampling frame")}
   
   # standardise internal sampling frame format
   # - data.stratum.column: the name of the data column holding strata names (is function argument)
@@ -121,13 +139,24 @@ weighting_fun_from_samplingframe <- function(sampling.frame,
   names(population.counts)<-as.character(unique_strata)
   
   # error if any stratum has zero population
-  if(any(population.counts==0,na.rm = T)){stop("strata in sampling frame can not have population 0, please remove the stratum from your sampling frame and data. (how did you even sample from that)")}
+  if(any(population.counts==0,na.rm = T)){.write_to_log("CRITICAL: strata in sampling frame can not have population 0, please remove the stratum from your sampling frame and data. (how did you even sample from that)")}
   # make sure all strata have data:
   population.counts <- population.counts[(
     !is.na(population.counts) &
       !is.na(population.counts) &
       population.counts > 0)]
+
   
+  # make sure all data has strata in samplingframe:
+  if(!is.null(data)){
+  is_data_in_sf<-unique(data[,data.stratum.column]) %in% sf_raw[,sampling.frame.stratum.column]
+  if(any(!(is_data_in_sf))){
+    warning(paste0("there are records that can not be found in the sampling frame:\n",
+                   cyan(paste0(data[is_data_in_sf,data.stratum.column] %>% unique,collapse="\n"))))
+  }
+  }
+  
+    
   # closure function that calculates weights on the fly
   # uses immutable data provided to load_samplingframe()
   weights_of<- function(df) {
@@ -150,7 +179,6 @@ weighting_fun_from_samplingframe <- function(sampling.frame,
     # population counts taken from weights_of() enclosing environment, created in load_samplingframe()
     weights <- stratify.weights(pop_strata = population.counts,
                                 sample_strata = sample.counts)
-    
     # final test that mean of weights == 1
     # insure(that.all=mean(weights[df[[data.stratum.column]]]) %almost.equals% 1,
     #        err="Weighting calculation failed internally, this is our fault. Sorry! Contact the Reach Initiatives data unit to get this fixed!")

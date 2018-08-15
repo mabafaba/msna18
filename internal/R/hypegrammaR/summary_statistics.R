@@ -160,17 +160,16 @@ percent_with_confints_select_mult_groups <- function(dependent.var,
   result_hg_format <- lapply(names(choices), function(x){
     if(length(unique(data[[x]]))==1){
       dependent.var.value= x
-      if(length(unique(data[[independent.var]]==1))){
+      if(length(unique(data[[independent.var]]))==1){
         independent.var.value=unique(data[[independent.var]])	
         return(data.frame(dependent.var,independent.var,dependent.var.value,independent.var.value,numbers=as.numeric(unique(data[[x]])),se=NA,min=NA,max=NA))}}
-    
-    formula_string <- paste0("~",x ,sep = "")
+    formula_string_sans_tilde<-paste0("as.numeric(",x ,")",sep = "")
+    formula_string <- paste0("~as.numeric(",x ,")",sep = "")
     by <- paste0("~", independent.var ,sep = "") 
     
     result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
-    
-    
-    summary_stat_colname <- x
+           
+    summary_stat_colname <- formula_string_sans_tilde
     lower_confint_colname<-paste0("ci_l")
     upper_confint_colname<-paste0("ci_u")
     

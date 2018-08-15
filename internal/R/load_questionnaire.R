@@ -164,24 +164,24 @@ load_questionnaire<-function(data,
     
     
     
-    message(blue("load_questionnaire() activated the following functions:
-
-
-             identifying data type:
-
-             question_is_numeric()
-             question_is_categorical()
-             question_is_categorical()
-             question_is_select_one()
-             question_is_select_multiple()
-             question_variable_type()
-
-             labels:
-             question_get_choice_labels()
-             question_get_question_label()
-
-             skiplogic:
-             question_is_skipped()"))
+    # message(blue("load_questionnaire() activated the following functions:
+    # 
+    # 
+    #          identifying data type:
+    # 
+    #          question_is_numeric()
+    #          question_is_categorical()
+    #          question_is_categorical()
+    #          question_is_select_one()
+    #          question_is_select_multiple()
+    #          question_variable_type()
+    # 
+    #          labels:
+    #          question_get_choice_labels()
+    #          question_get_question_label()
+    # 
+    #          skiplogic:
+    #          question_is_skipped()"))
     questionnaire_is_loaded <- TRUE
     is_questionnaire_loaded<-function(){return(TRUE)}
 

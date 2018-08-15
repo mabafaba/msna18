@@ -1,20 +1,33 @@
 apply_data_analysis_plan<-function(data,analysisplan){
   if(!is.null(analysisplan[,"repeat.var"])){
-    repeat.var <- as.character(unique(analysisplan$repeat.var))
       # repeat.var.value <- unique(data[[repeat.var]])
       # repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
-      analysisplan.no.repeat <- analysisplan %>% filter(repeat.var %in% c(NA, "", " ")) %>% cbind(.,repeat.var.value = NA, stringsAsFactors = F)
+      analysisplan.no.repeat <- analysisplan[analysisplan$repeat.var %in% c(NA,""," "),]
+      if(!nrow(analysisplan.no.repeat)<1){
+        analysisplan.no.repeat$repeat.var<-NA
+        analysisplan.no.repeat$repeat.var.value<-NA
+      }
+      analysisplan.repeat<-analysisplan[!(analysisplan$repeat.var %in% c(NA,""," ")),]
+      analysisplan.repeat<-(1:nrow(analysisplan.repeat)) %>% lapply(function(ap_row_index){
+        ap_row<-analysisplan.repeat[ap_row_index,] %>% unlist
+        ap_row_expanded<-matrix(ap_row,nrow=length(unique(data[[ap_row["repeat.var"]]])),
+                                ncol=length(ap_row),byrow=TRUE) %>% as.data.frame(stringsAsFactors=F)
+        colnames(ap_row_expanded)<-names(ap_row)
+        ap_row_expanded$repeat.var.value<-unique(as.character(data[[ap_row["repeat.var"]]]))
+        ap_row_expanded
+      }) %>% do.call(rbind,.)
       
-      analysisplan.repeat <- lapply(repeat.var, function(x){
-        if(!x %in% c(NA, "", " ")){
-        repeat.var.value <- unique(data[[x]])
-        repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
-        analysisplan %>% filter(repeat.var %in% x) %>% slice(rep(1:n(), each = length(repeat.var.value))) %>% cbind(.,repeat.var.value, stringsAsFactors = F)}}) %>% do.call(rbind,.)
+      # analysisplan.repeat <- lapply(repeat.var, function(x){
+      #   if(!x %in% c(NA, "", " ")){
+      #   repeat.var.value <- unique(data[[x]])
+      #   repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
+      #   analysisplan %>% filter(repeat.var %in% x) %>% slice(rep(1:n(), each = length(repeat.var.value))) %>% cbind(.,repeat.var.value, stringsAsFactors = F)}}) %>% do.call(rbind,.)
     
-      analysisplan <- rbind(analysisplan.no.repeat, analysisplan.repeat, stringsAsFactors = F) 
-      rm(repeat.var)}
-   
-  analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
+      analysisplan <- rbind(analysisplan.no.repeat, analysisplan.repeat, stringsAsFactors = F)
+    }
+colnames(analysisplan.no.repeat)
+colnames(analysisplan.repeat)
+      analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
   
    results<- apply(analysisplan,1,function(x){
     if(!(x["repeat.var"]) %in% c(NULL, "", " ", NA)){
@@ -30,7 +43,6 @@ apply_data_analysis_plan<-function(data,analysisplan){
         which(
           !(is.na(data[,x["independent.var"]]))),]
     }
-print(x)
     printparamlist(x,"1/2: calculating summary statistics and hypothesis tests")
     .write_to_log(printparamlist(x,"1/2: calculating summary statistics and hypothesis tests"))
     if(is.na(x["independent.var"])|is.null(x["independent.var"])){
@@ -49,6 +61,10 @@ print(x)
     if(!is.null(x["repeat.var"])&(!is.na(x["repeat.var"]))){
       result$input.parameters$repeat.var<-x["repeat.var"]
       result$input.parameters$repeat.var.value<-x["repeat.var.value"]
+    }else{
+      result$input.parameters$repeat.var<-NA
+      result$input.parameters$repeat.var.value<-NA
+      
     }
     
 
@@ -74,6 +90,7 @@ print(x)
 
 printparamlist<-function(x,title=""){
   # if(!exists("debugging_mode")){cat("\014")}else{if(!debugging_mode){cat("\014")}}
+  cat("\014")
   cat(title)
   cat("\n")
   cbind(names(x[-length(x)]),as.matrix(x)[-length(x)]) %>% apply(1,paste,collapse=" = '") %>% paste(collapse="'\n") %>% cat
