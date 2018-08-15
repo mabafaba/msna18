@@ -1,4 +1,4 @@
-## Function that 
+
 triangulate<-function(data,by.var.name,vartypes=NULL){
   lapply(names(data),function(varname){
     triangulation_fun<-map_to_triangulation(varname)
@@ -20,8 +20,6 @@ triangulate_combine_select_multiple<-function(x,by){
   split(x,by) %>% lapply(function(x){strsplit(x," ") %>% unlist %>% unique %>% paste(collapse =" ")})
 }
 
-
-
 numeric_consensus<-function(x){
   # accepting 30% difference at most
   x <- as.numeric(x)
@@ -31,9 +29,9 @@ numeric_consensus<-function(x){
 
 
 triangulate_mean<-function(x,by){
-  split(as.numeric(x),by) %>% lapply( ### This part of the code throws the error because split.by returns NA 
+  split(as.numeric(x),by) %>% lapply(
     function(x){
-      if(!numeric_consensus(x)){return(NA)} 
+      if(!numeric_consensus(x)){return(NA)}
       return(mean(x))
     }) %>% unlist
 }
