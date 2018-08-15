@@ -18,9 +18,10 @@
   survey.design <- svydesign(data = data,
       ids = formula(cluster.id.formula),
       strata = names(strata.weights),
-      weights = as.vector(strata.weights))
+      weights = as.vector(strata.weights),
+      nest = T)
     return(survey.design)}
-
+?svydesign
 #add to this an option that strata weights can be the vector of weights if there is one in the data & warning that we usually dont do this
 
 #' Map to case
@@ -40,7 +41,18 @@ map_to_case<-function(data,
                       dependent.var,
                       independent.var = NULL,
                       paired = NULL){
-  variable.type <- paste0(variable_type(dependent.var), "_", variable_type(independent.var))
+  case_vartype<-function(varname,data){
+      if(varname %in% c(NA,""," ")){return("")}
+      if(question_is_categorical(varname)){return("categorical")}
+      if(question_is_numeric(varname)){return("numeric")}
+      # if conversion to numeric doesn't cause extra NA's, give numeric:
+      if(length(which(is.na(as.numeric(data[[varname]]))))==length(which(is.na(data[[varname]])))){return("numeric")}
+      # if it wasn't empty,not NA, not found in kobo tool, and not convertable to numeric.. then let's give categorical a shot i guess:
+      return("categorical")
+    
+    }
+  
+  variable.type <- paste0(case_vartype(dependent.var,data), "_", case_vartype(independent.var,data))
   case <- paste(c("CASE",hypothesis.type,variable.type, paired), collapse = "_")
   class(case)<-"analysis_case"
   return(case)
@@ -186,9 +198,8 @@ map_to_visualisation <- function(case) {
   # add implemented cases:
   visualisation_functions[["CASE_group_difference_categorical_categorical"]] <- grouped_barchart_percent
   visualisation_functions[["CASE_group_difference_numerical_categorical"]] <- barchart_average
-  # visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_with_error_bars
+  visualisation_functions[["CASE_direct_reporting_categorical_"]] <- barchart_percent
   visualisation_functions[["CASE_direct_reporting_numerical_"]] <- barchart_average
-  visualisation_functions[["CASE_direct_reporting_categorical_"]] <- grouped_barchart_percent
   
   return(visualisation_functions[[case]])
 }
@@ -207,8 +218,9 @@ map_to_file<-function(object,filename,...){
     }
     
   },
-  error=function(cond){
+  error=function(e){
     message(paste0("Could not write to the file called:\n",filename))
+    message(paste0("error:\n",e$message))
     message("Please close the file if it is open in any application and make sure the folder I am trying to write to exists.")
     message("to try again and continue the script, type 't'. To skip writing this file and countine the script, type 's'. To cancel the whole script, type 'c'. Then press enter.")
     whattodo<-readline("Try again (t), skip this file (s), or cancel script (c)?: ")  
@@ -235,19 +247,3 @@ map_to_file<-function(object,filename,...){
 #################################
 # map to mode:           ########
 #################################
-### for select_one and select multiple answers, returns the most common answer for that group 
-# only works for select_one and select_multiple
-
-
-summary_statistic_mode <- function(dependent.var,independent.var, design,data){
- percent<-percent_with_confints(dependent.var,independent.var, design,data)
- modes <- percent %>% split.data.frame(percent$independent.var.value, drop = T) %>% lapply(function(x){
-   x[which.max(x$numbers),]}) %>% do.call(rbind, .)
- return(modes)}
-
-summary_statistic_rank<- function(dependent.var,independent.var, design,data){
-  percent<-percent_with_confints(dependent.var,independent.var, design,data)
-  ranked <- percent %>% split.data.frame(percent$independent.var.value, drop = T) %>% lapply(function(x){
-  mutate(x, rank = rank(x$numbers, ties.method = "min"))}) %>% do.call(rbind, .) 
-  return(ranked)}
-

@@ -66,7 +66,10 @@ load_questionnaire<-function(data,
         choices_per_data_column<-questions$type %>% as.character %>% strsplit(" ") %>% lapply(unlist)%>% lapply(function(x){
 
         x %>% lapply(function(y){
-        grep(y,choices[["list_name"]],value=F)
+        # grep(y,choices[["list_name"]],value=F)
+        # match (full word only)
+        grep(paste0(" ",y," "),paste0(" ",choices[["list_name"]]," "),value=F,fixed = T)
+          
       }
       ) %>% unlist
     }) %>% lapply(hasdata) %>% lapply(function(x){
@@ -78,6 +81,7 @@ load_questionnaire<-function(data,
     # make functions that need questionnaire
 
    question_get_choice_labels <<- function(responses,variable.name){
+
      variable.name<-as.character(variable.name)
       if(question_is_categorical(variable.name)){
       labels<-replace_with_lookup_table(
@@ -160,24 +164,24 @@ load_questionnaire<-function(data,
     
     
     
-    message(blue("load_questionnaire() activated the following functions:
-
-
-             identifying data type:
-
-             question_is_numeric()
-             question_is_categorical()
-             question_is_categorical()
-             question_is_select_one()
-             question_is_select_multiple()
-             question_variable_type()
-
-             labels:
-             question_get_choice_labels()
-             question_get_question_label()
-
-             skiplogic:
-             question_is_skipped()"))
+    # message(blue("load_questionnaire() activated the following functions:
+    # 
+    # 
+    #          identifying data type:
+    # 
+    #          question_is_numeric()
+    #          question_is_categorical()
+    #          question_is_categorical()
+    #          question_is_select_one()
+    #          question_is_select_multiple()
+    #          question_variable_type()
+    # 
+    #          labels:
+    #          question_get_choice_labels()
+    #          question_get_question_label()
+    # 
+    #          skiplogic:
+    #          question_is_skipped()"))
     questionnaire_is_loaded <- TRUE
     is_questionnaire_loaded<-function(){return(TRUE)}
 

@@ -345,6 +345,9 @@ link.to.overview<-function(frompage){
                   display:inline-block;
                   }
                   
+                  div{
+                  margin-left:30px;
+                  }
                   </style>")  
               stop.speaking()
               

@@ -104,9 +104,9 @@ lapply(seq_along(g_independent_components),function(gi){
 
 
 
-
+require("igraph")
 graph_reverse_edges<-function(g){
-graph_as_dfs<-as_data_frame(g,"both")
+graph_as_dfs<-igraph::as_data_frame(g,"both")
 old_from<-graph_as_dfs$edges$from
 graph_as_dfs$edges$from<-graph_as_dfs$edges$to
 graph_as_dfs$edges$to<-old_from

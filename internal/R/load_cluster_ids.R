@@ -1,12 +1,8 @@
-load_cluster_sampling_units <- function(file = "./internal/input_files/cluster_sample.csv"){
-  
-  sampling_units <- read.csv(file, skip = 1, header=F, stringsAsFactors = F)
-  
-  if(sampling_units[1] == "yes") {
-    sampling_units <- as.character(sampling_units[!is.na(sampling_units)])
-  }
-  
-  else {
+load_cluster_sampling_units <- function(cluster.variable=NULL){
+  cluster.variable<-cluster.variable[cluster.variable!="" & !is.na(cluster.variable)]
+  if(!is.null(cluster.variable)) {
+    sampling_units <- as.character(cluster.variable[!is.na(cluster.variable)])
+  }else {
     sampling_units <- NULL
   }
   
@@ -17,8 +13,11 @@ load_cluster_sampling_units <- function(file = "./internal/input_files/cluster_s
     }
     
     else {
-      cluster_formula <- paste0("~", reduce(sampling_units[-1], function(x, y) {paste(x, y, sep = "+")}))
+      cluster_formula <- paste0("~", reduce(sampling_units, function(x, y) {paste(x, y, sep = "+")}))
     }
   }
   return(cluster_formula)
 }
+
+
+
