@@ -43,7 +43,7 @@ test_weights<-weights_of(data);rm(test_weights)
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
   message(silver("applying analysis plan.."))
-  results<-apply_data_analysis_plan(data,analysisplan)
+  results<-apply_data_analysis_plan(data,analysisplan[5:13,])
   results$analysisplan_log<-results$analysisplan
   results$analysisplan_log$message<-lapply(results$results,function(x){x$message}) %>% unlist
 # OUTPUT
@@ -52,10 +52,9 @@ test_weights<-weights_of(data);rm(test_weights)
     x$summary.statistics<-labels_summary_statistic(x$summary.statistics)
    return(x)
   })
+
   
   datamerge<-map_resultlist_to_datamerge(results$results,rows = c("repeat.var","repeat.var.value"),ignore = c("se","min","max"),labelise=T)
-  
-  
   results$analysisplan_log<-results$analysisplan
  
   
@@ -124,4 +123,3 @@ test_weights<-weights_of(data);rm(test_weights)
                 bold("a lot more objects and functions:"), "type ls() to see what's around."
                 )))
   
-allsumstats$max %>% table

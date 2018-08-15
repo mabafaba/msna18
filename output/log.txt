@@ -739,10 +739,6 @@ zeylaczeylac/---CLUSTER---/HC[39m
 
 
 
-
-
-
-
 data sanitation decided not to produce summary statistics. Message:
 
 not a data frame or data frame without data
@@ -1055,3 +1051,572 @@ data sanitation decided not to produce summary statistics. Message:
 
 can not test group difference with <2 different values in the dependent variable
 
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+no data (after removing records with NA in dependent or independent variable)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+no data (after removing records with NA in dependent or independent variable)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+no data (after removing records with NA in dependent or independent variable)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+no data (after removing records with NA in dependent or independent variable)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+no data (after removing records with NA in dependent or independent variable)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+no data (after removing records with NA in dependent or independent variable)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data

@@ -1,269 +1,148 @@
 "","independent.var","dependent.var","hypothesis.type","case","repeat.var","output.raw.numbers","output.minimal.chart...width.of.quarter.A4.landscape..FS.","output.regular.chart..report.","output.Map..Mode","output.Map..Average.Percent..of.mode.","output.heatmap","repeat.var.value","percentcomplete","heatmaps"
-"5","group","cash_education","group_difference","CASE_group_difference_categorical_categorical",NA,"yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___NA___NAInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___NA___NANon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___NA___NAReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___NA___NA_report_barchart.jpg",NA,NA,"yes",NA,"1%
-
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___NA___NA_heatmap.jpg"
-"6",NA,"cash_education","direct_reporting","CASE_direct_reporting_categorical_",NA,"yes","yes","yes",NA,NA,"yes",NA,"3%
+"1","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","lower_juba","2%
 
 ",NA
-"1","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","mmc and jere","4%
+"2","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","hiraan","4%
 
 ",NA
-"2","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","southern adamawa","6%
+"3","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","gedo","6%
 
 ",NA
-"3","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","east borno","8%
+"4","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","togdheer","8%
 
 ",NA
-"4","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","central yobe","9%
+"5","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","woqooyi_galbeed","10%
 
 ",NA
-"510","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","southern yobe","11%
+"6","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","bari","12%
 
 ",NA
-"61","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","northern adamawa","12%
+"7","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","mudug","14%
 
 ",NA
-"7","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","central borno","14%
+"8","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","nugaal","16%
 
 ",NA
-"8","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","northern yobe","16%
+"9","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","galgaduud","18%
 
 ",NA
-"9","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","northern borno","17%
+"10","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","sanaag","20%
 
 ",NA
-"10","group","access_aoo","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","southern borno","19%
+"11","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","bakool","22%
 
 ",NA
-"11","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jere_report_barchart.jpg",NA,NA,"yes","mmc and jere","20%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jere_heatmap.jpg"
-"12","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawa_report_barchart.jpg",NA,NA,"yes","southern adamawa","22%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawa_heatmap.jpg"
-"13","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east borno_report_barchart.jpg",NA,NA,"yes","east borno","24%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east borno_heatmap.jpg"
-"14","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobe_report_barchart.jpg",NA,NA,"yes","central yobe","25%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobe_heatmap.jpg"
-"15","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobe_report_barchart.jpg",NA,NA,"yes","southern yobe","27%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobe_heatmap.jpg"
-"16","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawa_report_barchart.jpg",NA,NA,"yes","northern adamawa","29%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawa_heatmap.jpg"
-"17","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central borno_report_barchart.jpg",NA,NA,"yes","central borno","30%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central borno_heatmap.jpg"
-"18","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobe_report_barchart.jpg",NA,NA,"yes","northern yobe","32%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobe_heatmap.jpg"
-"19","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern borno_report_barchart.jpg",NA,NA,"yes","northern borno","33%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern borno_heatmap.jpg"
-"20","group","marital_hoh","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoNon-displaced.jpg
-./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoReturnees.jpg","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern borno_report_barchart.jpg",NA,NA,"yes","southern borno","35%
-
-","./output/charts/marital_hoh___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern borno_heatmap.jpg"
-"21","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","mmc and jere","37%
+"12","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","bay","24%
 
 ",NA
-"22","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","southern adamawa","38%
+"13","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","middle_shabelle","26%
 
 ",NA
-"23","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","east borno","40%
+"14","population_group","wash_pin","group_difference","CASE_group_difference_numerical_categorical","region",NA,NA,"yes",NA,NA,"","lower_shabelle","28%
 
 ",NA
-"24","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","central yobe","41%
+"15","protection_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","host","30%
+
+","./output/charts/food_sec_index___protection_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___host_heatmap.jpg"
+"16","protection_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","IDP","32%
+
+","./output/charts/food_sec_index___protection_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___IDP_heatmap.jpg"
+"17","protection_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","returnee","34%
+
+","./output/charts/food_sec_index___protection_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___returnee_heatmap.jpg"
+"18","protection_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","refugee","36%
+
+","./output/charts/food_sec_index___protection_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___refugee_heatmap.jpg"
+"19","protection_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes",NA,"38%
 
 ",NA
-"25","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","southern yobe","43%
+"20","food_sec_index","health_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","host","40%
+
+","./output/charts/health_index___food_sec_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___host_heatmap.jpg"
+"21","food_sec_index","health_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","IDP","42%
+
+","./output/charts/health_index___food_sec_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___IDP_heatmap.jpg"
+"22","food_sec_index","health_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","returnee","44%
+
+","./output/charts/health_index___food_sec_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___returnee_heatmap.jpg"
+"23","food_sec_index","health_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","refugee","46%
+
+","./output/charts/health_index___food_sec_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___refugee_heatmap.jpg"
+"24","food_sec_index","health_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes",NA,"48%
 
 ",NA
-"26","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","northern adamawa","45%
+"25","health_index","nfi_shelter_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","host","51%
+
+","./output/charts/nfi_shelter_index___health_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___host_heatmap.jpg"
+"26","health_index","nfi_shelter_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","IDP","53%
+
+","./output/charts/nfi_shelter_index___health_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___IDP_heatmap.jpg"
+"27","health_index","nfi_shelter_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","returnee","55%
 
 ",NA
-"27","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","central borno","46%
+"28","health_index","nfi_shelter_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","refugee","57%
 
 ",NA
-"28","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","northern yobe","48%
+"29","health_index","nfi_shelter_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes",NA,"59%
 
 ",NA
-"29","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","northern borno","50%
+"30","nfi_shelter_index","nutrition_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","host","61%
+
+","./output/charts/nutrition_index___nfi_shelter_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___host_heatmap.jpg"
+"31","nfi_shelter_index","nutrition_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","IDP","63%
+
+","./output/charts/nutrition_index___nfi_shelter_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___IDP_heatmap.jpg"
+"32","nfi_shelter_index","nutrition_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","returnee","65%
 
 ",NA
-"30","group","move_plans","group_difference","CASE_group_difference_categorical_categorical","domain","yes","yes","yes",NA,NA,"yes","southern borno","51%
+"33","nfi_shelter_index","nutrition_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","refugee","67%
 
 ",NA
-"31","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jere_report_barchart.jpg",NA,NA,"yes","mmc and jere","53%
+"34","nfi_shelter_index","nutrition_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes",NA,"69%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jere_heatmap.jpg"
-"32","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawa_report_barchart.jpg",NA,NA,"yes","southern adamawa","54%
+",NA
+"35","nutrition_index","protection_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","host","71%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawa_heatmap.jpg"
-"33","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east borno_report_barchart.jpg",NA,NA,"yes","east borno","56%
+","./output/charts/protection_index___nutrition_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___host_heatmap.jpg"
+"36","nutrition_index","protection_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","IDP","73%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east borno_heatmap.jpg"
-"34","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobe_report_barchart.jpg",NA,NA,"yes","central yobe","58%
+","./output/charts/protection_index___nutrition_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___IDP_heatmap.jpg"
+"37","nutrition_index","protection_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","returnee","75%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobe_heatmap.jpg"
-"35","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobe_report_barchart.jpg",NA,NA,"yes","southern yobe","59%
+","./output/charts/protection_index___nutrition_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___returnee_heatmap.jpg"
+"38","nutrition_index","protection_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","refugee","77%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobe_heatmap.jpg"
-"36","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawa_report_barchart.jpg",NA,NA,"yes","northern adamawa","61%
+","./output/charts/protection_index___nutrition_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___refugee_heatmap.jpg"
+"39","nutrition_index","protection_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes",NA,"79%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawa_heatmap.jpg"
-"37","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central borno_report_barchart.jpg",NA,NA,"yes","central borno","62%
+",NA
+"40","protection_index","wash_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","host","81%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central borno_heatmap.jpg"
-"38","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobe_report_barchart.jpg",NA,NA,"yes","northern yobe","64%
+","./output/charts/wash_index___protection_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___host_heatmap.jpg"
+"41","protection_index","wash_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","IDP","83%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobe_heatmap.jpg"
-"39","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern borno_report_barchart.jpg",NA,NA,"yes","northern borno","66%
+","./output/charts/wash_index___protection_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___IDP_heatmap.jpg"
+"42","protection_index","wash_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","returnee","85%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern borno_heatmap.jpg"
-"40","group","cash_education","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoNon-displaced.jpg
-./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoReturnees.jpg","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern borno_report_barchart.jpg",NA,NA,"yes","southern borno","67%
+","./output/charts/wash_index___protection_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___returnee_heatmap.jpg"
+"43","protection_index","wash_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","refugee","87%
 
-","./output/charts/cash_education___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern borno_heatmap.jpg"
-"41","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jere_report_barchart.jpg",NA,NA,"yes","mmc and jere","69%
+","./output/charts/wash_index___protection_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___refugee_heatmap.jpg"
+"44","protection_index","wash_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes",NA,"89%
 
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jere_heatmap.jpg"
-"42","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawa_report_barchart.jpg",NA,NA,"yes","southern adamawa","70%
+",NA
+"45","wash_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","host","91%
 
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawa_heatmap.jpg"
-"43","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east borno_report_barchart.jpg",NA,NA,"yes","east borno","72%
+","./output/charts/food_sec_index___wash_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___host_heatmap.jpg"
+"46","wash_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","IDP","93%
 
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east borno_heatmap.jpg"
-"44","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobe_report_barchart.jpg",NA,NA,"yes","central yobe","74%
+","./output/charts/food_sec_index___wash_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___IDP_heatmap.jpg"
+"47","wash_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","returnee","95%
 
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobe_heatmap.jpg"
-"45","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobe_report_barchart.jpg",NA,NA,"yes","southern yobe","75%
+","./output/charts/food_sec_index___wash_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___returnee_heatmap.jpg"
+"48","wash_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes","refugee","97%
 
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobe_heatmap.jpg"
-"46","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawa_report_barchart.jpg",NA,NA,"yes","northern adamawa","77%
+","./output/charts/food_sec_index___wash_index___group_difference___TRUE___CASE_group_difference_numerical_categorical___population_group___refugee_heatmap.jpg"
+"49","wash_index","food_sec_index","group_difference","CASE_group_difference_numerical_categorical","population_group",NA,NA,"no",NA,NA,"yes",NA,"100%
 
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawa_heatmap.jpg"
-"47","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central borno_report_barchart.jpg",NA,NA,"yes","central borno","79%
-
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central borno_heatmap.jpg"
-"48","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobe_report_barchart.jpg",NA,NA,"yes","northern yobe","80%
-
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobe_heatmap.jpg"
-"49","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern borno_report_barchart.jpg",NA,NA,"yes","northern borno","82%
-
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern borno_heatmap.jpg"
-"50","group","safe_fuel_light","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoNon-displaced.jpg
-./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoReturnees.jpg","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern borno_report_barchart.jpg",NA,NA,"yes","southern borno","83%
-
-","./output/charts/safe_fuel_light___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern borno_heatmap.jpg"
-"51","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jereReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jere_report_barchart.jpg",NA,NA,"yes","mmc and jere","85%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___mmc and jere_heatmap.jpg"
-"52","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawaReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawa_report_barchart.jpg",NA,NA,"yes","southern adamawa","87%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern adamawa_heatmap.jpg"
-"53","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east bornoReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east borno_report_barchart.jpg",NA,NA,"yes","east borno","88%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___east borno_heatmap.jpg"
-"54","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobeReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobe_report_barchart.jpg",NA,NA,"yes","central yobe","90%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central yobe_heatmap.jpg"
-"55","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobeReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobe_report_barchart.jpg",NA,NA,"yes","southern yobe","91%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern yobe_heatmap.jpg"
-"56","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawaReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawa_report_barchart.jpg",NA,NA,"yes","northern adamawa","93%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern adamawa_heatmap.jpg"
-"57","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central bornoReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central borno_report_barchart.jpg",NA,NA,"yes","central borno","95%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___central borno_heatmap.jpg"
-"58","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobeReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobe_report_barchart.jpg",NA,NA,"yes","northern yobe","96%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern yobe_heatmap.jpg"
-"59","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern bornoReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern borno_report_barchart.jpg",NA,NA,"yes","northern borno","98%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___northern borno_heatmap.jpg"
-"60","group","cash_shelter","group_difference","CASE_group_difference_categorical_categorical","domain","yes","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoInternally Displaced Persons (IDPs).jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoNon-displaced.jpg
-./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern bornoReturnees.jpg","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern borno_report_barchart.jpg",NA,NA,"yes","southern borno","100%
-
-","./output/charts/cash_shelter___group___group_difference___TRUE___CASE_group_difference_categorical_categorical___domain___southern borno_heatmap.jpg"
+",NA
