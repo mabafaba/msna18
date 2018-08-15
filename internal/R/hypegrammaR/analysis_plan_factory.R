@@ -134,9 +134,9 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
   case<-sapply(1:nrow(analysis_plan_user),function(x){
     map_to_case(data,hypothesis.type[x],dependent.var = dependent.var[x],independent.var = independent.var[x])
   })
-  
-  
-  # case<- paste0("CASE_",hypothesis.type,"_",ifelse(data[,dependent.var] %>% as.data.frame(stringsAsFactors=F) %>% sapply(is.numeric),"numerical","categorical"),"_categorical")
+  # numeric as independent not implemented so far, let's treat those as categorical:
+  case<-gsub("_numerical_numerical$","_numerical_categorical",case)
+
   analysisplan<-data.frame(
              independent.var,
              dependent.var,
@@ -158,7 +158,6 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
     # just in case
     return(analysisplan)
 }
-
 
 
 

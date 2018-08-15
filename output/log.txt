@@ -2,4 +2,966 @@
 
 which necessary input files exist?
 
-|                                                        |      | |:-------------------------------------------------------|:-----| |./internal/input_files/analysis plan.csv                |FALSE | |./internal/input_files/choice ranks.csv                 |FALSE | |./internal/input_files/cluster_samplingframe.csv        |FALSE | |./internal/input_files/composite_indicators.csv         |FALSE | |./internal/input_files/data.csv                         |FALSE | |./internal/input_files/kobo choices.csv                 |FALSE | |./internal/input_files/kobo questions.csv               |FALSE | |./internal/input_files/parameters.csv                   |FALSE | |./internal/input_files/stratification_samplingframe.csv |FALSE |
+|                                                        |     | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+SERIOUS ISSUE: duplicate stratum names in the sampling frame:
+ [36mafgoyeabroone camp     /---CLUSTER---/IDP
+afgoyeafgoye town/---CLUSTER---/HC
+afgoyebaalguri/---CLUSTER---/IDP
+afgoyecamp caalami/---CLUSTER---/IDP
+afgoyecamp eylo                 /---CLUSTER---/IDP
+afgoyecamp saddex buurod         /---CLUSTER---/IDP
+afgoyecarbiska/---CLUSTER---/HC
+afgoyecel qode/---CLUSTER---/IDP
+afgoyegosha iyo gendiga camp   /---CLUSTER---/IDP
+afgoyehanta dheer/---CLUSTER---/IDP
+afgoyehawo tako laanta 3aad/---CLUSTER---/IDP
+afgoyeif iyo akhiro camp   /---CLUSTER---/IDP
+afgoyelafoole/---CLUSTER---/HC
+afgoyembagathi/---CLUSTER---/IDP
+afgoyeonat camp    /---CLUSTER---/IDP
+afgoyeshukurow/---CLUSTER---/HC
+afgoyesiinka dheer/---CLUSTER---/HC
+afmadowafmadow/---CLUSTER---/HC
+afmadowcameroon camp/---CLUSTER---/IDP
+afmadowcameroon/---CLUSTER---/IDP
+afmadowcamp bilisa/---CLUSTER---/IDP
+afmadowcamp buale/---CLUSTER---/IDP
+afmadowdagmareer/---CLUSTER---/IDP
+afmadowdanwadaag/---CLUSTER---/IDP
+afmadowdhobley/---CLUSTER---/HC
+afmadowgaras gacanlow/---CLUSTER---/IDP
+afmadowhaji  qaliif/---CLUSTER---/IDP
+afmadowhindey/---CLUSTER---/IDP
+afmadowqooqaani/---CLUSTER---/HC
+afmadowtaabdo/---CLUSTER---/HC
+baardheereaaminaay/---CLUSTER---/HC
+baardheerebuulo caddey/---CLUSTER---/HC
+baardheerebuulo kurmaan/---CLUSTER---/HC
+baardheerebuulo weyn/---CLUSTER---/HC
+baardheerebuulogediyo/---CLUSTER---/IDP
+baardheerecamp xabaal cadeey/---CLUSTER---/IDP
+baardheeregel gel ba'iid/---CLUSTER---/HC
+baardheerehureyna/---CLUSTER---/HC
+baardheerekaskey/---CLUSTER---/IDP
+baardheerekuloow/---CLUSTER---/IDP
+baardheerekurmaan/---CLUSTER---/IDP
+baardheeremardha/---CLUSTER---/HC
+badhaadhebarahowle/---CLUSTER---/HC
+badhaadheburgabo/---CLUSTER---/HC
+badhaadhekidimani/---CLUSTER---/HC
+badhaadhekomawalla/---CLUSTER---/HC
+badhaadhekudhaa/---CLUSTER---/HC
+badhaadhemadawa/---CLUSTER---/HC
+badhaadhemanarani/---CLUSTER---/HC
+badhaadheoddow/---CLUSTER---/HC
+badhaadhesarjajab/---CLUSTER---/HC
+badhaadhetosha/---CLUSTER---/HC
+badhaadhewarseer/---CLUSTER---/HC
+badhaadheyora/---CLUSTER---/HC
+badhanbadhan/---CLUSTER---/HC
+badhancarraweyn/---CLUSTER---/HC
+badhanmiddigale/---CLUSTER---/HC
+baidoaaawdiinle/---CLUSTER---/HC
+baidoaal-furqaan 3/---CLUSTER---/IDP
+baidoaalla aamin/---CLUSTER---/IDP
+baidoabaidoa/---CLUSTER---/HC
+baidoabakalaabow/---CLUSTER---/IDP
+baidoaban-busul/---CLUSTER---/IDP
+baidoabeer shabeel/---CLUSTER---/HC
+baidoaberdale/---CLUSTER---/HC
+baidoabootis/---CLUSTER---/IDP
+baidoabuulo-fur/---CLUSTER---/HC
+baidoabuulo/---CLUSTER---/IDP
+baidoacara gaduud/---CLUSTER---/IDP
+baidoaceel rahole wp/---CLUSTER---/HC
+baidoadalandool 3/---CLUSTER---/IDP
+baidoadhusundhus/---CLUSTER---/HC
+baidoadooday/---CLUSTER---/IDP
+baidoagardiile/---CLUSTER---/IDP
+baidoahagarow/---CLUSTER---/IDP
+baidoahowl wadaag 1/---CLUSTER---/IDP
+baidoahowl wadaag/---CLUSTER---/IDP
+baidoaidaw madow/---CLUSTER---/HC
+baidoaideedi/---CLUSTER---/HC
+baidoaisha/---CLUSTER---/HC
+baidoakulunoy keerane/---CLUSTER---/IDP
+baidoamaleel/---CLUSTER---/IDP
+baidoamaraayle 2/---CLUSTER---/IDP
+baidoamaroodmadi/---CLUSTER---/HC
+baidoaminafaafle 2/---CLUSTER---/IDP
+baidoaoagaduud/---CLUSTER---/HC
+baidoarebay/---CLUSTER---/HC
+baidoatabaarak/---CLUSTER---/IDP
+baidoatahriibdiid/---CLUSTER---/IDP
+baidoatooro toorow/---CLUSTER---/IDP
+baidoawanaag/---CLUSTER---/IDP
+baidoawejido 2/---CLUSTER---/IDP
+balcadbalcad/---CLUSTER---/HC
+balcadcali yale/---CLUSTER---/HC
+balcadfarax gololey/---CLUSTER---/HC
+balcadgololey/---CLUSTER---/HC
+balcadkorreebe/---CLUSTER---/HC
+balcadkurshale/---CLUSTER---/HC
+balcadqalimow/---CLUSTER---/HC
+balcadxawadley/---CLUSTER---/HC
+balcadyaaqle/---CLUSTER---/HC
+bandarbaylabandarbayla/---CLUSTER---/HC
+bandarbayladhuudo/---CLUSTER---/HC
+belet weynebacad/---CLUSTER---/HC
+belet weynebadbaado/---CLUSTER---/IDP
+belet weynebaslawe/---CLUSTER---/HC
+belet weynebundoweyn/---CLUSTER---/HC
+belet weyneciiltire camp/---CLUSTER---/IDP
+belet weyneciiltire/---CLUSTER---/IDP
+belet weynedagmada ceel cali 1/---CLUSTER---/IDP
+belet weynedaruuf/---CLUSTER---/IDP
+belet weynedayax/---CLUSTER---/IDP
+belet weynedoomeey/---CLUSTER---/IDP
+belet weynedoonsubagle/---CLUSTER---/IDP
+belet weyneelgal/---CLUSTER---/HC
+belet weyneex airbor 2/---CLUSTER---/IDP
+belet weynegabooye3/---CLUSTER---/IDP
+belet weynegargaar/---CLUSTER---/IDP
+belet weynehawo tako/---CLUSTER---/HC
+belet weynehelikiliyo/---CLUSTER---/HC
+belet weynehowl-wadag/---CLUSTER---/HC
+belet weyneilkacado/---CLUSTER---/HC
+belet weynejawil/---CLUSTER---/HC
+belet weynekoshin/---CLUSTER---/HC
+belet weynekulmiye 2/---CLUSTER---/IDP
+belet weyneleebow/---CLUSTER---/HC
+belet weynenasiib/---CLUSTER---/IDP
+belet weynewabi shabele/---CLUSTER---/IDP
+belet weynewadajir1/---CLUSTER---/IDP
+belet weynex aalborg 1/---CLUSTER---/IDP
+belet xaawobeledxaawi section 6/---CLUSTER---/IDP
+belet xaawobelet xaawo/---CLUSTER---/HC
+belet xaawodhagaxley/---CLUSTER---/IDP
+belet xaawoheegan/---CLUSTER---/IDP
+belet xaawoidman/---CLUSTER---/IDP
+belet xaawokamooredoon/---CLUSTER---/IDP
+belet xaawosaction 4/---CLUSTER---/IDP
+belet xaawosaction 5/---CLUSTER---/IDP
+belet xaawotusbaxley/---CLUSTER---/IDP
+belet xaawoxananley/---CLUSTER---/IDP
+berberaberbera/---CLUSTER---/HC
+berberadalaw/---CLUSTER---/HC
+berberadhaymoole/---CLUSTER---/HC
+berberadhuxusha idp/---CLUSTER---/IDP
+berberaeil geradi/---CLUSTER---/HC
+berberageeri/---CLUSTER---/HC
+berberalaas xig/---CLUSTER---/HC
+berberalafaruug/---CLUSTER---/HC
+berberamagaalo cad/---CLUSTER---/IDP
+berberamagab/---CLUSTER---/HC
+berberasabawanaag/---CLUSTER---/IDP
+berberashacabka/---CLUSTER---/IDP
+berberawaraabo u taag/---CLUSTER---/IDP
+boramaboon/---CLUSTER---/HC
+boramaborama/---CLUSTER---/HC
+boramacadaad/---CLUSTER---/HC
+boramacaro-wareen/---CLUSTER---/HC
+boramadagmo-laqas/---CLUSTER---/HC
+boramadhagaxa madow/---CLUSTER---/HC
+boramadunbuluq/---CLUSTER---/IDP
+boramagoroyo-cawl/---CLUSTER---/HC
+boramahayayaabaha hoose/---CLUSTER---/IDP
+boramahayayaabe/---CLUSTER---/IDP
+boramajarahorato/---CLUSTER---/HC
+boramaqarxabishi/---CLUSTER---/IDP
+boramaqoor gaab (al-xayat area)/---CLUSTER---/IDP
+boramaqoor gaab/---CLUSTER---/IDP
+boramash.makaahiil/---CLUSTER---/IDP
+boramashacabka/---CLUSTER---/IDP
+boramasheikh osman/---CLUSTER---/IDP
+boramatukhaantukhi/---CLUSTER---/IDP
+boramawalaalgo/---CLUSTER---/HC
+boramaxaaslayda/---CLUSTER---/IDP
+boramaxanaanada/---CLUSTER---/IDP
+boramaxero dhiigta/---CLUSTER---/IDP
+bossasoabow b/---CLUSTER---/IDP
+bossasoabsame a/---CLUSTER---/IDP
+bossasoajuuraan a/---CLUSTER---/IDP
+bossasobaalade/---CLUSTER---/IDP
+bossasobanaadir a/---CLUSTER---/IDP
+bossasobanaadir a2/---CLUSTER---/IDP
+bossasobanaadir b/---CLUSTER---/IDP
+bossasoboqolka buush/---CLUSTER---/IDP
+bossasobossaso/---CLUSTER---/HC
+bossasobuulo mingis a/---CLUSTER---/IDP
+bossasobuulo mingis b/---CLUSTER---/IDP
+bossasobuulo qosax/---CLUSTER---/IDP
+bossasofarjano/---CLUSTER---/IDP
+bossasogarible/---CLUSTER---/IDP
+bossasokaam suweyto/---CLUSTER---/IDP
+bossasokaam tawakal/---CLUSTER---/IDP
+bossasolaso-dawaco/---CLUSTER---/HC
+bossasoraf iyo raaxo/---CLUSTER---/IDP
+bossasotuurjaale/---CLUSTER---/IDP
+bulo burtobulo burto/---CLUSTER---/HC
+bulo burtobuulo dacaar/---CLUSTER---/HC
+bulo burtobuulo kaxar/---CLUSTER---/HC
+bulo burtodaba dheere/---CLUSTER---/HC
+bulo burtogalmadoobe bari/---CLUSTER---/HC
+bulo burtojaaboole bari/---CLUSTER---/HC
+bulo burtosorogleey/---CLUSTER---/HC
+bulo burtoxagar/---CLUSTER---/HC
+bulo burtoxoor wadi/---CLUSTER---/HC
+burcoadan saleban a/---CLUSTER---/IDP
+burcoballi dhiig/---CLUSTER---/HC
+burcobeer one/---CLUSTER---/HC
+burcoboodhaly/---CLUSTER---/HC
+burcoburco/---CLUSTER---/HC
+burcocaaqil yare/---CLUSTER---/IDP
+burcocali saahid/---CLUSTER---/HC
+burcoccaqil yare/---CLUSTER---/IDP
+burcoceel-dhere/---CLUSTER---/HC
+burcodhoqoshay/---CLUSTER---/HC
+burcofifteenmay 1/---CLUSTER---/IDP
+burcogumbur libaax/---CLUSTER---/HC
+burcokadhada/---CLUSTER---/HC
+burcokarasharka/---CLUSTER---/HC
+burcokoosaar c/---CLUSTER---/IDP
+burcokoosar a/---CLUSTER---/IDP
+burcokoosar b/---CLUSTER---/IDP
+burcolebbi-guun/---CLUSTER---/HC
+burcomuruq maal/---CLUSTER---/IDP
+burcoood yar/---CLUSTER---/IDP
+burcoqunyar dega/---CLUSTER---/IDP
+burcosahara/---CLUSTER---/IDP
+burcosalebankulul/---CLUSTER---/HC
+burcosuuryo qansax/---CLUSTER---/HC
+burcowaraabeeye/---CLUSTER---/HC
+burtinleburtinle/---CLUSTER---/HC
+burtinlecaano-macays/---CLUSTER---/IDP
+burtinlecamp daruraha/---CLUSTER---/IDP
+burtinledogob yar/---CLUSTER---/HC
+burtinledogob/---CLUSTER---/HC
+burtinlehayaanle 1/---CLUSTER---/HC
+burtinlejalam/---CLUSTER---/HC
+burtinlekaamladan/---CLUSTER---/IDP
+burtinlekalabayr/---CLUSTER---/HC
+burtinlekalkaal one/---CLUSTER---/IDP
+burtinlekalkal two/---CLUSTER---/IDP
+buur hakaba4 abawli/---CLUSTER---/HC
+buur hakabaaray/---CLUSTER---/HC
+buur hakabaaw malin foqi/---CLUSTER---/HC
+buur hakabaaw urweyni/---CLUSTER---/HC
+buur hakabaawyayi/---CLUSTER---/HC
+buur hakababalow/---CLUSTER---/HC
+buur hakababuur hakaba/---CLUSTER---/HC
+buur hakabadaar/---CLUSTER---/HC
+buur hakabadanilay nasiye/---CLUSTER---/HC
+buur hakabagoley yarey /---CLUSTER---/HC
+buur hakabahagarow/---CLUSTER---/HC
+buur hakabakurow aw rikow/---CLUSTER---/HC
+buur hakabamasusow/---CLUSTER---/HC
+buur hakabaqardhale/---CLUSTER---/HC
+buur hakabashiidlow nasiye/---CLUSTER---/HC
+buur hakabasool/---CLUSTER---/HC
+cabudwaaqbalanbal/---CLUSTER---/HC
+cabudwaaqbaligaras/---CLUSTER---/IDP
+cabudwaaqdanwadaag/---CLUSTER---/IDP
+cabudwaaqdayacan/---CLUSTER---/IDP
+cabudwaaqjaqaf waabir/---CLUSTER---/IDP
+cabudwaaqkulmiye/---CLUSTER---/IDP
+cabudwaaqlaandheer/---CLUSTER---/IDP
+cabudwaaqmiirjicley/---CLUSTER---/HC
+cabudwaaqwadajir/---CLUSTER---/IDP
+cabudwaaqxurfadda/---CLUSTER---/IDP
+cadaadobaadbaado/---CLUSTER---/IDP
+cadaadobaxdo/---CLUSTER---/HC
+cadaadocadaado/---CLUSTER---/HC
+cadaadodaryeel/---CLUSTER---/IDP
+cadaadogalbeed/---CLUSTER---/IDP
+cadaadogalinsoor/---CLUSTER---/HC
+cadaadogidhays/---CLUSTER---/HC
+cadaadokaraamo/---CLUSTER---/IDP
+cadaadokaxandho/---CLUSTER---/HC
+cadaadokulmaiye/---CLUSTER---/IDP
+cadaadomarsamage/---CLUSTER---/HC
+cadaadoqoryacaddo/---CLUSTER---/IDP
+cadaleadow ul/---CLUSTER---/HC
+cadalebursho-shiekh/---CLUSTER---/HC
+cadalecadaan gaabey area/---CLUSTER---/HC
+cadalecadae town/---CLUSTER---/HC
+cadalecadan gabey/---CLUSTER---/HC
+cadalegarasweyn/---CLUSTER---/HC
+cadalehaji ali/---CLUSTER---/HC
+cadalehaskule/---CLUSTER---/HC
+caluulaaf kala haye/---CLUSTER---/HC
+caluulabareeda/---CLUSTER---/HC
+caluulabuuro-xamur/---CLUSTER---/HC
+caluulacaluula/---CLUSTER---/HC
+caluulageesaley/---CLUSTER---/HC
+caluulamurcanyo/---CLUSTER---/HC
+caluulaolog/---CLUSTER---/HC
+caluulasayn weyn ida jabis/---CLUSTER---/HC
+caluulaseen yar/---CLUSTER---/HC
+caynaboainabo camp one/---CLUSTER---/IDP
+caynaboainabo camp two/---CLUSTER---/IDP
+caynaboberkeda cali xirsi/---CLUSTER---/HC
+caynabocaynabo/---CLUSTER---/HC
+caynaboceel-dhaab/---CLUSTER---/HC
+caynabodhanaano/---CLUSTER---/HC
+caynabofadhiyar/---CLUSTER---/HC
+caynabogod heeri/---CLUSTER---/HC
+caynabojablahe/---CLUSTER---/HC
+caynaboqori dheere/---CLUSTER---/HC
+caynabowadaamagoo/---CLUSTER---/HC
+caynabowariiley/---CLUSTER---/HC
+caynaboxurfada/---CLUSTER---/HC
+ceel afweynbalan baal/---CLUSTER---/HC
+ceel afweynbuur dhuubo/---CLUSTER---/IDP
+ceel afweyncadaadkulaale/---CLUSTER---/HC
+ceel afweynceel afweyn/---CLUSTER---/HC
+ceel afweynceelal/---CLUSTER---/HC
+ceel afweynceelcade/---CLUSTER---/HC
+ceel afweyndocolka/---CLUSTER---/HC
+ceel afweynfadhi gaab/---CLUSTER---/HC
+ceel afweynhuluul/---CLUSTER---/HC
+ceel afweynkoolo/---CLUSTER---/HC
+ceel afweynsincaro/---CLUSTER---/HC
+ceel afweynsoddonley/---CLUSTER---/HC
+ceel bardeayeyeo/---CLUSTER---/HC
+ceel bardebananey/---CLUSTER---/IDP
+ceel bardebiya fadhi/---CLUSTER---/HC
+ceel bardebiyo qaboobe/---CLUSTER---/HC
+ceel bardeceel barde/---CLUSTER---/HC
+ceel bardecimilow/---CLUSTER---/HC
+ceel bardedaanshood/---CLUSTER---/HC
+ceel bardegahiydhley/---CLUSTER---/HC
+ceel bardegargar/---CLUSTER---/IDP
+ceel bardehallul/---CLUSTER---/HC
+ceel bardehigloolay/---CLUSTER---/HC
+ceel bardehiirey/---CLUSTER---/HC
+ceel bardekheyra habon/---CLUSTER---/HC
+ceel bardeomar saahil/---CLUSTER---/HC
+ceel bardeondheere/---CLUSTER---/HC
+ceel bardewargarweyni/---CLUSTER---/IDP
+ceel waaqceel waaq/---CLUSTER---/HC
+ceel waaqel banda/---CLUSTER---/HC
+ceerigaabocaduur/---CLUSTER---/HC
+ceerigaabocaydha/---CLUSTER---/IDP
+ceerigaaboceerigaabo/---CLUSTER---/HC
+ceerigaabodayaxa/---CLUSTER---/HC
+ceerigaabodhaban dhige/---CLUSTER---/HC
+ceerigaabogudmobiyocas/---CLUSTER---/HC
+ceerigaabohaldhagan/---CLUSTER---/HC
+ceerigaabokulaal/---CLUSTER---/HC
+ceerigaabokulmiye/---CLUSTER---/HC
+ceerigaaboqaarar/---CLUSTER---/HC
+ceerigaabowadayax/---CLUSTER---/HC
+ceerigaaboxaafad soomaal/---CLUSTER---/IDP
+ceerigaaboxabaalo camaare/---CLUSTER---/HC
+ceerigaaboyubbe/---CLUSTER---/HC
+dhuusamarreebbuurta/---CLUSTER---/IDP
+dhuusamarreebceel dheere/---CLUSTER---/HC
+dhuusamarreebceel xamuud/---CLUSTER---/IDP
+dhuusamarreebdadle/---CLUSTER---/HC
+dhuusamarreebdawacooley/---CLUSTER---/IDP
+dhuusamarreebdhuusamarreeb/---CLUSTER---/HC
+dhuusamarreebgadoon/---CLUSTER---/HC
+dhuusamarreebgargaar/---CLUSTER---/IDP
+dhuusamarreebguri-ceel/---CLUSTER---/HC
+dhuusamarreebhanano/---CLUSTER---/IDP
+dhuusamarreebhorog/---CLUSTER---/HC
+dhuusamarreebkaam shalxad/---CLUSTER---/IDP
+dhuusamarreeblaandheer/---CLUSTER---/IDP
+dhuusamarreebmareer guur/---CLUSTER---/HC
+dhuusamarreebtuulo-og/---CLUSTER---/IDP
+dhuusamarreebxero milatari/---CLUSTER---/IDP
+eyleyl/---CLUSTER---/HC
+eylwargaduud/---CLUSTER---/HC
+gaalkacyo northabaarey/---CLUSTER---/HC
+gaalkacyo northalla aamin 1 b/---CLUSTER---/IDP
+gaalkacyo northalla aamin 2/---CLUSTER---/IDP
+gaalkacyo northbuloo bacleey/---CLUSTER---/IDP
+gaalkacyo northgaalkacyo/---CLUSTER---/HC
+gaalkacyo northhalabookhad/---CLUSTER---/IDP
+gaalkacyo northlabo warood/---CLUSTER---/HC
+gaalkacyo northliibaan 3/---CLUSTER---/IDP
+gaalkacyo northmadina/---CLUSTER---/IDP
+gaalkacyo northmalaasle/---CLUSTER---/HC
+gaalkacyo northmustaqbal 1/---CLUSTER---/IDP
+gaalkacyo northmustaqbal 2/---CLUSTER---/IDP
+gaalkacyo northnajax/---CLUSTER---/IDP
+gaalkacyo northnew doonyaale/---CLUSTER---/IDP
+gaalkacyo northorshe camp/---CLUSTER---/IDP
+gaalkacyo northsalaama 1/---CLUSTER---/IDP
+gaalkacyo northsalaama 2/---CLUSTER---/IDP
+gaalkacyo northsyl/---CLUSTER---/IDP
+gaalkacyo northtawakal/---CLUSTER---/IDP
+gaalkacyo northtulo xabiibo/---CLUSTER---/HC
+gaalkacyo northwaayo arag/---CLUSTER---/IDP
+gaalkacyo southbaantuu 2/---CLUSTER---/IDP
+gaalkacyo southbandiidley/---CLUSTER---/HC
+gaalkacyo southbayle/---CLUSTER---/HC
+gaalkacyo southbulsho/---CLUSTER---/IDP
+gaalkacyo southbuulo bishaaro/---CLUSTER---/IDP
+gaalkacyo southbuulo jawaan/---CLUSTER---/IDP
+gaalkacyo southcalanleey/---CLUSTER---/IDP
+gaalkacyo southceel gaab/---CLUSTER---/IDP
+gaalkacyo southdagaari/---CLUSTER---/HC
+gaalkacyo southdurdur 2/---CLUSTER---/IDP
+gaalkacyo southhilaac/---CLUSTER---/IDP
+gaalkacyo southmahad alle/---CLUSTER---/IDP
+gaalkacyo southqoraxey 2/---CLUSTER---/IDP
+gaalkacyo southsaaxil2/---CLUSTER---/IDP
+gaalkacyo southsadax-higlo/---CLUSTER---/HC
+gaalkacyo southsalaad/---CLUSTER---/IDP
+gaalkacyo southsoomali weyn/---CLUSTER---/IDP
+gaalkacyo southxaaran/---CLUSTER---/HC
+gaalkacyo southxoriyo 2/---CLUSTER---/IDP
+garbahaareybur caro/---CLUSTER---/HC
+garbahaareyburaa/---CLUSTER---/HC
+garbahaareybuurdhuubo/---CLUSTER---/HC
+garbahaareygalbeed/---CLUSTER---/HC
+garbahaareygarbahaarey/---CLUSTER---/HC
+garbahaareygardabeelyereey/---CLUSTER---/HC
+garbahaareygoley/---CLUSTER---/HC
+garbahaareyhelamareer/---CLUSTER---/HC
+garbahaareymuuriya/---CLUSTER---/HC
+garowebaley/---CLUSTER---/HC
+garowecuun/---CLUSTER---/HC
+garowegarowe/---CLUSTER---/HC
+garowejilab 1/---CLUSTER---/IDP
+garowekaaam ajuuran/---CLUSTER---/IDP
+garowekaam marka/---CLUSTER---/IDP
+garowekaam yemen/---CLUSTER---/IDP
+garowekaam.tawakal/---CLUSTER---/IDP
+garowekaamladan/---CLUSTER---/IDP
+garowekalkal two/---CLUSTER---/IDP
+garoweriiga/---CLUSTER---/IDP
+garoweshabeele/---CLUSTER---/IDP
+garowesiliga/---CLUSTER---/IDP
+garowesinujif/---CLUSTER---/HC
+garowewaaberi/---CLUSTER---/IDP
+gebiley43238/---CLUSTER---/IDP
+gebileybalay/---CLUSTER---/HC
+gebileybanka wajale/---CLUSTER---/HC
+gebileybeeyo-qaloocan 1/---CLUSTER---/HC
+gebileybotor/---CLUSTER---/HC
+gebileycaraan carka/---CLUSTER---/HC
+gebileydhigta/---CLUSTER---/IDP
+gebileyfooda kidiga/---CLUSTER---/HC
+gebileygarbo haadley/---CLUSTER---/HC
+gebileygebiley/---CLUSTER---/HC
+gebileygeed-diqsi/---CLUSTER---/HC
+gebileygucudhaale/---CLUSTER---/HC
+gebileyidhanka deeryahan/---CLUSTER---/HC
+gebileyifad gabilay/---CLUSTER---/HC
+gebileyijaara/---CLUSTER---/HC
+gebileyilma dedo/---CLUSTER---/HC
+gebileyjava buldhuq/---CLUSTER---/IDP
+gebileyjidhi gabiley/---CLUSTER---/HC
+gebileymagaalo mataan/---CLUSTER---/HC
+gebileytog-wajaale/---CLUSTER---/HC
+gebileyxirsi jiciir/---CLUSTER---/HC
+hargeysaalaala-cadka/---CLUSTER---/HC
+hargeysaayah 1/---CLUSTER---/IDP
+hargeysaayax 4/---CLUSTER---/IDP
+hargeysaayax2/---CLUSTER---/IDP
+hargeysaballi-gubadle/---CLUSTER---/HC
+hargeysabartanno/---CLUSTER---/HC
+hargeysabender wanaag/---CLUSTER---/HC
+hargeysacadaadley/---CLUSTER---/HC
+hargeysadababahal/---CLUSTER---/HC
+hargeysadigaale/---CLUSTER---/IDP
+hargeysafaraweyne/---CLUSTER---/HC
+hargeysagolwaraabe/---CLUSTER---/IDP
+hargeysahargeysa/---CLUSTER---/HC
+hargeysaibraahim koodbuur/---CLUSTER---/HC
+hargeysaidp stadium/---CLUSTER---/IDP
+hargeysaistanbuul b/---CLUSTER---/IDP
+hargeysakarin shabeel/---CLUSTER---/HC
+hargeysamagaalo xaali/---CLUSTER---/HC
+hargeysamagallo jimcalle/---CLUSTER---/IDP
+hargeysasharmaake/---CLUSTER---/HC
+hargeysashilmaale/---CLUSTER---/HC
+hargeysastate house/---CLUSTER---/IDP
+hobyoaf-barwaaqo/---CLUSTER---/HC
+hobyoalla aamin 1 b/---CLUSTER---/IDP
+hobyoalla aamin 2/---CLUSTER---/IDP
+hobyobacadwayn/---CLUSTER---/HC
+hobyobajeelo/---CLUSTER---/HC
+hobyobudbud/---CLUSTER---/HC
+hobyoceel-dibir/---CLUSTER---/HC
+hobyoceelguula/---CLUSTER---/HC
+hobyohobyo/---CLUSTER---/HC
+hobyoliibaan 3/---CLUSTER---/IDP
+hobyoqaydarrey/---CLUSTER---/HC
+hobyowisil/---CLUSTER---/HC
+hobyoxingod/---CLUSTER---/HC
+iskushubanbali-shillin/---CLUSTER---/HC
+iskushubanbuq-catooti/---CLUSTER---/HC
+iskushubanciisse/---CLUSTER---/HC
+iskushubandharjaale/---CLUSTER---/HC
+iskushubandharoor/---CLUSTER---/HC
+iskushubanhurdiya/---CLUSTER---/HC
+iskushubaniskushuban/---CLUSTER---/HC
+iskushubanitaageer/---CLUSTER---/HC
+iskushubanlaamiye/---CLUSTER---/HC
+iskushubanxamure/---CLUSTER---/HC
+jariibangadobjiran/---CLUSTER---/HC
+jariibangarcad/---CLUSTER---/HC
+jariibanjariiban/---CLUSTER---/HC
+jariibansemade/---CLUSTER---/HC
+jowharbaalguri/gacan libax/---CLUSTER---/HC
+jowharbareey/---CLUSTER---/HC
+jowharbuulo makiino/---CLUSTER---/IDP
+jowhardhaaifo/---CLUSTER---/HC
+jowhardhay -gawan/---CLUSTER---/HC
+jowharfanoole/---CLUSTER---/HC
+jowhargenaral daud/---CLUSTER---/IDP
+jowharhalgan/---CLUSTER---/HC
+jowharjowhar somali/---CLUSTER---/HC
+jowharkaluundi/---CLUSTER---/HC
+jowharlaanta afaraad/---CLUSTER---/IDP
+jowharlebiga/---CLUSTER---/HC
+jowharnuukaay/---CLUSTER---/HC
+kismayoabaq bambow/---CLUSTER---/IDP
+kismayobarisaay 1/---CLUSTER---/IDP
+kismayobarwaaqo/---CLUSTER---/IDP
+kismayobass 3b/---CLUSTER---/IDP
+kismayobula bartire/---CLUSTER---/HC
+kismayobula hussein/---CLUSTER---/IDP
+kismayobuula-gaduud/---CLUSTER---/HC
+kismayocadaadgeri/---CLUSTER---/IDP
+kismayodalxiiska/---CLUSTER---/HC
+kismayodaryel/---CLUSTER---/IDP
+kismayodharkenley/---CLUSTER---/IDP
+kismayofeersagaro/---CLUSTER---/IDP
+kismayogoob weyn/---CLUSTER---/HC
+kismayohalgan 1/---CLUSTER---/IDP
+kismayohangash/---CLUSTER---/IDP
+kismayojaberti 2/---CLUSTER---/IDP
+kismayokismayo/---CLUSTER---/HC
+kismayoluqman galeer/---CLUSTER---/IDP
+kismayoluqman/---CLUSTER---/IDP
+kismayonajah/---CLUSTER---/IDP
+kismayonew kismayo/---CLUSTER---/HC
+kismayoqaam qaam/---CLUSTER---/HC
+kismayosaa moja/---CLUSTER---/HC
+kismayosakuye/---CLUSTER---/IDP
+kismayotaleex/---CLUSTER---/IDP
+kismayowadajir (bar aleen)/---CLUSTER---/IDP
+kismayowadajir/---CLUSTER---/HC
+kismayoyoontoy/---CLUSTER---/HC
+kismayoz2/---CLUSTER---/IDP
+laasqorayalxamdullileh/---CLUSTER---/HC
+laasqorayburaan/---CLUSTER---/HC
+laasqoraybuur dhuubo/---CLUSTER---/IDP
+laasqorayceelaayo/---CLUSTER---/HC
+laasqoraydhahar/---CLUSTER---/HC
+laasqoraylaasqoray/---CLUSTER---/HC
+laasqoraywaaciye/---CLUSTER---/HC
+lughayealmis idp/---CLUSTER---/IDP
+lughayeduqaareyte/---CLUSTER---/IDP
+lughayefarda lagu-xidh/---CLUSTER---/HC
+lughayegaraaca/---CLUSTER---/HC
+lughayegeerisa/---CLUSTER---/HC
+lughayekalawle/---CLUSTER---/HC
+lughayekaruure/---CLUSTER---/HC
+lughayelughaye/---CLUSTER---/HC
+lughayexoog faras/---CLUSTER---/HC
+lughayexussein/---CLUSTER---/HC
+luuqaboow/---CLUSTER---/HC
+luuqbuyle/---CLUSTER---/IDP
+luuqgaba /---CLUSTER---/HC
+luuqgeer boolow/---CLUSTER---/HC
+luuqheli-shiid/---CLUSTER---/HC
+luuqhoodey/hoobishow/---CLUSTER---/HC
+luuqluuq/---CLUSTER---/HC
+luuqmira dhuubow/---CLUSTER---/HC
+luuqtuulo marexan/taleex/---CLUSTER---/HC
+markaafar yak/---CLUSTER---/HC
+markaceel-jaale/---CLUSTER---/HC
+markaistaduuto/---CLUSTER---/HC
+markamarka town/---CLUSTER---/HC
+matabaanbarkurtun/---CLUSTER---/HC
+matabaanbeergadiid/---CLUSTER---/HC
+matabaanbundomadow/---CLUSTER---/HC
+matabaanelmo jowle/---CLUSTER---/HC
+matabaangirijir/---CLUSTER---/HC
+matabaanhaji - hababis/---CLUSTER---/HC
+matabaanharqaboobe/---CLUSTER---/HC
+matabaanlibile/---CLUSTER---/HC
+matabaanmadah-marodi/---CLUSTER---/HC
+matabaanmatabaan town/---CLUSTER---/HC
+matabaanqodqod/---CLUSTER---/HC
+matabaanqulaale/---CLUSTER---/HC
+matabaantakaraale/---CLUSTER---/HC
+matabaantuulocano/---CLUSTER---/HC
+mogadishu deyniileal-cadaala/---CLUSTER---/IDP
+mogadishu deyniilebuulo warbo/---CLUSTER---/IDP
+mogadishu deyniilebuulomareer/---CLUSTER---/IDP
+mogadishu deyniilecanshaqow/---CLUSTER---/IDP
+mogadishu deyniileceel wareegow/---CLUSTER---/IDP
+mogadishu deyniileciid/---CLUSTER---/IDP
+mogadishu deyniiledarul xikma/---CLUSTER---/IDP
+mogadishu deyniiledaryeel 1/---CLUSTER---/IDP
+mogadishu deyniiledaryeel dumar/---CLUSTER---/IDP
+mogadishu deyniiledeyniile/---CLUSTER---/HC
+mogadishu deyniilegeed weyne/---CLUSTER---/IDP
+mogadishu deyniilehalgan 2/---CLUSTER---/IDP
+mogadishu deyniileiftin 1/---CLUSTER---/IDP
+mogadishu deyniileintifaac/---CLUSTER---/IDP
+mogadishu deyniilejameecada/---CLUSTER---/IDP
+mogadishu deyniilejanaale 2/---CLUSTER---/IDP
+mogadishu deyniilemanaas/---CLUSTER---/IDP
+mogadishu deyniileqanciye 2/---CLUSTER---/IDP
+mogadishu deyniilerabi suge/---CLUSTER---/IDP
+mogadishu deyniilesaacid 1/---CLUSTER---/IDP
+mogadishu deyniiletawakal 1/---CLUSTER---/IDP
+mogadishu deyniiletawakal calalaahi/---CLUSTER---/IDP
+mogadishu deyniileuburow/---CLUSTER---/IDP
+mogadishu hodanbarwaaqo 3/---CLUSTER---/IDP
+mogadishu hodandhamole/---CLUSTER---/IDP
+mogadishu hodanfaguug/---CLUSTER---/IDP
+mogadishu hodanfardowsa/---CLUSTER---/IDP
+mogadishu hodanhar wanaag/---CLUSTER---/IDP
+mogadishu hodanlibaan/---CLUSTER---/IDP
+mogadishu hodanmahad allah/---CLUSTER---/IDP
+mogadishu hodanmogadishu hodan/---CLUSTER---/HC
+mogadishu hodanqoraxeey/---CLUSTER---/IDP
+mogadishu hodanshabeele 2/---CLUSTER---/IDP
+mogadishu hodantawakal 4/---CLUSTER---/IDP
+mogadishu hodantowxiid/---CLUSTER---/IDP
+mogadishu hodanunlay/---CLUSTER---/IDP
+mogadishu hodanxiis 3/---CLUSTER---/IDP
+mogadishu kaxdarafmalab/---CLUSTER---/IDP
+mogadishu kaxdaralla suge 4/---CLUSTER---/IDP
+mogadishu kaxdardayax 1/---CLUSTER---/IDP
+mogadishu kaxdargaleyr 1/---CLUSTER---/IDP
+mogadishu kaxdargashaan/---CLUSTER---/IDP
+mogadishu kaxdargorgor 2/---CLUSTER---/IDP
+mogadishu kaxdarjanaale 5/---CLUSTER---/IDP
+mogadishu kaxdarkulmis/---CLUSTER---/IDP
+mogadishu kaxdarmandeeq 2/---CLUSTER---/IDP
+mogadishu kaxdarmaskiin allah umaqan/---CLUSTER---/IDP
+mogadishu kaxdarmiskiinow/---CLUSTER---/IDP
+mogadishu kaxdarmogadishu kaxdar/---CLUSTER---/HC
+mogadishu kaxdarnabadey/---CLUSTER---/IDP
+mogadishu kaxdarshalaqben/---CLUSTER---/IDP
+mogadishu kaxdarsuit jeex/---CLUSTER---/IDP
+mogadishu kaxdarwanaag center/---CLUSTER---/IDP
+qandalabalidhidin/---CLUSTER---/HC
+qandalabutiyaalo/---CLUSTER---/HC
+qandaladhurbo/---CLUSTER---/HC
+qandalamagaaloyar/---CLUSTER---/HC
+qandalaqandala/---CLUSTER---/HC
+qansax dheereqansax dheere/---CLUSTER---/HC
+qardhobuulo qodax/---CLUSTER---/IDP
+qardhoel dubat/---CLUSTER---/HC
+qardhoguud cad/---CLUSTER---/HC
+qardhoharwayn/---CLUSTER---/IDP
+qardhoiskoolk kaamka/---CLUSTER---/IDP
+qardhokaam new/---CLUSTER---/IDP
+qardhokam warsan/---CLUSTER---/IDP
+qardhokamka ayan/---CLUSTER---/IDP
+qardhokoom karaash/---CLUSTER---/IDP
+qardhokubo/---CLUSTER---/IDP
+qardhoqardho/---CLUSTER---/HC
+qardhorako/---CLUSTER---/HC
+qardhosamaysa dheer/---CLUSTER---/HC
+qardhoshimbaraale/---CLUSTER---/IDP
+qardhoxerodhiigta/---CLUSTER---/IDP
+qardhoxiddo/---CLUSTER---/HC
+qoryooleyalambuur/---CLUSTER---/HC
+qoryooleybandar/---CLUSTER---/HC
+qoryooleybeynax bare/---CLUSTER---/HC
+qoryooleybuulo sheekh/---CLUSTER---/HC
+qoryooleybuulo siidow/---CLUSTER---/HC
+qoryooleycamp 2/---CLUSTER---/HC
+qoryooleydegaybere/---CLUSTER---/HC
+qoryooleydharkaynley/---CLUSTER---/HC
+qoryooleygaay warow/---CLUSTER---/HC
+qoryooleygaras-jereed/---CLUSTER---/HC
+qoryooleyqoryooley/---CLUSTER---/HC
+qoryooleytugaarrey/---CLUSTER---/HC
+waajidal- amin/---CLUSTER---/IDP
+waajidburdhuxunle idp/---CLUSTER---/IDP
+waajidburdhuxunle/---CLUSTER---/IDP
+waajidelbon idp camp/---CLUSTER---/IDP
+waajidkulmiye idps camp/---CLUSTER---/IDP
+waajidtawakal idp camp/---CLUSTER---/IDP
+waajidtowfiiq idp camp/---CLUSTER---/IDP
+waajidwaajid district/---CLUSTER---/HC
+wanla weyneaw cusman/---CLUSTER---/HC
+wanla weyneaw guurow/---CLUSTER---/HC
+wanla weynebakaal camp/---CLUSTER---/IDP
+wanla weynebaloow/---CLUSTER---/HC
+wanla weynebocorey camp/---CLUSTER---/IDP
+wanla weynebulo amir camp/---CLUSTER---/IDP
+wanla weynebulo cajuuso camp/---CLUSTER---/IDP
+wanla weynedaud bule camp/---CLUSTER---/IDP
+wanla weynedawanle/---CLUSTER---/HC
+wanla weynegalooley/---CLUSTER---/HC
+wanla weyneheero/---CLUSTER---/HC
+wanla weyneidow camp/---CLUSTER---/IDP
+wanla weynemasiirey camp/---CLUSTER---/IDP
+wanla weyneshanta kulan camp/---CLUSTER---/IDP
+wanla weynewanla weyn/---CLUSTER---/HC
+xuudurbaana/---CLUSTER---/HC
+xuudurbulow-xudur/---CLUSTER---/HC
+xuudurdondardir idp/---CLUSTER---/IDP
+xuudurdoonful/---CLUSTER---/HC
+xuuduredinow/---CLUSTER---/HC
+xuudurfajar bore/---CLUSTER---/HC
+xuudurfajer feylohow/---CLUSTER---/HC
+xuudurfaraq/---CLUSTER---/HC
+xuudurgarasweyne idp/---CLUSTER---/IDP
+xuudurgomore/---CLUSTER---/HC
+xuudurgubud galole/---CLUSTER---/HC
+xuudurhorsed-xudur/---CLUSTER---/HC
+xuudurillin/---CLUSTER---/HC
+xuudurkainey idp/---CLUSTER---/IDP
+xuudurmada warabe/---CLUSTER---/HC
+xuudurmoragabey-xudur/---CLUSTER---/HC
+xuudurreer waqle/---CLUSTER---/HC
+xuudursheikh aweys-xudur/---CLUSTER---/HC
+xuudurtieglow idp/---CLUSTER---/IDP
+zeylaccaasha caddo/---CLUSTER---/HC
+zeylaccabdil qaaddir/---CLUSTER---/HC
+zeylaccali weeci/---CLUSTER---/HC
+zeylacderbi xoorre/---CLUSTER---/HC
+zeylacgeelka goojis/---CLUSTER---/HC
+zeylacqumbo wareen/---CLUSTER---/HC
+zeylacsh. dudub/---CLUSTER---/HC
+zeylacsh.ciise/---CLUSTER---/HC
+zeylactoqoshi/---CLUSTER---/HC
+zeylacxidhxid galbeed/---CLUSTER---/HC
+zeylaczeylac/---CLUSTER---/HC[39m
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+no data (after removing records with NA in dependent or independent variable)
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+not a data frame or data frame without data
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+

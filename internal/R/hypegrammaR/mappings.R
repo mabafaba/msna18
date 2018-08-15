@@ -46,7 +46,7 @@ map_to_case<-function(data,
       if(question_is_categorical(varname)){return("categorical")}
       if(question_is_numeric(varname)){return("numeric")}
       # if conversion to numeric doesn't cause extra NA's, give numeric:
-      if(length(which(is.na(as.numeric(data[[varname]]))))==length(which(is.na(data[[varname]])))){return("numeric")}
+      suppressWarnings({if(length(which(is.na(as.numeric(as.character(data[[varname]])))))==length(which(is.na(data[[varname]])))){return("numerical")}})
       # if it wasn't empty,not NA, not found in kobo tool, and not convertable to numeric.. then let's give categorical a shot i guess:
       return("categorical")
     
