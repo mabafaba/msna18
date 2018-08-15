@@ -1,7 +1,7 @@
-# rm(list=ls())
-# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-# setwd("../")
-# getwd()
+rm(list=ls())
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd("../")
+getwd()
 if(!exists("debugging_mode")){
   debugging_mode<-FALSE
 }
@@ -90,7 +90,6 @@ data_parameters$stratum.name.variable <- data_parameters$stratum.name.variable %
 
 #KI interviews
 ki_aggregation<-read.csv("./internal/input_files/ki_aggregation.csv",stringsAsFactors = F)  %>% as.data.frame(stringsAsFactors=F)
-ki_aggregation <- ki_aggregation %>% apply(., 2, to_alphanumeric_lowercase) 
 
 # load samplingframe (only if data_parameters says it's a stratified sample)
 if(data_parameters$stratified[1]=="yes"){

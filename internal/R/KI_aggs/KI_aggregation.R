@@ -1,5 +1,5 @@
 #### add a mapping function from the parameters (what you are aggregating to) to the median / mode / means
-source("./internal/R/triangulate_KI.R")
+source("./internal/R/KI_aggs/triangulate_KI.R")
 
 
 ###FIRST YOU TRIANGULATE 
