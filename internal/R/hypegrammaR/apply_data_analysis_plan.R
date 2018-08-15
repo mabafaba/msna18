@@ -5,8 +5,11 @@ apply_data_analysis_plan<-function(data,analysisplan){
       # repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
       analysisplan.no.repeat <- analysisplan[analysisplan$repeat.var %in% c(NA,""," "),]
       if(!nrow(analysisplan.no.repeat)<1){
-      analysisplan.no.repeat$repeat.var<-character(0)
-      analysisplan.no.repeat$repeat.var.value<-character(0)
+      analysisplan.no.repeat$repeat.var<-NA
+      analysisplan.no.repeat$repeat.var.value<-NA
+      }else{
+        analysisplan.no.repeat$repeat.var<-character(0)
+        analysisplan.no.repeat$repeat.var.value<-character(0)
       }
       analysisplan.repeat<-analysisplan[!(analysisplan$repeat.var %in% c(NA,""," ")),]
       analysisplan.repeat<-(1:nrow(analysisplan.repeat)) %>% lapply(function(ap_row_index){

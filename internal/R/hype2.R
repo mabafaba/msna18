@@ -42,8 +42,9 @@ test_weights<-weights_of(data);rm(test_weights)
 
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
+
   message(silver("applying analysis plan.."))
-  results<-apply_data_analysis_plan(data,analysisplan[5:13,])
+  results<-apply_data_analysis_plan(data,analysisplan)
   results$analysisplan_log<-results$analysisplan
   results$analysisplan_log$message<-lapply(results$results,function(x){x$message}) %>% unlist
 # OUTPUT
@@ -58,6 +59,10 @@ test_weights<-weights_of(data);rm(test_weights)
   results$analysisplan_log<-results$analysisplan
  
   
+  # analysisplan$output.minimal.chart...width.of.quarter.A4.landscape..FS.<-"yes"
+  # analysisplan$output.regular.chart..report.<-"yes"
+  # analysisplan$output.heatmap<-"yes"
+  # 
   
   # make mini barcharts
   mini_barchart_filelists<-map_resultslist_to_output_minibarcharts(results)

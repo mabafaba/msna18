@@ -149,10 +149,10 @@ reach_style_color_beiges<-function(){
   vapply(1:3,FUN.VALUE = vector(mode = 'character',length = 1),reach_style_color_beige)
 }
 
-
 reach_style_color_rainbow<-function(n){
-  cols<-  as.vector(rbind(reach_style_color_reds(),rev(reach_style_color_darkgreys()),reach_style_color_beiges(),rev(reach_style_color_lightgreys())))
-  rep(cols,ceiling(n/12))[1:n]
+  cols<-c(rev(reach_style_color_darkgreys()[1]),(reach_style_color_reds()[3]),rev(reach_style_color_beiges()[1]))  
+  # cols<-rep(cols,ceiling(n/12))[1:3]
+  colorRampPalette(cols)(n)
 }
 
 
@@ -160,7 +160,7 @@ reach_style_color_rainbow<-function(n){
 scale_fill_reach <- function(color=NULL,name="",...){
   if(is.null(color)){
     structure(list(
-      scale_fill_manual(values= reach_style_color_rainbow(12),name=name,...)
+      scale_fill_manual(values= reach_style_color_rainbow(22),name=name,...)
     ))
   }else{
     structure(list(
