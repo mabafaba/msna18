@@ -174,7 +174,7 @@ map_resultslist_to_output_heatmap_table<-function(results){
       plot_name<-"heatmap"
       file_type<-".jpg"
       filenames<-paste0(output_path,filename_prefix,"_",plot_name,file_type)
-      heatmap_to_file(results_labeled_values[[i]]$summary.statistic,filename = filenames)
+      map_resultslist_to_output_heatmap_table(results$results[[i]]$input.parameters$case)(results_labeled_values[[i]]$summary.statistic,filename = filenames)
       
       data.frame(filename=filenames,
                  analysis_plan_row = i,
