@@ -4,19 +4,38 @@ map_resultlist_to_summarystatistic_df<-function(results){
   all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
 }
 
+map_resultlist_to_datamerge<-function(results,
+                                      rows=c("repeat.var","repeat.var.value"),
+                                      values="numbers",
+                                      ignore=c("se","min","max"),
+                                      labelise.values=F,
+                                      labelise.varnames=F){
+  # rbind all summary statistics
+  all_summary_statistics <-  results %>%
+    lapply(function(x){
+      x$summary.statistic %>% lapply(function(x){
+        if(is.factor(x)){return(as.character(x))};x}) %>% as.data.frame(stringsAsFactors=F)
+      }) %>% 
+    do.call(rbind,.)
 
-map_resultlist_to_datamerge<-function(results,rows=c("repeat.var","repeat.var.value"),values="numbers",ignore=c("se","min","max"),labelise=F){
+    all_summary_statistics_labeled<-results %>% lapply(function(x){x$summary.statistic}) %>% 
+      lapply(labels_summary_statistic,
+             label.dependent.var.value = labelise.values,
+             label.independent.var.value = labelise.values,
+             label.dependent.var = labelise.varnames,
+             label.independent.var = labelise.varnames) %>%
+      do.call(rbind,.)
+    
+  columns<-  names(all_summary_statistics)[!(names(all_summary_statistics) %in% c(rows,ignore,values))]
   
-  all_summary_statistics <-  results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
-  if(labelise){
-    all_summary_statistics_labeled<-results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic) %>% do.call(rbind,.)
+    if(labelise.varnames){
+      all_summary_statistics_labeled$master_table_column_name<-  all_summary_statistics_labeled[,columns] %>% as.list %>% c(sep=":::") %>% do.call(paste,.)     
     }else{
-    all_summary_statistics_labeled<-all_summary_statistics # if not labelise, just pretend it's all labeled and get on with your life
+      all_summary_statistics_labeled$master_table_column_name<-  all_summary_statistics[,columns] %>% as.list %>% c(sep=":::") %>% do.call(paste,.)     
+      
     }
   
-  columns<-  names(all_summary_statistics)[!(names(all_summary_statistics) %in% c(rows,ignore,values))]
-  all_summary_statistics_labeled$master_table_column_name<-all_summary_statistics[,columns] %>% as.list %>% c(sep=":::") %>% do.call(paste,.) 
-  all_summary_statistics_labeled$master_table_column_name
+
   # what to keep rows for:
   wide_format<-all_summary_statistics_labeled %>% unique %>% .[,c(rows,"master_table_column_name",values)] %>%
     spread(key = master_table_column_name,value = numbers)
@@ -174,7 +193,7 @@ map_resultslist_to_output_heatmap_table<-function(results){
       plot_name<-"heatmap"
       file_type<-".jpg"
       filenames<-paste0(output_path,filename_prefix,"_",plot_name,file_type)
-      map_resultslist_to_output_heatmap_table(results$results[[i]]$input.parameters$case)(results_labeled_values[[i]]$summary.statistic,filename = filenames)
+      map_to_visualisation_heatmap(results$results[[i]]$input.parameters$case)(results_labeled_values[[i]]$summary.statistic,filename = filenames)
       
       data.frame(filename=filenames,
                  analysis_plan_row = i,

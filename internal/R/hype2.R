@@ -53,12 +53,11 @@ test_weights<-weights_of(data);rm(test_weights)
     x$summary.statistics<-labels_summary_statistic(x$summary.statistics)
    return(x)
   })
+  datamerge<-map_resultlist_to_datamerge(results$results,rows = c("repeat.var","repeat.var.value"),ignore = c("se","min","max"),labelise.values =T,labelise.varnames =T)
 
-  
-  datamerge<-map_resultlist_to_datamerge(results$results,rows = c("repeat.var","repeat.var.value"),ignore = c("se","min","max"),labelise=T)
   results$analysisplan_log<-results$analysisplan
  
-  
+  map_resultlist_to_datamerge(results$results) %>% head
   # analysisplan$output.minimal.chart...width.of.quarter.A4.landscape..FS.<-"yes"
   # analysisplan$output.regular.chart..report.<-"yes"
   # analysisplan$output.heatmap<-"yes"

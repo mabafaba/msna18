@@ -40,7 +40,7 @@ excel_csv_inputs_sampling_frame_stratification_to_weighting_function<-function(f
     strat_weigthing(df)
   }
   # that's the function we want:
-  return(weights_of)    
+  return(list(weights_of=weights_of,sampling.frame=sampling.frame,add_stratum_names_to_data=add_stratum_names_to_data,stratum_variable="these_are_all_the_strata_names"))    
 }
 
 
@@ -86,7 +86,8 @@ excel_csv_inputs_sampling_frame_cluster_to_weighting_function<-function(file="./
     stratification_weigthing(df)
   }
   # that's the function we want:
-  return(weights_of) 
+  return(list(weights_of=weights_of,sampling.frame=sampling.frame,add_stratum_names_to_data=add_stratum_names_to_data,stratum_variable="these_are_all_the_cluster_names"))
+  
 }
 
 

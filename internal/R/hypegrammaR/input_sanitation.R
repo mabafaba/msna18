@@ -139,6 +139,24 @@ sanitise_is_good_dataframe<-function(data){
 
 
 
+data_sanitation_remove_not_in_samplingframe<-function(data,samplingframe_object,name="samplingframe"){
+  records_not_found_in_sf<-!(samplingframe_object$add_stratum_names_to_data(data)[,samplingframe_object$stratum_variable] %in% samplingframe_object$sampling.frame$stratum)
+  if(length(which(records_not_found_in_sf))==0){
+    .write_to_log(paste("samplingframe",name,"complete.\n"))
+    return(data)
+  }
+        message(paste("FATAL:", length(which(records_not_found_in_sf)),"records discarded, because they could not be matched with samplingframe",name,"\n"))
+  .write_to_log(paste("FATAL:", length(which(records_not_found_in_sf)),"records discarded, because they could not be matched with samplingframe",name,"\n"))
+  
+  .write_to_log(paste("names not found in sampling frame:\n",
+                      paste(samplingframe_object$add_stratum_names_to_data(data)[,samplingframe_object$stratum_variable] %>% unique,collapse="\n")
+  ))
+  
+  return(data[!records_not_found_in_sf,])
+  
+}
+
+
 
 
 
