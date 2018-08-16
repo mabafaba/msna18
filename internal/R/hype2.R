@@ -44,7 +44,9 @@ test_weights<-weights_of(data);rm(test_weights)
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
 
   message(silver("applying analysis plan.."))
+  undebug(percent_with_confints_select_one_groups)
   results<-apply_data_analysis_plan(data,analysisplan)
+
   results$analysisplan_log<-results$analysisplan
   results$analysisplan_log$message<-lapply(results$results,function(x){x$message}) %>% unlist
 # OUTPUT
@@ -54,7 +56,7 @@ test_weights<-weights_of(data);rm(test_weights)
    return(x)
   })
   datamerge<-map_resultlist_to_datamerge(results$results,rows = c("repeat.var","repeat.var.value"),ignore = c("se","min","max"),labelise.values =T,labelise.varnames =T)
-
+  
   results$analysisplan_log<-results$analysisplan
  
   map_resultlist_to_datamerge(results$results) %>% head
@@ -69,7 +71,6 @@ test_weights<-weights_of(data);rm(test_weights)
   report_barchart_filelist<-map_resultslist_to_output_reportbarcharts(results)
   # make heatmaps
   heatmaps_filelists<-map_resultslist_to_output_heatmap_table(results)
-
 
  # add filenames to analysis plan
  if(!is.null(mini_barchart_filelists)){

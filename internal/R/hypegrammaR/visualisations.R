@@ -21,7 +21,7 @@ grouped_barchart_percent<-function(summary.statistic,filename){
           # axis.text.y=element_blank(),
           # axis.ticks.y=element_blank(),
           # plot.margin = unit(x = c(0,0,0,0),'null')
-    )+scale_fill_reach(name=unique(summary.statistic$dependent.var)[1])+
+    )+scale_fill_reach(name="")+
     geom_errorbar( aes(x=summary.statistic$independent.var.value,
                        ymin=as.numeric(summary.statistic$min),
                        ymax=as.numeric(summary.statistic$max)),

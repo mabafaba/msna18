@@ -47,18 +47,24 @@ message(silver("loading and preparing parameters.."))
 
 data_parameters<-read.csv("./internal/input_files/parameters.csv",stringsAsFactors = F) 
 
-
-cluster_formula <- if(any(grep("cluster", data_parameters$sampling.strategy)>0)){
-                            load_cluster_sampling_units(cluster.variable = data_parameters$cluster.variables %>% to_alphanumeric_lowercase)
+cluster_deff<-any(!(data_parameters$cluster.variables %in% c(NA,"NA",""," ")))
+cluster_formula <- if(cluster_deff){
+                            cluster_formula<-load_cluster_sampling_units(cluster.variable = data_parameters$cluster.variables %>% to_alphanumeric_lowercase)
+                            cluster.id.formula<-cluster_formula()
+                            rows_with_valid_clusterids<-data[,all.vars(formula(cluster.id.formula)),drop=F] %>% apply(2,is.na) %>% apply(1,function(x){!any(x)}) 
+                            data<-data[rows_with_valid_clusterids,]
+                            cluster_formula
                    }else{
-                            load_cluster_sampling_units(cluster.variable = NULL)
+                            cluster_formula<-suppressWarnings(load_cluster_sampling_units(cluster.variable = NULL))
+                            cluster.id.formula<-cluster_formula()
+                            cluster_formula
                         }
 
-cluster.id.formula<-cluster_formula()
+
 
 # remove records with NA in cluster id
-rows_with_valid_clusterids<-data[,all.vars(formula(cluster.id.formula)),drop=F] %>% apply(2,is.na) %>% apply(1,function(x){!any(x)}) 
-data<-data[rows_with_valid_clusterids,]
+
+
 
 message(silver("loading and preparing sampling frames.."))
 
