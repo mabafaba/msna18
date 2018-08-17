@@ -2,4 +2,6764 @@
 
 which necessary input files exist?
 
+|                                                        |.    | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo_choices.csv                 |TRUE | |./internal/input_files/kobo_questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+which necessary input files exist?
+
+|                                                        |.     | |:-------------------------------------------------------|:-----| |./internal/input_files/analysis plan.csv                |TRUE  | |./internal/input_files/choice ranks.csv                 |TRUE  | |./internal/input_files/cluster_samplingframe.csv        |TRUE  | |./internal/input_files/composite_indicators.csv         |TRUE  | |./internal/input_files/data.csv                         |TRUE  | |./internal/input_files/kobo_choices.csv                 |FALSE | |./internal/input_files/kobo_questions.csv               |FALSE | |./internal/input_files/parameters.csv                   |TRUE  | |./internal/input_files/stratification_samplingframe.csv |TRUE  |
+
+which necessary input files exist?
+
+|                                                        |.     | |:-------------------------------------------------------|:-----| |./internal/input_files/analysis plan.csv                |TRUE  | |./internal/input_files/choice ranks.csv                 |TRUE  | |./internal/input_files/cluster_samplingframe.csv        |TRUE  | |./internal/input_files/composite_indicators.csv         |TRUE  | |./internal/input_files/data.csv                         |TRUE  | |./internal/input_files/kobo_choices.csv                 |FALSE | |./internal/input_files/kobo_questions.csv               |FALSE | |./internal/input_files/parameters.csv                   |TRUE  | |./internal/input_files/stratification_samplingframe.csv |TRUE  |
+
+which necessary input files exist?
+
 |                                                        |.    | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+
+
+chisquared testing:
+dependent.var: organisation_name
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: mantika
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: displacement_status
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: hoh
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: relation_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: sex_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: hosting_displaced
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: access_land_sea
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: engage_agriculture_prior2014
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nb_hectares_cultivated
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: dwelling_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: occupancy_type
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: shelter_condition
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: threat_eviction
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: first_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: second_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: cooking_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: vehicle_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: generator_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: heating_fuel
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: distance_water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_for_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: unsufficient_drinking_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_quality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_public_network_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: frequency_trash_collection
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_needed_15days
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_received
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_facility_visited
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_healthcentre
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: ind_chronicdisease
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: chronicdisease_medecine
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mental_disorder
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_to_meet_needs
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw_amount
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: payment_modality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_market_place
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_accessgoods
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_non_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: spent_savings
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: borrow_money
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: purchase_on_credit
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_nfi
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_health
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: delay_skip_rent
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: begging
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: additional_job
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: degrading_illegal_work
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_other
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: displaced_since2011
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: year_displacement
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_disp
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: lost_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: applied_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_family_member
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_intention
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: presence_uxo_neighborhood
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: member_uxo_injured
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: received_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: future_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: humanitarian_assistance_info
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: prefered_information_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: food_security_consent
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: agricultural_production
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: crop_crisis
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: livestock_crisis
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+chisquared testing:
+dependent.var: access_mobile_network
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: eviction_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_heating
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_noaccess_dropped_school
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: type_nonformal_education
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_treatment
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: toilet_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: waste_management
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_criteria
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: pregnancy_consultedby
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: organisation_name
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: mantika
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: displacement_status
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: hoh
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: relation_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: sex_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: hosting_displaced
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: access_land_sea
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: engage_agriculture_prior2014
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nb_hectares_cultivated
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: dwelling_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: occupancy_type
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: shelter_condition
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: threat_eviction
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: first_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: second_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: cooking_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: vehicle_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: generator_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: heating_fuel
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: distance_water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_for_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: unsufficient_drinking_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_quality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_public_network_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: frequency_trash_collection
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_needed_15days
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_received
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_facility_visited
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_healthcentre
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: ind_chronicdisease
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: chronicdisease_medecine
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mental_disorder
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_to_meet_needs
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw_amount
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: payment_modality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_market_place
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_accessgoods
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_non_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: spent_savings
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: borrow_money
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: purchase_on_credit
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_nfi
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_health
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: delay_skip_rent
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: begging
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: additional_job
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: degrading_illegal_work
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_other
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: displaced_since2011
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: year_displacement
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_disp
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: lost_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: applied_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_family_member
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_intention
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: presence_uxo_neighborhood
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: member_uxo_injured
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: received_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: future_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: humanitarian_assistance_info
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: prefered_information_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: food_security_consent
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: agricultural_production
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: crop_crisis
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: livestock_crisis
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+chisquared testing:
+dependent.var: access_mobile_network
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: eviction_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_heating
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_noaccess_dropped_school
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: type_nonformal_education
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_treatment
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: toilet_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: waste_management
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_criteria
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: pregnancy_consultedby
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: service_access_issues
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_service_issues
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_challenges
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketplace
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem_expensive
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem_unavailable
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: financial_provider
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_reason
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: no_return_reason
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: return_area_decision
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: problem_faced_return
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: lost_doc_types
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: lost_doc_impact
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: documentation_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_reasons
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo_actions
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: modality_assistance
+independent.var:sex_hoh
+
+
+
+
+
+which necessary input files exist?
+
+|                                                        |.    | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+
+
+chisquared testing:
+dependent.var: organisation_name
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: mantika
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: displacement_status
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: hoh
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: relation_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: sex_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: hosting_displaced
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: access_land_sea
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: engage_agriculture_prior2014
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nb_hectares_cultivated
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: dwelling_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: occupancy_type
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: shelter_condition
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: threat_eviction
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: first_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: second_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: cooking_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: vehicle_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: generator_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: heating_fuel
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: distance_water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_for_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: unsufficient_drinking_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_quality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_public_network_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: frequency_trash_collection
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_needed_15days
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_received
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_facility_visited
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_healthcentre
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: ind_chronicdisease
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: chronicdisease_medecine
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mental_disorder
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_to_meet_needs
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw_amount
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: payment_modality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_market_place
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_accessgoods
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_non_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: spent_savings
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: borrow_money
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: purchase_on_credit
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_nfi
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_health
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: delay_skip_rent
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: begging
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: additional_job
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: degrading_illegal_work
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_other
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: displaced_since2011
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: year_displacement
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_disp
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: lost_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: applied_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_family_member
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_intention
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: presence_uxo_neighborhood
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: member_uxo_injured
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: received_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: future_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: humanitarian_assistance_info
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: prefered_information_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: food_security_consent
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: agricultural_production
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: crop_crisis
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: livestock_crisis
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+chisquared testing:
+dependent.var: access_mobile_network
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: eviction_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_heating
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_noaccess_dropped_school
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: type_nonformal_education
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_treatment
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: toilet_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: waste_management
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_criteria
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: pregnancy_consultedby
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: organisation_name
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: mantika
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: displacement_status
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: hoh
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: relation_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: sex_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: hosting_displaced
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: access_land_sea
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: engage_agriculture_prior2014
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nb_hectares_cultivated
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: dwelling_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: occupancy_type
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: shelter_condition
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: threat_eviction
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: first_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: second_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: cooking_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: vehicle_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: generator_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: heating_fuel
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: distance_water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_for_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: unsufficient_drinking_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_quality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_public_network_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: frequency_trash_collection
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_needed_15days
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_received
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_facility_visited
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_healthcentre
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: ind_chronicdisease
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: chronicdisease_medecine
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mental_disorder
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_to_meet_needs
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw_amount
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: payment_modality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_market_place
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_accessgoods
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_non_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: spent_savings
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: borrow_money
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: purchase_on_credit
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_nfi
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_health
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: delay_skip_rent
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: begging
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: additional_job
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: degrading_illegal_work
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_other
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: displaced_since2011
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: year_displacement
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_disp
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: lost_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: applied_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_family_member
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_intention
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: presence_uxo_neighborhood
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: member_uxo_injured
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: received_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: future_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: humanitarian_assistance_info
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: prefered_information_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: food_security_consent
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: agricultural_production
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: crop_crisis
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: livestock_crisis
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+chisquared testing:
+dependent.var: access_mobile_network
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: eviction_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_heating
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_noaccess_dropped_school
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: type_nonformal_education
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_treatment
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: toilet_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: waste_management
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_criteria
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: pregnancy_consultedby
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: service_access_issues
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_service_issues
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_challenges
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketplace
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem_expensive
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem_unavailable
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: financial_provider
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_reason
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: no_return_reason
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: return_area_decision
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: problem_faced_return
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: lost_doc_types
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: lost_doc_impact
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: documentation_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_reasons
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo_actions
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: modality_assistance
+independent.var:sex_hoh
+
+
+
+
+
+which necessary input files exist?
+
+|                                                        |.    | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+
+
+chisquared testing:
+dependent.var: organisation_name
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: mantika
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: displacement_status
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: hoh
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: relation_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: sex_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: hosting_displaced
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: access_land_sea
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: engage_agriculture_prior2014
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nb_hectares_cultivated
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: dwelling_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: occupancy_type
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: shelter_condition
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: threat_eviction
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: first_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: second_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: cooking_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: vehicle_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: generator_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: heating_fuel
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: distance_water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_for_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: unsufficient_drinking_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_quality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_public_network_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: frequency_trash_collection
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_needed_15days
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_received
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_facility_visited
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_healthcentre
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: ind_chronicdisease
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: chronicdisease_medecine
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mental_disorder
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_to_meet_needs
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw_amount
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: payment_modality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_market_place
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_accessgoods
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_non_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: spent_savings
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: borrow_money
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: purchase_on_credit
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_nfi
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_health
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: delay_skip_rent
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: begging
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: additional_job
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: degrading_illegal_work
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_other
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: displaced_since2011
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: year_displacement
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_disp
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: lost_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: applied_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_family_member
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_intention
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: presence_uxo_neighborhood
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: member_uxo_injured
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: received_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: future_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: humanitarian_assistance_info
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: prefered_information_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: food_security_consent
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: agricultural_production
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: crop_crisis
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: livestock_crisis
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+chisquared testing:
+dependent.var: access_mobile_network
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: eviction_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_heating
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_noaccess_dropped_school
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: type_nonformal_education
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_treatment
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: toilet_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: waste_management
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_criteria
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: pregnancy_consultedby
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: service_access_issues
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_service_issues
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_challenges
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketplace
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem_expensive
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem_unavailable
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: financial_provider
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_reason
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: no_return_reason
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: return_area_decision
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: problem_faced_return
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: lost_doc_types
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: lost_doc_impact
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: documentation_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_reasons
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo_actions
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: modality_assistance
+independent.var:sex_hoh
+
+
+
+
+
+which necessary input files exist?
+
+|                                                        |.    | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+
+
+chisquared testing:
+dependent.var: organisation_name
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: mantika
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: displacement_status
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: hoh
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: relation_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: sex_hoh
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: hosting_displaced
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: access_land_sea
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: engage_agriculture_prior2014
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nb_hectares_cultivated
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+chisquared testing:
+dependent.var: dwelling_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: occupancy_type
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: shelter_condition
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: threat_eviction
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: first_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: second_electricity_source
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: cooking_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: vehicle_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: generator_fuel
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: heating_fuel
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: distance_water_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_for_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_source_other_purpose
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: unsufficient_drinking_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_quality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_public_network_water
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: frequency_trash_collection
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_needed_15days
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_received
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_facility_visited
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_healthcentre
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: ind_chronicdisease
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: chronicdisease_medecine
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mental_disorder
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_healthcare_service
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_to_meet_needs
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: cash_withdraw_amount
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: payment_modality
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_market_place
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: time_accessgoods
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_non_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: sell_productive_asset
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: spent_savings
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: borrow_money
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: purchase_on_credit
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_nfi
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reduce_expense_health
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: delay_skip_rent
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: begging
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: additional_job
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: degrading_illegal_work
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_other
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: displaced_since2011
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: baladiya_area_origin
+independent.var:sex_hoh
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: year_displacement
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: mantika_disp
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: lost_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: applied_documentation
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_family_member
+independent.var:sex_hoh
+
+
+
+
+
+
+
+
+
+chisquared testing:
+dependent.var: missing_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_intention
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: presence_uxo_neighborhood
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_period
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: member_uxo_injured
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: received_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: future_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: humanitarian_assistance_info
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: prefered_information_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: food_security_consent
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: agricultural_production
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 different values in the dependent variable
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: crop_crisis
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: livestock_crisis
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with <2 unique values in the independent variable with at least 2 records)
+
+
+
+chisquared testing:
+dependent.var: access_mobile_network
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: eviction_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: access_heating
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_noaccess_dropped_school
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: type_nonformal_education
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: water_treatment
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: toilet_type
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: waste_management
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: healthcare_criteria
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: reasons_nohealthaccess
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: pregnancy_consultedby
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: service_access_issues
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: physical_disability_service_issues
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: obtaining_cash_challenges
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketplace
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem_expensive
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: barrier_marketitem_unavailable
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: financial_provider
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: coping_cash_reason
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: no_return_reason
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.
+
+
+
+chisquared testing:
+dependent.var: return_area_decision
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: problem_faced_return
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: lost_doc_types
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: lost_doc_impact
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: documentation_reason
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: leave_country_reasons
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_uxo_actions
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: awareness_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: modality_assistance
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: assistance_source
+independent.var:sex_hoh
+
+
+
+
+
+chisquared testing:
+dependent.var: humanitarian_assistance_barriers
+independent.var:sex_hoh
+
+
+
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not perform chisquared test on >50 unique values in the dependent variable.

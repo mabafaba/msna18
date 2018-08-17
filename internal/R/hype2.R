@@ -44,7 +44,8 @@ test_weights<-weights_of(data);rm(test_weights)
   
   
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
-
+  #Removing chronic disease because it didnt recode properly
+  #analysisplan <- analysisplan[!(analysisplan$dependent.var == "type_chronic_disease"),]
 
   message(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
