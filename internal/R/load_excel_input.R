@@ -5,7 +5,6 @@ verify_excel_input()
 message(silver("loading and preparing data.."))
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 
-
 missing_data_to_NA<-function(data){
   lapply(data,function(x){
     replace(x,which(x %in% c("","N/A","#N/A","NA", " ")),NA)    

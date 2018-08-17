@@ -2,7 +2,6 @@ verify_excel_input<-function(){
   verify_excel_input_all_files_exist()
 }
 
-
 verify_excel_input_all_files_exist<-function(){
 
   files_needed<-c(  "./internal/input_files/analysis plan.csv",
@@ -17,7 +16,7 @@ verify_excel_input_all_files_exist<-function(){
   
   filesexist<-sapply(files_needed,file.exists)
   .write_to_log("which necessary input files exist?")
-  suppressWarnings(.write_to_log(kable(filesexist %>% as.matrix)))
+  suppressWarnings(.write_to_log(kable(filesexist %>% as.data.frame)))
   
   if(any(!filesexist)){
     missing_sheets<-files_needed[!filesexist] %>%  strsplit("/") %>% lapply(function(x){x[length(x)] %>% gsub(".csv","",.)}) %>% unlist %>% paste(collapse = "\n")
