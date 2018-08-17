@@ -2,9 +2,11 @@
 .dependencies<-c("dplyr","purrr","questionr","data.table","tidyr","crayon","magrittr","rstudioapi","igraph","knitr","rlist","ggplot2","ggthemes","extrafont","gridExtra")
 
 source("./internal/R/verify_excel_input.R")
+source('./internal/R/read_excel_output.R')
 source("./internal/R/composite_indicator_weighted_count.R")
 source("./internal/R/survey_design.R")
 source("./internal/R/recoding.R")
+source('./internal/R/survey_design2.R')
 
 source("./internal/R/load_questionnaire.R")
 source("./internal/R/load_cluster_ids.R")

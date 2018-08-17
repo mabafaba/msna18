@@ -1,3 +1,4 @@
+  cat("\14")
 
 message(("loading dependencies.."))
 # clear/create folders
@@ -11,8 +12,8 @@ dir.create("./output/tables",showWarnings = F)
 #load dependencies
 source("./internal/R/dependencies.R")
 cat("\14")
-source("./internal/R/survey_design2.R")
-source("./internal/R/read_excel_output.R")
+# source("./internal/R/survey_design2.R")
+# source("./internal/R/read_excel_output.R")
 source("./internal/R/hypegrammaR/visualisations_barchart_FS_quarter_a4width.R")
 # LOAD INPUT
 # make sure all files exist:
@@ -38,14 +39,12 @@ test_weights<-weights_of(data);rm(test_weights)
   }else{
     .write_to_log("\nNo Composite Indicators Defined.\n")
   }
-  
+
 
   
-# composite_indicator_data_loss_diagnostic(data,composite_indicators_definitions_weighted_counts,write_log=T, warning=T)
   
-  
-# ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
+
 
   message(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
