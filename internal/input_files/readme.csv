@@ -1,0 +1,14 @@
+Steps,if there is a problem..
+,
+,
+"copy your Kobo tool ""questions"" sheet to the corresponding sheet here",
+"same with kobo tool ""choices"" sheet",
+"1. copy your data to the data sheet. Please note that the data from this sheet will NOT be used for analysis, but only to insure the analysis parameters set make sense with the data. The data used in the analysis is taken from the other input .xlm file. We'll join this later on, for now it is easier to keep them separate as this sheet will change a lot.",
+fill out the data_parameters sheet,
+"see the ""input check"" to insure your inputs match",
+,
+"2. define your composite indicators in the composite indicators"" sheet",
+"3. set your disaggregation variables in the ""aggregate all variables"" sheet",If this fails: make sure none of the files in /internal/input_files/ is open in any application. Save this file and reopen it.
+e,
+"4. now open ""run.R"" in Rstudio, mark all lines and press ctrl+ENTER",
+5. find all results in ./output/,

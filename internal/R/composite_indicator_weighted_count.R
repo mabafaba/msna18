@@ -16,15 +16,8 @@ add_variable_indicators_weighted_count<-function(data,composite_indicator_defini
       if(any(!var_in_data)){stop(
         paste("Promblem in Composite indicator definition: variable name not found in data. If variable name is a composite itself, it must be defined first. problematic variable names:",
               paste(list.of.new.indicator.definitions[[i]]$var[!var_in_data] %>% unique,collapse = ", ")))}
-      
       data[[unique(list.of.new.indicator.definitions[[i]]$new.var.name)[1]]] <- composite_indicator_weighted_count(data,indicator_definition = list.of.new.indicator.definitions[[i]])
-      
-  }
-  
-  # load again the sampling frame in case some composite indicators need to be added:
-  questionnaire<-load_questionnaire_xml_input(data)
-  data[,composite_indicator_definitions$new.var.name %>% unique] <- levels_for_cat(data[,composite_indicator_definitions$new.var.name %>% unique,drop=F], questionnaire) 
-  
+      }
 
   return(data)
 }
