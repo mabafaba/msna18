@@ -4,4 +4,3 @@
   setwd(dirname(rstudioapi::getActiveDocumentContext()$path));debugging_mode<-F;
   source("./internal/R/hype2.R")
   
-  

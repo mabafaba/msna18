@@ -109,9 +109,12 @@ if(!is.stratified() & !is.clustered()){
 message(silver("loading and preparing questionnaire.."))
 
 # load questionnaire and create associated functions:
-questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo questions.csv",
+load_questionnaire_xml_input<-function(data){
+load_questionnaire(data,questions.file = "./internal/input_files/kobo questions.csv",
                                   choices.file = "./internal/input_files/kobo choices.csv",
-                                  choices.label.column.to.use = data_parameters$questionnaire.choices.label.column[1])
+                                  choices.label.column.to.use = data_parameters$questionnaire.choices.label.column[1])}
+
+questionnaire<-load_questionnaire_xml_input(data)
 # load cluster ids and create associated functions:
 
 # cleaning and getting the factors out 

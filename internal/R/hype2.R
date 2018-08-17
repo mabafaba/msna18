@@ -40,13 +40,15 @@ test_weights<-weights_of(data);rm(test_weights)
   }
   
 
+  
+# composite_indicator_data_loss_diagnostic(data,composite_indicators_definitions_weighted_counts,write_log=T, warning=T)
+  
+  
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
 
   message(silver("applying analysis plan.."))
-  undebug(percent_with_confints_select_one_groups)
   results<-apply_data_analysis_plan(data,analysisplan)
-
   results$analysisplan_log<-results$analysisplan
   results$analysisplan_log$message<-lapply(results$results,function(x){x$message}) %>% unlist
 # OUTPUT
