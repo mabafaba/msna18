@@ -1,6 +1,6 @@
 apply_data_analysis_plan<-function(data,analysisplan){
   analysisplan<-analysisplan[!is.na(analysisplan$dependent.var),]
-  if(!is.null(analysisplan[,"repeat.var"])){
+  if("repeat.var" %in% colnames(analysisplan)){
       # repeat.var.value <- unique(data[[repeat.var]])
       # repeat.var.value <- repeat.var.value[!is.na(repeat.var.value )]
       analysisplan.no.repeat <- analysisplan[analysisplan$repeat.var %in% c(NA,""," "),]
