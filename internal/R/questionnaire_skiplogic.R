@@ -9,16 +9,16 @@ question_is_skipped_apply_condition_to_data<-function(data,condition){
   res<-remove_junk_from_disected_condition(res)
   res<-list.clean(res,recursive = T,fun = is.null)
   res<-reduce_single_item_lists(res)
-  condition_fulfilled<-list_collapse_logic_hierarchy(res)
-  if(!is.vector(condition_fulfilled)){
+  is_skipped<-list_collapse_logic_hierarchy(res)
+  if(!is.vector(is_skipped)){
     warning("at least parts of skip logic condition `", condition ,"` could not be read properly.")
-    if(is.logical(condition_fulfilled[[1]])){return(!condition_fulfilled[[1]])}else{
+    if(is.logical(is_skipped[[1]])){return(is_skipped[[1]])}else{
     }
     warning("assuming all records are skipped")
     return(rep(FALSE,nrow(data)))
   }
   
-  return(!condition_fulfilled)
+  return(!is_skipped)
 }
 
 # takes a condition that's already split into a hierarchical list and applies it to data
@@ -163,7 +163,7 @@ is_selected_condition<-function(condition){
 }
 # is condition type "numric"?
 is_numeric_condition<-function(condition){
-  (strsplit(condition,">|<|>=|<=|=")[[1]] %>% length)==2
+  (strsplit(condition,">|<|>=|<=")[[1]] %>% length)==2
 }
 
 
@@ -182,12 +182,12 @@ selected_condition_fulfilled<-function(data,condition){
   # if the variable is not in the data we're giving up:
   if(!(varname %in% names(data))){
     warning(paste("couldn't figure out part of skip logic condition:\n",condition,"\n", varname," is not a column name in the provided data.\nassuming no records are skipped."))
-    return(rep(TRUE,nrow(data)))}
+    return(rep(FALSE,nrow(data)))}
   
   lapply(data[,varname],function(x){
     (conditional_value%in%(x %>% as.character %>% strsplit(" ") %>% unlist))
   }
-  ) %>% unlist 
+  ) %>% unlist
 }
 
 
@@ -195,28 +195,26 @@ selected_condition_fulfilled<-function(data,condition){
 # for numeric type: returns a logical vector (condition fulfilled or not in provided records):
 
 numeric_condition_fulfilled<-function(data,condition){
-  condition_split<-strsplit(condition, ">|<|>=|<=|=") %>% unlist
-  operator_list<-c(">","<","=>","<=","=")
+  condition_split<-strsplit(condition, ">|<|>=|<=") %>% unlist
+  operator_list<-c(">","<","=>","<=")
   OPERATOR    <- operator_list[lapply(operator_list,grepl,condition) %>% unlist]
-  if(OPERATOR=="="){OPERATOR<-"=="}
-  CRITICAL_VALUE<-condition_split[[2]] %>% gsub("\\.","its99a99dot",.)%>% to_alphanumeric_lowercase %>% gsub("[_\\.]","",.) %>% gsub("its99a99dot",".",.)%>% as.numeric
+  CRITICAL_VALUE<-condition_split[[2]] %>% gsub("\\(|\\)","",.) %>% as.numeric
   
   to_compare<-condition_split[[1]]
   to_compare_components<-gsub("\\+","HERESANOPERATOR+HERESANOPERATOR",to_compare)
   to_compare_components<- strsplit(to_compare_components,"HERESANOPERATOR")[[1]]
   to_compare_components_as_varnames<-lapply(to_compare_components,extract_varname_from_condition) %>% unlist %>% to_alphanumeric_lowercase
   if(!(to_compare_components_as_varnames %in% names(data))){
-    warning(paste("couldn't figure out skip logic:",varname,"is not a column name in the provided data. Assuming condition fulfilled (not skipped) for this part of the skiplogic."))
+    warning(paste("couldn't figure out skip logic:",varname,"is not a column name in the provided data."))
     return(rep(TRUE,nrow(data)))}
   # lapply(to_compare_components_as_varnames,function(x){if(!is.na(x)){return(data[,x])}else{NA}})
   varnames_subset_rexpression<-to_compare_components_as_varnames %>% lapply(function(x){if(!is.na(x)){return(paste0('data[,"',x,'"]'))}else{return(x)}}) %>% unlist
   varnames_subset_rexpression[is.na(varnames_subset_rexpression)]<-to_compare_components[is.na(varnames_subset_rexpression)]   
   to_compare_rexpression<-varnames_subset_rexpression %>%  paste0(collapse="")
   full_expression<- paste0(to_compare_rexpression,OPERATOR,CRITICAL_VALUE)
-  condition_fulfilled<-eval(parse(text = full_expression))
-  return(unlist(condition_fulfilled))
+  is_skipped<-eval(parse(text = full_expression))
+  return(is_skipped)
 }
-
 
 
 

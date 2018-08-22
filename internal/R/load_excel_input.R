@@ -5,6 +5,7 @@ verify_excel_input()
 message(silver("loading and preparing data.."))
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 
+
 missing_data_to_NA<-function(data){
   lapply(data,function(x){
     replace(x,which(x %in% c("","N/A","#N/A","NA", " ")),NA)    
@@ -109,12 +110,9 @@ if(!is.stratified() & !is.clustered()){
 message(silver("loading and preparing questionnaire.."))
 
 # load questionnaire and create associated functions:
-load_questionnaire_xml_input<-function(data){
-load_questionnaire(data,questions.file = "./internal/input_files/kobo questions.csv",
+questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo questions.csv",
                                   choices.file = "./internal/input_files/kobo choices.csv",
-                                  choices.label.column.to.use = data_parameters$questionnaire.choices.label.column[1])}
-
-questionnaire<-load_questionnaire_xml_input(data)
+                                  choices.label.column.to.use = data_parameters$questionnaire.choices.label.column[1])
 # load cluster ids and create associated functions:
 
 # cleaning and getting the factors out 
