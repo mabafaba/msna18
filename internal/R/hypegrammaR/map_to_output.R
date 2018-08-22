@@ -16,15 +16,20 @@ map_resultlist_to_datamerge<-function(results,
       x$summary.statistic %>% lapply(function(x){
         if(is.factor(x)){return(as.character(x))};x}) %>% as.data.frame(stringsAsFactors=F)
       }) %>% 
-    do.call(rbind,.)
-
+    do.call(rbind,.) 
+  
     all_summary_statistics_labeled<-results %>% lapply(function(x){x$summary.statistic}) %>% 
       lapply(labels_summary_statistic,
              label.dependent.var.value = labelise.values,
              label.independent.var.value = labelise.values,
              label.dependent.var = labelise.varnames,
              label.independent.var = labelise.varnames) %>%
-      do.call(rbind,.)
+      do.call(rbind,.) 
+    
+    if(nrow(all_summary_statistics)<nrow(all_summary_statistics_labeled)){
+      warning("labelising made some analysis definition indistinguishable (identical question labels or same label for different choices in the same question?")
+      .write_to_log("mapping resultlist to datamerge csv could not be done correctly with labels - some analysis definitions became indistinguishable ")
+    }
     
   columns<-  names(all_summary_statistics)[!(names(all_summary_statistics) %in% c(rows,ignore,values))]
   

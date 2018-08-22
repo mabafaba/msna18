@@ -1,0 +1,4 @@
+"","independent.var","dependent.var","hypothesis.type","case","repeat.var","output.raw.numbers","output.minimal.chart...width.of.quarter.A4.landscape..FS.","output.regular.chart..report.","output.Map..Mode","output.Map..Average.Percent..of.mode.","output.heatmap","repeat.var.value","percentcomplete","heatmaps"
+"1",NA,"stay_firstreason","direct_reporting","CASE_direct_reporting_categorical_",NA,"yes","./output/charts/stay_firstreason___direct_reporting___TRUE___CASE_direct_reporting_categorical____NA___NA_mini_barchart.jpg","./output/charts/stay_firstreason___direct_reporting___TRUE___CASE_direct_reporting_categorical____NA___NA_report_barchart.jpg",NA,NA,"yes",NA,"100%
+
+","./output/charts/stay_firstreason___direct_reporting___TRUE___CASE_direct_reporting_categorical____NA___NA_heatmap.jpg"

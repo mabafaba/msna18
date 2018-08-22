@@ -1,4 +1,4 @@
-  cat("\14")
+cat("\14")
 
 message(("loading dependencies.."))
 # clear/create folders
@@ -56,11 +56,10 @@ test_weights<-weights_of(data);rm(test_weights)
     x$summary.statistics<-labels_summary_statistic(x$summary.statistics)
    return(x)
   })
-  datamerge<-map_resultlist_to_datamerge(results$results,rows = c("repeat.var","repeat.var.value"),ignore = c("se","min","max"),labelise.values =T,labelise.varnames =T)
+  datamerge<-map_resultlist_to_datamerge(results$results,rows = c("repeat.var","repeat.var.value"),ignore = c("se","min","max"),labelise.values =F,labelise.varnames =F)
   
   results$analysisplan_log<-results$analysisplan
  
-  map_resultlist_to_datamerge(results$results) %>% head
   # analysisplan$output.minimal.chart...width.of.quarter.A4.landscape..FS.<-"yes"
   # analysisplan$output.regular.chart..report.<-"yes"
   # analysisplan$output.heatmap<-"yes"
@@ -114,9 +113,7 @@ test_weights<-weights_of(data);rm(test_weights)
  map_to_file(datamerge,"./output/datamerge.csv")
  results$analysisplan_log %>% as.data.frame %>%  map_to_file("./output/analysisplan_chart_filenames.csv")
 
- 
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
- 
  
  if(!debugging_mode){cat("\014")}  
  cat(green("\n\n\nDONE - no issues detected.\n"))

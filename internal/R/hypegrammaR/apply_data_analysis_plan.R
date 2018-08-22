@@ -29,8 +29,6 @@ apply_data_analysis_plan<-function(data,analysisplan){
     
       analysisplan <- rbind(analysisplan.no.repeat, analysisplan.repeat, stringsAsFactors = F)
     }
-colnames(analysisplan.no.repeat)
-colnames(analysisplan.repeat)
       analysisplan$percentcomplete<-paste0(floor(1:nrow(analysisplan)/nrow(analysisplan)*100),"%\n\n")
   
    results<- apply(analysisplan,1,function(x){
@@ -48,7 +46,7 @@ colnames(analysisplan.repeat)
           !(is.na(data[,x["independent.var"]]))),]
     }
     printparamlist(x,"1/2: calculating summary statistics and hypothesis tests")
-    .write_to_log(printparamlist(x,"1/2: calculating summary statistics and hypothesis tests"))
+    # .write_to_log(printparamlist(x,"1/2: calculating summary statistics and hypothesis tests"))
     if(is.na(x["independent.var"])|is.null(x["independent.var"])){
       indep.var <- NULL}else{
         indep.var <- x["independent.var"]
