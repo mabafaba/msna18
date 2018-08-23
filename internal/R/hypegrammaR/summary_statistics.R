@@ -27,7 +27,7 @@ percent_with_confints_select_one <- function(dependent.var,
     colnames(result_svy_format)<-c("numbers","min","max")
     summary_with_confints <- data.frame(dependent.var=dependent.var,
                    independent.var=NA,
-                   dependent.var.value=gsub(paste0("^",depednent.var),"",rownames(result_svy_format)),
+                   dependent.var.value=gsub(paste0("^",dependent.var),"",rownames(result_svy_format)),
                    independent.var.value=NA,
                    numbers=result_svy_format[,"numbers"],
                    se=NA,
@@ -56,11 +56,9 @@ percent_with_confints_select_mult <- function(dependent.var,
   if(!dependent_more_than_1){
     dependent.var.value=unique(data[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
-  
   result_hg_format <- lapply(names(choices), function(x){
-    
     result_svy_format <- svymean(formula(paste0("~", x)),design, level=0.95) %>% cbind(.,confint(.))
-    
+    result_svy_format<-result_svy_format[rownames(result_svy_format)==paste0(x,TRUE),,drop=F]
     colnames(result_svy_format)<-c("numbers","min","max")
     summary_with_confints <- data.frame(dependent.var=dependent.var,
                                         independent.var=NA,
@@ -252,7 +250,7 @@ confidence_intervals_mean <- function(dependent.var,
   unique.independent.var.values <- design$variables[[independent.var]] %>% unique
   results<-unique.independent.var.values %>%
     lapply(function(x){
-      dependent_value_x_stats <- result_svy_format[x,]
+      dependent_value_x_stats <- result_svy_format[as.character(x),]
       colnames(dependent_value_x_stats)<-c("independent.var.value","numbers","min","max")
       data.frame(dependent.var=dependent.var,
                  independent.var=independent.var,

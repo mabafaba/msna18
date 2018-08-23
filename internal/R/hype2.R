@@ -1,4 +1,5 @@
 cat("\14")
+
 message(("loading dependencies.."))
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE) 
@@ -42,8 +43,10 @@ test_weights<-weights_of(data);rm(test_weights)
 
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
+
   message(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
+
   results$analysisplan_log<-results$analysisplan
   results$analysisplan_log$message<-lapply(results$results,function(x){x$message}) %>% unlist
 # OUTPUT
@@ -52,13 +55,14 @@ test_weights<-weights_of(data);rm(test_weights)
     x$summary.statistics<-labels_summary_statistic(x$summary.statistics)
    return(x)
   })
-  
-  datamerge<-map_resultlist_to_datamerge(results$results,rows = c("repeat.var","repeat.var.value"),ignore = c("se","min","max"),labelise=T)
-  
+  datamerge<-map_resultlist_to_datamerge(results$results,rows = c("repeat.var","repeat.var.value"),ignore = c("se","min","max"),labelise.values =F,labelise.varnames =F)
   
   results$analysisplan_log<-results$analysisplan
  
-  
+  # analysisplan$output.minimal.chart...width.of.quarter.A4.landscape..FS.<-"yes"
+  # analysisplan$output.regular.chart..report.<-"yes"
+  # analysisplan$output.heatmap<-"yes"
+  # 
   
   # make mini barcharts
   mini_barchart_filelists<-map_resultslist_to_output_minibarcharts(results)
@@ -66,7 +70,6 @@ test_weights<-weights_of(data);rm(test_weights)
   report_barchart_filelist<-map_resultslist_to_output_reportbarcharts(results)
   # make heatmaps
   heatmaps_filelists<-map_resultslist_to_output_heatmap_table(results)
-
 
  # add filenames to analysis plan
  if(!is.null(mini_barchart_filelists)){
@@ -109,9 +112,7 @@ test_weights<-weights_of(data);rm(test_weights)
  map_to_file(datamerge,"./output/datamerge.csv")
  results$analysisplan_log %>% as.data.frame %>%  map_to_file("./output/analysisplan_chart_filenames.csv")
 
- 
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
- 
  
  if(!debugging_mode){cat("\014")}  
  cat(green("\n\n\nDONE - no issues detected.\n"))
@@ -124,4 +125,3 @@ test_weights<-weights_of(data);rm(test_weights)
                 bold("a lot more objects and functions:"), "type ls() to see what's around."
                 )))
   
-allsumstats$max %>% table

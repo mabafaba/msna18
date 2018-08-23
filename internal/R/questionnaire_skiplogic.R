@@ -18,7 +18,7 @@ question_is_skipped_apply_condition_to_data<-function(data,condition){
     return(rep(FALSE,nrow(data)))
   }
   
-  return(is_skipped)
+  return(!is_skipped)
 }
 
 # takes a condition that's already split into a hierarchical list and applies it to data

@@ -1,7 +1,8 @@
+
 plot_to_file_FS_quarter_a4width<-function(data,filename="test.svg"){
   # make one plot per independent variable value:
   
-  
+  data<-labels_summary_statistic(data)
   # some parameters: make sure it's a quarter of an a4 page wide (as in the factsheets):
   A4widthincm<-27.94
   
@@ -50,7 +51,7 @@ plot_to_file_FS_quarter_a4width<-function(data,filename="test.svg"){
       theme_tufte()+
       theme(axis.text.x = element_blank(), axis.ticks.x=element_blank(),axis.title.x=element_blank(),text =element_text(family="Arial Narrow"))+
       theme(axis.title.y=element_blank(),axis.ticks.y=element_blank(),text =element_text(family="Arial Narrow"))+
-      theme(text=element_text(family="Arial Narrow"))+
+      theme(text=element_text(margin = c(0,0,0,0),family="Arial Narrow"))+
       coord_flip()+
       theme(axis.text.y =
               element_text(size  = fontsize,
@@ -86,7 +87,9 @@ plot_to_file_FS_quarter_a4width<-function(data,filename="test.svg"){
                          plot_part_numbers,
                          plot_part_bars, ncol=3,widths=smallFSplotwdith*c(0.6,0.09,0.31))
 
-  ggsave(file=filename, plot=fullplot,width =smallFSplotwdith, height=0.4+heightperbarcm*length(unique(data$independent.var)),units = "cm",device = "jpeg")   
+  ggsave(file=filename, plot=fullplot,width =smallFSplotwdith, height=0.4+heightperbarcm*length(unique(data$dependent.var.value)),units = "cm",device = "jpeg")   
   
   return(fullplot)
 }
+
+

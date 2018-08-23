@@ -80,18 +80,18 @@ lapply(seq_along(g_independent_components),function(gi){
                     "composite_indicator_graph_",gi,".pdf"),
       plotwidth,plotwidth)
   plotwidthpx<-sqrt((area_sidelength_per_20_nodes^2)*length(V(g))/20)*150
-  jpeg(file = paste0("./output/composite_indicator_visualisation/",
-                     "composite_indicator_graph_",gi,".jpg")
-       ,plotwidthpx,plotwidthpx)
+  # jpeg(file = paste0("./output/composite_indicator_visualisation/",
+  #                    "composite_indicator_graph_",gi,".jpg")
+  #      ,plotwidthpx,plotwidthpx)
   
   plot_composite_graph(g)
   dev.off()
-  dev.off()
+  # dev.off()
   
-#   save_graph_to_d3_web(g,
-#                        path = ".",
-#                        paste0(file="./output/composite_indicator_visualisation/composite_indicator_graph_",gi,".html"))
-#   
+  # save_graph_to_d3_web(g,
+  #                      path = ".",
+  #                      paste0(file="./output/composite_indicator_visualisation/composite_indicator_graph_",gi,".html"))
+
 })
 
 }

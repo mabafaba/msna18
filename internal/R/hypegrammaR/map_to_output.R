@@ -4,19 +4,43 @@ map_resultlist_to_summarystatistic_df<-function(results){
   all_summary_statistics <- results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
 }
 
-
-map_resultlist_to_datamerge<-function(results,rows=c("repeat.var","repeat.var.value"),values="numbers",ignore=c("se","min","max"),labelise=F){
+map_resultlist_to_datamerge<-function(results,
+                                      rows=c("repeat.var","repeat.var.value"),
+                                      values="numbers",
+                                      ignore=c("se","min","max"),
+                                      labelise.values=F,
+                                      labelise.varnames=F){
+  # rbind all summary statistics
+  all_summary_statistics <-  results %>%
+    lapply(function(x){
+      x$summary.statistic %>% lapply(function(x){
+        if(is.factor(x)){return(as.character(x))};x}) %>% as.data.frame(stringsAsFactors=F)
+      }) %>% 
+    do.call(rbind,.) 
   
-  all_summary_statistics <-  results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
-  if(labelise){
-    all_summary_statistics_labeled<-results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic) %>% do.call(rbind,.)
+    all_summary_statistics_labeled<-results %>% lapply(function(x){x$summary.statistic}) %>% 
+      lapply(labels_summary_statistic,
+             label.dependent.var.value = labelise.values,
+             label.independent.var.value = labelise.values,
+             label.dependent.var = labelise.varnames,
+             label.independent.var = labelise.varnames) %>%
+      do.call(rbind,.) 
+    
+    if(nrow(all_summary_statistics)<nrow(all_summary_statistics_labeled)){
+      warning("labelising made some analysis definition indistinguishable (identical question labels or same label for different choices in the same question?")
+      .write_to_log("mapping resultlist to datamerge csv could not be done correctly with labels - some analysis definitions became indistinguishable ")
+    }
+    
+  columns<-  names(all_summary_statistics)[!(names(all_summary_statistics) %in% c(rows,ignore,values))]
+  
+    if(labelise.varnames){
+      all_summary_statistics_labeled$master_table_column_name<-  all_summary_statistics_labeled[,columns] %>% as.list %>% c(sep=":::") %>% do.call(paste,.)     
     }else{
-    all_summary_statistics_labeled<-all_summary_statistics # if not labelise, just pretend it's all labeled and get on with your life
+      all_summary_statistics_labeled$master_table_column_name<-  all_summary_statistics[,columns] %>% as.list %>% c(sep=":::") %>% do.call(paste,.)     
+      
     }
   
-  columns<-  names(all_summary_statistics)[!(names(all_summary_statistics) %in% c(rows,ignore,values))]
-  all_summary_statistics_labeled$master_table_column_name<-all_summary_statistics[,columns] %>% as.list %>% c(sep=":::") %>% do.call(paste,.) 
-  all_summary_statistics_labeled$master_table_column_name
+
   # what to keep rows for:
   wide_format<-all_summary_statistics_labeled %>% unique %>% .[,c(rows,"master_table_column_name",values)] %>%
     spread(key = master_table_column_name,value = numbers)
@@ -26,7 +50,6 @@ return(wide_format)
 
 map_resultslist_to_output_minibarcharts<-function(results){
   results_labeled_values<-lapply(results$results,function(x){x$summary.statistic<-x$summary.statistic %>% labels_summary_statistic;x})
-  
   datamerge_table_long<-lapply(1:nrow(results$analysisplan),function(i){
     cat("\14")
     cat("small horizontal barcharts for FS\n")
@@ -101,11 +124,11 @@ map_resultslist_to_output_reportbarcharts<-function(results){
     cat("regular report barcharts\n")
     cat(silver((i/nrow(results$analysisplan)*100) %>% round(2) %>% paste0("%\n"))) 
     # lapply(r,function(i){
-    if(is.null(results_labeled_values[[i]]$summary.statistic)){return(NULL)}
-    if(nrow(results_labeled_values[[i]]$summary.statistic)<1){return(NULL)}
+    if(is.null(results$results[[i]]$summary.statistic)){return(NULL)}
+    if(nrow(results$results[[i]]$summary.statistic)<1){return(NULL)}
     
     output_path<-"./output/charts/"
-    filename_prefix<-results_labeled_values[[i]]$input.parameters %>% unlist(use.names = F) %>% paste(collapse="___")
+    filename_prefix<-results$results[[i]]$input.parameters %>% unlist(use.names = F) %>% paste(collapse="___")
     
     if(results$analysisplan$output.regular.chart..report.[i]=="yes"&!is.na(results$analysisplan$output.regular.chart..report.[i])
        & results$analysisplan$case[i] %in% c("CASE_group_difference_categorical_categorical",
@@ -118,7 +141,7 @@ map_resultslist_to_output_reportbarcharts<-function(results){
       plot_name<-"report_barchart"
       file_type<-".jpg"
         filenames<-paste0(output_path,filename_prefix,"_",plot_name,file_type)
-        map_to_visualisation(results_labeled_values[[i]]$input.parameters$case)(results_labeled_values[[i]]$summary.statistic,filename = filenames)
+        map_to_visualisation(results$results[[i]]$input.parameters$case)(results$results[[i]]$summary.statistic,filename = filenames)
       
       data.frame(filename=filenames,
                  analysis_plan_row = i,
@@ -158,11 +181,11 @@ map_resultslist_to_output_heatmap_table<-function(results){
     cat("heatmap tables\n")
     cat(silver((i/nrow(results$analysisplan)*100) %>% round(2) %>% paste0("%\n"))) 
     # lapply(r,function(i){
-    if(is.null(results_labeled_values[[i]]$summary.statistic)){return(NULL)}
-    if(nrow(results_labeled_values[[i]]$summary.statistic)<1){return(NULL)}
+    if(is.null(results$results[[i]]$summary.statistic)){return(NULL)}
+    if(nrow(results$results[[i]]$summary.statistic)<1){return(NULL)}
     
     output_path<-"./output/charts/"
-    filename_prefix<-results_labeled_values[[i]]$input.parameters %>% unlist(use.names = F) %>% paste(collapse="___")
+    filename_prefix<-results$results[[i]]$input.parameters %>% unlist(use.names = F) %>% paste(collapse="___")
     
     if(results$analysisplan$output.heatmap[i]=="yes"&!is.na(results$analysisplan$output.heatmap[i])
        & results$analysisplan$case[i] %in% c("CASE_group_difference_categorical_categorical",
@@ -174,7 +197,7 @@ map_resultslist_to_output_heatmap_table<-function(results){
       plot_name<-"heatmap"
       file_type<-".jpg"
       filenames<-paste0(output_path,filename_prefix,"_",plot_name,file_type)
-      heatmap_to_file(results_labeled_values[[i]]$summary.statistic,filename = filenames)
+      map_to_visualisation_heatmap(results$results[[i]]$input.parameters$case)(results$results[[i]]$summary.statistic,filename = filenames)
       
       data.frame(filename=filenames,
                  analysis_plan_row = i,

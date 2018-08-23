@@ -83,6 +83,7 @@ load_questionnaire<-function(data,
    question_get_choice_labels <<- function(responses,variable.name){
 
      variable.name<-as.character(variable.name)
+     responses<-as.character(responses)
       if(question_is_categorical(variable.name)){
       labels<-replace_with_lookup_table(
         as.character(responses),
@@ -214,7 +215,8 @@ load_questionnaire<-function(data,
     }
 
 
-    question_get_choice_labels<-function(responses,variable.name){
+    
+question_get_choice_labels<-function(responses,variable.name){
       stop("you must successfully run load_questionnaire() first")
 
     }

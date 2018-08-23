@@ -47,18 +47,24 @@ message(silver("loading and preparing parameters.."))
 
 data_parameters<-read.csv("./internal/input_files/parameters.csv",stringsAsFactors = F) 
 
-
-cluster_formula <- if(any(grep("cluster", data_parameters$sampling.strategy)>0)){
-                            load_cluster_sampling_units(cluster.variable = data_parameters$cluster.variables %>% to_alphanumeric_lowercase)
+cluster_deff<-any(!(data_parameters$cluster.variables %in% c(NA,"NA",""," ")))
+cluster_formula <- if(cluster_deff){
+                            cluster_formula<-load_cluster_sampling_units(cluster.variable = data_parameters$cluster.variables %>% to_alphanumeric_lowercase)
+                            cluster.id.formula<-cluster_formula()
+                            rows_with_valid_clusterids<-data[,all.vars(formula(cluster.id.formula)),drop=F] %>% apply(2,is.na) %>% apply(1,function(x){!any(x)}) 
+                            data<-data[rows_with_valid_clusterids,]
+                            cluster_formula
                    }else{
-                            load_cluster_sampling_units(cluster.variable = NULL)
+                            cluster_formula<-suppressWarnings(load_cluster_sampling_units(cluster.variable = NULL))
+                            cluster.id.formula<-cluster_formula()
+                            cluster_formula
                         }
 
-cluster.id.formula<-cluster_formula()
+
 
 # remove records with NA in cluster id
-rows_with_valid_clusterids<-data[,all.vars(formula(cluster.id.formula)),drop=F] %>% apply(2,is.na) %>% apply(1,function(x){!any(x)}) 
-data<-data[rows_with_valid_clusterids,]
+
+
 
 message(silver("loading and preparing sampling frames.."))
 
@@ -67,15 +73,23 @@ is.stratified<-function(){any(grep("stratified", data_parameters$sampling.strate
 is.clustered<-function(){any(grep("cluster", data_parameters$sampling.strategy[1])>0)}
 # load strata weighting function
 if(is.stratified()){
-  stratfication_weighting<-excel_csv_inputs_sampling_frame_stratification_to_weighting_function()
+  stratification_sf<-excel_csv_inputs_sampling_frame_stratification_to_weighting_function()
+  stratfication_weighting<-stratification_sf$weights_of
+  data<-data_sanitation_remove_not_in_samplingframe(data,stratification_sf,"for_stratification")
 }
 # load cluster weighting function
 if(is.clustered()){
-  cluster_weighting<-excel_csv_inputs_sampling_frame_cluster_to_weighting_function()
+  cluster_sf<-excel_csv_inputs_sampling_frame_cluster_to_weighting_function()
+  cluster_weighting<-cluster_sf$weights_of
+  data<-data_sanitation_remove_not_in_samplingframe(data,cluster_sf,"for_strata")
+  cluster_weighting(data)  
 }
 
 # select one of them, or combine them if both exist:
-if(is.stratified() & !is.clustered()){weights_of<-stratfication_weighting}
+if(is.stratified() & !is.clustered()){weights_of<-stratfication_weighting
+
+
+}
 if(!is.stratified() & is.clustered()){weights_of<-cluster_weighting}
 
 if(is.stratified() & is.clustered()){
