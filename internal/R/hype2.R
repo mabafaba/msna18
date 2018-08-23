@@ -4,7 +4,7 @@ message(("loading dependencies.."))
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE) 
 unlink("./output/percent_aggregations_raw_csv",recursive=TRUE)
-unlink("./output/barcharts",recursive=TRUE) 
+unlink("./output/charts",recursive=TRUE) 
 dir.create("./output",showWarnings = F)
 dir.create("./output/charts",showWarnings = F)
 dir.create("./output/composite_indicator_visualisation",showWarnings = F)

@@ -8,7 +8,7 @@ output/composite_indicator_visualisation/
 output/mean_aggregations_raw_csv/
 /internal/input_files/*.csv
 /input/*.xlsm
-!input/input_template.xlsm
+!/input/template.xlsm
 output/percent_aggregations_raw_csv/
 output/composite_indicator_visualisation/
 output/mean_aggregations_raw_csv/
