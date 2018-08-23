@@ -1,0 +1,14 @@
+.DS_Store
+.Rhistory
+.RData
+output/charts/
+output/modified_data/
+output/percent_aggregations_raw_csv/
+output/composite_indicator_visualisation/
+output/mean_aggregations_raw_csv/
+/internal/input_files/*.csv
+/input/*.xlsm
+!input/input_template.xlsm
+output/percent_aggregations_raw_csv/
+output/composite_indicator_visualisation/
+output/mean_aggregations_raw_csv/
