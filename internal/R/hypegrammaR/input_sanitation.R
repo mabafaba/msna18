@@ -29,6 +29,15 @@ sanitise_group_difference<-function(data,dependent.var,independent.var){
 
 
 sanitise_data <- function(data, dependent.var,independent.var,case){
+  
+  data<-tryCatch({
+    numerics<-sapply(names(data),question_is_numeric)
+    data[,numerics]<-data[,numerics] %>% lapply(as.numeric) %>% as.data.frame(stringsAsFactors=F)
+    },
+    error=function(e){return(data)}
+  )
+  
+  
   if(is.null(independent.var)){
     sanitise_data_no_independent(data = data, dependent.var = dependent.var, case = case)}else{
       sanitise_data_independent(data = data, independent.var = independent.var, dependent.var = dependent.var, case = case)
@@ -38,7 +47,7 @@ sanitise_data <- function(data, dependent.var,independent.var,case){
 sanitise_data_no_independent<-function(data,
                                  dependent.var,
                                  case){
-  
+
   dep_var_name_in_data_headers<- grep(paste0("^",dependent.var),colnames(data),value = T)
   indep_var_name_in_data_headers<- grep(paste0("^",dependent.var),colnames(data),value = T)
   if(length(dep_var_name_in_data_headers)==0){
