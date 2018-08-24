@@ -20,26 +20,26 @@ source("./internal/R/hypegrammaR/visualisations_barchart_FS_quarter_a4width.R")
 
 # load all the excel input files:
 source("./internal/R/load_excel_input.R",local = T)
-  # this creates following objects:
-  # data  # questionnaire  # data_parameters # analysis_plan_user
-  # cluster_formula()  # weights_of() # question_is_skipped()
-  # question_is_numeric()  # question_is_categorical()  # question_is_select_one()  # question_is_select_multiple()  # question_variable_type()
-  # question_get_choice_labels()  # question_get_question_label()
+# this creates following objects:
+# data  # questionnaire  # data_parameters # analysis_plan_user
+# cluster_formula()  # weights_of() # question_is_skipped()
+# question_is_numeric()  # question_is_categorical()  # question_is_select_one()  # question_is_select_multiple()  # question_variable_type()
+# question_get_choice_labels()  # question_get_question_label()
 
 # just give weighting a shot to see if the sampling frame is complete:
 test_weights<-weights_of(data);rm(test_weights)
 # COMPOSITE INDICATORS:
-  message(silver("making composite indicators.."))
-  composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
-  if(nrow(composite_indicators_definitions_weighted_counts)>0){
-    visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
-    data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
-    data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
-    message(green("data with composite indicators exported to ./output/modified_data/data_with_composite_indicators.csv"))
-  }else{
-    .write_to_log("\nNo Composite Indicators Defined.\n")
-  }
-  
+message(silver("making composite indicators.."))
+composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
+if(nrow(composite_indicators_definitions_weighted_counts)>0){
+  visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
+  data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
+  data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
+  message(green("data with composite indicators exported to ./output/modified_data/data_with_composite_indicators.csv"))
+}else{
+  .write_to_log("\nNo Composite Indicators Defined.\n")
+}
+
 
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)

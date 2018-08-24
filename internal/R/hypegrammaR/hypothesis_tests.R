@@ -20,7 +20,7 @@ hypothesis_test_chisquared <- function(dependent.var,
   
   )
   results<-list()
-  results$results <- list(F=chisq$statistic, p.value=chisq$p.value %>% unname)
+  results$result <- list(F=chisq$statistic, p.value=chisq$p.value %>% unname)
   results$parameters <- chisq$parameter %>% as.list
   results$name<-chisq$method
   return(results)
