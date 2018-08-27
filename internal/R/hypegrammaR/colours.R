@@ -155,19 +155,57 @@ reach_style_color_rainbow<-function(n){
   colorRampPalette(cols)(n)
 }
 
+reach_style_color_rainbow<-function(n){
+  cols<-c(rev(reach_style_color_darkgreys()[1]),(reach_style_color_reds()[3]),rev(reach_style_color_beiges()[1]))  
+  # cols<-rep(cols,ceiling(n/12))[1:3]
+  colorRampPalette(cols)(n)
+}
+
 
 # GGPLOT GRADIENTS
 scale_fill_reach <- function(color=NULL,name="",...){
   if(is.null(color)){
-    structure(list(
-      scale_fill_manual(values= reach_style_color_rainbow(22),name=name,...)
-    ))
+ 
   }else{
     structure(list(
       scale_fill_manual(values= get(paste0('reach_style_color_',color,'s'))(),name=name,...)
       
     ))}
 }
+
+scale_fill_reach_categorical<-function(n,name="",...){
+
+    structure(list(
+    scale_fill_manual(values= reach_style_color_categorical(n),name=name,...)
+  ))
+  
+}
+
+reach_style_color_categorical<-function(n){
+  m<-4
+  cols<-colorRampPalette(c(reach_style_color_darkgreys()[3],
+                           reach_style_color_reds()[1],
+                           reach_style_color_beiges()[1],
+                           reach_style_color_lightgreys()[2]
+                           # reach_style_color_re()[3]
+  ))(n)
+  # .show_colors(cols)
+  # colorder<-sapply(1:(n/m),function(x){x+(c(0:(m-1))*n/m)}) %>% as.vector %>% rank
+  # cols<-cols[colorder[1:length(cols)]]
+  # .show_colors(cols)
+  cols
+}
+
+categorical_col_order<-function(n){
+  orders<-list(
+    1,
+    c(1:2),
+    c(1:3),
+    c(1:4)
+  )
+}
+
+
 
 scale_color_discrete_reach <- function(color='red'){
   

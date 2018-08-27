@@ -33,6 +33,7 @@ sanitise_data <- function(data, dependent.var,independent.var,case){
   data<-tryCatch({
     numerics<-sapply(names(data),question_is_numeric)
     data[,numerics]<-data[,numerics] %>% lapply(as.numeric) %>% as.data.frame(stringsAsFactors=F)
+    data
     },
     error=function(e){return(data)}
   )
@@ -51,7 +52,7 @@ sanitise_data_no_independent<-function(data,
   dep_var_name_in_data_headers<- grep(paste0("^",dependent.var),colnames(data),value = T)
   indep_var_name_in_data_headers<- grep(paste0("^",dependent.var),colnames(data),value = T)
   if(length(dep_var_name_in_data_headers)==0){
-    stop("dependent.var not found in data")
+    stop(paste0("dependent.var: \"",dependent.var,"\" not found in data"))
   }
   
 
@@ -84,10 +85,12 @@ sanitise_data_independent<-function(data,
   dep_var_name_in_data_headers<- grep(paste0("^",dependent.var),colnames(data),value = T)
   indep_var_name_in_data_headers<- grep(paste0("^",dependent.var),colnames(data),value = T)
   if(length(dep_var_name_in_data_headers)==0){
-    stop("dependent.var not found in data")
-  }
+    stop(paste0("dependent.var: \"",dependent.var,"\" not found in data"))
+    
+      }
   if(length(indep_var_name_in_data_headers)==0){
-    stop("independent.var not found in data")
+    stop(paste0("independent.var: \"",independent.var,"\" not found in data"))
+    
   }
 
   if(!sanitise_is_good_dataframe(data)){return(list(success=F,message="not a data frame or data frame without data"))}

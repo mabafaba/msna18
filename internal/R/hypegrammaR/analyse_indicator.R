@@ -60,40 +60,40 @@ analyse_indicator<-function(data,
                                 dependent.var,
                                 independent.var,
                                 case)
-
-
+  
+  
   if(data_sanitised$success){
     data<-data_sanitised$data
   }else{
     return(
       empty_result(input.parameters,data_sanitised$message)
-
+      
     )
   }
-
-
-    # map from case to appropriate summary statistic, hypothesis test and visualisation:
-
-            
-            design <- map_to_design(data = data, cluster.var = NULL)
-
-
-            summarise.result<- map_to_summary_statistic(case)
-            test.hypothesis <- map_to_hypothesis_test(case)
-            visualisation <- map_to_visualisation(case)
-
-
-
-        # apply the summary statistic, hypothesis test to the given data and survey design:
-            summary.result  <- summarise.result(dependent.var = dependent.var,independent.var, design = design, data = data)
-        # do hypothesis test:
-
-            hypothesis.test.result<- test.hypothesis(dependent.var,independent.var, design)
-
-        # add results to the visualisation:
-            # visualisation<-visualisation+ggplot()...
-        return(list(
-                    input.parameters= list(
+  
+  
+  # map from case to appropriate summary statistic, hypothesis test and visualisation:
+  
+  
+  design <- map_to_design(data = data, cluster.var = NULL)
+  
+  
+  summarise.result<- map_to_summary_statistic(case)
+  test.hypothesis <- map_to_hypothesis_test(case)
+  visualisation <- map_to_visualisation(case)
+  
+  
+  
+  # apply the summary statistic, hypothesis test to the given data and survey design:
+  summary.result  <- summarise.result(dependent.var = dependent.var,independent.var, design = design, data = data)
+  # do hypothesis test:
+  
+  hypothesis.test.result<- test.hypothesis(dependent.var,independent.var, design)
+  
+  # add results to the visualisation:
+  # visualisation<-visualisation+ggplot()...
+  return(list(
+    input.parameters= list(
                       dependent.var=dependent.var,
                       independent.var=independent.var,
                       hypothesis.type=hypothesis.type,
