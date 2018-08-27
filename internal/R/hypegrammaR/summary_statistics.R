@@ -8,7 +8,6 @@ percent_with_confints <- function(dependent.var,
   return(percent_with_confints_select_one(dependent.var = dependent.var,  design = design))
 }
 
-
 percent_with_confints_select_one <- function(dependent.var,
                                              design,
                                              na.rm = TRUE){

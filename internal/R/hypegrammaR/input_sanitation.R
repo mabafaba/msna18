@@ -116,8 +116,8 @@ sanitise_data_independent<-function(data,
     
   }
 
-  if(case%in%c("CASE_group_difference_categorical_categorical","CASE_direct_reporting_categorical_categorical")){
-    if(length(unique(data[[dependent.var]]))>50){
+  if(case%in%c("CASE_group_difference_categorical_categorical","CASE_direct_reporting_categorical_categorical","CASE_direct_reporting_categorical_")){
+    if(question_is_select_one(dependent.var) & length(unique(data[[dependent.var]]))>50){
       return(list(success=F,message="can not perform chisquared test on >50 unique values in the dependent variable."))
 
     }
