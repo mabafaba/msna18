@@ -30,24 +30,19 @@ opts_chunk$set(warning=FALSE, message=FALSE, echo=FALSE)
 #don't plot more than..
 maxresults<-10
 results$analysisplan_log$include_in_html<-"yes"
-whichtoreport<-which(results$analysisplan_log$include_in_html=="yes")
+whichtoreport<-which(results$analysisplan_log$include_in_html=="yes" &!sapply(results$results,is.null))
 if(length(whichtoreport)>maxresults){
   whichtoplot<-whichtoreport[1:maxresults]
 }
 # make titles
 for (mycount in whichtoreport){
 
-<<<<<<< HEAD
+
 rmdrs_title(results,mycount,parameter = "independent.var",prefix = "# ")
 rmdrs_title(results,mycount,parameter = "dependent.var",prefix = "## ")
 rmdrs_title(results,mycount,parameter = "repeat.var",prefix = "### ")
 rmdrs_title(results,mycount,parameter = "repeat.var.value",prefix = "##### ")
-=======
-rmdrs_title(results,mycount,parameter = "independent.var",prefix = "##")
-rmdrs_title(results,mycount,parameter = "dependent.var",prefix = "###")
-rmdrs_title(results,mycount,parameter = "repeat.var",prefix = "####")
-rmdrs_title(results,mycount,parameter = "repeat.var.value",prefix = "#####")
->>>>>>> master
+
 if(results$results[[mycount]]$message!="success (or unidentified issue)"){
   cat(results$results[[mycount]]$message)
   break
@@ -65,40 +60,25 @@ if(results$results[[mycount]]$message!="success (or unidentified issue)"){
       # heatmapchartpath<-paste
     
         cat(knit(text = knit_expand(text =
-<<<<<<< HEAD
     			 sprintf("```{r %s, results='asis'  }\n
     				\n
     				cat('\n\n\n###### Graph \n\n')
-=======
-    			 sprintf("```{r %s, fig.height=%s, fig.width=%s, results='asis'  }\n
-    				\n
-    				cat('\n\n\n## Graph \n\n')
->>>>>>> master
             \n
             if(file.exists(reportchartpath)){include_graphics(reportchartpath)}            
             \n
             if(file.exists(heatmapchartpath)){include_graphics(heatmapchartpath)}            
     				\n\n\n
-<<<<<<< HEAD
     				cat('\n\n\n###### Table \n\n')
-=======
-    				cat('\n\n\n## Table \n\n')
->>>>>>> master
     				\n
     				kable(kdf)
     				\n\n\n
-
-<<<<<<< HEAD
-    				cat('\n\n\n###### Statistics \n\n')
-=======
-    				cat('\n\n\n## Statistics \n\n')
->>>>>>> master
+      			cat('\n\n\n###### Statistics \n\n')
             cat(cat_stat)
     				\n\n\n
     				\n\n\n
 
 
-    			 ```", fig_n, ht, lg)
+    			 ```", fig_n)
     		)))
 } 
 

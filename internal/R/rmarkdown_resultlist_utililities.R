@@ -1,13 +1,19 @@
-
-
 rmdrs_decide_showtitle<-function(results,i,input.parameter){
   # by default, don't show
   showtitle<-F
+  if(is.null(results$results[[i]])){return(F)}
+  if(is.null(results$results[[i]]$input.parameters[[input.parameter]])){return(F)}
   # if first item, always show:
   if(i==1){showtitle<-T}else{
+  print(i)
     # otherwise show new title whenever the relevant input.parameter has changed:
-  if(results$results[[i]]$input.parameters[[input.parameter]]!=results$results[[i-1]]$input.parameters[[input.parameter]]){
-    showtitle<-T}
+    this_param<-results$results[[i]]$input.parameters[[input.parameter]]
+    previous_param<-results$results[[i-1]]$input.parameters[[input.parameter]]
+    if(is.null(previous_param) & !is.null(this_param)){return(TRUE)}
+  
+    if(is.null(this_param)){return(TRUE)}
+    if(this_param!=previous_param){return(FALSE)}
+    showtitle<-T
   }
   return(showtitle)
 }

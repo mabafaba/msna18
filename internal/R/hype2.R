@@ -104,8 +104,6 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  }
 
 
-  results<-readRDS("./output/results_raw_R.RDS")  
-
 
  results$results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic()}) %>% do.call(rbind,.) -> allsumstats
  allsumstats %>% saveRDS("./output/allsummarystatistics.RDS")
@@ -116,7 +114,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
  
  if(!debugging_mode){cat("\014")}  
- cat(green("\n\n\nDONE - no issues detected.\n"))
+ cat(green("\n\n\nDONE with statistical tests and plots - no issues detected.\n"))
  cat(paste0("see ", getwd(),"/","/output/ for results."))
  cat(silver(paste("to process results in R, the following objects are now available:\n",
                 bold("results$results: "), "a list with the results. each item has $input.parameters, $summary.statistics and $hypothesis.test subobjects\n",
@@ -126,6 +124,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
                 bold("a lot more objects and functions:"), "type ls() to see what's around."
                 )))
  
+ cat(silver("\n\n Now compling outputs into html - this may take a while..\n"))
  
-rmarkdown::render("./internal/report2.rmd")
+# rmarkdown::render("./internal/report2.rmd")
  
