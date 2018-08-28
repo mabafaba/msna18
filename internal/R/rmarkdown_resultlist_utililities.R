@@ -29,6 +29,7 @@ rmdrs_title<-function(results,i,parameter,prefix="##", always.show=F){
     }else{
       param_formated<-question_get_question_label(results$results[[i]]$input.parameters[[parameter]])
     }
+
     thistitle<-paste0("\n\n\n\n\n",prefix," ",param_formated,"\n\n\n")
     cat(thistitle)
   }
@@ -110,12 +111,11 @@ rmdrs_pretty_hypothesis_test_result<-function(results,i){
 if(case=="CASE_group_difference_numerical_categorical" & !is.null(results$results[[mycount]]$hypothesis.test$name)){
   cat_stat<-paste0(results$results[[mycount]]$hypothesis.test$name,': p=',tryround(results$result[[mycount]]$hypothesis.test$result$p.value[1],3),
                    '; ',paste0('df=',tryround(results$results[[mycount]]$hypothesis.test$parameters$df,1)))
-} else if(case=="CASE_group_difference_categorical_categorical" & !is.null(results$results[[mycount]]$hypothesis.test$name)){
-  cat_stat<-paste0(results$results[[mycount]]$hypothesis.test$name,': p=',tryround(results$results[[mycount]]$hypothesis.test$results$p.value[1],3),
-                   '; ',paste0('ddf=',tryround(results$results[[mycount]]$hypothesis.test$parameters$ddf,1)))
-}else {
-  cat_stat<-"no hypothesis test performed"
-}
-  
+  } else if(case=="CASE_group_difference_categorical_categorical" & !is.null(results$results[[mycount]]$hypothesis.test$name)){
+    cat_stat<-paste0(results$results[[mycount]]$hypothesis.test$name,': p=',tryround(results$results[[mycount]]$hypothesis.test$results$p.value[1],3),
+                     '; ',paste0('ddf=',tryround(results$results[[mycount]]$hypothesis.test$parameters$ddf,1)))
+  }else {
+    cat_stat<-"no hypothesis test performed"
+  }
   
 }

@@ -15,11 +15,13 @@ cat("\14")
 source("./internal/R/survey_design2.R")
 source("./internal/R/read_excel_output.R")
 source("./internal/R/hypegrammaR/visualisations_barchart_FS_quarter_a4width.R")
+source("./internal/R/rmarkdown_resultlist_utililities.R")
 # LOAD INPUT
 # make sure all files exist:
 
 # load all the excel input files:
 source("./internal/R/load_excel_input.R",local = T)
+
 # this creates following objects:
 # data  # questionnaire  # data_parameters # analysis_plan_user
 # cluster_formula()  # weights_of() # question_is_skipped()
@@ -67,18 +69,21 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   mini_barchart_filelists<-map_resultslist_to_output_minibarcharts(results)
   # make report barcharts 
   report_barchart_filelist<-map_resultslist_to_output_reportbarcharts(results)
+  
   # make heatmaps
   heatmaps_filelists<-map_resultslist_to_output_heatmap_table(results)
-  # add filenames to analysis plan
-  if(!is.null(mini_barchart_filelists)){
-  filenames<-sapply(mini_barchart_filelists$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
+ # add filenames to analysis plan
+ if(!is.null(mini_barchart_filelists)){
+ filenames<-sapply(mini_barchart_filelists$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
   analysisplan_rows<-sapply(mini_barchart_filelists$analysisplan_list,function(x){x$analysis_plan_row[1]})
  results$analysisplan_log$output.minimal.chart...width.of.quarter.A4.landscape..FS.[analysisplan_rows]<-filenames
+
 
  datamerge_row<-match(as.character(datamerge$repeat.var.value),as.character(mini_barchart_filelists$datamerge$repeat.var.value))
  datamerge<-data.frame(datamerge,minibarchart=mini_barchart_filelists$datamerge[datamerge_row,])
  
   }
+
  if(!is.null(report_barchart_filelist)){
  filenames<-sapply(report_barchart_filelist$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
  analysisplan_rows<-sapply(report_barchart_filelist$analysisplan_list,function(x){x$analysis_plan_row[1]})
@@ -99,7 +104,8 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  }
 
 
-results %>% saveRDS("./output/results_raw_R.RDS")
+  results<-readRDS("./output/results_raw_R.RDS")  
+
 
  results$results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic()}) %>% do.call(rbind,.) -> allsumstats
  allsumstats %>% saveRDS("./output/allsummarystatistics.RDS")

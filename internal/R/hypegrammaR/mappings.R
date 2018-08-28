@@ -10,17 +10,17 @@
 #' @examples map_to_design(data,cluster.var="clusterQ
 #' _id")
 #' @export
-  map_to_design <- function(data,
+map_to_design <- function(data,
                           cluster.var = NULL) {
-
+  
   cluster.id.formula <- cluster_formula()
   strata.weights <- weights_of(data)
   survey.design <- svydesign(data = data,
-      ids = formula(cluster.id.formula),
-      strata = names(strata.weights),
-      weights = as.vector(strata.weights),
-      nest = T)
-    return(survey.design)}
+                             ids = formula(cluster.id.formula),
+                             strata = names(strata.weights),
+                             weights = as.vector(strata.weights),
+                             nest = T)
+  return(survey.design)}
 ?svydesign
 #add to this an option that strata weights can be the vector of weights if there is one in the data & warning that we usually dont do this
 
@@ -42,15 +42,15 @@ map_to_case<-function(data,
                       independent.var = NULL,
                       paired = NULL){
   case_vartype<-function(varname,data){
-      if(varname %in% c(NA,""," ")){return("")}
-      if(question_is_categorical(varname)){return("categorical")}
-      if(question_is_numeric(varname)){return("numerical")}
-      # if conversion to numeric doesn't cause extra NA's, give numeric:
-      suppressWarnings({if(length(which(is.na(as.numeric(as.character(data[[varname]])))))==length(which(is.na(data[[varname]])))){return("numerical")}})
-      # if it wasn't empty,not NA, not found in kobo tool, and not convertable to numeric.. then let's give categorical a shot i guess:
-      return("categorical")
+    if(varname %in% c(NA,""," ")){return("")}
+    if(question_is_categorical(varname)){return("categorical")}
+    if(question_is_numeric(varname)){return("numerical")}
+    # if conversion to numeric doesn't cause extra NA's, give numeric:
+    suppressWarnings({if(length(which(is.na(as.numeric(as.character(data[[varname]])))))==length(which(is.na(data[[varname]])))){return("numerical")}})
+    # if it wasn't empty,not NA, not found in kobo tool, and not convertable to numeric.. then let's give categorical a shot i guess:
+    return("categorical")
     
-    }
+  }
   
   variable.type <- paste0(case_vartype(dependent.var,data), "_", case_vartype(independent.var,data))
   case <- paste(c("CASE",hypothesis.type,variable.type, paired), collapse = "_")
@@ -117,7 +117,7 @@ map_to_summary_statistic <- function(case) {
   # dependent is categorical:
   summary_functions$CASE_direct_reporting_categorical_ <- percent_with_confints
   summary_functions$CASE_direct_reporting_categorical_categorical <- percent_with_confints_groups
-
+  
   # GROUP DIFFERENCE
   # dependent is categorical:
   summary_functions$CASE_group_difference_categorical_categorical <- percent_with_confints_groups

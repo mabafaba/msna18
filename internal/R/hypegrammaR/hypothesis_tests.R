@@ -1,5 +1,13 @@
-
-hypothesis_test_chisquared <- function(dependent.var,
+hypothesis_test_chisquared<-function(dependent.var,independent.var,design){
+  
+  if(tryCatch({question_is_select_multiple(dependent.var)},error={FALSE})){
+    return(hypothesis_test_chisquared_select_multiple(dependent.var,independent.var,design))
+  }
+  hypothesis_test_chisquared_select_one(dependent.var,independent.var,design)
+  
+}
+  
+hypothesis_test_chisquared_select_one <- function(dependent.var,
                                   independent.var,
                                   design){
 
@@ -78,17 +86,60 @@ hypothesis_test_z <- function(dependent.var,
 
 
 hypothesis_test_linear_regression <- function(independent.var = independent.var,
-                              dependent.var = data.dependent.var,
-                              design){
-
-
+                                              dependent.var = data.dependent.var,
+                                              design){
+  
+  
   # .....
-
-
+  
+  
   results<-list()
   results$result <- c()
   results$parameters <- c()
   results$name<-"linear regression (not implemented)"
   return(results)
+  return(results)
+}
+
+
+
+
+hypothesis_test_chisquared_select_multiple <- function(dependent.var,
+                                                       independent.var,
+                                                       design){
+  
+  # .write_to_log(paste0("chisquared testing:\n",
+  #                      "dependent.var: ", dependent.var,"\n",
+  #                      "independent.var:",independent.var,"\n\n"
+  #               ))
+  multiple_dependents<-names(data)[choices_for_select_multiple(dependent.var,design$variables)]
+  multiple_results<-lapply(multiple_dependents,function(dependent.var){
+    formula_string<-paste0("~",independent.var, "+", dependent.var)
+    chisq<-tryCatch(
+      {svychisq (formula(formula_string), design, na.rm = TRUE)
+      },
+      error=function(e){
+        .write_to_log(paste0("FAILED: Chi squared test.  Error:\n",e,"\n"))
+        .write_to_log(paste0("independent.var:",independent.var,"- dependent.var:",dependent.var,"\n raw frequency table:"))
+        .write_to_log(kable(table(design$variables[,c(dependent.var,independent.var)])))
+        return(NULL)}
+      
+    )
+  })
+  `%pull%`<-function(list,item){lapply(list,function(x){x[[item]]})}
+  successful<-sapply(multiple_results,function(x){!is.null(x)})
+  p.values<-(multiple_results %pull% "p.value") %>% unlist %>% .[successful]
+  choicesnames<-multiple_dependents %>% gsub(paste0(dependent.var,"."),"",.) %>% .[successful]
+  names(p.values)<-choicesnames %>% unlist 
+  fstats<-multiple_results %pull% "statistic" %>% unlist %>% .[successful]
+  names(fstats)<-choicesnames
+  method<-multiple_results %pull% "method" %>% unlist %>% .[successful]
+  names(method)<-choicesnames %>% unlist 
+  results<-list()
+  results$result <- list(F=fstats, p.value=p.values)
+  results$parameters <- multiple_results %pull% "parameter" %>% .[successful] %>% do.call(rbind,.)
+  
+  results$name<-method
+  results <- results %>% data.frame %>% (function(x){names(x)<-gsub("^result\\.","",names(x));x})
   return(results)
 }
