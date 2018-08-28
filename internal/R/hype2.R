@@ -42,7 +42,6 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   .write_to_log("\nNo Composite Indicators Defined.\n")
 }
 
-
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
 
@@ -79,6 +78,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   analysisplan_rows<-sapply(mini_barchart_filelists$analysisplan_list,function(x){x$analysis_plan_row[1]})
  results$analysisplan_log$output.minimal.chart...width.of.quarter.A4.landscape..FS.[analysisplan_rows]<-filenames
 
+
  datamerge_row<-match(as.character(datamerge$repeat.var.value),as.character(mini_barchart_filelists$datamerge$repeat.var.value))
  datamerge<-data.frame(datamerge,minibarchart=mini_barchart_filelists$datamerge[datamerge_row,])
  
@@ -105,7 +105,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 
 
 # results %>% saveRDS("./output/results_raw_R.RDS")
-  rmarkdown::render("./internal/report2.rmd")
+  # rmarkdown::render("./internal/report2.rmd")
   results<-readRDS("./output/results_raw_R.RDS")  
 # setwd("..") # in case rmarkdown failed, revert wd
 

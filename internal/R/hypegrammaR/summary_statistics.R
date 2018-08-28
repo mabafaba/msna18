@@ -8,7 +8,6 @@ percent_with_confints <- function(dependent.var,
   return(percent_with_confints_select_one(dependent.var = dependent.var,  design = design))
 }
 
-
 percent_with_confints_select_one <- function(dependent.var,
                                              design,
                                              na.rm = TRUE){
@@ -57,9 +56,11 @@ percent_with_confints_select_mult <- function(dependent.var,
     dependent.var.value=unique(data[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
   result_hg_format <- lapply(names(choices), function(x){
+    design$variables[[x]]<-as.logical(design$variables[[x]])    
     result_svy_format <- svymean(formula(paste0("~", x)),design, level=0.95) %>% cbind(.,confint(.))
     result_svy_format<-result_svy_format[rownames(result_svy_format)==paste0(x,TRUE),,drop=F]
     colnames(result_svy_format)<-c("numbers","min","max")
+    if(nrow(result_svy_format)>0){
     summary_with_confints <- data.frame(dependent.var=dependent.var,
                                         independent.var=NA,
                                         dependent.var.value=gsub(paste0("^",dependent.var,"."),"",x),
@@ -67,8 +68,19 @@ percent_with_confints_select_mult <- function(dependent.var,
                                         numbers=result_svy_format[,"numbers"],
                                         se=NA,
                                         min=result_svy_format[,"min"],
-                                        max=result_svy_format[,"max"])})
-  
+                                        max=result_svy_format[,"max"])
+    }else{
+      summary_with_confints <- data.frame(dependent.var=dependent.var,
+                                          independent.var=NA,
+                                          dependent.var.value=gsub(paste0("^",dependent.var,"."),"",x),
+                                          independent.var.value=NA,
+                                          numbers=NA,
+                                          se=NA,
+                                          min=NA,
+                                          max=NA)
+    }
+    
+    })
   result_hg_format %<>% do.call(rbind,.)
     
   result_hg_format[,"min"] <- result_hg_format[,"min"] %>% replace(result_hg_format[,"min"] < 0 , 0)
