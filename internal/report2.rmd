@@ -1,0 +1,89 @@
+---
+title: "MSNA Analysis Results"
+date: "Sys.Date()"
+output: 
+  html_document:
+    theme: yeti 
+    toc: true
+    toc_float: true
+    number_sections: true
+    self_contained: true
+
+---
+
+
+
+```{r,echo = F, warning=FALSE, message=FALSE, results='asis' }
+tryround<-function(x,digits=2,...){
+if(is.null(x)){x<-NA}
+round(x,digits)
+}
+  # results<-readRDS("./output/results_raw_R.RDS")
+library(knitr)
+opts_knit$set(progress = FALSE, verbose = FALSE)
+opts_chunk$set(warning=FALSE, message=FALSE, echo=FALSE)
+
+`%pull%`<-function(list,item){lapply(list,function(x){x[[item]]})}
+
+
+# lovely loop
+#don't plot more than..
+maxresults<-10
+results$analysisplan_log$include_in_html<-"yes"
+whichtoreport<-which(results$analysisplan_log$include_in_html=="yes")
+if(length(whichtoreport)>maxresults){
+  whichtoplot<-whichtoreport[1:maxresults]
+}
+# make titles
+for (mycount in whichtoreport){
+
+rmdrs_title(results,mycount,parameter = "independent.var",prefix = "# ")
+rmdrs_title(results,mycount,parameter = "dependent.var",prefix = "## ")
+rmdrs_title(results,mycount,parameter = "repeat.var",prefix = "### ")
+rmdrs_title(results,mycount,parameter = "repeat.var.value",prefix = "##### ")
+if(results$results[[mycount]]$message!="success (or unidentified issue)"){
+  cat(results$results[[mycount]]$message)
+  break
+  }
+
+  case<-results$results[[mycount]]$`input.parameters`$case
+  kdf<-rmdrs_pretty_summary_table(results,mycount)
+  cat_stat<-rmdrs_pretty_hypothesis_test_result(results,mycount)
+
+  fig_n<- paste0("figure_",mycount)
+    	# ht<-tryround(2+length(unique(paste0(df$repeat.var.value,df$dependent.var.value)))*0.6,1)
+    	# lg<-tryround(6+length(unique(df$independent.var.value))*2,0)
+      reportchartpath<-paste0(".",results$analysisplan_log[mycount,"output.regular.chart..report."])
+      heatmapchartpath<-paste0(".",results$analysisplan_log[mycount,"output.heatmap"])
+      # heatmapchartpath<-paste
+    
+        cat(knit(text = knit_expand(text =
+    			 sprintf("```{r %s, results='asis'  }\n
+    				\n
+    				cat('\n\n\n###### Graph \n\n')
+            \n
+            if(file.exists(reportchartpath)){include_graphics(reportchartpath)}            
+            \n
+            if(file.exists(heatmapchartpath)){include_graphics(heatmapchartpath)}            
+    				\n\n\n
+    				cat('\n\n\n###### Table \n\n')
+    				\n
+    				kable(kdf)
+    				\n\n\n
+
+    				cat('\n\n\n###### Statistics \n\n')
+            cat(cat_stat)
+    				\n\n\n
+    				\n\n\n
+
+
+    			 ```", fig_n, ht, lg)
+    		)))
+} 
+
+
+
+```
+
+
+

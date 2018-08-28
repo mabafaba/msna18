@@ -73,7 +73,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   if(!is.null(mini_barchart_filelists)){
   filenames<-sapply(mini_barchart_filelists$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
   analysisplan_rows<-sapply(mini_barchart_filelists$analysisplan_list,function(x){x$analysis_plan_row[1]})
-  results$analysisplan_log$output.minimal.chart...width.of.quarter.A4.landscape..FS.[analysisplan_rows]<-filenames
+ results$analysisplan_log$output.minimal.chart...width.of.quarter.A4.landscape..FS.[analysisplan_rows]<-filenames
 
  datamerge_row<-match(as.character(datamerge$repeat.var.value),as.character(mini_barchart_filelists$datamerge$repeat.var.value))
  datamerge<-data.frame(datamerge,minibarchart=mini_barchart_filelists$datamerge[datamerge_row,])
@@ -97,10 +97,9 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  datamerge_row<-match(as.character(datamerge$repeat.var.value),as.character(heatmaps_filelists$datamerge$repeat.var.value))
  datamerge<-data.frame(datamerge,heatmap=heatmaps_filelists$datamerge[datamerge_row,])
  }
- 
- 
- # add filenames to datamerge csv 
- 
+
+
+results %>% saveRDS("./output/results_raw_R.RDS")
 
  results$results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic()}) %>% do.call(rbind,.) -> allsumstats
  allsumstats %>% saveRDS("./output/allsummarystatistics.RDS")
@@ -108,7 +107,6 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  # output global CSV files
  map_to_file(datamerge,"./output/datamerge.csv")
  results$analysisplan_log %>% as.data.frame %>%  map_to_file("./output/analysisplan_chart_filenames.csv")
-
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
  
  if(!debugging_mode){cat("\014")}  
@@ -121,4 +119,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
                 bold("allsumstats: "), "a single long format (ideal for ggplot) data frame of all results\n",
                 bold("a lot more objects and functions:"), "type ls() to see what's around."
                 )))
-  
+ 
+ 
+rmarkdown::render("./internal/report2.rmd")
+ 
