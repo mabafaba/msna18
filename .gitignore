@@ -14,3 +14,4 @@ output/mean_aggregations_raw_csv/
 output/percent_aggregations_raw_csv/
 output/composite_indicator_visualisation/
 output/mean_aggregations_raw_csv/
+/output/log.txt
