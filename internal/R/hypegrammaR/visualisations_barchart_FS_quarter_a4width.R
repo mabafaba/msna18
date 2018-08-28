@@ -87,7 +87,13 @@ plot_to_file_FS_quarter_a4width<-function(data,filename="test.svg"){
                          plot_part_numbers,
                          plot_part_bars, ncol=3,widths=smallFSplotwdith*c(0.6,0.09,0.31))
 
-  ggsave(file=filename, plot=fullplot,width =smallFSplotwdith, height=0.4+heightperbarcm*length(unique(data$dependent.var.value)),units = "cm",device = "jpeg")   
+  ggsave(file=filename,
+         plot=fullplot,
+         width =smallFSplotwdith,
+         height=0.4+heightperbarcm*length(unique(data$dependent.var.value)),
+         units = "cm",
+         device = "jpeg",
+         limitsize = F)   
   
   return(fullplot)
 }

@@ -40,7 +40,6 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   .write_to_log("\nNo Composite Indicators Defined.\n")
 }
 
-
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
 
@@ -70,18 +69,16 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   report_barchart_filelist<-map_resultslist_to_output_reportbarcharts(results)
   # make heatmaps
   heatmaps_filelists<-map_resultslist_to_output_heatmap_table(results)
-
- # add filenames to analysis plan
- if(!is.null(mini_barchart_filelists)){
- filenames<-sapply(mini_barchart_filelists$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
- analysisplan_rows<-sapply(mini_barchart_filelists$analysisplan_list,function(x){x$analysis_plan_row[1]})
- results$analysisplan_log$output.minimal.chart...width.of.quarter.A4.landscape..FS.[analysisplan_rows]<-filenames
+  # add filenames to analysis plan
+  if(!is.null(mini_barchart_filelists)){
+  filenames<-sapply(mini_barchart_filelists$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
+  analysisplan_rows<-sapply(mini_barchart_filelists$analysisplan_list,function(x){x$analysis_plan_row[1]})
+  results$analysisplan_log$output.minimal.chart...width.of.quarter.A4.landscape..FS.[analysisplan_rows]<-filenames
 
  datamerge_row<-match(as.character(datamerge$repeat.var.value),as.character(mini_barchart_filelists$datamerge$repeat.var.value))
  datamerge<-data.frame(datamerge,minibarchart=mini_barchart_filelists$datamerge[datamerge_row,])
  
   }
-  
  if(!is.null(report_barchart_filelist)){
  filenames<-sapply(report_barchart_filelist$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
  analysisplan_rows<-sapply(report_barchart_filelist$analysisplan_list,function(x){x$analysis_plan_row[1]})

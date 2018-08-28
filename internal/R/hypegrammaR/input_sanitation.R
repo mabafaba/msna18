@@ -33,6 +33,7 @@ sanitise_data <- function(data, dependent.var,independent.var,case){
   data<-tryCatch({
     numerics<-sapply(names(data),question_is_numeric)
     data[,numerics]<-data[,numerics] %>% lapply(as.numeric) %>% as.data.frame(stringsAsFactors=F)
+    data
     },
     error=function(e){return(data)}
   )
@@ -118,7 +119,7 @@ sanitise_data_independent<-function(data,
 
   if(case%in%c("CASE_group_difference_categorical_categorical","CASE_direct_reporting_categorical_categorical","CASE_direct_reporting_categorical_")){
     if(question_is_select_one(dependent.var) & length(unique(data[[dependent.var]]))>50){
-      return(list(success=F,message="can not perform chisquared test on >50 unique values in the dependent variable."))
+      return(list(success=F,message="can not perform chisquared test (and won't calculate summary statistics) on >50 unique values in the dependent variable."))
 
     }
   }

@@ -1,0 +1,14 @@
+"","dependent.var","independent.var","dependent.var.value","independent.var.value","numbers","se","min","max","repeat.var","repeat.var.value"
+"dependent.var","Does the HH head have a vulnerability?",NA,"no","NA",0.342731699988161,NA,0.318339257436058,0.367124142540265,NA,NA
+"dependent.var1","Does the HH head have a vulnerability?",NA,"pensioner","NA",0.551660900045383,NA,0.526185280046467,0.577136520044299,NA,NA
+"dependent.var2","Does the HH head have a vulnerability?",NA,"disability_official","NA",0.0612293902029855,NA,0.0493780984657137,0.0730806819402573,NA,NA
+"dependent.var3","Does the HH head have a vulnerability?",NA,"disability_inofficial","NA",0.0163984358455884,NA,0.0102071680309767,0.0225897036602,NA,NA
+"dependent.var4","Does the HH head have a vulnerability?",NA,"veteran_of_war_ato_official","NA",0.00712798924163252,NA,0.0029393393761021,0.0113166391071629,NA,NA
+"dependent.var5","Does the HH head have a vulnerability?",NA,"veteran_of_war_ato_inofficial","NA",0.000178507093503207,NA,0,0.000528374567754414,NA,NA
+"dependent.var6","Does the HH head have a vulnerability?",NA,"single_parent_official","NA",0.0212544226458304,NA,0.0141476080699225,0.0283612372217384,NA,NA
+"dependent.var7","Does the HH head have a vulnerability?",NA,"single_parent_inofficial","NA",0.0141794987988937,NA,0.00784524729637355,0.0205137503014139,NA,NA
+"dependent.var8","Does the HH head have a vulnerability?",NA,"family_3_children_official","NA",0.0143379128316007,NA,0.00839351800867608,0.0202823076545252,NA,NA
+"dependent.var9","Does the HH head have a vulnerability?",NA,"family_3_children_inofficial","NA",0.00911756326973583,NA,0.00382716790747108,0.0144079586320006,NA,NA
+"dependent.var10","Does the HH head have a vulnerability?",NA,"family_foster_children","NA",0.00173349750278028,NA,0.000192873998550091,0.00327412100701046,NA,NA
+"dependent.var11","Does the HH head have a vulnerability?",NA,"chronical_illness","NA",0.179721009880162,NA,0.160370000343237,0.199072019417087,NA,NA
+"dependent.var12","Does the HH head have a vulnerability?",NA,"other_specify","NA",0.0127935759543724,NA,0.00696172158102064,0.0186254303277242,NA,NA

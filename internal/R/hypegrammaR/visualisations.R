@@ -71,7 +71,7 @@ barchart_average<-function(summary.statistic,filename){
 
 barchart_percent<-function(summary.statistic,filename){
   summary.statistic<-labels_summary_statistic(summary.statistic)
-  theplot<-ggplot(summary.statistic,aes(x=independent.var.value,y=numbers),fill=reach_style_color_darkgrey(1))+geom_bar(stat = "identity")+theme_tufte()+
+  theplot<-ggplot(summary.statistic,aes(x=dependent.var.value,y=numbers),fill=reach_style_color_darkgrey(1))+geom_bar(stat = "identity")+theme_tufte()+
     xlab("")+ylab(summary.statistic$dependent.var[1])+ 
     theme(text=element_text(family="Arial Narrow"),
           axis.title.x=element_blank(),
@@ -82,13 +82,13 @@ barchart_percent<-function(summary.statistic,filename){
           # axis.ticks.y=element_blank(),
           # plot.margin = unit(x = c(0,0,0,0),'null')
     )+scale_y_continuous(limits = c(0,1),labels = scales::percent_format())+
-    geom_errorbar( aes(x=summary.statistic$independent.var.value,
+    geom_errorbar( aes(x=summary.statistic$dependent.var.value,
                        ymin=as.numeric(summary.statistic$min),
                        ymax=as.numeric(summary.statistic$max)),
                    stat='identity',
                    width=.1) + theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust=0.5)) 
   
-  number_of_bars<-(length(unique(summary.statistic$independent.var.value)))
+  number_of_bars<-(length(unique(summary.statistic$dependent.var.value)))
   plotwidth<-5+(number_of_bars*1.5)
   map_to_file(theplot,filename,height=12,width=plotwidth,unit="cm")
   return(theplot)
@@ -169,8 +169,7 @@ visualisation_barchart_percent_nogroups_FS<-function(data,filename="test.svg"){
                          plot_numbers(data),
                          plot_bars(data), ncol=3,widths=smallFSplotwdith*c(0.4,0.1,0.5))
   
-  ggsave(file=filename, plot=fullplot,width =smallFSplotwdith, height=heightperbarcm*length(unique(data$dependent.var.value)),units = "cm",device = "jpg")   
-  
+  ggsave(file=filename, plot=fullplot,width =smallFSplotwdith, height=heightperbarcm*length(unique(data$dependent.var.value)),units = "cm",device = "jpg",limitsize = F)   
   return(fullplot)
 }
 
