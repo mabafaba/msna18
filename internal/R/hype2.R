@@ -45,7 +45,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
 
-  message(silver("applying analysis plan.."))
+  analysismessage(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
 
   results$analysisplan_log<-results$analysisplan
@@ -106,7 +106,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 
 # results %>% saveRDS("./output/results_raw_R.RDS")
   # rmarkdown::render("./internal/report2.rmd")
-  results<-readRDS("./output/results_raw_R.RDS")  
+  #results<-readRDS("./output/results_raw_R.RDS")  
 # setwd("..") # in case rmarkdown failed, revert wd
 
 # add filenames to datamerge csv 

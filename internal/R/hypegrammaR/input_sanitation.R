@@ -21,7 +21,9 @@ sanitise_group_difference<-function(data,dependent.var,independent.var){
 
 
   if(!at_least_two_independent_groups){
-    return(list(success=FALSE,message="can not test group difference with <2 unique values in the independent variable with at least 2 records)"))
+    test.hypothesis <- hypothesis_test_empty
+    return(list(success=TRUE,message="can not test group difference with <2 unique values in the independent variable with at least 2 records)", test.hypothesis))
+    
   }
 
   return(list(success=TRUE,data=data))

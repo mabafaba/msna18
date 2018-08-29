@@ -79,6 +79,7 @@ analyse_indicator<-function(data,
   
   
   summarise.result<- map_to_summary_statistic(case)
+
   test.hypothesis <- map_to_hypothesis_test(case)
   visualisation <- map_to_visualisation(case)
   
@@ -89,7 +90,7 @@ analyse_indicator<-function(data,
   # do hypothesis test:
   
   hypothesis.test.result<- test.hypothesis(dependent.var,independent.var, design)
-  
+
   # add results to the visualisation:
   # visualisation<-visualisation+ggplot()...
   return(list(

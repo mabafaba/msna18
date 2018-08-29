@@ -51,22 +51,25 @@ hypothesis_test_empty <- function(dependent.var = NULL,
   return(results)
 }
 
-
+tryCatch({
 hypothesis_test_t_two_sample <- function(dependent.var,
                                        independent.var,
                                        design){
+  independent_more_than_1 <- length(unique(data[[independent.var]])) > 1
+      if(!independent_more_than_1){
+        results$result <- list()}else{
   formula_string<-paste0(dependent.var, "~", independent.var)
   ttest <- svyttest(formula(formula_string), design, na.rm = TRUE)
   results<-list()
   results$result <- list(t=unname(ttest$statistic), p.value = ttest$p.value %>% unname)
   results$parameters <- as.list(ttest$parameter)
-  results$name<-"two sample ttest on difference in means (two sided)"
+  results$name<-"two sample ttest on difference in means (two sided)"}
   return(results)
 
   ttest$statistic
 
 }
-
+})
 
 
 
