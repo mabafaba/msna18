@@ -2,7 +2,7 @@ rmdrs_decide_showtitle<-function(results,i,input.parameter){
   # by default, don't show
   showtitle<-F
   if(is.null(results$results[[i]])){return(F)}
-  if(is.null(results$results[[i]]$input.parameters[[input.parameter]])){return(F)}
+  if(is.null(results$results[[i]]$input.parameters[[input.parameter]])){return(T)}
   # if first item, always show:
   if(i==1){showtitle<-T}else{
   print(i)
@@ -30,51 +30,52 @@ rmdrs_title<-function(results,i,parameter,prefix="##", always.show=F){
         if(parameter=="independent.var"){param_formated<-"no comparison"
         }else if(parameter=="dependent.var"){param_formated<-"error: no dependent variable"
         }else if(parameter=="repeat.var"){param_formated<-"all data"
-        }else if(parameter=="repeat.var.value"){param_formated<-"no subset"
+        }else if(parameter=="repeat.var.value"){param_formated<-""
         }else{param_formated<-paste(parameter,": N/A")}
     }else{
       param_formated<-question_get_question_label(results$results[[i]]$input.parameters[[parameter]])
     }
-
-    thistitle<-paste0("\n\n\n\n\n",prefix," ",param_formated,"\n\n\n")
+thistitle<-paste0("\n\n\n\n\n",prefix," ",param_formated,"\n\n\n")
     cat(thistitle)
   }
 }
+
 rmdrs_independent_title<-function(results,i){
   
 }
 
 
 
-rmdrs_title_concatenated<-function(results,i){
-  mycount<-i
-  if(is.na(results$results[[mycount]]$input.parameters$repeat.var)){
-    titl<-paste0(" by ",
-                 question_get_question_label(results$results[[mycount]]$input.parameters$independent.var),
-                 ": ",
-                 question_get_question_label(results$results[[mycount]]$input.parameters$dependent.var))
-    
-  }else{
-    titl<-paste0(" by ",
-                 question_get_question_label(results$results[[mycount]]$input.parameters$independent.var),
-                 ": ",
-                 question_get_question_label(results$results[[mycount]]$input.parameters$dependent.var),
-                 " / ",
-                 question_get_question_label(results$results[[mycount]]$input.parameters$repeat.var),
-                 "=",
-                 results$results[[mycount]]$input.parameters$repeat.var.value)
-  }
-  
-  title<-paste("\n\n\n\n# ",titl,"\n\n\n\n")
-  
-  return(titl)
-}
+# rmdrs_title_concatenated<-function(results,i){
+#   mycount<-i
+#   if(is.na(results$results[[mycount]]$input.parameters$repeat.var)){
+#     titl<-paste0(" by ",
+#                  question_get_question_label(results$results[[mycount]]$input.parameters$independent.var),
+#                  ": ",
+#                  question_get_question_label(results$results[[mycount]]$input.parameters$dependent.var))
+# 
+#   }else{
+#     titl<-paste0(" by ",
+#                  question_get_question_label(results$results[[mycount]]$input.parameters$independent.var),
+#                  ": ",
+#                  question_get_question_label(results$results[[mycount]]$input.parameters$dependent.var),
+#                  " / ",
+#                  question_get_question_label(results$results[[mycount]]$input.parameters$repeat.var),
+#                  "=",
+#                  results$results[[mycount]]$input.parameters$repeat.var.value)
+#   }
+# 
+#   title<-paste("\n\n\n\n# ",titl,"\n\n\n\n")
+# 
+#   return(titl)
+# }
 
 
 
 
 rmdrs_pretty_summary_table<-function(results,i){
   mycount<-i
+  results$results[[mycount]]$summary.statistic<-labels_summary_statistic(results$results[[mycount]]$summary.statistic,T,T,T,T,T,T)
   df<-results$results[[mycount]]$summary.statistic[,c(
     "repeat.var.value",
     "dependent.var.value",
