@@ -45,7 +45,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
 
-  message(silver("applying analysis plan.."))
+  analysismessage(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
 
   results$analysisplan_log<-results$analysisplan
