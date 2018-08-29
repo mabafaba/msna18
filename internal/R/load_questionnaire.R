@@ -121,7 +121,7 @@ load_questionnaire<-function(data,
       if(question.name==""){return(FALSE)}
       qid<-which(questions$name==question.name)
       if(length(qid)==0){return(FALSE)}
-      if(length(c(grep("integer",questions$type[qid]),grep("decimal", questions$typep[qid])))>0){return(TRUE)}
+      if(length(c(grep("integer",questions$type[qid]),grep("decimal", questions$typep[qid]), grep("calculate", questions$type[qid])))>0){return(TRUE)}
       return(FALSE)
     }
 

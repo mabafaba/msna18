@@ -55,9 +55,10 @@ tryCatch({
 hypothesis_test_t_two_sample <- function(dependent.var,
                                        independent.var,
                                        design){
-  independent_more_than_1 <- length(unique(data[[independent.var]])) > 1
+
+  independent_more_than_1 <- length(unique(design$data[[independent.var]])) > 1
       if(!independent_more_than_1){
-        results$result <- list()}else{
+        results <- list()}else{
   formula_string<-paste0(dependent.var, "~", independent.var)
   ttest <- svyttest(formula(formula_string), design, na.rm = TRUE)
   results<-list()
