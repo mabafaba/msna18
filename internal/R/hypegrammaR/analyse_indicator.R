@@ -29,7 +29,7 @@ analyse_indicator<-function(data,
   
   input.parameters= list(
     dependent.var=dependent.var,
-    independent.var=independent.var,
+    independent.var=ifelse(is.null(independent.var),NA,independent.var),
     hypothesis.type=hypothesis.type,
     sampling.strategy.stratified=sampling.strategy.stratified,
     case=case

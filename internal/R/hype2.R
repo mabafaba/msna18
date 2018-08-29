@@ -1,10 +1,9 @@
 cat("\14")
-
 message(("loading dependencies.."))
 # clear/create folders
-unlink("./output/modified_data/",recursive=TRUE) 
+unlink("./output/modified_data/",recursive=TRUE)
 unlink("./output/percent_aggregations_raw_csv",recursive=TRUE)
-unlink("./output/charts",recursive=TRUE) 
+unlink("./output/charts",recursive=TRUE)
 dir.create("./output",showWarnings = F)
 dir.create("./output/charts",showWarnings = F)
 dir.create("./output/composite_indicator_visualisation",showWarnings = F)
@@ -18,7 +17,6 @@ source("./internal/R/hypegrammaR/visualisations_barchart_FS_quarter_a4width.R")
 source("./internal/R/rmarkdown_resultlist_utililities.R")
 # LOAD INPUT
 # make sure all files exist:
-
 # load all the excel input files:
 source("./internal/R/load_excel_input.R",local = T)
 
@@ -74,10 +72,9 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   heatmaps_filelists<-map_resultslist_to_output_heatmap_table(results)
  # add filenames to analysis plan
  if(!is.null(mini_barchart_filelists)){
- filenames<-sapply(mini_barchart_filelists$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
+  filenames<-sapply(mini_barchart_filelists$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
   analysisplan_rows<-sapply(mini_barchart_filelists$analysisplan_list,function(x){x$analysis_plan_row[1]})
- results$analysisplan_log$output.minimal.chart...width.of.quarter.A4.landscape..FS.[analysisplan_rows]<-filenames
-
+  results$analysisplan_log$output.minimal.chart...width.of.quarter.A4.landscape..FS.[analysisplan_rows]<-filenames
 
  datamerge_row<-match(as.character(datamerge$repeat.var.value),as.character(mini_barchart_filelists$datamerge$repeat.var.value))
  datamerge<-data.frame(datamerge,minibarchart=mini_barchart_filelists$datamerge[datamerge_row,])
@@ -98,7 +95,6 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  analysisplan_rows<-sapply(heatmaps_filelists$analysisplan_list,function(x){x$analysis_plan_row[1]}) %>% unname
  results$analysisplan_log$heatmaps<-NA
  results$analysisplan_log$heatmaps[analysisplan_rows]<-filenames
- 
  datamerge_row<-match(as.character(datamerge$repeat.var.value),as.character(heatmaps_filelists$datamerge$repeat.var.value))
  datamerge<-data.frame(datamerge,heatmap=heatmaps_filelists$datamerge[datamerge_row,])
  }
@@ -112,6 +108,8 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  map_to_file(datamerge,"./output/datamerge.csv")
  results$analysisplan_log %>% as.data.frame %>%  map_to_file("./output/analysisplan_chart_filenames.csv")
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
+ message(silver("creating html report output"))
+ rmarkdown::render("./internal/report2.rmd",output_file = "../output/results.html")
  
  if(!debugging_mode){cat("\014")}  
  cat(green("\n\n\nDONE with statistical tests and plots - no issues detected.\n"))
@@ -126,5 +124,4 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  
  cat(silver("\n\n Now compling outputs into html - this may take a while..\n"))
  
-# rmarkdown::render("./internal/report2.rmd")
  
