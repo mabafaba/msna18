@@ -5,7 +5,7 @@ which necessary input files exist?
 |                                                        |     | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
 
 FATAL: 9 records discarded, because they could not be matched with samplingframe.
-                  I wrote a copy of those records to ./output/log/ERROR_LOG_records_discared18-08-30__15-06-30.csv 
+                  I wrote a copy of those records to ./output/log/ERROR_LOG_records_discared18-08-30__18-02-45.csv 
  sampling frame name: for_stratification 
 
 
