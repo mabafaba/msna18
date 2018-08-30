@@ -8,7 +8,7 @@ output:
     toc_float: true
     number_sections: false
     self_contained: true
-
+    toc_depth: 4 
 ---
 
 
@@ -37,10 +37,10 @@ if(length(whichtoreport)>maxresults){
 # make titles
 for (mycount in whichtoreport){
 
-rmdrs_title(results,mycount,parameter = "independent.var",prefix = "# ")
-rmdrs_title(results,mycount,parameter = "dependent.var",prefix = "## ")
-rmdrs_title(results,mycount,parameter = "repeat.var",prefix = "### ")
-rmdrs_title(results,mycount,parameter = "repeat.var.value",prefix = "#### ")
+rmdrs_title(results,mycount,parameter = "independent.var",prefix = "# comparing between:")
+rmdrs_title(results,mycount,parameter = "dependent.var",prefix = "## variable:")
+rmdrs_title(results,mycount,parameter = "repeat.var",prefix = "### subsetted by:")
+rmdrs_title(results,mycount,parameter = "repeat.var.value",prefix = "#### subset:")
 
 if(results$results[[mycount]]$message!="success (or unidentified issue)"){
     cat(results$results[[mycount]]$message)
@@ -61,17 +61,13 @@ if(results$results[[mycount]]$message!="success (or unidentified issue)"){
           cat(knit(text = knit_expand(text =
       			 sprintf("```{r %s, results='asis'  }\n
       				\n
-      				cat('\n\n\n#### Graph \n\n')
-              \n
               if(file.exists(reportchartpath)){include_graphics(reportchartpath)}            
               \n
-              if(file.exists(heatmapchartpath)){include_graphics(heatmapchartpath)}            
+              file.exists(heatmapchartpath)
+              # if(file.exists(heatmapchartpath)){include_graphics(heatmapchartpath)}            
       				\n\n\n
-      				cat('\n\n\n#### Table \n\n')
-      				\n
       				kable(kdf)
       				\n\n\n
-        			cat('\n\n\n#### Statistics \n\n')
               cat(cat_stat)
       				\n\n\n
       				\n\n\n
@@ -84,6 +80,29 @@ if(results$results[[mycount]]$message!="success (or unidentified issue)"){
 
 
 ```
+```{r results="asis"}
+cat("
+<style>
+.list-group {
+padding-left:5px!important;
+background:#00000011;
+}
+
+.list-group-item{
+background:#00000011;
+}
+
+.tocify{
+  border: 0px solid #ccc;
+  webkit-border-radius: 0px;
+  moz-border-radius: 0px;
+  border-radius: 0px;
+}
+</style>
+")
+```
+
+
 
 
 

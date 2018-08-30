@@ -82,7 +82,6 @@ apply_data_analysis_plan<-function(data,analysisplan){
     }
     return(result)})
   
-  # names(results)<-analysisplan$dependent.var
   return(list(results=results,analysisplan=analysisplan))
   
 }

@@ -1,0 +1,109 @@
+
+
+which necessary input files exist?
+
+|                                                        |     | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+FATAL: 9 records discarded, because they could not be matched with samplingframe.
+                  I wrote a copy of those records to ./output/log/ERROR_LOG_records_discared18-08-30__15-06-30.csv 
+ sampling frame name: for_stratification 
+
+
+names not found in sampling frame:
+ gebiley/---STRATA---/IDP
+buur hakaba/---STRATA---/HC
+baardheere/---STRATA---/HC
+baidoa/---STRATA---/HC
+galkaacyo_north/---STRATA---/HC
+kismayo/---STRATA---/IDP
+luuq/---STRATA---/HC
+bossaso/---STRATA---/IDP
+afgooye/---STRATA---/IDP
+burco/---STRATA---/IDP
+cadale/---STRATA---/HC
+marka/---STRATA---/HC
+hobyo/---STRATA---/HC
+afmadow/---STRATA---/HC
+mogadishu_kahda/---STRATA---/IDP
+caynabo/---STRATA---/IDP
+hargeysa/---STRATA---/HC
+qoryooley/---STRATA---/HC
+waajid/---STRATA---/IDP
+mogadishu_daynile/---STRATA---/IDP
+baidoa/---STRATA---/IDP
+galkaacyo_north/---STRATA---/IDP
+lughaye/---STRATA---/IDP
+laasqoray/---STRATA---/HC
+wanla_weyn/---STRATA---/HC
+hargeysa/---STRATA---/IDP
+ceel barde/---STRATA---/HC
+beledweyne/---STRATA---/IDP
+jowhar/---STRATA---/HC
+xuudur/---STRATA---/HC
+galkaacyo_south/---STRATA---/IDP
+belet weyne/---STRATA---/HC
+badhan/---STRATA---/HC
+wanla_weyn/---STRATA---/IDP
+ceel afweyn/---STRATA---/HC
+cabudwaaq/---STRATA---/HC
+gebiley/---STRATA---/HC
+balcad/---STRATA---/HC
+garowe/---STRATA---/HC
+cabudwaaq/---STRATA---/IDP
+iskushuban/---STRATA---/HC
+burco/---STRATA---/HC
+bandarbayla/---STRATA---/HC
+gaalkacyo south/---STRATA---/HC
+badhaadhe/---STRATA---/HC
+matabaan/---STRATA---/HC
+mogadishu_hodan/---STRATA---/IDP
+cadaado/---STRATA---/HC
+belet_xaawo/---STRATA---/IDP
+belet xaawo/---STRATA---/HC
+berbera/---STRATA---/HC
+caynabo/---STRATA---/HC
+borama/---STRATA---/HC
+bossaso/---STRATA---/HC
+kismayo/---STRATA---/HC
+bulo burto/---STRATA---/HC
+garbahaarey/---STRATA---/HC
+burtinle/---STRATA---/HC
+mogadishu_kahda/---STRATA---/HC
+jowhar/---STRATA---/IDP
+qardho/---STRATA---/IDP
+baardheere/---STRATA---/IDP
+dhuusamarreeb/---STRATA---/IDP
+dhuusamarreeb/---STRATA---/HC
+luuq/---STRATA---/IDP
+zeylac/---STRATA---/HC
+afmadow/---STRATA---/IDP
+afgooye/---STRATA---/HC
+ceerigaabo/---STRATA---/IDP
+ceel barde/---STRATA---/IDP
+ceel waaq/---STRATA---/HC
+ceerigaabo/---STRATA---/HC
+cadaado/---STRATA---/IDP
+mogadishu_daynile/---STRATA---/HC
+xudur/---STRATA---/IDP
+borama/---STRATA---/IDP
+qardho/---STRATA---/HC
+eyl/---STRATA---/HC
+lughaye/---STRATA---/HC
+jariiban/---STRATA---/HC
+belet weyne/---STRATA---/IDP
+mogadishu_hodan/---STRATA---/HC
+waajid/---STRATA---/HC
+garowe/---STRATA---/IDP
+burtinle/---STRATA---/IDP
+ceel_afweyn/---STRATA---/IDP
+berbera/---STRATA---/IDP
+qandala/---STRATA---/HC
+badhan/---STRATA---/IDP
+qansax dheere/---STRATA---/HC
+qansax dheere/---STRATA---/IDP
+
+samplingframe for_strata complete.
+
+
+
+No Composite Indicators Defined.

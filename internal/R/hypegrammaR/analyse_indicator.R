@@ -33,7 +33,6 @@ analyse_indicator<-function(data,
     hypothesis.type=hypothesis.type,
     sampling.strategy.stratified=sampling.strategy.stratified,
     case=case
-    
   )
   # sanitise input
   # if(!is.null(do.for.each.unique.value.in.var)){stop("do.for.each.unique.value.in.var must be NULL (not yet implemented)")}
