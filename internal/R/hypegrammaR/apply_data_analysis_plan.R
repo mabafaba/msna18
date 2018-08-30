@@ -40,7 +40,7 @@ apply_data_analysis_plan<-function(data,analysisplan){
       
     this_valid_data<-this_valid_data[
       which(
-        !(is.na(data[,as.character(x["dependent.var"])]))),]
+        !(is.na(this_valid_data[,as.character(x["dependent.var"])]))),]
     if(!is.na(x["independent.var"])){
       this_valid_data <- this_valid_data[
         which(

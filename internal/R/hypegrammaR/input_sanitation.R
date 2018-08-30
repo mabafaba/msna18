@@ -32,14 +32,14 @@ sanitise_group_difference<-function(data,dependent.var,independent.var){
 
 sanitise_data <- function(data, dependent.var,independent.var,case){
   
-  data<-tryCatch({
-    numerics<-sapply(names(data),question_is_numeric)
-    data[,numerics]<-data[,numerics] %>% lapply(as.numeric) %>% as.data.frame(stringsAsFactors=F)
-    data
-    },
-    error=function(e){return(data)}
-  )
-  
+  # data<-tryCatch({
+  #   numerics<-sapply(names(data),question_is_numeric)
+  #   data[,numerics]<-data[,numerics] %>% lapply(as.numeric) %>% as.data.frame(stringsAsFactors=F)
+  #   data
+  #   },
+  #   error=function(e){return(data)}
+  # )
+  # 
   
   if(is.null(independent.var)){
     sanitise_data_no_independent(data = data, dependent.var = dependent.var, case = case)}else{
@@ -145,11 +145,6 @@ sanitise_is_good_dataframe<-function(data){
   return(TRUE)
 
   }
-
-
-
-
-
 
 
 
