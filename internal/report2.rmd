@@ -28,7 +28,7 @@ opts_chunk$set(warning=FALSE, message=FALSE, echo=FALSE)
 
 # lovely loop
 #don't plot more than..
-maxresults<-10
+maxresults<-150
 results$analysisplan_log$include_in_html<-"yes"
 whichtoreport<-which(results$analysisplan_log$include_in_html=="yes" &!sapply(results$results,is.null))
 if(length(whichtoreport)>maxresults){

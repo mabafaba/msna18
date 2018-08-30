@@ -44,13 +44,12 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 }
 
 #### SPECIFIC TO UGANDA DATA 
-# list <- apply(data, 2, function(x) gsub("_", ".", x))
-# abc <- rbind.data.frame(list)
-# data <- abc
+# data <- apply(data, 2, function(x) gsub("_", ".", x)) %>% rbind.data.frame(list)
+
 
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
-# analysisplan <- analysisplan[c(75,76),]
+#analysisplan <- analysisplan[c(1:22),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   analysismessage(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
@@ -123,7 +122,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  results$analysisplan_log %>% as.data.frame %>%  map_to_file("./output/analysisplan_chart_filenames.csv")
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
  message(silver("creating html report output"))
- undebug(rmdrs_decide_showtitle)
+
  suppressMessages(rmarkdown::render("./internal/report2.rmd",output_file = "../output/results.html"))
  
  if(!debugging_mode){cat("\014")}  

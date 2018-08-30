@@ -2,108 +2,1411 @@
 
 which necessary input files exist?
 
-|                                                        |     | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/choice ranks.csv                 |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+|                                                        |     | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
 
-FATAL: 9 records discarded, because they could not be matched with samplingframe.
-                  I wrote a copy of those records to ./output/log/ERROR_LOG_records_discared18-08-30__18-02-45.csv 
- sampling frame name: for_stratification 
+samplingframe for_stratification complete.
 
 
-names not found in sampling frame:
- gebiley/---STRATA---/IDP
-buur hakaba/---STRATA---/HC
-baardheere/---STRATA---/HC
-baidoa/---STRATA---/HC
-galkaacyo_north/---STRATA---/HC
-kismayo/---STRATA---/IDP
-luuq/---STRATA---/HC
-bossaso/---STRATA---/IDP
-afgooye/---STRATA---/IDP
-burco/---STRATA---/IDP
-cadale/---STRATA---/HC
-marka/---STRATA---/HC
-hobyo/---STRATA---/HC
-afmadow/---STRATA---/HC
-mogadishu_kahda/---STRATA---/IDP
-caynabo/---STRATA---/IDP
-hargeysa/---STRATA---/HC
-qoryooley/---STRATA---/HC
-waajid/---STRATA---/IDP
-mogadishu_daynile/---STRATA---/IDP
-baidoa/---STRATA---/IDP
-galkaacyo_north/---STRATA---/IDP
-lughaye/---STRATA---/IDP
-laasqoray/---STRATA---/HC
-wanla_weyn/---STRATA---/HC
-hargeysa/---STRATA---/IDP
-ceel barde/---STRATA---/HC
-beledweyne/---STRATA---/IDP
-jowhar/---STRATA---/HC
-xuudur/---STRATA---/HC
-galkaacyo_south/---STRATA---/IDP
-belet weyne/---STRATA---/HC
-badhan/---STRATA---/HC
-wanla_weyn/---STRATA---/IDP
-ceel afweyn/---STRATA---/HC
-cabudwaaq/---STRATA---/HC
-gebiley/---STRATA---/HC
-balcad/---STRATA---/HC
-garowe/---STRATA---/HC
-cabudwaaq/---STRATA---/IDP
-iskushuban/---STRATA---/HC
-burco/---STRATA---/HC
-bandarbayla/---STRATA---/HC
-gaalkacyo south/---STRATA---/HC
-badhaadhe/---STRATA---/HC
-matabaan/---STRATA---/HC
-mogadishu_hodan/---STRATA---/IDP
-cadaado/---STRATA---/HC
-belet_xaawo/---STRATA---/IDP
-belet xaawo/---STRATA---/HC
-berbera/---STRATA---/HC
-caynabo/---STRATA---/HC
-borama/---STRATA---/HC
-bossaso/---STRATA---/HC
-kismayo/---STRATA---/HC
-bulo burto/---STRATA---/HC
-garbahaarey/---STRATA---/HC
-burtinle/---STRATA---/HC
-mogadishu_kahda/---STRATA---/HC
-jowhar/---STRATA---/IDP
-qardho/---STRATA---/IDP
-baardheere/---STRATA---/IDP
-dhuusamarreeb/---STRATA---/IDP
-dhuusamarreeb/---STRATA---/HC
-luuq/---STRATA---/IDP
-zeylac/---STRATA---/HC
-afmadow/---STRATA---/IDP
-afgooye/---STRATA---/HC
-ceerigaabo/---STRATA---/IDP
-ceel barde/---STRATA---/IDP
-ceel waaq/---STRATA---/HC
-ceerigaabo/---STRATA---/HC
-cadaado/---STRATA---/IDP
-mogadishu_daynile/---STRATA---/HC
-xudur/---STRATA---/IDP
-borama/---STRATA---/IDP
-qardho/---STRATA---/HC
-eyl/---STRATA---/HC
-lughaye/---STRATA---/HC
-jariiban/---STRATA---/HC
-belet weyne/---STRATA---/IDP
-mogadishu_hodan/---STRATA---/HC
-waajid/---STRATA---/HC
-garowe/---STRATA---/IDP
-burtinle/---STRATA---/IDP
-ceel_afweyn/---STRATA---/IDP
-berbera/---STRATA---/IDP
-qandala/---STRATA---/HC
-badhan/---STRATA---/IDP
-qansax dheere/---STRATA---/HC
-qansax dheere/---STRATA---/IDP
-
-samplingframe for_strata complete.
+FAILED: Chi squared test.  Error:
+Error in solve.default(denom, numr): system is computationally singular: reciprocal condition number = 4.0377e-19
 
 
 
-No Composite Indicators Defined.
+independent.var:shelter.type- dependent.var:primary.hc.provider
+ raw frequency table:
+
+|                           | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--------------------------|--------------:|-----------------:|---------:|-----:|-----:| |clinic                     |             94|                 3|       186|     1|   114| |district.hospital          |             37|                 0|        30|     0|    63| |hc.ii                      |            110|                 5|       284|     0|   518| |hc.iii                     |            103|                 4|       211|     0|   419| |hc.iv                      |             29|                 1|        76|     0|   118| |national.referral.hospital |              5|                 0|         6|     0|    15| |other                      |              0|                 0|         2|     0|     1| |private.hospital           |              6|                 0|         3|     0|     6| |vht                        |              5|                 1|        18|     0|    15|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |    463|  587|
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+FAILED: Chi squared test.  Error:
+Error in solve.default(denom, numr): system is computationally singular: reciprocal condition number = 8.34759e-18
+
+
+
+independent.var:shelter.type- dependent.var:primary.hc.provider
+ raw frequency table:
+
+|                           | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--------------------------|--------------:|-----------------:|---------:|-----:|-----:| |clinic                     |              1|                 0|         1|     0|     1| |district.hospital          |             15|                 0|         5|     0|    18| |hc.ii                      |              3|                 1|        26|     0|    83| |hc.iii                     |              4|                 0|        12|     0|    47| |hc.iv                      |              0|                 0|         1|     0|    12| |national.referral.hospital |              0|                 0|         2|     0|     1| |other                      |              0|                 0|         0|     0|     0| |private.hospital           |              0|                 0|         0|     0|     0| |vht                        |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in solve.default(denom, numr): system is computationally singular: reciprocal condition number = 5.50004e-18
+
+
+
+independent.var:shelter.type- dependent.var:primary.hc.provider
+ raw frequency table:
+
+|                           | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--------------------------|--------------:|-----------------:|---------:|-----:|-----:| |clinic                     |              0|                 0|         1|     0|     6| |district.hospital          |              0|                 0|         0|     0|     4| |hc.ii                      |              3|                 0|         4|     0|    83| |hc.iii                     |              0|                 0|         2|     0|    69| |hc.iv                      |              2|                 0|         4|     0|    34| |national.referral.hospital |              0|                 0|         0|     0|     0| |other                      |              0|                 0|         0|     0|     0| |private.hospital           |              0|                 0|         0|     0|     0| |vht                        |              0|                 0|         0|     0|     1|
+
+FAILED: Chi squared test.  Error:
+Error in solve.default(denom, numr): system is computationally singular: reciprocal condition number = 5.64375e-18
+
+
+
+independent.var:shelter.type- dependent.var:primary.hc.provider
+ raw frequency table:
+
+|                           | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--------------------------|--------------:|-----------------:|---------:|-----:|-----:| |clinic                     |              0|                 0|         2|     0|     4| |district.hospital          |              0|                 0|         0|     0|     0| |hc.ii                      |              4|                 0|         5|     0|   100| |hc.iii                     |              3|                 1|         5|     0|    61| |hc.iv                      |              3|                 1|         7|     0|    32| |national.referral.hospital |              0|                 0|         0|     0|     0| |other                      |              0|                 0|         0|     0|     0| |private.hospital           |              1|                 0|         0|     0|     0| |vht                        |              0|                 1|         0|     0|     2|
+
+FAILED: Chi squared test.  Error:
+Error in solve.default(denom, numr): system is computationally singular: reciprocal condition number = 1.13871e-18
+
+
+
+independent.var:shelter.type- dependent.var:primary.hc.provider
+ raw frequency table:
+
+|                           | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--------------------------|--------------:|-----------------:|---------:|-----:|-----:| |clinic                     |             20|                 1|        16|     0|    17| |district.hospital          |              0|                 0|         0|     0|     0| |hc.ii                      |             13|                 0|        13|     0|    11| |hc.iii                     |             29|                 2|        26|     0|    26| |hc.iv                      |              9|                 0|         3|     0|     1| |national.referral.hospital |              1|                 0|         0|     0|     0| |other                      |              0|                 0|         1|     0|     1| |private.hospital           |              2|                 0|         3|     0|     0| |vht                        |              0|                 0|         4|     0|     2|
+
+FAILED: Chi squared test.  Error:
+Error in solve.default(denom, numr): system is computationally singular: reciprocal condition number = 4.93494e-18
+
+
+
+independent.var:shelter.type- dependent.var:primary.hc.provider
+ raw frequency table:
+
+|                           | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--------------------------|--------------:|-----------------:|---------:|-----:|-----:| |clinic                     |             21|                 1|        82|     0|    16| |district.hospital          |              0|                 0|         0|     0|     0| |hc.ii                      |              4|                 1|        32|     0|     6| |hc.iii                     |             13|                 1|        34|     0|     9| |hc.iv                      |              1|                 0|         1|     0|     0| |national.referral.hospital |              0|                 0|         0|     0|     1| |other                      |              0|                 0|         0|     0|     0| |private.hospital           |              0|                 0|         0|     0|     0| |vht                        |              1|                 0|         6|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in solve.default(denom, numr): system is computationally singular: reciprocal condition number = 1.01564e-19
+
+
+
+independent.var:shelter.type- dependent.var:primary.hc.provider
+ raw frequency table:
+
+|                           | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--------------------------|--------------:|-----------------:|---------:|-----:|-----:| |clinic                     |             18|                 1|        16|     1|    41| |district.hospital          |              7|                 0|        10|     0|    14| |hc.ii                      |             27|                 3|        11|     0|    40| |hc.iii                     |              8|                 0|         3|     0|    30| |hc.iv                      |              0|                 0|         0|     0|     0| |national.referral.hospital |              0|                 0|         0|     0|     2| |other                      |              0|                 0|         0|     0|     0| |private.hospital           |              1|                 0|         0|     0|     0| |vht                        |              2|                 0|         1|     0|     1|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     44|   32| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     44|   32| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     44|   32|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     44|   32| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     44|   32| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.none
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     44|   32| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     44|   32| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     50|   50|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.language.barrier
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     27|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.lack.drugs.pharmacy
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     27|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     27|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     27|   65|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     27|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     27|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.none
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     27|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.lack.drugs.pharmacy
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     39|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     39|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     39|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     39|   65|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     39|   65| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     47|   46| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     47|   46|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     47|   46| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     47|   46| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.refused.treatment
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     30|   33| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     30|   33| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     30|   33| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     30|   33|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     30|   33| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     30|   33| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     45|   53| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     45|   53| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     45|   53| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     45|   53|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     45|   53| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     45|   53| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     45|   53| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.none
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     45|   53| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     45|   53| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     60|   64| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     60|   64|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     60|   64| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.offered.treatment.phc
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     17|   45| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     17|   45| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     17|   45| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     17|   45| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     17|   45|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     17|   45| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     17|   45| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     17|   45| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     64|   41| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     64|   41| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     64|   41| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     64|   41|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     64|   41| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     64|   41| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     64|   41| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.none
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     64|   41| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     64|   41| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     40|   93| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     40|   93| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     40|   93|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     40|   93| |1  |      0|    0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:hoh.sex- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | female| male| |:--|------:|----:| |0  |     40|   93| |1  |      0|    0|
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             22|                 0|        53|     0|     1| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             22|                 0|        53|     0|     1| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             22|                 0|        53|     0|     1|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             22|                 0|        53|     0|     1| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             22|                 0|        53|     0|     1| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.none
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             22|                 0|        53|     0|     1| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             22|                 0|        53|     0|     1| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              2|                 0|         9|     0|    89|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.language.barrier
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             10|                 0|        12|     0|    69| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.lack.drugs.pharmacy
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             10|                 0|        12|     0|    69| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             10|                 0|        12|     0|    69| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             10|                 0|        12|     0|    69|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             10|                 0|        12|     0|    69| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             10|                 0|        12|     0|    69| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.none
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             10|                 0|        12|     0|    69| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.lack.drugs.pharmacy
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             14|                 0|        36|     0|    54| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             14|                 0|        36|     0|    54| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             14|                 0|        36|     0|    54| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             14|                 0|        36|     0|    54|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             14|                 0|        36|     0|    54| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              8|                 1|        23|     0|    61| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              8|                 1|        23|     0|    61|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              8|                 1|        23|     0|    61| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              8|                 1|        23|     0|    61| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.refused.treatment
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              1|                 0|         3|     0|    59| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              1|                 0|         3|     0|    59| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              1|                 0|         3|     0|    59| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              1|                 0|         3|     0|    59|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              1|                 0|         3|     0|    59| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              1|                 0|         3|     0|    59| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             16|                 0|        76|     0|     6| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             16|                 0|        76|     0|     6| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             16|                 0|        76|     0|     6| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             16|                 0|        76|     0|     6|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             16|                 0|        76|     0|     6| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             16|                 0|        76|     0|     6| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             16|                 0|        76|     0|     6| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.none
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             16|                 0|        76|     0|     6| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             16|                 0|        76|     0|     6| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              3|                 1|        13|     0|   107| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              3|                 1|        13|     0|   107|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |              3|                 1|        13|     0|   107| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.offered.treatment.phc
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             23|                 1|        24|     0|    14| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             23|                 1|        24|     0|    14| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             23|                 1|        24|     0|    14| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             23|                 1|        24|     0|    14| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             23|                 1|        24|     0|    14|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             23|                 1|        24|     0|    14| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             23|                 1|        24|     0|    14| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             23|                 1|        24|     0|    14| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             19|                 2|        66|     0|    18| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.health.referral
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             19|                 2|        66|     0|    18| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             19|                 2|        66|     0|    18| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             19|                 2|        66|     0|    18|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.support.family
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             19|                 2|        66|     0|    18| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             19|                 2|        66|     0|    18| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             19|                 2|        66|     0|    18| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.none
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             19|                 2|        66|     0|    18| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.no.answer
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             19|                 2|        66|     0|    18| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.documentation.issue
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             33|                 3|        18|     1|    78| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.facility.closed
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             33|                 3|        18|     1|    78| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.gender.discrimination
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             33|                 3|        18|     1|    78|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.delays
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             33|                 3|        18|     1|    78| |1  |              0|                 0|         0|     0|     0|
+
+FAILED: Chi squared test.  Error:
+Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels
+
+
+
+independent.var:shelter.type- dependent.var:treatment.access.difficulty.other
+ raw frequency table:
+
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             33|                 3|        18|     1|    78| |1  |              0|                 0|         0|     0|     0|
