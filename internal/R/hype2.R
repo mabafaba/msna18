@@ -40,9 +40,15 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   .write_to_log("\nNo Composite Indicators Defined.\n")
 }
 
+#### SPECIFIC TO UGANDA DATA 
+# list <- apply(data, 2, function(x) gsub("_", ".", x))
+# abc <- rbind.data.frame(list)
+# data <- abc
+
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
-
+# analysisplan <- analysisplan[c(75,76),]
+# analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   analysismessage(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
 
@@ -81,6 +87,10 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  
   }
 
+  
+  results$results %pull% ("summary.statistic") %>% do.call(rbind,.)
+
+
  if(!is.null(report_barchart_filelist)){
  filenames<-sapply(report_barchart_filelist$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
  analysisplan_rows<-sapply(report_barchart_filelist$analysisplan_list,function(x){x$analysis_plan_row[1]})
@@ -99,6 +109,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  datamerge<-data.frame(datamerge,heatmap=heatmaps_filelists$datamerge[datamerge_row,])
  }
 
+  results %>% saveRDS("./output/ResultsForfactsheets.RDS")
 
 
  results$results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic()}) %>% do.call(rbind,.) -> allsumstats
