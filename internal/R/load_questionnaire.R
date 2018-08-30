@@ -38,6 +38,7 @@ load_questionnaire<-function(data,
   names(questions) <- to_alphanumeric_lowercase(names(questions))
   names(choices) <- to_alphanumeric_lowercase(names(choices))
   names(data) <- to_alphanumeric_lowercase(names(data))
+  #choices$name <- gsub("_", ".", choices$name)
   choices.label.column.to.use <- to_alphanumeric_lowercase(choices.label.column.to.use)
   
   # sanitise
@@ -46,6 +47,7 @@ load_questionnaire<-function(data,
   insure.string.is.column.header(choices, choices.label.column.to.use)
   insure.string.is.column.header(choices, "list_name")
   questions$name <- to_alphanumeric_lowercase(questions$name)
+#  questions$name <- gsub("_", ".", questions$name)
   
   begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
   end_gr <- grep(paste(c("end_group","end group"), collapse = "|"), questions$type, ignore.case = T)
@@ -119,7 +121,7 @@ load_questionnaire<-function(data,
       if(question.name==""){return(FALSE)}
       qid<-which(questions$name==question.name)
       if(length(qid)==0){return(FALSE)}
-      if(length(c(grep("integer",questions$type[qid]),grep("decimal", questions$typep[qid])))>0){return(TRUE)}
+      if(length(c(grep("integer",questions$type[qid]),grep("decimal", questions$typep[qid]), grep("calculate", questions$type[qid])))>0){return(TRUE)}
       return(FALSE)
     }
 
