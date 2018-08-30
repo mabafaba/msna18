@@ -1,4 +1,5 @@
 apply_data_analysis_plan<-function(data,analysisplan){
+  data %>% rbind.data.frame
   analysisplan<-analysisplan[!is.na(analysisplan$dependent.var),]
   if(!is.null(analysisplan[,"repeat.var"])){
       # repeat.var.value <- unique(data[[repeat.var]])
@@ -33,23 +34,23 @@ apply_data_analysis_plan<-function(data,analysisplan){
   
    results<- apply(analysisplan,1,function(x){
     if(!(x["repeat.var"]) %in% c(NULL, "", " ", NA)){
-      this_valid_data <- data[data[,x["repeat.var"]] == as.character(x["repeat.var.value"]),]}else{
+      this_valid_data <- data[(data[,as.character(x["repeat.var"])] == as.character(x["repeat.var.value"])),]}else{
         this_valid_data<-data
       }
-    
+      
     this_valid_data<-this_valid_data[
       which(
-        !(is.na(data[,x["dependent.var"]]))),]
+        !(is.na(this_valid_data[,as.character(x["dependent.var"])]))),]
     if(!is.na(x["independent.var"])){
       this_valid_data <- this_valid_data[
         which(
-          !(is.na(data[,x["independent.var"]]))),]
+          !(is.na(this_valid_data[,as.character(x["independent.var"])]))),]
     }
     printparamlist(x,"1/2: calculating summary statistics and hypothesis tests")
     # .write_to_log(printparamlist(x,"1/2: calculating summary statistics and hypothesis tests"))
     if(is.na(x["independent.var"])|is.null(x["independent.var"])){
       indep.var <- NULL}else{
-        indep.var <- x["independent.var"]
+        indep.var <- as.character(x["independent.var"])
       }
     
     result<-analyse_indicator(this_valid_data,
@@ -80,9 +81,9 @@ apply_data_analysis_plan<-function(data,analysisplan){
         result$summary.statistic$repeat.var.value<-character(0)
         }
     }
+    # names(result) <- paste(x["dependent.var"], result$input.parameters$repeat.var.value)
     return(result)})
   
-  # names(results)<-analysisplan$dependent.var
   return(list(results=results,analysisplan=analysisplan))
   
 }

@@ -1,5 +1,5 @@
 .log<-list()
-.logfile<-"./output/log.txt"
+.logfile<-"./output/log/log.txt"
 
 .write_to_log<-function(x){
   .log<-c(.log,x)

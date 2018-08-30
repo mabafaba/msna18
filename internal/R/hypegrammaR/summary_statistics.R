@@ -122,10 +122,13 @@ percent_with_confints_select_one_groups <- function(dependent.var,
   
   formula_string <- paste0("~",dependent.var ,sep = "")
   by <- paste0("~", independent.var ,sep = "")
+
   
   result_hg_format<- # tryCatch(
   {
+
     result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
+    
     unique.dependent.var.values<- design$variables[[dependent.var]] %>% unique
     summary_with_confints<-unique.dependent.var.values %>%
       lapply(function(x){

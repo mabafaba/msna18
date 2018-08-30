@@ -21,7 +21,9 @@ sanitise_group_difference<-function(data,dependent.var,independent.var){
 
 
   if(!at_least_two_independent_groups){
-    return(list(success=FALSE,message="can not test group difference with <2 unique values in the independent variable with at least 2 records)"))
+    test.hypothesis <- hypothesis_test_empty
+    return(list(success=TRUE,message="can not test group difference with <2 unique values in the independent variable with at least 2 records)", test.hypothesis))
+    
   }
 
   return(list(success=TRUE,data=data))
@@ -30,14 +32,14 @@ sanitise_group_difference<-function(data,dependent.var,independent.var){
 
 sanitise_data <- function(data, dependent.var,independent.var,case){
   
-  data<-tryCatch({
-    numerics<-sapply(names(data),question_is_numeric)
-    data[,numerics]<-data[,numerics] %>% lapply(as.numeric) %>% as.data.frame(stringsAsFactors=F)
-    data
-    },
-    error=function(e){return(data)}
-  )
-  
+  # data<-tryCatch({
+  #   numerics<-sapply(names(data),question_is_numeric)
+  #   data[,numerics]<-data[,numerics] %>% lapply(as.numeric) %>% as.data.frame(stringsAsFactors=F)
+  #   data
+  #   },
+  #   error=function(e){return(data)}
+  # )
+  # 
   
   if(is.null(independent.var)){
     sanitise_data_no_independent(data = data, dependent.var = dependent.var, case = case)}else{
@@ -146,20 +148,21 @@ sanitise_is_good_dataframe<-function(data){
 
 
 
-
-
-
-
-
 data_sanitation_remove_not_in_samplingframe<-function(data,samplingframe_object,name="samplingframe"){
   records_not_found_in_sf<-!(samplingframe_object$add_stratum_names_to_data(data)[,samplingframe_object$stratum_variable] %in% samplingframe_object$sampling.frame$stratum)
   if(length(which(records_not_found_in_sf))==0){
     .write_to_log(paste("samplingframe",name,"complete.\n"))
     return(data)
   }
-        message(paste("FATAL:", length(which(records_not_found_in_sf)),"records discarded, because they could not be matched with samplingframe",name,"\n"))
-  .write_to_log(paste("FATAL:", length(which(records_not_found_in_sf)),"records discarded, because they could not be matched with samplingframe",name,"\n"))
-  
+  logfile<-paste0("./output/log/ERROR_LOG_records_discared",format(Sys.time(), "%y-%m-%d__%H-%M-%S"),".csv")      
+  write.csv(data[records_not_found_in_sf,],logfile)
+  message<-(paste("FATAL:",
+                  length(which(records_not_found_in_sf)),
+                  "records discarded, because they could not be matched with samplingframe.
+                  I wrote a copy of those records to",logfile,
+                  "\n sampling frame name:",name,"\n"))
+  message(message)
+  .write_to_log(message)
   .write_to_log(paste("names not found in sampling frame:\n",
                       paste(samplingframe_object$add_stratum_names_to_data(data)[,samplingframe_object$stratum_variable] %>% unique,collapse="\n")
   ))

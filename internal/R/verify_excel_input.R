@@ -6,7 +6,7 @@ verify_excel_input<-function(){
 verify_excel_input_all_files_exist<-function(){
 
   files_needed<-c(  "./internal/input_files/analysis plan.csv",
-                    "./internal/input_files/choice ranks.csv",
+                    # "./internal/input_files/choice ranks.csv",
                     "./internal/input_files/cluster_samplingframe.csv",
                     "./internal/input_files/composite_indicators.csv",
                     "./internal/input_files/data.csv",

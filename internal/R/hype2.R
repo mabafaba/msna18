@@ -4,10 +4,13 @@ message(("loading dependencies.."))
 unlink("./output/modified_data/",recursive=TRUE)
 unlink("./output/percent_aggregations_raw_csv",recursive=TRUE)
 unlink("./output/charts",recursive=TRUE)
+unlink("./output/log",recursive=TRUE)
 dir.create("./output",showWarnings = F)
 dir.create("./output/charts",showWarnings = F)
 dir.create("./output/composite_indicator_visualisation",showWarnings = F)
 dir.create("./output/tables",showWarnings = F)
+dir.create("./output/log",showWarnings = F)
+
 #load dependencies
 source("./internal/R/dependencies.R")
 cat("\14")
@@ -40,10 +43,16 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   .write_to_log("\nNo Composite Indicators Defined.\n")
 }
 
+#### SPECIFIC TO UGANDA DATA 
+# list <- apply(data, 2, function(x) gsub("_", ".", x))
+# abc <- rbind.data.frame(list)
+# data <- abc
+
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
-
-  message(silver("applying analysis plan.."))
+# analysisplan <- analysisplan[c(75,76),]
+# analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
+  analysismessage(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
 
   results$analysisplan_log<-results$analysisplan
@@ -81,6 +90,10 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  
   }
 
+  
+  results$results %pull% ("summary.statistic") %>% do.call(rbind,.)
+
+
  if(!is.null(report_barchart_filelist)){
  filenames<-sapply(report_barchart_filelist$analysisplan_list,function(x){paste(x$filename,collapse="\n")})
  analysisplan_rows<-sapply(report_barchart_filelist$analysisplan_list,function(x){x$analysis_plan_row[1]})
@@ -99,6 +112,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  datamerge<-data.frame(datamerge,heatmap=heatmaps_filelists$datamerge[datamerge_row,])
  }
 
+  results %>% saveRDS("./output/ResultsForfactsheets.RDS")
 
 
  results$results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic()}) %>% do.call(rbind,.) -> allsumstats
@@ -109,7 +123,8 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  results$analysisplan_log %>% as.data.frame %>%  map_to_file("./output/analysisplan_chart_filenames.csv")
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
  message(silver("creating html report output"))
- rmarkdown::render("./internal/report2.rmd",output_file = "../output/results.html")
+ undebug(rmdrs_decide_showtitle)
+ suppressMessages(rmarkdown::render("./internal/report2.rmd",output_file = "../output/results.html"))
  
  if(!debugging_mode){cat("\014")}  
  cat(green("\n\n\nDONE with statistical tests and plots - no issues detected.\n"))
@@ -123,5 +138,4 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
                 )))
  
  cat(silver("\n\n Now compling outputs into html - this may take a while..\n"))
- 
- 
+ browseURL("./output/results.html")

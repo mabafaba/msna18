@@ -156,6 +156,7 @@ map_to_hypothesis_test <- function(case) {
   
   
   # DIRECT REPORTING
+  hypothesis_test_functions[["CASE_group_difference_categorical_numerical"]] <- hypothesis_test_empty
   hypothesis_test_functions[["CASE_direct_reporting_numerical_"]] <- hypothesis_test_empty
   hypothesis_test_functions[["CASE_direct_reporting_categorical_"]] <- hypothesis_test_empty
   hypothesis_test_functions[["CASE_direct_reporting_numerical_categorical"]] <- hypothesis_test_empty
