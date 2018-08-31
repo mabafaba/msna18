@@ -17,6 +17,9 @@ hypothesis_test_chisquared_select_one <- function(dependent.var,
   #                      "independent.var:",independent.var,"\n\n"
   #               ))
   formula_string<-paste0("~",independent.var, "+", dependent.var)
+  # drop empty choices from levels (to avoid many empty cells, potentially breaking the chisquared test)
+  if(is.factor(design$variables[[independent.var]])){design$variables[[independent.var]]<-droplevels(design$variables[[independent.var]])}
+  if(is.factor(design$variables[[dependent.var]])){design$variables[[dependent.var]]<-droplevels(design$variables[[dependent.var]])}
   chisq<-tryCatch(
   {svychisq (formula(formula_string), design, na.rm = TRUE)
   },
@@ -51,12 +54,24 @@ hypothesis_test_empty <- function(dependent.var = NULL,
   return(results)
 }
 
-tryCatch({
+
 hypothesis_test_t_two_sample <- function(dependent.var,
                                        independent.var,
                                        design){
 
-  independent_more_than_1 <- length(unique(design$data[[independent.var]])) > 1
+  as.numeric_factors_from_names<-function(x){
+    if(is.factor((x))){x<-as.character(x)}  
+    as.numeric(x)  
+  }
+  design$variables[[dependent.var]] <- as.numeric_factors_from_names(design$variables[[dependent.var]])
+  if(is.factor(design$variables[[independent.var]])){
+    design$variables[[independent.var]]<-droplevels(design$variables[[independent.var]])
+  }
+    
+  
+  
+  
+  independent_more_than_1 <- length(unique(design$variables[[independent.var]])) > 1
       if(!independent_more_than_1){
         results <- list()}else{
   formula_string<-paste0(dependent.var, "~", independent.var)
@@ -70,7 +85,7 @@ hypothesis_test_t_two_sample <- function(dependent.var,
   ttest$statistic
 
 }
-})
+
 
 
 

@@ -82,7 +82,13 @@ rmdrs_independent_title<-function(results,i){
 # }
 rmdrs_pretty_summary_table<-function(results,i){
   mycount<-i
-  df<-labels_summary_statistic(results$results[[mycount]]$summary.statistic,T,T,T,T,T,T)
+  df<-labels_summary_statistic(results$results[[mycount]]$summary.statistic,
+                               label.dependent.var.value = T,
+                               label.independent.var.value = T,
+                               label.dependent.var = T,
+                               label.independent.var = T,
+                               independent.linebreak = F,
+                               dependent.linebreak = F)
   
   kdf<-df
   
@@ -137,9 +143,7 @@ rmdrs_pretty_summary_table<-function(results,i){
   kdf<-kdf[,which(lapply(kdf,function(x){!all(is.na(x))}) %>% unlist)]
   names(kdf)<-colnames(kdf)
   
-  if(is.null(results$results[[mycount]]$hypothesis.test$results$p.value)){
-    results$results[[mycount]]$hypothesis.test$results$p.value<-NA
-  }
+ 
 return(kdf)
 }
 
@@ -149,12 +153,16 @@ return(kdf)
 
 rmdrs_pretty_hypothesis_test_result<-function(results,i){
   mycount<-i
+  
+  if(is.null(results$results[[mycount]]$hypothesis.test$result$p.value)){
+    results$results[[mycount]]$hypothesis.test$result$p.value<-NA
+  }
 if(case=="CASE_group_difference_numerical_categorical" & !is.null(results$results[[mycount]]$hypothesis.test$name)){
-  cat_stat<-paste0(results$results[[mycount]]$hypothesis.test$name,': p=',tryround(results$result[[mycount]]$hypothesis.test$result$p.value[1],3),
-                   '; ',paste0('df=',tryround(results$results[[mycount]]$hypothesis.test$parameters$df,1)))
+  cat_stat<-paste0(results$results[[mycount]]$hypothesis.test$name,': **p = ',tryround(results$result[[mycount]]$hypothesis.test$result$p.value[1],3),"**",
+                   '\n  Parameters: ',paste0('df=',tryround(results$results[[mycount]]$hypothesis.test$parameters$df,1)))
   } else if(case=="CASE_group_difference_categorical_categorical" & !is.null(results$results[[mycount]]$hypothesis.test$name)){
     cat_stat<-paste0(results$results[[mycount]]$hypothesis.test$name,': p=',tryround(results$results[[mycount]]$hypothesis.test$results$p.value[1],3),
-                     '; ',paste0('ddf=',tryround(results$results[[mycount]]$hypothesis.test$parameters$ddf,1)))
+                     '\n  Parameters: ',paste0('ddf=',tryround(results$results[[mycount]]$hypothesis.test$parameters$ddf,1)))
   }else {
     cat_stat<-"no hypothesis test performed"
   }

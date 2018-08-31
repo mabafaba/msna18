@@ -50,21 +50,24 @@ if(results$results[[mycount]]$message!="success (or unidentified issue)"){
     case<-results$results[[mycount]]$`input.parameters`$case
     kdf<-rmdrs_pretty_summary_table(results,mycount)
     cat_stat<-rmdrs_pretty_hypothesis_test_result(results,mycount)
-  
     fig_n<- paste0("figure_",mycount)
+    # fig_nA<- paste0("figure_",mycount,"_a")
+    # fig_nB<- paste0("figure_",mycount,"_b")
       	# ht<-tryround(2+length(unique(paste0(df$repeat.var.value,df$dependent.var.value)))*0.6,1)
       	# lg<-tryround(6+length(unique(df$independent.var.value))*2,0)
         reportchartpath<-paste0(".",results$analysisplan_log[mycount,"output.regular.chart..report."])
         heatmapchartpath<-paste0(".",results$analysisplan_log[mycount,"heatmaps"])
+        
         # heatmapchartpath<-paste
-      
+
+  
           cat(knit(text = knit_expand(text =
-      			 sprintf("```{r %s, results='asis'  }\n
-      				\n
-              if(file.exists(reportchartpath)){include_graphics(reportchartpath)}            
+      			 sprintf("```{r %s, results='asis'}
               \n
-              file.exists(heatmapchartpath)
-              # if(file.exists(heatmapchartpath)){include_graphics(heatmapchartpath)}            
+      				\n
+              if(file.exists(reportchartpath) & !(reportchartpath=='.')){include_graphics(reportchartpath)}
+              \n
+              if(file.exists(heatmapchartpath) & !(heatmapchartpath=='.')){include_graphics(heatmapchartpath)}
       				\n\n\n
       				kable(kdf)
       				\n\n\n

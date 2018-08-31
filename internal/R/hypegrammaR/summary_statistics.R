@@ -15,9 +15,9 @@ percent_with_confints_select_one <- function(dependent.var,
   
   # if dependent var have only one value, just return that:
   
-  dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
+  dependent_more_than_1 <- length(unique(design$variables[[dependent.var]])) > 1
   if(!dependent_more_than_1){
-    dependent.var.value=unique(data[[dependent.var]])
+    dependent.var.value=unique(design$variables[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
 
   tryCatch(expr={result_hg_format<- 
@@ -49,11 +49,11 @@ percent_with_confints_select_mult <- function(dependent.var,
   
   
   # if dependent and independent variables have only one value, just return that:
-  choices <- data[,choices_for_select_multiple(dependent.var, data)]
+  choices <- data[,choices_for_select_multiple(dependent.var, design$variables)]
   
-  dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
+  dependent_more_than_1 <- length(unique(design$variables[[dependent.var]])) > 1
   if(!dependent_more_than_1){
-    dependent.var.value=unique(data[[dependent.var]])
+    dependent.var.value=unique(design$variables[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
   result_hg_format <- lapply(names(choices), function(x){
     design$variables[[x]]<-as.logical(design$variables[[x]])    

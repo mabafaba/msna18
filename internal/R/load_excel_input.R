@@ -84,7 +84,6 @@ if(is.clustered()){
   data<-data_sanitation_remove_not_in_samplingframe(data,cluster_sf,"for_strata")
   cluster_weighting(data)  
 }
-
 # select one of them, or combine them if both exist:
 if(is.stratified() & !is.clustered()){weights_of<-stratfication_weighting
 

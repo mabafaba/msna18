@@ -34,7 +34,6 @@ map_to_analysis_plan_all_vars_as_dependent <- function(repeat.var = NULL ,indepe
     
     analysis_plan_data_table <- analysis_plan_data_table %>% analysisplan_remove_where_select_multiple_choice %>% analysisplan_remove_dependent_same_as_independent
     
-    
       return(analysis_plan_data_table)}
 
 # map to analysis plan
@@ -96,7 +95,7 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
   } 
   analysis_plan_user<-rbind(analysis_plan_user[analysis_plan_user$variable!="..all..",],analysis_plan_user_ALL) %>% unique
   
-  
+
   
   analysis_plan_user<-analysis_plan_user[!apply(analysis_plan_user,1,function(x){all(is.na(x)|grepl("^[[:space:]]*$",x))}),]
   has_no_var<-analysis_plan_user$variable %>% (function(x){is.na(x)|grepl("^[[:space:]]*$",x)})
@@ -155,6 +154,13 @@ map_to_analysisplan_custom_user_plan<-function(data,analysis_plan_user){
     analysisplan$output.regular.chart..report.[analysisplan$output.regular.chart..report.!="yes"]<-"no"
     analysisplan$output.Map..Mode[analysisplan$output.Map..Mode!="yes"]<-"no"
     analysisplan$output.Map..Average.Percent..of.mode.[analysisplan$output.Map..Average.Percent..of.mode.!="yes"]<-"no"
+    
+    
+    sort_df_by_cols<-function(df,cols){
+      df[do.call(order,df[,cols,drop=F]),]
+    }
+    analysisplan<-sort_df_by_cols(analysisplan,c("independent.var","dependent.var","repeat.var"))
+    
     # just in case
     return(analysisplan)
 }
