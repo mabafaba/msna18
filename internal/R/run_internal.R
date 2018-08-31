@@ -24,7 +24,7 @@ data_parameters<-read.csv("./internal/input_files/data_parameters.csv",stringsAs
 
 # if(readline("previous script outputs will be deleted / overwritten. type 'yes' to confirm:")!="yes"){stop("user cancelled script execution")}
 
-message("deleting all previous script outputs with absolutely no warning lol")
+logmessage("deleting all previous script outputs")
 
 unlink("./output/modified_data/",recursive=TRUE) 
 unlink("./output/percent_aggregations_raw_csv",recursive=TRUE) 
@@ -97,5 +97,5 @@ summary_stats_no_disaggregation <- function(data){
 
 
 write.csv(data_with_composite_indicators,"./output/modified_data/data_w_weighted_counts.csv")
-message(paste0("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsee '",getwd(),"/output' for your results!"))
+logmessage(paste0("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsee '",getwd(),"/output' for your results!"))
 

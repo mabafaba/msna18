@@ -220,14 +220,14 @@ map_to_file<-function(object,filename,...){
     
   },
   error=function(e){
-    message(paste0("Could not write to the file called:\n",filename))
-    message(paste0("error:\n",e$message))
-    message("Please close the file if it is open in any application and make sure the folder I am trying to write to exists.")
-    message("to try again and continue the script, type 't'. To skip writing this file and countine the script, type 's'. To cancel the whole script, type 'c'. Then press enter.")
+    logmessage(paste0("Could not write to the file called:\n",filename))
+    logmessage(paste0("error:\n",e$message))
+    logmessage("Please close the file if it is open in any application and make sure the folder I am trying to write to exists.")
+    logmessage("to try again and continue the script, type 't'. To skip writing this file and countine the script, type 's'. To cancel the whole script, type 'c'. Then press enter.")
     whattodo<-readline("Try again (t), skip this file (s), or cancel script (c)?: ")  
     
     if(!(whattodo %in% c("t","s","c"))){
-      message("invalid input. You must type 't' to Try again, 's' to skip this file or 'c' to cancel the script (otherwise I'll abort the script, equivalent to typing 'c').")
+      logmessage("invalid input. You must type 't' to Try again, 's' to skip this file or 'c' to cancel the script (otherwise I'll abort the script, equivalent to typing 'c').")
       whattodo<-readline("Try again (t), skip this file (s), or cancel script (c)?: ")  
     }
     if(!(whattodo %in% c("t","s","c"))){
@@ -236,7 +236,7 @@ map_to_file<-function(object,filename,...){
     
     if(whattodo=="t"){return(map_to_file(object,filename))}
     if(whattodo=="s"){
-      message("WRITING TO FILE HAS BEEN SKIPPED. Proceeding with the script.")
+      logmessage("WRITING TO FILE HAS BEEN SKIPPED. Proceeding with the script.")
       return(NULL)}
     if(whattodo=="c"){stop("Could not write to a file, and user decided to cancel the script.")}
 
