@@ -156,13 +156,11 @@ data_sanitation_remove_not_in_samplingframe<-function(data,samplingframe_object,
   }
   logfile<-paste0("./output/log/ERROR_LOG_records_discared",format(Sys.time(), "%y-%m-%d__%H-%M-%S"),".csv")      
   write.csv(data[records_not_found_in_sf,],logfile)
-  message<-(paste("FATAL:",
+  logmessage(paste("FATAL:",
                   length(which(records_not_found_in_sf)),
                   "records discarded, because they could not be matched with samplingframe.
                   I wrote a copy of those records to",logfile,
                   "\n sampling frame name:",name,"\n"))
-  message(message)
-  .write_to_log(message)
   .write_to_log(paste("names not found in sampling frame:\n",
                       paste(samplingframe_object$add_stratum_names_to_data(data)[,samplingframe_object$stratum_variable] %>% unique,collapse="\n")
   ))

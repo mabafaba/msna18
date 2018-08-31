@@ -22,7 +22,6 @@ source("./internal/R/rmarkdown_resultlist_utililities.R")
 # make sure all files exist:
 # load all the excel input files:
 source("./internal/R/load_excel_input.R",local = T)
-
 # this creates following objects:
 # data  # questionnaire  # data_parameters # analysis_plan_user
 # cluster_formula()  # weights_of() # question_is_skipped()
@@ -32,13 +31,13 @@ source("./internal/R/load_excel_input.R",local = T)
 # just give weighting a shot to see if the sampling frame is complete:
 test_weights<-weights_of(data);rm(test_weights)
 # COMPOSITE INDICATORS:
-message(silver("making composite indicators.."))
+logmessage(silver("making composite indicators.."))
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 if(nrow(composite_indicators_definitions_weighted_counts)>0){
   visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
   data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
   data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
-  message(green("data with composite indicators exported to ./output/modified_data/data_with_composite_indicators.csv"))
+  logmessage(green("data with composite indicators exported to ./output/modified_data/data_with_composite_indicators.csv"))
 }else{
   .write_to_log("\nNo Composite Indicators Defined.\n")
 }
@@ -52,7 +51,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
 # analysisplan <- analysisplan[c(75,76),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
-  analysismessage(silver("applying analysis plan.."))
+  logmessage(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
 
   results$analysisplan_log<-results$analysisplan
@@ -91,7 +90,6 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   }
 
   
-  results$results %pull% ("summary.statistic") %>% do.call(rbind,.)
 
 
  if(!is.null(report_barchart_filelist)){
@@ -122,7 +120,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  map_to_file(datamerge,"./output/datamerge.csv")
  results$analysisplan_log %>% as.data.frame %>%  map_to_file("./output/analysisplan_chart_filenames.csv")
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
- message(silver("creating html report output"))
+ logmessage(silver("creating html report output"))
  undebug(rmdrs_decide_showtitle)
  suppressMessages(rmarkdown::render("./internal/report2.rmd",output_file = "../output/results.html"))
  
@@ -138,4 +136,6 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
                 )))
  
  cat(silver("\n\n Now compling outputs into html - this may take a while..\n"))
+ cat(green("\n\n\nScripts finished. Opening complied results in browser.\n"))
+ 
  browseURL("./output/results.html")
