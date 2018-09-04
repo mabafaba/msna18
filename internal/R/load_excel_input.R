@@ -2,7 +2,7 @@
 verify_excel_input()
 
 # data 
-message(silver("loading and preparing data.."))
+logmessage(silver("loading and preparing data.."))
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
 
 
@@ -43,7 +43,7 @@ levels_for_cat <- function(data, questionnaire){
 ## Loading cluster sampling units
 
 # data parameters
-message(silver("loading and preparing parameters.."))
+logmessage(silver("loading and preparing parameters.."))
 
 data_parameters<-read.csv("./internal/input_files/parameters.csv",stringsAsFactors = F) 
 
@@ -66,7 +66,7 @@ cluster_formula <- if(cluster_deff){
 
 
 
-message(silver("loading and preparing sampling frames.."))
+logmessage(silver("loading and preparing sampling frames.."))
 
 # make the weighting functions based on strata sampling frame and cluster sampling frame
 is.stratified<-function(){any(grep("stratified", data_parameters$sampling.strategy[1])>0)}
@@ -84,7 +84,6 @@ if(is.clustered()){
   data<-data_sanitation_remove_not_in_samplingframe(data,cluster_sf,"for_strata")
   cluster_weighting(data)  
 }
-
 # select one of them, or combine them if both exist:
 if(is.stratified() & !is.clustered()){weights_of<-stratfication_weighting
 
@@ -107,7 +106,7 @@ if(!is.stratified() & !is.clustered()){
 ###################  
 
 
-message(silver("loading and preparing questionnaire.."))
+logmessage(silver("loading and preparing questionnaire.."))
 
 # load questionnaire and create associated functions:
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo questions.csv",
@@ -117,7 +116,7 @@ questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/
 
 # cleaning and getting the factors out 
 data <- levels_for_cat(data, questionnaire)
-message(silver("loading and preparing analysis plan.."))
+logmessage(silver("loading and preparing analysis plan.."))
 
 # load analysis definitions
 analysis_plan_user<-read.csv("./internal/input_files/analysis plan.csv",stringsAsFactors = F)

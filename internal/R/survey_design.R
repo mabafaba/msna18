@@ -144,8 +144,8 @@ load_samplingframe.stratification <- function(sampling.frame.file,
     
     
   }
-  message(
-    "Sampling frame loaded. you can now use .._weighted() functions with automatic weighting"
+  logmessage(
+    "Sampling frame loaded."
   )
   if(return.stratum.populations){return(population.counts)}
 }

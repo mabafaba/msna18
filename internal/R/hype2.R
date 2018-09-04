@@ -12,7 +12,7 @@ dir.create("./output/tables",showWarnings = F)
 dir.create("./output/log",showWarnings = F)
 
 #load dependencies
-source("./internal/R/dependencies.R")
+suppressMessages(source("./internal/R/dependencies.R"))
 cat("\14")
 source("./internal/R/survey_design2.R")
 source("./internal/R/read_excel_output.R")
@@ -32,13 +32,13 @@ source("./internal/R/load_excel_input.R",local = T)
 # just give weighting a shot to see if the sampling frame is complete:
 test_weights<-weights_of(data);rm(test_weights)
 # COMPOSITE INDICATORS:
-message(silver("making composite indicators.."))
+logmessage(silver("making composite indicators.."))
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 if(nrow(composite_indicators_definitions_weighted_counts)>0){
   visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
   data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
   data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
-  message(green("data with composite indicators exported to ./output/modified_data/data_with_composite_indicators.csv"))
+  logmessage(green("data with composite indicators exported to ./output/modified_data/data_with_composite_indicators.csv"))
 }else{
   .write_to_log("\nNo Composite Indicators Defined.\n")
 }
@@ -48,12 +48,13 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 
 
 # ANALYSIS 
+
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
 #analysisplan <- analysisplan[c(1:22),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
-  analysismessage(silver("applying analysis plan.."))
+  logmessage(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
-
+  results$analysisplan$repeat.var
   results$analysisplan_log<-results$analysisplan
   results$analysisplan_log$message<-lapply(results$results,function(x){x$message}) %>% unlist
 # OUTPUT
@@ -63,13 +64,12 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
    return(x)
   })
   datamerge<-map_resultlist_to_datamerge(results$results,rows = c("repeat.var","repeat.var.value"),ignore = c("se","min","max"),labelise.values =F,labelise.varnames =F)
-  
   results$analysisplan_log<-results$analysisplan
  
   # analysisplan$output.minimal.chart...width.of.quarter.A4.landscape..FS.<-"yes"
   # analysisplan$output.regular.chart..report.<-"yes"
   # analysisplan$output.heatmap<-"yes"
-  # 
+  
   
   # make mini barcharts
   mini_barchart_filelists<-map_resultslist_to_output_minibarcharts(results)
@@ -90,7 +90,6 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   }
 
   
-  results$results %pull% ("summary.statistic") %>% do.call(rbind,.)
 
 
  if(!is.null(report_barchart_filelist)){
@@ -111,7 +110,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  datamerge<-data.frame(datamerge,heatmap=heatmaps_filelists$datamerge[datamerge_row,])
  }
 
-  results %>% saveRDS("./output/ResultsForfactsheets.RDS")
+ results %>% saveRDS("./output/ResultsForfactsheets.RDS")
 
 
  results$results %>% lapply(function(x){x$summary.statistic %>% labels_summary_statistic()}) %>% do.call(rbind,.) -> allsumstats
@@ -121,11 +120,12 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  map_to_file(datamerge,"./output/datamerge.csv")
  results$analysisplan_log %>% as.data.frame %>%  map_to_file("./output/analysisplan_chart_filenames.csv")
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
- message(silver("creating html report output"))
+
+ logmessage(silver("creating html report output"))
 
  suppressMessages(rmarkdown::render("./internal/report2.rmd",output_file = "../output/results.html"))
  
- if(!debugging_mode){cat("\014")}  
+ cat("\014")  
  cat(green("\n\n\nDONE with statistical tests and plots - no issues detected.\n"))
  cat(paste0("see ", getwd(),"/","/output/ for results."))
  cat(silver(paste("to process results in R, the following objects are now available:\n",
@@ -137,4 +137,5 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
                 )))
  
  cat(silver("\n\n Now compling outputs into html - this may take a while..\n"))
+ cat(green("\n\n\nScripts finished. Opening complied results in browser.\n"))
  browseURL("./output/results.html")
