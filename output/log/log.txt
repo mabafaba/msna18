@@ -597,4 +597,27 @@ Error in solve.default(denom, numr): system is computationally singular: recipro
 independent.var:group_stratum- dependent.var:access_comms
  raw frequency table:
 
+<<<<<<< Updated upstream
 | IDP| NONDISPLACED| RETURNEE| |---:|------------:|--------:| | 109|          570|      210| |   0|            4|        0| |   0|           17|        0| |  17|          113|       60| |  23|          112|       33|
+=======
+|   | concrete.brick| makeshift.shelter| mud.brick| other| tukul| |:--|--------------:|-----------------:|---------:|-----:|-----:| |0  |             33|                 3|        18|     1|    78| |1  |              0|                 0|         0|     0|     0|
+
+which necessary input files exist?
+
+|                                                        |     | |:-------------------------------------------------------|:----| |./internal/input_files/analysis plan.csv                |TRUE | |./internal/input_files/cluster_samplingframe.csv        |TRUE | |./internal/input_files/composite_indicators.csv         |TRUE | |./internal/input_files/data.csv                         |TRUE | |./internal/input_files/kobo choices.csv                 |TRUE | |./internal/input_files/kobo questions.csv               |TRUE | |./internal/input_files/parameters.csv                   |TRUE | |./internal/input_files/stratification_samplingframe.csv |TRUE |
+
+samplingframe for_stratification complete.
+
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+
+data sanitation decided not to produce summary statistics. Message:
+
+can not test group difference with 20 or more unique values in the independent variable
+>>>>>>> Stashed changes

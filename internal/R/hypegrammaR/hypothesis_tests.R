@@ -59,6 +59,7 @@ hypothesis_test_t_two_sample <- function(dependent.var,
                                        independent.var,
                                        design){
 
+
   as.numeric_factors_from_names<-function(x){
     if(is.factor((x))){x<-as.character(x)}  
     as.numeric(x)  
@@ -69,8 +70,7 @@ hypothesis_test_t_two_sample <- function(dependent.var,
   }
     
   
-  
-  
+
   independent_more_than_1 <- length(unique(design$variables[[independent.var]])) > 1
       if(!independent_more_than_1){
         results <- list()}else{
@@ -87,8 +87,20 @@ hypothesis_test_t_two_sample <- function(dependent.var,
 }
 
 
-
-
+hypothesis_test_logistic_regression <- function(dependent.var, 
+                                                independent.var, 
+                                                design){
+  dependent_more_than_1 <- length(unique(design$variables[[dependent.var]])) > 1
+  if(!dependent_more_than_1){
+    sanitised <-sanitise_data(data,dependent.var,independent.var,case = case)
+    results <- list()}else{
+      formula_string <- paste0(dependent.var,"~", independent.var, sep = "")
+      test <- svyglm(as.formula(formula_string), design, family=quasibinomial)
+      summary <- summary(test)
+      results <- list()
+      results$result <- list(coefficients = unname(summary$coefficients), decision = summary$effects)
+    }
+}
 
 hypothesis_test_z <- function(dependent.var,
                                independent.var,

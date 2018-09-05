@@ -63,6 +63,9 @@ analyse_indicator<-function(data,
   
   if(data_sanitised$success){
     data<-data_sanitised$data
+    if(question_is_numeric(independent.var)){
+      data[[independent.var]] <- as.numeric(data[[independent.var]])
+    }
   }else{
     return(
       empty_result(input.parameters,data_sanitised$message)
