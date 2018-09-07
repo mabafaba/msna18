@@ -54,7 +54,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   logmessage(silver("applying analysis plan.."))
   results<-apply_data_analysis_plan(data,analysisplan)
-  results$analysisplan$repeat.var
+results$analysisplan$repeat.var
   results$analysisplan_log<-results$analysisplan
   results$analysisplan_log$message<-lapply(results$results,function(x){x$message}) %>% unlist
 # OUTPUT

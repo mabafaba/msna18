@@ -123,8 +123,6 @@ map_to_summary_statistic <- function(case) {
   summary_functions$CASE_group_difference_categorical_categorical <- percent_with_confints_groups
   summary_functions$CASE_group_difference_numerical_categorical <- confidence_intervals_mean_groups
   
-  
-  
   # return corresponding summary function:
   
   return(summary_functions[[case]])

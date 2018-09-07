@@ -1,6 +1,4 @@
-# setwd to current
-
-if(!("rstudioapi" %in% installed.packages()[,"Package"])){install.packages("rstudioapi")};require("rstudioapi");setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+if(!("rstudioapi" %in% installed.packages()[,"Package"])){install.packages("rstudioapi")};require("rstudioapi")
 rm(list = ls())
 
 # load all the codes, libraries etc.:
@@ -10,8 +8,8 @@ source("./internal/R/dependencies.R")
 list.files()
 data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F)
 # load questionnaire and create associated functions:
-questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo_questions.csv",
-                                  choices.file = "./internal/input_files/kobo_choices.csv",
+questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo questions.csv",
+                                  choices.file = "./internal/input_files/kobo choices.csv",
                                   choices.label.column.to.use = "name")
 
 
@@ -76,11 +74,11 @@ colnames(myset) = sm_variables
 
 #### FIX IT FOR THE OTHERS 
 data_no_sm <- data[!(names(data) %in% sm_variables)] 
-data_no_sm2 <- data_no_sm[-c(761:769)] ## dont know why but the gps part made the code crashed so I have just removed it
+# data_no_sm2 <- data_no_sm[-c(761:769)] ## dont know why but the gps part made the code crashed so I have just removed it
 
 
 convert_to_xml_all_others <- function(data_no_sm, questionnaire, choices.column.to.use){
-no_sm_vars <- names(data_no_sm) %>% to_alphanumeric_lowercase
+no_sm_vars <- to_alphanumeric_lowercase_colnames_df(data_no_sm)
 
 recoded_data <- lapply(no_sm_vars, function(var){
     choices_questionnaire <- questionnaire$choices_per_variable[[var]]$name
@@ -114,7 +112,7 @@ recoded_data <- lapply(no_sm_vars, function(var){
 return(recoded_data)
 }
 
-named<-convert_to_xml_all_others(data_no_sm2, questionnaire, choices.column.to.use = NA) 
+named<-convert_to_xml_all_others(data_no_sm, questionnaire, choices.column.to.use = NA)
 named %>% head
 
 
