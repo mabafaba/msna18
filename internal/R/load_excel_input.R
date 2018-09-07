@@ -82,7 +82,6 @@ if(is.clustered()){
   cluster_sf<-excel_csv_inputs_sampling_frame_cluster_to_weighting_function()
   cluster_weighting<-cluster_sf$weights_of
   data<-data_sanitation_remove_not_in_samplingframe(data,cluster_sf,"for_strata")
-  cluster_weighting(data)  
 }
 
 # select one of them, or combine them if both exist:
@@ -93,9 +92,6 @@ if(is.stratified() & !is.clustered()){weights_of<-stratfication_weighting
 if(!is.stratified() & is.clustered()){weights_of<-cluster_weighting}
 
 if(is.stratified() & is.clustered()){
-  # BLIND CODE
-  # KNOWN ISSUE
-  # must be nested / 
   weights_of<-combine_weighting_functions(stratfication_weighting,cluster_weighting)
 }
 
@@ -108,7 +104,6 @@ if(!is.stratified() & !is.clustered()){
 
 
 logmessage(silver("loading and preparing questionnaire.."))
-
 # load questionnaire and create associated functions:
 questionnaire<-load_questionnaire(data,questions.file = "./internal/input_files/kobo questions.csv",
                                   choices.file = "./internal/input_files/kobo choices.csv",
@@ -122,4 +117,8 @@ logmessage(silver("loading and preparing analysis plan.."))
 # load analysis definitions
 analysis_plan_user<-read.csv("./internal/input_files/analysis plan.csv",stringsAsFactors = F)
 analysis_plan_user[,c("repeat.for","disaggregate.by","variable")]<-analysis_plan_user[,c("repeat.for", "disaggregate.by", "variable")] %>% lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors=F)
+
+
+
+
 

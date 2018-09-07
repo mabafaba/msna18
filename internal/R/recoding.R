@@ -71,7 +71,7 @@ recode_select_multiple <- function(data, x, value, condition, to){
   x<-as.character(x)
   if(is.null(value)){stop("At least one parameter must be provided")}
   x_recoded <- rep(NA, length(x))
-  value <- value %>% strsplit(",") %>% as.vector %>% unlist %>% gsub(" ", "", .)
+  value <- value %>% strsplit("[[:space:]]*,[[:space:]]*|[[:space:]]") %>% as.vector %>% unlist %>% gsub(" ", "", .)
   ####match any
   if(condition == "any"){
     match_any <- x %>% as.character %>% strsplit(" ") %>% lapply(function(x){

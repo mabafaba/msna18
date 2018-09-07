@@ -13,8 +13,6 @@ percent_with_confints_select_one <- function(dependent.var,
                                              na.rm = TRUE){
   
   
-  # if dependent var have only one value, just return that:
-  
   dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
   if(!dependent_more_than_1){
     dependent.var.value=unique(data[[dependent.var]])

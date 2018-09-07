@@ -10,7 +10,6 @@ sanitise_group_difference<-function(data,dependent.var,independent.var){
     return(list(success=FALSE,message="can not test group difference with <2 different values in the dependent variable"))
   }
 
-
   which_independent_more_than_one_record <- table(data[[independent.var]])
   which_independent_more_than_one_record <- which_independent_more_than_one_record[which(which_independent_more_than_one_record>1)]
   which_independent_more_than_one_record <- names(which_independent_more_than_one_record)

@@ -44,7 +44,7 @@ rmdrs_title(results,mycount,parameter = "repeat.var.value",prefix = "#### subset
 
 if(results$results[[mycount]]$message!="success (or unidentified issue)"){
     cat(results$results[[mycount]]$message)
-    break
+    next
     }
     
     case<-results$results[[mycount]]$`input.parameters`$case
@@ -61,10 +61,10 @@ if(results$results[[mycount]]$message!="success (or unidentified issue)"){
           cat(knit(text = knit_expand(text =
       			 sprintf("```{r %s, results='asis'  }\n
       				\n
-              if(file.exists(reportchartpath)){include_graphics(reportchartpath)}            
+
+              if(file.exists(reportchartpath)){if(file.info(reportchartpath)$size>0){include_graphics(reportchartpath)}}
               \n
-              file.exists(heatmapchartpath)
-              # if(file.exists(heatmapchartpath)){include_graphics(heatmapchartpath)}            
+              if(file.exists(reportchartpath)){if(file.info(reportchartpath)$size>0){include_graphics(reportchartpath)}}
       				\n\n\n
       				kable(kdf)
       				\n\n\n

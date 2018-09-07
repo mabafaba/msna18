@@ -52,12 +52,13 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 # analysisplan <- analysisplan[c(75,76),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   logmessage(silver("applying analysis plan.."))
+  data$calc.household<-NA
   results<-apply_data_analysis_plan(data,analysisplan)
-
+  results$results %>% lapply(function(x){x[["message"]]})
   results$analysisplan_log<-results$analysisplan
-  results$analysisplan_log$message<-lapply(results$results,function(x){x$message}) %>% unlist
+  
 # OUTPUT
-  # 
+
   results_labeled_values<-lapply(results$results,function(x){
     x$summary.statistics<-labels_summary_statistic(x$summary.statistics)
    return(x)
@@ -69,7 +70,6 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
   # analysisplan$output.minimal.chart...width.of.quarter.A4.landscape..FS.<-"yes"
   # analysisplan$output.regular.chart..report.<-"yes"
   # analysisplan$output.heatmap<-"yes"
-  # 
   
   # make mini barcharts
   mini_barchart_filelists<-map_resultslist_to_output_minibarcharts(results)
@@ -120,11 +120,11 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
  map_to_file(datamerge,"./output/datamerge.csv")
  results$analysisplan_log %>% as.data.frame %>%  map_to_file("./output/analysisplan_chart_filenames.csv")
  results$results %>% lapply(function(x){x$summary.statistic}) %>% lapply(labels_summary_statistic,T,T,T,T) %>% do.call(rbind,.) %>%  map_to_file("./output/master_table_long.csv")
+ 
  logmessage(silver("creating html report output"))
- undebug(rmdrs_decide_showtitle)
  suppressMessages(rmarkdown::render("./internal/report2.rmd",output_file = "../output/results.html"))
  
- if(!debugging_mode){cat("\014")}  
+ cat("\014")  
  cat(green("\n\n\nDONE with statistical tests and plots - no issues detected.\n"))
  cat(paste0("see ", getwd(),"/","/output/ for results."))
  cat(silver(paste("to process results in R, the following objects are now available:\n",

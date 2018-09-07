@@ -55,10 +55,7 @@ analyse_indicator<-function(data,
   }
   
   
-  data_sanitised<-sanitise_data(data,
-                                dependent.var,
-                                independent.var,
-                                case)
+  data_sanitised<-apply_data_sanitations(data,dependent.var,independent.var)
   
   
   if(data_sanitised$success){

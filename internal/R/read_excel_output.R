@@ -29,7 +29,7 @@ excel_csv_inputs_sampling_frame_stratification_to_weighting_function<-function(f
   }
   
   # make a weighting function from the sampling frame, that assumes that the strata names are in the data
-  strat_weigthing<-weighting_fun_from_samplingframe(sampling.frame,
+  strat_weighting<-weighting_fun_from_samplingframe(sampling.frame,
                                                              data.stratum.column = "these_are_all_the_strata_names", # <- matching name used by add_stratum_names_to_data()
                                                              sampling.frame.stratum.column = "stratum",
                                                              sampling.frame.population.column = "population")
@@ -37,7 +37,7 @@ excel_csv_inputs_sampling_frame_stratification_to_weighting_function<-function(f
   # make a weighting function that adds the strata names to the data, then returns the weights using the function above:
   weights_of<-function(df){
     df<-add_stratum_names_to_data(df)
-    strat_weigthing(df)
+    strat_weighting(df)
   }
   # that's the function we want:
   return(list(weights_of=weights_of,sampling.frame=sampling.frame,add_stratum_names_to_data=add_stratum_names_to_data,stratum_variable="these_are_all_the_strata_names"))    
@@ -50,8 +50,11 @@ excel_csv_inputs_sampling_frame_stratification_to_weighting_function<-function(f
 excel_csv_inputs_sampling_frame_cluster_to_weighting_function<-function(file="./internal/input_files/cluster_samplingframe.csv"){
   # read csv file
   rawsf<-read.csv(file,stringsAsFactors = F,skip = 1,header = T) %>% remove.empty.rows
+  # KNOWN ISSUE: fails if first row is  empty in all cells
   stratum_var_separator_string<-"/---CLUSTER---/"
   stratanames.rawcols<-paste0(c("first","second","third"),".cluster.name.variable")
+  
+  if(!all(stratanames.rawcols %in% colnames(rawsf))){stop("Issue with sampling frames. It's a weird one, but you might be able to fix it by writing 'please work!' in the cell A1 of the samplingframe sheets. Otherwise please double check that the input file sampling frame sheets are exactly identical to the latest input template.")}
   stratanames.rawcols<-stratanames.rawcols[!is.na(rawsf[1,stratanames.rawcols]) &
                                              rawsf[1,stratanames.rawcols] != ""] %>% as.character
   

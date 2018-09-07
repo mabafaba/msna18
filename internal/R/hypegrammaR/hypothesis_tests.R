@@ -1,5 +1,10 @@
 hypothesis_test_chisquared<-function(dependent.var,independent.var,design){
-  
+  # check if data ok; if not return empty hypothesis test
+  sanitised<-datasanitation_design(design,dependent.var,independent.var,
+                                   datasanitation_hypothesistest_chisq)
+  if(!sanitised$success){return(hypothesis_test_empty(dependent.var,independent.var,message=sanitised$message))}
+  # update design object from sanitation
+  design<-sanitised$design
   if(tryCatch({question_is_select_multiple(dependent.var)},error={FALSE})){
     return(hypothesis_test_chisquared_select_multiple(dependent.var,independent.var,design))
   }
@@ -43,11 +48,12 @@ hypothesis_test_chisquared_select_one <- function(dependent.var,
 
 hypothesis_test_empty <- function(dependent.var = NULL,
                                        independent.var = NULL,
-                                       design = NULL, ...){
+                                       design = NULL,
+                                       message="No hypothesis test",...){
   results<-list()
   results$result <- c()
   results$parameters <- c()
-  results$name<-"No Hypothesis test"
+  results$name<-message
   return(results)
 }
 
