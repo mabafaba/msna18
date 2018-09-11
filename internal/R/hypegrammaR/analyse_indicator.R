@@ -67,19 +67,14 @@ analyse_indicator<-function(data,
     )
   }
   
-  
+
   # map from case to appropriate summary statistic, hypothesis test and visualisation:
-  
-  
-  design <- map_to_design(data = data, cluster.var = NULL)
-  
+  design <- map_to_design(data = data, cluster.var = NULL, weights = data[["weights"]]) #LIBYA ONLY
   
   summarise.result<- map_to_summary_statistic(case)
 
   test.hypothesis <- map_to_hypothesis_test(case)
   visualisation <- map_to_visualisation(case)
-  
-  
   
   # apply the summary statistic, hypothesis test to the given data and survey design:
   summary.result  <- summarise.result(dependent.var = dependent.var,independent.var, design = design, data = data)

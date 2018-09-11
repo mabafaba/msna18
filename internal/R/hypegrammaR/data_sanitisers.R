@@ -1,7 +1,7 @@
 datasanitation_design<-function(design,dependent.var,independent.var,sanitation_function){
   sanitised<-sanitation_function(design$variables,dependent.var,independent.var)
   if(sanitised$success){
-    sanitised$design<-map_to_design(sanitised$data)
+    sanitised$design<-map_to_design(sanitised$data, weights = sanitised$data[["weights"]])
   }else{
     sanitised$design<-NULL
   }

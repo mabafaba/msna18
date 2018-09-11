@@ -175,7 +175,7 @@ weighting_fun_from_samplingframe <- function(sampling.frame,
     sample.counts<-stratify.count.sample(data.strata = df[[data.stratum.column]],sf.strata = population.counts)
     
     # make sure all record's strata can be found in the sampling frame:
-    if("weights" %in% names(df)){stop("'weights' is not allowed as a column name (will be calculated from the sampling frame)")}
+    if("weights" %in% names(df)){warning("'weights' is used as a column name (will not be calculated from the sampling frame)")}
     if(!all(names(sample.counts) %in% names(population.counts))){stop("all strata names in column '",
                                                                       data.stratum.column,"' must also appear in the loaded sampling frame.")}
     # population counts taken from weights_of() enclosing environment, created in load_samplingframe()

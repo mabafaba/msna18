@@ -10,10 +10,13 @@
 #' @examples map_to_design(data,cluster.var="cluster_id")
 #' @export
 map_to_design <- function(data,
-                          cluster.var = NULL) {
+                          cluster.var = NULL, 
+                          weights = NULL) {
   
   cluster.id.formula <- cluster_formula()
-  strata.weights <- weights_of(data)
+  if(is.null(weights)){
+  strata.weights <- weights_of(data)}else{
+    strata.weights <- weights} 
   survey.design <- svydesign(data = data,
                              ids = formula(cluster.id.formula),
                              strata = names(strata.weights),

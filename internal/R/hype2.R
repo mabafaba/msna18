@@ -43,16 +43,18 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 }
 
 #### SPECIFIC TO UGANDA DATA 
-# list <- apply(data, 2, function(x) gsub("_", ".", x))
-# abc <- rbind.data.frame(list)
+# list <- apply(data, 2, function(x) gsub("_", ".", x, stringsAsFactors = F))
+# abc <- rbind.data.frame(list, stringsAsFactors = F)
 # data <- abc
 
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
+  #subset to make the whole thing go faster
+  analysisplan <- analysisplan[1:20,]
 # analysisplan <- analysisplan[c(75,76),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   logmessage(silver("applying analysis plan.."))
-  data$calc.household<-NA
+
   results<-apply_data_analysis_plan(data,analysisplan)
   results$results %>% lapply(function(x){x[["message"]]})
   results$analysisplan_log<-results$analysisplan
