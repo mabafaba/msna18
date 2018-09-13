@@ -118,7 +118,9 @@ logmessage(silver("loading and preparing analysis plan.."))
 analysis_plan_user<-read.csv("./internal/input_files/analysis plan.csv",stringsAsFactors = F)
 analysis_plan_user[,c("repeat.for","disaggregate.by","variable")]<-analysis_plan_user[,c("repeat.for", "disaggregate.by", "variable")] %>% lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors=F)
 
-
-
+#####LIBYA
+analysis_plan_user$repeat.for %<>% gsub("_", ".", .) %>% to_alphanumeric_lowercase
+analysis_plan_user$variable %<>% gsub("_", ".", .) %>% to_alphanumeric_lowercase
+analysis_plan_user$disaggregate.by %<>% gsub("_", ".", .) %>% to_alphanumeric_lowercase
 
 

@@ -1,4 +1,5 @@
 cat("\14")
+
 message(("loading dependencies.."))
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE)
@@ -8,6 +9,7 @@ unlink("./output/log",recursive=TRUE)
 dir.create("./output",showWarnings = F)
 dir.create("./output/charts",showWarnings = F)
 dir.create("./output/composite_indicator_visualisation",showWarnings = F)
+
 dir.create("./output/tables",showWarnings = F)
 dir.create("./output/log",showWarnings = F)
 
@@ -29,10 +31,19 @@ source("./internal/R/load_excel_input.R",local = T)
 # question_get_choice_labels()  # question_get_question_label()
 
 # just give weighting a shot to see if the sampling frame is complete:
-test_weights<-weights_of(data);rm(test_weights)
+weights<-weights_of(data)
+rm(test_weights)
 # COMPOSITE INDICATORS:
 logmessage(silver("making composite indicators.."))
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
+####LIBYA ONLY
+composite_indicators_definitions_weighted_counts$var %>% to_alphanumeric_lowercase 
+composite_indicators_definitions_weighted_counts$var %<>% gsub("_", ".", .)
+composite_indicators_definitions_weighted_counts$new.var.name %<>% gsub("_", ".", .)
+composite_indicators_definitions_weighted_counts$value %>% to_alphanumeric_lowercase 
+composite_indicators_definitions_weighted_counts$value %<>% gsub("_", ".", .)
+#### LIBYA ONLY
+
 if(nrow(composite_indicators_definitions_weighted_counts)>0){
   visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
   data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
@@ -43,7 +54,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 }
 
 #### SPECIFIC TO UGANDA DATA 
-# list <- apply(data, 2, function(x) gsub("_", ".", x, stringsAsFactors = F))
+# list <- apply(data, 2, function(x) gsub("_", ".", x))
 # abc <- rbind.data.frame(list, stringsAsFactors = F)
 # data <- abc
 

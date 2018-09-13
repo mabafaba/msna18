@@ -62,10 +62,10 @@ intersected_composites<- expand_composite_indicators_to_set_intersections(testda
 ### now doing this quick and cheap for the example:
 
 aggregated.results <- svymean(data[,759:1013], design, na.rm = T)
-bibou <- aggregated.results %>% unlist %>% as.data.frame(., stringsAsFactors =F, na.rm = T)
+aggregated.results.named <- aggregated.results %>% unlist %>% as.data.frame(., stringsAsFactors =F, na.rm = T)
 
-aggregated.results <- bibou[,1]
-names(aggregated.results) <- rownames(bibou)
+aggregated.results <- aggregated.results.named[,1]
+names(aggregated.results) <- rownames(aggregated.results.named)
 aggregated.results <- aggregated.results[!is.na(aggregated.results)]
 
 # aggregated.results must be a vector with the names given as set1, set2, set1&set2 ... etc (as given by expand_composite_indicators_to_set_intersections()):
