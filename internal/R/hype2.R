@@ -1,5 +1,6 @@
 cat("\14")
 message(("loading dependencies.."))
+
 # clear/create folders
 unlink("./output/modified_data/",recursive=TRUE)
 unlink("./output/percent_aggregations_raw_csv",recursive=TRUE)
