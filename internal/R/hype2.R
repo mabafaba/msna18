@@ -19,6 +19,7 @@ source("./internal/R/survey_design2.R")
 source("./internal/R/read_excel_output.R")
 source("./internal/R/hypegrammaR/visualisations_barchart_FS_quarter_a4width.R")
 source("./internal/R/rmarkdown_resultlist_utililities.R")
+
 # LOAD INPUT
 # make sure all files exist:
 # load all the excel input files:
