@@ -61,7 +61,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
   #subset to make the whole thing go faster
-  analysisplan <- analysisplan[1:20,]
+
 # analysisplan <- analysisplan[c(75,76),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   logmessage(silver("applying analysis plan.."))

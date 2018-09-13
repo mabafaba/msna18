@@ -14,6 +14,10 @@ choices_for_select_multiple <- function(question_name, data){
   choices<-questionnaire$choices_per_variable[[question_name]]
   select_mult_colnames<-paste(question_name,choices$name,sep=".") %>% to_alphanumeric_lowercase
   indices<-match(as.character(select_mult_colnames),names(data))
-  if(any(is.na(indices))){stop(paste("can not find TRUE/FALSE columns for variable",question_name,". Please double check that they exist in the data and that their names are in the standard kobo format of \"[question name].[choice name]\""))}
+  if(all(is.na(indices))){stop(paste("can not find TRUE/FALSE columns for variable",question_name,". Please double check that they exist in the data and that their names are in the standard kobo format of \"[question name].[choice name]\""))}
+  if(any(is.na(indices))){warning(paste("could not find TRUE/FALSE columns for variable", question_name, ". Some choices will be discarded. 
+                                       Please double check that they exist in the data and that their names are in the standard 
+                                       kobo format of \"[question name].[choice name]\""))}
+  indices <- na.rm(indices)
 return(indices)
   }
