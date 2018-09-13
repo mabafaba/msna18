@@ -36,6 +36,7 @@ rm(test_weights)
 # COMPOSITE INDICATORS:
 logmessage(silver("making composite indicators.."))
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
+composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[-c(1:7),]
 ####LIBYA ONLY
 composite_indicators_definitions_weighted_counts$var %>% to_alphanumeric_lowercase 
 composite_indicators_definitions_weighted_counts$var %<>% gsub("_", ".", .)
@@ -65,8 +66,8 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 # analysisplan <- analysisplan[c(75,76),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   logmessage(silver("applying analysis plan.."))
-
-  results<-apply_data_analysis_plan(data,analysisplan)
+  
+  results<-apply_data_analysis_plan(data,analysisplan_disag)
   results$results %>% lapply(function(x){x[["message"]]})
   results$analysisplan_log<-results$analysisplan
   

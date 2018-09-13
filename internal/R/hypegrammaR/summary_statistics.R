@@ -134,7 +134,7 @@ percent_with_confints_select_one_groups <- function(dependent.var,
         lower_confint_colname<-paste0("ci_l.",summary_stat_colname)
         upper_confint_colname<-paste0("ci_u.",summary_stat_colname)
         
-        dependent_value_x_stats<-result_svy_format[,c(independent.var,summary_stat_colname,lower_confint_colname,upper_confint_colname)]
+        dependent_value_x_stats<-result_svy_format[,c(1:4)] ###DANGEROUS FIX FOR LIBYA
         colnames(dependent_value_x_stats)<-c("independent.var.value","numbers","min","max")
         data.frame(dependent.var=dependent.var,
                    independent.var=independent.var,
