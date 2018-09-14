@@ -153,7 +153,7 @@ if(case=="CASE_group_difference_numerical_categorical" & !is.null(results$result
   cat_stat<-paste0(results$results[[mycount]]$hypothesis.test$name,': p=',tryround(results$result[[mycount]]$hypothesis.test$result$p.value[1],3),
                    '; ',paste0('df=',tryround(results$results[[mycount]]$hypothesis.test$parameters$df,1)))
   } else if(case=="CASE_group_difference_categorical_categorical" & !is.null(results$results[[mycount]]$hypothesis.test$name)){
-    cat_stat<-paste0(results$results[[mycount]]$hypothesis.test$name,': p=',tryround(results$results[[mycount]]$hypothesis.test$results$p.value[1],3),
+    cat_stat<-paste0(results$results[[mycount]]$hypothesis.test$name,': p=',tryround(results$results[[mycount]]$hypothesis.test$result$p.value[1],3),
                      '; ',paste0('ddf=',tryround(results$results[[mycount]]$hypothesis.test$parameters$ddf,1)))
   }else {
     cat_stat<-"no hypothesis test performed"

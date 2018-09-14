@@ -22,8 +22,8 @@ hypothesis_test_chisquared_select_one <- function(dependent.var,
   #                      "independent.var:",independent.var,"\n\n"
   #               ))
   formula_string<-paste0("~",independent.var, "+", dependent.var)
-  chisq<-tryCatch(
-  {svychisq (formula(formula_string), design, na.rm = TRUE)
+  tryCatch(
+  {chisq <- svychisq (formula(formula_string), design, na.rm = TRUE)
   },
   error=function(e){
     .write_to_log(paste0("FAILED: Chi squared test.  Error:\n",e,"\n"))

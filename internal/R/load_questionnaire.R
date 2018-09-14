@@ -87,7 +87,7 @@ load_questionnaire<-function(data,
 
     # make functions that need questionnaire
 
-   question_get_choice_labels <<- function(responses,variable.name){
+   question_get_choice_labels <- function(responses,variable.name){
 
      variable.name<-as.character(variable.name)
      responses<-as.character(responses)
@@ -119,7 +119,6 @@ load_questionnaire<-function(data,
       }
    
     
-
     question_is_numeric <<- function(question.name){
       if(is.null(question.name)){return(FALSE)}
       if(is.na(question.name)){return(FALSE)}
@@ -159,7 +158,6 @@ load_questionnaire<-function(data,
     }
     
     
-    
     question_is_skipped <<- function(data, question.name){
       qid<-which(questions$name==question.name)
       condition<-questions$relevant[qid[1]]
@@ -167,7 +165,7 @@ load_questionnaire<-function(data,
     }
     
 
-    is_questionnaire_loaded<<-function(){return(TRUE)
+    is_questionnaire_loaded<-function(){return(TRUE)
     }
     
     
@@ -256,12 +254,7 @@ question_get_choice_labels<-function(responses,variable.name){
       stop("you must successfully run load_questionnaire() first")
     }
 
-
-
-    is_questionnaire_loaded<-function(){return(FALSE)
-    }
     
-  
     question_is_skipped<-function(data, variable.name){
       stop("you must successfully run load_questionnaire() first")
     }
