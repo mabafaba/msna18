@@ -51,6 +51,7 @@ load_questionnaire<-function(data,
   questions$name <- gsub("_", ".", questions$name)
   choices$name <- gsub("_", ".", choices$name)
   names(data) <- gsub("_", ".", names(data))
+  questions$relevant <- gsub("_", ".", questions$relevant) %>% to_alphanumeric_lowercase
   
   # # UGANDA
   # 
@@ -87,7 +88,7 @@ load_questionnaire<-function(data,
 
     # make functions that need questionnaire
 
-   question_get_choice_labels <- function(responses,variable.name){
+   question_get_choice_labels <<- function(responses,variable.name){
 
      variable.name<-as.character(variable.name)
      responses<-as.character(responses)
@@ -104,7 +105,9 @@ load_questionnaire<-function(data,
       }
      return(responses)
    }
-   question_get_question_label<<-function(variable.names){
+   
+   
+   question_get_question_label <<-function(variable.names){
      variable.names<-as.character(variable.names)
      
      labelcol<-grep("label",names(questions))[1]
@@ -161,7 +164,8 @@ load_questionnaire<-function(data,
     question_is_skipped <<- function(data, question.name){
       qid<-which(questions$name==question.name)
       condition<-questions$relevant[qid[1]]
-      question_is_skipped_apply_condition_to_data(data,condition)
+      skipped <- question_is_skipped_apply_condition_to_data(data,condition)
+      return(skipped)
     }
     
 

@@ -36,7 +36,9 @@ rm(test_weights)
 # COMPOSITE INDICATORS:
 logmessage(silver("making composite indicators.."))
 composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
-composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[-c(1:7),]
+composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[c(1:8),]
+composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[(39:48),]
+
 ####LIBYA ONLY
 composite_indicators_definitions_weighted_counts$var %>% to_alphanumeric_lowercase 
 composite_indicators_definitions_weighted_counts$var %<>% gsub("_", ".", .)
@@ -48,7 +50,7 @@ composite_indicators_definitions_weighted_counts$value %<>% gsub("_", ".", .)
 if(nrow(composite_indicators_definitions_weighted_counts)>0){
   visualisation_composite_indicator_definition_graph(composite_indicators_definitions_weighted_counts)
   data<-add_variable_indicators_weighted_count(data,composite_indicators_definitions_weighted_counts)
-  data %>% map_to_file("./output/modified_data/data_with_composite_indicators.csv")
+  data %>% map_to_file("./output/data_with_composite_indicators.csv")
   logmessage(green("data with composite indicators exported to ./output/modified_data/data_with_composite_indicators.csv"))
 }else{
   .write_to_log("\nNo Composite Indicators Defined.\n")
@@ -61,13 +63,11 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
-  #subset to make the whole thing go faster
-
-# analysisplan <- analysisplan[c(75,76),]
+  analysisplan <- analysisplan[-(1:5),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   logmessage(silver("applying analysis plan.."))
   
-  results<-apply_data_analysis_plan(data,analysisplan_disag)
+  results<-apply_data_analysis_plan(data,analysisplan)
   results$results %>% lapply(function(x){x[["message"]]})
   results$analysisplan_log<-results$analysisplan
   

@@ -46,16 +46,18 @@ composite_indicator_weighted_count<-function(data,indicator_definition){
               
               if(x$condition == "else"){
               # subset(x_recoded, !is.na(x_recoded) & (!is.na(data[,x$var]) | question_is_skipped(data, data[,x$var]))) <- recode_else(data = data, x = x, to = to)
-                to_replace<- (is.na(x_recoded) & ((!is.na(data[,x$var]) | question_is_skipped(data, data[,x$var]))))
+                to_replace<- (is.na(x_recoded))
               }else{
                 to_replace<-!is.na(recoded_generic) 
-                # (apart from "else" amd skipped, no condition can overwrite NAs in original data)
+                # (apart from "else" and skipped, no condition can overwrite NAs in original data)
               }
               x_recoded[to_replace] <- recoded_generic[to_replace]
             }
             
             # default else to 0:
-            x_recoded[(is.na(x_recoded) & ((!is.na(data[,x$var]) | question_is_skipped(data, data[,x$var]))))]<-0
+            x_recoded[(is.na(x_recoded) & ((!is.na(data[,x$var]) 
+                                            #| question_is_skipped(data, x$var)
+                                            )))]<-0
             
               return(x_recoded)
             

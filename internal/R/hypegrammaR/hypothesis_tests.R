@@ -33,9 +33,10 @@ hypothesis_test_chisquared_select_one <- function(dependent.var,
   
   )
   results<-list()
+  if(exists("chisq")){
   results$result <- list(F=chisq$statistic, p.value=chisq$p.value %>% unname)
   results$parameters <- chisq$parameter %>% as.list
-  results$name<-chisq$method
+  results$name<-chisq$method}
   return(results)
 }
 
@@ -57,7 +58,7 @@ hypothesis_test_empty <- function(dependent.var = NULL,
   return(results)
 }
 
-tryCatch({
+
 hypothesis_test_t_two_sample <- function(dependent.var,
                                        independent.var,
                                        design){
@@ -66,17 +67,17 @@ hypothesis_test_t_two_sample <- function(dependent.var,
       if(!independent_more_than_1){
         results <- list()}else{
   formula_string<-paste0(dependent.var, "~", independent.var)
-  ttest <- svyttest(formula(formula_string), design, na.rm = TRUE)
+  tryCatch({
+    ttest <- svyttest(formula(formula_string), design, na.rm = TRUE)})
   results<-list()
+  if(exists("ttest")){
   results$result <- list(t=unname(ttest$statistic), p.value = ttest$p.value %>% unname)
   results$parameters <- as.list(ttest$parameter)
-  results$name<-"two sample ttest on difference in means (two sided)"}
+  results$name<-"two sample ttest on difference in means (two sided)"}}
   return(results)
 
-  ttest$statistic
-
 }
-})
+
 
 
 
@@ -125,8 +126,8 @@ hypothesis_test_chisquared_select_multiple <- function(dependent.var,
   multiple_dependents<-names(data)[choices_for_select_multiple(dependent.var,design$variables)]
   multiple_results<-lapply(multiple_dependents,function(dependent.var){
     formula_string<-paste0("~",independent.var, "+", dependent.var)
-    chisq<-tryCatch(
-      {svychisq (formula(formula_string), design, na.rm = TRUE)
+    tryCatch(
+      {chisq<-svychisq (formula(formula_string), design, na.rm = TRUE)
       },
       error=function(e){
         .write_to_log(paste0("FAILED: Chi squared test.  Error:\n",e,"\n"))
