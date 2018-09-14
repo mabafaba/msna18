@@ -17,12 +17,13 @@ hypothesis_test_chisquared_select_one <- function(dependent.var,
   #                      "independent.var:",independent.var,"\n\n"
   #               ))
   formula_string<-paste0("~",independent.var, "+", dependent.var)
+
   # drop empty choices from levels (to avoid many empty cells, potentially breaking the chisquared test)
   if(is.factor(design$variables[[independent.var]])){design$variables[[independent.var]]<-droplevels(design$variables[[independent.var]])}
   if(is.factor(design$variables[[dependent.var]])){design$variables[[dependent.var]]<-droplevels(design$variables[[dependent.var]])}
-  chisq<-tryCatch(
-  {svychisq (formula(formula_string), design, na.rm = TRUE)
-  },
+
+  tryCatch(
+  {chisq <- svychisq (formula(formula_string), design, na.rm = TRUE)},
   error=function(e){
     .write_to_log(paste0("FAILED: Chi squared test.  Error:\n",e,"\n"))
     .write_to_log(paste0("independent.var:",independent.var,"- dependent.var:",dependent.var,"\n raw frequency table:"))
