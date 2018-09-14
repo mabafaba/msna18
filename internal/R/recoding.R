@@ -92,7 +92,7 @@ recode_select_multiple <- function(data, x, value, condition, to, variable.name 
   
   ####match skipped
   if(condition == "skipped"){
-    skipped <- question_is_skipped(data, x$variable)
+    skipped <- question_is_skipped(data, variable.name)
     x_recoded[skipped] <- to}
   # ####match else
   
@@ -150,8 +150,8 @@ recode_larger<-function(x,from,to){
   return(recoded_empty)
 }
 
-recode_skipped <- function(data, x, to){
-  skipped <- question_is_skipped(data, x$variable)
+recode_skipped <- function(data, x, to, variable.name){
+  skipped <- question_is_skipped(data, variable.name)
   recoded_empty <- rep(NA,length(x))
   recoded_empty[skipped] <- to
   return(recoded_empty)
