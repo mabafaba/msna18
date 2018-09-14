@@ -51,11 +51,11 @@ recode_generic <- function(data, x, value, condition, to, variable.name){
   }
   
   if(question_is_select_multiple(variable.name)){
-    recoded <- recode_select_multiple(data = data, x = x, value = value, condition = condition, to = to)
+    recoded <- recode_select_multiple(data = data, x = x, value = value, condition = condition, to = to, variable.name = variable.name)
     return(recoded)    
   }
   
-  recoded <- recode_generic_one(data = data, x = x, value = value, condition = condition, to = to)
+  recoded <- recode_generic_one(data = data, x = x, value = value, condition = condition, to = to, variable.name = variable.name)
   return(recoded)
 }
 
@@ -67,7 +67,7 @@ recode_generic <- function(data, x, value, condition, to, variable.name){
 #'@param condition  specifies the relationship to the vector in value
 #'@details NA's stay NA
 #'@return vector of the same length as th einput vector, all values are either a numeric value specified in "to" or NA's
-recode_select_multiple <- function(data, x, value, condition, to){
+recode_select_multiple <- function(data, x, value, condition, to, variable.name = variable.name){
   x<-as.character(x)
   if(is.null(value)){stop("At least one parameter must be provided")}
   x_recoded <- rep(NA, length(x))
@@ -89,7 +89,13 @@ recode_select_multiple <- function(data, x, value, condition, to){
       match(value, x)})
     make_true_none <- lapply(match_none, function(x){all(is.na(x))}) %>% unlist
     x_recoded[make_true_none] <- to}
+  
+  ####match skipped
+  if(condition == "skipped"){
+    skipped <- question_is_skipped(data, x$variable)
+    x_recoded[skipped] <- to}
   # ####match else
+  
   # if(condition == "else"){
   #   x_recoded <- recode_else(data = data, x = x, to = to)
   # }
@@ -98,7 +104,7 @@ recode_select_multiple <- function(data, x, value, condition, to){
 
 
 ### input x should be the line in the data with variable name, 
-recode_generic_one <- function(data, x, value, condition, to){
+recode_generic_one <- function(data, x, value, condition, to, variable.name = variable.name){
   recoded <- rep(NA,length(x))
   if(condition == "smaller.equal"){
     recoded <- recode_smaller_equal(x = x, from = value, to = to)
@@ -111,7 +117,7 @@ recode_generic_one <- function(data, x, value, condition, to){
     recoded <- recode_larger(x = x, from = value, to = to)
   }
   if(condition == "skipped"){
-    recoded <- recode_skipped(data = data, x = x, to = to)
+    recoded <- recode_skipped(data = data, x = x, to = to, variable.name = variable.name)
   }
   return(recoded)
 }
@@ -145,7 +151,7 @@ recode_larger<-function(x,from,to){
 }
 
 recode_skipped <- function(data, x, to){
-  skipped <- question_is_skipped(data, x)
+  skipped <- question_is_skipped(data, x$variable)
   recoded_empty <- rep(NA,length(x))
   recoded_empty[skipped] <- to
   return(recoded_empty)
@@ -168,14 +174,6 @@ ass.numeric<-function(x){
   }
 }
 
-
-#### fake question_is_skipped function (delete this ASAP)
-question_is_skipped <- function(data, x){
-  recode_empty <- rep(FALSE,length(x))
-  skipped <- x == 3
-  skipped[is.na(skipped)] <- FALSE
-  recode_empty[skipped] <- TRUE
-return(rep(FALSE,length(x)))}
 
 
 
