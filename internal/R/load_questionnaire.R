@@ -48,8 +48,8 @@ load_questionnaire<-function(data,
   questions$name <- to_alphanumeric_lowercase(questions$name)
 
   ####UGA ONLY
-  questions$name <- gsub("_", ".", questions$name)
-  choices$name <- gsub("_", ".", choices$name)
+  # questions$name <- gsub("_", ".", questions$name)
+  # choices$name <- gsub("_", ".", choices$name)
   # UGANDA
   
   begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
