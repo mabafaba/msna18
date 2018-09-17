@@ -53,12 +53,15 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 #analysisplan <- analysisplan[c(1:22),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   logmessage(silver("applying analysis plan.."))
+  data$calc.household<-NA
   results<-apply_data_analysis_plan(data,analysisplan)
-results$analysisplan$repeat.var
+
+  results$results %>% lapply(function(x){x[["message"]]})
+
   results$analysisplan_log<-results$analysisplan
-  results$analysisplan_log$message<-lapply(results$results,function(x){x$message}) %>% unlist
+  
 # OUTPUT
-  # 
+
   results_labeled_values<-lapply(results$results,function(x){
     x$summary.statistics<-labels_summary_statistic(x$summary.statistics)
    return(x)
@@ -69,8 +72,7 @@ results$analysisplan$repeat.var
   # analysisplan$output.minimal.chart...width.of.quarter.A4.landscape..FS.<-"yes"
   # analysisplan$output.regular.chart..report.<-"yes"
   # analysisplan$output.heatmap<-"yes"
-  
-  
+
   # make mini barcharts
   mini_barchart_filelists<-map_resultslist_to_output_minibarcharts(results)
   # make report barcharts 

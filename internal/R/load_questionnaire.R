@@ -39,8 +39,10 @@ load_questionnaire<-function(data,
   names(choices) <- to_alphanumeric_lowercase(names(choices))
   names(data) <- to_alphanumeric_lowercase(names(data))
 
+
   # choices$name <- gsub("_", ".", choices$name) # UGANDA
   
+
   choices.label.column.to.use <- to_alphanumeric_lowercase(choices.label.column.to.use)
   
   # sanitise
@@ -50,9 +52,6 @@ load_questionnaire<-function(data,
   insure.string.is.column.header(choices, "list_name")
   questions$name <- to_alphanumeric_lowercase(questions$name)
 
-  # questions$name <- gsub("_", ".", questions$name) # UGANDA
-
-  
   begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
   end_gr <- grep(paste(c("end_group","end group"), collapse = "|"), questions$type, ignore.case = T)
   number_of_questions <- (length(questions$name) - length(begin_gr) - length(end_gr))

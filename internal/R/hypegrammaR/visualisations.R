@@ -12,16 +12,17 @@ grouped_barchart_percent<-function(summary.statistic,filename){
   
   summary.statistic<-labels_summary_statistic(summary.statistic)
   theplot<-ggplot(summary.statistic,aes(x=independent.var.value,y=numbers,fill=dependent.var.value))+geom_bar(stat = "identity",position='dodge')+theme_tufte()+
-    xlab("")+ylab("percent")+ 
+    xlab(NULL)+ylab(NULL)+ 
     theme(text=element_text(family="Arial Narrow"),
           # axis.title.x=element_text(summary.statistic$dependent.var.value"),
           # axis.text.x=element_blank(),
           # axis.ticks.x=element_blank(),
           # axis.title.y=element_blank(),
-          axis.text.y=element_blank(),
+          # axis.text.y=element_blank(),
           # axis.ticks.y=element_blank(),
           # plot.margin = unit(x = c(0,0,0,0),'null')
     )+scale_fill_reach_categorical(n=length(unique(summary.statistic$dependent.var.value)),name="")+
+    scale_y_continuous(limits = c(0,1),labels = scales::percent_format())+
     geom_errorbar( aes(x=summary.statistic$independent.var.value,
                        ymin=as.numeric(summary.statistic$min),
                        ymax=as.numeric(summary.statistic$max)),
