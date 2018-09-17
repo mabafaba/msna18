@@ -16,7 +16,7 @@ map_to_design <- function(data,
   strata.weights <- weights_of(data)
   survey.design <- svydesign(data = data,
                              ids = formula(cluster.id.formula),
-                             strata = names(strata.weights),
+                            # strata = names(strata.weights),
                              weights = as.vector(strata.weights),
                              nest = T)
   return(survey.design)}

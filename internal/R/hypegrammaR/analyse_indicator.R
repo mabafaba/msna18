@@ -21,7 +21,7 @@ analyse_indicator<-function(data,
                             independent.var = NULL,
                             hypothesis.type,
                             sampling.strategy.cluster=FALSE,
-                            sampling.strategy.stratified=FALSE,
+                            sampling.strategy.stratified=TRUE,
                             case=NULL){
   
   options(survey.lonely.psu = "average")
@@ -72,10 +72,9 @@ analyse_indicator<-function(data,
   
   
   # map from case to appropriate summary statistic, hypothesis test and visualisation:
-  
-  
-  design <- map_to_design(data = data, cluster.var = NULL)
-  
+
+  design <- map_to_design(data = data, cluster.var = NULL, weights = NULL) 
+
   
   summarise.result<- map_to_summary_statistic(case)
 

@@ -33,12 +33,24 @@ levels_for_cat <- function(data, questionnaire){
       levels_data<-unique(data[[x]])
       levels_all<-c(levels_questionnaire,levels_data) %>% unique
       data[[x]] %<>% factor(., levels = levels_all)
-      }
+    }
     return(data[[x]])}) 
   names(data_level) <- names(data)
-  return(data_level %>% as.data.frame)
-}
+  return(data_level %>% as.data.frame)}
+  
+levels_for_logic <- function(data){
+  data.logi <- lapply(names(data), function(x){
+  if(is.logical(data[[x]])){
+      logical.v <- as.character(data[[x]])
+      logical.v[data[[x]] == "TRUE"] <- "yes"
+      logical.v[data[[x]] == "FALSE"] <- "no"
+      data[[x]] <- as.factor(logical.v)
+    }
+    return(data[[x]])}) 
+  names(data.logi) <- names(data)
+  return(data.logi %>% as.data.frame)}
 
+data <- levels_for_logic(data)
 
 ## Loading cluster sampling units
 
@@ -118,6 +130,9 @@ analysis_plan_user<-read.csv("./internal/input_files/analysis plan.csv",stringsA
 analysis_plan_user[,c("repeat.for","disaggregate.by","variable")]<-analysis_plan_user[,c("repeat.for", "disaggregate.by", "variable")] %>% lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors=F)
 
 
-
+# #####LIBYA
+# analysis_plan_user$repeat.for %<>% gsub("_", ".", .) %>% to_alphanumeric_lowercase
+# analysis_plan_user$variable %<>% gsub("_", ".", .) %>% to_alphanumeric_lowercase
+# analysis_plan_user$disaggregate.by %<>% gsub("_", ".", .) %>% to_alphanumeric_lowercase
 
 

@@ -57,7 +57,7 @@ apply_data_analysis_plan<-function(data,analysisplan){
                               dependent.var = x["dependent.var"],
                               independent.var = indep.var ,
                               hypothesis.type =  x["hypothesis.type"],
-                              sampling.strategy.cluster = FALSE,
+                              sampling.strategy.cluster = TRUE,
                               sampling.strategy.stratified = TRUE,
                               case=x["case"])
     
