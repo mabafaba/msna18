@@ -119,9 +119,21 @@ recode_generic_one <- function(data, x, value, condition, to, variable.name = va
   if(condition == "skipped"){
     recoded <- recode_skipped(data = data, x = x, to = to, variable.name = variable.name)
   }
+  if(condition == "any"){
+    recoded <- recode_any(x = x, from = value, to = to)}
   return(recoded)
 }
 
+
+recode_any<-function(x, from, to){
+from <- from %>% strsplit(",,") %>% as.vector %>% unlist %>% gsub(" ", "", .)
+x %<>% as.character
+to %<>% as.numeric
+match_any <- match(x, from)
+make_true <- !is.na(match_any)
+recoded_empty <- rep(NA,length(x))
+recoded_empty[make_true] <- to
+return(recoded_empty)}
 
 recode_equal<-function(x,from,to){
 x %<>% as.character
@@ -156,6 +168,7 @@ recode_skipped <- function(data, x, to, variable.name){
   recoded_empty[skipped] <- to
   return(recoded_empty)
 }
+
 
 #SUPER DNAGEROUS SWITCH FOR LIBYA
 recode_else <- function(data, x, to, variable.name){
