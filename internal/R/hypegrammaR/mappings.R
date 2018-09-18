@@ -10,13 +10,16 @@
 #' @examples map_to_design(data,cluster.var="cluster_id")
 #' @export
 map_to_design <- function(data,
-                          cluster.var = NULL) {
+                          cluster.var = NULL, 
+                          weights = NULL) {
   
   cluster.id.formula <- cluster_formula()
-  strata.weights <- weights_of(data)
+  if(is.null(weights)){
+  strata.weights <- weights_of(data)}else{
+    strata.weights <- weights} 
   survey.design <- svydesign(data = data,
                              ids = formula(cluster.id.formula),
-                            # strata = names(strata.weights),
+                             strata = names(strata.weights),
                              weights = as.vector(strata.weights),
                              nest = T)
   return(survey.design)}
@@ -121,6 +124,8 @@ map_to_summary_statistic <- function(case) {
   # dependent is categorical:
   summary_functions$CASE_group_difference_categorical_categorical <- percent_with_confints_groups
   summary_functions$CASE_group_difference_numerical_categorical <- confidence_intervals_mean_groups
+  
+  
   
   # return corresponding summary function:
   

@@ -21,7 +21,7 @@ analyse_indicator<-function(data,
                             independent.var = NULL,
                             hypothesis.type,
                             sampling.strategy.cluster=FALSE,
-                            sampling.strategy.stratified=TRUE,
+                            sampling.strategy.stratified=FALSE,
                             case=NULL){
   
   options(survey.lonely.psu = "average")
@@ -60,9 +60,6 @@ analyse_indicator<-function(data,
   
   if(data_sanitised$success){
     data<-data_sanitised$data
-    if(question_is_numeric(independent.var)){
-      data[[independent.var]] <- as.numeric(data[[independent.var]])
-    }
   }else{
     return(
       empty_result(input.parameters,data_sanitised$message)
@@ -70,18 +67,15 @@ analyse_indicator<-function(data,
     )
   }
   
-  
+
   # map from case to appropriate summary statistic, hypothesis test and visualisation:
-
-  design <- map_to_design(data = data, cluster.var = NULL, weights = NULL) 
-
+  design <- map_to_design(data = data, cluster.var = NULL, 
+                          weights = data[["weights.displacement.group"]]) #LIBYA ONLY
   
   summarise.result<- map_to_summary_statistic(case)
 
   test.hypothesis <- map_to_hypothesis_test(case)
   visualisation <- map_to_visualisation(case)
-  
-  
   
   # apply the summary statistic, hypothesis test to the given data and survey design:
   summary.result  <- summarise.result(dependent.var = dependent.var,independent.var, design = design, data = data)

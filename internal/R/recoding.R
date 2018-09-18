@@ -46,7 +46,7 @@ recode_select_one_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
 #' }
 recode_generic <- function(data, x, value, condition, to, variable.name){
   if(condition=="else"){
-    recoded <- recode_else(data = data, x = x, to = to)
+    recoded <- recode_else(data = data, x = x, to = to, variable.name = variable.name)
     return(recoded)
   }
   
@@ -71,7 +71,7 @@ recode_select_multiple <- function(data, x, value, condition, to, variable.name 
   x<-as.character(x)
   if(is.null(value)){stop("At least one parameter must be provided")}
   x_recoded <- rep(NA, length(x))
-  value <- value %>% strsplit("[[:space:]]*,[[:space:]]*|[[:space:]]") %>% as.vector %>% unlist %>% gsub(" ", "", .)
+  value <- value %>% strsplit(",,") %>% as.vector %>% unlist %>% gsub(" ", "", .)
   ####match any
   if(condition == "any"){
     match_any <- x %>% as.character %>% strsplit(" ") %>% lapply(function(x){
@@ -119,9 +119,21 @@ recode_generic_one <- function(data, x, value, condition, to, variable.name = va
   if(condition == "skipped"){
     recoded <- recode_skipped(data = data, x = x, to = to, variable.name = variable.name)
   }
+  if(condition == "any"){
+    recoded <- recode_any(x = x, from = value, to = to)}
   return(recoded)
 }
 
+
+recode_any<-function(x, from, to){
+from <- from %>% strsplit(",,") %>% as.vector %>% unlist %>% gsub(" ", "", .)
+x %<>% as.character
+to %<>% as.numeric
+match_any <- match(x, from)
+make_true <- !is.na(match_any)
+recoded_empty <- rep(NA,length(x))
+recoded_empty[make_true] <- to
+return(recoded_empty)}
 
 recode_equal<-function(x,from,to){
 x %<>% as.character
@@ -157,6 +169,7 @@ recode_skipped <- function(data, x, to, variable.name){
   return(recoded_empty)
 }
 
+
 recode_else <- function(data, x, to){
   to %<>% as.numeric
   recoded_empty <- rep(NA,length(x))
@@ -165,7 +178,6 @@ recode_else <- function(data, x, to){
   recoded_empty[!is.na(x)] <- to
   return(recoded_empty)
 }
-
 
 ass.numeric<-function(x){
   # as.numeric, but without factor mayham
