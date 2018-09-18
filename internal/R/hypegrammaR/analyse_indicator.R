@@ -69,8 +69,7 @@ analyse_indicator<-function(data,
   
 
   # map from case to appropriate summary statistic, hypothesis test and visualisation:
-  design <- map_to_design(data = data, cluster.var = NULL, 
-                          weights = data[["weights.displacement.group"]]) #LIBYA ONLY
+  design <- map_to_design(data = data, cluster.var = NULL, weights = NULL) 
   
   summarise.result<- map_to_summary_statistic(case)
 
