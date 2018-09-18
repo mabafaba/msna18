@@ -31,13 +31,13 @@ source("./internal/R/load_excel_input.R",local = T)
 # question_get_choice_labels()  # question_get_question_label()
 
 # just give weighting a shot to see if the sampling frame is complete:
-weights<-weights_of(data)
+test_weights<-weights_of(data)
 rm(test_weights)
 # COMPOSITE INDICATORS:
 logmessage(silver("making composite indicators.."))
-composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
-composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[c(1:8),]
-composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[(39:48),]
+load_composite_indicator_definition_weighted_count<-load_composite_indicator_definition_weighted_count()
+# composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[c(49:75),]
+# composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[(39:48),]
 
 ####LIBYA ONLY
 composite_indicators_definitions_weighted_counts$var %>% to_alphanumeric_lowercase 
@@ -63,7 +63,7 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 
 # ANALYSIS 
   analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
-  analysisplan <- analysisplan[-(1:5),]
+# analysisplan <- analysisplan[-(1:5),]
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
   logmessage(silver("applying analysis plan.."))
   
