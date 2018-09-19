@@ -1,5 +1,4 @@
-.log<-list()
-.logfile<-"./output/log/log.txt"
+
 
 .write_to_log<-function(x){
   .log<-c(.log,x)
@@ -19,7 +18,6 @@
 }
 
 
-.clearlog()
 
 logmessage<-function(message){
 message(message)

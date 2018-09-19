@@ -13,9 +13,11 @@ percent_with_confints_select_one <- function(dependent.var,
                                              na.rm = TRUE){
   
   
+
   # if dependent var have only one value, just return that:
   
-  dependent_more_than_1 <- length(unique(design$variables[[dependent.var]])) > 1
+  dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
+
   if(!dependent_more_than_1){
     dependent.var.value=unique(design$variables[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
@@ -40,7 +42,6 @@ percent_with_confints_select_one <- function(dependent.var,
     .write_to_log("percent_with_confints_select_one failed with error:")
     .write_to_log(e$message)}
   )
-  
 }
 
 percent_with_confints_select_mult <- function(dependent.var,

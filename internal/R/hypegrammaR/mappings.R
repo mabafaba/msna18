@@ -7,21 +7,21 @@
 #' @param cluster.var if cluster sampling was used, what's the name of the column(s) in `data` that identifies the cluster?
 #' @details create a `survey` package design object from the data and information on the sampling strategy
 #' @return a `survey` package design object
-#' @examples map_to_design(data,cluster.var="clusterQ
-#' _id")
+#' @examples map_to_design(data,cluster.var="cluster_id")
 #' @export
 map_to_design <- function(data,
-                          cluster.var = NULL) {
+                          cluster.var = NULL, 
+                          weights = NULL) {
   
   cluster.id.formula <- cluster_formula()
-  strata.weights <- weights_of(data)
+  if(is.null(weights)){
+  strata.weights <- weights_of(data)}else{
+    strata.weights <- weights} 
   survey.design <- svydesign(data = data,
                              ids = formula(cluster.id.formula),
-                             strata = names(strata.weights),
                              weights = as.vector(strata.weights),
                              nest = T)
   return(survey.design)}
-?svydesign
 #add to this an option that strata weights can be the vector of weights if there is one in the data & warning that we usually dont do this
 
 #' Map to case
@@ -210,7 +210,7 @@ map_to_file<-function(object,filename,...){
   tryCatch({
     
     if("ggplot" %in% class(object)){
-      ggsave(filename,object,...)
+      ggsave(filename,object,...,limitsize = F)
       return(filename)
     }
     

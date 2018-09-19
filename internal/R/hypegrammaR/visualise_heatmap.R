@@ -29,7 +29,7 @@ heatmap_categorical_to_file<-function(summary.statistic,filename){
          plot = theplot,
          units = "cm",
          width = 10+0.5*length(unique(summary.statistic$dependent.var.value)),
-         height = 10+0.5*length(unique(summary.statistic$independent.var.value)),
+         height = 15+0.5*length(unique(summary.statistic$independent.var.value)),
          limitsize = F)
   return(theplot)
   }
@@ -47,7 +47,7 @@ heatmap_categorical_nogroups_to_file<-function(summary.statistic,filename){
          plot = theplot,
          units = "cm",
          width = 10+0.5*length(unique(summary.statistic$dependent.var.value)),
-         height = 10+0.5*length(unique(summary.statistic$independent.var.value)),
+         height = 15+0.5*length(unique(summary.statistic$independent.var.value)),
          limitsize = F)
   return(theplot)
   }
@@ -65,7 +65,7 @@ heatmap_numerical_to_file<-function(summary.statistic,filename){
          plot = theplot,
          units = "cm",
          width = 10+0.5*length(unique(summary.statistic$dependent.var.value)),
-         height = 10+0.5*length(unique(summary.statistic$independent.var.value)),
+         height = 15+0.5*length(unique(summary.statistic$independent.var.value)),
          limitsize = F)
   return(theplot)
 }

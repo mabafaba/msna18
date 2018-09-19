@@ -1,7 +1,6 @@
 
 
 htmlreport<-function(results){
-source("./internal/R/htmlR.R")
 
 dir.create("./output/summary")
 .record(to.file = "output/summary/index.html")
@@ -32,7 +31,6 @@ seq_along(results) %>% lapply(function(result){
 
 
 htmlreport2<-function(results){
-  source("./internal/R/htmlR.R")
   results$results<-results$results_unlabeled
   summary_df<-results$results %>% lapply(function(x){x$summary.statistic}) %>% do.call(rbind,.)
   summary_df %>% head

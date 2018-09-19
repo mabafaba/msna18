@@ -1,16 +1,18 @@
 ######## BLIND CODE
 
-
-
-
-
 combine_weighting_functions<-function(weights_function_1,weights_function_2){
   normweights<-function(w){w*length(w)/sum(w)}
   normW2byW1<-function(w1,w2){
+   
+    
     w1_proportions_is<-(w2 %>% split(names(w1)) %>% sapply(sum)) %>% normweights() 
-    w1_proportions_should<-w1[!duplicated(names(w1))]
+    w1_proportions_should<-w1 %>% split(names(w1)) %>% sapply(sum) %>% normweights
+    w1_proportions_should<-w1_proportions_should[match(names(w1_proportions_is),names(w1_proportions_should))]
     w1_proportion_factor<-w1_proportions_should/w1_proportions_is
+    
     w_combined<-w2*w1_proportion_factor[names(w1)]
+    w_combined<-normweights(w_combined)
+    
     w_combined
   }
   
@@ -173,7 +175,7 @@ weighting_fun_from_samplingframe <- function(sampling.frame,
     sample.counts<-stratify.count.sample(data.strata = df[[data.stratum.column]],sf.strata = population.counts)
     
     # make sure all record's strata can be found in the sampling frame:
-    if("weights" %in% names(df)){stop("'weights' is not allowed as a column name (will be calculated from the sampling frame)")}
+    if("weights" %in% names(df)){warning("'weights' is used as a column name (will not be calculated from the sampling frame)")}
     if(!all(names(sample.counts) %in% names(population.counts))){stop("all strata names in column '",
                                                                       data.stratum.column,"' must also appear in the loaded sampling frame.")}
     # population counts taken from weights_of() enclosing environment, created in load_samplingframe()

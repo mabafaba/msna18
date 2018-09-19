@@ -1,7 +1,7 @@
 sanitise_group_difference<-function(data,dependent.var,independent.var){
   independent_less_than_30 <- length(unique(data[[independent.var]])) <= 30
 
-  if(!independent_less_than_30){
+  if(!independent_less_than_30 & !question_is_numeric(independent.var)){
   return(list(success=FALSE,message="can not test group difference with 20 or more unique values in the independent variable"))
   }
 
@@ -9,7 +9,6 @@ sanitise_group_difference<-function(data,dependent.var,independent.var){
   if(!dependent_more_than_1){
     return(list(success=FALSE,message="can not test group difference with <2 different values in the dependent variable"))
   }
-
 
   which_independent_more_than_one_record <- table(data[[independent.var]])
   which_independent_more_than_one_record <- which_independent_more_than_one_record[which(which_independent_more_than_one_record>1)]
@@ -113,13 +112,11 @@ sanitise_data_independent<-function(data,
     if(group_difference$success==F){return(group_difference)}
 
   }
-  if((grep("direct_reporting",case) %>% length)>0){
-    group_difference<-sanitise_group_difference(data,
-                                                dependent.var = dependent.var,
-                                                independent.var = independent.var)
-    if(group_difference$success==F){return(group_difference)}
-    
-  }
+  # if((grep("direct_reporting",case) %>% length)>0){
+  #   group_difference<-sanitise_group_difference(data,
+  #                                               dependent.var = dependent.var,
+  #                                               independent.var = independent.var)
+  #   if(group_difference$success==F){return(group_difference)}}
 
   if(case%in%c("CASE_group_difference_categorical_categorical","CASE_direct_reporting_categorical_categorical","CASE_direct_reporting_categorical_")){
     if(question_is_select_one(dependent.var) & length(unique(data[[dependent.var]]))>50){

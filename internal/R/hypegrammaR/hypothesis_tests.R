@@ -1,5 +1,10 @@
 hypothesis_test_chisquared<-function(dependent.var,independent.var,design){
-  
+  # check if data ok; if not return empty hypothesis test
+  sanitised<-datasanitation_design(design,dependent.var,independent.var,
+                                   datasanitation_hypothesistest_chisq)
+  if(!sanitised$success){return(hypothesis_test_empty(dependent.var,independent.var,message=sanitised$message))}
+  # update design object from sanitation
+  design<-sanitised$design
   if(tryCatch({question_is_select_multiple(dependent.var)},error={FALSE})){
     return(hypothesis_test_chisquared_select_multiple(dependent.var,independent.var,design))
   }
@@ -17,12 +22,13 @@ hypothesis_test_chisquared_select_one <- function(dependent.var,
   #                      "independent.var:",independent.var,"\n\n"
   #               ))
   formula_string<-paste0("~",independent.var, "+", dependent.var)
+
   # drop empty choices from levels (to avoid many empty cells, potentially breaking the chisquared test)
   if(is.factor(design$variables[[independent.var]])){design$variables[[independent.var]]<-droplevels(design$variables[[independent.var]])}
   if(is.factor(design$variables[[dependent.var]])){design$variables[[dependent.var]]<-droplevels(design$variables[[dependent.var]])}
-  chisq<-tryCatch(
-  {svychisq (formula(formula_string), design, na.rm = TRUE)
-  },
+
+  tryCatch(
+  {chisq <- svychisq (formula(formula_string), design, na.rm = TRUE)},
   error=function(e){
     .write_to_log(paste0("FAILED: Chi squared test.  Error:\n",e,"\n"))
     .write_to_log(paste0("independent.var:",independent.var,"- dependent.var:",dependent.var,"\n raw frequency table:"))
@@ -46,11 +52,12 @@ hypothesis_test_chisquared_select_one <- function(dependent.var,
 
 hypothesis_test_empty <- function(dependent.var = NULL,
                                        independent.var = NULL,
-                                       design = NULL, ...){
+                                       design = NULL,
+                                       message="No hypothesis test",...){
   results<-list()
   results$result <- c()
   results$parameters <- c()
-  results$name<-"No Hypothesis test"
+  results$name<-message
   return(results)
 }
 
@@ -58,6 +65,7 @@ hypothesis_test_empty <- function(dependent.var = NULL,
 hypothesis_test_t_two_sample <- function(dependent.var,
                                        independent.var,
                                        design){
+
 
   as.numeric_factors_from_names<-function(x){
     if(is.factor((x))){x<-as.character(x)}  
@@ -69,8 +77,7 @@ hypothesis_test_t_two_sample <- function(dependent.var,
   }
     
   
-  
-  
+
   independent_more_than_1 <- length(unique(design$variables[[independent.var]])) > 1
       if(!independent_more_than_1){
         results <- list()}else{
@@ -87,8 +94,20 @@ hypothesis_test_t_two_sample <- function(dependent.var,
 }
 
 
-
-
+hypothesis_test_logistic_regression <- function(dependent.var, 
+                                                independent.var, 
+                                                design){
+  dependent_more_than_1 <- length(unique(design$variables[[dependent.var]])) > 1
+  if(!dependent_more_than_1){
+    sanitised <-sanitise_data(data,dependent.var,independent.var,case = case)
+    results <- list()}else{
+      formula_string <- paste0(dependent.var,"~", independent.var, sep = "")
+      test <- svyglm(as.formula(formula_string), design, family=quasibinomial)
+      summary <- summary(test)
+      results <- list()
+      results$result <- list(coefficients = unname(summary$coefficients), decision = summary$effects)
+    }
+}
 
 hypothesis_test_z <- function(dependent.var,
                                independent.var,
