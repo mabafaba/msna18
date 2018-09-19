@@ -42,7 +42,6 @@ percent_with_confints_select_one <- function(dependent.var,
     .write_to_log("percent_with_confints_select_one failed with error:")
     .write_to_log(e$message)}
   )
-  
 }
 
 percent_with_confints_select_mult <- function(dependent.var,
