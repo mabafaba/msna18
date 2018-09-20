@@ -39,35 +39,38 @@ install.packages("UpSetR")
 require("dplyr")
 require("UpSetR")
 
+#making design object if you havent 
+design <- map_to_design(data)
+
 # assuming we have data with some (non aggregated) composite_indicators (making an example here):
 testdata<-data.frame(test=sample(letters[1:5],100,T),pin1=sample(c(0,1, NA),100,T),pin2=sample(c(0,1),100,T),pin3=sample(c(0,1),100,T))
 
 # which ones should be intersected?
-composite_indicator_names<-c("food.pin", "wash.pin", "protection.pin", "health.pin", "nfi.shelter.pin", "education.pin", "environment.pin", "livelihoods.pin")
+composite_indicator_names<-c("foodsec_index", "wash_index", "protection_index",  
+                             "education_index", "health_index", "livelihood_index", "shelter_index", "nutrition_index")
 
-d_num <- data[,which((names(data)) %in% c("food.pin", "wash.pin", "protection.pin", "health.pin", "nfi.shelter.pin", "education.pin", "environment.pin", "livelihoods.pin"))]
+d_num <- data[,which((names(data)) %in% c("foodsec_index", "wash_index", "protection_index",  
+                                          "education_index", "health_index", "livelihood_index","shelter_index",  "nutrition_index"))]
 
 # assuming they are coercible to logical (e.g. 0's and  1's)
 # you can create TRUE/FALSE columns for call combinations with this:
 intersected_composites<- expand_composite_indicators_to_set_intersections(data,composite_indicator_names)
+
 #### Take away the single indicators
-intersected_composites <- intersected_composites[,9:255]
-#....
-intersected_composites<- expand_composite_indicators_to_set_intersections(testdata,c("pin1","pin2","pin3"))
-#....
+intersected_composites <- intersected_composites[,-(1:8)]
+data <- cbind(data, intersected_composites, stringsAsFactors = F)
+
 
 ### get aggregated results...:
 ### this should be done with the msna tool in the real example to make sure everything is weighted correctly etc.:
 ### If you have used load_questionnaire() you could also do this with the "reachR" package (Eliora knows)
 ### now doing this quick and cheap for the example:
 
-data <- cbind(data, intersected_composites, StringsAsFactors = F)
+aggregated.results <- svymean(data[,c(1295:1541)], design, na.rm = T)
+aggregated.results.named <- aggregated.results %>% unlist %>% as.data.frame(., stringsAsFactors =F, na.rm = T)
 
-aggregated.results <- svymean(data[,759:1006], design, na.rm = T)
-bibou <- aggregated.results %>% unlist %>% as.data.frame(., stringsAsFactors =F, na.rm = T)
-
-aggregated.results <- bibou[,1]
-names(aggregated.results) <- rownames(bibou)
+aggregated.results <- aggregated.results.named[,1]
+names(aggregated.results) <- rownames(aggregated.results.named)
 aggregated.results <- aggregated.results[!is.na(aggregated.results)]
 
 # aggregated.results must be a vector with the names given as set1, set2, set1&set2 ... etc (as given by expand_composite_indicators_to_set_intersections()):
@@ -77,4 +80,4 @@ plot <- set_intersection_plot(aggregated.results)
 
 aggregated.results
 
-
+corr <- cov(d_num)

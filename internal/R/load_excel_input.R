@@ -3,7 +3,7 @@ verify_excel_input()
 
 # data 
 logmessage(silver("loading and preparing data.."))
-data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
+data<-read.csv("./internal/input_files/data.csv",stringsAsFactors = F)
 
 
 missing_data_to_NA<-function(data){
