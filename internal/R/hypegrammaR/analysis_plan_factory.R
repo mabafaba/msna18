@@ -95,7 +95,8 @@ analysisplan_remove_dependent_same_as_independent<-function(analysisplan){
 
 
 map_to_analysisplan_custom_user_plan <- function(data, analysis_plan_user) {
-  
+
+  #Creates the analysis plan if use selected "..all.." instead of inputing a personal analysis plan
   analysis_plan_user_ALL <- analysis_plan_user[analysis_plan_user$variable=="..all..",]
   
   if(nrow(analysis_plan_user_ALL) > 0) {
@@ -123,10 +124,12 @@ map_to_analysisplan_custom_user_plan <- function(data, analysis_plan_user) {
                                     but have an empty \"variable\" field. Removed.")
                       }
   
+  # Changes all entries from the excel files to lowercase
   repeat.var = analysis_plan_user$repeat.for %>% to_alphanumeric_lowercase %>% unname
   independent.var = analysis_plan_user$disaggregate.by %>% to_alphanumeric_lowercase %>% unname
   independent.var <- independent.var %>% (function(x) {y<-x;y[is.na(x)|x==""|is.null(x)]<-NA;y})
   dependent.var = analysis_plan_user$variable %>% to_alphanumeric_lowercase %>% unname
+  
   illegal_independent <- independent.var[which(
                                               (
                                                 !((is.na(independent.var)) | independent.var=="") # not empty or na (which is allowed)
