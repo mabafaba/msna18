@@ -14,6 +14,6 @@ sapply(source_folders,.source_dir)
 # load external packages:
 .install_dependencies(.dependencies)
 .load_dependencies(.dependencies)
-# reach "hypegrammar" package ("unpackaged" and loaded as scripts)
+# reach "hypegrammaR" package ( dependencies installed and loaded, hypegrammaR loaded locally from .R files)
 source("./internal/R/121 - hypegrammar_dependencies.R")
 
