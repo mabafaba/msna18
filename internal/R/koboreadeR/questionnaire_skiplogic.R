@@ -47,10 +47,10 @@ list_collapse_logic_hierarchy<-function(l){
     
   }
   # otherwise sweet, let's collapse the first three elements
-  if(l[[2]]=="&"){combined<-l[[1]] | l[[3]]}
-  if(l[[2]]=="|"){combined<-l[[1]] & l[[3]]}
+  if(l[[2]]=="&"){combined<-l[[1]] & l[[3]]}
+  if(l[[2]]=="|"){combined<-l[[1]] | l[[3]]}
   l[[1]]<-NULL
-  l[[1]]<-NULL
+  l[[1]]<-NULL # those two lines do different things, as the "next" first element is deleted on the second row
   l[[1]]<-combined
   if(length(l)>1){
     # there might be more conditions after the first elements that I just collapsed.. if that's the case do those first and then return: 
@@ -58,9 +58,8 @@ list_collapse_logic_hierarchy<-function(l){
   }else{
     # otherwise all done!
     return(combined)
-  }
 }
-
+}
 
 is_collapsable_logiclist<-function(l){
   if(length(l)<3){
@@ -120,7 +119,7 @@ reduce_single_item_lists<-function(l){
 # BRACKET HIERARCHY LOGIC
 string_w_brackets_to_hierarchical_list<-function(x){
   x_split<-split_on_highest_brackets(x)
-  if(length(x_split)==1){return(x_split)}else{
+  if(length(x_split)==1){return(x_split %>% split_on_logical_operators)}else{
     return(lapply(x_split,string_w_brackets_to_hierarchical_list))
   }
 }
@@ -175,8 +174,8 @@ selected_condition_fulfilled<-function(data,condition){
   
   conditional_var<-strsplit(condition,"\\$\\{")[[1]][2] 
   conditional_var<-  strsplit(conditional_var,"\\}\\,")[[1]][1]
-  conditional_value<-strsplit(condition,'}, "')[[1]][2]
-  conditional_value<-strsplit(conditional_value,"\")")[[1]][1]
+  conditional_value<-strsplit(condition,'\\}[[:space:]]*,[[:space:]]*["]*')[[1]][2]
+  conditional_value<-strsplit(conditional_value,"\"*)")[[1]][1]
   
   varname<-to_alphanumeric_lowercase(conditional_var)
   # if the variable is not in the data we're giving up:
@@ -193,7 +192,6 @@ selected_condition_fulfilled<-function(data,condition){
 
 
 # for numeric type: returns a logical vector (condition fulfilled or not in provided records):
-
 numeric_condition_fulfilled<-function(data,condition){
   condition_split<-strsplit(condition, ">|<|>=|<=") %>% unlist
   operator_list<-c(">","<","=>","<=")
@@ -262,6 +260,22 @@ extract_varname_from_condition<-function(condition){
   return(to_alphanumeric_lowercase(varname))
 }
 
+condition<-"or asdlifj alsdif a or asldf and asdlfi or lisdafjliasdf or asdf and or"
+replace_pattern_by<-"|"
+x<-condition
+pattern<-"\\bor\\b"
 
+split_on_logical_operators<-function(condition){
+  
+  split_and_replace_words<-function(x,pattern,replace_pattern_by){
+    x<-paste(" ",x," ")
+    replaced <- x %>% strsplit(pattern) %>% unlist %>% rbind(replace_pattern_by) %>% .[-length(.)] %>% c    
 
-
+    replaced<-replaced[!(grepl("^[[:space:]]*$",replaced))]
+  }
+  x<-condition
+  conditions_split_by_or<-split_and_replace_words(condition,"\\bor\\b","|")
+  conditions_split_by_orand<-sapply(conditions_split_by_or, split_and_replace_words,"\\band\\b","&") %>% unlist %>% unname
+  conditions_split_by_orand[conditions_split_by_orand=="  |  "]<-"|"
+  conditions_split_by_orand %>% lapply(function(x){x}) # turn into list
+  }
