@@ -8,7 +8,7 @@
 #' @param independent.var string with the column name in `data` of the independent variable
 #' @param hypothesis.type the type of hypothesis as a string. Allowed values are "direct_reporting", "group_difference",
 #'  "limit", "correlation" or "change"
-#' @param case a string to support the mapping functions. It takes the form "CASE_TEST_TYPEOFDEPENDENTVARIABLE_TYPEOFINDEPENDENTVARIABLE"
+#' @param case a string to support the mapping functions. To list valid case strings use \link{\code{list_all_cases}}
 #' @details this function takes the data, information about your variables of interest, hypothesis type. It selects 
 #' the appropriate summary statistics, hypothesis test and visualisation and applies them.
 #' it uses \code{\link{map_to_case}}, \code{\link{map_to_design}}, \code{\link{map_to_summary_statistic}},

@@ -3,10 +3,11 @@
 #'
 #' creates a `survey` design object from the data
 #'
-#' @param data
+#' @param data dataframe with all the data; created from `130 - load_input.R` 
 #' @param cluster.var if cluster sampling was used, what's the name of the column(s) in `data` that identifies the cluster?
+#' @param weights if omitted, the formula will create a weight
 #' @details create a `survey` package design object from the data and information on the sampling strategy
-#' @return a `survey` package design object
+#' @return a `survey.design` package design object with `data`, `ids`, `weights` and `nest`
 #' @examples map_to_design(data,cluster.var="cluster_id")
 #' @export
 map_to_design <- function(data,
@@ -15,27 +16,35 @@ map_to_design <- function(data,
   
   cluster.id.formula <- cluster_formula()
   if(is.null(weights)){
-  strata.weights <- weights_of(data)}else{
-    strata.weights <- weights} 
+    strata.weights <- weights_of(data)
+    } else {
+    strata.weights <- weights
+    } 
   survey.design <- svydesign(data = data,
                              ids = formula(cluster.id.formula),
                              weights = as.vector(strata.weights),
                              nest = T)
-  return(survey.design)}
+  return(survey.design)
+  }
 #add to this an option that strata weights can be the vector of weights if there is one in the data & warning that we usually dont do this
 
 #' Map to case
 #'
-#' creates a string that other functions can use to know what analysis case they are dealing with
+#' Creates a string that other functions can use to know what analysis case they are dealing with. 
+#' \code{\link{map_to_design}}, \code{\link{map_to_summary_statistic}}, \code{\link{map_to_hypothesis_test}} 
+#' and \code{\link{map_to_visualisation}} depend on the string created by \code{\link{map_to_case}}.
 #'
-#' @param data missing documentation
-#' @param hypothesis.type
-#' @param dependent.var
-#' @param independent.var
-#' @param paired
-#' @return a string that other functions can use to know what analysis case they are dealing with. It has a class "analysis_case" assigned
-#' @examples map_to_design(data,cluster.var="cluster_id")
+#' @param data dataframe with all the data; created from `130 - load_input.R` 
+#' @param hypothesis.type the type of hypothesis as a string. Allowed values are "direct_reporting", "group_difference",
+#'  "limit", "correlation" or "change"
+#' @param dependent.var string with the column name in `data` of the dependent variable
+#' @param independent.var string with the column name in `data` of the independent variable
+#' @param paired #####QUESTION dont know what this does######
+#' @return a string that other functions can use to know what analysis case they are dealing with. 
+#' It has a class "analysis_case" assigned
+#' @examples map_to_case(data, "group_difference", "dependent.var", "independent.var")
 #' @export
+#' 
 map_to_case<-function(data,
                       hypothesis.type,
                       dependent.var,
@@ -96,13 +105,15 @@ case_not_implemented_error<-function(case,situation){
 #'
 #' selects an appropriate summary statistic function based on the analysis case
 #'
-#' @param case a string uniquely identifying the analysis case. output of \link{\code{map_to_case}}. To list valid case strings use \link{\code{list_all_cases}}
+#' @param case a string uniquely identifying the analysis case. output of \link{\code{map_to_case}}. 
+#' To list valid case strings use \link{\code{list_all_cases}}
 #' @return a _function_ that computes the relevant summary statistic
-#' @examples map_to_summary_statistic("group_difference_categorical_categorical")
+#' @examples map_to_summary_statistic("CASE_group_difference_categorical_categorical")
 #' @examples my_case<- map_to_case( ... )
 #' my_sumstat <- map_to_summary_statistic(my_case)
 #' my_sumstat( ... )
 #' @export
+
 map_to_summary_statistic <- function(case) {
   # sanitise input:
   if(!is_valid_case_string(case)){stop("input to map_to_summary_statistic must be a valid analysis case")}
@@ -139,9 +150,10 @@ map_to_summary_statistic <- function(case) {
 #'
 #' selects an appropriate hypothesis test function based on the analysis case
 #'
-#' @param case a string uniquely identifying the analysis case. output of \link{\code{map_to_case}}. To list valid case strings use \link{\code{list_all_cases}}
+#' @param case a string uniquely identifying the analysis case. output of \link{\code{map_to_case}}. 
+#' To list valid case strings use \link{\code{list_all_cases}}
 #' @return a _function_ that computes the relevant hypothesis test
-#' @examples map_to_summary_statistic("group_difference_categorical_categorical")
+#' @examples map_to_hypothesis_test("CASE_group_difference_categorical_categorical")
 #' @examples my_case<- map_to_case( ... )
 #' my_hyptest <- map_to_hypothesis_test(my_case)
 #' my_hyptest( ... )
@@ -178,9 +190,10 @@ map_to_hypothesis_test <- function(case) {
 #'
 #' selects an appropriate visualisation function based on the analysis case
 #'
-#' @param case a string uniquely identifying the analysis case. output of \link{\code{map_to_case}}. To list valid case strings use \link{\code{list_all_cases}}
+#' @param case a string uniquely identifying the analysis case. output of \link{\code{map_to_case}}. 
+#' To list valid case strings use \link{\code{list_all_cases}}
 #' @return a _function_ that creates the relevant ggplot object
-#' @examples map_to_visualisation("group_difference_categorical_categorical")
+#' @examples map_to_visualisation("CASE_group_difference_categorical_categorical")
 #' @examples my_case<- map_to_case( ... )
 #' my_vis_fun <- map_to_visualisation(my_case)
 #' my_ggplot_obj<-my_vis_fun( ... )
