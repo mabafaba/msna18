@@ -3,18 +3,30 @@
 #'
 #' Produce summary statistics, hypothesis tests and plot objects for a hypothesis
 #'
-#' @param data
+#' @param data dataframe with all the data; created from `130 - load_input.R`
 #' @param dependent.var string with the column name in `data` of the dependent variable
 #' @param independent.var string with the column name in `data` of the independent variable
-#' @param hypothesis.type the type of hypothesis as a string. Allowed values are "direct_reporting", "group_difference", "limit", "correlation" or "change"
-#' @param do.for.each.unique.value.in.var if you want to repeat the analysis for multiple subsets of the data, specify the column name in `data` by which to split the dataset
-#' @details this function takes the data, information about your variables of interest, hypothesis type and sampling strategy. It selects the appropriate summary statistics, hypothesis test and visualisation and applies them.
-#' it uses \code{\link{map_to_case}},\code{\link{map_to_indicator}},\code{\link{map_to_hypothesis}},\code{\link{map_to_visualisation}}
-#' @return A list with 1. the summary.statistic, 2. the hypothesis.test.result, and 3. the visualisation as a ggplot object
+#' @param hypothesis.type the type of hypothesis as a string. Allowed values are "direct_reporting", "group_difference",
+#'  "limit", "correlation" or "change"
+#' @param case a string to support the mapping functions. It takes the form "CASE_TEST_TYPEOFDEPENDENTVARIABLE_TYPEOFINDEPENDENTVARIABLE"
+#' @details this function takes the data, information about your variables of interest, hypothesis type. It selects 
+#' the appropriate summary statistics, hypothesis test and visualisation and applies them.
+#' it uses \code{\link{map_to_case}}, \code{\link{map_to_design}}, \code{\link{map_to_summary_statistic}},
+#' \code{\link{map_to_hypothesis_test}} and \code{\link{map_to_visualisation}}.
+#' The function does not take any `design` as parameter, it will create the `design` object itself.
+#' @return A list of 5 items with:
+#' 1. `input.parameters`, a list with the input parameters, 
+#' 2. `summary.statistic`, a dataframe with the summary.statistic, 
+#' 3. `hypothesis.test`, a list with the hypothesis.test.result,
+#' 4. `visualisation`, a ggplot object with the visualisation and
+#' 5. `message`, a string to say whether the analysis was successful or not
 #' @examples
-#' plot_crayons()
+#' #### USING SOM_MSNA_input
+#' analyse_indicator(data, "health_pay", "x7states", "group_difference")
+#' analyse_indicator(data, "health_pay", "x7states", "group_difference", "CASE_group_difference_categorical_categorical")
 #' @export
-analyse_indicator<-function(data,
+
+analyse_indicator <- function(data,
                             dependent.var,
                             independent.var = NULL,
                             hypothesis.type,
@@ -44,17 +56,22 @@ analyse_indicator<-function(data,
                         paired = NULL)
   }else{
     if(!is_valid_case_string(case)){
-      stop(paste(case,"is not a valid case string. List of valid cases:\n",paste(list_all_cases(T),collapse = "\n"),"value for argument 'case' is not a valid case string. It must be of the form CASE_[hypothesis_type]_[dependent.variable.type]_[independent.variable.type]\nfor example 'CASE_group_difference_categorical_categorical'\nAlternatively, you can leave out that parameter, and we will try to identify the case automagically from the questionnaire"))
+      stop(paste(case,"is not a valid case string. List of valid cases:\n",paste(list_all_cases(T),collapse = "\n"),
+                 "value for argument 'case' is not a valid case string. It must be of the form 
+                 CASE_[hypothesis_type]_[dependent.variable.type]_[independent.variable.type]\n
+                 for example 'CASE_group_difference_categorical_categorical'\nAlternatively, 
+                 you can leave out that parameter, and we will try to identify the case automagically 
+                 from the questionnaire"))
     }
   }
   
   
-  data_sanitised<-apply_data_sanitations(data,dependent.var,independent.var)
+  data_sanitised <- apply_data_sanitations(data,dependent.var,independent.var)
   
   
-  if(data_sanitised$success){
-    data<-data_sanitised$data
-  }else{
+  if(data_sanitised$success) {
+    data <- data_sanitised$data
+  } else {
     return(
       empty_result(input.parameters,data_sanitised$message)
       
@@ -86,13 +103,13 @@ analyse_indicator<-function(data,
                       case=case
                       
                     ),
-                    summary.statistic=summary.result,
-                    hypothesis.test=hypothesis.test.result,
-                    visualisation=visualisation,
-                    message="success (or unidentified issue)"
+                    summary.statistic = summary.result,
+                    hypothesis.test = hypothesis.test.result,
+                    visualisation = visualisation,
+                    message = "success (or unidentified issue)"
               ))
 
-    }
+}
 
 empty_result<-function(input.parameters,message){
   
