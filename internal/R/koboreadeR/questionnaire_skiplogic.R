@@ -2,7 +2,6 @@
 question_is_skipped_apply_condition_to_data<-function(data,condition){
   # print(paste("analysing skiplogic for:",condition))
   if(condition=="" | is.null(condition)|is.na(condition)){return(rep(FALSE,nrow(data)))}
-  
   hierarchical_condition_string<-string_w_brackets_to_hierarchical_list(condition)
   hierarchical_condition_string<-reduce_single_item_lists(hierarchical_condition_string)
   res<-hierarchical_condition_fulfilled(data,hierarchical_condition_string)
@@ -30,7 +29,6 @@ hierarchical_condition_fulfilled<-function(data,x){
 }
 
 
-
 list_collapse_logic_hierarchy<-function(l){
   if(!is.list(l)){return(l)}
   
@@ -38,8 +36,22 @@ list_collapse_logic_hierarchy<-function(l){
   # logical vector - operater string - logical vector - ....
   # this checks if that is the case:
   
+  # move parts that are only operators up one level:
+  indices_to_flatten<-lapply(l,all_elements_operators) %>% unlist %>% which
+  if(length(indices_to_flatten)>0){
+    l<- flatten_list_items(l,indices_to_flatten)
+  }
+  # collapse the 'not's (of this level) first:
+  
+  l<-collapse_not_operators(l)
   # if it's not a logical list combo that I can collapse directly, try collapsing first all sub elements ( - using this fun, so it'srecursive):
   if(!is_collapsable_logiclist(l)){l<-lapply(l,list_collapse_logic_hierarchy)}
+
+  
+  # if it's still a list but fully collapsed, return the logical vector:
+  if(is.list(l) & (length(l)==1) & is.logical(l[[1]])){
+    return(l[[1]])
+  }
   # if I it's still not a collapsable thing.. give up 
   if(!is_collapsable_logiclist(l)){
     warning("collapsable hierarchy list has a structure that I can't handle:")
@@ -67,14 +79,52 @@ is_collapsable_logiclist<-function(l){
     goodlisttooperateon<-FALSE
   }
   else{
-    # otherwise depends.. is the first and third element a logical vector - and the second element an operator as a character?
-    goodlisttooperateon<- is.logical(l[[1]]) & is.logical(l[[3]]) & (l[[2]] %in% c("|","&") )
+    # otherwise depends.. is the first and third element a logical vector - and the second element a single element and an operator as a character?
+    goodlisttooperateon<- is.logical(l[[1]]) & is.logical(l[[3]]) & (length(l[[2]])==1) &((l[[2]] %in% c("|","&")) )
   }
   goodlisttooperateon
 }
 
 
 
+
+is_a_not_operator<-function(l){
+  if(is.null(l)){return(F)}
+  if(is.list(l) | is.na(l) | is.null(l)){return(F)}
+  if(length(l)!=1){return(F)}
+  return(l=="!")
+}
+
+find_not_operators<-function(l){
+  which(lapply(l,is_a_not_operator) %>% unlist)
+}
+
+
+
+
+collapse_not_operators<-function(l){
+# which list items are 'not' operators?
+not_index<-find_not_operators(l)
+# sort decreasing before looping over so we can remove elements without messing up the indices:
+not_index<-sort(not_index,decreasing = T)
+# for each of them..
+for(i in not_index){
+  # if it's not the last element..
+  if(!(i>=length(l))){
+    # and if the next element is a logical vector..
+    if(is.logical(l[[i+1]])){
+      # apply 'not' to the logical vector
+      l[[i+1]]<- !l[[i+1]]
+      # delete the 'not' operator
+      l[[i]]<-NULL
+      
+    }
+  }
+
+}
+
+  return(l)
+}
 
 
 #helper functions for cleaning up nested lists.
@@ -84,7 +134,7 @@ is_collapsable_logiclist<-function(l){
 # strings naming operators (that define how the logical vectors should be combined)
 remove_junk_from_disected_condition<-function(hierarchical_condition){
   is.junk<-function(x){
-    if(is.list(x) | is.logical(x) | x=="|" | x=="&"){return(FALSE)}
+    if(is.list(x) | is.logical(x) | x=="|" | x=="&" | x=="!"){return(FALSE)}
     return(TRUE)
   }
   if(is.list(hierarchical_condition)){
@@ -112,10 +162,6 @@ reduce_single_item_lists<-function(l){
   
 }
 
-
-
-
-
 # BRACKET HIERARCHY LOGIC
 string_w_brackets_to_hierarchical_list<-function(x){
   x_split<-split_on_highest_brackets(x)
@@ -124,7 +170,7 @@ string_w_brackets_to_hierarchical_list<-function(x){
   }
 }
 
-
+# ( selected(${yes_no_host},""no"") ) and ( not(selected(${dest_loc_why1},""none"")) and not(selected(${dest_loc_why1},""dontknow"")) )
 split_on_highest_brackets<-function(x){
   chars<-lettervector(x)
   openings<-(chars=="(") %>% as.numeric
@@ -253,6 +299,14 @@ identify_operator_in_string<-function(x){
   return(NA)
 }
 
+all_elements_operators<-function(l){
+  if(is.null(l)){return(FALSE)}
+  if(is.na(l)){return(FALSE)}
+  if(sapply(l,function(x){length(x)>1}) %>% any){return(FALSE)}
+  if(sapply(l,is.list) %>% any){return(FALSE)}
+  if(sapply(l,function(x){x %in% c("|","&","!")}) %>% all){return(TRUE)}
+  return(FALSE)
+}
 
 extract_varname_from_condition<-function(condition){
   varname<-strsplit(condition,"\\$\\{")[[1]][2] 
@@ -260,22 +314,24 @@ extract_varname_from_condition<-function(condition){
   return(to_alphanumeric_lowercase(varname))
 }
 
-condition<-"or asdlifj alsdif a or asldf and asdlfi or lisdafjliasdf or asdf and or"
-replace_pattern_by<-"|"
-x<-condition
-pattern<-"\\bor\\b"
+condition<-"not A or B asdlifj alsdif a or C asldf not D and not(E and F asdlfi or G lisdafjliasdf or E asdf and F or G"
 
 split_on_logical_operators<-function(condition){
   
   split_and_replace_words<-function(x,pattern,replace_pattern_by){
     x<-paste(" ",x," ")
     replaced <- x %>% strsplit(pattern) %>% unlist %>% rbind(replace_pattern_by) %>% .[-length(.)] %>% c    
-
-    replaced<-replaced[!(grepl("^[[:space:]]*$",replaced))]
+    replaced<-replaced[!(grepl("^[[:space:]]*$",replaced))] # remove empty strings
+    # remove nay amount (*) of spaces at beginnig (^) and end ($) of strings: 
+    replaced<- gsub("[[:space:]]*$","",replaced) %>% gsub("^[[:space:]]*","",.)
   }
-  x<-condition
   conditions_split_by_or<-split_and_replace_words(condition,"\\bor\\b","|")
   conditions_split_by_orand<-sapply(conditions_split_by_or, split_and_replace_words,"\\band\\b","&") %>% unlist %>% unname
-  conditions_split_by_orand[conditions_split_by_orand=="  |  "]<-"|"
-  conditions_split_by_orand %>% lapply(function(x){x}) # turn into list
-  }
+  conditions_split_by_orandnot<-sapply(conditions_split_by_orand,
+                                       split_and_replace_words,
+                                       "[[:space:]]not\\(*[[:space:]]","!") %>% unlist %>% unname
+  
+  # turn into list
+  condition_split_all_list <- conditions_split_by_orandnot %>% lapply(function(x){x}) 
+}
+
