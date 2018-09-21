@@ -1,3 +1,15 @@
+#' apply_data_analysis_plan
+#' 
+#' A wrapper for analyse_indicator() that ties it into the general Impact workflow surrounding analysis plans
+#'
+#' @param data dataframe with all the data; created from `130 - load_input.R`
+#' @param analysisplan dataframe with the analysis plan details; created with map_to_analysisplan_custom_user_plan();
+#' @return a list of 2 lists `results` and `analysisplan`
+#' `results` a list of `n` lists created by \code{\link{analyse_indicator}}. `n` is the number of analysis made.
+#' `analysisplan` a dataframe with the analysis plan details
+#' @export
+#'
+#' @examples
 apply_data_analysis_plan<-function(data,analysisplan){
   data %>% rbind.data.frame
   analysisplan<-analysisplan[!is.na(analysisplan$dependent.var),]
