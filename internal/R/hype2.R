@@ -35,7 +35,7 @@ test_weights<-weights_of(data)
 rm(test_weights)
 # COMPOSITE INDICATORS:
 logmessage(silver("making composite indicators.."))
-load_composite_indicator_definition_weighted_count<-load_composite_indicator_definition_weighted_count()
+composite_indicators_definitions_weighted_counts<-load_composite_indicator_definition_weighted_count()
 # composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[c(49:75),]
 # composite_indicators_definitions_weighted_counts <- composite_indicators_definitions_weighted_counts[(39:48),]
 
