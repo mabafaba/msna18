@@ -12,7 +12,6 @@ clear_console()
 # set up log file:
 .log<-list();.logfile<-"./output/log/log.txt";.clearlog()
 
-
 source("./internal/R/130 - load_input.R",local = T)
 # this created following objects:
 # data  # questionnaire  # data_parameters # analysis_plan_user
