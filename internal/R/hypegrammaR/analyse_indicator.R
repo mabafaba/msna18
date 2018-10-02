@@ -70,7 +70,7 @@ analyse_indicator<-function(data,
 
   # map from case to appropriate summary statistic, hypothesis test and visualisation:
   design <- map_to_design(data = data, cluster.var = NULL, 
-                          weights = data[["weights.all.population.groups"]]) #LIBYA ONLY
+                          weights = data[["weights.all.population.groups"]])
   
   summarise.result<- map_to_summary_statistic(case)
 
