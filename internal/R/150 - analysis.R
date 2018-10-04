@@ -1,5 +1,5 @@
 analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
-#analysisplan <- analysisplan[c(1:22),]
+
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
 logmessage(silver("applying analysis plan.."))
 data$calc.household<-NA
