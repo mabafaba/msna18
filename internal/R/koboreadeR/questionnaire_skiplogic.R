@@ -6,8 +6,11 @@ question_is_skipped_apply_condition_to_data<-function(data,condition){
   hierarchical_condition_string<-reduce_single_item_lists(hierarchical_condition_string)
   res<-hierarchical_condition_fulfilled(data,hierarchical_condition_string)
   res<-remove_junk_from_disected_condition(res)
-  res<-list.clean(res,recursive = T,fun = is.null)
-  res<-reduce_single_item_lists(res)
+  if(is.list(res)){
+    res<-list.clean(res,recursive = T,fun = is.null)
+    res<-reduce_single_item_lists(res)
+  }
+  
   is_skipped<-list_collapse_logic_hierarchy(res)
   if(!is.vector(is_skipped)){
     warning("at least parts of skip logic condition `", condition ,"` could not be read properly.")
@@ -171,6 +174,8 @@ string_w_brackets_to_hierarchical_list<-function(x){
   }
 }
 
+# split a string into a list on the top level bracket
+# has unit tests
 split_on_highest_brackets<-function(x){
   chars<-lettervector(x)
   openings<-(chars=="(") %>% as.numeric
