@@ -149,6 +149,7 @@ remove_junk_from_disected_condition<-function(hierarchical_condition){
 # flattens a list that only has a single item.
 # e.g. turns list(list("A")) into list("A")
 # does that recursively through all subelements of a nested list
+# has unit tests
 reduce_single_item_lists<-function(l){
   # if l is a single item list, reduce until it no longer is:
   while(is.list(l) & length(l)==1){l<-l[[1]]}
@@ -162,6 +163,7 @@ reduce_single_item_lists<-function(l){
 }
 
 # BRACKET HIERARCHY LOGIC
+# has unit tests
 string_w_brackets_to_hierarchical_list<-function(x){
   x_split<-split_on_highest_brackets(x)
   if(length(x_split)==1){return(x_split %>% split_on_logical_operators)}else{
@@ -169,7 +171,6 @@ string_w_brackets_to_hierarchical_list<-function(x){
   }
 }
 
-# ( selected(${yes_no_host},""no"") ) and ( not(selected(${dest_loc_why1},""none"")) and not(selected(${dest_loc_why1},""dontknow"")) )
 split_on_highest_brackets<-function(x){
   chars<-lettervector(x)
   openings<-(chars=="(") %>% as.numeric
@@ -183,10 +184,6 @@ split_on_highest_brackets<-function(x){
   highest_opening_split_positions<-(!highest_level&c(FALSE,highest_level[1:(length(highest_level)-1)])) %>% which
 splitStringAt(x,c(highest_opening_split_positions,highest_closing_split_positions))  
 }
-
-
-
-
 
 
 # INDIVIDUAL CONDITIONS FULFILLED IN DATA? (identify numeric or categorical):
@@ -319,7 +316,6 @@ extract_varname_from_condition<-function(condition){
   return(to_alphanumeric_lowercase(varname))
 }
 
-condition<-"not A or B asdlifj alsdif a or C asldf not D and not(E and F asdlfi or G lisdafjliasdf or E asdf and F or G"
 
 split_on_logical_operators<-function(condition){
   
