@@ -129,12 +129,11 @@ for(i in not_index){
 
 #helper functions for cleaning up nested lists.
 
-
 # recursively removes all list items that are not logical vectors or 
 # strings naming operators (that define how the logical vectors should be combined)
 remove_junk_from_disected_condition<-function(hierarchical_condition){
   is.junk<-function(x){
-    if(is.list(x) | is.logical(x) | x=="|" | x=="&" | x=="!"){return(FALSE)}
+    if(all(is.list(x)) | all(is.logical(x)) | all(x=="|") | all(x=="&") | all(x=="!")){return(FALSE)}
     return(TRUE)
   }
   if(is.list(hierarchical_condition)){
@@ -196,19 +195,25 @@ splitStringAt(x,c(highest_opening_split_positions,highest_closing_split_position
 # agnostic to condition type:
 single_condition_fulfilled<-function(data,x){
   if(is_numeric_condition(x)){return(numeric_condition_fulfilled(data,x))}
-  if(is_selected_condition(x)){return(selected_condition_fulfilled(data,x))}
+  if(is_select_multiple_condition(x)){return(select_multiple_condition_fulfilled(data,x))}
   operator_identified<-identify_operator_in_string(x)
   if(!is.na(operator_identified)){return(operator_identified)}
   return(x)
 }
 
 # is condition type "selected"?
-is_selected_condition<-function(condition){
-  (length(grep("}[[:space:]]*,[[:space:]]*['\"]",condition,fixed = F))!=0)
-}
+
 # is condition type "numric"?
 is_numeric_condition<-function(condition){
   (strsplit(condition,">|<|>=|<=")[[1]] %>% length)==2
+}
+
+is_select_one_condition<-function(condition){
+  (length(grep("}[[:space:]]*=[[:space:]]*['\"]",condition,fixed = F))!=0)
+}
+
+is_select_multiple_condition<-function(condition){
+  (length(grep("}[[:space:]]*,[[:space:]]*['\"]",condition,fixed = F))!=0)
 }
 
 
@@ -216,7 +221,7 @@ is_numeric_condition<-function(condition){
 
 
 # for selected type: returns a logical vector (condition fulfilled or not in provided records):
-selected_condition_fulfilled<-function(data,condition){
+select_multiple_condition_fulfilled<-function(data,condition){
   
   conditional_var<-strsplit(condition,"\\$\\{")[[1]][2] 
   conditional_var<-  strsplit(conditional_var,"\\}\\,")[[1]][1]
