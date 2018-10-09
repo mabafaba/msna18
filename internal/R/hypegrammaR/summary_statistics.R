@@ -125,6 +125,7 @@ percent_with_confints_select_one_groups <- function(dependent.var,
     }
   }
   if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
+  if(!question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
   
   formula_string <- paste0("~",dependent.var ,sep = "")
   by <- paste0("~", independent.var ,sep = "")
@@ -309,7 +310,9 @@ confidence_intervals_mean <- function(dependent.var,
   
   ###function that takes a variable (vector of values) and checks if it has more than one unique values
   var_more_than_n <- function(var, n){
-    if(length(unique(var)) > n){
+    var <- na.rm(var)
+    var <- trimws(var)
+    if(length(unique(var[var != ""])) > n){
       return(TRUE)
     }
     return(FALSE)

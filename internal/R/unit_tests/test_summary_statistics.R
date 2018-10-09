@@ -59,31 +59,41 @@ test_that("percent_with_confints outputs are correct",{
   expect_error(percent_with_confints(tf$numeric[1], design))
 })
 
- test_that("percent_with_confints_groups",{
-   expect_error(percent_with_confints_groups(("today"), ("sheep"), design))
-   expect_is(percent_with_confints_select_mult(("household_expenditure"), design), "data.frame")
-   expect_is(percent_with_confints_select_mult(("household_expenditure"), design), "data.frame")
- })
+test_that("percent_with_confints_select_mult_groups all inputs correct",{
+  expect_is(percent_with_confints_select_mult_groups(tf$select_multiple[1], tf$select_one[2], design), "data.frame") 
+  expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design)) ##wrong dependent
+  expect_error(percent_with_confints_select_one_groups(tf$numeric[1], tf$select_one[2], design)) ## wrong dependent
+  expect_error(percent_with_confints_select_one_groups(tf$fake[1], tf$select_one[2], design)) ## wrong dependent
+  expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$fake[2], design)) ##wrong independent
+  expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$numeric[2], design)) ##wrong independent
+  expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$numeric[2], design)) ## wrong independent
+  expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$select_multiple[2], design)) ## wrong independent
+})
+
+test_that("percent_with_confints_select_mult_groups all outputs correct",{
+  expect_is(percent_with_confints_select_mult_groups(tf$select_multiple[1], tf$select_one[2], design), "data.frame")
+  expect_named(percent_with_confints_select_mult_groups(tf$select_multiple[1], tf$select_one[2], design), c("dependent.var","independent.var",
+                                                                                                      "dependent.var.value","independent.var.value",
+                                                                                                      "numbers","se","min","max"))
+  expect_true(is.numeric(percent_with_confints_select_mult_groups(tf$select_multiple[1], tf$select_one[2], design)$numbers))
+})
+
  
  test_that("percent_with_confints_select_one_groups all inputs correct",{
    expect_is(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design), "data.frame") 
    expect_error(percent_with_confints_select_one_groups(tf$numeric[1], tf$select_one[2], design)) ##wrong dependent
    expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$select_one[2], design)) ## wrong dependent
-   expect_error(percent_with_confints_select_one_groups(tf$numeric[1], tf$numeric[2], design)) ##wrong independent
+   expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$numeric[2], design)) ##wrong independent
    expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$numeric[2], design)) ## wrong independent
+   expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$select_multiple[2], design)) ## wrong independent
  })
  
  test_that("percent_with_confints_select_one_groups all outputs correct",{
    expect_is(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design), "data.frame")
-  
    expect_named(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design), c("dependent.var","independent.var",
                                                                                                      "dependent.var.value","independent.var.value",
                                                                                                      "numbers","se","min","max"))
    expect_true(is.numeric(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design)$numbers))
-   expect_match(names(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$select_one[2], design)), "max",all = FALSE)
  })
    
-   ###converts a numeric dependent var to a factor
-   ### the names of the levels in the svytstat object worl
-#expect_warning
-#expect_error
+
