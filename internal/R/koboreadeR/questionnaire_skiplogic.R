@@ -1,4 +1,6 @@
-
+#### known issues:
+#### brackets that contain no condition by themselves are ignored
+#### e.g. ${a}+2*(3+5)>20 is read as as ${a}+2>20 
 question_is_skipped_apply_condition_to_data<-function(data,condition){
   # print(paste("analysing skiplogic for:",condition))
   if(condition=="" | is.null(condition)|is.na(condition)){return(rep(FALSE,nrow(data)))}
@@ -25,6 +27,7 @@ question_is_skipped_apply_condition_to_data<-function(data,condition){
 
 # takes a condition that's already split into a hierarchical list and applies it to data
 hierarchical_condition_fulfilled<-function(data,x){
+  
   if(is.list(x)){return(lapply(x,hierarchical_condition_fulfilled,data=data))}else{
     
     single_condition_fulfilled(data,x)
@@ -40,15 +43,42 @@ list_collapse_logic_hierarchy<-function(l){
   # this checks if that is the case:
   
   # move parts that are only operators up one level:
-  indices_to_flatten<-lapply(l,all_elements_operators) %>% unlist %>% which
-  if(length(indices_to_flatten)>0){
-    l<- flatten_list_items(l,indices_to_flatten)
+  indices_to_flatten_allops<-lapply(l,all_elements_operators) %>% unlist %>% which
+  if(length(indices_to_flatten_allops)>0){
+    l<- flatten_list_items(l,indices_to_flatten_allops)
   }
-  # collapse the 'not's (of this level) first:
   
+  
+  # collapse the 'not's (of this level) first:
   l<-collapse_not_operators(l)
+  
+  
+  # are there any items of the form: list([logical],[operator])? they must be moved up one level (since they can not be collapsed on their own level..0)
+  # this is an edge case that appears when one side of an operator is nested in extra brackets like this:
+  # ([condition without extra brackets] [and/or] ([condition in extra brackets]))
+  # example:
+  # $ :List of 2
+  # ..$ : logi [1:n] FALSE FALSE FALSE ...
+  # ..$ : chr "|"
+  # $ : logi [1:n] FALSE FALSE FALSE ...
+  indices_to_flatten_endsinoperator<-lapply(l,function(x){
+    collapsable<-is_collapsable_logiclist(x)
+    ends_in_operator<-all_elements_operators(last(x))
+      # return(!collapsable & ends_in_operator)      
+    }) %>% unlist %>% which
+
+  if(length(indices_to_flatten_endsinoperator)>0){
+    l<- flatten_list_items(l,indices_to_flatten_endsinoperator)
+  }
+  # collapse the 'not's (of this level) again:
+  l<-collapse_not_operators(l)
+  
+
   # if it's not a logical list combo that I can collapse directly, try collapsing first all sub elements ( - using this fun, so it'srecursive):
-  if(!is_collapsable_logiclist(l)){l<-lapply(l,list_collapse_logic_hierarchy)}
+  if(!is_collapsable_logiclist(l)){
+    
+    l<-lapply(l,list_collapse_logic_hierarchy)
+    }
 
   
   # if it's still a list but fully collapsed, return the logical vector:
@@ -93,7 +123,7 @@ is_collapsable_logiclist<-function(l){
 
 is_a_not_operator<-function(l){
   if(is.null(l)){return(F)}
-  if(is.list(l) | is.na(l) | is.null(l)){return(F)}
+  if(any(is.list(l)) | any(is.na(l)) | is.null(l)){return(F)}
   if(length(l)!=1){return(F)}
   return(l=="!")
 }
@@ -198,6 +228,7 @@ splitStringAt(x,c(highest_opening_split_positions,highest_closing_split_position
 single_condition_fulfilled<-function(data,x){
   if(is_numeric_condition(x)){return(numeric_condition_fulfilled(data,x))}
   if(is_select_multiple_condition(x)){return(select_multiple_condition_fulfilled(data,x))}
+  if(is_select_one_condition(x)){return(select_one_condition_fulfilled(data,x))}
   operator_identified<-identify_operator_in_string(x)
   if(!is.na(operator_identified)){return(operator_identified)}
   return(x)
@@ -244,29 +275,91 @@ select_multiple_condition_fulfilled<-function(data,condition){
 
 
 
+mark_operator<-function(x,operator,operator_search=NULL){
+  if(is.null(operator_search)){operator_search<-operator}
+  gsub(paste0("[\\",operator_search,"]"),paste0("HERESANOPERATOR",operator,"HERESANOPERATOR"),x)
+  }
+
+
+kobo_expression_to_valid_r_code<-function(expression){
+  condition<-"${total_children}+${total_children}+1>0+1*5*${total_childrens}"
+  expression<-extract_varname_from_condition(expression)
+  to_compare<-condition
+  to_compare_components<-to_compare %>%
+    mark_operator("\\+") %>%
+    mark_operator("-") %>%
+    mark_operator("/") %>%
+    mark_operator("\\*")  %>%
+    mark_operator(">[^=]") %>%
+    mark_operator(">=") %>% 
+    mark_operator("<=") 
+  to_compare_components<- strsplit(to_compare_components,"HERESANOPERATOR")[[1]]
+  
+  
+}
 # for numeric type: returns a logical vector (condition fulfilled or not in provided records):
 numeric_condition_fulfilled<-function(data,condition){
-  condition_split<-strsplit(condition, ">|<|>=|<=") %>% unlist
-  operator_list<-c(">","<","=>","<=")
-  OPERATOR    <- operator_list[lapply(operator_list,grepl,condition) %>% unlist]
-  CRITICAL_VALUE<-condition_split[[2]] %>% gsub("\\(|\\)","",.) %>% as.numeric
+  # this might be simplified like this:
+  # JUST REMOVE $, { and }, then evaluate and pray!
+  # condition_split<-strsplit(condition, ">|<|>=|<=") %>% unlist
+  # operator_list<-c(">","<","=>","<=")
+  # OPERATOR    <- operator_list[lapply(operator_list,grepl,condition) %>% unlist]
+  # CRITICAL_VALUE<-condition_split[[2]] %>% gsub("\\(|\\)","",.) 
   
-  to_compare<-condition_split[[1]]
-  to_compare_components<-gsub("\\+","HERESANOPERATOR+HERESANOPERATOR",to_compare)
-  to_compare_components<- strsplit(to_compare_components,"HERESANOPERATOR")[[1]]
-  to_compare_components_as_varnames<-lapply(to_compare_components,extract_varname_from_condition) %>% unlist %>% to_alphanumeric_lowercase
-  if(!(to_compare_components_as_varnames %in% names(data))){
-    warning(paste("couldn't figure out skip logic:",varname,"is not a column name in the provided data."))
-    return(rep(TRUE,nrow(data)))}
-  # lapply(to_compare_components_as_varnames,function(x){if(!is.na(x)){return(data[,x])}else{NA}})
-  varnames_subset_rexpression<-to_compare_components_as_varnames %>% lapply(function(x){if(!is.na(x)){return(paste0('data[,"',x,'"]'))}else{return(x)}}) %>% unlist
-  varnames_subset_rexpression[is.na(varnames_subset_rexpression)]<-to_compare_components[is.na(varnames_subset_rexpression)]   
-  to_compare_rexpression<-varnames_subset_rexpression %>%  paste0(collapse="")
-  full_expression<- paste0(to_compare_rexpression,OPERATOR,CRITICAL_VALUE)
+  # to_compare<-condition_split[[1]]
+  # # split on mathematical operators +, -, *, /:
+  # to_compare_components<-to_compare %>%
+  #   mark_operator("\\+") %>%
+  #   mark_operator("-") %>%
+  #   mark_operator("/") %>%
+  #   mark_operator("*")  #%>%
+  #   # mark_operator(">") %>% 
+  #   # mark_operator(">") %>% 
+  #   # mark_operator(">=") %>% 
+  #   # mark_operator("<=") 
+  # to_compare_components<- strsplit(to_compare_components,"HERESANOPERATOR")[[1]]
+  # # get real varnames:
+  # varnames<-lapply(to_compare_components,extract_varname_from_condition) %>% unlist %>% to_alphanumeric_lowercase
+  # is_variable_name<-!is.na(varnames)
+  # to_compare_components_as_varnames<-to_compare_components
+  # to_compare_components_as_varnames[is_variable_name]<-varnames[is_variable_name]
+
+  # if(any(!(varnames[is_variable_name] %in% names(data)))){
+  #   warning(paste("couldn't figure out skip logic. The following variable names are not a column in the provided data:\n",
+  #                 paste(pastevarnames[!(varnames[is_variable_name] %in% names(data))],collapse="\n")))
+  #   return(rep(TRUE,nrow(data)))}
+  # varnames_subset_rexpression<-to_compare_components_as_varnames
+  # varnames_subset_rexpression[is_variable_name]<-to_compare_components_as_varnames[is_variable_name] %>% lapply(function(x){if(!is.na(x)){return(paste0('data[,"',x,'"]'))}else{return(x)}}) %>% unlist
+  # varnames_subset_rexpression[is.na(varnames_subset_rexpression)]<-to_compare_components[is.na(varnames_subset_rexpression)]   
+  # to_compare_rexpression<-varnames_subset_rexpression %>%  paste0(collapse="")
+  # full_expression<- paste0(to_compare_rexpression,OPERATOR,CRITICAL_VALUE)
+  attach(data)
+  full_expression<-rify_varnames_in_string(condition)
   is_skipped<-eval(parse(text = full_expression))
+  detach(data)
   return(is_skipped)
 }
 
+# for select one type: returns a logical vector (condition fulfilled or not in provided records):
+select_one_condition_fulfilled<-function(data,condition){
+  
+  conditional_var<-strsplit(condition,"\\$\\{")[[1]][2] 
+  conditional_var<-  strsplit(conditional_var,"\\}[[:space:]]*\\=[\"']")[[1]][1]
+  conditional_value<-strsplit(condition,"\\}[[:space:]]*\\=[\"']")[[1]][2]
+  conditional_value<-strsplit(conditional_value,"[\"']")[[1]][1]
+  
+  varname<-to_alphanumeric_lowercase(conditional_var)
+  # if the variable is not in the data we're giving up:
+  if(!(varname %in% names(data))){
+    warning(paste("couldn't figure out part of skip logic condition:\n",condition,"\n", varname," is not a column name in the provided data.\nassuming no records are skipped."))
+    return(rep(FALSE,nrow(data)))}
+
+    # this is lapplying over rows so super inefficient. Should avoid strsplit, and regex the conditional_value in all rows (considering potential select_multiple!)
+    lapply(data[,varname],function(x){
+    (conditional_value%in%(x %>% as.character %>% strsplit(" ") %>% unlist))
+  }
+  ) %>% unlist
+}
 
 
 
@@ -308,7 +401,7 @@ identify_operator_in_string<-function(x){
 
 all_elements_operators<-function(l){
   if(is.null(l)){return(FALSE)}
-  if(is.na(l)){return(FALSE)}
+  if(any(is.na(l))){return(FALSE)}
   if(sapply(l,function(x){length(x)>1}) %>% any){return(FALSE)}
   if(sapply(l,is.list) %>% any){return(FALSE)}
   if(sapply(l,function(x){x %in% c("|","&","!")}) %>% all){return(TRUE)}
@@ -320,6 +413,13 @@ extract_varname_from_condition<-function(condition){
   varname<-  strsplit(varname,"\\}")[[1]][1]
   return(to_alphanumeric_lowercase(varname))
 }
+
+rify_varnames_in_string<-function(x){
+  x<-gsub("[\\{\\$\\}\\(\\)]","",x)
+  
+}
+
+
 
 
 split_on_logical_operators<-function(condition){

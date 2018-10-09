@@ -1,5 +1,50 @@
+is_in_test_dir<-(getwd() %>% gsub("\\/$","",.) %>% strsplit("/") %>% .[[1]] %>% last)=="unit_tests"
+if(!is_in_test_dir){setwd("./internal/R/unit_tests/")}
 
 context("Skip Logic: basics")
+
+
+
+
+test_that("question_is_skipped_apply_condition_to_data works",{
+  # setwd("./internal/R/unit_tests/")
+  example<-load.example("example1",T)
+  expect_is(question_is_skipped,"function")                   
+  
+  attach(example$data)
+  skip_examples<-c("settlement_other","selected(${settlement},\"other\")",'settlement=="other"',
+                   "settlement_other","${settlement}='other'",'settlement=="other"',
+                   "plw","${females_13_15}>0 or ${females_16_17}>0 or ${females_18_40}>0",'females_13_15>0 | females_16_17>0 | females_18_40>0',
+                   "note_vuln_gender","${disabled_chronic}>0 or ${sick_children}>0 or ${mental}>0 or ${uasc}>0","disabled_chronic>0 | sick_children>0 | mental>0 | uasc>0",
+                   "note_vuln_gender","(${disabled_chronic}>0 or ${sick_children}>0) and (${mental}>0 or (${uasc}>0))","(disabled_chronic>0 | sick_children>0) & (mental>0 | uasc>0)",
+                   "uasc","${total_children}>0", "total_children>0",
+                   "uasc","${total_children}+1>0+1*5*${total_children}", "(total_children+1)>0+1*5*total_children",
+                   "uasc","(${total_children}+1)*2>2*(0+1*5*${total_children})+3", "(total_children+1)*2>2*(0+1*5*total_children)+3"
+                   
+                   
+                   
+                   
+                   
+  ) %>% 
+    matrix(3,byrow=F) %>% t %>% as.data.frame(stringsAsFactors=F) %>% set_colnames(c("var","condition","manual_calculation"))
+  
+  skip_example_solutions<-apply(skip_examples,1,function(x){
+    !eval(parse(text=x["manual_calculation"]))
+  })
+  detach(example$data)
+  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[1,"condition"]),skip_example_solutions[,1])
+  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[2,"condition"]),skip_example_solutions[,2])
+  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[3,"condition"]),skip_example_solutions[,3])
+  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[4,"condition"]),skip_example_solutions[,4])
+  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[5,"condition"]),skip_example_solutions[,5])
+  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[6,"condition"]),skip_example_solutions[,6])
+  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[7,"condition"]),skip_example_solutions[,7])
+  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[7,"condition"]),skip_example_solutions[,8])
+  })
+
+
+
+
 
 test_that("reduce_single_item_lists identities",{
   expect_equal(reduce_single_item_lists(NULL),NULL)
@@ -189,32 +234,3 @@ test_that("question_is_skipped_apply_condition_to_data FALSE on empty condition"
   })
 
 
-
-test_that("question_is_skipped_apply_condition_to_data works",{
-  # setwd("./internal/R/unit_tests/")
-  example<-load.example("example1")
-  
-  expect_is(question_is_skipped,"function")                   
-
-  attach(example$data)
-  skip_examples<-c("settlement_other","selected(${settlement},\"other\")",'settlement=="other"',
-                      "plw","${females_13_15}>0 or ${females_16_17}>0 or ${females_18_40}>0",'females_13_15>0 | females_16_17>0 | females_18_40>0',
-                     "uasc","${total_children}>0", "total_children>0",
-                     "note_vuln_gender","${disabled_chronic}>0 or ${sick_children}>0 or ${mental}>0 or ${uasc}>0","disabled_chronic>0 | sick_children>0 | mental>0 | uasc>0"
-                     
-                     
-                     ) %>% 
-                      matrix(3,4,byrow=F) %>% t %>% as.data.frame(stringsAsFactors=F) %>% set_colnames(c("var","condition","manual_calculation"))
-  
-    skip_example_solutions<-apply(skip_examples,1,function(x){
-      !eval(parse(text=x["manual_calculation"]))
-    })
-
-  detach(example$data)
-  
-  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[1,"condition"]),skip_example_solutions[,1])
-  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[2,"condition"]),skip_example_solutions[,2])
-  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[3,"condition"]),skip_example_solutions[,3])
-  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[4,"condition"]),skip_example_solutions[,4])
-                   
-  })
