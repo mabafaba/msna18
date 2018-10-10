@@ -3,9 +3,6 @@ if(!is_in_test_dir){setwd("./internal/R/unit_tests/")}
 
 context("Skip Logic: basics")
 
-
-
-
 test_that("question_is_skipped_apply_condition_to_data works",{
   # setwd("./internal/R/unit_tests/")
   example<-load.example("example1",T)
