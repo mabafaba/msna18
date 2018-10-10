@@ -12,18 +12,21 @@ percent_with_confints_select_one <- function(dependent.var,
                                              design,
                                              na.rm = TRUE){
   
-  
-
   # if dependent var have only one value, just return that:
-  
-  dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
+
+    
+  dependent_more_than_1 <- var_more_than_n(data[[dependent.var]], 1)
 
   if(!dependent_more_than_1){
     dependent.var.value=unique(design$variables[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
 
+  if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
+  
   tryCatch(expr={result_hg_format<- 
   {
+    design$variables[[dependent.var]] <- as.factor(design$variables[[dependent.var]])
+    
     result_svy_format <- svymean(formula(paste0("~", dependent.var)),design, level=0.95) %>% cbind(.,confint(.))
     colnames(result_svy_format)<-c("numbers","min","max")
     summary_with_confints <- data.frame(dependent.var=dependent.var,
@@ -50,14 +53,15 @@ percent_with_confints_select_mult <- function(dependent.var,
   
   
   # if dependent and independent variables have only one value, just return that:
-  choices <- data[,choices_for_select_multiple(dependent.var, design$variables)]
+  choices <- design$variables[,choices_for_select_multiple(dependent.var, design$variables)]
   
   dependent_more_than_1 <- length(unique(design$variables[[dependent.var]])) > 1
   if(!dependent_more_than_1){
     dependent.var.value=unique(design$variables[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
+  
   result_hg_format <- lapply(names(choices), function(x){
-    design$variables[[x]]<-as.logical(design$variables[[x]])    
+    design$variables[[x]]<-as.logical(design$variables[[x]])
     result_svy_format <- svymean(formula(paste0("~", x)),design, level=0.95) %>% cbind(.,confint(.))
     result_svy_format<-result_svy_format[rownames(result_svy_format)==paste0(x,TRUE),,drop=F]
     colnames(result_svy_format)<-c("numbers","min","max")
@@ -103,7 +107,7 @@ percent_with_confints_groups <- function(dependent.var,
   return(percent_with_confints_select_one_groups(dependent.var = dependent.var, independent.var = independent.var, design = design))
 }
 
-
+### TESTED without weighting CHECK 
 percent_with_confints_select_one_groups <- function(dependent.var,
                                              independent.var,
                                              design,
@@ -112,14 +116,16 @@ percent_with_confints_select_one_groups <- function(dependent.var,
   
   # if dependent and independent variables have only one value, just return that:
   
-  if(length(unique(as.character(data[[dependent.var]])))==1){
-    dependent.var.value=unique(data[[dependent.var]])
-    if(length(unique(as.character(data[[independent.var]])))==1){
-      independent.var.value=unique(data[[independent.var]])	
+  if(length(unique(as.character(design$variables[[dependent.var]])))==1){
+    dependent.var.value=unique(design$variables[[dependent.var]])
+    if(length(unique(as.character(design$variables[[independent.var]])))==1){
+      independent.var.value=unique(design$variables[[independent.var]])	
       return(data.frame(dependent.var,independent.var,dependent.var.value,independent.var.value,numbers=1,se=NA,min=NA,max=NA))
       
     }
   }
+  if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
+  if(!question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
   
   formula_string <- paste0("~",dependent.var ,sep = "")
   by <- paste0("~", independent.var ,sep = "")
@@ -128,6 +134,8 @@ percent_with_confints_select_one_groups <- function(dependent.var,
   result_hg_format<- # tryCatch(
   {
 
+    design$variables[[dependent.var]] <- as.factor(design$variables[[dependent.var]])
+    
     result_svy_format <- svyby(formula(formula_string), formula(by), design, svymean, na.rm = T, keep.var = T,vartype = "ci")
     
     unique.dependent.var.values<- design$variables[[dependent.var]] %>% unique
@@ -169,7 +177,7 @@ percent_with_confints_select_mult_groups <- function(dependent.var,
                                               na.rm = TRUE){
   
   # if dependent and independent variables have only one value, just return that:
-  choices <- data[,choices_for_select_multiple(dependent.var, data)]
+  choices <- design$variables[,choices_for_select_multiple(dependent.var, design$variables)]
   
   result_hg_format <- lapply(names(choices), function(x){
     if(length(unique(data[[x]]))==1){
@@ -235,6 +243,7 @@ percent_with_confints_select_mult_groups <- function(dependent.var,
 # }
 
 
+### TESTED without weighting CHECK 
 confidence_intervals_mean <- function(dependent.var,
                                      independent.var = NULL,
                                      design,
@@ -254,6 +263,7 @@ confidence_intervals_mean <- function(dependent.var,
     return(results)
  }
 
+### TESTED without weighting CHECK 
   confidence_intervals_mean_groups <- function(dependent.var,
                                      independent.var,
                                      design,
@@ -296,5 +306,15 @@ confidence_intervals_mean <- function(dependent.var,
     ranked <- percent %>% split.data.frame(percent$independent.var.value, drop = T) %>% lapply(function(x){
       mutate(x, rank = rank(x$numbers, ties.method = "min"))}) %>% do.call(rbind, .) 
     return(ranked)
+  }
+  
+  ###function that takes a variable (vector of values) and checks if it has more than one unique values
+  var_more_than_n <- function(var, n){
+    var <- na.rm(var)
+    var <- trimws(var)
+    if(length(unique(var[var != ""])) > n){
+      return(TRUE)
+    }
+    return(FALSE)
   }
   
