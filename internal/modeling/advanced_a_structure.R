@@ -1,52 +1,61 @@
 #Advcanced Analytics
-install.packages("installr")
 suppressPackageStartupMessages(library(installr))
 installr:updateR()
 require(survey)
-install.packages("multicomp")
-install.packages("sjPlot")
-install.packages("effects")
-install.packages('TMB', type = 'source')
+library(effects)
 library(sjPlot)  
+library(outliers)
+library(magrittr)
 
 ##### Starting with glms 
 
 ##### 1.0 Mapping from data inputs to function inputs
 
-vars <- c("large_hh", "dependency_ratio_greater_1", "fcs_category", "std_dwelling", "ncs_debt", "hh_holding_debt", "consumption_per_capita_per_day" ,"pis_regular.income")
+  vars <- c("large_hh", "dependency_ratio_greater_1", "fcs_acceptable","fcs_borderline", "std_dwelling", "ncs_debt", "hh_holding_debt", "consumption_per_capita_per_month" ,"pis_regular.income")
 
 ##### 1.1 Sanitation 
 
-#remove NA's
-data <- data[!data %in% NA]
 
 ##### 1.2Recoding 
   #1.2.1 Depdendent var
-data$consumption_per_capita_per_day %>% table  
+# data$consumption_per_capita_per_day %>% table  
 data$consumption_per_capita_per_month <- data$consumption_per_capita_per_day * 30.43
 data$log_consumption_per_capita_per_month <- log10(data$consumption_per_capita_per_month)
+data$log_consumption_per_capita_per_month[data$log_consumption_per_capita_per_month < 0] <- NA
+
+dependent.var <- "log_consumption_per_capita_per_month"
 
   #1.2.2 Independent 
 data$large_hh <- data$hh_size > 6 
 data$dependency_ratio_greater_1 <- data$dep_ratio_.1 == "yes" 
 data$fcs_acceptable <- data$fcs_category == "acceptable"
+data$fcs_borderline <- data$fcs_category == "borderline"
 data$std_dwelling <- data$standard_dwelling == "yes"
-data$ncs_debt %>% table
+data$hh_holding_debt <- data$hh_holding_debt == "yes"
+data$pis_regular.income <- data$pis_regular.income == "yes"
+data$ncs_debt <- data$ncs_debt == "yes"
 
-#making a dataframe with the variables 
-cols<- names(data) %in% vars
-data_for_model <- data[,cols]
-sjPlot::sjp.corr(data_for_model)
+
+
+#sanitise
+#remove NA's
+data <- data[!is.na(data[[dependent.var]]),]
+data <- data[!(data[[parameters$weight]] == 0),]
 
 #apply weights and create design object (must happen after recoding)
 if(exists("parameters$weight")){
   design <- map_to_design(data)}else{
-    design <- svydesign(~0, variables = data, weights = parameters$weight)}
+    design <- svydesign(~1, variables = data, weights = data[[parameters$weight]])}
+
+#making a dataframe with the variables 
+cols<- names(data) %in% vars
+data_for_model <- data[,cols]
+
 
 ##### 2.0 Inspecting dependent variable
 #### do a histogram 
 hist(data$log_consumption_per_capita_per_month, breaks= 100) ### log distribution
-hist(log(data$total_quantity_water), breaks = 100) # <- normal distribution
+# hist(log(data$total_quantity_water), breaks = 100) # <- normal distribution
 
 hist(data$log_consumption_per_capita_per_month, breaks = 30) # <- linear
 data$log_consumption_per_capita_per_month %>% table
@@ -56,12 +65,12 @@ data$log_consumption_per_capita_per_month %>% table
 # data$log_hh_water_consumption[data$log_hh_water_consumption < 0] <- 0
 
 ##### 2.1 Correlation matrix of potential predictors (independent variable)
-
-svychisq(~large_hh+dependency_ratio_greater_1, design)
+data_for_model[] <- lapply(data_for_model,as.integer)
+sjPlot::sjp.corr(data_for_model)
 
 ##### 2.2 GLM 
 
-Model1 <- svyglm(formula = log_hh_water_consumption ~ quality_water + domain, design, family=stats::gaussian())
+Model1 <- svyglm(formula = consumption_per_capita_per_month ~ large_hh + dependency_ratio_greater_1 + fcs_borderline + hh_holding_debt, design, family=stats::gaussian())
 Model1a <- svyglm(formula = log_hh_water_consumption ~ quality_water, design, family=stats::gaussian())
 Model2 <- svyglm(formula = as.numeric(quality_water) ~ hh_water_consumption, design, family=stats::poisson())
 
