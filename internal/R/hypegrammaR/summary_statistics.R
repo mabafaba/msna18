@@ -12,17 +12,17 @@ percent_with_confints_select_one <- function(dependent.var,
                                              design,
                                              na.rm = TRUE){
   
-  
-
   # if dependent var have only one value, just return that:
 
-    
-  dependent_more_than_1 <- var_more_than_1(data[[dependent.var]])
+
+  dependent_more_than_1 <- var_more_than_n(data[[dependent.var]], 1)
 
   if(!dependent_more_than_1){
     dependent.var.value=unique(design$variables[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
 
+  if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
+  
   tryCatch(expr={result_hg_format<- 
   {
     design$variables[[dependent.var]] <- as.factor(design$variables[[dependent.var]])
@@ -124,6 +124,8 @@ percent_with_confints_select_one_groups <- function(dependent.var,
       
     }
   }
+  if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
+  if(!question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
   
   formula_string <- paste0("~",dependent.var ,sep = "")
   by <- paste0("~", independent.var ,sep = "")
@@ -308,7 +310,9 @@ confidence_intervals_mean <- function(dependent.var,
   
   ###function that takes a variable (vector of values) and checks if it has more than one unique values
   var_more_than_n <- function(var, n){
-    if(length(unique(var)) > n){
+    var <- na.rm(var)
+    var <- trimws(var)
+    if(length(unique(var[var != ""])) > n){
       return(TRUE)
     }
     return(FALSE)

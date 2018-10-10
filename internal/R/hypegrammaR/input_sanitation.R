@@ -1,20 +1,16 @@
 sanitise_group_difference<-function(data,dependent.var,independent.var){
-  independent_less_than_30 <- length(unique(data[[independent.var]])) <= 30
+  independent_less_than_20 <- !var_more_than_n(data[[independent.var]], 20)
 
-  if(!independent_less_than_30 & !question_is_numeric(independent.var)){
+  if(!independent_less_than_20 & !question_is_numeric(independent.var)){
   return(list(success=FALSE,message="can not test group difference with 20 or more unique values in the independent variable"))
   }
 
-  dependent_more_than_1 <- length(unique(data[[dependent.var]])) > 1
+  dependent_more_than_1 <- var_more_than_n(data[[dependent.var]], 1)
   if(!dependent_more_than_1){
     return(list(success=FALSE,message="can not test group difference with <2 different values in the dependent variable"))
   }
 
-  which_independent_more_than_one_record <- table(data[[independent.var]])
-  which_independent_more_than_one_record <- which_independent_more_than_one_record[which(which_independent_more_than_one_record>1)]
-  which_independent_more_than_one_record <- names(which_independent_more_than_one_record)
-  data <- data[data[[independent.var]] %in% which_independent_more_than_one_record,]
-
+  data <- which_independent_more_than_one_record(data, independent.var)
 
   at_least_two_independent_groups <- (data[[independent.var]] %>% unique %>% length) > 1
 
@@ -166,6 +162,12 @@ data_sanitation_remove_not_in_samplingframe<-function(data,samplingframe_object,
   
 }
 
+which_independent_more_than_one_record <- function(data, independent.var){
+  independent_more_than_one_record <- table(data[[independent.var]])
+  independent_more_than_one_record <- independent_more_than_one_record[which(independent_more_than_one_record>1)]
+  independent_more_than_one_record <- names(independent_more_than_one_record)
+  data <- data[data[[independent.var]] %in% independent_more_than_one_record,]
+  return(data)}
 
 
 
