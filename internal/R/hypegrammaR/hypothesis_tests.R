@@ -36,11 +36,12 @@ hypothesis_test_chisquared_select_one <- function(dependent.var,
     return(NULL)}
   
   )
+  if(exists("chisq")){
   results<-list()
   results$result <- list(F=chisq$statistic, p.value=chisq$p.value %>% unname)
   results$parameters <- chisq$parameter %>% as.list
   results$name<-chisq$method
-  return(results)
+  return(results)}
 }
 
 ######## ONE SAMPLE Z tEST

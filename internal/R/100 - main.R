@@ -1,6 +1,9 @@
 message(("loading dependencies.."))
-# clear/create folders
+
+# clear/create folders without warnings
+# make sure you don't have anything of importance in the output folders
 source("./internal/R/110 - initialise_folders.R",local = T)
+
 #load dependencies
 suppressMessages(source("./internal/R/120 - dependencies.R"))
 # this installed and loaded all external packages and local scripts.
@@ -8,7 +11,6 @@ clear_console()
 
 # set up log file:
 .log<-list();.logfile<-"./output/log/log.txt";.clearlog()
-
 
 source("./internal/R/130 - load_input.R",local = T)
 # this created following objects:
