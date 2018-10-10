@@ -21,7 +21,8 @@ percent_with_confints_select_one <- function(dependent.var,
     dependent.var.value=unique(design$variables[[dependent.var]])
     return(data.frame(dependent.var,independent.var=NA,dependent.var.value,independent.var.value=NA,numbers=1,se=NA,min=NA,max=NA))}
 
-  if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
+  if(question_in_questionnaire(dependent.var) & !question_is_select_one(dependent.var)){stop("This question was not a select one")}
+ 
   
   tryCatch(expr={result_hg_format<- 
   {
@@ -124,8 +125,9 @@ percent_with_confints_select_one_groups <- function(dependent.var,
       
     }
   }
-  if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
-  if(!question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
+  
+  if(question_in_questionnaire(dependent.var) & !question_is_select_one(dependent.var)){stop("This question was not a select one")}
+  if(question_in_questionnaire(independent.var) & !question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
   
   formula_string <- paste0("~",dependent.var ,sep = "")
   by <- paste0("~", independent.var ,sep = "")
@@ -318,3 +320,11 @@ confidence_intervals_mean <- function(dependent.var,
     return(FALSE)
   }
   
+  #### function that checks if a question is in the questionnaire
+  question_in_questionnaire <- function(var){
+    if(exists("questionnaire")){
+      result <- (sum(questionnaire$questions$name %in% var) > 0)}else{
+        result <- FALSE
+      }
+    return(result)}
+    
