@@ -1,0 +1,9 @@
+recoding conditions,output type,sampling strategy,yes/no
+Equal,numbers,probability simple random,yes
+Smaller Equal,minimal barchart quarter A4 width (FS),probability stratified,no
+Larger,regular barchart (report),probability cluster,
+Any,Map: Mode,probability stratified cluster,
+All,Map: Average/Percent,non probability / KI,
+None,,,
+Else,,,
+Skipped,,,
