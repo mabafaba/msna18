@@ -63,7 +63,7 @@ analyse_indicator<-function(data,
   
 
   # map from case to appropriate summary statistic, hypothesis test and visualisation:
-  design <- map_to_design(data = data, cluster.var = NULL, weights = NULL) 
+  design <- map_to_design(data = data, cluster.var = NULL, weights = "weight_nat") 
   
   summarise.result<- map_to_summary_statistic(case)
 

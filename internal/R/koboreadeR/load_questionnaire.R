@@ -40,8 +40,8 @@ load_questionnaire<-function(data,
   names(data) <- to_alphanumeric_lowercase(names(data))
 
 
-  # choices$name <- gsub("_", ".", choices$name) # UGANDA
-  
+  choices$name <- gsub("_", ".", choices$name) # UGANDA
+  # choices$name <- gsub("[[:punct:]]", "", choices$name)
 
   choices.label.column.to.use <- to_alphanumeric_lowercase(choices.label.column.to.use)
   
@@ -54,11 +54,15 @@ load_questionnaire<-function(data,
 
   
   # # ####UGA ONLY
-  # questions$name <- gsub("_", ".", questions$name)
-  # choices$name <- gsub("_", ".", choices$name)
-  # names(data) <- gsub("_", ".", names(data))
-  # questions$relevant <- gsub("_", ".", questions$relevant) %>% to_alphanumeric_lowercase
-  
+  questions$name <- gsub("_", ".", questions$name)
+  questions$name <- gsub(".mcna", "", questions$name)
+  # questions$name <- gsub("[[:punct:]]", "", questions$name)
+  choices$name <- gsub("_", ".", choices$name)
+  names(data) <- gsub("_", ".", names(data))
+  names(data) <- gsub(".mcna", "", names(data))
+  # names(data) <- gsub("[[:punct:]]", "", names(data))
+  questions$relevant <- gsub("_", ".", questions$relevant) %>% to_alphanumeric_lowercase
+
   # # UGANDA
 
   begin_gr <- grep(paste(c("begin_group","begin group"), collapse = "|"), questions$type, ignore.case = T)
