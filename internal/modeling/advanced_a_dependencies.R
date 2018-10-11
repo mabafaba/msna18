@@ -14,6 +14,8 @@ suppressMessages(source("./internal/R/120 - dependencies.R"))
 
 ###load data
 
-data<-read.csv("./internal/modeling/MCNA_centre_final.csv",stringsAsFactors = F) %>% to_alphanumeric_lowercase_colnames_df
+data<-read.csv("./internal/modeling/MCNA_centre_final.csv",stringsAsFactors = T) %>% to_alphanumeric_lowercase_colnames_df
 parameters <- list()
 parameters$weight <- "normalised_weight"
+parameters$variables <- c("large_hh", "dependency_ratio_greater_1", "fcs_acceptable","fcs_borderline", "std_dwelling", "ncs_debt", "hh_holding_debt", "consumption_per_capita_per_month" ,"pis_regular.income")
+parameters$dependent.var <- "log_consumption_per_capita_per_month"
