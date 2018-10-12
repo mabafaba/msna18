@@ -173,11 +173,11 @@ percent_with_confints_select_one_groups <- function(dependent.var,
 percent_with_confints_select_mult_groups <- function(dependent.var,
                                               independent.var,
                                               design,
-                                              data,
                                               na.rm = TRUE){
   
   # if dependent and independent variables have only one value, just return that:
   choices <- design$variables[,choices_for_select_multiple(dependent.var, design$variables)]
+  data <- design$variables
   
   result_hg_format <- lapply(names(choices), function(x){
     if(length(unique(data[[x]]))==1){

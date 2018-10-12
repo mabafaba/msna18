@@ -3,11 +3,6 @@ if(!is_in_test_dir){setwd("./internal/R/unit_tests/")}
 
 context("Summary stats test numeric")
 
-example<-load.example("example1",F)
-data <- example$data
-tf <- example$tf
-questionnaire <- example$questionnaire
-design <- svydesign(~0, data = data)
 
 test_that("var_more_than_n returns FALSE unless the dependent variable has two categories",{
   expect_equal(var_more_than_n(c(NULL,7,7,7), 1),FALSE)
@@ -34,8 +29,6 @@ test_that("percent_with_confints_select_one inputs correct",{
   expect_error(percent_with_confints_select_one(tf$numeric[1], design)) #numerical var
   expect_error(percent_with_confints_select_one(tf$fake[1], design)) #nonexistent.var
   expect_error(percent_with_confints_select_one(tf$select_multiple[1], design)) # select multiple
-  expect_match(names(percent_with_confints_select_one(tf$select_one[1], design)), "min",all = FALSE)
-  expect_match(names(percent_with_confints_select_one(tf$select_one[1], design)), "max",all = FALSE)
 })
 
 test_that("percent_with_confints_select_mult outputs correct",{
@@ -58,15 +51,14 @@ test_that("percent_with_confints_select_mult outputs correct",{
   expect_named(percent_with_confints_select_mult(tf$select_multiple[1], design), c("dependent.var","independent.var",
                                                                                    "dependent.var.value","independent.var.value",
                                                                                    "numbers","se","min","max"))
-  expect_true(is.numeric(percent_with_confints_select_mult(tf$select_mult[1], design)$numbers))
+  expect_true(is.numeric(percent_with_confints_select_mult(tf$select_multiple[1], design)$numbers))
   expect_true(is.numeric(percent_with_confints_select_mult(tf$select_multiple_NA_heavy[1], design)$numbers))
 })
 
 test_that("percent_with_confints outputs are correct",{
-  expect_match(names(percent_with_confints(tf$select_multiple[1], design)), "min",all = FALSE)
-  expect_match(names(percent_with_confints(tf$select_multiple[1], design)), "max",all = FALSE)
-  expect_match(names(percent_with_confints(tf$select_one[1], design)), "min",all = FALSE)
-  expect_match(names(percent_with_confints(tf$select_one[1], design)), "max",all = FALSE)
+  expect_named(percent_with_confints(tf$select_multiple[1], design), c("dependent.var","independent.var","dependent.var.value","independent.var.value",
+                                                                  "numbers","se","min","max"))
+  expect_true(is.numeric(percent_with_confints(tf$select_multiple[1], design)$numbers))
   expect_named(percent_with_confints(tf$select_one[1], design), c("dependent.var","independent.var","dependent.var.value","independent.var.value",
                                                                   "numbers","se","min","max"))
   expect_true(is.numeric(percent_with_confints(tf$select_one[1], design)$numbers))
@@ -83,4 +75,33 @@ test_that("percent_with_confints_select_mult_groups all inputs correct",{
   expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$select_one_NA_heavy[2], design)) ##right combination but high number of NA's
   expect_error(percent_with_confints_select_one_groups(data, tf$select_multiple[1], tf$numeric[2], design)) ## wrong order of arguments
   expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$select_multiple[2], design)) ## wrong independent
+})
+
+test_that("percent_with_confints_select_mult_groups all outputs correct",{
+  expect_is(percent_with_confints_select_mult_groups(tf$select_multiple[1], tf$select_one[2], design), "data.frame")
+  expect_named(percent_with_confints_select_mult_groups(tf$select_multiple[1], tf$select_one[2], design), c("dependent.var","independent.var",
+                                                                                                            "dependent.var.value","independent.var.value",
+                                                                                                            "numbers","se","min","max"))
+  expect_true(is.numeric(percent_with_confints_select_mult_groups(tf$select_multiple[1], tf$select_one[2], design)$numbers))
+})
+
+
+test_that("percent_with_confints_select_one_groups all inputs correct",{
+  expect_is(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design), "data.frame") 
+  expect_error(percent_with_confints_select_one_groups(tf$numeric[1], tf$select_one[2], design)) ##wrong dependent
+  expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$select_one[2], design)) ## wrong dependent
+  expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$numeric[2], design)) ##wrong independent
+  expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$numeric[2], design)) ## wrong independent
+  expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_multiple[2], design)) ## wrong independent
+  expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one_NA_heavy[1], design)) ##right combination but high number of NA's
+  expect_error(percent_with_confints_select_one_groups(data, tf$select_one[1], tf$numeric[2], design)) ## wrong order of arguments
+  expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$numeric[2], data)) ## wrong order of arguments, data instead of design
+})
+
+test_that("percent_with_confints_select_one_groups all outputs correct",{
+  expect_is(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design), "data.frame")
+  expect_named(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design), c("dependent.var","independent.var",
+                                                                                                      "dependent.var.value","independent.var.value",
+                                                                                                      "numbers","se","min","max"))
+  expect_true(is.numeric(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design)$numbers))
 })

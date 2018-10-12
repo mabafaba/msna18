@@ -3,7 +3,7 @@ test_that("question_in_questionnaire returns FALSE unless question is in the qai
   expect_true(question_in_questionnaire(tf$select_one[1]))
   expect_true(question_in_questionnaire(tf$select_one_NA_heavy[1]))
   expect_error(question_in_questionnaire(tf$select_one, data, questionnaire)) #list input instead of string + too many inputs
-  expect_error(question_in_questionnaire(tf$NA[1], questionnaire))
+  expect_error(question_in_questionnaire(tf$NAs[1], questionnaire))
   expect_false(question_in_questionnaire(tf$fake[1]))
   rm(questionnaire); is_questionnaire_loaded <- function(){return(FALSE)}
   expect_false(question_in_questionnaire(tf$select_one[1]))

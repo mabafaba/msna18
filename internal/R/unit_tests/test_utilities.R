@@ -54,9 +54,9 @@ load.example<-function(name,global_space=F){
                                         choices.file = exfilepath("kobo choices.csv"),
                                         choices.label.column.to.use = ex$choice.label.column.to.use)
   
-  ex$tf <- data.frame("dependent.var" = c("population_group", "when_continue", "males_13_15","uasc_boys", "household_expenditure", "sep_accidental", "bla", NA, NA), 
-                                    "independent.var" = c("district_localadmin", "when_continue", "children_0_4", "uasc_girls", "household_expenditure", "sep_forced", "hehe", NA, NA))  %>% t %>% as.data.frame(., stringsAsFactors = F)
-  colnames(ex$tf) <- c("select_one", "select_one_NA_heavy", "numeric", "numeric_NA_heavy", "select_multiple", "select_multiple_NA_heavy","fake", "NA", "NULL")
+  ex$tf <- data.frame("dependent.var" = c("population_group", "when_continue", "males_13_15","uasc_boys", "household_expenditure", "sep_accidental", "household_expenditure.father", "bla", NA), 
+                                    "independent.var" = c("district_localadmin", "when_continue", "children_0_4", "uasc_girls", "household_expenditure", "sep_forced", "usable_blanket", "hehe", NA))  %>% t %>% as.data.frame(., stringsAsFactors = F)
+  colnames(ex$tf) <- c("select_one", "select_one_NA_heavy", "numeric", "numeric_NA_heavy", "select_multiple", "select_multiple_NA_heavy","logical", "fake", "NAs")
   ex$tf[,9] <- c(NULL, NULL)
   
   
