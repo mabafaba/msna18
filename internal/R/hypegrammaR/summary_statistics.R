@@ -184,7 +184,7 @@ percent_with_confints_select_mult_groups <- function(dependent.var,
   data <- design$variables
   
   if(question_type_generic(dependent.var,data) != "select_multiple"){stop("The dependent must be a select multiple that is defined in the questionnaire and choices file")}
-  if(question_type_generic(independent.var,datapercent_with_confints_select_one_groups) != "select_one"){stop("The disaggregation variable must be a select one that is defined in the questionnaire and choices file")}
+  if(question_type_generic(independent.var,data) != "select_one"){stop("The disaggregation variable must be a select one that is defined in the questionnaire and choices file")}
   
   result_hg_format <- lapply(names(choices), function(x){
     if(length(unique(data[[x]]))==1){

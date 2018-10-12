@@ -67,7 +67,6 @@ test_that("percent_with_confints outputs are correct",{
 
 test_that("percent_with_confints_select_mult_groups all inputs correct",{
   expect_is(percent_with_confints_select_mult_groups(tf$select_multiple[1], tf$select_one[2], design), "data.frame") 
-  expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one[2], design)) ##wrong dependent
   expect_error(percent_with_confints_select_one_groups(tf$numeric[1], tf$select_one[2], design)) ## wrong dependent
   expect_error(percent_with_confints_select_one_groups(tf$fake[1], tf$select_one[2], design)) ## wrong dependent
   expect_error(percent_with_confints_select_one_groups(tf$select_multiple[1], tf$fake[2], design)) ##wrong independent
@@ -94,7 +93,7 @@ test_that("percent_with_confints_select_one_groups all inputs correct",{
   expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$numeric[2], design)) ## wrong independent
   expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_multiple[2], design)) ## wrong independent
   expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$select_one_NA_heavy[1], design)) ##right combination but high number of NA's
-  expect_error(percent_with_confints_select_one_groups(data, tf$select_one[1], tf$numeric[2], design)) ## wrong order of arguments
+  expect_error(percent_with_confints_select_one_groups(design, tf$select_one[1], tf$numeric[2], data)) ## wrong order of arguments
   expect_error(percent_with_confints_select_one_groups(tf$select_one[1], tf$numeric[2], data)) ## wrong order of arguments, data instead of design
 })
 
