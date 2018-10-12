@@ -1,3 +1,4 @@
+
 # questionnaire_is_loaded <- FALSE
 # 
 
@@ -351,3 +352,4 @@ read.csv.auto.sep<-function(file,stringsAsFactors=F,...){
   df<-to_alphanumeric_lowercase_colnames_df(df)
   return(df)
 }
+
