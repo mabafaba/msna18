@@ -7,10 +7,13 @@ source("./internal/R/110 - initialise_folders.R",local = T)
 #load dependencies
 suppressMessages(source("./internal/R/120 - dependencies.R"))
 # this installed and loaded all external packages and local scripts.
+
 clear_console()
 
 # set up log file:
 .log<-list();.logfile<-"./output/log/log.txt";.clearlog()
+
+
 
 source("./internal/R/130 - load_input.R",local = T)
 # this created following objects:
@@ -26,3 +29,6 @@ source("./internal/R/150 - analysis.R", local = T)
 
 source("./internal/R/160 - output.R", local = T)
 #
+
+data$total_pin <- as.factor(data$total_pin)
+analyse_indicator(data = data, dependent.var = "total_pin", independent.var = "hh_type", case = "CASE_group_difference_categorical_categorical", hypothesis.type = "group_difference")
