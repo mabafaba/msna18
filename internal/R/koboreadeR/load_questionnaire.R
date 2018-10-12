@@ -166,7 +166,7 @@ load_questionnaire<-function(data,
       return(question_is_select_one(question.name) | question_is_select_multiple(question.name))
     }
     
-    question_in_questionnaire <- function(question.name){
+    question_in_questionnaire <<- function(question.name){
       if(sum(question.name %in% questionnaire$questions$name) > 0){
         return(TRUE)}
       return(FALSE)}
@@ -201,10 +201,8 @@ load_questionnaire<-function(data,
     # 
     #          skiplogic:
     #          question_is_skipped()"))
-    questionnaire_is_loaded <- TRUE
+    questionnaire_is_loaded <<- TRUE
     
-    is_questionnaire_loaded<-function(){return(TRUE)}
-
     
     # select_multiple_names<-names(data)[question_is_select_multiple(names(data))]
     # sm_choice_varnames<-lapply(select_multiple_names,function(sm_varname){

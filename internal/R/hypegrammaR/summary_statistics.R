@@ -124,6 +124,9 @@ percent_with_confints_select_one_groups <- function(dependent.var,
       
     }
   }
+  
+  if(question_type_generic(dependent.var,data) != "select_one"){stop("The dependent must be a select one or interpretable as such")}
+  if(question_type_generic(independent.var,datapercent_with_confints_select_one_groups) != "select_one"){stop("The disaggregation variable must be a select one that is defined in the questionnaire and choices file")}
   # if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
   # if(!question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
   # 
@@ -177,7 +180,11 @@ percent_with_confints_select_mult_groups <- function(dependent.var,
   
   # if dependent and independent variables have only one value, just return that:
   choices <- design$variables[,choices_for_select_multiple(dependent.var, design$variables)]
+  
   data <- design$variables
+  
+  if(question_type_generic(dependent.var,data) != "select_multiple"){stop("The dependent must be a select multiple that is defined in the questionnaire and choices file")}
+  if(question_type_generic(independent.var,datapercent_with_confints_select_one_groups) != "select_one"){stop("The disaggregation variable must be a select one that is defined in the questionnaire and choices file")}
   
   result_hg_format <- lapply(names(choices), function(x){
     if(length(unique(data[[x]]))==1){
