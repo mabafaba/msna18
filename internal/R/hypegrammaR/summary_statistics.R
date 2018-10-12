@@ -124,9 +124,9 @@ percent_with_confints_select_one_groups <- function(dependent.var,
       
     }
   }
-  if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
-  if(!question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
-  
+  # if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
+  # if(!question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
+  # 
   formula_string <- paste0("~",dependent.var ,sep = "")
   by <- paste0("~", independent.var ,sep = "")
 
