@@ -5,7 +5,7 @@ context("Skip Logic: basics")
 
 test_that("question_is_skipped_apply_condition_to_data works",{
   # setwd("./internal/R/unit_tests/")
-  example<-load.example("example1",T)
+  example<-load.example("example1",F)
   expect_is(question_is_skipped,"function")                   
   
   attach(example$data)
@@ -16,19 +16,16 @@ test_that("question_is_skipped_apply_condition_to_data works",{
                    "note_vuln_gender","(${disabled_chronic}>0 or ${sick_children}>0) and (${mental}>0 or (${uasc}>0))","(disabled_chronic>0 | sick_children>0) & (mental>0 | uasc>0)",
                    "uasc","${total_children}>0", "total_children>0",
                    "uasc","${total_children}+1>0+1*5*${total_children}", "(total_children+1)>0+1*5*total_children",
-                   "uasc","(${total_children}+1)*2>2*(0+1*5*${total_children})+3", "(total_children+1)*2>2*(0+1*5*total_children)+3"
-                   
-                   
-                   
-                   
+                   "uasc","(${total_children}+1)*2>2*(0+1*5*${total_children})+3 and (${disabled_chronic}>0)", "((total_children+1)*2>2*(0+1*5*total_children)+3)&disabled_chronic>0",
+                   "uasc","(2)*(0+(1+${total_children}+${total_children})-1)/4>3 and (${disabled_chronic}>0)", "(2)*(0+(1+total_children+total_children)-1)/4>3 & (disabled_chronic>0)"
                    
   ) %>% 
     matrix(3,byrow=F) %>% t %>% as.data.frame(stringsAsFactors=F) %>% set_colnames(c("var","condition","manual_calculation"))
-  
+
   skip_example_solutions<-apply(skip_examples,1,function(x){
     !eval(parse(text=x["manual_calculation"]))
   })
-  detach(example$data)
+  # debug(question_is_skipped_apply_condition_to_data)
   expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[1,"condition"]),skip_example_solutions[,1])
   expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[2,"condition"]),skip_example_solutions[,2])
   expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[3,"condition"]),skip_example_solutions[,3])
@@ -36,10 +33,8 @@ test_that("question_is_skipped_apply_condition_to_data works",{
   expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[5,"condition"]),skip_example_solutions[,5])
   expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[6,"condition"]),skip_example_solutions[,6])
   expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[7,"condition"]),skip_example_solutions[,7])
-  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[7,"condition"]),skip_example_solutions[,8])
+  expect_identical(question_is_skipped_apply_condition_to_data(example$data,skip_examples[8,"condition"]),skip_example_solutions[,8])
   })
-
-
 
 
 
