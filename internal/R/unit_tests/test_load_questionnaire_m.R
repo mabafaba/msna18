@@ -2,7 +2,7 @@ is_in_test_dir<-(getwd() %>% gsub("\\/$","",.) %>% strsplit("/") %>% .[[1]] %>% 
 if(!is_in_test_dir){setwd("./internal/R/unit_tests/")}
 
 
-test_that("load_questionnaire: errors",{
+test_that("load_questionnaire: fail on bad input",{
   example1<-load.example("example1")
   
   expect_error(load_questionnaire())
@@ -53,7 +53,30 @@ test_that("question_variable_type: errors",{
     choices.file = paste0(example1$path,"kobo choices.csv"),
     choices.label.column.to.use = example1$choice.label.column.to.use)
   
-  question_
   
   })
 
+
+
+test_that("question_in_questionnaire returns FALSE unless question is in the questionnaire",{
+  example<-load.example("example1")
+  expect_true(question_in_questionnaire(example$tf$select_one[1]))
+  expect_true(question_in_questionnaire(example$tf$select_one_NA_heavy[1]))
+  expect_error(question_in_questionnaire(example$tf$select_one)) #list input instead of string + too many inputs
+  expect_error(question_in_questionnaire(example$tf$`NA`[1], questionnaire))
+  expect_false(question_in_questionnaire(example$tf$fake[1]))
+  is_questionnaire_loaded <- function(){return(FALSE)}
+  expect_false(question_in_questionnaire(example$tf$select_one[1]))
+  expect_false(question_in_questionnaire(example$tf$select_one[1]))
+}) 
+
+test_that("question_type_generic works with or without the questionnaire",{
+  example<-load.example("example1")
+  source("../koboreadeR/load_questionnaire.R")
+  expect_equal(question_type_generic(example$tf$select_one[1], data), "select_one")
+  expect_equal(question_type_generic(example$tf$select_multiple[1], data), "select_one")
+  expect_equal(question_type_generic(example$tf$numeric_NA_heavy[1], data), "numeric")
+  expect_warning(question_type_generic(example$tf$select_multiple[1], data))
+  expect_warning(question_type_generic(example$tf$numeric_NA_heavy[1], data))
+  expect_error(question_type_generic(example$tf$fake[1], data))
+})

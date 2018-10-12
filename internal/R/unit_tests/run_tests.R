@@ -3,6 +3,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path));setwd("./../../../")
 require("testthat")
 source("./internal/R/unit_tests/test_utilities.R")
 source("./internal/R/120 - dependencies.R")
-test_file(path = "./internal/R/unit_tests/test_questionnaire_skiplogic2.R")
+test_file("./internal/R/unit_tests/test_load_questionnaire_m.R")
+test_file(path = "./internal/R/unit_tests/test_questionnaire_skiplogic.R")
 test_file(path = "./internal/R/unit_tests/test_summary_statistics.R")
 

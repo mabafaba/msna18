@@ -166,10 +166,11 @@ load_questionnaire<-function(data,
       return(question_is_select_one(question.name) | question_is_select_multiple(question.name))
     }
     
-    question_in_questionnaire <- function(question.name){
-      if(sum(question.name %in% questionnaire$questions$name) > 0){
+    question_in_questionnaire <<- function(question.name){
+      if(sum(question.name %in% questions$name) > 0){
         return(TRUE)}
-      return(FALSE)}x
+      return(FALSE)
+    }
     
     question_is_skipped <<- function(data, question.name){
       qid<-which(questions$name==question.name)
