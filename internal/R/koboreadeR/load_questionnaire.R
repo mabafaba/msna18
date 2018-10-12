@@ -1,3 +1,4 @@
+
 # questionnaire_is_loaded <- FALSE
 # 
 
@@ -165,7 +166,10 @@ load_questionnaire<-function(data,
       return(question_is_select_one(question.name) | question_is_select_multiple(question.name))
     }
     
-    
+    question_in_questionnaire <- function(question.name){
+      if(sum(question.name %in% questionnaire$questions$name) > 0){
+        return(TRUE)}
+      return(FALSE)}x
     
     question_is_skipped <<- function(data, question.name){
       qid<-which(questions$name==question.name)
@@ -198,6 +202,7 @@ load_questionnaire<-function(data,
     #          skiplogic:
     #          question_is_skipped()"))
     questionnaire_is_loaded <- TRUE
+    
     is_questionnaire_loaded<-function(){return(TRUE)}
 
     
@@ -245,7 +250,6 @@ question_get_choice_labels<-function(responses,variable.name){
     }
 
 
-
     question_is_select_one<-function(question.name){
       stop("you must successfully run load_questionnaire() first")
 
@@ -263,12 +267,12 @@ question_get_choice_labels<-function(responses,variable.name){
       stop("you must successfully run load_questionnaire() first")
     }
 
-
-
     is_questionnaire_loaded<-function(){return(FALSE)
     }
     
-  
+    question_in_questionnaire <- function(question.name){return(FALSE)
+    }
+    
     question_is_skipped<-function(data, variable.name){
       stop("you must successfully run load_questionnaire() first")
     }
@@ -281,7 +285,7 @@ question_get_choice_labels<-function(responses,variable.name){
 #' @export
 #' @examples
 #'
-question_variable_type <- function(variables){
+question_variable_type_from_questionnaire <- function(variables){
     variable_types <- as.vector(sapply(variables, function(x){
       # if(question_is_categorical(x)){return("categorical")}
       if(question_is_select_multiple(x)){return("select_multiple")}
@@ -351,3 +355,4 @@ read.csv.auto.sep<-function(file,stringsAsFactors=F,...){
   df<-to_alphanumeric_lowercase_colnames_df(df)
   return(df)
 }
+
