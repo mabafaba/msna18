@@ -9,3 +9,4 @@ if(nrow(composite_indicators_definitions_weighted_counts)>0){
 }else{
   .write_to_log("\nNo Composite Indicators Defined.\n")
 }
+
