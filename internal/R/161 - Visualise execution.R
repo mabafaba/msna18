@@ -33,7 +33,7 @@ expand_composite_indicators_to_set_intersections<-function(data,compnames){
 set_intersection_plot<-function(set_percentages){
   set_percentages<-set_percentages*100 %>% round
   upset(fromExpression(set_percentages), order.by = "freq", nsets = 7, nintersects = 12, 
-        mainbar.y.label = "Percent of HouseHolds", mainbar.y.max = 30)
+        mainbar.y.label = "% in need per combination of sectors", mainbar.y.max = 30)
   
 }
 
