@@ -41,17 +41,8 @@ map_to_case<-function(data,
                       dependent.var,
                       independent.var = NULL,
                       paired = NULL){
-  case_vartype<-function(varname,data){
-    if(varname %in% c(NA,""," ")){return("")}
-    if(question_is_categorical(varname)){return("categorical")}
-    if(question_is_numeric(varname)){return("numerical")}
-    # if conversion to numeric doesn't cause extra NA's, give numeric:
-    suppressWarnings({if(length(which(is.na(as.numeric(as.character(data[[varname]])))))==length(which(is.na(data[[varname]])))){return("numerical")}})
-    # if it wasn't empty,not NA, not found in kobo tool, and not convertable to numeric.. then let's give categorical a shot i guess:
-    return("categorical")
-    
-  }
   
+
   variable.type <- paste0(case_vartype(dependent.var,data), "_", case_vartype(independent.var,data))
   case <- paste(c("CASE",hypothesis.type,variable.type, paired), collapse = "_")
   class(case)<-"analysis_case"
@@ -244,6 +235,18 @@ map_to_file<-function(object,filename,...){
   finally = {}
   ) 
 }
+
+case_vartype<-function(varname, data){
+  if(varname %in% c(NA,""," ")){return("")}
+  if(question_is_categorical(varname)){return("categorical")}
+  if(question_is_numeric(varname)){return("numerical")}
+  # if conversion to numeric doesn't cause extra NA's, give numeric:
+  suppressWarnings({if(length(which(is.na(as.numeric(as.character(data[[varname]])))))==length(which(is.na(data[[varname]])))){return("numerical")}})
+  # if it wasn't empty,not NA, not found in kobo tool, and not convertable to numeric.. then let's give categorical a shot i guess:
+  return("categorical")
+  
+}
+
 
 #################################
 # map to mode:           ########

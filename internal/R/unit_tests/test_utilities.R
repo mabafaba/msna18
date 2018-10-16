@@ -33,6 +33,14 @@ read.example.csv<-function(filename,examplename){
   read.csv.auto.sep(paste0(example.data.path(examplename),filename))
 }
 
+read.strata.csv<-function(examplename){
+  excel_csv_inputs_sampling_frame_stratification_to_weighting_function(paste0(example.data.path(examplename),"stratification_samplingframe.csv"))
+}
+
+read.cluster.csv <- function(examplename){
+  excel_csv_inputs_sampling_frame_cluster_to_weighting_function(paste0(example.data.path(examplename),"cluster_samplingframe.csv"))
+}
+
 
 
 load.example<-function(name,global_space=F){
@@ -48,6 +56,8 @@ load.example<-function(name,global_space=F){
   }
   
   ex$data<-exfile("data.csv")
+  ex$strata <- read.strata.csv(ex$name)
+  ex$cluster <- read.cluster.csv(ex$name)
   ex$questionnaire<-load_questionnaire(ex$data,
 
                                         questions.file = exfilepath("kobo questions.csv"),
