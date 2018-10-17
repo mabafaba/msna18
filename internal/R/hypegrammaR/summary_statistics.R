@@ -173,11 +173,11 @@ percent_with_confints_select_one_groups <- function(dependent.var,
 percent_with_confints_select_mult_groups <- function(dependent.var,
                                               independent.var,
                                               design,
-                                              data,
                                               na.rm = TRUE){
   
   # if dependent and independent variables have only one value, just return that:
   choices <- design$variables[,choices_for_select_multiple(dependent.var, design$variables)]
+  data <- design$variables
   
   result_hg_format <- lapply(names(choices), function(x){
     if(length(unique(data[[x]]))==1){
@@ -319,7 +319,7 @@ confidence_intervals_mean <- function(dependent.var,
   }
   
   ### determine question type 
-  question_type_generic <- function(question.name, data){
+  question_type <- function(question.name, data){
     if(question_in_questionnaire(question.name)){
       return(question_variable_type_from_questionnaire(question.name))}
     warning(paste(question.name), "'s type was guessed from the data because no questionnaire was loaded")

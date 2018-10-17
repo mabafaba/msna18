@@ -68,15 +68,15 @@ test_that("question_in_questionnaire returns FALSE unless question is in the que
   is_questionnaire_loaded <- function(){return(FALSE)}
   expect_false(question_in_questionnaire(example$tf$select_one[1]))
   expect_false(question_in_questionnaire(example$tf$select_one[1]))
-}) 
+} )
 
-test_that("question_type_generic works with or without the questionnaire",{
+test_that("question_type works with or without the questionnaire",{
   example<-load.example("example1")
   source("../koboreadeR/load_questionnaire.R")
-  expect_equal(question_type_generic(example$tf$select_one[1], data), "select_one")
-  expect_equal(question_type_generic(example$tf$select_multiple[1], data), "select_one")
-  expect_equal(question_type_generic(example$tf$numeric_NA_heavy[1], data), "numeric")
-  expect_warning(question_type_generic(example$tf$select_multiple[1], data))
-  expect_warning(question_type_generic(example$tf$numeric_NA_heavy[1], data))
-  expect_error(question_type_generic(example$tf$fake[1], data))
+  expect_equal(question_type(example$tf$select_one[1], data), "select_one")
+  expect_equal(question_type(example$tf$select_multiple[1], data), "select_one")
+  expect_equal(question_type(example$tf$numeric_NA_heavy[1], data), "numeric")
+  expect_warning(question_type(example$tf$select_multiple[1], data))
+  expect_warning(question_type(example$tf$numeric_NA_heavy[1], data))
+  expect_error(question_type(example$tf$fake[1], data))
 })

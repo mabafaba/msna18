@@ -46,7 +46,7 @@ recode_select_one_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
 #' }
 recode_generic <- function(data, x, value, condition, to, variable.name){
   if(condition=="else"){
-    recoded <- recode_else(data = data, x = x, to = to, variable.name = variable.name)
+    recoded <- recode_else(data = data, x = x, to = to)
     return(recoded)
   }
   

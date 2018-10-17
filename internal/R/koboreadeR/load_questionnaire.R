@@ -171,7 +171,7 @@ load_questionnaire<-function(data,
         return(TRUE)}
       return(FALSE)
     }
-    
+
     question_is_skipped <<- function(data, question.name){
       qid<-which(questions$name==question.name)
       condition<-questions$relevant[qid[1]]
