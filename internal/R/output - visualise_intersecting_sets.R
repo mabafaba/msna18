@@ -1,13 +1,18 @@
-##########
+#gm#####################################################################
 # FUNCTIONS (ignore this part and see below 'example use')
-##########
+######################################################################
 
-
+compnames <- c("WASH_PIN", "NFI_PIN", "education_PIN", "health_PIN", "protection_PIN", "livelihood_PIN", "food_PIN") %>% to_alphanumeric_lowercase
+comp_ind <- data[,compnames]
+write.csv(comp_ind, "./output/PIN.csv")
 
 ##### Function that returns the most common unique intersections (i.e. a record that appears in columns 
 ##### 1,2 and 3 will appear in the 1&2&3 intersection as well as in the 1&2, 2&3, 1&3 intersections) 
 ###   The set size on the right is not significant and should be ignored in the analysis
 expand_composite_indicators_to_set_intersections<-function(data,compnames){
+  
+
+  
   newvarnames<-lapply(2:length(compnames),function(x){
     combn(compnames,x) %>% apply(2,paste,collapse="&")
   }) %>% unlist
@@ -74,7 +79,7 @@ composite_indicator_names<-c("pin1","pin2","pin3", "pin4")
 # 
 # # assuming they are coercible to logical (e.g. 0's and  1's)
 # # you can create TRUE/FALSE columns for call combinations with this:
-intersected_composites<- expand_composite_indicators_to_set_intersections_unique(testdata,compnames)
+intersected_composites<- expand_composite_indicators_to_set_intersections_unique(data,compnames)
 # 
 # #....
 # #....

@@ -124,9 +124,9 @@ percent_with_confints_select_one_groups <- function(dependent.var,
       
     }
   }
-  if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
-  if(!question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
-  
+  # if(!question_is_select_one(dependent.var)){stop("This question was not a select one")}
+  # if(!question_is_select_one(independent.var)){stop("You are not disaggregating by groups (independent variable is not a select one question)")}
+  # 
   formula_string <- paste0("~",dependent.var ,sep = "")
   by <- paste0("~", independent.var ,sep = "")
 
@@ -173,11 +173,11 @@ percent_with_confints_select_one_groups <- function(dependent.var,
 percent_with_confints_select_mult_groups <- function(dependent.var,
                                               independent.var,
                                               design,
-                                              data,
                                               na.rm = TRUE){
   
   # if dependent and independent variables have only one value, just return that:
   choices <- design$variables[,choices_for_select_multiple(dependent.var, design$variables)]
+  data <- design$variables
   
   result_hg_format <- lapply(names(choices), function(x){
     if(length(unique(data[[x]]))==1){
@@ -317,4 +317,14 @@ confidence_intervals_mean <- function(dependent.var,
     }
     return(FALSE)
   }
+  
+  ### determine question type 
+  question_type <- function(question.name, data){
+    if(question_in_questionnaire(question.name)){
+      return(question_variable_type_from_questionnaire(question.name))}
+    warning(paste(question.name), "'s type was guessed from the data because no questionnaire was loaded")
+    if(!all(question.name%in%names(data))){stop("Can not determine the data type: it's neither in the questionnaire nor in the data column headers")}
+    if(is.numeric(data[[question.name]])){return("numeric")}
+    if(is.numeric.fuzzy(data[[question.name]], 0.9)){return("numeric")}
+    return("select_one")}
   
