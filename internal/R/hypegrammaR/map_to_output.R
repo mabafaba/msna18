@@ -44,6 +44,8 @@ map_resultlist_to_datamerge<-function(results,
   # what to keep rows for:
   wide_format<-all_summary_statistics_labeled %>% unique %>% .[,c(rows,"master_table_column_name",values)] %>%
     spread(key = master_table_column_name,value = numbers)
+  # return the wide format in the order of the analysis plan
+  wide_format <- wide_format[, c(rows, all_summary_statistics_labeled$master_table_column_name)]
 return(wide_format)
 }
 

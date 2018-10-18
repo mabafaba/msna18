@@ -1,4 +1,5 @@
 analysisplan<-map_to_analysisplan_custom_user_plan(data,analysis_plan_user)
+analysisplan <- analysisplan[order(as.numeric(row.names(analysisplan))), ]   # the analysis plan in the order of the input file
 
 # analysisplan$case <- c("CASE_group_difference_categorical_categorical", "CASE_group_difference_categorical_categorical")
 logmessage(silver("applying analysis plan.."))
