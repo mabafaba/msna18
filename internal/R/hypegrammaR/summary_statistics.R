@@ -333,5 +333,6 @@ confidence_intervals_mean <- function(dependent.var,
     if(!all(question.name%in%names(data))){stop("Can not determine the data type: it's neither in the questionnaire nor in the data column headers")}
     if(is.numeric(data[[question.name]])){return("numeric")}
     if(is.numeric.fuzzy(data[[question.name]], 0.9)){return("numeric")}
-    return("select_one")}
+    return("select_one")
+    }
   
