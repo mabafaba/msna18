@@ -4,8 +4,11 @@ require("dplyr")
 require("UpSetR")
 require("magrittr")
 
+# subset the data to female HH 
+data <- data[which(data$fem_hh == 1),]
+
 # # which ones should be intersected?
-composite_indicator_names<-c("education_PIN", "health_PIN", "protection_PIN", "food_PIN", "livelihood_PIN", "NFI_PIN", "WASH_PIN") %>% to_alphanumeric_lowercase
+composite_indicator_names<-c("MCNA_FoodSec1", "health_score1", "wash3_score1", "MCNA_education_score1", "protection_score5V2b", "shelter_score1", "live_score1") %>% to_alphanumeric_lowercase
 compinds <- data[,composite_indicator_names] 
 
 ##########
@@ -32,10 +35,13 @@ expand_composite_indicators_to_set_intersections<-function(data,compnames){
 
 set_intersection_plot<-function(set_percentages){
   set_percentages<-set_percentages*100 %>% round
-  upset(fromExpression(set_percentages), order.by = "freq", nsets = 7, nintersects = 12, 
-        mainbar.y.label = "% in need per combination of sectors", mainbar.y.max = 30)
-  
-}
+  upset(fromExpression(set_percentages), 
+        order.by = "freq", 
+        nsets = 7, nintersects = 12, 
+        mainbar.y.label = "% in need per combination of sectors" 
+      # ,mainbar.y.max = 30
+      )
+  }
 
 #making design object if you havent 
 data <- split.data.frame(data, f = data$hh_type)
@@ -44,7 +50,7 @@ original.data <- data
 data <- data[[1]]
 
 g <- function(x){
-design <- map_to_design(data, weights = "weight_nat")
+design <- map_to_design(data, weights = "weight_crossnat")
 
 # assuming they are coercible to logical (e.g. 0's and  1's)
 # you can create TRUE/FALSE columns for call combinations with this:
@@ -59,7 +65,7 @@ data <- cbind(data, intersected_composites, stringsAsFactors = F)
 ### If you have used load_questionnaire() you could also do this with the "reachR" package (Eliora knows)
 ### now doing this quick and cheap for the example:
 
-aggregated.results <- svymean(data[,c(682:801)], design, na.rm = T)
+aggregated.results <- svymean(data[,c(669:788)], design, na.rm = T)
 aggregated.results.named <- aggregated.results %>% unlist %>% as.data.frame(., stringsAsFactors =F, na.rm = T)
 
 aggregated.results <- aggregated.results.named[,1]

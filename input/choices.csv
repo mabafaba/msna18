@@ -1,0 +1,763 @@
+list_name,name,label,zone_sante,province
+organisation,NRC,NRC,,
+organisation,AIDES,AIDES,,
+organisation,caritas_goma,Caritas Goma,,
+organisation,AIRD,AIRD,,
+organisation,AHADI,AHADI,,
+organisation,BIFERD,BIFERD,,
+organisation,PASMU,PASMU,,
+organisation,croix_rouge_nk,Croix Rouge NK,,
+organisation,RCID,RCID,,
+organisation,OVG,OVG,,
+organisation,mercy_corps,Mercy Corps,,
+organisation,caritas_bunia,Caritas Bunia,,
+organisation,samaritan_purse,Samaritan's Purse,,
+organisation,DRC,DRC,,
+organisation,ADSSE,ADSSE,,
+organisation,ADRA,ADRA,,
+organisation,WHH,WHH,,
+organisation,RSAD,RSAD,,
+organisation,PPSSP,PPSSP,,
+genre,feminin,Féminin,,
+genre,masculin,Masculin,,
+type_localite,village,Village (zone rurale),,
+type_localite,cite,Cité (zone péri-urbaine),,
+type_localite,quartier,Quartier (zone urbaine),,
+source_eau,robinet_borne_fontaine,Robinet public / borne fontaine,,
+source_eau,robinet_parcelle,Robinet dans la concession / jardin / parcelle,,
+source_eau,robinet_voisin,Robinet chez le voisin,,
+source_eau,puits_pompe_forage,Puits à pompe / forage,,
+source_eau,puits_creuse_amenage,Puits creusé aménagé,,
+source_eau,puits_non_amenage,Puits non aménagé,,
+source_eau,source_amenagee,Source aménagée,,
+source_eau,source_non_amenagee,Source non aménagée,,
+source_eau,eau_de_pluie,Eau de pluie,,
+source_eau,charrette_citerne,Charrette avec petite citerne,,
+source_eau,camion_citerne,Camion-citerne,,
+source_eau,kiosque_eau,Kiosque à eau,,
+source_eau,eau_surface,"Eau de surface (rivière, barrage, lac, mare, courant, canal, système d’irrigation)",,
+source_eau,eau_bouteille,Eau en bouteille,,
+source_eau,eau_sachet,Eau en sachet,,
+source_eau,ne_sait_pas,Ne sait pas,,
+source_eau,autre,Autre,,
+coping_eau,reduction_boisson,Ils réduisent la quantité d’eau qu’ils boivent,,
+coping_eau,reduction_hygiene,Ils réduisent la quantité d’eau qu’ils utilisent pour les pratiques d’hygiène,,
+coping_eau,collecte_pt_moins_accessible,"Ils collectent l’eau d’un point d’eau moins accessible (plus loin, temps d’attente plus long) que celui d’où ils collectent l’eau habituellement",,
+coping_eau,collecte_moindre_qualite,Ils collectent de l’eau d’une qualité pire que celle qu'ils collectent habituellement,,
+coping_eau,autre,Autre,,
+coping_eau,ne_sait_pas,Ne sait pas,,
+materiaux,bambou,Bambou,,
+materiaux,roseau,Roseau,,
+materiaux,planche,Planches (bois),,
+materiaux,sticks,Sticks,,
+materiaux,briques_adobe,Briques d'adobe,,
+materiaux,briques_cuites,Briques cuites,,
+materiaux,blocs_ciment,Blocs de ciment ou ciment,,
+materiaux,corde_ficelle,Corde/ficelle,,
+materiaux,bois_perches_rondins,Bois/perches/rondins,,
+materiaux,tole,Tôle,,
+materiaux,paille,Paille,,
+materiaux,clous,Clous,,
+materiaux,outils,Outils,,
+materiaux,aucune,Aucun de ces matériaux est disponible,,
+materiaux,ne_sait_pas,Ne sait pas,,
+materiaux2,bassines,Bassines,,
+materiaux2,seaux,Seaux,,
+materiaux2,jerricanes,Jerricanes,,
+materiaux2,bidons_eau,Bidons de stockage d’eau,,
+materiaux2,savon,Savon,,
+materiaux2,poudre_lessive,Poudre à lessiver,,
+materiaux2,produits_traitement_eau,"Produits de traitement de l’eau (Aquatabs, etc.)",,
+materiaux2,produits_purification_eau,Produits de purification de l'eau,,
+materiaux2,chlore_liquide,Chlore liquide,,
+materiaux2,aucune,Aucun de ces matériaux est disponible,,
+materiaux2,ne_sait_pas,Ne sais pas,,
+ouinonnsp,oui,Oui,,
+ouinonnsp,non,Non,,
+ouinonnsp,ne_sait_pas,Ne sait pas,,
+population_acces_materiaux,retournes,Retournés ,,
+population_acces_materiaux,deplaces,Déplacés ,,
+population_acces_materiaux,refugies,Réfugiés ,,
+population_acces_materiaux,non,Non,,
+population_acces_materiaux,ne_sait_pas,Ne sait pas,,
+capacite_stock,aucune,Aucune,,
+capacite_stock,limitee,Limitée,,
+capacite_stock,moyenne,Moyenne,,
+capacite_stock,grande,Grande,,
+capacite_stock,ne_sait_pas,Ne sait pas,,
+changement_marches,plus_commercants,Augmentation du nombre de commerçants,,
+changement_marches,moins_commercants,Réduction du nombre de commerçants,,
+changement_marches,plus_acheteurs,Plus d’acheteurs,,
+changement_marches,moins_acheteurs,Moins d’acheteurs,,
+changement_marches,aucun,Aucun changement,,
+changement_marches,plus_biens,Plus de biens disponible,,
+changement_marches,moins_biens,Moins de biens disponible,,
+changement_marches,augmentation_prix,Augmentations des prix,,
+changement_marches,reduction_prix,Réduction des prix,,
+changement_marches,ne_sait_pas,Ne sait pas,,
+type_abris_pref,struct_bambou_boue,Structure - Bambou recouvert de boue,,
+type_abris_pref,struct_argile_nature,Structure - Argile naturelle,,
+type_abris_pref,struct_bache_natte,Structures - bâches ou nattes,,
+type_abris_pref,struct_planche_bois,Structure - Planches de bois,,
+type_abris_pref,struct_briques_adobe,Structure - Briques d'adobe,,
+type_abris_pref,struct_bois,Structure - Bois,,
+type_abris_pref,toit_fer,Toit - Tôle,,
+type_abris_pref,toit_paille,Toit - Paille/chaume,,
+type_abris_pref,toit_bache,Toit - Bâche,,
+type_abris_pref,autre,Autre (spécifier),,
+reseau_mob,airtel,Airtel,,
+reseau_mob,vodacom,Vodacom,,
+reseau_mob,orange,Orange,,
+reseau_mob,autre,Autre,,
+profession,agent_soin,Agent de soins,,
+profession,membre_admin,Membre de l'administration,,
+profession,chef_commun,Chef coutumier/communautaire,,
+profession,employe_ong,Employé d'une ONG,,
+profession,enseignant,Enseignant,,
+profession,relais_communautaire,Relais communautaire,,
+profession,leader_religieux,Leader religieux,,
+profession,agent_hydri,Agent des ressources hydriques,,
+profession,superviseur_pompe,Superviseur de la pompe à eau,,
+profession,commercant,Commerçant,,
+profession,autre,Autre,,
+profession,comite_village_ecoles,Membre du comité Village et Ecoles assainis,,
+groupe,deplaces,Déplacés (déplacésdepuis au moins deux ans et provenant d'autres aires de santé),,
+groupe,retournes,Retournés (ont quitté l'aire de santé depuis au moins deux ans puis sont revenus),,
+groupe,non_deplaces,Non-déplacés (n'ont jamais quitté l'aire de santé dans les deux dernières années),,
+groupe,refugies,Réfugiés (en provenance d'un autre pays et qui se sont installés dans l'aire de santé dans les deux dernières années,,
+groupe,ne_sait_pas,Ne sait pas,,
+distance,moins_30,Moins de 30 minutes,,
+distance,entre_30_1,Entre 30 minutes et 1 heure,,
+distance,entre_1_2,Entre 1 heures et 2 heures,,
+distance,plus_2_heures,Plus de 2 heures,,
+distance,ne_sait_pas,Ne sait pas,,
+acces_mob,tout_le_monde,Tout le monde/à peu près tout le monde,,
+acces_mob,majorite,Une majorité de personnes,,
+acces_mob,moitie,A peu près la moitié des personnes,,
+acces_mob,minorite,Une minorité de personnes,,
+acces_mob,personne,Personne/à peu près personne,,
+acces_mob,ne_sait_pas,Ne sait pas,,
+modalites,distribution_directe,Distribution directe,,
+modalites,coupons,Coupons,,
+modalites,especes,Espèces,,
+modalites,mobile_money,Mobile money,,
+modalites,autre,Autre,,
+modalites,ne_sait_pas,Ne sait pas,,
+inquietudes,insecurite_cash,Insécurité de posséder trop de cash ,,
+inquietudes,mauvaise_utilisation,Inquiétude d'une mauvaise utilisation du cash pour des biens non essentiels,,
+inquietudes,mauvaise_qualite_articles,Insuffisance/mauvaise qualité des articles sur les marchés,,
+inquietudes,pratique_prix,Pratique de prix excessifs par les commercants,,
+inquietudes,ne_sait_pas,Ne sait pas,,
+inquietudes,autre,Autre,,
+temps_attente,moins_15_minutes,Moins de 15 minutes,,
+temps_attente,entre_15_30,De 15 à 30 minutes,,
+temps_attente,plus_30_minutes,Plus de 30 minutes,,
+temps_attente,plus_1_heure,Plus d'une heure,,
+temps_attente,non,Non,,
+temps_attente,ne_sait_pas,Ne sait pas,,
+acces_eau,tout_le_monde_assez_eau,Tout le monde/à peu près tout le monde a assez d’eau pour couvrir ses besoins,,
+acces_eau,majorite_assez_eau,Une majorité de personnes ont assez d’eau pour couvrir ses besoins,,
+acces_eau,moitie_assez_eau,A peu près la moitié des personnes ont assez d’eau pour couvrir ses besoins,,
+acces_eau,minorite_assez_eau,Une minorité de personnes ont assez d’eau pour couvrir ses besoins,,
+acces_eau,personne_assez_eau,Personne/ à peu près personne n'a assez d’eau pour couvrir ses besoins,,
+acces_eau,ne_sait_pas,Ne sait pas,,
+entrave_acces_eau,nb_point_eau_insuffisant,Le nombre de points d’eau est insuffisant,,
+entrave_acces_eau,quantite_point_eau_insuffisante,La quantité d'eau disponible aux points d'eau est faible/insuffisante,,
+entrave_acces_eau,points_en_panne,Les points d’eau sont en panne,,
+entrave_acces_eau,temps_attente_trop_long,Le temps d’attente aux points d’eau est trop long,,
+entrave_acces_eau,distance_trop_longue,La distance à parcourir pour se rendre aux points d’eau est trop longue,,
+entrave_acces_eau,collecte_dangereuse,La collecte de l'eau est dangereuse à cause de risques de sécurité,,
+entrave_acces_eau,pas_de_recipients,Les ménages ne disposent pas d’assez de récipients pour la collecte et le stockage de l’eau,,
+entrave_acces_eau,eau_trop_chere,Le prix de l'eau est trop cher,,
+entrave_acces_eau,qualite_mauvaise,"La qualité de l’eau disponible (goût, couleur, etc.) est mauvaise",,
+entrave_acces_eau,ne_sait_pas,Ne sait pas,,
+entrave_acces_eau,autre,Autre,,
+acces_savon,tout_le_monde_acces_savon,Tout le monde/à peu près tout le monde a assez de savon,,
+acces_savon,majorite_acces_savon,Une majorité de personnes a assez de savon,,
+acces_savon,moitie_acces_savon,A peu près la moitié des personnes ont assez de savon,,
+acces_savon,minorite_acces_savon,Une minorité de personnes ont assez de savon,,
+acces_savon,personne_acces_savon,Personne/ à peu près personne n'a assez de savon,,
+acces_savon,ne_sait_pas,Ne sait pas,,
+probleme_savon,savon_pas_disponible,Le savon n’est pas disponible sur le marché,,
+probleme_savon,savon_trop_cher,Le savon est trop cher sur le marché,,
+probleme_savon,preferent_produits_alternatif,"Les personnes préfèrent des produits alternatifs (cendre, etc.)",,
+probleme_savon,gaspillage_argent,Les personne ne veulent pas gaspiller de l'argent pour du savon,,
+probleme_savon,population_pas_sensibilisee,La population n'est pas sensibilisée sur l'utilisation du savon,,
+probleme_savon,autre,Autre,,
+probleme_savon,ne_sait_pas,Ne sait pas,,
+acces_latrines,tout_le_monde_acces_latrines,Tout le monde/à peu près tout le monde a accès à des latrines adéquates,,
+acces_latrines,majorite_acces_latrines,Une majorité de personnes ont accès à des latrines adéquates,,
+acces_latrines,moitie_acces_latrines,A peu près la moitié des personnes ont accès à des latrines adéquates,,
+acces_latrines,minorite_acces_latrines,Une minorité de personnes ont accès à des latrines adéquates,,
+acces_latrines,personne_acces_latrines,Personne/ à peu près personne n'a accès à des latrines adéquates,,
+acces_latrines,autre,Autre,,
+acces_latrines,ne_sait_pas,Ne sait pas,,
+mois,toute_annee,Toute l'année,,
+mois,janvier,Janvier,,
+mois,fevrier,Février,,
+mois,mars,Mars,,
+mois,avril,Avril,,
+mois,mai ,Mai ,,
+mois,juin,Juin,,
+mois,juillet,Juillet,,
+mois,aout,Aout,,
+mois,septembre,Septembre,,
+mois,octobre,Octobre,,
+mois,novembre ,Novembre,,
+mois,decembre,Décembre,,
+probleme_latrines,trop_monde_latrines,Trop de monde utilise les mêmes latrines ,,
+probleme_latrines,latrines_trop_distantes,Les latrines sont trop distantes,,
+probleme_latrines,latrines_fonctionnent_pas,"Les latrines ne fonctionnent pas (abimées, détruites, etc.)",,
+probleme_latrines,latrines_pas_propres,Les latrines ne sont pas propres/hygiéniques,,
+probleme_latrines,manque_eau,Manque ou insuffisance d’eau,,
+probleme_latrines,manque_intimite,Manque d’intimité/pas de séparation entre hommes et femmes,,
+probleme_latrines,latrines_pas_securisees,"Les latrines ne sont pas sécurisées (pas de porte, verrou, etc.)",,
+probleme_latrines,pas_de_latrine,Pas de latrine,,
+probleme_latrines,autre,Autres,,
+probleme_latrines,ne_sait_pas,Ne sait pas,,
+gestion_dechets,fosse_familiale,Les déchets sont jetés dans une fosse familiale,,
+gestion_dechets,fosse_village,Les déchets sont jetés dans une fosse du village,,
+gestion_dechets,brousse,Les déchets sont jetés en brousse,,
+gestion_dechets,derriere_case,Les déchets sont jetés derrière la case,,
+gestion_dechets,brules,Les déchets sont brûlés,,
+gestion_dechets,compostes,Les déchets sont compostés,,
+gestion_dechets,voie_publique,Les déchets sont jetés sur la voie publique,,
+gestion_dechets,pas_de_dechets,Il n'y a pas de déchets,,
+gestion_dechets,autre,Autre,,
+gestion_dechets,ne_sait_pas,Ne sait pas,,
+proprete,village_propre_aires,Les villages sont propres et les déchets sont toujours jetés dans des aires désignées,,
+proprete,village_propre_hors_aires,La plupart des villages sont propres mais parfois les déchets sont jetés hors des aires désignées,,
+proprete,villages_sales_hors_aires,La plupart des villages sont sales car les déchets sont souvent jetés hors des aires désignées,,
+proprete,pas_aires_designees,Il n y a pas d'aire désignée pour les déchets dans les villages,,
+proprete,ne_sait_pas,Ne sait pas,,
+types_habitation,propriétaire,Maison propre,,
+types_habitation,partage_maison_gratuit,Partage d'une maison/d'un abri avec une famille hôte (sans frais),,
+types_habitation,maison_location,Maison individuelle louée,,
+types_habitation,partage_maison_location_travail,Partage d'une maison/d'un abri avec une famille hôte contre paiement (loyer) ou services rendus (travail),,
+types_habitation,emprunt_gratuit_proprietaire,Maison empruntée gratuitement avec autorisation du propriétaire de la maison,,
+types_habitation,occupation_partie_tierce,Maison occupée avec l'autorisation de quelqu'un d'autres que le propriétaire,,
+types_habitation,abris_collectifs,"Abris collectifs (Ecoles, Eglises, Postes de Santé)",,
+types_habitation,abris_sites_integres,"Abris (de fortune ou amélioré) dans un Site de déplacés situé près de, en périphérie ou dans d’une ville ",,
+types_habitation,abris_sites_isoles,Abris (de fortune ou amélioré) dans un site de déplacés  isolé éloigné d’un village,,
+types_habitation,abris_parcelle_loyer,Abri de fortune ou abris en matérieux locaux construit sur la parcelle d'une famille d'accueil (à côté de leur maison) contre paiement (loyer) ou services rendus (travail),,
+types_habitation,abris_parcelle_gratuit,Abri de fortune ou abris en matérieux locaux construit sur la parcelle d'une famille d'accueil (à côté de leur maison)  gratuitement,,
+types_habitation,pas_abris,Pas d'abris,,
+types_habitation,autre,Autre (spécifier),,
+service_financier,banques,Banques,,
+service_financier,agence_micro_finance,Agences de micro-finance,,
+service_financier,transf_telephonie_mobile,Transferts d'argent par téléphonie mobile,,
+service_financier,commercant,Commerçants,,
+service_financier,autre,Autre (spécifier),,
+service_financier,aucune,Aucune,,
+service_financier,ne_sait_pas,Ne sait pas,,
+barriere_marche,insecurite_route,Insecurité le long de la route,,
+barriere_marche,insecurite_marche,Insecurité au marché,,
+barriere_marche,manque_transport,Manque de moyen de transports,,
+barriere_marche,route_impraticable,Route impraticable,,
+barriere_marche,barriere_naturelle,Barriere naturelle,,
+barriere_marche,pas_marche_fonctionnel,Pas de marche fonctionnel,,
+barriere_marche,barrage_militaire,Barrage militaire,,
+barriere_marche,autre,Autre (specifier),,
+non_construction,manque_moyen,Pas de moyens pour acheter les matériaux ou payer la main d'œuvre,,
+non_construction,manque_materiaux,Pas de matériaux localement disponibles ,,
+non_construction,manque_main_oeuvre,Pas de main d'oeuvre disponible l'abri (l'expertise de construction n'existent pas dans la zone),,
+non_construction,pas_de_terrain,Pas de terrain/endroit disponible/reçu pour construire,,
+non_construction,autre_priorités,Les ménages ont d'autre priorités que de construire leurs abris,,
+non_construction,incertitude_insecurite,Incertitude si rester dans ce même village liée à l'insécurité,,
+non_construction,incertitude_services,Incertitude si rester dans ce même village par manque de services de bases,,
+non_construction,aucune_raison,Aucune raison,,
+non_construction,autre,Autre (specifier),,
+duree,1_mois,1 mois,,
+duree,1_3_mois,entre 1 et 3 mois,,
+duree,3_6_mois,entre 3 et 6 mois,,
+duree,6_1_an,entre 6 mois et 1 ans,,
+duree,1_2_ans,entre 1 et 2 ans,,
+duree,plus_2_ans,Plus de 2 ans,,
+duree,ne_sait_pas,Ne sait pas,,
+duree,autre,Autre,,
+temps,1_minute,1 minute,,
+temps,1_30_minutes,1-30 minutes,,
+temps,plus_30_minutes,30+ minutes,,
+temps,acces_impossible,Accès impossible,,
+deplacement,1_2_fois,En moyenne entre 1 à 2 fois depuis leur premier déplacement,,
+deplacement,2_3_fois,En moyenne entre 2 à 3 fois depuis leur premier déplacement,,
+deplacement,plus_3_fois,En moyenne plus de 3 fois depuis leur premier déplacement,,
+deplacement,non,"Non, la plupart ne se sont pas déplacés encore une fois après leur déplacement initial ",,
+deplacement,ne_sait_pas,Ne sait pas,,
+raison_deplacement,insecurite,Insécurité liée aux violences de groupes armés,,
+raison_deplacement,eviction,Evictions des sites pour cause de non paiement de loyer,,
+raison_deplacement,tension,tensions communautaires,,
+raison_deplacement,manque_subsistance,Manque des moyens de subsistance,,
+raison_deplacement,reduction_service,Réduction de l'accès aux services de base,,
+raison_deplacement,probleme_nourriture,Problème d’accès à la nourriture,,
+raison_deplacement,ne_sait_pas,Ne sait pas,,
+raison_deplacement,autre,Autre,,
+raison_pendulaire,saison_semence,Saison de semences dans leur lieu d'origine,,
+raison_pendulaire,saison_recolte,Saison de récoltes dans leur lieu d'origine,,
+raison_pendulaire,securite,Vérifier la sécurité dans leur lieu d'origine,,
+raison_pendulaire,bien,Vérifier leur bien dans leur lieu d'origine,,
+raison_pendulaire,ne_sait_pas,Ne sait pas,,
+raison_pendulaire,autre,Autre,,
+loyer,moins_5000,Moins de 5 000Fc,,
+loyer,5000_15000,Entre 5 000Fc et 15 000Fc,,
+loyer,15000_25000,Entre 15 000Fc et 25 000Fc,,
+loyer,plus_25000,Plus de 25 000Fc,,
+loyer,travail,Paiement en travail,,
+loyer,ne_sait_pas,Ne sait pas,,
+loyer,autre,Autre,,
+raison_eviction,non_paiement,Non-paiement du loyer,,
+raison_eviction,mesentente,Mésentente avec le propriétaire,,
+raison_eviction,proprietaire_revenu,Le propriétaire de la maison est revenu pour occuper son bien,,
+raison_eviction,tension_communaute,Tensions avec la commuanutés hôte,,
+raison_eviction,ne_sait_pas,Ne sait pas,,
+raison_eviction,autre,Autre,,
+,,,,
+province,nord_kivu,Nord Kivu,,
+province,ituri,Ituri,,
+,,,,
+zone_sante,beni,Beni,,nord_kivu
+zone_sante,birambizo,Birambizo,,nord_kivu
+zone_sante,kirotshe,Kirotshe,,nord_kivu
+zone_sante,lubero,Lubero,,nord_kivu
+zone_sante,masisi,Masisi,,nord_kivu
+zone_sante,mweso,Mweso,,nord_kivu
+zone_sante,bambo,Bambo,,nord_kivu
+zone_sante,kayina,Kayina,,nord_kivu
+zone_sante,katoyi,Katoyi,,nord_kivu
+zone_sante,kibua,Kibua,,nord_kivu
+zone_sante,mutwanga,Mutwanga,,nord_kivu
+zone_sante,oicha,Oicha,,nord_kivu
+zone_sante,pinga,Pinga,,nord_kivu
+zone_sante,rutshuru,Rutshuru,,nord_kivu
+zone_sante,bunia,Bunia,,ituri
+zone_sante,drodro,Drodro,,ituri
+zone_sante,fataki,Fataki,,ituri
+zone_sante,gethy,Gethy,,ituri
+zone_sante,jiba,Jiba,,ituri
+zone_sante,komanda,Komanda,,ituri
+zone_sante,lita,Lita,,ituri
+zone_sante,mambasa,Mambasa,,ituri
+zone_sante,mangala,Mangala,,ituri
+zone_sante,tchomia,Tchomia,,ituri
+zone_sante,autre,Autre,,nord_kivu
+zone_sante,autre,Autre,,ituri
+,,,,
+aire_sante,bingo,Bingo,beni,nord_kivu
+aire_sante,paida,Paida,beni,nord_kivu
+aire_sante,mukulya,Mukulya,beni,nord_kivu
+aire_sante,ngoyo,Ngoyo,beni,nord_kivu
+aire_sante,tamende,Tamende,beni,nord_kivu
+aire_sante,buhumbani,Buhumbani,beni,nord_kivu
+aire_sante,kabasha,Kabasha,beni,nord_kivu
+aire_sante,kasabinyole,Kasabinyole,beni,nord_kivu
+aire_sante,mununze,Mununze,beni,nord_kivu
+aire_sante,mabalako,Mabalako,beni,nord_kivu
+aire_sante,mabakanga,Mabakanga,beni,nord_kivu
+aire_sante,mangina,Mangina,beni,nord_kivu
+aire_sante,mangodomu,Mangodomu,beni,nord_kivu
+aire_sante,butsili,Butsili,beni,nord_kivu
+aire_sante,kanzulinzuli,Kanzulinzuli,beni,nord_kivu
+aire_sante,boikene,Boikene,beni,nord_kivu
+aire_sante,aloya,Aloya,beni,nord_kivu
+aire_sante,kasanga,Kasanga,beni,nord_kivu
+aire_sante,kasebere,Kasebere,beni,nord_kivu
+aire_sante,mabolio,Mabolio,beni,nord_kivu
+aire_sante,madrandele,Madrandele,beni,nord_kivu
+aire_sante,malepe,Malepe,beni,nord_kivu
+aire_sante,ngumo,Ngumo,beni,nord_kivu
+aire_sante,kalunguta,Kalunguta,beni,nord_kivu
+aire_sante,sayo,Sayo,beni,nord_kivu
+aire_sante,lisasa,Lisasa,beni,nord_kivu
+aire_sante,supa,Supa,beni,nord_kivu
+aire_sante,mataba,Mataba,beni,nord_kivu
+aire_sante,birambizo,Birambizo,birambizo,nord_kivu
+aire_sante,bishusha ,Bishusha ,birambizo,nord_kivu
+aire_sante,jtn  ,JTN  ,birambizo,nord_kivu
+aire_sante,katsiru ,Katsiru ,birambizo,nord_kivu
+aire_sante,kizimba ,Kizimba ,birambizo,nord_kivu
+aire_sante,mushebere ,Mushebere ,birambizo,nord_kivu
+aire_sante,ngoholo ,Ngoholo ,birambizo,nord_kivu
+aire_sante,rusekera ,Rusekera ,birambizo,nord_kivu
+aire_sante,rwindi ,Rwindi ,birambizo,nord_kivu
+aire_sante,kahe ,Kahe ,birambizo,nord_kivu
+aire_sante,luya ,Luya ,birambizo,nord_kivu
+aire_sante,mulimbi ,Mulimbi ,birambizo,nord_kivu
+aire_sante,bishange,Bishange,kirotshe,nord_kivu
+aire_sante,bitonga,Bitonga,kirotshe,nord_kivu
+aire_sante,katuunda,Katuunda,kirotshe,nord_kivu
+aire_sante,kausa,Kausa,kirotshe,nord_kivu
+aire_sante,buroha,Buroha,kirotshe,nord_kivu
+aire_sante,bweremana,Bweremana,kirotshe,nord_kivu
+aire_sante,murambi,Murambi,kirotshe,nord_kivu
+aire_sante,karuba,Karuba,kirotshe,nord_kivu
+aire_sante,kihindo,Kihindo,kirotshe,nord_kivu
+aire_sante,kabase,Kabase,kirotshe,nord_kivu
+aire_sante,kirotshe,Kirotshe,kirotshe,nord_kivu
+aire_sante,matanda,Matanda,kirotshe,nord_kivu
+aire_sante,kabingu,Kabingu,kirotshe,nord_kivu
+aire_sante,mitumbala,Mitumbala,kirotshe,nord_kivu
+aire_sante,mumba,Mumba,kirotshe,nord_kivu
+aire_sante,ngungu,Ngungu,kirotshe,nord_kivu
+aire_sante,rubaya,Rubaya,kirotshe,nord_kivu
+aire_sante,ruhegeri,Ruhegeri,kirotshe,nord_kivu
+aire_sante,sake,Sake,kirotshe,nord_kivu
+aire_sante,ufamandu,Ufamandu,kirotshe,nord_kivu
+aire_sante,kirikiri,Kirikiri,lubero,nord_kivu
+aire_sante,kisima,Kisima,lubero,nord_kivu
+aire_sante,kitsombiro,Kitsombiro,lubero,nord_kivu
+aire_sante,baraka,Baraka,lubero,nord_kivu
+aire_sante,bukununu,Bukununu,lubero,nord_kivu
+aire_sante,kaghuli,Kaghuli,lubero,nord_kivu
+aire_sante,kalimba,Kalimba,lubero,nord_kivu
+aire_sante,kasalala,Kasalala,lubero,nord_kivu
+aire_sante,kasima,Kasima,lubero,nord_kivu
+aire_sante,kasugho,Kasugho,lubero,nord_kivu
+aire_sante,katolo,Katolo,lubero,nord_kivu
+aire_sante,kipese,Kipese,lubero,nord_kivu
+aire_sante,lubango,Lubango,lubero,nord_kivu
+aire_sante,lubero_cité,Lubero-Cité,lubero,nord_kivu
+aire_sante,mulo,Mulo,lubero,nord_kivu
+aire_sante,mubana,Mubana,lubero,nord_kivu
+aire_sante,vukendo,Vukendo,lubero,nord_kivu
+aire_sante,vunyakondomi,Vunyakondomi,lubero,nord_kivu
+aire_sante,ndoluma,Ndoluma,lubero,nord_kivu
+aire_sante,kagheri,Kagheri,lubero,nord_kivu
+aire_sante,masisi,Masisi,masisi,nord_kivu
+aire_sante,nyabiondo,Nyabiondo,masisi,nord_kivu
+aire_sante,kitsule,Kitsule,masisi,nord_kivu
+aire_sante,kibabi,Kibabi,masisi,nord_kivu
+aire_sante,machumbi,Machumbi,masisi,nord_kivu
+aire_sante,loashi,Loashi,masisi,nord_kivu
+aire_sante,lukweti,Lukweti,masisi,nord_kivu
+aire_sante,kibati,Kibati,masisi,nord_kivu
+aire_sante,bukumbirire,Bukumbirire,masisi,nord_kivu
+aire_sante,mahanga,Mahanga,masisi,nord_kivu
+aire_sante,kishanga,Kishanga,masisi,nord_kivu
+aire_sante,buabo,Buabo,masisi,nord_kivu
+aire_sante,kaniro,Kaniro,masisi,nord_kivu
+aire_sante,kalonge,Kalonge,masisi,nord_kivu
+aire_sante,lwibo,Lwibo,masisi,nord_kivu
+aire_sante,bihambwe,Bihambwe,masisi,nord_kivu
+aire_sante,nyamitaba,Nyamitaba,masisi,nord_kivu
+aire_sante,miandja,Miandja,masisi,nord_kivu
+aire_sante,luke,Luke,masisi,nord_kivu
+aire_sante,katoyi,Katoyi,masisi,nord_kivu
+aire_sante,nyakariba,Nyakariba,masisi,nord_kivu
+aire_sante,kazinga,Kazinga,masisi,nord_kivu
+aire_sante,muheto,Muheto,masisi,nord_kivu
+aire_sante,kanyatsi,Kanyatsi,masisi,nord_kivu
+aire_sante,kimua,Kimua,masisi,nord_kivu
+aire_sante,ngomashi,Ngomashi,masisi,nord_kivu
+aire_sante,luhinzi,Luhinzi,masisi,nord_kivu
+aire_sante,mahya,Mahya,masisi,nord_kivu
+aire_sante,katoyi_2,Katoyi 2,masisi,nord_kivu
+aire_sante,buhimba,Buhimba,masisi,nord_kivu
+aire_sante,langira,Langira,masisi,nord_kivu
+aire_sante,ngenge,Ngenge,masisi,nord_kivu
+aire_sante,mbitsi,Mbitsi,masisi,nord_kivu
+aire_sante,buguri,Buguri,masisi,nord_kivu
+aire_sante,kahanga,Kahanga,masisi,nord_kivu
+aire_sante,mweso_rugarama,Mweso/Rugarama,mweso,nord_kivu
+aire_sante,kichanga,Kichanga,mweso,nord_kivu
+aire_sante,kirumbu,Kirumbu,mweso,nord_kivu
+aire_sante,burungu,Burungu,mweso,nord_kivu
+aire_sante,mokoto,Mokoto,mweso,nord_kivu
+aire_sante,jtn,JTN,mweso,nord_kivu
+aire_sante,kamonyi,Kamonyi,mweso,nord_kivu
+aire_sante,kibarizo,Kibarizo,mweso,nord_kivu
+aire_sante,tambi,Tambi,mweso,nord_kivu
+aire_sante,busumba,Busumba,mweso,nord_kivu
+aire_sante,bukama,Bukama,mweso,nord_kivu
+aire_sante,kashuga,Kashuga,mweso,nord_kivu
+aire_sante,kivuye,Kivuye,mweso,nord_kivu
+aire_sante,kalembe_muungano,Kalembe/Muungano,mweso,nord_kivu
+aire_sante,mushebere,Mushebere,mweso,nord_kivu
+aire_sante,nyarubande,Nyarubande,mweso,nord_kivu
+aire_sante,bweru,Bweru,mweso,nord_kivu
+aire_sante,bibwe,Bibwe,mweso,nord_kivu
+aire_sante,st_benoit,St Benoit,mweso,nord_kivu
+aire_sante,lwama,Lwama,mweso,nord_kivu
+aire_sante,katuna,Katuna,mweso,nord_kivu
+aire_sante,luhanga,Luhanga,mweso,nord_kivu
+aire_sante,pety,Pety,pinga,nord_kivu
+aire_sante,buleusa,Buleusa,pinga,nord_kivu
+aire_sante,kaseke,Kaseke,pinga,nord_kivu
+aire_sante,limangi,Limangi,pinga,nord_kivu
+aire_sante,kasuka,Kasuka,pinga,nord_kivu
+aire_sante,robe,Robe,pinga,nord_kivu
+aire_sante,mashuta,Mashuta,pinga,nord_kivu
+aire_sante,bukumbirwa,Bukumbirwa,pinga,nord_kivu
+aire_sante,kakuku,Kakuku,pinga,nord_kivu
+aire_sante,lukala,Lukala,pinga,nord_kivu
+aire_sante,bukonde,Bukonde,pinga,nord_kivu
+aire_sante,rungoma,Rungoma,pinga,nord_kivu
+aire_sante,oninga,Oninga,pinga,nord_kivu
+aire_sante,besse,Besse,pinga,nord_kivu
+aire_sante,buhimba,Buhimba,pinga,nord_kivu
+aire_sante,rusamambu,Rusamambu,pinga,nord_kivu
+aire_sante,munsanga,Munsanga,pinga,nord_kivu
+aire_sante,mutongo,Mutongo,pinga,nord_kivu
+aire_sante,kailenge,Kailenge,pinga,nord_kivu
+aire_sante,kassa,Kassa,pinga,nord_kivu
+aire_sante,n_kimba,N'Kimba,pinga,nord_kivu
+aire_sante,kanune,Kanune,pinga,nord_kivu
+aire_sante,mwenda,Mwenda,mutwanga,nord_kivu
+aire_sante,lume,Lume,mutwanga,nord_kivu
+aire_sante,bulongo,Bulongo,mutwanga,nord_kivu
+aire_sante,kikingi,Kikingi,mutwanga,nord_kivu
+aire_sante,kabalwa,Kabalwa,mutwanga,nord_kivu
+aire_sante,kangahuka,Kangahuka,mutwanga,nord_kivu
+aire_sante,nzenga,Nzenga,mutwanga,nord_kivu
+aire_sante,masambo,Masambo,mutwanga,nord_kivu
+aire_sante,kasanga,Kasanga,mutwanga,nord_kivu
+aire_sante,kisima,Kisima,mutwanga,nord_kivu
+aire_sante,manzanga,Manzanga,mutwanga,nord_kivu
+aire_sante,kenehambaore,Kenehambaore,mutwanga,nord_kivu
+aire_sante,kikura,Kikura,mutwanga,nord_kivu
+aire_sante,rugetsi,Rugetsi,mutwanga,nord_kivu
+aire_sante,kudi_iii,Kudi III,mutwanga,nord_kivu
+aire_sante,kalembo,Kalembo,mutwanga,nord_kivu
+aire_sante,loulo,Loulo,mutwanga,nord_kivu
+aire_sante,lubiriha,Lubiriha,mutwanga,nord_kivu
+aire_sante,kitokoli,Kitokoli,mutwanga,nord_kivu
+aire_sante,kithevya,Kithevya,oicha,nord_kivu
+aire_sante,mbutaba,Mbutaba,oicha,nord_kivu
+aire_sante,maleki,Maleki,oicha,nord_kivu
+aire_sante,mavivi,Mavivi,oicha,nord_kivu
+aire_sante,bunzumu,Bunzumu,oicha,nord_kivu
+aire_sante,liva,Liva,oicha,nord_kivu
+aire_sante,luanoli,Luanoli,oicha,nord_kivu
+aire_sante,oicha,Oicha,oicha,nord_kivu
+aire_sante,kamango,Kamango,oicha,nord_kivu
+aire_sante,kainama,Kainama,oicha,nord_kivu
+aire_sante,eringeti,Eringeti,oicha,nord_kivu
+aire_sante,samboko,Samboko,oicha,nord_kivu
+aire_sante,mambabio,Mambabio,oicha,nord_kivu
+aire_sante,totolito,Totolito,oicha,nord_kivu
+aire_sante,kakutama,Kakutama,oicha,nord_kivu
+aire_sante,mamove,Mamove,oicha,nord_kivu
+aire_sante,mbau,Mbau,oicha,nord_kivu
+aire_sante,mambau,Mambau,oicha,nord_kivu
+aire_sante,pasala,Pasala,oicha,nord_kivu
+aire_sante,mabasele,Mabasele,oicha,nord_kivu
+aire_sante,mambabeka,Mambabeka,oicha,nord_kivu
+aire_sante,kokola,Kokola,oicha,nord_kivu
+aire_sante,apetina,Apetina,oicha,nord_kivu
+aire_sante,bayeti,Bayeti,oicha,nord_kivu
+aire_sante,tenambo,Tenambo,oicha,nord_kivu
+aire_sante,kahondo,Kahondo,oicha,nord_kivu
+aire_sante,musuku,Musuku,oicha,nord_kivu
+aire_sante,pakanza,Pakanza,oicha,nord_kivu
+aire_sante,biruma,Biruma ,rutshuru,nord_kivu
+aire_sante,buturande,Buturande ,rutshuru,nord_kivu
+aire_sante,kakomero,Kakomero ,rutshuru,nord_kivu
+aire_sante,kalengera,Kalengera ,rutshuru,nord_kivu
+aire_sante,katale,Katale,rutshuru,nord_kivu
+aire_sante,kibututu,Kibututu ,rutshuru,nord_kivu
+aire_sante,as_katoro,AS Katoro ,rutshuru,nord_kivu
+aire_sante,kinyandonyi,Kinyandonyi ,rutshuru,nord_kivu
+aire_sante,kiwanja,Kiwanja ,rutshuru,nord_kivu
+aire_sante,mabungo,Mabungo ,rutshuru,nord_kivu
+aire_sante,mapendo,Mapendo ,rutshuru,nord_kivu
+aire_sante,murambi,Murambi ,rutshuru,nord_kivu
+aire_sante,rubare,Rubare ,rutshuru,nord_kivu
+aire_sante,rugari,Rugari ,rutshuru,nord_kivu
+aire_sante,rutshuru,Rutshuru ,rutshuru,nord_kivu
+aire_sante,umoja,Umoja ,rutshuru,nord_kivu
+aire_sante,kamandi_gite,Kamandi gite,kayina,nord_kivu
+aire_sante,luofu,Luofu ,kayina,nord_kivu
+aire_sante,mighobwe,Mighobwe ,kayina,nord_kivu
+aire_sante,kikuvo,Kikuvo,kayina,nord_kivu
+aire_sante,rubaya,Rubaya,katoyi,nord_kivu
+aire_sante,katovu,Katovu,katoyi,nord_kivu
+aire_sante,kinigi,Kinigi,katoyi,nord_kivu
+aire_sante,bukumbiriri,Bukumbiriri,katoyi,nord_kivu
+aire_sante,katoyi,Katoyi,katoyi,nord_kivu
+aire_sante,kikoma,Kikoma,katoyi,nord_kivu
+aire_sante,kikabi,Kibabi,katoyi,nord_kivu
+aire_sante,misau,Misau,kibua,nord_kivu
+aire_sante,kibua,Kibua,kibua,nord_kivu
+aire_sante,kashebere,Kashebere,kibua,nord_kivu
+aire_sante,machumbi,Machumbi,kibua,nord_kivu
+aire_sante,kibati,Kibati,kibua,nord_kivu
+aire_sante,karambi,Karambi,kibua,nord_kivu
+aire_sante,kishanga,Kishanga,kibua,nord_kivu
+aire_sante,kasuka,Kasuka,kibua,nord_kivu
+aire_sante,lubonga,Lubonga,kibua,nord_kivu
+aire_sante,limangi,Limangi,kibua,nord_kivu
+aire_sante,nkimba,Nkimba,kibua,nord_kivu
+aire_sante,robe,Robe,kibua,nord_kivu
+aire_sante,byungu,Byungu,kibua,nord_kivu
+aire_sante,katwa,Katwa,kibua,nord_kivu
+aire_sante,ntoto,Ntoto,kibua,nord_kivu
+aire_sante,langira,Langira,kibua,nord_kivu
+aire_sante,kimua,Kimua,kibua,nord_kivu
+aire_sante,ngenge,Ngenge,kibua,nord_kivu
+aire_sante,kabizo,Kabizo,bambo,nord_kivu
+aire_sante,mushababwe,Mushababwe,bambo,nord_kivu
+aire_sante,kamena,Kamena,bambo,nord_kivu
+aire_sante,rushovu,Rushovu,bambo,nord_kivu
+aire_sante,tongo,Tongo,bambo,nord_kivu
+aire_sante,marangara,Marangara,bambo,nord_kivu
+aire_sante,kirumba,Kirumba,bambo,nord_kivu
+aire_sante,kishishe,Kishishe,bambo,nord_kivu
+aire_sante,faraja,Faraja,bambo,nord_kivu
+aire_sante,cbce_bambo,CBCE Bambo,bambo,nord_kivu
+aire_sante,hopital_general_bambo,Hopital Général Bambo,bambo,nord_kivu
+aire_sante,adventiste,Adventiste,bunia,ituri
+aire_sante,bankoko,Bankoko,bunia,ituri
+aire_sante,nzere,Nzere,bunia,ituri
+aire_sante,bora_uzima,Bora Uzima,bunia,ituri
+aire_sante,bunia_cité,Bunia Cité,bunia,ituri
+aire_sante,central_soleniama,Central soleniama,bunia,ituri
+aire_sante,cnca_saio,Cnca Saio,bunia,ituri
+aire_sante,lembabo,Lembabo,bunia,ituri
+aire_sante,mudzi_maria,Mudzi-Maria,bunia,ituri
+aire_sante,muhito,Muhito,bunia,ituri
+aire_sante,ngezi,Ngezi ,bunia,ituri
+aire_sante,rwankole,Rwankole,bunia,ituri
+aire_sante,bigo,Bigo,bunia,ituri
+aire_sante,nyakasanza,Nyakasanza,bunia,ituri
+aire_sante,simbiliabo,Simbiliabo,bunia,ituri
+aire_sante,blukwa_lat,Blukwa Lat,drodro,ituri
+aire_sante,blukwa_mb,Blukwa Mb,drodro,ituri
+aire_sante,dhedja,Dhedja,drodro,ituri
+aire_sante,hgr_drodro,Hgr Drodro,drodro,ituri
+aire_sante,kpalo,Kpalo,drodro,ituri
+aire_sante,kpanga,Kpanga,drodro,ituri
+aire_sante,logo,Logo,drodro,ituri
+aire_sante,lomi,Lomi,drodro,ituri
+aire_sante,masumbuku,Masumbuku,drodro,ituri
+aire_sante,maze,Maze,drodro,ituri
+aire_sante,mulinga,Mulinga,drodro,ituri
+aire_sante,nyaudii,Nyaudii,drodro,ituri
+aire_sante,retso,Retso,drodro,ituri
+aire_sante,saliboko,Saliboko,drodro,ituri
+aire_sante,tchatchikpa,Tchatchikpa ,drodro,ituri
+aire_sante,utcha,Utcha,drodro,ituri
+aire_sante,bukachele,Bukachele,fataki,ituri
+aire_sante,bule,Bule,fataki,ituri
+aire_sante,dhendro,Dhendro,fataki,ituri
+aire_sante,djugu,Djugu,fataki,ituri
+aire_sante,duvire,Duvire,fataki,ituri
+aire_sante,fataki,Fataki,fataki,ituri
+aire_sante,jina,Jina,fataki,ituri
+aire_sante,lenga,Lenga,fataki,ituri
+aire_sante,ndjale,Ndjale,fataki,ituri
+aire_sante,ngolo,Ngolo,fataki,ituri
+aire_sante,salama,Salama,fataki,ituri
+aire_sante,pimbo,Pimbo,fataki,ituri
+aire_sante,sumbuso,Sumbuso,fataki,ituri
+aire_sante,avera,Avera,gethy,ituri
+aire_sante,bilima,Bilima,gethy,ituri
+aire_sante,bukiringi,Bukiringi,gethy,ituri
+aire_sante,gethy,Gethy,gethy,ituri
+aire_sante,isura,Isura,gethy,ituri
+aire_sante,kagoro,Kagoro ,gethy,ituri
+aire_sante,kagaba,Kagaba,gethy,ituri
+aire_sante,kinyomubaya,Kinyomubaya,gethy,ituri
+aire_sante,maga,Maga,gethy,ituri
+aire_sante,nombe,Nombe,gethy,ituri
+aire_sante,olongbwa,Olongbwa,gethy,ituri
+aire_sante,singo,Singo,gethy,ituri
+aire_sante,soke,Soke,gethy,ituri
+aire_sante,songolo,Songolo,gethy,ituri
+aire_sante,tchekele,Tchekele,gethy,ituri
+aire_sante,zitono,Zitono,gethy,ituri
+aire_sante,bassani,Bassani,jiba,ituri
+aire_sante,dadaru,Dadaru,jiba,ituri
+aire_sante,dhendo,Dhendo,jiba,ituri
+aire_sante,djokaba,Djokaba,jiba,ituri
+aire_sante,gokpa,Gokpa,jiba,ituri
+aire_sante,jiba,Jiba,jiba,ituri
+aire_sante,krido,Krido,jiba,ituri
+aire_sante,ladyi,Ladyi,jiba,ituri
+aire_sante,laudjo,Laudjo,jiba,ituri
+aire_sante,malo,Malo,jiba,ituri
+aire_sante,ngadjoka,Ngadjoka,jiba,ituri
+aire_sante,okareba,Okareba,jiba,ituri
+aire_sante,petro,Petro,jiba,ituri
+aire_sante,bamande,Bamande,komanda,ituri
+aire_sante,bwana_sura,Bwana Sura,komanda,ituri
+aire_sante,hero_caritas,Hero/Caritas,komanda,ituri
+aire_sante,dou,Dou,komanda,ituri
+aire_sante,katabei,Katabei,komanda,ituri
+aire_sante,komanda,Komanda,komanda,ituri
+aire_sante,luna,Luna,komanda,ituri
+aire_sante,mangiva,Mangiva,komanda,ituri
+aire_sante,ndallia,Ndallia,komanda,ituri
+aire_sante,masekunde,Masekunde,komanda,ituri
+aire_sante,ofay,Ofay,komanda,ituri
+aire_sante,bahwere,Bahwere,lita,ituri
+aire_sante,katoto,Katoto,lita,ituri
+aire_sante,lita,Lita,lita,ituri
+aire_sante,loga,Loga,lita,ituri
+aire_sante,lonyo,Lonyo,lita,ituri
+aire_sante,mandro,Mandro,lita,ituri
+aire_sante,matumbi,Matumbi,lita,ituri
+aire_sante,ndungbe,Ndungbe,lita,ituri
+aire_sante,vilo,Vilo,lita,ituri
+aire_sante,zumbe,Zumbe,lita,ituri
+aire_sante,akokora,Akokora,mambasa,ituri
+aire_sante,bakaeku_kinya,Bakaeku Kinya,mambasa,ituri
+aire_sante,bakulani,Bakulani,mambasa,ituri
+aire_sante,banana,Banana,mambasa,ituri
+aire_sante,bandisende,Bandisende,mambasa,ituri
+aire_sante,binase,Binase,mambasa,ituri
+aire_sante,alambi,Alambi,mambasa,ituri
+aire_sante,epulu,Epulu,mambasa,ituri
+aire_sante,makoko_2,Makoko 2,mambasa,ituri
+aire_sante,malembi,Malembi,mambasa,ituri
+aire_sante,molokay,Molokay,mambasa,ituri
+aire_sante,nduye,Nduye,mambasa,ituri
+aire_sante,pede,Pede,mambasa,ituri
+aire_sante,salate,Salate,mambasa,ituri
+aire_sante,tobola,Tobola,mambasa,ituri
+aire_sante,budhu,Budhu,mangala,ituri
+aire_sante,dz_na,Dz‘Na,mangala,ituri
+aire_sante,kpau,Kpau,mangala,ituri
+aire_sante,likopi,Likopi,mangala,ituri
+aire_sante,masikini,Masikini,mangala,ituri
+aire_sante,ndjubu,Ndjubu,mangala,ituri
+aire_sante,passion,Passion,mangala,ituri
+aire_sante,paty,Paty,mangala,ituri
+aire_sante,tchele,Tchele,mangala,ituri
+aire_sante,tchomia,Tchomia,tchomia,ituri
+aire_sante,gbii,Gbii,tchomia,ituri
+aire_sante,hii,Hii,tchomia,ituri
+aire_sante,joo,Joo,tchomia,ituri
+aire_sante,kakwa,Kakwa,tchomia,ituri
+aire_sante,kasenyi,Kasenyi,tchomia,ituri
+aire_sante,nana,Nana,tchomia,ituri
+aire_sante,ndrigi,Ndrigi,tchomia,ituri
+aire_sante,nyamamba,Nyamamba,tchomia,ituri
+aire_sante,nyamavi,Nyamavi,tchomia,ituri
+aire_sante,sabe,Sabe,tchomia,ituri
+aire_sante,autre,Autre,beni,
+aire_sante,autre,Autre,birambizo,
+aire_sante,autre,Autre,kirotshe,
+aire_sante,autre,Autre,lubero,
+aire_sante,autre,Autre,masisi,
+aire_sante,autre,Autre,mweso,
+aire_sante,autre,Autre,kayina,
+aire_sante,autre,Autre,kibua,
+aire_sante,autre,Autre,bambo,
+aire_sante,autre,Autre,katoyi,
+aire_sante,autre,Autre,mutwanga,
+aire_sante,autre,Autre,oicha,
+aire_sante,autre,Autre,pinga,
+aire_sante,autre,Autre,rutshuru,
+aire_sante,autre,Autre,bunia,
+aire_sante,autre,Autre,drodro,
+aire_sante,autre,Autre,fataki,
+aire_sante,autre,Autre,gethy,
+aire_sante,autre,Autre,jiba,
+aire_sante,autre,Autre,komanda,
+aire_sante,autre,Autre,lita,
+aire_sante,autre,Autre,mambasa,
+aire_sante,autre,Autre,mangala,
+aire_sante,autre,Autre,tchomia,
+aire_sante,autre,Autre,pweto,
+aire_sante,autre,Autre,kilwa,
+aire_sante,autre,Autre,mufunga_sampwe,
+aire_sante,autre,Autre,autre,
