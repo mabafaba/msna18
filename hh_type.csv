@@ -1,0 +1,33 @@
+"","dependent.var","independent.var","dependent.var.value","independent.var.value","numbers","se","min","max"
+"1","hh_type","governorate","returnee","Anbar",0.66761472211606,NA,0.634587618002306,0.700641826229814
+"2","hh_type","governorate","returnee","Babylon",0,NA,0,0
+"3","hh_type","governorate","returnee","Baghdad",0.139930927712278,NA,0.112428222561629,0.167433632862928
+"4","hh_type","governorate","returnee","Dahuk",0,NA,0,0
+"5","hh_type","governorate","returnee","Diyala",0.429841723584475,NA,0.384312807717527,0.475370639451422
+"6","hh_type","governorate","returnee","Erbil",0.207314944134078,NA,0.162367222833569,0.252262665434588
+"7","hh_type","governorate","returnee","Kerbala",0,NA,0,0
+"8","hh_type","governorate","returnee","Kirkuk",0.60718607782645,NA,0.552748516589659,0.661623639063241
+"9","hh_type","governorate","returnee","Missan",0,NA,0,0
+"10","hh_type","governorate","returnee","Najaf",0,NA,0,0
+"11","hh_type","governorate","returnee","Ninewa",0.443965342562349,NA,0.407327587279388,0.48060309784531
+"12","hh_type","governorate","returnee","Qadissiya",0,NA,0,0
+"13","hh_type","governorate","returnee","Salah al-Din",0.6029282232966,NA,0.567164193741672,0.638692252851528
+"14","hh_type","governorate","returnee","Sulaymaniyah",0,NA,0,0
+"15","hh_type","governorate","returnee","Thi-Qar",0,NA,0,0
+"16","hh_type","governorate","returnee","Wassit",0,NA,0,0
+"17","hh_type","governorate","idp","Anbar",0.33238527788394,NA,0.299358173770186,0.365412381997694
+"18","hh_type","governorate","idp","Babylon",1,NA,1,1
+"19","hh_type","governorate","idp","Baghdad",0.860069072287722,NA,0.832566367137072,0.887571777438371
+"20","hh_type","governorate","idp","Dahuk",1,NA,1,1
+"21","hh_type","governorate","idp","Diyala",0.570158276415525,NA,0.524629360548578,0.615687192282473
+"22","hh_type","governorate","idp","Erbil",0.792685055865922,NA,0.747737334565412,0.837632777166431
+"23","hh_type","governorate","idp","Kerbala",1,NA,1,1
+"24","hh_type","governorate","idp","Kirkuk",0.39281392217355,NA,0.338376360936759,0.447251483410341
+"25","hh_type","governorate","idp","Missan",1,NA,1,1
+"26","hh_type","governorate","idp","Najaf",1,NA,1,1
+"27","hh_type","governorate","idp","Ninewa",0.556034657437651,NA,0.51939690215469,0.592672412720613
+"28","hh_type","governorate","idp","Qadissiya",1,NA,1,1
+"29","hh_type","governorate","idp","Salah al-Din",0.3970717767034,NA,0.361307747148472,0.432835806258328
+"30","hh_type","governorate","idp","Sulaymaniyah",1,NA,1,1
+"31","hh_type","governorate","idp","Thi-Qar",1,NA,1,1
+"32","hh_type","governorate","idp","Wassit",1,NA,1,1

@@ -1,0 +1,118 @@
+---
+title: "correlation_investigation"
+author: "ElioraH"
+date: "17 December 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r}
+source("./internal/R/120 - dependencies.R")
+.log<-list();.logfile<-"./output/log/log.txt";.clearlog()
+source("./internal/R/130 - load_input.R")
+source("./internal/R/140 - composite_indicators.R")
+```
+
+
+#Advcanced Analytics setup - looking at dependent variable
+```{r}
+#suppressPackageStartupMessages(library(installr))
+#installr:updateR()
+require(survey)
+library(effects)
+library(sjPlot)  
+library(outliers)
+library(magrittr)
+  
+hist(data$tot_income, breaks= 80)
+```
+
+
+# Recoding, weighting and sanitising
+```{r}
+data$tot_income[is.na(data$tot_income)] <- 0 
+data$log_tot_income <- log10(data$tot_income)
+
+# there are many missing values in the tot_income calculation, representing those HH with 0 income
+data$log_tot_income[is.na(data$log_tot_income)] <- 0
+data$log_tot_income[data$log_tot_income < 0] <- 0
+
+#sanitise
+#remove NA's
+data <- data[!is.na(data[["log_tot_income"]]),]
+data$weight_nat <- as.numeric(data$weight_nat)
+data <- data[!(data[["weight_nat"]] == 0),]
+
+#apply weights and create design object (must happen after recoding)
+
+      design <- svydesign(~0, data = data, weights = data$weight_nat)
+      
+      #### do a histogram 
+hist(data$log_tot_income, breaks= 80) ### log distribution
+```
+
+
+##### 2.2 GLM 
+
+```{r}
+model_total <- svyglm(formula = log_tot_income ~ wash_index + protection_index + livelihood_index + health_index + nfi_index, design, family=stats::gaussian())
+
+summary(model_total)
+plot(model_total)
+
+### Looking at individual correlations for PINS
+
+model_prot <- svyglm(formula = protection_pin ~ log_tot_income, design, family=stats::gaussian())
+summary(model_prot)
+model_livelihood <- svyglm(formula = livelihood_pin ~ log_tot_income, design, family=stats::gaussian())
+summary(model_livelihood)
+model_wash <- svyglm(formula = log_tot_income ~ wash_pin, design, family=stats::gaussian()) 
+summary(model_wash)
+model_health <- svyglm(formula = log_tot_income ~ health_pin, design, family=stats::gaussian())
+summary(model_health)
+```
+
+
+## Understanding health 
+
+```{r}
+
+## Relation of indicators building the index to the ultimate PIN classification
+model_health_why <- svyglm(formula = health_pin ~ mcna_clinic * mcna_hosp + mcna_vaccines1 + mcna_chronic1, design, family = stats::gaussian())
+
+summary(model_health_why)
+
+clinics_on_money <- svyglm(formula = log_tot_income ~ mcna_clinic * mcna_hosp 
+                            , design, family = stats::gaussian())
+summary(clinics_on_money)
+
+hospitals_location <- svyglm(formula = mcna_hosp ~  district, design, family = stats::gaussian())
+summary(hospitals_location)
+
+health_pin_location <- svyglm(formula = health_pin ~  log_tot_income * mcna_hosp
+                              ,design, family = stats::gaussian())
+
+
+### creating a variable for districts where location doesnt affect hospital presence
+data$location_no_influence <- 0
+data$location_no_influence[data$district %in% c("Adhamia", "Chamchamal", "Dahuk", "Darbandihkan", "Diwaniya", "Haditha", "Halabja", "Hamza", "Hashimiya", "Kalar", "Kerbala", "Khalis", "Koisnjaq", "Mahawil", "Kufa", "Musayab", "Najaf", "Soran","Sumel", "Suwaira")] <- 1
+
+
+### when does money matter
+design <- svydesign(~0, data = data, weights = data$weight_nat)
+
+health_pin_location <- svyglm(formula = health_pin ~  location_no_influence * log_tot_income + mcna_hosp, design, family = stats::gaussian())
+
+summary(health_pin_location)
+```
+
+
+##### 2.3 Residuals
+
+plot(Model1$y, Model1$residuals)
+plot(Model1a$y, Model1a$residuals)
+plot(Model2$y, Model2$residuals)

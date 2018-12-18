@@ -1,0 +1,17 @@
+"","dependent.var","independent.var","dependent.var.value","independent.var.value","numbers","se","min","max"
+"17","future_shelter_need","governorate_origin","TRUE","Baghdad",0,NA,0,0
+"18","future_shelter_need","governorate_origin","TRUE","Basrah",0,NA,0,0
+"19","future_shelter_need","governorate_origin","TRUE","Dahuk",0,NA,0,0
+"20","future_shelter_need","governorate_origin","TRUE","Diyala",0.0339179149920838,NA,0.0157241284857978,0.0521117014983698
+"21","future_shelter_need","governorate_origin","TRUE","Erbil",0,NA,0,0
+"22","future_shelter_need","governorate_origin","TRUE","Missan",0,NA,0,0
+"23","future_shelter_need","governorate_origin","TRUE","Najaf",0,NA,0,0
+"24","future_shelter_need","governorate_origin","TRUE","Ninewa",0.0519142802299092,NA,0.0422347009676941,0.0615938594921243
+"25","future_shelter_need","governorate_origin","TRUE","Sulaymaniyah",0,NA,0,0
+"26","future_shelter_need","governorate_origin","TRUE","Thi_Qar",0,NA,0,0
+"27","future_shelter_need","governorate_origin","TRUE","Kirkuk",0.0725047517500348,NA,0.0242111251364063,0.120798378363663
+"28","future_shelter_need","governorate_origin","TRUE","Salah_al_Din",0.0872773268683462,NA,0.0615379993638572,0.113016654372835
+"NA",NA,NA,NA,NA,NA,NA,NA,NA
+"NA.1",NA,NA,NA,NA,NA,NA,NA,NA
+"NA.2",NA,NA,NA,NA,NA,NA,NA,NA
+"NA.3",NA,NA,NA,NA,NA,NA,NA,NA

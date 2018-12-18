@@ -1,0 +1,3 @@
+"","dependent.var","independent.var","dependent.var.value","independent.var.value","numbers","se","min","max"
+"FALSE","mcna_shelter_imm","idps_new_movements",NA,FALSE,0.299927118362337,NA,0.283418663827058,0.316435572897616
+"TRUE","mcna_shelter_imm","idps_new_movements",NA,TRUE,0.400465684058233,NA,0.34664294916578,0.454288418950686

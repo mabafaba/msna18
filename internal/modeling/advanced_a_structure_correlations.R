@@ -1,3 +1,10 @@
+```{r setup0, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("./internal/R/120 - dependencies.R")
+.log<-list();.logfile<-"./output/log/log.txt";.clearlog()
+source("./internal/R/130 - load_input.R")
+source("./internal/R/140 - composite_indicators.R")
+
 #Advcanced Analytics
 suppressPackageStartupMessages(library(installr))
 installr:updateR()
@@ -6,73 +13,30 @@ library(effects)
 library(sjPlot)  
 library(outliers)
 library(magrittr)
-
-##### Starting with glms 
-
-##### 1.0 Mapping from data inputs to function inputs
-
-  vars <- parameters$variables
   
-##### 1.1 Sanitation 
-
-
-##### 1.2Recoding 
-  #1.2.1 Depdendent var
-# data$consumption_per_capita_per_day %>% table  
-  
-data$tot_income
+hist(data$tot_income, breaks= 80)data$tot_income
 
 # data$consumption_per_capita_per_month <- data$consumption_per_capita_per_day * 30.43
 data$tot_income[is.na(data$tot_income)] <- 0 
 data$log_tot_income <- log10(data$tot_income)
-data$log_tot_income[is.na(data$log_tot_income)] <- 0 
+
+# there are many missing values in the tot_income calculation, representing those HH with 0 income
+data$log_tot_income[is.na(data$log_tot_income)] <- 0
 data$log_tot_income[data$log_tot_income < 0] <- 0
-
-dependent.var <- parameters$dependent.var
-
-  #1.2.2 Independent 
-data$large_hh <- (data$hh_size > 6) %>% ordered 
-data$dependency_ratio_greater_1 <- (data$dep_ratio_.1 == "yes")%>% ordered
-data$fcs_acceptable <- (data$fcs_category == "acceptable") %>% ordered
-data$fcs_borderline <- (data$fcs_category == "borderline") %>% ordered
-data$std_dwelling <- (data$standard_dwelling == "yes") %>% ordered
-data$hh_holding_debt <- (data$hh_holding_debt == "yes") %>% ordered
-data$pis_regular.income <- (data$pis_regular.income == "yes") %>% ordered
-data$ncs_debt <- (data$ncs_debt == "yes") %>% ordered
-
-
 
 #sanitise
 #remove NA's
 data <- data[!is.na(data[["log_tot_income"]]),]
-data <- data[!(data[["weight_nat"]] == 0),]
-
 data$weight_nat <- as.numeric(data$weight_nat)
+data <- data[!(data[["weight_nat"]] == 0),]
 
 #apply weights and create design object (must happen after recoding)
 
       design <- svydesign(~0, data = data, weights = data$weight_nat)
 
-#making a dataframe with the variables 
-cols<- names(data) %in% vars
-data_for_model <- data[,cols]
-data[,cols] <- as.data.frame(lapply(data_for_model, as.factor))
-
 ##### 2.0 Inspecting dependent variable
 #### do a histogram 
 hist(data$log_tot_income, breaks= 80) ### log distribution
-# hist(log(data$total_quantity_water), breaks = 100) # <- normal distribution
-
-hist(data$log_tot_income, breaks = 30) # <- linear
-data$log_tot_income %>% table
-
-# data$quality_water[data$quality_water %in% c(98, 99)] <- NA
-# data$log_hh_water_consumption <- log(data$hh_water_consumption)
-# data$log_hh_water_consumption[data$log_hh_water_consumption < 0] <- 0
-
-##### 2.1 Correlation matrix of potential predictors (independent variable)
-data_for_model[] <- lapply(data_for_model,as.integer)
-sjPlot::sjp.corr(data_for_model)
 
 ##### 2.2 GLM 
 summary(lm(consumption_per_capita_per_month ~ large_hh, data = data))
@@ -90,8 +54,19 @@ Model_health_why <- svyglm(formula = health_pin ~ mcna_clinic * mcna_hosp + mcna
 Clinics_or_money <- svyglm(formula = log_tot_income ~ mcna_clinic + mcna_hosp + clusterid
                             , design, family = stats::gaussian())
 
-Clinics_and_money_location <- svyglm(formula = health_pin ~  district + log_tot_income
+health_income_hospital <- svyglm(formula = log_tot_income ~ mcna_hosp
                             , design, family = stats::gaussian())
+hospitals_location <- svyglm(formula = mcna_hosp ~  district
+                                     , design, family = stats::gaussian())
+health_pin_location <- svyglm(formula = health_pin ~  log_tot_income * mcna_hosp
+                              , design, family = stats::gaussian())
+
+summary(health_income_hospital)
+summary(health_pin_location)
+summary(hospitals_location)
+
+Adhamia Chamchamal Dahuk Darbandihkan Diwaniya 
+Haditha Halabja Hamza Hashimiya Kalar Kerbala Khalis Koisnjaq
 
 data$clusterid <- as.character(data$clusterid)
 

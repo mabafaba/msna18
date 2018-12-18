@@ -1,0 +1,91 @@
+---
+title: "Cross sectoral PCA"
+output: html_document
+---
+
+```{r setup0, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("./internal/R/120 - dependencies.R")
+.log<-list();.logfile<-"./output/log/log.txt";.clearlog()
+source("./internal/R/130 - load_input.R")
+source("./internal/R/140 - composite_indicators.R")
+
+# pca_vis<-
+
+```
+
+```{r setup, include=FALSE}
+
+data$tot_income[data$tot_income<3.8]<-NA
+data$tot_income_log<-log(data$tot_income)
+sub<-data[,c("tot_income_log",
+             "nfi_index",
+             "livelihood_index" ,
+             "wash_index",
+             "health_index",
+             "protection_index")]
+require(factoextra)
+require(sjstats)
+
+sub<-sub[apply(sub,1,function(x){all(!is.na(x))}),]
+pca<-prcomp(sub,scale. = T)
+```
+# distribution of severity
+
+```{r severity_dist}
+hist(quantile(data$nfi_index,na.rm=T,seq(0,1,0.1)),col="black",main="NFI index")
+hist(quantile(data$wash_index,na.rm=T,seq(0,1,0.1)),col="black",main="WASH index")
+hist(quantile(data$health_index,na.rm=T,seq(0,1,0.1)),col="black",main="Health index")
+hist(quantile(data$livelihood_index,na.rm=T,seq(0,1,0.1)),col="black",main="Livelihood index")
+hist(quantile(data$protection_index,na.rm=T,seq(0,1,0.1)),col="black",main="Protection index")
+
+
+```
+(ACAPS document) Most need score distributions are "mostly low" except for livelihood (polarised) and protection(mixed mostly low and polarised).
+# Cross sectoral
+
+Can cross-sector needs be compressed?
+```{r plots}
+res.var<-get_pca_var(pca)
+res.var$contrib
+plot(pca,col="black",main="variance explained by principal components")
+```
+
+## First two principal components:
+
+
+```{r pcavis, echo=FALSE}
+fviz_pca_var(pca,col.var = "contrib",
+              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             axes=c(1:2),
+             repel = TRUE)
+
+
+```
+Third and fourth principal component:
+```{r pcavis0, echo=FALSE}
+
+fviz_pca_var(pca,col.var = "contrib",
+              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             axes=c(3:4),
+             repel = TRUE)
+
+
+```
+
+# Health index
+```{r pcavis2, echo=FALSE}
+
+# health_vars<-composite_indicators_definitions_weighted_counts[composite_indicators_definitions_weighted_counts$new.var.name=="health_index","var"]
+# sub<-
+# pca<-prcomp(data[,health_vars],scale. = T,center = T)
+# fviz_pca_var(pca,col.var = "contrib",
+#               gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+#              axes=c(3:4),
+#              repel = TRUE)
+
+
+```
+
+
+
