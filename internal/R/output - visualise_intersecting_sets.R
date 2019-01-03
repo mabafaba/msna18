@@ -5,7 +5,7 @@ require("UpSetR")
 require("magrittr")
 rm(list = ls())
 
-data <- read.csv("internal/input_files/MCNA_Dataset_HH Survey_SFHH.csv")
+data <- read.csv("internal/input_files/UKR_MSNA_pin_dummies.csv")
 
 
 # subset the data if you need to
@@ -19,6 +19,7 @@ composite_indicator_names<-c("edu_pin_bin_population", "health_pin_bin", "food_p
 
 ### check that the names are all good
 composite_indicator_names %in% names(data)
+
 ## subset
 compinds <- data[,composite_indicator_names] 
 ##### Function that returns the most common unique intersections (i.e. a record that appears in columns 
@@ -51,15 +52,17 @@ set_intersection_plot<-function(set_percentages){
   upset(fromExpression(set_percentages), 
         order.by = "freq", nintersects = 10, nsets = 7,
         mainbar.y.label = "% in need per combination of sectors"  
-     #   , mainbar.y.max = 50
+      , mainbar.y.max = 15
   )
 }
 
 #making design object if you havent 
-data <- split.data.frame(data, f = data$hh_type)
+data <- split.data.frame(data, f = data$area_km)
 original.data <- data
 
-data <- data[[1]]
+data <- original.data[[3]]
+
+
 
 g <- function(x){
   design <- svydesign(~1,weights = data$weight, data = data )
@@ -69,7 +72,7 @@ g <- function(x){
   intersected_composites<- expand_composite_indicators_to_set_intersections(data,composite_indicator_names)
   
   #### Take away the single indicators
-  intersected_composites <- intersected_composites[,-(1:7)]
+  intersected_composites <- intersected_composites[,-(1:5)]
   data <- cbind(data, intersected_composites, stringsAsFactors = F)
   
   ### get aggregated results...:
@@ -77,7 +80,7 @@ g <- function(x){
   ### If you have used load_questionnaire() you could also do this with the "reachR" package (Eliora knows)
   ### now doing this quick and cheap for the example:
   
-  aggregated.results <- svymean(data[,c(9:128)], design, na.rm = T)
+  aggregated.results <- svymean(data[,c(31:56)], design, na.rm = T)
   aggregated.results.named <- aggregated.results %>% unlist %>% as.data.frame(., stringsAsFactors =F, na.rm = T)
   
   aggregated.results <- aggregated.results.named[,1]
