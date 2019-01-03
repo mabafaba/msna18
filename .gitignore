@@ -17,3 +17,4 @@ output/mean_aggregations_raw_csv/
 /output/log.txt
 /output/*.html
 /output/log/*
+.Rproj.user
