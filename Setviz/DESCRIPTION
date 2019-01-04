@@ -2,10 +2,12 @@ Package: Setviz
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Eliora H
+Maintainer: The package maintainer eliora.henzler@impact-initiatives.org
+Description: This package lets you visualise intersecting sets. 
+			It is a wrapper for the upsetR package, and can be used in combination with weighted percentages. Its functions take a list of binary variables in a dataframe, and show you what combinations of variables occur in what percentages
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Imports: dplyr, roxygen2, reachR, upsetR, magrittr
+Suggests: hypegrammaR
