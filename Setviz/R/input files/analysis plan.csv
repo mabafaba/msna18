@@ -1,0 +1,14 @@
+repeat for,disaggregate by,variable,output raw numbers,output minimal chart - width of quarter A4 landscape (FS),output regular chart (report),output Map: Mode,output Map: Average/Percent (of mode),output heatmap
+,hh_type,education_index,yes,no,yes,no,no,yes
+,hh_type,education_PIN,yes,no,yes,no,no,yes
+,hh_type,health_index,yes,no,yes,no,no,yes
+,hh_type,health_PIN,yes,no,yes,no,no,yes
+,hh_type,protection_index,yes,no,yes,no,no,yes
+,hh_type,protection_PIN,yes,no,yes,no,no,yes
+,hh_type,NFI_index,yes,no,yes,no,no,yes
+,hh_type,NFI_PIN,yes,no,yes,no,no,yes
+,hh_type,WASH_index,yes,no,yes,no,no,yes
+,hh_type,WASH_PIN,yes,no,yes,no,no,yes
+,hh_type,livelihood_index,yes,no,yes,no,no,yes
+,hh_type,livelihood_PIN,yes,no,yes,no,no,yes
+,hh_type,food_PIN,yes,no,yes,no,no,yes
