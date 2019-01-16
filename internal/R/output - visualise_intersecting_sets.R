@@ -1,8 +1,7 @@
 ##########
 # FUNCTIONS (ignore this part and see below 'example use')
 ##########
-require("UpSetR")
-require("magrittr")
+
 
 
 ##### Function that returns the most common unique intersections (i.e. a record that appears in columns 
