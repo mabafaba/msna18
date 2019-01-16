@@ -1,3 +1,4 @@
+
 #' Recode select_one to binary TRUE/FALSE
 #'
 #'@param x vector of select_one
@@ -34,8 +35,8 @@ recode_select_one_to_logical <- function(x, becomes.TRUE, becomes.FALSE){
 #'   ####match all
 #'   if(!is.null(selected.all.in)){
 #'   make_false_all <- x %>% strsplit(" ") %>% sapply(function(x){
-#'     match(selected.all.in,x) %>% is.na %>% any}) 
-#'   x_recoded[!make_false_all] <- TRUE} 
+#'     match(selected.all.in,x) %>% is.na %>% any})
+#'   x_recoded[!make_false_all] <- TRUE}
 #'   ####match none
 #'   if(!is.null(selected.none.in)){
 #'   match_none <- x %>% strsplit(" ") %>% lapply(function(x){
@@ -49,12 +50,12 @@ recode_generic <- function(data, x, value, condition, to, variable.name){
     recoded <- recode_else(data = data, x = x, to = to)
     return(recoded)
   }
-  
+
   if(question_is_select_multiple(variable.name)){
     recoded <- recode_select_multiple(data = data, x = x, value = value, condition = condition, to = to, variable.name = variable.name)
-    return(recoded)    
+    return(recoded)
   }
-  
+
   recoded <- recode_generic_one(data = data, x = x, value = value, condition = condition, to = to, variable.name = variable.name)
   return(recoded)
 }
@@ -82,20 +83,20 @@ recode_select_multiple <- function(data, x, value, condition, to, variable.name 
   if(condition == "all"){
     isfulfilled <- x %>% strsplit(" ") %>% lapply(function(x){
       (value %in% x) %>% all}) %>% unlist
-    x_recoded[isfulfilled] <- to} 
+    x_recoded[isfulfilled] <- to}
   ####match none
   if(condition == "none"){
     match_none <- x %>% strsplit(" ") %>% lapply(function(x){
       match(value, x)})
     make_true_none <- lapply(match_none, function(x){all(is.na(x))}) %>% unlist
     x_recoded[make_true_none] <- to}
-  
+
   ####match skipped
   if(condition == "skipped"){
     skipped <- question_is_skipped(data, variable.name)
     x_recoded[skipped] <- to}
   # ####match else
-  
+
   # if(condition == "else"){
   #   x_recoded <- recode_else(data = data, x = x, to = to)
   # }
@@ -103,7 +104,7 @@ recode_select_multiple <- function(data, x, value, condition, to, variable.name 
 }
 
 
-### input x should be the line in the data with variable name, 
+### input x should be the line in the data with variable name,
 recode_generic_one <- function(data, x, value, condition, to, variable.name = variable.name){
   recoded <- rep(NA,length(x))
   if(condition == "smaller.equal"){
