@@ -72,7 +72,7 @@ recode_select_multiple <- function(data, x, value, condition, to, variable.name 
   x<-as.character(x)
   if(is.null(value)){stop("At least one parameter must be provided")}
   x_recoded <- rep(NA, length(x))
-  value <- value %>% strsplit(",,") %>% as.vector %>% unlist %>% gsub(" ", "", .)
+  value <- value %>% strsplit(" ") %>% as.vector %>% unlist
   ####match any
   if(condition == "any"){
     match_any <- x %>% as.character %>% strsplit(" ") %>% lapply(function(x){
@@ -127,14 +127,15 @@ recode_generic_one <- function(data, x, value, condition, to, variable.name = va
 
 
 recode_any<-function(x, from, to){
-from <- from %>% strsplit(",,") %>% as.vector %>% unlist %>% gsub(" ", "", .)
-x %<>% as.character
-to %<>% as.numeric
-match_any <- match(x, from)
-make_true <- !is.na(match_any)
-recoded_empty <- rep(NA,length(x))
-recoded_empty[make_true] <- to
-return(recoded_empty)}
+  from <- from %>% strsplit(" ") %>% as.vector %>% unlist 
+  x %<>% as.character
+  to %<>% as.numeric
+  match_any <- match(x, from)
+  make_true <- !is.na(match_any)
+  recoded_empty <- rep(NA,length(x))
+  recoded_empty[make_true] <- to
+  return(recoded_empty)
+}
 
 recode_equal<-function(x,from,to){
 x %<>% as.character

@@ -19,8 +19,19 @@ load_composite_indicator_definition_weighted_count<-function(file="./internal/in
   conditions<- remove.empty.rows(conditions)
   # table <- read.csv.part(file = file,first.row = header_row-1,first.col = 2,last.col = 6) %>% 
   conditions[,c("var","new.var.name","condition")] <- conditions[,c("var","new.var.name","condition")] %>% lapply(to_alphanumeric_lowercase) %>% as.data.frame(stringsAsFactors = F)
+
+  # check no illegal combos:
+
+  select_mults<-sapply(conditions$var,question_is_select_multiple)
   
-  
+  # Make sure that select multiple questions only have "all" "any" or "none" as condition 
+  illlegal<-!(tolower(conditions[,"condition"]) %in% c("all","any","none","skipped","else")) & select_mults
+  legal<-!illlegal
+  if(any(!legal)){
+    stop(paste0("illegal condition type for select_multiple composite indicators:\n",
+                
+                paste0(conditions[!legal,"var"],": '",conditions[!legal,"condition"],"'"),"\nallowed conditions are: 'All', 'Any', 'None','Else' and 'skipped'",collapse="\n",sep="\n"))
+  }
   return(conditions)
   
 }

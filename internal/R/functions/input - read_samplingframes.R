@@ -1,7 +1,9 @@
 
 excel_csv_inputs_sampling_frame_stratification_to_weighting_function<-function(file="./internal/input_files/stratification_samplingframe.csv"){
   # read csv file
-  rawsf<-read.csv(file,stringsAsFactors = F,skip = 1,header = T) %>% remove.empty.rows
+  rawsf<-read.csv(file,stringsAsFactors = F
+                  ,skip = 1
+                  ,header = T) %>% remove.empty.rows
   stratum_var_separator_string<-"/---STRATA---/"
   stratanames.rawcols<-paste0(c("first","second","third"),".strata.name.variable")
   stratanames.rawcols<-stratanames.rawcols[!is.na(rawsf[1,stratanames.rawcols]) &

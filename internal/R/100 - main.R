@@ -23,6 +23,5 @@ source("./internal/R/140 - composite_indicators.R", local = T)
 # ...
 source("./internal/R/150 - analysis.R", local = T)
 #...
-
 source("./internal/R/160 - output.R", local = T)
 #
